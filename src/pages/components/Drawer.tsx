@@ -43,11 +43,11 @@ function ProjectsDrawer() {
                   </strong> - An extensive list of Shields.io badges, aka these:
                   <br /><br />
                   <div className="flex">
-                    <Image src="https://img.shields.io/badge/Discord-%235865F2.svg?&logo=discord&logoColor=white" alt="Discord Shields.io badge" width={80} height={30} className="mr-4"></Image>
-                    <Image src="https://img.shields.io/badge/ChatGPT-74aa9c?logo=openai&logoColor=white" alt="ChatGPT Shields.io badge" width={80} height={80} className="mr-4"></Image>
-                    <Image src="https://img.shields.io/badge/Firefox-FF7139?logo=Firefox&logoColor=white" alt="Firefox Shields.io badge" width={80} height={80} className="mr-4"></Image>
-                    <Image src="https://img.shields.io/badge/YouTube-%23FF0000.svg?logo=YouTube&logoColor=white" alt="YouTube Shields.io badge" width={80} height={80} className="mr-4"></Image>
-                    <Image src="https://img.shields.io/badge/Jenkins-D24939?logo=jenkins&logoColor=white" alt="Jenkins Shields.io badge" width={80} height={80} className="mr-4"></Image>
+                    <Image src="badges/discord-badge.svg" alt="Discord Shields.io badge" width={80} height={30} className="mr-4"></Image>
+                    <Image src="badges/chatgpt-badge.svg" alt="ChatGPT Shields.io badge" width={80} height={80} className="mr-4"></Image>
+                    <Image src="badges/firefox-badge.svg" alt="Firefox Shields.io badge" width={80} height={80} className="mr-4"></Image>
+                    <Image src="badges/youtube-badge.svg" alt="YouTube Shields.io badge" width={80} height={80} className="mr-4"></Image>
+                    <Image src="badges/jenkins-badge.svg" alt="Jenkins Shields.io badge" width={80} height={80} className="mr-4"></Image>
                   </div>
                 </p>
                 <br />
