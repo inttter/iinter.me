@@ -12,7 +12,7 @@
     "@mdi/react": "^1.6.1",
     "daisyui": "^4.7.2",
     "million": "^3.0.4",
-    "next": "13.5.1",
+    "next": "13.5.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sharp": "^0.33.2",
@@ -24,7 +24,7 @@
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.26",
     "autoprefixer": "^10.4.13",
-    "postcss": "^8.4.31",
+    "postcss": "^8.4.32",
     "postcss-import": "^15.1.0",
     "tailwindcss": "^3.2.4",
     "typescript": "^4.9.4"
