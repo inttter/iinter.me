@@ -18,14 +18,14 @@ function Username() {
       })
       .then(data => {
         const discordStatus = data.data.discord_status;
-  
+
         const gameActivity = data.data.activities.find((activity: any) => activity.type === 0);
         const gameName = gameActivity ? gameActivity.name : '';
-  
+
         const spotifyActivityData = data.data.spotify;
-  
+
         let updatedStatus = '';
-  
+
         if (gameActivity) {
           updatedStatus = `🎮 Playing ${gameName}`;
         } else if (spotifyActivityData) {
@@ -34,18 +34,16 @@ function Username() {
           setSpotifyAlbum(spotifyActivityData.album);
           setSpotifyTime(spotifyActivityData.timestamps.end);
           updatedStatus = `🎧 ${spotifyActivityData.song} by ${spotifyActivityData.artist}`;
-        } else {
-          updatedStatus = '🤷‍♂️ idk';
         }
-  
+
         const statusMap: Record<string, string> = {
           online: '🟢 online',
           idle: '🟡 idle',
           dnd: '🔴 dnd',
           offline: '💤 offline'
         };
-  
-        setStatus(statusMap[discordStatus] + ' • ' + updatedStatus);
+
+        setStatus(statusMap[discordStatus] + (updatedStatus ? ' • ' + updatedStatus : ''));
       })
       .catch(error => {
         console.error('Error fetching Discord status:', error);
