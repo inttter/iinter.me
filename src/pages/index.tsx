@@ -11,7 +11,7 @@ export default function Home() {
             i'm <Username />
           </h1>
         </div>
-        <div className="flex justify-center space-x-5 selection:bg-gray-700 bg-transparent" data-theme="lofi">
+        <div className="flex justify-center md:space-x-5 space-x-3 selection:bg-gray-700 bg-transparent" data-theme="lofi">
           <SocialLink href="https://github.com/inttter" src="socials/github.svg" alt="GitHub" tooltipText="github" />
           <SocialLink href="https://steamcommunity.com/id/intermed" src="socials/steam.svg" alt="Steam" tooltipText="steam" />
           <SocialLink href="https://discord.com/users/514106760299151372" src="socials/discord.svg" alt="Discord" tooltipText="discord" />
