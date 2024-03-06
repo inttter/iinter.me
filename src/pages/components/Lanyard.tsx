@@ -3,7 +3,6 @@ import { toast } from 'sonner';
 
 function Username() {
   const [status, setStatus] = useState<string>('loading... 𖦹');
-  const [spotifyActivity, setSpotifyActivity] = useState<any>(null);
   const [spotifySong, setSpotifySong] = useState<string>('');
   const [spotifyArtist, setSpotifyArtist] = useState<string>('');
   const [spotifyAlbum, setSpotifyAlbum] = useState<string>('');
@@ -18,38 +17,35 @@ function Username() {
         return response.json();
       })
       .then(data => {
-        console.log(data)
         const discordStatus = data.data.discord_status;
-
+  
+        const gameActivity = data.data.activities.find((activity: any) => activity.type === 0);
+        const gameName = gameActivity ? gameActivity.name : '';
+  
         const spotifyActivityData = data.data.spotify;
-        if (spotifyActivityData) {
+  
+        let updatedStatus = '';
+  
+        if (gameActivity) {
+          updatedStatus = `🎮 Playing ${gameName}`;
+        } else if (spotifyActivityData) {
           setSpotifySong(spotifyActivityData.song);
           setSpotifyArtist(spotifyActivityData.artist);
           setSpotifyAlbum(spotifyActivityData.album);
           setSpotifyTime(spotifyActivityData.timestamps.end);
+          updatedStatus = `🎧 ${spotifyActivityData.song} by ${spotifyActivityData.artist}`;
+        } else {
+          updatedStatus = '🤷‍♂️ idk';
         }
-
-        const gameActivity = data.data.activities.find((activity: any) => activity.type === 0);
-        const gameName = gameActivity ? gameActivity.name : '';
-
+  
         const statusMap: Record<string, string> = {
           online: '🟢 online',
           idle: '🟡 idle',
           dnd: '🔴 dnd',
           offline: '💤 offline'
         };
-
-        let updatedStatus = statusMap[discordStatus] || '🤷‍♂️ idk';
-
-        if (spotifyActivityData) {
-          updatedStatus += ` • 🎧 ${spotifyActivityData.song} by ${spotifyActivityData.artist}`;
-        }
-
-        if (gameActivity) {
-          updatedStatus += ` • 🎮 Playing ${gameName}`;
-        }
-
-        setStatus(updatedStatus);
+  
+        setStatus(statusMap[discordStatus] + ' • ' + updatedStatus);
       })
       .catch(error => {
         console.error('Error fetching Discord status:', error);
