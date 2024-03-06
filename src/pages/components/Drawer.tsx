@@ -31,7 +31,7 @@ function ProjectsDrawer() {
         <Drawer.Portal>
           <Drawer.Overlay className="fixed inset-0 bg-black/40" />
           <Drawer.Content className="bg-black flex flex-col rounded-t-[10px] h-[96%] mt-24 fixed bottom-0 left-0 right-0">
-            <div className="p-4 bg-neutral-900 rounded-t-[10px] flex-1">
+            <div className="p-4 bg-neutral-900 rounded-t-[10px] flex-1 overflow-y-auto">
               <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-zinc-600 mb-8" />
               <div className="max-w-md mx-auto">
                 <Drawer.Title className="text-3xl font-bold mb-4 text-white">
@@ -42,12 +42,11 @@ function ProjectsDrawer() {
                     <a href="https://github.com/inttter/md-badges" className="hover:text-ctp-pink duration-300 text-lg font-semibold leading-none tracking-tight">md-badges</a>
                   </strong> - An extensive list of Shields.io badges, aka these:
                   <br /><br />
-                  <div className="flex">
+                  <div className="flex justify-center">
                     <Image src="badges/discord-badge.svg" alt="Discord Shields.io badge" width={80} height={30} className="mr-4"></Image>
                     <Image src="badges/chatgpt-badge.svg" alt="ChatGPT Shields.io badge" width={80} height={80} className="mr-4"></Image>
                     <Image src="badges/firefox-badge.svg" alt="Firefox Shields.io badge" width={80} height={80} className="mr-4"></Image>
                     <Image src="badges/youtube-badge.svg" alt="YouTube Shields.io badge" width={80} height={80} className="mr-4"></Image>
-                    <Image src="badges/jenkins-badge.svg" alt="Jenkins Shields.io badge" width={80} height={80} className="mr-4"></Image>
                   </div>
                 </p>
                 <br />
@@ -94,11 +93,11 @@ function ProjectsDrawer() {
             <div className="p-4 bg-neutral-900 border-t border-black mt-auto">
               <div className="flex gap-6 justify-end max-w-md mx-auto">
                 <a
-                  className="text-xs text-zinc-600 flex items-center gap-0.25"
+                  className="text-xs text-zinc-600 hover:text-zinc-300 duration-300 flex items-center gap-0.25"
                   href="https://github.com/inttter"
                   target="_blank"
                 >
-                  GitHub
+                  Want more? Check out my GitHub.
                   <svg
                     fill="none"
                     height="16"
