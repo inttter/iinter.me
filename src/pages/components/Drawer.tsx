@@ -44,8 +44,8 @@ function ProjectsDrawer() {
         <Drawer.Portal>
           <Drawer.Overlay className="fixed inset-0 bg-black/40" />
           <Drawer.Content className="bg-black flex flex-col rounded-t-[10px] h-[96%] mt-24 fixed bottom-0 left-0 right-0">
-            <div className="p-4 bg-neutral-900 rounded-t-[10px] flex-1 overflow-y-auto">
-              <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-zinc-600 mb-8" />
+            <div className="p-4 bg-neutral-950 rounded-t-[10px] flex-1 overflow-y-auto">
+              <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-neutral-800 mb-8" />
               <div className="max-w-md mx-auto">
                 <Drawer.Title className="text-3xl font-bold mb-4 text-white">
                   Projects
@@ -111,7 +111,7 @@ function ProjectsDrawer() {
                 </p>
               </div>
             </div>
-            <div className="p-4 bg-neutral-900 border-t border-black mt-auto">
+            <div className="p-4 bg-neutral-950 border-t border-black mt-auto">
               <div className="flex gap-6 justify-end max-w-md mx-auto">
                 <a
                   className="text-xs text-zinc-600 hover:text-zinc-300 duration-300 flex items-center gap-0.25"
