@@ -8,15 +8,28 @@ function ProjectsDrawer() {
   const [copied, setCopied] = useState(false);
 
   const copyToClipboard = (text: string) => {
-    navigator.clipboard.writeText(text)
-      .then(() => {
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-        toast.success('Copied to your clipboard!');
-      })
-      .catch(err => {
-        console.error('Error copying text to clipboard:', err);
-      });
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text)
+        .then(() => {
+          setCopied(true);
+          setTimeout(() => setCopied(false), 2000);
+          toast.success('Copied to your clipboard!');
+        })
+        .catch(err => {
+          console.error('Error copying text to clipboard:', err);
+        });
+    } else {
+      // a fallback for browsers that do not support navigator.clipboard (fuck you safari!)
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textArea);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+      toast.success('Copied to your clipboard!');
+    }
   };
 
   return (
@@ -37,6 +50,14 @@ function ProjectsDrawer() {
                 <Drawer.Title className="text-3xl font-bold mb-4 text-white">
                   Projects
                 </Drawer.Title>
+                <p className="text-zinc-300 mb-2 tracking-wide">
+                  These are most of my projects that I am actively working on.
+                  Click on the names of the projects to be taken to the GitHub
+                  page for it. Those with terminal commands are NPM packages which
+                  you can click on to copy the command to your clipboard.
+                 <span className="text-gray-500 bg-transparent"> (tip: scroll to see more!)</span>
+                </p>
+                <br />
                 <p className="text-zinc-300 mb-2">
                   <strong>
                     <a href="https://github.com/inttter/md-badges" className="hover:text-ctp-pink duration-300 text-lg font-semibold leading-none tracking-tight">md-badges</a>
