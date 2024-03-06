@@ -7,8 +7,8 @@ interface CodeBlockProps {
 
 const CodeBlock: React.FC<CodeBlockProps> = ({ onClick, children }) => {
   return (
-    <div className="rounded-lg overflow-hidden bg-black text-white font-mono font-semibold tracking-tight leading-3 text-sm cursor-pointer">
-      <pre className="p-2.5 overflow-x-auto" onClick={onClick}>
+    <div className="rounded-md bg-black text-white shadow-lg overflow-auto scrollbar-thin cursor-pointer active:scale-90 duration-300">
+      <pre className="p-4 overflow-x-auto" onClick={onClick}>
         {children}
       </pre>
     </div>
