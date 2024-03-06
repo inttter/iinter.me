@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { toast } from 'sonner';
 
 function Username() {
   const [status, setStatus] = useState<string>('loading... 𖦹');
+  const [spotifyActivity, setSpotifyActivity] = useState<any>(null);
+  const [spotifySong, setSpotifySong] = useState<string>('');
+  const [spotifyArtist, setSpotifyArtist] = useState<string>('');
+  const [spotifyAlbum, setSpotifyAlbum] = useState<string>('');
+  const [spotifyTime, setSpotifyTime] = useState<string>('');
 
   useEffect(() => {
     fetch('https://api.lanyard.rest/v1/users/514106760299151372')
@@ -12,13 +18,18 @@ function Username() {
         return response.json();
       })
       .then(data => {
+        console.log(data)
         const discordStatus = data.data.discord_status;
 
-        const spotifyActivity = data.data.activities.find(activity => activity.name === 'Spotify');
-        const spotifySong = spotifyActivity ? spotifyActivity.details : '';
-        const spotifyArtist = spotifyActivity && spotifyActivity.state ? spotifyActivity.state : '';
+        const spotifyActivityData = data.data.spotify;
+        if (spotifyActivityData) {
+          setSpotifySong(spotifyActivityData.song);
+          setSpotifyArtist(spotifyActivityData.artist);
+          setSpotifyAlbum(spotifyActivityData.album);
+          setSpotifyTime(spotifyActivityData.timestamps.end);
+        }
 
-        const gameActivity = data.data.activities.find(activity => activity.type === 0);
+        const gameActivity = data.data.activities.find((activity: any) => activity.type === 0);
         const gameName = gameActivity ? gameActivity.name : '';
 
         const statusMap: Record<string, string> = {
@@ -30,8 +41,8 @@ function Username() {
 
         let updatedStatus = statusMap[discordStatus] || '🤷‍♂️ idk';
 
-        if (spotifyActivity) {
-          updatedStatus += ` • 🎧 ${spotifySong} by ${spotifyArtist}`;
+        if (spotifyActivityData) {
+          updatedStatus += ` • 🎧 ${spotifyActivityData.song} by ${spotifyActivityData.artist}`;
         }
 
         if (gameActivity) {
@@ -46,13 +57,23 @@ function Username() {
       });
   }, []);
 
+  const handleStatusClick = () => {
+    if (status.includes('🎧')) {
+      const endTime = new Date(spotifyTime);
+      const now = new Date();
+      const timeLeft = endTime.getTime() - now.getTime();
+      const minutesLeft = Math.floor(timeLeft / 60000);
+      const secondsLeft = Math.floor((timeLeft % 60000) / 1000);
+      toast.info(`${spotifySong} by ${spotifyArtist}, on ${spotifyAlbum} - ${minutesLeft}min ${secondsLeft}s left`);
+    }
+  };
+
   return (
     <>
       <span className="text-ctp-green">inter</span>
-      <p className="text-sm text-gray-500">{status}</p>
+      <p className="text-sm text-gray-500" onClick={handleStatusClick}>{status}</p>
     </>
   );
 }
 
 export default Username;
-
