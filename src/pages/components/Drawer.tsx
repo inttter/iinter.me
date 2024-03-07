@@ -4,6 +4,12 @@ import Image from 'next/image';
 import { Toaster, toast } from 'sonner';
 import CodeBlock from './Code';
 
+// fonts from fontsource
+import '@fontsource/geist-sans';
+import '@fontsource/geist-sans/700.css';
+import '@fontsource/geist-sans/600.css';
+import '@fontsource/geist-mono';
+
 function ProjectsDrawer() {
   const [copied, setCopied] = useState(false);
 
@@ -43,14 +49,14 @@ function ProjectsDrawer() {
         </Drawer.Trigger>
         <Drawer.Portal>
           <Drawer.Overlay className="fixed inset-0 bg-black/40" />
-          <Drawer.Content className="bg-black flex flex-col rounded-t-[10px] h-[96%] mt-24 fixed bottom-0 left-0 right-0">
+          <Drawer.Content className="bg-black flex flex-col rounded-t-[10px] h-[96%] mt-24 fixed bottom-0 left-0 right-0 drawer">
             <div className="p-4 bg-neutral-950 rounded-t-[10px] flex-1 overflow-y-auto">
               <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-neutral-800 mb-8" />
               <div className="max-w-md mx-auto">
-                <Drawer.Title className="text-3xl font-bold mb-4 text-white">
+                <Drawer.Title className="text-3xl font-bold leading-none tracking-tight hover:tracking-wide duration-300 mb-4 text-white">
                   Projects
                 </Drawer.Title>
-                <p className="text-zinc-300 mb-2 tracking-wide">
+                <p className="text-zinc-400 mb-2 tracking-wide">
                   These are most of my projects that I am actively working on.
                   Click on the names of the projects to be taken to the GitHub
                   page for it. Those with terminal commands are NPM packages which
@@ -58,9 +64,9 @@ function ProjectsDrawer() {
                  <span className="text-gray-500 bg-transparent"> (tip: scroll to see more!)</span>
                 </p>
                 <br />
-                <p className="text-zinc-300 mb-2">
+                <p className="text-zinc-400 mb-2">
                   <strong>
-                    <a href="https://github.com/inttter/md-badges" className="hover:text-ctp-pink duration-300 text-lg font-semibold leading-none tracking-tight">md-badges</a>
+                    <a href="https://github.com/inttter/md-badges" className="text-white hover:text-ctp-pink duration-300 text-lg font-bold leading-none tracking-tight hover:tracking-wide hover:text-xl">md-badges</a>
                   </strong> - An extensive list of Shields.io badges, aka these:
                   <br /><br />
                   <div className="flex justify-center">
@@ -73,9 +79,9 @@ function ProjectsDrawer() {
                 <br />
                 <hr />
                 <br />
-                <p className="text-zinc-300 mb-2 space-y-4">
+                <p className="text-zinc-400 mb-2 space-y-4">
                   <strong>
-                    <a href="https://mdbcli.xyz" className="hover:text-ctp-pink duration-300 text-lg font-semibold leading-none tracking-tight">mdbadges-cli</a>
+                    <a href="https://mdbcli.xyz" className="text-white hover:text-ctp-pink duration-300 text-lg font-semibold leading-none tracking-tight hover:tracking-wide hover:text-xl">mdbadges-cli</a>
                   </strong> - The CLI version of the above list. It lets you find Shields.io badges without needing to leave the terminal.
                   <CodeBlock onClick={() => copyToClipboard('npm install -g mdbadges-cli')}>
                     npm install -g mdbadges-cli
@@ -84,9 +90,9 @@ function ProjectsDrawer() {
                 <br />
                 <hr className="p-1 rounded-lg" />
                 <br />
-                <p className="text-zinc-300">
+                <p className="text-zinc-400">
                   <strong>
-                    <a href="https://github.com/inttter/create-ps" className="hover:text-ctp-pink duration-300 text-lg font-semibold leading-none tracking-tight">create-ps</a>
+                    <a href="https://github.com/inttter/create-ps" className="text-white hover:text-ctp-pink duration-300 text-lg font-bold leading-none tracking-tight hover:tracking-wide hover:text-xl">create-ps</a>
                   </strong> - Creates the foundations for an NPM package.
                   <br /><br />
                   <CodeBlock onClick={() => copyToClipboard('npx cps new-project')}>
@@ -98,7 +104,7 @@ function ProjectsDrawer() {
                 <br />
                 <p className="text-zinc-300 mb-2 space-y-4">
                   <strong>
-                    <a href="https://discid.xyz" className="hover:text-ctp-pink duration-300">discid</a>
+                    <a href="https://discid.xyz" className="hover:text-ctp-pink duration-300 text-lg font-bold leading-none tracking-tight hover:tracking-wide hover:text-xl">discid</a>
                   </strong> - A simple command-line tool to check a user's Discord status using Lanyard.
                   <div className="flex space-x-2">
                     <CodeBlock onClick={() => copyToClipboard('npm install -g discid')}>

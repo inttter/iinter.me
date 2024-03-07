@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-tailwindcss-typescript-starter",
+  "name": "iinter.me",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,8 +8,11 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fontsource/geist-mono": "^5.0.2",
+    "@fontsource/geist-sans": "^5.0.2",
     "@mdi/js": "^7.4.47",
     "@mdi/react": "^1.6.1",
+    "@nextui-org/snippet": "^2.0.31",
     "daisyui": "^4.7.2",
     "million": "^3.0.4",
     "next": "13.5.6",

@@ -2,6 +2,15 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+
 :root {
     font-family: 'Ubuntu', sans-serif;
+}
+
+.drawer {
+    font-family: 'Geist Sans', sans-serif;
+}
+
+.code {
+    font-family: 'Geist Mono', monospace;
 }
