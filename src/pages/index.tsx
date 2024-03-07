@@ -18,7 +18,7 @@ export default function Home() {
           <SocialLink href="https://twitter.com/accmpy" src="socials/twitter.svg" alt="Twitter" tooltipText="twitter" />
           <SocialLink href="https://osu.ppy.sh/users/19054376" src="socials/osu.svg" alt="osu!" tooltipText="osu!" />
           <SocialLink href="https://www.last.fm/user/intter" src="/socials/lastfm.svg" alt="Last.fm" tooltipText="last.fm" />
-          <div className="tooltip tooltip-bottom text-[#CAD3F5] bg-transparent font-bold mb-2" data-tip="projects" data-theme="lofi" style={{ marginTop: '5px' }}>
+          <div className="tooltip tooltip-bottom text-[#98CF93] bg-transparent font-bold mb-2" data-tip="projects" data-theme="lofi" style={{ marginTop: '5px' }}>
           <ProjectsDrawer />
           </div>
         </div>
