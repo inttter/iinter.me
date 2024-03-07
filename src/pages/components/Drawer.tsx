@@ -83,8 +83,8 @@ function ProjectsDrawer() {
                   <strong>
                     <a href="https://mdbcli.xyz" className="text-white hover:text-ctp-pink duration-300 text-lg font-semibold leading-none tracking-tight hover:tracking-wide hover:text-xl">mdbadges-cli</a>
                   </strong> - The CLI version of the above list. It lets you find Shields.io badges without needing to leave the terminal.
-                  <CodeBlock onClick={() => copyToClipboard('npm install -g mdbadges-cli')}>
-                    npm install -g mdbadges-cli
+                  <CodeBlock onClick={() => copyToClipboard('npm i -g mdbadges-cli')}>
+                    npm i -g mdbadges-cli
                   </CodeBlock>
                 </p>
                 <br />
@@ -102,13 +102,13 @@ function ProjectsDrawer() {
                 <br />
                 <hr />
                 <br />
-                <p className="text-zinc-300 mb-2 space-y-4">
+                <p className="text-zinc-400 mb-2 space-y-4">
                   <strong>
-                    <a href="https://discid.xyz" className="hover:text-ctp-pink duration-300 text-lg font-bold leading-none tracking-tight hover:tracking-wide hover:text-xl">discid</a>
+                    <a href="https://discid.xyz" className="text-white hover:text-ctp-pink duration-300 text-lg font-bold leading-none tracking-tight hover:tracking-wide hover:text-xl">discid</a>
                   </strong> - A simple command-line tool to check a user's Discord status using Lanyard.
                   <div className="flex space-x-2">
-                    <CodeBlock onClick={() => copyToClipboard('npm install -g discid')}>
-                      npm install -g discid
+                    <CodeBlock onClick={() => copyToClipboard('npm i -g discid')}>
+                      npm i -g discid
                     </CodeBlock>
                     <CodeBlock onClick={() => copyToClipboard('discid 514106760299151372')}>
                       discid 514106760299151372
