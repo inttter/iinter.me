@@ -8,14 +8,14 @@ export default function SocialLink({ href, src, alt, tooltipText }) {
 
   return (
     <div 
-      className="tooltip tooltip-bottom font-semibold active:scale-90 duration-150 relative group" 
+      className="tooltip tooltip-bottom font-semibold relative group" 
       {...(!isDiscord && { 'data-tip': tooltipText })}
       onMouseEnter={() => setIsHovered(true)} 
       onMouseLeave={() => setIsHovered(false)}
     >
       <a href={href} target="_blank" rel="noopener noreferrer">
         <div className="flex items-center">
-          <Image src={src} alt={alt} width={34} height={0} className="mb-4 hover:rotate-12 hover:scale-110 duration-150" />
+          <Image src={src} alt={alt} width={34} height={0} className="mb-4 hover:scale-110 duration-150" />
           {isHovered && isDiscord && (
             <img 
               className="xl:group-hover:opacity-100 absolute top-10 left-8 z-10 transition-opacity max-w-none opacity-0 pointer-events-none" 

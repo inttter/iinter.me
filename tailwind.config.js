@@ -4,14 +4,14 @@ module.exports = {
     './src/pages/**/*.{ts,tsx,js,jsx}'
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'gray-1100': '#B5B3AD',
+      },
+    },
   },
   variants: {},
   plugins: [
-    require("@catppuccin/tailwindcss")({
-      prefix: "ctp",
-      defaultFlavour: "mocha",
-    }),
     require("daisyui"),
   ],
   daisyui: {

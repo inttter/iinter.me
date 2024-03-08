@@ -3,6 +3,8 @@ import { Drawer } from "vaul";
 import Image from 'next/image';
 import { Toaster, toast } from 'sonner';
 import CodeBlock from './Code';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 // fonts from fontsource
 import '@fontsource/geist-sans';
@@ -43,30 +45,33 @@ function ProjectsDrawer() {
       <Toaster position="bottom-right" />
       <Drawer.Root>
         <Drawer.Trigger asChild>
-          <button className="cursor-pointer duration-200 hover:scale-125 active:scale-100 hover:rotate-12">
-            <i className="fa-solid fa-folder fa-xl"></i>
-          </button>
+          <motion.div
+            initial={{ opacity: 0, y: 5 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="menu menu-horizontal md:hidden lg:flex xl:flex absolute bg-base-200 rounded-md mt-6 py-1.5 px-2 hover:bg-gray-1100 hover:text-black duration-300 cursor-pointer"
+          >
+            <li>Projects</li>
+          </motion.div>
         </Drawer.Trigger>
         <Drawer.Portal>
           <Drawer.Overlay className="fixed inset-0 bg-black/40" />
-          <Drawer.Content className="bg-black flex flex-col rounded-t-[10px] h-[96%] mt-24 fixed bottom-0 left-0 right-0 drawer">
+          <Drawer.Content className="bg-black flex flex-col rounded-t-[20px] h-[96%] mt-24 fixed bottom-0 left-0 right-0 drawer">
             <div className="p-4 bg-neutral-950 rounded-t-[10px] flex-1 overflow-y-auto">
               <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-neutral-800 mb-8" />
               <div className="max-w-md mx-auto">
-                <Drawer.Title className="text-3xl font-bold leading-none tracking-tight hover:tracking-wide duration-300 mb-4 text-white">
+                <Drawer.Title className="text-3xl font-semibold leading-none tracking-tighter hover:tracking-normal duration-300 mb-4 text-white">
                   Projects
                 </Drawer.Title>
-                <p className="text-zinc-400 mb-2 tracking-wide">
-                  These are most of my projects that I am actively working on.
-                  Click on the names of the projects to be taken to the GitHub
-                  page for it. Those with terminal commands are NPM packages which
-                  you can click on to copy the command to your clipboard.
-                 <span className="text-gray-500 bg-transparent"> (tip: scroll to see more!)</span>
+                <p className="text-zinc-400 tracking-normal">
+                  My featured work. Click on a projects name to go to the project page.
+                  Click on the code blocks to copy the text to your clipboard.
+                  <span className="text-gray-500 bg-transparent"> (tip: scroll to see more!)</span>
                 </p>
                 <br />
                 <p className="text-zinc-400 mb-2">
                   <strong>
-                    <a href="https://github.com/inttter/md-badges" className="text-white hover:text-ctp-pink duration-300 text-lg font-bold leading-none tracking-tight hover:tracking-wide hover:text-xl">md-badges</a>
+                    <a href="https://github.com/inttter/md-badges" className="text-white hover:text-red-200 duration-300 text-lg font-bold leading-none tracking-tight hover:tracking-wide hover:text-xl">md-badges</a>
                   </strong> - An extensive list of Shields.io badges, aka these:
                   <br /><br />
                   <div className="flex justify-center">
@@ -77,22 +82,25 @@ function ProjectsDrawer() {
                   </div>
                 </p>
                 <br />
-                <hr />
                 <br />
-                <p className="text-zinc-400 mb-2 space-y-4">
+                <p className="text-zinc-400 space-y-4">
                   <strong>
-                    <a href="https://mdbcli.xyz" className="text-white hover:text-ctp-pink duration-300 text-lg font-semibold leading-none tracking-tight hover:tracking-wide hover:text-xl">mdbadges-cli</a>
+                    <a href="https://mdbcli.xyz" className="text-white hover:text-red-200 duration-300 text-lg font-semibold leading-none tracking-tight hover:tracking-wide hover:text-xl">mdbadges-cli</a>
                   </strong> - The CLI version of the above list. It lets you find Shields.io badges without needing to leave the terminal.
                   <CodeBlock onClick={() => copyToClipboard('npm i -g mdbadges-cli')}>
                     npm i -g mdbadges-cli
                   </CodeBlock>
+                  <br />
+                  <Link href="https://docs.mdbcli.xyz"> {/* if i remove this comment it breaks wtf? */}
+                    <a className="rounded-md mb-6 w-full bg-gray-900 px-10 flex justify-center py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-gray-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600 duration-300">
+                    Documentation ↗
+                    </a>
+                  </Link>
                 </p>
-                <br />
-                <hr className="p-1 rounded-lg" />
                 <br />
                 <p className="text-zinc-400">
                   <strong>
-                    <a href="https://github.com/inttter/create-ps" className="text-white hover:text-ctp-pink duration-300 text-lg font-bold leading-none tracking-tight hover:tracking-wide hover:text-xl">create-ps</a>
+                    <a href="https://github.com/inttter/create-ps" className="text-white hover:text-red-200 duration-300 text-lg font-bold leading-none tracking-tight hover:tracking-wide hover:text-xl">create-ps</a>
                   </strong> - Creates the foundations for an NPM package.
                   <br /><br />
                   <CodeBlock onClick={() => copyToClipboard('npx cps new-project')}>
@@ -100,11 +108,10 @@ function ProjectsDrawer() {
                   </CodeBlock>
                 </p>
                 <br />
-                <hr />
                 <br />
                 <p className="text-zinc-400 mb-2 space-y-4">
                   <strong>
-                    <a href="https://discid.xyz" className="text-white hover:text-ctp-pink duration-300 text-lg font-bold leading-none tracking-tight hover:tracking-wide hover:text-xl">discid</a>
+                    <a href="https://discid.xyz" className="text-white hover:text-red-200 duration-300 text-lg font-bold leading-none tracking-tight hover:tracking-wide hover:text-xl">discid</a>
                   </strong> - A simple command-line tool to check a user's Discord status using Lanyard.
                   <div className="flex space-x-2">
                     <CodeBlock onClick={() => copyToClipboard('npm i -g discid')}>

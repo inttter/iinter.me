@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 
 function Username() {
-  const [status, setStatus] = useState<string>('loading... 𖦹');
+  const [status, setStatus] = useState<string>('loading... ߷');
+  const [emoji, setEmoji] = useState<string>('');
   const [spotifySong, setSpotifySong] = useState<string>('');
   const [spotifyArtist, setSpotifyArtist] = useState<string>('');
   const [spotifyAlbum, setSpotifyAlbum] = useState<string>('');
@@ -18,6 +19,19 @@ function Username() {
       })
       .then(data => {
         const discordStatus = data.data.discord_status;
+        let newEmoji = '';
+
+        if (discordStatus === 'online') {
+          newEmoji = '🟢';
+        } else if (discordStatus === 'idle') {
+          newEmoji = '🟡';
+        } else if (discordStatus === 'dnd') {
+          newEmoji = '🔴';
+        } else if (discordStatus === 'offline') {
+          newEmoji = '💤';
+        }
+
+        setEmoji(newEmoji);
 
         const gameActivity = data.data.activities.find((activity: any) => activity.type === 0);
         const gameName = gameActivity ? gameActivity.name : '';
@@ -29,21 +43,14 @@ function Username() {
         if (gameActivity) {
           updatedStatus = `🎮 Playing ${gameName}`;
         } else if (spotifyActivityData) {
+          updatedStatus = `🎧 Listening to ${spotifyActivityData.song} by ${spotifyActivityData.artist}`;
           setSpotifySong(spotifyActivityData.song);
           setSpotifyArtist(spotifyActivityData.artist);
           setSpotifyAlbum(spotifyActivityData.album);
           setSpotifyTime(spotifyActivityData.timestamps.end);
-          updatedStatus = `🎧 ${spotifyActivityData.song} by ${spotifyActivityData.artist}`;
         }
 
-        const statusMap: Record<string, string> = {
-          online: '🟢 online',
-          idle: '🟡 idle',
-          dnd: '🔴 dnd',
-          offline: '💤 offline'
-        };
-
-        setStatus(statusMap[discordStatus] + (updatedStatus ? ' • ' + updatedStatus : ''));
+        setStatus(updatedStatus);
       })
       .catch(error => {
         console.error('Error fetching Discord status:', error);
@@ -64,8 +71,13 @@ function Username() {
 
   return (
     <>
-      <span className="text-ctp-green">inter</span>
-      <p className="text-sm text-gray-500" onClick={handleStatusClick}>{status}</p>
+      <span className="text-zinc-300 font-semibold justify-start tracking-tight">Inter</span>
+      {emoji && (
+        <span style={{ fontSize: '0.3em', verticalAlign: 'middle', paddingLeft: '10px' }}>
+          {emoji}
+        </span>
+      )}
+      <p className="text-sm tracking-normal text-gray-500 justify-start overflow-elipsis" onClick={handleStatusClick}>{status}</p>
     </>
   );
 }
