@@ -11,6 +11,8 @@
     "@fontsource/geist-mono": "^5.0.2",
     "@fontsource/geist-sans": "^5.0.2",
     "@nextui-org/snippet": "^2.0.31",
+    "@vercel/analytics": "^1.2.2",
+    "@vercel/speed-insights": "^1.0.10",
     "daisyui": "^4.7.2",
     "framer-motion": "^11.0.8",
     "million": "^3.0.4",
