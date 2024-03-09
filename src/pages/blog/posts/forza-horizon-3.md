@@ -9,7 +9,7 @@ slug: fh3
 
 # Introduction
 
-It was Christmas of 2016. Back then, I still believed in Santa, so I woke up early in the morning to
+It was Christmas of 2016. I woke up early in the morning to
 open my presents, to recieve the very thing that would change my life:
 
 
