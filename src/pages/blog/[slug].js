@@ -79,7 +79,7 @@ const markdownComponents = {
         {String(children).replace(/\n$/, '')}
       </SyntaxHighlighter>
     ) : (
-      <pre className="block bg-gray-800 p-3 rounded-lg font-mono" {...props}>
+      <pre className="block bg-gray-800 p-3 rounded-lg font-mono max-w-full overflow-x-auto" {...props}>
         {children}
       </pre>
     );
