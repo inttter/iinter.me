@@ -21,6 +21,7 @@ export default function BlogPost({ post }) {
     <div className="bg-neutral-950 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8">
       <Head>
         <title>{`inter | ${post.frontmatter.title}`}</title>
+        <meta property="og:image" content={post.frontmatter.image} />
       </Head>
       <div className="max-w-2xl w-full px-4 py-8 space-y-6">
         <div className="flex items-center justify-center">
@@ -33,7 +34,7 @@ export default function BlogPost({ post }) {
         </div>
         <div className="text-gray-500 duration-300 text-sm mt-2 flex justify-center">
           <a href="/blog" className="hover:text-zinc-300 duration-300 flex items-center">
-          ← Back to blog posts
+            ← Back to blog posts
           </a>
           <span className="mx-1">•</span> 2024 - MIT License
         </div>

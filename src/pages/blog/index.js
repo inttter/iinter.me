@@ -11,6 +11,8 @@ export default function Blog({ posts }) {
     <div className="bg-neutral-950 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8">
       <Head>
         <title>inter | blog</title>
+        <meta property="og:description" content="inter's (mediocre) blog." />
+        <meta property="og:url" content="https://iinter.me/blog" />
       </Head>
       <div className="max-w-3xl w-full px-4 py-8 space-y-6">
         <div className="flex items-center justify-center">
