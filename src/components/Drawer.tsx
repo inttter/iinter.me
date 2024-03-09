@@ -14,6 +14,7 @@ import '@fontsource/geist-mono';
 
 function ProjectsDrawer() {
   const [copied, setCopied] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const copyToClipboard = (text: string) => {
     if (navigator.clipboard) {
@@ -40,19 +41,30 @@ function ProjectsDrawer() {
     }
   };
 
+  const handleProjectsClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    setIsDrawerOpen(true);
+  };
+
+  const closeDrawer = () => {
+    setIsDrawerOpen(false);
+  };
+
   return (
     <>
       <Toaster position="bottom-right" />
-      <Drawer.Root>
+      <Drawer.Root open={isDrawerOpen} onClose={closeDrawer}>
         <Drawer.Trigger asChild>
-          <motion.div
-            initial={{ opacity: 0, y: 5 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="menu menu-horizontal md:hidden lg:flex xl:flex absolute bg-base-200 rounded-md mt-6 py-1.5 px-2 hover:bg-gray-1100 hover:text-black duration-300 cursor-pointer"
-          >
-            <li>Projects</li>
-          </motion.div>
+          <ul className="menu menu-horizontal bg-base-200 rounded-box">
+            <li>
+              <a onClick={handleProjectsClick} href="/">Projects</a>
+            </li>
+            <li>
+              <Link href="/blog">
+                Blog
+              </Link>
+            </li>
+          </ul>
         </Drawer.Trigger>
         <Drawer.Portal>
           <Drawer.Overlay className="fixed inset-0 bg-black/40" />
