@@ -28,23 +28,20 @@ export default function Blog({ posts }) {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {posts.map(post => (
-            <div key={post.slug} className="bg-blogcard rounded-md shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:border-2 hover:border-indigo-500 active:scale-95">              
-             <img src={post.frontmatter.image} alt="Blog Post Preview" className="w-full h-40 object-cover" />
+            <a key={post.slug} href={`/blog/${post.slug}`} className="bg-blogcard rounded-md shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:border-2 hover:border-indigo-500 active:scale-95 block">
+              <img src={post.frontmatter.image} alt="Blog Post Preview" className="w-full h-40 object-cover" />
               <div className="p-4">
                 <h2 className="text-xl text-zinc-300 font-semibold mb-2">{post.frontmatter.title}</h2>
                 <p className="text-gray-500 mb-2 md:text-xsm text-sm">{post.frontmatter.description}</p>
-                <p className="text-zinc-300 mb-2 font-mono">
+                <p className="text-zinc-300 mb-2 font-mono text-sm">
                   <i className="fa-regular fa-calendar"></i> {post.frontmatter.date} • <i className="fa-regular fa-clock"></i> {post.frontmatter.timeToRead} min read
                 </p>
-                <a href={`/blog/${post.slug}`} className="text-blue-500 hover:text-sky-200 hover:underline duration-300">
-                  Read the full post <i className="fa-solid fa-arrow-right ml-1"></i>
-                </a>
               </div>
-            </div>
+            </a>
           ))}
         </div>
         <div className="bottom-5 left-1/2 transform -translate-x-1/2 text-gray-500 text-sm font-regular fixed">
-        <a href="/" className="hover:text-zinc-300 duration-300 flex items-center">
+          <a href="/" className="hover:text-zinc-300 duration-300 flex items-center">
             ← Back
           </a>
         </div>
