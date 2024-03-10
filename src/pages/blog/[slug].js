@@ -24,9 +24,12 @@ export default function BlogPost({ post }) {
         <meta property="og:image" content={post.frontmatter.image} />
       </Head>
       <div className="max-w-2xl w-full px-4 py-8 space-y-6">
-        <div className="flex items-center justify-center">
-          <h1 className="text-5xl text-zinc-300 font-bold">{post.frontmatter.title}</h1>
-        </div>
+      <div className="flex flex-col items-start justify-center">
+        <h1 className="text-5xl text-zinc-300 font-bold">{post.frontmatter.title}</h1>
+        <p className="text-zinc-300 mt-4 font-mono text-sm">
+          <i className="fa-regular fa-calendar"></i> <span className="inline-block align-top">{post.frontmatter.date}</span> • <i className="fa-regular fa-clock"></i> <span className="inline-block align-top">{post.frontmatter.timeToRead}</span> min read
+        </p>
+      </div>
         <div className="text-zinc-300">
           <ReactMarkdown components={markdownComponents} remarkPlugins={[gfm]} rehypePlugins={[rehypeRaw]}>
             {post.content}
