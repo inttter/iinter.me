@@ -18,9 +18,9 @@ import Head from 'next/head';
 
 export default function BlogPost({ post }) {
   return (
-    <div className="bg-neutral-950 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8">
+    <div className="bg-neutral-950 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 selection:bg-gray-800">
       <Head>
-        <title>{`inter | ${post.frontmatter.title}`}</title>
+        <title>{`${post.frontmatter.title}`}</title>
         <meta property="og:image" content={post.frontmatter.image} />
       </Head>
       <div className="max-w-2xl w-full px-4 py-8 space-y-6">
