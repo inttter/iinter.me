@@ -24,12 +24,12 @@ export default function BlogPost({ post }) {
         <meta property="og:image" content={post.frontmatter.image} />
       </Head>
       <div className="max-w-2xl w-full px-4 py-8 space-y-6">
-      <div className="flex flex-col items-start justify-center">
-        <h1 className="text-5xl text-zinc-300 font-bold">{post.frontmatter.title}</h1>
-        <p className="text-zinc-300 mt-4 font-mono text-sm">
-          <i className="fa-regular fa-calendar"></i> <span className="inline-block align-top">{post.frontmatter.date}</span> • <i className="fa-regular fa-clock"></i> <span className="inline-block align-top">{post.frontmatter.timeToRead}</span> min read
-        </p>
-      </div>
+        <div className="flex flex-col items-start justify-center">
+          <h1 className="text-5xl text-zinc-300 font-bold">{post.frontmatter.title}</h1>
+          <p className="text-zinc-300 mt-4 font-mono text-sm">
+            <i className="fa-regular fa-calendar"></i> <span className="inline-block align-top">{post.frontmatter.date}</span> • <i className="fa-regular fa-clock"></i> <span className="inline-block align-top">{post.frontmatter.timeToRead}</span> min read
+          </p>
+        </div>
         <div className="text-zinc-300">
           <ReactMarkdown components={markdownComponents} remarkPlugins={[gfm]} rehypePlugins={[rehypeRaw]}>
             {post.content}
@@ -77,13 +77,19 @@ const markdownComponents = {
   // Code blocks
   code({ node, inline, className, children, ...props }) {
     const match = /language-(\w+)/.exec(className || '');
+    const codeLines = children.trim().split('\n').map((line, index) => (
+      <div key={index} className="code-line">
+        <span className="line-number text-gray-500 text-md mr-4">{index + 1}</span>
+        <span className="line-content">{line}</span>
+      </div>
+    ));
     return !inline && match ? (
       <SyntaxHighlighter language={match[1]} PreTag="div" {...props}>
-        {String(children).replace(/\n$/, '')}
+        {codeLines}
       </SyntaxHighlighter>
     ) : (
-      <pre className="block bg-gray-800 p-3 rounded-lg font-mono max-w-full overflow-x-auto" {...props}>
-        {children}
+      <pre className="block bg-gray-800 p-3 rounded-lg font-mono max-w-full overflow-x-auto">
+        {codeLines}
       </pre>
     );
   },
@@ -193,5 +199,15 @@ const markdownComponents = {
 
 const SyntaxHighlighter = ({ language, children }) => {
   const html = Prism.highlight(children, Prism.languages[language], language);
-  return <pre className={`language-${language}`} dangerouslySetInnerHTML={{ __html: html }} />;
+  const lines = html.split('\n').map((line, index) => (
+    <div key={index} className="line">
+      <span className="line-number">{index + 1}</span>
+      {line}
+    </div>
+  ));
+  return (
+    <pre className={`language-${language}`}>
+      <code>{lines}</code>
+    </pre>
+  );
 };
