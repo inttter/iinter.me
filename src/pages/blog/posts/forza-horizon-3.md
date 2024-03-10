@@ -1,6 +1,6 @@
 ---
 title: "My Opinion on Forza Horizon 3"
-date: "10/03/2024"
+date: "March 9, 2024"
 author: "Inter"
 timeToRead: 3.5
 image: "https://i.redd.it/2wdzxl91d0k31.jpg"
