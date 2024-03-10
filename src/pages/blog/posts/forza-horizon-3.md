@@ -4,6 +4,7 @@ date: "10/03/2024"
 author: "Inter"
 timeToRead: 3.5
 image: "https://i.redd.it/2wdzxl91d0k31.jpg"
+description: A little blog post about my experience growing up playing Forza Horizon 3, a game released in 2016 by Playground Games.
 slug: fh3
 ---
 
@@ -74,7 +75,7 @@ If I wasn't playing the game, I was probably on my (albeit very bad) iPhone 5 wa
 
 # Now
 
-I've aged 8 years since I first touched this game, and even *still*, I sometimes wipe the dust off of my Xbox (that, at this point, I don't know how long it's been since I've touched it), put the **Forza Horizon 3** disc inside of the cosnole, and boot up the game just to drive around for a little bit.
+I've aged 8 years since I first touched this game, and even *still*, I sometimes wipe the dust off of my Xbox (that, at this point, I don't know how long it's been since I've touched it), put the **Forza Horizon 3** disc inside of the console, and boot up the game just to drive around for a little bit.
 
 Not to mention, I have no problems playing online anymore, so I've tried going online here and there, and have had some amazing experiences cruising with others and playing minigames like *Infection* or *King*. You can ***still*** find full lobbies on this game after only a few seconds!
 
