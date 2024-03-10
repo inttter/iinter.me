@@ -2,6 +2,10 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import Head from 'next/head';
+import '@fontsource/geist-sans';
+import '@fontsource/geist-sans/700.css';
+import '@fontsource/geist-sans/600.css';
+import '@fontsource/geist-mono';
 
 export default function Blog({ posts }) {
   // Reverse the order of posts to show the latest first
@@ -15,22 +19,34 @@ export default function Blog({ posts }) {
         <meta property="og:url" content="https://iinter.me/blog" />
       </Head>
       <div className="max-w-3xl w-full px-4 py-8 space-y-6">
-        <div className="flex items-center justify-center">
-          <h1 className="text-5xl text-zinc-300 font-bold tracking-tight border-b-4 border-zinc-300 pb-2">Blog</h1>
+        <div className="flex items-center justify-between mb-4">
+          <h1 className="text-2xl text-zinc-300 hover:text-indigo-500 duration-300 font-mono font-semibold tracking-tight border-zinc-300 pb-2 tooltip tooltip-top bg-transparent" data-tip="The latest things I've written." data-theme="lofi"><i class="fa-solid fa-newspaper"></i> Latest Posts</h1>
+          <div className="flex items-center md:top-24 top-14 absolute">
+            <img src="https://cdn.discordapp.com/attachments/892836872118763543/1216385117065580695/P_clouds_nf2u.gif?ex=660031eb&is=65edbceb&hm=493f9284a65e41080d6e4fe5d85bbe8819a8807c189be9e7915703453c4a8b96&" alt="Clouds" className="w-8 h-8 mr-2" />
+            <div className="text-zinc-300 font-semibold text-4xl tracking-wide">Inter</div>
+          </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {posts.map(post => (
-            <div key={post.slug} className="bg-blogcard rounded-lg shadow-lg overflow-hidden">
-              <img src={post.frontmatter.image} alt="Blog Post Preview" className="w-full h-40 object-cover" />
+            <div key={post.slug} className="bg-blogcard rounded-md shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:border-2 hover:border-indigo-500 active:scale-95">              
+             <img src={post.frontmatter.image} alt="Blog Post Preview" className="w-full h-40 object-cover" />
               <div className="p-4">
                 <h2 className="text-xl text-zinc-300 font-semibold mb-2">{post.frontmatter.title}</h2>
-                <p className="text-zinc-300 mb-2"><i className="fa-regular fa-calendar"></i> {post.frontmatter.date} • <i className="fa-regular fa-clock"></i> {post.frontmatter.timeToRead} min read</p>
+                <p className="text-gray-500 mb-2 md:text-xsm text-sm">{post.frontmatter.description}</p>
+                <p className="text-zinc-300 mb-2 font-mono">
+                  <i className="fa-regular fa-calendar"></i> {post.frontmatter.date} • <i className="fa-regular fa-clock"></i> {post.frontmatter.timeToRead} min read
+                </p>
                 <a href={`/blog/${post.slug}`} className="text-blue-500 hover:text-sky-200 hover:underline duration-300">
                   Read the full post <i className="fa-solid fa-arrow-right ml-1"></i>
                 </a>
               </div>
             </div>
           ))}
+        </div>
+        <div className="bottom-5 left-1/2 transform -translate-x-1/2 text-gray-500 text-sm font-regular fixed">
+        <a href="/" className="hover:text-zinc-300 duration-300 flex items-center">
+            ← Back
+          </a>
         </div>
       </div>
     </div>
