@@ -20,8 +20,8 @@ export default function Blog({ posts }) {
       </Head>
       <div className="max-w-3xl w-full px-4 py-8 space-y-6">
         <div className="flex items-center justify-between mb-4">
-          <h1 className="text-2xl text-zinc-300 hover:text-indigo-500 duration-300 font-mono font-semibold tracking-tight border-zinc-300 pb-2 tooltip tooltip-top bg-transparent" data-tip="The latest things I've written." data-theme="lofi"><i class="fa-solid fa-newspaper"></i> Latest Posts</h1>
-          <div className="flex items-center md:top-24 top-14 absolute">
+          <h1 className="text-2xl text-zinc-300 hover:text-indigo-500 duration-300 font-mono font-semibold tracking-tight border-zinc-300 pb-2 tooltip tooltip-top bg-transparent" data-tip="The latest things I've written." data-theme="lofi"><i className="fa-solid fa-newspaper"></i> Latest Posts</h1>
+          <div className="items-center md:top-24 top-14 absolute hidden md:flex">
             <img src="https://cdn.discordapp.com/attachments/892836872118763543/1216385117065580695/P_clouds_nf2u.gif?ex=660031eb&is=65edbceb&hm=493f9284a65e41080d6e4fe5d85bbe8819a8807c189be9e7915703453c4a8b96&" alt="Clouds" className="w-8 h-8 mr-2" />
             <div className="text-zinc-300 font-semibold text-4xl tracking-wide">Inter</div>
           </div>
