@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -10,6 +11,19 @@ import '@fontsource/geist-mono';
 export default function Blog({ posts }) {
   // Reverse the order of posts to show the latest first
   posts.reverse();
+
+  // State to hold the search query
+  const [searchQuery, setSearchQuery] = useState('');
+
+  // Function to handle search input change
+  const handleSearchChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  // Filtered posts based on search query
+  const filteredPosts = posts.filter(post =>
+    post.frontmatter.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div className="bg-neutral-950 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8">
@@ -26,8 +40,19 @@ export default function Blog({ posts }) {
             <div className="text-zinc-300 font-semibold text-xs tracking-wide">by Inter</div>
           </div>
         </div>
+        {/* search box */}
+        <div className="mb-4">
+          <input
+          type="text"
+          placeholder="Search blog posts..."
+          value={searchQuery}
+          onChange={handleSearchChange}
+          className="px-4 py-2 rounded-md bg-gray-800 text-zinc-300 focus:outline-none focus:ring duration-300 focus:border-indigo-500 caret-indigo-500"
+        />
+        </div>
+        {/* Display filtered posts */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {posts.map(post => (
+          {filteredPosts.map(post => (
             <a key={post.slug} href={`/blog/${post.slug}`} className="bg-blogcard rounded-md shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:border-2 hover:border-indigo-500 active:scale-95 block">
               <img src={post.frontmatter.image} alt="Blog Post Preview" className="w-full h-40 object-cover" />
               <div className="p-4">
@@ -40,13 +65,13 @@ export default function Blog({ posts }) {
             </a>
           ))}
         </div>
-        <div className="bottom-5 left-1/2 transform -translate-x-1/2 text-gray-500 text-sm font-regular fixed">
-          <a href="/" className="hover:text-zinc-300 duration-300 flex items-center">
+        <a href="/" className="hover:text-zinc-300 duration-300 flex items-center">
+          <div className="bottom-5 left-1/2 transform -translate-x-1/2 text-zinc-400 text-sm font-regular fixed bg-gray-800 hover:bg-gray-700 duration-300 px-4 py-2 rounded-md">
             ← Back
-          </a>
-        </div>
-      </div>
+          </div>
+        </a>
     </div>
+  </div>
   );
 }
 
