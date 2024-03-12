@@ -124,7 +124,7 @@ function ProjectsDrawer() {
                 <p className="text-zinc-400 mb-2 space-y-4">
                   <strong>
                     <a href="https://discid.xyz" className="text-white hover:text-red-200 duration-300 text-lg font-bold leading-none tracking-tight hover:tracking-wide hover:text-xl">discid</a>
-                  </strong> - A simple command-line tool to check a user's Discord status using Lanyard.
+                  </strong> - A simple command-line tool to check a user's Discord status using Lanyard. <a href="blog/using-discid" className="text-gray-500 hover:text-zinc-300 duration-300 hover:underline">Read the blog post here</a>.
                   <div className="flex space-x-2">
                     <CodeBlock onClick={() => copyToClipboard('npm i -g discid')}>
                       npm i -g discid
