@@ -24,11 +24,16 @@ export default function BlogPost({ post }) {
         <meta property="og:image" content={post.frontmatter.image} />
       </Head>
       <div className="max-w-2xl w-full px-4 py-8 space-y-6">
+        <img src={post.frontmatter.image} alt="Blog Post Image" className="rounded-lg mb-4 w-auto mx-auto" />
         <div className="flex flex-col items-start justify-center">
           <h1 className="text-5xl text-zinc-300 font-bold">{post.frontmatter.title}</h1>
-          <p className="text-zinc-300 mt-4 font-mono text-sm">
+          <p className="text-zinc-300 mt-4 font-mono code tracking-wider text-sm">
             <i className="fa-regular fa-calendar"></i> <span className="inline-block align-top">{post.frontmatter.date}</span> • <i className="fa-regular fa-clock"></i> <span className="inline-block align-top">{post.frontmatter.timeToRead}</span> min read
           </p>
+        </div>
+        <div className="flex items-center justify-start">
+          <img src="https://pbs.twimg.com/profile_images/1766977775003402240/KyX3n1RD_400x400.jpg" alt="Avatar" className="w-8 h-8 rounded-full mr-2" />
+          <p className="text-zinc-500 font-semibold text-xs">by <span className="text-zinc-300">Inter</span></p>
         </div>
         <div className="text-zinc-300">
           <ReactMarkdown components={markdownComponents} remarkPlugins={[gfm]} rehypePlugins={[rehypeRaw]}>
