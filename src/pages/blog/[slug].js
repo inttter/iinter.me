@@ -4,11 +4,6 @@ import path from 'path';
 import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
 import gfm from 'remark-gfm';
-import Prism from 'prismjs';
-import 'prismjs/components/prism-javascript';
-import 'prismjs/components/prism-bash';
-import 'prismjs/components/prism-css';
-import 'prismjs/components/prism-jsx';
 import rehypeRaw from 'rehype-raw';
 import '@fontsource/geist-sans';
 import '@fontsource/geist-sans/700.css';
@@ -89,9 +84,9 @@ const markdownComponents = {
       </div>
     ));
     return !inline && match ? (
-      <SyntaxHighlighter language={match[1]} PreTag="div" {...props}>
+      <pre className="block bg-gray-800 p-3 rounded-lg font-mono max-w-full overflow-x-auto">
         {codeLines}
-      </SyntaxHighlighter>
+      </pre>
     ) : (
       <pre className="block bg-gray-800 p-3 rounded-lg font-mono max-w-full overflow-x-auto">
         {codeLines}
@@ -200,19 +195,4 @@ const markdownComponents = {
   td({ node, children, ...props }) {
     return <td className="px-4 py-2" {...props}>{children}</td>;
   },
-};
-
-const SyntaxHighlighter = ({ language, children }) => {
-  const html = Prism.highlight(children, Prism.languages[language], language);
-  const lines = html.split('\n').map((line, index) => (
-    <div key={index} className="line">
-      <span className="line-number">{index + 1}</span>
-      {line}
-    </div>
-  ));
-  return (
-    <pre className={`language-${language}`}>
-      <code>{lines}</code>
-    </pre>
-  );
 };
