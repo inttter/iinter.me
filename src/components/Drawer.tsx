@@ -55,7 +55,7 @@ function ProjectsDrawer() {
       <Toaster position="bottom-right" />
       <Drawer.Root open={isDrawerOpen} onClose={closeDrawer}>
         <Drawer.Trigger asChild>
-          <ul className="menu menu-horizontal bg-base-200 rounded-box">
+          <ul className="menu menu-horizontal bg-base-200 hover:bg-[#EBD2B6] hover:bg-opacity-10 duration-300 rounded-box">
             <li>
               <a onClick={handleProjectsClick} href="/">Projects</a>
             </li>

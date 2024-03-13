@@ -71,7 +71,7 @@ function Lanyard() {
 
   return (
     <>
-      <span className="text-zinc-300 font-semibold justify-start tracking-tight">Inter</span>
+      <span className="text-[#EBD2B6] font-semibold justify-start tracking-tight">Inter</span>
       {emoji && (
         <span style={{ fontSize: '0.3em', verticalAlign: 'middle', paddingLeft: '10px' }}>
           {emoji}
