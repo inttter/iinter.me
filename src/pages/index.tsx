@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import SocialLink from '../components/SocialLink';
-import Username from '../components/Lanyard';
+import Lanyard from '../components/Lanyard';
 import ProjectsDrawer from '../components/Drawer';
 import '@fontsource/geist-sans';
 import '@fontsource/geist-sans/700.css';
@@ -18,7 +18,7 @@ export default function Home() {
             transition={{ duration: 0.5 }}
             className="text-4xl md:text-5xl tracking-wide text-zinc-100 opacity-90 selection:bg-white selection:text-black"
           >
-            <Username />
+            <Lanyard />
           </motion.h1>
         </div>
         <motion.div

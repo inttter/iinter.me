@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 
-function Username() {
+function Lanyard() {
   const [status, setStatus] = useState<string>('loading... ߷');
   const [emoji, setEmoji] = useState<string>('');
   const [spotifySong, setSpotifySong] = useState<string>('');
@@ -82,4 +82,4 @@ function Username() {
   );
 }
 
-export default Username;
+export default Lanyard;
