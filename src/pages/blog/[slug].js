@@ -84,11 +84,11 @@ const markdownComponents = {
       </div>
     ));
     return !inline && match ? (
-      <pre className="block bg-gray-800 p-3 rounded-lg font-mono max-w-full overflow-x-auto">
+      <pre className="block code bg-gray-800 p-3 rounded-lg font-mono max-w-full overflow-x-auto">
         {codeLines}
       </pre>
     ) : (
-      <pre className="block bg-gray-800 p-3 rounded-lg font-mono max-w-full overflow-x-auto">
+      <pre className="block code bg-gray-800 p-3 rounded-lg font-mono max-w-full overflow-x-auto">
         {codeLines}
       </pre>
     );
