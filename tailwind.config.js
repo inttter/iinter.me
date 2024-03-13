@@ -14,6 +14,7 @@ module.exports = {
   variants: {},
   plugins: [
     require("daisyui"),
+    require("tailwindcss-animate")
   ],
   daisyui: {
     themes: ["light", "dark", "cupcake", "lofi", "coffee"],

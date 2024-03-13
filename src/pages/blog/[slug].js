@@ -147,7 +147,7 @@ const markdownComponents = {
   // Blockquotes
   blockquote({ node, children, ...props }) {
     return (
-      <blockquote className="border-l-4 border-neutral-400 italic pl-4 my-4">
+      <blockquote className="border-l-4 border-neutral-400 pl-4 my-4">
         <div className="ml-2">{children}</div>
       </blockquote>
     );
@@ -168,7 +168,7 @@ const markdownComponents = {
 
   // Links
   a({ node, children, ...props }) {
-    return <a className="text-blue-500 hover:text-sky-200 hover:underline duration-300" {...props}>{children}</a>;
+    return <a className="text-sky-500 hover:text-[#EBD2B6] hover:underline underline-offset-2 duration-300 animate-in fade-in" {...props}>{children}</a>;
   },
 
   // Horizontal Rule
