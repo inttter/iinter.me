@@ -99,8 +99,6 @@ This game gave (and still gives) me **SO** much nostalgia, and I'm really happy 
 
 While the game may have been delisted, its had a **massive** impact on me. It sparked an interest in me for racing games and cars that continues to this day.
 
-If you ever have the opportunity to experience Forza Horizon 3, I highly recommend it. It's more than just a game; it's an immersive and exhilarating adventure that will stay with you long after the credits roll. 
-
 > "What about the newer games?"
 
 You should try [4](https://store.steampowered.com/app/1293830/Forza_Horizon_4/), probably not [5](https://store.steampowered.com/app/1551360/Forza_Horizon_5/). I'd love to play Horizon 5 more, but...
