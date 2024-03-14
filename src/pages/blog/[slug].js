@@ -11,6 +11,7 @@ import '@fontsource/geist-sans/600.css';
 import '@fontsource/geist-mono';
 import Head from 'next/head';
 import { FaArrowLeft, FaHome, FaEnvelope, FaGithub } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 const avatarHash = 'd14e90a16144987f53f5a3700aacc934'
 const userID = '514106760299151372'
@@ -21,7 +22,12 @@ const BottomMenuBar = ({ blogPostFileName }) => {
 
   return (
     <div className="fixed bottom-5 left-1/2 transform -translate-x-1/2 w-62 menu menu-horizontal bg-base-200 duration-300 justify-center rounded-full divide-x-2">
-      <ul className="flex items-center">
+      <motion.ul 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="flex items-center"
+      >
         <li>
           <a href="/blog" className="bg-transparent text-[#A6ADBB] tooltip tooltip-top hover:bg-zinc-300 hover:bg-opacity-10" data-tip="Back" data-theme="coffee"><FaArrowLeft size={20} /></a>
         </li>
@@ -36,7 +42,7 @@ const BottomMenuBar = ({ blogPostFileName }) => {
             <a href={githubURL} target="_blank" rel="noopener noreferrer" className="bg-transparent text-[#A6ADBB] tooltip tooltip-top hover:bg-zinc-300 hover:bg-opacity-10" data-tip="View file on GitHub." data-theme="coffee"><FaGithub size={20} /></a>
           </li>
         )}
-      </ul>
+      </motion.ul>
     </div>
   );
 };
