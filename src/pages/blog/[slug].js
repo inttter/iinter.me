@@ -11,6 +11,10 @@ import '@fontsource/geist-sans/600.css';
 import '@fontsource/geist-mono';
 import Head from 'next/head';
 
+const avatarHash = 'd14e90a16144987f53f5a3700aacc934'
+const userID = '514106760299151372'
+const avatarURL = `https://cdn.discordapp.com/avatars/${userID}/${avatarHash}.png`;
+
 export default function BlogPost({ post }) {
   return (
     <div className="bg-neutral-950 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 selection:bg-gray-800">
@@ -27,7 +31,7 @@ export default function BlogPost({ post }) {
           </p>
         </div>
         <div className="flex items-center justify-start">
-          <img src="https://pbs.twimg.com/profile_images/1766977775003402240/KyX3n1RD_400x400.jpg" alt="Avatar" className="w-8 h-8 rounded-full mr-2" />
+          <img src={avatarURL} alt="Avatar" className="w-8 h-8 rounded-full mr-2" />
           <p className="text-zinc-500 font-semibold text-xs">by <span className="text-zinc-300">Inter</span></p>
         </div>
         <div className="text-zinc-300">
