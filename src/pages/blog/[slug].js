@@ -10,10 +10,36 @@ import '@fontsource/geist-sans/700.css';
 import '@fontsource/geist-sans/600.css';
 import '@fontsource/geist-mono';
 import Head from 'next/head';
+import { FaArrowLeft, FaHome, FaEnvelope, FaGithub } from 'react-icons/fa';
 
 const avatarHash = 'd14e90a16144987f53f5a3700aacc934'
 const userID = '514106760299151372'
 const avatarURL = `https://cdn.discordapp.com/avatars/${userID}/${avatarHash}.png`;
+
+const BottomMenuBar = ({ blogPostFileName }) => {
+  const githubURL = blogPostFileName ? `https://github.com/inttter/iinter.me/blob/master/src/pages/blog/posts/${blogPostFileName}.md` : '';
+
+  return (
+    <div className="fixed bottom-5 left-1/2 transform -translate-x-1/2 w-62 menu menu-horizontal bg-base-200 duration-300 justify-center rounded-full divide-x-2">
+      <ul className="flex items-center">
+        <li>
+          <a href="/blog" className="bg-transparent text-[#A6ADBB] tooltip tooltip-top hover:bg-zinc-300 hover:bg-opacity-10" data-tip="Back" data-theme="coffee"><FaArrowLeft size={20} /></a>
+        </li>
+        <li>
+          <a href="/" className="bg-transparent text-[#A6ADBB] tooltip tooltip-top hover:bg-zinc-300 hover:bg-opacity-10" data-tip="Home" data-theme="coffee"><FaHome size={20} /></a>
+        </li>
+        <li>
+          <a href="mailto:hi@iinter.me" className="bg-transparent text-[#A6ADBB] tooltip tooltip-top hover:bg-zinc-300 hover:bg-opacity-10" data-tip="Email" data-theme="coffee"><FaEnvelope size={20} /></a>
+        </li>
+        {blogPostFileName && (
+          <li>
+            <a href={githubURL} target="_blank" rel="noopener noreferrer" className="bg-transparent text-[#A6ADBB] tooltip tooltip-top hover:bg-zinc-300 hover:bg-opacity-10" data-tip="View file on GitHub." data-theme="coffee"><FaGithub size={20} /></a>
+          </li>
+        )}
+      </ul>
+    </div>
+  );
+};
 
 export default function BlogPost({ post }) {
   return (
@@ -41,11 +67,12 @@ export default function BlogPost({ post }) {
         </div>
         <div className="text-gray-500 duration-300 text-sm mt-2 flex justify-center">
           <a href="/blog" className="hover:text-zinc-300 duration-300 flex items-center">
-            ← Back to blog posts
+            <FaArrowLeft className="mr-1" /> Back to blog posts
           </a>
           <span className="mx-1">•</span> 2024 - MIT License
         </div>
       </div>
+      <BottomMenuBar blogPostFileName={post.slug} />
     </div>
   );
 }
