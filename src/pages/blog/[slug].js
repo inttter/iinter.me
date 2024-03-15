@@ -10,42 +10,11 @@ import '@fontsource/geist-sans/700.css';
 import '@fontsource/geist-sans/600.css';
 import '@fontsource/geist-mono';
 import Head from 'next/head';
-import { FaArrowLeft, FaHome, FaEnvelope, FaGithub } from 'react-icons/fa';
-import { motion } from 'framer-motion';
+import Image from 'next/image';
+import Menu from '../../components/MenuBar';
 
 const avatarHash = 'd14e90a16144987f53f5a3700aacc934'
-const userID = '514106760299151372'
-const avatarURL = `https://cdn.discordapp.com/avatars/${userID}/${avatarHash}.png`;
-
-const BottomMenuBar = ({ blogPostFileName }) => {
-  const githubURL = blogPostFileName ? `https://github.com/inttter/iinter.me/blob/master/src/pages/blog/posts/${blogPostFileName}.md` : '';
-
-  return (
-    <div className="fixed bottom-5 left-1/2 transform -translate-x-1/2 w-62 menu menu-horizontal bg-base-200 duration-300 justify-center rounded-full divide-x-2">
-      <motion.ul 
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="flex items-center"
-      >
-        <li>
-          <a href="/blog" className="bg-transparent text-[#A6ADBB] tooltip tooltip-top hover:bg-zinc-300 hover:bg-opacity-10" data-tip="Back" data-theme="coffee"><FaArrowLeft size={20} /></a>
-        </li>
-        <li>
-          <a href="/" className="bg-transparent text-[#A6ADBB] tooltip tooltip-top hover:bg-zinc-300 hover:bg-opacity-10" data-tip="Home" data-theme="coffee"><FaHome size={20} /></a>
-        </li>
-        <li>
-          <a href="mailto:hi@iinter.me" className="bg-transparent text-[#A6ADBB] tooltip tooltip-top hover:bg-zinc-300 hover:bg-opacity-10" data-tip="Email" data-theme="coffee"><FaEnvelope size={20} /></a>
-        </li>
-        {blogPostFileName && (
-          <li>
-            <a href={githubURL} target="_blank" rel="noopener noreferrer" className="bg-transparent text-[#A6ADBB] tooltip tooltip-top hover:bg-zinc-300 hover:bg-opacity-10" data-tip="View file on GitHub." data-theme="coffee"><FaGithub size={20} /></a>
-          </li>
-        )}
-      </motion.ul>
-    </div>
-  );
-};
+const avatarURL = `https://cdn.discordapp.com/avatars/514106760299151372/${avatarHash}.png`;
 
 export default function BlogPost({ post }) {
   return (
@@ -55,7 +24,7 @@ export default function BlogPost({ post }) {
         <meta property="og:image" content={post.frontmatter.image} />
       </Head>
       <div className="max-w-2xl w-full px-4 py-8 space-y-6">
-        <img src={post.frontmatter.image} alt="Blog Post Image" className="rounded-lg mb-4 w-auto mx-auto" />
+        <Image src={post.frontmatter.image} alt="Blog Post Image" className="rounded-lg mb-4 mx-auto" width={700} height={700} loading="lazy" />
         <div className="flex flex-col items-start justify-center">
           <h1 className="text-5xl text-zinc-300 font-bold">{post.frontmatter.title}</h1>
           <p className="text-zinc-300 mt-4 font-mono code tracking-wider text-sm">
@@ -63,7 +32,7 @@ export default function BlogPost({ post }) {
           </p>
         </div>
         <div className="flex items-center justify-start">
-          <img src={avatarURL} alt="Avatar" className="w-8 h-8 rounded-full mr-2" />
+          <Image src={avatarURL} alt="Avatar" width={32} height={32} className="rounded-full mr-2" loading="lazy" />
           <p className="text-zinc-500 font-semibold text-xs">by <span className="text-zinc-300">Inter</span></p>
         </div>
         <div className="text-zinc-300">
@@ -73,12 +42,12 @@ export default function BlogPost({ post }) {
         </div>
         <div className="text-gray-500 duration-300 text-sm mt-2 flex justify-center">
           <a href="/blog" className="hover:text-zinc-300 duration-300 flex items-center">
-            <FaArrowLeft className="mr-1" /> Back to blog posts
+          ← Back to blog posts
           </a>
           <span className="mx-1">•</span> 2024 - MIT License
         </div>
       </div>
-      <BottomMenuBar blogPostFileName={post.slug} />
+      <Menu blogPostFileName={post.slug} />
     </div>
   );
 }
@@ -138,7 +107,7 @@ const markdownComponents = {
 
   // Images
   img({ node, ...props }) {
-    return <img className="rounded-lg" {...props} />;
+    return <img className="rounded-lg" loading="lazy" {...props} />;
   },
 
   // Paragraphs
