@@ -9,6 +9,7 @@ import '@fontsource/geist-mono';
 import '@fontsource/geist-sans';
 import '@fontsource/geist-sans/700.css';
 import '@fontsource/geist-sans/600.css';
+import Link from 'next/link';
 
 function ProjectsDrawer() {
   const [copied, setCopied] = useState(false);
@@ -57,7 +58,9 @@ function ProjectsDrawer() {
               <a onClick={handleProjectsClick} href="/">Projects</a>
             </li>
             <li>
-              <a href="/blog">Blog</a>
+              <Link href="/blog">
+                Blog
+              </Link>
             </li>
           </ul>
         </Drawer.Trigger>

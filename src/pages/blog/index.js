@@ -7,6 +7,7 @@ import '@fontsource/geist-sans';
 import '@fontsource/geist-sans/700.css';
 import '@fontsource/geist-sans/600.css';
 import '@fontsource/geist-mono';
+import Link from 'next/link';
 
 export default function Blog({ posts }) {
   posts.reverse();
@@ -53,7 +54,7 @@ export default function Blog({ posts }) {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {sortedPosts.map((post, index) => (
-            <a key={post.slug} href={`/blog/${post.slug}`} className="bg-blogcard rounded-md shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:border-2 hover:border-indigo-500 active:scale-95 block relative">
+            <Link key={post.slug} href={`/blog/${post.slug}`} className="bg-blogcard rounded-md shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:border-2 hover:border-indigo-500 active:scale-95 block relative">
               {/* badge */}
               {index === 0 && (
                 <span className="absolute top-2 right-2 px-2 py-1 bg-[#E8D4B6] bg-opacity-20 text-white rounded-full text-xs font-semibold">latest</span>
@@ -66,14 +67,14 @@ export default function Blog({ posts }) {
                   <i className="fa-regular fa-calendar"></i> {post.frontmatter.date} • <i className="fa-regular fa-clock"></i> {post.frontmatter.timeToRead} min read
                 </p>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
-        <a href="/" className="hover:text-zinc-300 duration-300 flex items-center">
+        <Link href="/" className="hover:text-zinc-300 duration-300 flex items-center">
           <div className="bottom-5 left-1/2 transform -translate-x-1/2 text-zinc-400 text-sm font-regular fixed bg-gray-800 hover:bg-gray-700 duration-300 px-4 py-2 rounded-md">
             ← Back
           </div>
-        </a>
+        </Link>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function SocialLink({ href, src, alt, tooltipText }) {
   const [isHovered, setIsHovered] = useState(false);
@@ -13,7 +14,7 @@ export default function SocialLink({ href, src, alt, tooltipText }) {
       onMouseEnter={() => setIsHovered(true)} 
       onMouseLeave={() => setIsHovered(false)}
     >
-      <a href={href} target="_blank" rel="noopener noreferrer">
+      <Link href={href} target="_blank" rel="noopener noreferrer">
         <div className="flex items-center">
           <Image src={src} alt={alt} width={34} height={0} className="mb-4 hover:scale-110 duration-150" />
           {isHovered && isDiscord && (
@@ -24,7 +25,7 @@ export default function SocialLink({ href, src, alt, tooltipText }) {
             />
           )}
         </div>
-      </a>
+      </Link>
     </div>
   );
 }
