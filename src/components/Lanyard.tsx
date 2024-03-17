@@ -35,13 +35,15 @@ function Lanyard() {
 
         const gameActivity = data.data.activities.find((activity: any) => activity.type === 0);
         const gameName = gameActivity ? gameActivity.name : '';
+        const gameStartTime = gameActivity ? gameActivity.timestamps.start : '';
+        const gameDuration = gameActivity ? calculateDuration(gameStartTime) : '';
 
         const spotifyActivityData = data.data.spotify;
 
         let updatedStatus = '';
 
         if (gameActivity) {
-          updatedStatus = `🎮 Playing ${gameName}`;
+          updatedStatus = `🎮 Playing ${gameName} for ${gameDuration}`;
         } else if (spotifyActivityData) {
           updatedStatus = `🎧 Listening to ${spotifyActivityData.song} by ${spotifyActivityData.artist}`;
           setSpotifySong(spotifyActivityData.song);
@@ -54,9 +56,16 @@ function Lanyard() {
       })
       .catch(error => {
         console.error('Error fetching Discord status:', error);
-        setStatus('🤷‍♂️ idk');
+        setStatus('🤷‍♂️ Couldn\'t find a status');
       });
   }, []);
+
+  const calculateDuration = (startTime: string) => {
+    const start = new Date(startTime);
+    const now = new Date();
+    const duration = Math.floor((now.getTime() - start.getTime()) / 60000); // Convert milliseconds to minutes
+    return `${duration} minutes`;
+  };
 
   const handleStatusClick = () => {
     if (status.includes('🎧')) {
