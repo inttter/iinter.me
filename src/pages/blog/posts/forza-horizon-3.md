@@ -2,7 +2,7 @@
 title: "My Opinion on Forza Horizon 3"
 date: "March 9, 2024"
 author: "Inter"
-timeToRead: 3.5
+timeToRead: 6
 image: "https://i.redd.it/2wdzxl91d0k31.jpg"
 description: A little blog post about my experience growing up playing Forza Horizon 3, a game released in 2016 by Playground Games.
 slug: fh3
