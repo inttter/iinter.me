@@ -10,6 +10,7 @@
   "dependencies": {
     "@fontsource/geist-mono": "^5.0.2",
     "@fontsource/geist-sans": "^5.0.2",
+    "@fontsource/jetbrains-mono": "^5.0.19",
     "@nextui-org/snippet": "^2.0.31",
     "@types/react-dom": "^18.2.22",
     "@vercel/analytics": "^1.2.2",

@@ -6,7 +6,7 @@ import Head from 'next/head';
 import '@fontsource/geist-sans';
 import '@fontsource/geist-sans/700.css';
 import '@fontsource/geist-sans/600.css';
-import '@fontsource/geist-mono';
+import '@fontsource/jetbrains-mono';
 import Link from 'next/link';
 
 export default function Blog({ posts }) {
@@ -28,7 +28,7 @@ export default function Blog({ posts }) {
   const sortedPosts = filteredPosts.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
 
   return (
-    <div className="bg-neutral-950 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8">
+    <div className="bg-neutral-950 min-h-screen flex flex-col justify-center items-center antialiased scrollbar-thin scrollbar-thumb-slate-50 scroll-smooth p-4 md:p-8">
       <Head>
         <title>inter | blog</title>
         <meta property="og:description" content="inter's (mediocre) blog." />
@@ -49,23 +49,25 @@ export default function Blog({ posts }) {
             placeholder="Search blog posts..."
             value={searchQuery}
             onChange={handleSearchChange}
-            className="px-4 py-2 rounded-md bg-gray-800 text-zinc-300 focus:outline-none focus:ring duration-300 focus:border-indigo-500 caret-indigo-500"
+            className="px-4 py-2 rounded-md bg-gray-800 text-zinc-300 focus:outline-none focus:ring duration-300 focus:border-indigo-500 caret-indigo-500 w-full"
           />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {sortedPosts.map((post, index) => (
-            <Link key={post.slug} href={`/blog/${post.slug}`} className="bg-blogcard rounded-md shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:border-2 hover:border-indigo-500 active:scale-95 block relative">
-              {/* badge */}
-              {index === 0 && (
-                <span className="absolute top-2 right-2 px-2 py-1 bg-[#E8D4B6] bg-opacity-20 text-white rounded-full text-xs font-semibold">latest</span>
-              )}
-              <img src={post.frontmatter.image} alt="Blog Post Preview" className="w-full h-40 object-cover" />
-              <div className="p-4">
-                <h2 className="text-xl text-[#E8D4B6] font-semibold mb-2">{post.frontmatter.title}</h2>
-                <p className="text-gray-500 mb-2 md:text-xsm text-sm">{post.frontmatter.description}</p>
-                <p className="text-zinc-300 mb-2 font-mono code tracking-wider text-sm">
-                  <i className="fa-regular fa-calendar"></i> {post.frontmatter.date} • <i className="fa-regular fa-clock"></i> {post.frontmatter.timeToRead} min read
-                </p>
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
+          {sortedPosts.map((post) => (
+            <Link key={post.slug} href={`/blog/${post.slug}`} passHref>
+              <div className="bg-blogcard rounded-md shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:border-2 hover:border-indigo-500 active:scale-95 relative">
+                <div className="grid grid-cols-1 md:grid-cols-2">
+                  <div>
+                    <img src={post.frontmatter.image} alt="Blog Post Preview" className="w-full h-auto md:h-full object-cover" />
+                  </div>
+                  <div className="p-4 md:p-8">
+                    <h2 className="text-xl text-[#E8D4B6] font-semibold mb-2">{post.frontmatter.title}</h2>
+                    <p className="text-gray-500 mb-2 md:text-xsm text-sm">{post.frontmatter.description}</p>
+                    <p className="text-gray-400 mb-2 font-semibold code tracking-normal text-sm">
+                      <i className="fa-regular fa-calendar"></i> {post.frontmatter.date} • <i className="fa-regular fa-clock"></i> {post.frontmatter.timeToRead} min read
+                    </p>
+                  </div>
+                </div>
               </div>
             </Link>
           ))}

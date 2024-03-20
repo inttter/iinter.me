@@ -5,7 +5,7 @@ import CodeBlock from './Code';
 import projectsData from '../data/projects.json';
 import { FiGithub, FiBook } from "react-icons/fi";
 import { CgDanger } from "react-icons/cg";
-import '@fontsource/geist-mono';
+import '@fontsource/jetbrains-mono';
 import '@fontsource/geist-sans';
 import '@fontsource/geist-sans/700.css';
 import '@fontsource/geist-sans/600.css';
