@@ -116,7 +116,7 @@ function ProjectsDrawer() {
                       )}
                       {/* warning message for things which are deprecated/unmaintained */}
                       {!project.maintained && (
-                        <div className="flex items-center bg-red-500 bg-opacity-40 text-white p-4 rounded-md mt-2">
+                        <div className="flex items-center bg-[#383131] text-red-200 p-2.5 mb-4 rounded-md">
                           <CgDanger className="mr-2" />
                           <span>The above project is deprecated/not maintained.</span>
                         </div>
