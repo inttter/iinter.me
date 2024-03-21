@@ -36,34 +36,45 @@ export default function Blog({ posts }) {
       </Head>
       <div className="max-w-3xl w-full px-4 py-8 space-y-6">
         <div className="flex items-center justify-between mb-4">
-          <h1 className="text-2xl text-zinc-300 hover:text-indigo-500 duration-300 font-mono font-semibold tracking-tight border-zinc-300 pb-2 tooltip tooltip-top bg-transparent" data-tip="The latest things I've written." data-theme="lofi"><i className="fa-solid fa-newspaper"></i> Latest Posts</h1>
-          <div className="fixed bottom-5 right-5 hidden md:flex">
-            <img src="https://cdn.discordapp.com/attachments/892836872118763543/1216385117065580695/P_clouds_nf2u.gif?ex=660031eb&is=65edbceb&hm=493f9284a65e41080d6e4fe5d85bbe8819a8807c189be9e7915703453c4a8b96&" alt="Clouds" className="w-4 h-4 mr-2" />
-            <div className="text-zinc-300 font-semibold text-xs tracking-wide">by Inter</div>
-          </div>
+          <h1 className="text-2xl text-zinc-300 font-mono code font-semibold tracking-tight border-zinc-300 pb-2 tooltip tooltip-top bg-transparent"><i className="fa-solid fa-newspaper"></i> Latest Posts</h1>
         </div>
         {/* search box */}
-        <div className="mb-4">
+        <div className="mb-4 relative">
           <input
             type="text"
-            placeholder="Search blog posts..."
+            placeholder="Search blog posts"
             value={searchQuery}
             onChange={handleSearchChange}
-            className="px-4 py-2 rounded-md bg-gray-800 text-zinc-300 focus:outline-none focus:ring duration-300 focus:border-indigo-500 caret-indigo-500 w-full"
+            className="px-4 py-2 text-lg rounded-md placeholder:text-gray-500 bg-neutral-900 text-zinc-300 focus:outline-none focus:caret-gray-400 border border-gray-800 focus:border-red-200 duration-300 w-full"
           />
+          <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+            {/* SVG Icon */}
+            <svg
+              className="feather feather-search h-6 w-6 text-gray-500"
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-1 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-9">
           {sortedPosts.map((post) => (
             <Link key={post.slug} href={`/blog/${post.slug}`} passHref>
-              <div className="bg-blogcard rounded-md shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:border-2 hover:border-indigo-500 active:scale-95 relative">
+              <div className="bg-blogcard bg-opacity-10 rounded-md shadow-lg overflow-hidden transition-transform duration-300 md:duration-150 hover:scale-105 active:scale-95 relative">
                 <div className="grid grid-cols-1 md:grid-cols-2">
                   <div>
                     <img src={post.frontmatter.image} alt="Blog Post Preview" className="w-full h-auto md:h-full object-cover" />
                   </div>
                   <div className="p-4 md:p-8">
                     <h2 className="text-xl text-[#E8D4B6] font-semibold mb-2">{post.frontmatter.title}</h2>
-                    <p className="text-gray-500 mb-2 md:text-xsm text-sm">{post.frontmatter.description}</p>
-                    <p className="text-gray-400 mb-2 font-semibold code tracking-normal text-sm">
+                    <p className="text-gray-500 mb-2 md:text-xsm text-sm font-mono code">{post.frontmatter.description}</p>
+                    <p className="text-gray-400 mb-2 font-semibold code tracking-wider text-sm">
                       <i className="fa-regular fa-calendar"></i> {post.frontmatter.date} • <i className="fa-regular fa-clock"></i> {post.frontmatter.timeToRead} min read
                     </p>
                   </div>
