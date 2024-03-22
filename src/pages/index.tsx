@@ -18,7 +18,7 @@ export default function Home() {
             transition={{ duration: 0.5 }}
             className="text-4xl md:text-5xl tracking-wide text-zinc-100 opacity-90 selection:bg-white selection:text-black"
           >
-            <Lanyard />
+            <Lanyard showAlbumArt={false} />
           </motion.h1>
         </div>
         <motion.div

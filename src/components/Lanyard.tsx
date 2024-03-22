@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 
-function Lanyard() {
-  const [status, setStatus] = useState<string>('loading... ߷');
-  const [emoji, setEmoji] = useState<string>('');
-  const [spotifySong, setSpotifySong] = useState<string>('');
-  const [spotifyArtist, setSpotifyArtist] = useState<string>('');
-  const [spotifyAlbum, setSpotifyAlbum] = useState<string>('');
-  const [spotifyTime, setSpotifyTime] = useState<string>('');
+function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }) {
+  const [status, setStatus] = useState('Loading...');
+  const [emoji, setEmoji] = useState('');
+  const [spotifySong, setSpotifySong] = useState('');
+  const [spotifyArtist, setSpotifyArtist] = useState('');
+  const [spotifyAlbum, setSpotifyAlbum] = useState('');
+  const [spotifyAlbumArt, setSpotifyAlbumArt] = useState('');
+  const [spotifyTime, setSpotifyTime] = useState('');
 
   useEffect(() => {
     fetch('https://api.lanyard.rest/v1/users/514106760299151372')
@@ -31,9 +32,9 @@ function Lanyard() {
           newEmoji = '💤';
         }
 
-        setEmoji(newEmoji);
+        setEmoji(showEmoji ? newEmoji : '');
 
-        const gameActivity = data.data.activities.find((activity: any) => activity.type === 0);
+        const gameActivity = data.data.activities.find(activity => activity.type === 0);
         const gameName = gameActivity ? gameActivity.name : '';
         const gameStartTime = gameActivity ? gameActivity.timestamps.start : '';
         const gameDuration = gameActivity ? calculateDuration(gameStartTime) : '';
@@ -49,6 +50,7 @@ function Lanyard() {
           setSpotifySong(spotifyActivityData.song);
           setSpotifyArtist(spotifyActivityData.artist);
           setSpotifyAlbum(spotifyActivityData.album);
+          setSpotifyAlbumArt(spotifyActivityData.album_art_url);
           setSpotifyTime(spotifyActivityData.timestamps.end);
         }
 
@@ -58,9 +60,9 @@ function Lanyard() {
         console.error('Error fetching Discord status:', error);
         setStatus('🤷‍♂️ Couldn\'t find a status');
       });
-  }, []);
+  }, [showEmoji]);
 
-  const calculateDuration = (startTime: string) => {
+  const calculateDuration = startTime => {
     const start = new Date(startTime);
     const now = new Date();
     const duration = Math.floor((now.getTime() - start.getTime()) / 60000); // Convert milliseconds to minutes
@@ -80,15 +82,28 @@ function Lanyard() {
 
   return (
     <>
-      <span className="text-[#EBD2B6] font-semibold justify-start tracking-tight">Inter</span>
-      {emoji && (
+      {showUsername && (
+        <span className="text-[#EBD2B6] font-semibold justify-start tracking-tight">Inter</span>
+      )}
+      {emoji && showEmoji && (
         <span style={{ fontSize: '0.3em', verticalAlign: 'middle', paddingLeft: '10px' }}>
           {emoji}
         </span>
       )}
-      <p className="text-sm tracking-normal text-gray-500 justify-start overflow-elipsis" onClick={handleStatusClick}>{status}</p>
+      {showAlbumArt && spotifyAlbumArt && (
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <img src={spotifyAlbumArt} className="w-12 h-12 rounded-md focus:outline-none focus:caret-gray-400 border border-gray-800 focus:border-red-200 duration-300" alt="Album Art" style={{ marginRight: '8px' }} />
+          <p className="text-sm tracking-normal text-gray-500 justify-start overflow-elipsis">{status}</p>
+        </div>
+      )}
+      {!showAlbumArt && (
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <p className="text-sm tracking-normal text-gray-500 justify-start overflow-elipsis" onClick={handleStatusClick}>
+            {status}
+          </p>
+        </div>
+      )}
     </>
-  );
-}
+  )};
 
 export default Lanyard;
