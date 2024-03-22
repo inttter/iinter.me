@@ -8,7 +8,7 @@ import '@fontsource/geist-sans/700.css';
 import '@fontsource/geist-sans/600.css';
 import '@fontsource/jetbrains-mono';
 import Link from 'next/link';
-import Lanyard from '../../components/Lanyard'
+import Lanyard from '../../components/Lanyard';
 
 export default function Blog({ posts }) {
   posts.reverse();
@@ -44,23 +44,23 @@ export default function Blog({ posts }) {
           </div>
           {/* nav */}
           <div className="flex items-center px-1 space-x-4">
-        <Link href="/">
-          <div className="hover:bg-zinc-300 hover:bg-opacity-10 p-2 rounded-md code text-sm tracking-wide">
-            Home
+            <Link href="/">
+              <div className="hover:bg-zinc-300 hover:bg-opacity-10 p-2 rounded-md code text-sm tracking-wide">
+                Home
+              </div>
+            </Link>
+            <Link href="mailto:hi@iinter.me">
+              <div className="hover:bg-zinc-300 hover:bg-opacity-10 p-2 rounded-md code text-sm tracking-wide">
+                Contact
+              </div>
+            </Link>
+            <Link href="https://github.com/inttter/iinter.me">
+              <div className="hover:bg-zinc-300 hover:bg-opacity-10 p-2 rounded-md code text-sm tracking-wide">
+                Source
+              </div>
+            </Link>
           </div>
-        </Link>
-        <Link href="mailto:hi@iinter.me">
-          <div className="hover:bg-zinc-300 hover:bg-opacity-10 p-2 rounded-md code text-sm tracking-wide">
-            Contact
-          </div>
-        </Link>
-        <Link href="https://github.com/inttter/iinter.me">
-          <div className="hover:bg-zinc-300 hover:bg-opacity-10 p-2 rounded-md code text-sm tracking-wide">
-            Source
-          </div>
-        </Link>
-      </div>
-      </div>
+        </div>
         <Lanyard showUsername={false} showEmoji={false} showAlbumArt={true} />
         {/* search box */}
         <div className="mb-4 relative">
