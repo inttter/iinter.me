@@ -8,6 +8,7 @@ import '@fontsource/geist-sans/700.css';
 import '@fontsource/geist-sans/600.css';
 import '@fontsource/jetbrains-mono';
 import Link from 'next/link';
+import Lanyard from '../../components/Lanyard'
 
 export default function Blog({ posts }) {
   posts.reverse();
@@ -35,9 +36,32 @@ export default function Blog({ posts }) {
         <meta property="og:url" content="https://iinter.me/blog" />
       </Head>
       <div className="max-w-3xl w-full px-4 py-8 space-y-6">
-        <div className="flex items-center justify-between mb-4">
-          <h1 className="text-2xl text-zinc-300 font-mono code font-semibold tracking-tight border-zinc-300 pb-2 tooltip tooltip-top bg-transparent"><i className="fa-solid fa-newspaper"></i> Latest Posts</h1>
-        </div>
+        <div className="flex items-center justify-between px-4 py-2 text-lg rounded-md placeholder:text-gray-500 bg-neutral-900 text-zinc-300 focus:outline-none focus:caret-gray-400 border border-gray-800 focus:border-red-200 duration-300 w-full">
+          <div className="flex items-center">
+            <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2" data-theme="black">
+              <img src="https://cdn.discordapp.com/attachments/919647864794284112/1220864348105474108/image_2024-03-22_223621471-modified.png?ex=66107d87&is=65fe0887&hm=c722e50d416fb276dc3e8918cb29a06abe5f4701e60df2fb8552489dba273f75&" />
+            </div>
+          </div>
+          {/* nav */}
+          <div className="flex items-center px-1 space-x-4">
+        <Link href="/">
+          <div className="hover:bg-zinc-300 hover:bg-opacity-10 p-2 rounded-md code text-sm tracking-wide">
+            Home
+          </div>
+        </Link>
+        <Link href="mailto:hi@iinter.me">
+          <div className="hover:bg-zinc-300 hover:bg-opacity-10 p-2 rounded-md code text-sm tracking-wide">
+            Contact
+          </div>
+        </Link>
+        <Link href="https://github.com/inttter/iinter.me">
+          <div className="hover:bg-zinc-300 hover:bg-opacity-10 p-2 rounded-md code text-sm tracking-wide">
+            Source
+          </div>
+        </Link>
+      </div>
+      </div>
+        <Lanyard showUsername={false} showEmoji={false} showAlbumArt={true} />
         {/* search box */}
         <div className="mb-4 relative">
           <input
@@ -48,7 +72,6 @@ export default function Blog({ posts }) {
             className="px-4 py-2 text-lg rounded-md placeholder:text-gray-500 bg-neutral-900 text-zinc-300 focus:outline-none focus:caret-gray-400 border border-gray-800 focus:border-red-200 duration-300 w-full"
           />
           <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-            {/* SVG Icon */}
             <svg
               className="feather feather-search h-6 w-6 text-gray-500"
               fill="none"

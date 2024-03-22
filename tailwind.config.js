@@ -18,6 +18,6 @@ module.exports = {
     require('tailwind-scrollbar')
   ],
   daisyui: {
-    themes: ["light", "dark", "cupcake", "lofi", "coffee"],
+    themes: ["light", "dark", "cupcake", "lofi", "coffee", "black"],
   },
 };
