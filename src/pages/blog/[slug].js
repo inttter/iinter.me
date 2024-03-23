@@ -12,6 +12,7 @@ import '@fontsource/geist-mono';
 import Head from 'next/head';
 import Image from 'next/image';
 import Menu from '../../components/MenuBar';
+import { motion } from 'framer-motion'
 
 const avatarHash = 'd14e90a16144987f53f5a3700aacc934'
 const avatarURL = `https://cdn.discordapp.com/avatars/514106760299151372/${avatarHash}.png`;
@@ -24,7 +25,17 @@ export default function BlogPost({ post }) {
         <meta property="og:image" content={post.frontmatter.image} />
       </Head>
       <div className="max-w-2xl w-full px-4 py-8 space-y-6">
-        <Image src={post.frontmatter.image} alt="Blog Post Image" className="rounded-lg mb-4 mx-auto" width={700} height={700} loading="lazy" />
+        <motion.img 
+          src={post.frontmatter.image} 
+          alt="Blog Post Image" 
+          className="rounded-lg mb-4 mx-auto" 
+          width={700} 
+          height={700} 
+          loading="lazy"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        />
         <div className="flex flex-col items-start justify-center">
           <h1 className="text-5xl text-zinc-300 font-bold">{post.frontmatter.title}</h1>
           <p className="text-zinc-300 mt-4 font-mono code tracking-wider text-sm">
@@ -42,7 +53,7 @@ export default function BlogPost({ post }) {
         </div>
         <div className="text-gray-500 duration-300 text-sm mt-2 flex justify-center">
           <a href="/blog" className="hover:text-zinc-300 duration-300 flex items-center">
-          ← Back to blog posts
+            ← Back to blog posts
           </a>
           <span className="mx-1">•</span> 2024 - MIT License
         </div>
