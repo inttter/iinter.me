@@ -85,7 +85,6 @@ const markdownComponents = {
     const match = /language-(\w+)/.exec(className || '');
     const codeLines = children.trim().split('\n').map((line, index) => (
       <div key={index} className="code-line">
-        <span className="line-number text-gray-500 text-md mr-4">{index + 1}</span>
         <span className="line-content">{line}</span>
       </div>
     ));
@@ -94,7 +93,7 @@ const markdownComponents = {
         {codeLines}
       </pre>
     ) : (
-      <pre className="block code bg-gray-800 p-3 rounded-lg font-mono max-w-full overflow-x-auto">
+      <pre className="block code bg-neutral-900 text-zinc-300 focus:outline-none focus:caret-gray-400 border border-gray-800 focus:border-red-200 duration-300 p-3 rounded-md font-mono max-w-full overflow-x-auto scrollbar-thin">
         {codeLines}
       </pre>
     );
@@ -153,7 +152,7 @@ const markdownComponents = {
   // Blockquotes
   blockquote({ node, children, ...props }) {
     return (
-      <blockquote className="border-l-4 border-neutral-400 pl-4 my-4">
+      <blockquote className="border-l-4 border-neutral-700 pl-4 my-4">
         <div className="ml-2">{children}</div>
       </blockquote>
     );
