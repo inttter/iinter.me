@@ -86,6 +86,9 @@ export default function Blog({ posts }) {
             </svg>
           </div>
         </div>
+        {filteredPosts.length === 0 && (
+          <p className="text-gray-400 text-lg code">No posts found.</p>
+        )}
         <div className="grid grid-cols-1 md:grid-cols-1 gap-9">
           {sortedPosts.map((post) => (
             <Link key={post.slug} href={`/blog/${post.slug}`} passHref>
