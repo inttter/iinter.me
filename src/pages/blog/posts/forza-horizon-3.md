@@ -1,6 +1,7 @@
 ---
 title: "My Opinion on Forza Horizon 3"
 date: "March 9, 2024"
+lastUpdated: "23/03/2024 17:35"
 author: "Inter"
 timeToRead: 6
 image: "https://i.redd.it/2wdzxl91d0k31.jpg"

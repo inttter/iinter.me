@@ -1,6 +1,7 @@
 ---
 title: "Using discid"
 date: "March 11, 2024"
+lastUpdated: "23/03/2024 17:35"
 author: "Inter"
 timeToRead: 4
 image: "https://cdn.discordapp.com/attachments/892836872118763543/1216831277437681775/New_Project_23.png?ex=6601d170&is=65ef5c70&hm=d78c336154af6e156f708a45484e4dbcc4a1aabdd1ac030dfa7f81f2488cadd4&"

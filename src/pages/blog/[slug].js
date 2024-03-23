@@ -51,11 +51,8 @@ export default function BlogPost({ post }) {
             {post.content}
           </ReactMarkdown>
         </div>
-        <div className="text-gray-500 duration-300 text-sm mt-2 flex justify-center">
-          <a href="/blog" className="hover:text-zinc-300 duration-300 flex items-center">
-            ← Back to blog posts
-          </a>
-          <span className="mx-1">•</span> 2024 - MIT License
+        <div className="text-gray-500 duration-300 text-sm mt-2 flex justify-end">
+         — Last Updated: {post.frontmatter.lastUpdated}
         </div>
       </div>
       <Menu blogPostFileName={post.slug} />

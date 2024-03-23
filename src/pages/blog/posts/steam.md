@@ -1,6 +1,7 @@
 ---
 title: "Why Steam is the Best Game Launcher"
 date: "March 23, 2024"
+lastUpdated: "23/03/2024 17:32"
 author: "Inter"
 timeToRead: 8
 image: "https://cdn.discordapp.com/attachments/892836872118763543/1220150332592492614/why-steam-is-the-best-launcher.png?ex=660de48c&is=65fb6f8c&hm=f078803150e79c163acc2e24da4f4279da25606166a7ff094fb04ca8552476b4&"
