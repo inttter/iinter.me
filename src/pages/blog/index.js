@@ -110,7 +110,7 @@ export default function Blog({ posts }) {
           ))}
         </div>
         <Link href="/" className="hover:text-zinc-300 duration-300 flex items-center">
-          <div className="bottom-5 left-1/2 transform -translate-x-1/2 text-zinc-400 text-sm font-regular fixed bg-gray-800 hover:bg-gray-700 duration-300 px-4 py-2 rounded-md">
+          <div className="bottom-5 left-1/2 transform -translate-x-1/2 text-sm font-regular fixed bg-neutral-900 hover:bg-neutral-800 text-zinc-300 focus:outline-none border border-gray-800 focus:border-red-200 duration-300 px-4 py-2 rounded-md">
             ← Back
           </div>
         </Link>
