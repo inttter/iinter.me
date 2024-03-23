@@ -174,7 +174,7 @@ const markdownComponents = {
 
   // Links
   a({ node, children, ...props }) {
-    return <a className="text-sky-500 hover:text-[#EBD2B6] hover:underline underline-offset-2 duration-300 animate-in fade-in" {...props}>{children}</a>;
+    return <a className="hover:text-gray-400 border-b-2 border-gray-500 duration-300 animate-in fade-in" {...props}>{children}</a>;
   },
 
   // Horizontal Rule
