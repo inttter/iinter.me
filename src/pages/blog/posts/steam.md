@@ -85,14 +85,37 @@ The UI, while deep, is simple. There's four sections, Store, Library, Community,
 * Click on game I want to play
 * Click 'Play'
 
-Simple as that, no lag, nothing, unlike Rockstar, which for some reason, eats my PC's resources up. The UI did recently [get a facelift](https://steamcommunity.com/games/593110/announcements/detail/3686801719529689368), which also made it look nicer.
+Simple as that, no lag, nothing, unlike Rockstar, which for some reason, eats my PC's resources up. The UI did recently [get a redesign](https://steamcommunity.com/games/593110/announcements/detail/3686801719529689368), which also made it look nicer.
 
-### Before:
+<div align="center">
+<img src="https://cdn.discordapp.com/attachments/892836872118763543/1221112662163984506/image.png?ex=661164c9&is=65feefc9&hm=c8d07fced2dec64b1d66d6f2e6d0bda5c1425dec479469153dedb1b12c1b8713&">
+<br>
+<div style="color: rgb(161 161 170);">Old</div>
+</div>
 
-<img src="https://cdn.discordapp.com/attachments/892836872118763543/1221112662163984506/image.png?ex=661164c9&is=65feefc9&hm=c8d07fced2dec64b1d66d6f2e6d0bda5c1425dec479469153dedb1b12c1b8713&" width="2000">
+<br>
 
-### After: 
+<div align="center">
 <img src="https://cdn.discordapp.com/attachments/892836872118763543/1221113725566718052/image.png?ex=661165c7&is=65fef0c7&hm=c2356955730864928ce5dd47ca1a11d5e704886e91135f56705f232780d21425&">
+<br>
+<div style="color: rgb(161 161 170);">New</div>
+</div>
+
+Although, some parts of the UI have taken quite a while to update. An example of this is the Server Browser, commonly used in games with community maps, such as [CS2](https://store.steampowered.com/app/730/CounterStrike_2/) and [Garry's Mod](https://store.steampowered.com/app/4000/Garrys_Mod/), which was only updated 11 months ago, prior to which had been many years without change:
+
+<div align="center">
+<img src="https://preview.redd.it/060w0m4hu7t91.png?auto=webp&s=88b5a8a031e988383c34ed620114083c6fd3de82">
+<br>
+<div style="color: rgb(161 161 170);">Old</div>
+</div>
+
+<br>
+
+<div align="center">
+<img src="https://i.redd.it/ahwamnrx9nwa1.png">
+<br>
+<div style="color: rgb(161 161 170);">New</div>
+</div>
 
 # Valve
 
