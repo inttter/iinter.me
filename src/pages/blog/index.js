@@ -9,6 +9,7 @@ import '@fontsource/geist-sans/600.css';
 import '@fontsource/jetbrains-mono';
 import Link from 'next/link';
 import Lanyard from '../../components/Lanyard';
+import { motion } from 'framer-motion'
 
 export default function Blog({ posts }) {
   posts.reverse();
@@ -64,11 +65,14 @@ export default function Blog({ posts }) {
         <Lanyard showUsername={false} showEmoji={false} showAlbumArt={true} />
         {/* search box */}
         <div className="mb-4 relative">
-          <input
+          <motion.input
             type="text"
             placeholder="Search blog posts"
             value={searchQuery}
             onChange={handleSearchChange}
+            initial={{ opacity: 0, y: -5 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
             className="px-4 py-2 text-lg rounded-md placeholder:text-gray-500 bg-neutral-900 text-zinc-300 focus:outline-none focus:caret-gray-400 border border-gray-800 focus:border-red-200 duration-300 w-full"
           />
           <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
@@ -95,7 +99,14 @@ export default function Blog({ posts }) {
               <div className="bg-blogcard bg-opacity-10 rounded-md shadow-lg overflow-hidden transition-transform duration-300 md:duration-150 hover:scale-105 active:scale-95 relative">
                 <div className="grid grid-cols-1 md:grid-cols-2">
                   <div>
-                    <img src={post.frontmatter.image} alt="Blog Post Preview" className="w-full h-auto md:h-full object-cover" />
+                    <motion.img
+                      src={post.frontmatter.image}
+                      alt="Blog Post Preview"
+                      className="w-full h-auto md:h-full object-cover"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.3 }}
+                    />
                   </div>
                   <div className="p-4 md:p-8">
                     <h2 className="text-xl text-[#E8D4B6] font-semibold mb-2">{post.frontmatter.title}</h2>
