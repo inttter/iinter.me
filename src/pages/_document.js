@@ -16,9 +16,10 @@ class MyDocument extends Document {
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
           {isBlogPostPage && (
             <>
+              <meta property="og:title" content={post.frontmatter.title} />
               <meta property="og:image" content={post.frontmatter.image} />
-              <meta name="twitter:image" content={post.frontmatter.image} />
               <meta property="og:description" content={post.frontmatter.description} />
+              <meta name="twitter:image" content={post.frontmatter.image} />
               <meta name="twitter:card" content="summary_large_image" />
             </>
           )}
@@ -27,14 +28,14 @@ class MyDocument extends Document {
               <meta property="og:image" content="https://iinter.me/external-assets/og.png" />
               <meta name="twitter:image" content="https://iinter.me/external-assets/og-card.png" />
               <meta name="twitter:card" content="summary_large_image" />
-              <meta property="og:description" content="games + cats + computers." />
+              <meta property="og:description" content="A racing game enthusiast, and also cat lover." />
             </>
           )}
           <meta property="og:title" content="inter" />
           <meta property="og:site_name" content="iinter.me" />
           <meta property="og:url" content="iinter.me" />
           <meta property="og:type" content="website" />
-          <meta name="theme-color" content="#0A0A0A" />
+          <meta name="theme-color" content="#161617" />
         </Head>
         <body>
           <Main />
