@@ -25,7 +25,8 @@ class MyDocument extends Document {
           {!isBlogPostPage && (
             <>
               <meta property="og:image" content="https://iinter.me/external-assets/og.png" />
-              <meta name="twitter:image" content="https://iinter.me/external-assets/og.png" />
+              <meta name="twitter:image" content="https://iinter.me/external-assets/og-card.png" />
+              <meta name="twitter:card" content="summary_large_image" />
               <meta property="og:description" content="games + cats + computers." />
             </>
           )}
