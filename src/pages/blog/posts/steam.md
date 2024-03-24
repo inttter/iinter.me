@@ -11,7 +11,7 @@ slug: steam
 
 If you've ever bought a PC game before, it was almost 100% off of Steam. With over 120,000,000 users a month, it's the biggest distributor for games, and for good reason. There's no bullshit that you need to get through to launch a game. Simply launch Steam, select the game, and **Play**. Three clicks (or maybe four if you have to select a launch option).
 
-I myself have used Steam for the better part of four years ever since I switched over from [this old pile of a barely working console](https://cdn.discordapp.com/attachments/892836872118763543/1216051157609222174/IMG_4403.jpg?ex=65fefae5&is=65ec85e5&hm=0925506d03f65ddbe07159103403fa64a60bf638e28702493b07fe6a6546f1a8&), to a computer that decently works enough to play most of the games I play daily.
+I myself have used Steam for the better part of four years ever since I switched over from [this old pile of a barely working console](/blog/forza-horizon-3), to a computer that decently works enough to play most of the games I play daily.
 
 The whole reason I'm writing this is because of one of Steam's latest features, [Steam Families](https://store.steampowered.com/news/app/593110/view/4149575031735702628), which piqued my interest. It's great to see companies like Valve doing stuff like this:
 
@@ -57,8 +57,24 @@ Other launchers like EA sometimes just...don't want to work? At least in my expe
 
 I also don't like the fact that a lot of games on Steam, particularly from publishers like EA or Ubisoft, love to embed their own launcher into the game, so that when I click 'Play', it actually opens the other games' launcher, and launches the game there. What is the point of me launching a game just for it to take over a minute to launch because it's using ANOTHER launcher?
 
+To prove my point, here is a comparison between two games. The first video is me launching [Rainbow Six Siege](https://store.steampowered.com/app/359550/Tom_Clancys_Rainbow_Six_Siege/) (a Ubisoft game) through Steam, while the second is a video of me launching [Geometry Dash](https://store.steampowered.com/app/322170/Geometry_Dash/) (a game that does not need another launcher packaged with it) through Steam:
+
+### Rainbow Six Siege:
+
 <div align="center">
-<img src="https://cdn.discordapp.com/attachments/892836872118763543/1221110451664977940/image.png?ex=661162ba&is=65feedba&hm=1a8b3982cd7a51b1633901a1da22a29d3c11f3907cb4b2a60f58428ef80c8fe0&">
+<!-- Rainbow Six Siege !-->
+<video src="https://cdn.discordapp.com/attachments/892836872118763543/1221572083981615235/Siege_Launch_Time.mp4?ex=661310a8&is=66009ba8&hm=d332f4c6a437a175c682987de5cf8b7c82518c2d613db4eaf20c611c59a2c6c3&" controls></video>
+
+<div style="color: rgb(161 161 170);">Time Taken: 2:03:90</div>
+</div>
+
+### Geometry Dash:
+
+<div align="center">
+<!-- Geometry Dash !-->
+<video src="https://cdn.discordapp.com/attachments/892836872118763543/1221574047025070241/Geometry_Dash_Launch_Time.mp4?ex=6613127c&is=66009d7c&hm=3823c13451ad49edb7d4de579bbf7bad685f41d9d8af63cf588e25365f00456c&" controls></video>
+
+<div style="color: rgb(161 161 170);">Time Taken: 00:03:33</div>
 </div>
 
 # UI
