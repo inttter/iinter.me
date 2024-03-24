@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -12,12 +12,28 @@ import '@fontsource/geist-mono';
 import Head from 'next/head';
 import Image from 'next/image';
 import Menu from '../../components/MenuBar';
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeSlug from 'rehype-slug';
+import { useRouter } from 'next/router';
 
-const avatarHash = 'd14e90a16144987f53f5a3700aacc934'
+const avatarHash = 'd14e90a16144987f53f5a3700aacc934';
 const avatarURL = `https://cdn.discordapp.com/avatars/514106760299151372/${avatarHash}.png`;
 
 export default function BlogPost({ post }) {
+  const router = useRouter();
+
+  useEffect(() => {
+    // Scroll to the anchor if it exists in the URL
+    if (router.asPath.includes('#')) {
+      const anchor = router.asPath.split('#')[1];
+      const element = document.getElementById(anchor);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [router.asPath]);
+
   return (
     <div className="bg-neutral-950 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 selection:bg-gray-800">
       <Head>
@@ -25,12 +41,12 @@ export default function BlogPost({ post }) {
         <meta property="og:image" content={post.frontmatter.image} />
       </Head>
       <div className="max-w-2xl w-full px-4 py-8 space-y-6">
-        <motion.img 
-          src={post.frontmatter.image} 
-          alt="Blog Post Image" 
-          className="rounded-lg mb-4 mx-auto" 
-          width={700} 
-          height={700} 
+        <motion.img
+          src={post.frontmatter.image}
+          alt="Blog Post Image"
+          className="rounded-lg mb-4 mx-auto"
+          width={700}
+          height={700}
           loading="lazy"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -47,12 +63,12 @@ export default function BlogPost({ post }) {
           <p className="text-zinc-500 font-semibold text-xs">by <span className="text-zinc-300">Inter</span></p>
         </div>
         <div className="text-zinc-300">
-          <ReactMarkdown components={markdownComponents} remarkPlugins={[gfm]} rehypePlugins={[rehypeRaw]}>
+          <ReactMarkdown components={markdownComponents} remarkPlugins={[gfm]} rehypePlugins={[rehypeRaw, rehypeAutolinkHeadings, rehypeSlug]}>
             {post.content}
           </ReactMarkdown>
         </div>
         <div className="text-gray-500 duration-300 text-sm mt-2 flex justify-end">
-         — Last Updated: {post.frontmatter.lastUpdated}
+          — Last Updated: {post.frontmatter.lastUpdated}
         </div>
       </div>
       <Menu blogPostFileName={post.slug} />
@@ -64,7 +80,7 @@ export async function getStaticPaths() {
   const postsDirectory = path.join(process.cwd(), 'src', 'pages', 'blog', 'posts');
   const filenames = fs.readdirSync(postsDirectory);
 
-  const paths = filenames.map(filename => ({
+  const paths = filenames.map((filename) => ({
     params: { slug: filename.replace(/\.md$/, '') },
   }));
 
