@@ -1,10 +1,10 @@
 ---
 title: "Using discid"
 date: "March 11, 2024"
-lastUpdated: "23/03/2024 17:35"
+lastUpdated: "24/03/2024 22:23"
 author: "Inter"
 timeToRead: 4
-image: "https://cdn.discordapp.com/attachments/892836872118763543/1216831277437681775/New_Project_23.png?ex=6601d170&is=65ef5c70&hm=d78c336154af6e156f708a45484e4dbcc4a1aabdd1ac030dfa7f81f2488cadd4&"
+image: "/blog/using-discid/cover-image.png"
 description: How I use my tool, discid, to find people's statuses on Discord, directly from the command line.
 slug: using-discid
 ---
@@ -31,12 +31,14 @@ discid <userID>
 
 **1)** Enable Developer mode by going to: **Settings** ➔ **Advanced** ➔ **Developer Mode**, and check the toggle.
 
-<img src="https://cdn.discordapp.com/attachments/892836872118763543/1216833843164741732/image.png?ex=6601d3d3&is=65ef5ed3&hm=2469db0185e6dabce2d40fb3ebac60a257c6ed34f8ffbd84262863ddf3e5f433&">
+<div align="center">
+<img src="/blog/using-discid/developer-mode-toggle.png">
+</div>
 
 **2)** Right click on a user and click *Copy User ID*.
 
 <div align="center">
-<img src="https://cdn.discordapp.com/attachments/892836872118763543/1216834414181613618/image.png?ex=6601d45c&is=65ef5f5c&hm=f8798ab1b853c1147451a91b5310d9d95257db3e95be7dcc860e0aec7c403fc8&">
+<img src="/blog/using-discid/copy-user-id.png">
 </div>
 
 **3)** Go back to your command line and run discid <userId> replacing <userId> with the ID you copied. For example, if you had the user ID ***514106760299151372*** (my user ID!) copied, you would run:
@@ -141,7 +143,7 @@ This option will print the user's information in a JSON format. You can see an e
 This option will open the user's Discord profile in your browser. You can see an example of this in action below:
 
 <div align="center">
-<img src="https://github.com/inttter/discid/assets/73017070/6e75e85f-e639-4ecb-ae9e-da451a4a689f">
+<img src="/blog/using-discid/open-option-example.gif">
 </div>
 
 <br>

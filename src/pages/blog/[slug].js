@@ -133,6 +133,15 @@ const markdownComponents = {
     return <img className="rounded-lg" loading="lazy" {...props} />;
   },
 
+  // Video
+  video({ node, ...props }) {
+    return (
+      <video src={props.src} loading="lazy" {...props}>
+        Your browser does not support the video tag.
+      </video>
+    );
+  },
+
   // Paragraphs
   p({ node, children, ...props }) {
     return <p className="my-4" {...props}>{children}</p>;

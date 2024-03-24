@@ -1,24 +1,22 @@
 ---
 title: "My Opinion on Forza Horizon 3"
 date: "March 9, 2024"
-lastUpdated: "23/03/2024 17:35"
+lastUpdated: "24/03/2024 22:23"
 author: "Inter"
 timeToRead: 6
-image: "https://i.redd.it/2wdzxl91d0k31.jpg"
+image: "/blog/forza-horizon-3/cover-image.png"
 description: A little blog post about my experience growing up playing Forza Horizon 3, a game released in 2016 by Playground Games.
 slug: fh3
 ---
-
-# Introduction
 
 It was Christmas of 2016. I woke up early in the morning to
 open my presents, to recieve the very thing that would change my life:
 
 
 <div align="center">
-<img src="https://cdn.discordapp.com/attachments/892836872118763543/1216051157609222174/IMG_4403.jpg?ex=65fefae5&is=65ec85e5&hm=0925506d03f65ddbe07159103403fa64a60bf638e28702493b07fe6a6546f1a8&" width="350">
-<br>
-<div style="color: rgb(161 161 170);">An Xbox One S.</div>
+  <img src="/blog/forza-horizon-3/xbox-one-s.png" width="350" alt="An Xbox One S">
+  <br>
+  <div style="color: rgb(161 161 170);">An Xbox One S.</div>
 </div>
 
 This was my introduction into gaming. I got a few games along with it too, such as:
@@ -59,10 +57,11 @@ And I also progressed through the game as any normal person did, buying new cars
 
 <div align="center">
   <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
-    <img src="https://t10pgalleryv2.azureedge.net/galleryv2images/b4423db9-9bfe-4c01-a833-a97f0a7feca4/400c406b-00d6-442b-b152-acb65b898ab1/2" width="350">
-    <img src="https://t10pgalleryv2.azureedge.net/galleryv2images/b4423db9-9bfe-4c01-a833-a97f0a7feca4/6dee407f-49ff-4b83-b382-700ade76102c/2" width="350">
-    <img src="https://t10pgalleryv2.azureedge.net/galleryv2images/e4556362-7f74-4539-99c4-6c0e50256b49/81c581dd-e12c-4731-9534-69f1486322c4/2" width="350">
-    <img src="https://t10pgalleryv2.azureedge.net/galleryv2images/e4556362-7f74-4539-99c4-6c0e50256b49/6a29f492-04d8-4198-89c7-28c934e1beb2/2" width="350">
+    <img src="/blog/forza-horizon-3/forza-image-1.png" width="350">
+    <img src="/blog/forza-horizon-3/forza-image-2.png" width="350">
+    <img src="/blog/forza-horizon-3/forza-image-3.png" width="350">
+    <img src="/blog/forza-horizon-3/forza-image-4.png" width="350">
+
   </div>
 </div>
 
@@ -85,7 +84,7 @@ When I first wanted to go back to this game, I wanted to do it on PC, because I 
 Well, I tried to do this, but unfortunately, even though I was on the right account, I was greeted by this:
 
 <div align="center">
-    <img src="https://cdn.discordapp.com/attachments/892836872118763543/1216075276203855903/image.png?ex=65ff115b&is=65ec9c5b&hm=0f46565098038e0702d456c269e5b2e2dd2dbc6e723702f1b50052f77f41f8da&" width="450">
+    <img src="/blog/forza-horizon-3/fh3-delisted.png" width="450">
 </div>
 
 Not a single button to download, or even buy ([because they delisted it in 2020](https://support.forzamotorsport.net/hc/en-us/articles/360052097274-Forza-Horizon-3-Unavailable-for-Purchase#:~:text=Forza%20Horizon%203%20and%20its,game%20and%20its%20associated%20content.)) the game. I went through different rabbit holes to try and get access to the game on my machine, but ultimately, I wasn't willing to dig deeper and get myself into something nasty.
@@ -105,7 +104,7 @@ While the game may have been delisted, its had a **massive** impact on me. It sp
 You should try [4](https://store.steampowered.com/app/1293830/Forza_Horizon_4/), probably not [5](https://store.steampowered.com/app/1551360/Forza_Horizon_5/). I'd love to play Horizon 5 more, but...
 
 <div align="center">
-    <img src="https://cdn.discordapp.com/attachments/892836872118763543/1216083054523715584/Screenshot_2024-03-09_175800.png?ex=65ff1899&is=65eca399&hm=1698dac197b113289f3865139ee5c004d8b7de9a308642097f204ce8d8ceacae&" width="650">
+    <img src="/blog/forza-horizon-3/170gb-fh5.png" width="650">
 </div>
 
 I mean seriously? 170 GB just for a Forza installment, which isn't even that good? That's a fifth of my PC. When the game came out, it was only like ~80 GB, which was about the same as Horizon 4. Not to mention, the game just gets recycled content as *"new"* content.
