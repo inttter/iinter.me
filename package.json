@@ -15,7 +15,7 @@
     "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.10",
     "daisyui": "^4.7.3",
-    "framer-motion": "^11.0.18",
+    "framer-motion": "^11.0.20",
     "gray-matter": "^4.0.3",
     "million": "^3.0.6",
     "next": "^14.1.4",
