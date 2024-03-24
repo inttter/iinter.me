@@ -19,6 +19,7 @@ class MyDocument extends Document {
               <meta property="og:image" content={post.frontmatter.image} />
               <meta name="twitter:image" content={post.frontmatter.image} />
               <meta property="og:description" content={post.frontmatter.description} />
+              <meta name="twitter:card" content="summary_large_image" />
             </>
           )}
           {!isBlogPostPage && (
