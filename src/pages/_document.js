@@ -25,7 +25,7 @@ class MyDocument extends Document {
           )}
           {!isBlogPostPage && (
             <>
-              <meta property="og:image" content="https://iinter.me/external-assets/og.png" />
+              <meta property="og:image" content="https://iinter.me/external-assets/og-card.png" />
               <meta name="twitter:image" content="https://iinter.me/external-assets/og-card.png" />
               <meta name="twitter:card" content="summary_large_image" />
               <meta property="og:description" content="A racing game enthusiast, and also cat lover." />
@@ -35,6 +35,7 @@ class MyDocument extends Document {
           <meta property="og:site_name" content="iinter.me" />
           <meta property="og:url" content="iinter.me" />
           <meta property="og:type" content="website" />
+          <meta property="og:description" content="A racing game enthusiast, and also cat lover." />
           <meta name="theme-color" content="#161617" />
         </Head>
         <body>

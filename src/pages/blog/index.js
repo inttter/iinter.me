@@ -35,7 +35,7 @@ export default function Blog({ posts }) {
         <title>inter | blog</title>
         <meta property="og:description" content="inter's (mediocre) blog." />
         <meta property="og:url" content="https://iinter.me/blog" />
-        <meta property="og:image" content="https://iinter.me/external-assets/og.png" />
+        <meta property="og:image" content="https://iinter.me/external-assets/blog-index.png" />
         <meta name="twitter:image" content="https://iinter.me/external-assets/blog-index.png" />
       </Head>
       <div className="max-w-3xl w-full px-4 py-8 space-y-6">
