@@ -6,7 +6,7 @@ author: "Inter"
 timeToRead: 3
 image: "/blog/commit-emojis/cover-image.png"
 description: How I use emoji in my commit messages to symbolize different things.
-slug: fh3
+slug: commit-emojis
 ---
 
 Typically, when committing stuff from Git, you'll need to provide a [commit message](https://git-scm.com/docs/git-commit#Documentation/git-commit.txt--cltcommitgt), which details in a very short summary what changes you have made within the commit.
