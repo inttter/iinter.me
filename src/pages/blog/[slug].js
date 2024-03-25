@@ -228,7 +228,7 @@ const markdownComponents = {
 
   // Tables
   table({ node, children, ...props }) {
-    return <table className="table-auto my-4" {...props}>{children}</table>;
+    return <table className="table-auto my-4 w-full" {...props}>{children}</table>;
   },
   thead({ node, children, ...props }) {
     return <thead className="bg-neutral-800 text-white" {...props}>{children}</thead>;
