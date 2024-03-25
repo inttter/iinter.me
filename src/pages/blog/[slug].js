@@ -107,11 +107,23 @@ const markdownComponents = {
   // Code blocks
   code({ node, inline, className, children, ...props }) {
     const match = /language-(\w+)/.exec(className || '');
-    const codeLines = children.trim().split('\n').map((line, index) => (
+    const codeLines = children.trim().split('\n').map((line, index) => {
+    const commentIndex = Math.max(line.indexOf('#'), line.indexOf('//'));
+    const hasComment = commentIndex !== -1;
+    const lineContent = hasComment ? (
+      <span>
+        <span style={{ color: 'inherit' }}>{line.substring(0, commentIndex)}</span>
+        <span style={{ color: '#6c757d' }}>{line.substring(commentIndex)}</span>
+      </span>
+    ) : (
+      line
+    );
+    return (
       <div key={index} className="code-line">
-        <span className="line-content">{line}</span>
+        <span className="line-content">{lineContent}</span>
       </div>
-    ));
+    );
+  });
     return !inline && match ? (
       <pre className="block code bg-gray-800 p-3 rounded-lg font-mono max-w-full overflow-x-auto">
         {codeLines}
