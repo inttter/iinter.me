@@ -33,10 +33,6 @@ export default function Blog({ posts }) {
     <div className="bg-neutral-950 min-h-screen flex flex-col justify-center items-center antialiased scrollbar-thin scrollbar-thumb-slate-50 scroll-smooth p-4 md:p-8">
       <Head>
         <title>inter | blog</title>
-        <meta property="og:description" content="inter's (mediocre) blog." />
-        <meta property="og:url" content="https://iinter.me/blog" />
-        <meta property="og:image" content="https://iinter.me/external-assets/blog-index.png" />
-        <meta name="twitter:image" content="https://iinter.me/external-assets/blog-index.png" />
       </Head>
       <div className="max-w-3xl w-full px-4 py-8 space-y-6">
         <div className="flex items-center justify-between px-4 py-2 text-lg rounded-md placeholder:text-gray-500 bg-neutral-900 text-zinc-300 focus:outline-none focus:caret-gray-400 border border-gray-800 focus:border-red-200 duration-300 w-full">
