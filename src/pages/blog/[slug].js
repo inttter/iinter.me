@@ -17,10 +17,8 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import { useRouter } from 'next/router';
 import axios from 'axios';
-import { FaCodeCommit } from "react-icons/fa6";
-
-const avatarHash = 'd14e90a16144987f53f5a3700aacc934';
-const avatarURL = `https://cdn.discordapp.com/avatars/514106760299151372/${avatarHash}.png`;
+import { FaCodeCommit, } from "react-icons/fa6";
+import Badge from '../../components/Badge'
 
 export default function BlogPost({ post }) {
   const router = useRouter();
@@ -63,7 +61,7 @@ export default function BlogPost({ post }) {
         <motion.img
           src={post.frontmatter.image}
           alt="Blog Post Image"
-          className="rounded-lg mb-4 mx-auto"
+          className="rounded-lg mb-4 mx-auto shadow-xl"
           width={700}
           height={700}
           loading="lazy"
@@ -72,14 +70,13 @@ export default function BlogPost({ post }) {
           transition={{ duration: 0.5 }}
         />
         <div className="flex flex-col items-start justify-center">
-          <h1 className="text-5xl text-zinc-300 font-bold">{post.frontmatter.title}</h1>
-          <p className="text-zinc-300 mt-4 font-mono code tracking-wider text-sm">
-            <i className="fa-regular fa-calendar"></i> <span className="inline-block align-top">{post.frontmatter.date}</span> • <i className="fa-regular fa-clock"></i> <span className="inline-block align-top">{post.frontmatter.timeToRead}</span> min read
+          <h1 className="text-5xl text-[#E8D4B6] font-bold tracking-tighter">{post.frontmatter.title}</h1>
+          <p className="text-zinc-500 mt-4 text-sm">
+            <div className="flex items-center space-x-2">
+              <Badge text={`${post.frontmatter.date}`} />
+              <Badge text={`${post.frontmatter.timeToRead} minutes to read`} />
+            </div>          
           </p>
-        </div>
-        <div className="flex items-center justify-start">
-          <Image src={avatarURL} alt="Avatar" width={32} height={32} className="rounded-full mr-2" loading="lazy" />
-          <p className="text-zinc-500 font-semibold text-xs">by <span className="text-zinc-300">Inter</span></p>
         </div>
         <div className="text-zinc-300">
           <ReactMarkdown components={markdownComponents} remarkPlugins={[gfm]} rehypePlugins={[rehypeRaw, rehypeAutolinkHeadings, rehypeSlug]}>
