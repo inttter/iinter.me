@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -16,12 +16,15 @@ import { motion } from 'framer-motion';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import { useRouter } from 'next/router';
+import axios from 'axios';
+import { FaCodeCommit } from "react-icons/fa6";
 
 const avatarHash = 'd14e90a16144987f53f5a3700aacc934';
 const avatarURL = `https://cdn.discordapp.com/avatars/514106760299151372/${avatarHash}.png`;
 
 export default function BlogPost({ post }) {
   const router = useRouter();
+  const [latestCommit, setLatestCommit] = useState(null);
 
   useEffect(() => {
     // Scroll to the anchor if it exists in the URL
@@ -32,7 +35,23 @@ export default function BlogPost({ post }) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     }
-  }, [router.asPath]);
+
+    // Fetch latest commit information
+    const fetchLatestCommit = async () => {
+      try {
+        const response = await axios.get(
+          `https://api.github.com/repos/inttter/iinter.me/commits?path=src/pages/blog/posts/${post.slug}.md`
+        );
+        if (response.data && response.data.length > 0) {
+          setLatestCommit(response.data[0]);
+        }
+      } catch (error) {
+        console.error('Error fetching latest commit:', error);
+      }
+    };
+
+    fetchLatestCommit();
+  }, [router.asPath, post.slug]);
 
   return (
     <div className="bg-neutral-950 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 selection:bg-gray-800">
@@ -70,6 +89,16 @@ export default function BlogPost({ post }) {
         <div className="text-gray-500 duration-300 text-sm mt-2 flex justify-end">
           — Last Updated: {post.frontmatter.lastUpdated}
         </div>
+        {latestCommit && (
+          <div className="text-gray-500 duration-300 text-sm mt-2 flex justify-end code hover:text-zinc-300 hover:underline hover:underline-offset-2">
+            <FaCodeCommit className="mt-[3px]" /> 
+            <span className="ml-2">
+              <a href={latestCommit.html_url} target="_blank" rel="noopener noreferrer">
+                {latestCommit.sha.substr(0, 7)}
+              </a>
+            </span>
+          </div>
+        )}
       </div>
       <Menu blogPostFileName={post.slug} />
     </div>
