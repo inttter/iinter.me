@@ -160,11 +160,11 @@ const markdownComponents = {
     );
   });
     return !inline && match ? (
-      <pre className="block code bg-gray-800 p-3 rounded-lg font-mono max-w-full overflow-x-auto">
+      <pre className="block code bg-neutral-900 text-zinc-300 duration-300 p-3 rounded-md font-mono max-w-full overflow-x-auto scrollbar-thin">
         {codeLines}
       </pre>
     ) : (
-      <pre className="block code bg-neutral-900 text-zinc-300 focus:outline-none focus:caret-gray-400 border border-gray-800 focus:border-red-200 duration-300 p-3 rounded-md font-mono max-w-full overflow-x-auto scrollbar-thin">
+      <pre className="block code bg-neutral-900 text-zinc-300 duration-300 p-3 rounded-md font-mono max-w-full overflow-x-auto scrollbar-thin">
         {codeLines}
       </pre>
     );
