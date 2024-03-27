@@ -69,8 +69,8 @@ export default function BlogPost({ post }) {
           transition={{ duration: 0.5 }}
         />
         <div className="flex flex-col items-start justify-center">
-          <h1 className="text-5xl text-[#E8D4B6] font-bold tracking-tighter">{post.frontmatter.title}</h1>
-          <p className="text-zinc-500 mt-4 text-sm">
+          <div className="text-3xl text-[#E8D4B6] font-semibold tracking-tighter">{post.frontmatter.title}</div>
+          <p className="text-zinc-500 mt-1 text-sm">
             <div className="flex items-center space-x-2">
               <span>{post.frontmatter.date}</span>
             </div>          
