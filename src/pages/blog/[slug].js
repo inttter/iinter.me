@@ -256,6 +256,11 @@ const markdownComponents = {
     return <a className="text-white hover:text-gray-400 border-b-2 border-gray-500 duration-300 animate-in fade-in" target="_blank" rel="noopener noreferrer" {...props}>{children}</a>;
   },
 
+  // Keyboard input
+  kbd({ node, children, ...props }) {
+    return <kbd className="inline-block bg-neutral-900 text-zinc-300 focus:outline-none focus:caret-gray-400 border border-gray-800 focus:border-red-200 duration-300 p-1 rounded-md" {...props}>{children}</kbd>;
+  },
+
   // Horizontal Rule
   hr({ node, ...props }) {
     return <hr className="my-4 border-t-2 border-neutral-500" {...props} />;
