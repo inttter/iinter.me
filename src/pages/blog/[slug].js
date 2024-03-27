@@ -18,6 +18,7 @@ import rehypeSlug from 'rehype-slug';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import { FaCodeCommit, } from "react-icons/fa6";
+import { parseISO, formatDistanceToNow } from 'date-fns';
 
 export default function BlogPost({ post }) {
   const router = useRouter();
@@ -50,6 +51,17 @@ export default function BlogPost({ post }) {
     fetchLatestCommit();
   }, [router.asPath, post.slug]);
 
+  const parseAndFormatDate = () => {
+    try {
+      const parsedDate = new Date(post.frontmatter.date);
+      const distance = formatDistanceToNow(parsedDate, { addSuffix: true, unit: 'short' });
+      return distance;
+    } catch (error) {
+      console.error('Error parsing date:', error);
+      return '?';
+    }
+  };
+
   return (
     <div className="bg-neutral-950 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 selection:bg-gray-800">
       <Head>
@@ -72,7 +84,7 @@ export default function BlogPost({ post }) {
           <div className="text-3xl text-[#E8D4B6] font-semibold tracking-tighter">{post.frontmatter.title}</div>
           <p className="text-zinc-500 mt-1 text-sm">
             <div className="flex items-center space-x-2">
-              <span>{post.frontmatter.date}</span>
+            <span>{post.frontmatter.date} ({parseAndFormatDate()})</span>
             </div>          
           </p>
         </div>
