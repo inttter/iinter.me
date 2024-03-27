@@ -90,6 +90,13 @@ updates:
 
 🤖 signifies a change related to automation. Since Dependabot is a bot that auto-creates PR's for you, it is automated, hence the robot emoji.
 
+With this config, PR's opened from Dependabot will look like this:
+
+<div align="center">
+<img src="/blog/commit-emojis/package-pr.png">
+<img src="/blog/commit-emojis/action-pr.png">
+</div>
+
 I also recently came across a CLI tool called [better-commits](https://github.com/Everduin94/better-commits) that I'm most likely going to start using now. It includes this type of commit message, but in steps through the terminal. You can see a demo below:
 
 <video src="https://github.com/Everduin94/better-commits/assets/14320878/8fb15d46-17c4-4e5d-80d9-79abe0a2a00a" controls></video>

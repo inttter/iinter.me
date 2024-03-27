@@ -110,7 +110,7 @@ export default function Blog({ posts }) {
                     <h2 className="text-xl text-[#E8D4B6] font-semibold mb-2">{post.frontmatter.title}</h2>
                     <p className="text-gray-500 mb-2 md:text-xsm text-sm font-mono code">{post.frontmatter.description}</p>
                     <p className="text-gray-400 mb-2 font-semibold code tracking-wider text-sm">
-                      <i className="fa-regular fa-calendar"></i> {post.frontmatter.date} • <i className="fa-regular fa-clock"></i> {post.frontmatter.timeToRead} min read
+                      <i className="fa-regular fa-calendar"></i> {post.frontmatter.date}
                     </p>
                   </div>
                 </div>

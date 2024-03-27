@@ -18,7 +18,6 @@ import rehypeSlug from 'rehype-slug';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import { FaCodeCommit, } from "react-icons/fa6";
-import Badge from '../../components/Badge'
 
 export default function BlogPost({ post }) {
   const router = useRouter();
@@ -73,8 +72,7 @@ export default function BlogPost({ post }) {
           <h1 className="text-5xl text-[#E8D4B6] font-bold tracking-tighter">{post.frontmatter.title}</h1>
           <p className="text-zinc-500 mt-4 text-sm">
             <div className="flex items-center space-x-2">
-              <Badge text={`${post.frontmatter.date}`} />
-              <Badge text={`${post.frontmatter.timeToRead} minutes to read`} />
+              <span>{post.frontmatter.date}</span>
             </div>          
           </p>
         </div>
