@@ -17,7 +17,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import { useRouter } from 'next/router';
 import axios from 'axios';
-import { FaCodeCommit, } from "react-icons/fa6";
+import { FaCodeCommit } from "react-icons/fa6";
 import { parseISO, formatDistanceToNow } from 'date-fns';
 
 export default function BlogPost({ post }) {
@@ -25,7 +25,8 @@ export default function BlogPost({ post }) {
   const [latestCommit, setLatestCommit] = useState(null);
 
   useEffect(() => {
-    // Scroll to the anchor if it exists in the URL
+    if (!post) return;
+
     if (router.asPath.includes('#')) {
       const anchor = router.asPath.split('#')[1];
       const element = document.getElementById(anchor);
@@ -34,7 +35,6 @@ export default function BlogPost({ post }) {
       }
     }
 
-    // Fetch latest commit information
     const fetchLatestCommit = async () => {
       try {
         const response = await axios.get(
@@ -49,7 +49,9 @@ export default function BlogPost({ post }) {
     };
 
     fetchLatestCommit();
-  }, [router.asPath, post.slug]);
+  }, [router.asPath, post]);
+
+  if (!post) return null;
 
   const parseAndFormatDate = () => {
     try {
@@ -64,7 +66,7 @@ export default function BlogPost({ post }) {
   return (
     <div className="bg-neutral-950 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 selection:bg-gray-800">
       <Head>
-        <title>{`${post.frontmatter.title}`}</title>
+        <title>{post.frontmatter.title}</title>
         <meta property="og:image" content={post.frontmatter.image} />
       </Head>
       <div className="max-w-2xl w-full px-4 py-8 space-y-6">
@@ -82,9 +84,7 @@ export default function BlogPost({ post }) {
         <div className="flex flex-col items-start justify-center">
           <div className="text-3xl text-[#E8D4B6] font-semibold tracking-tighter">{post.frontmatter.title}</div>
           <p className="text-zinc-500 mt-1 text-sm">
-            <div className="flex items-center space-x-2">
-            <span>{post.frontmatter.date} ({parseAndFormatDate()})</span>
-            </div>          
+          <span>{post.frontmatter.date} ({parseAndFormatDate()})</span>
           </p>
         </div>
         <div className="text-zinc-300">
