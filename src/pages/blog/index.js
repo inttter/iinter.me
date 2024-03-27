@@ -129,7 +129,7 @@ export default function Blog({ posts }) {
 }
 
 export async function getStaticProps() {
-  const postsDirectory = path.join(process.cwd(), 'src', 'pages', 'blog', 'posts');
+  const postsDirectory = path.join(process.cwd(), 'content');
   let posts = [];
 
   try {

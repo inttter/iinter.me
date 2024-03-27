@@ -53,8 +53,7 @@ export default function BlogPost({ post }) {
 
   const parseAndFormatDate = () => {
     try {
-      const parsedDate = new Date(post.frontmatter.date);
-      const distance = formatDistanceToNow(parsedDate, { addSuffix: true, unit: 'short' });
+      const distance = formatDistanceToNow(new Date(post.frontmatter.date), { addSuffix: true, unit: 'short' });
       return distance;
     } catch (error) {
       console.error('Error parsing date:', error);
@@ -113,7 +112,7 @@ export default function BlogPost({ post }) {
 }
 
 export async function getStaticPaths() {
-  const postsDirectory = path.join(process.cwd(), 'src', 'pages', 'blog', 'posts');
+  const postsDirectory = path.join(process.cwd(), 'content');
   const filenames = fs.readdirSync(postsDirectory);
 
   const paths = filenames.map((filename) => ({
@@ -125,7 +124,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
-  const filePath = path.join(process.cwd(), 'src', 'pages', 'blog', 'posts', `${slug}.md`);
+  const filePath = path.join(process.cwd(), 'content', `${slug}.md`);
   const fileContent = fs.readFileSync(filePath, 'utf8');
   const { data, content } = matter(fileContent);
   return {

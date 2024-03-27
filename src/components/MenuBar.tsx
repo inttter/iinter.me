@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { FaArrowLeft, FaHome, FaEnvelope, FaGithub } from 'react-icons/fa';
 
 const MenuBar = ({ blogPostFileName }) => {
-    const githubURL = blogPostFileName ? `https://github.com/inttter/iinter.me/blob/master/src/pages/blog/posts/${blogPostFileName}.md` : '';
+    const githubURL = blogPostFileName ? `https://github.com/inttter/iinter.me/blob/master/content/${blogPostFileName}.md` : '';
   
     return (
       <div className="fixed bottom-5 left-1/2 transform -translate-x-1/2 w-62 menu menu-horizontal bg-base-200 duration-300 justify-center rounded-full divide-x-2">
