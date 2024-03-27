@@ -64,7 +64,7 @@ export default function BlogPost({ post }) {
   };
 
   return (
-    <div className="bg-neutral-950 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 selection:bg-gray-800">
+    <div className="bg-neutral-950 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 selection:bg-[#E8D4B6] selection:text-black">
       <Head>
         <title>{post.frontmatter.title}</title>
         <meta property="og:image" content={post.frontmatter.image} />
@@ -175,9 +175,13 @@ const markdownComponents = {
     return <br className="my-4" />;
   },
 
-  // Images
-  img({ node, ...props }) {
-    return <img className="rounded-lg" loading="lazy" {...props} />;
+  img({ node, alt, ...props }) {
+    return (
+      <div className="relative">
+        <img className="rounded-lg" loading="lazy" alt={alt} {...props} />
+        {alt && <p className="text-sm text-gray-500 mt-2">{alt}</p>}
+      </div>
+    );
   },
 
   // Video
