@@ -1,7 +1,7 @@
 ---
 title: "Using Emoji in Commit Messages"
 date: "March 25, 2024"
-lastUpdated: "25/03/24 22:56"
+lastUpdated: "27/03/24 18:24"
 author: "Inter"
 timeToRead: 3
 image: "/blog/commit-emojis/cover-image.png"
@@ -94,6 +94,7 @@ With this config, PR's opened from Dependabot will look like this:
 
 <div align="center">
 <img src="/blog/commit-emojis/package-pr.png">
+<br>
 <img src="/blog/commit-emojis/action-pr.png">
 </div>
 
