@@ -10,6 +10,7 @@ import '@fontsource/jetbrains-mono';
 import Link from 'next/link';
 import Lanyard from '../../components/Lanyard';
 import { motion } from 'framer-motion'
+import { ChevronRight } from 'react-icons/bs';
 
 export default function Blog({ posts }) {
   posts.reverse();
@@ -34,35 +35,23 @@ export default function Blog({ posts }) {
       <Head>
         <title>inter | blog</title>
       </Head>
-      <div className="max-w-3xl w-full px-4 py-8 space-y-6">
-        <div className="flex items-center justify-between px-4 py-2 text-lg rounded-md placeholder:text-gray-500 bg-neutral-900 text-zinc-300 focus:outline-none focus:caret-gray-400 border border-gray-800 focus:border-red-200 duration-300 w-full">
-          <div className="flex items-center">
-            <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2" data-theme="black">
-              <img src="https://cdn.discordapp.com/attachments/919647864794284112/1220864348105474108/image_2024-03-22_223621471-modified.png?ex=66107d87&is=65fe0887&hm=c722e50d416fb276dc3e8918cb29a06abe5f4701e60df2fb8552489dba273f75&" />
-            </div>
-          </div>
-          {/* nav */}
-          <div className="flex items-center px-1 space-x-4">
-            <Link href="/">
-              <div className="hover:bg-zinc-300 hover:bg-opacity-10 p-2 rounded-md code text-sm tracking-wide">
-                Home
-              </div>
-            </Link>
-            <Link href="mailto:hi@iinter.me">
-              <div className="hover:bg-zinc-300 hover:bg-opacity-10 p-2 rounded-md code text-sm tracking-wide">
-                Contact
-              </div>
-            </Link>
-            <Link href="https://github.com/inttter/iinter.me">
-              <div className="hover:bg-zinc-300 hover:bg-opacity-10 p-2 rounded-md code text-sm tracking-wide">
-                Source
-              </div>
-            </Link>
+      <div className="max-w-3xl w-full px-4 py-8">
+        <div className="flex items-center justify-between py-4 text-lg w-full">
+          <div className="flex items-center text-zinc-200 font-semibold text-3xl px-2">
+            Blog
           </div>
         </div>
-        <Lanyard showUsername={false} showEmoji={false} showAlbumArt={true} />
+        <div className="flex items-center ml-2">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.2, delay: 0.2 }}
+          >
+            <Lanyard showUsername={false} showEmoji={false} showAlbumArt={true} />
+          </motion.div>
+        </div>
         {/* search box */}
-        <div className="mb-4 relative">
+        <div className="mb-4 relative mt-4">
           <motion.input
             type="text"
             placeholder="Search blog posts"
@@ -73,51 +62,23 @@ export default function Blog({ posts }) {
             transition={{ duration: 0.3 }}
             className="px-4 py-2 text-lg rounded-md placeholder:text-gray-500 bg-neutral-900 text-zinc-300 focus:outline-none focus:caret-gray-400 border border-gray-800 focus:border-red-200 duration-300 w-full"
           />
-          <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-            <svg
-              className="feather feather-search h-6 w-6 text-gray-500"
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-            </svg>
-          </div>
         </div>
         {filteredPosts.length === 0 && (
           <p className="text-gray-400 text-lg code">No posts found.</p>
         )}
-        <div className="grid grid-cols-1 md:grid-cols-1 gap-9">
-          {sortedPosts.map((post) => (
-            <Link key={post.slug} href={`/blog/${post.slug}`} passHref>
-              <div className="bg-blogcard bg-opacity-10 rounded-md shadow-lg overflow-hidden transition-transform duration-300 md:duration-150 hover:scale-105 active:scale-95 relative">
-                <div className="grid grid-cols-1 md:grid-cols-2">
-                  <div>
-                    <motion.img
-                      src={post.frontmatter.image}
-                      alt="Blog Post Preview"
-                      className="w-full h-auto md:h-full object-cover rounded-lg"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                    />
-                  </div>
-                  <div className="p-4 md:p-8">
-                    <h2 className="text-xl text-[#E8D4B6] font-semibold mb-2">{post.frontmatter.title}</h2>
-                    <p className="text-gray-500 mb-2 md:text-xsm text-sm font-mono code">{post.frontmatter.description}</p>
-                    <p className="text-gray-400 mb-2 font-semibold code tracking-wider text-sm">
-                      <i className="fa-regular fa-calendar"></i> {post.frontmatter.date}
-                    </p>
-                  </div>
+        {sortedPosts.map((post) => (
+          <Link key={post.slug} href={`/blog/${post.slug}`} passHref>
+            <div className="rounded-md shadow-lg overflow-hidden relative">
+              <div className="p-4 md:py-7">
+                <div className="flex flex-col justify-between items-start">
+                  <h2 className="text-xl text-[#E8D4B6] hover:text-zinc-400 duration-300 tracking-tight font-semibold">{post.frontmatter.title} <span class="text-zinc-700">➜</span></h2>
+                  <p className="text-gray-400 text-sm">{post.frontmatter.date}</p>
                 </div>
+                <p className="text-zinc-300 mt-2 md:mt-2">{post.frontmatter.description}</p>
               </div>
-            </Link>
-          ))}
-        </div>
+            </div>
+          </Link>
+        ))}
         <Link href="/" className="hover:text-zinc-300 duration-300 flex items-center">
           <div className="bottom-5 left-1/2 transform -translate-x-1/2 text-sm font-regular fixed bg-neutral-900 hover:bg-neutral-800 text-zinc-300 focus:outline-none border border-gray-800 focus:border-red-200 duration-300 px-4 py-2 rounded-md">
             ← Back
