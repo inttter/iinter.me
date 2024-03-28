@@ -64,7 +64,9 @@ export default function BlogPost({ post }) {
   };
 
   return (
-    <div className="bg-neutral-950 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 selection:bg-[#E8D4B6] selection:text-black">
+    <div className="bg-neutral-950 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 selection:bg-[#E8D4B6] selection:text-black relative">
+      <div className="fixed inset-x-0 top-0 h-8 transparent backdrop-blur-[3px] pointer-events-none"></div>
+      <div className="fixed inset-x-0 bottom-0 h-8 transparent backdrop-blur-[3px] pointer-events-none"></div>
       <Head>
         <title>{post.frontmatter.title}</title>
         <meta property="og:image" content={post.frontmatter.image} />
@@ -84,7 +86,7 @@ export default function BlogPost({ post }) {
         <div className="flex flex-col items-start justify-center">
           <div className="text-3xl text-[#E8D4B6] font-semibold tracking-tighter">{post.frontmatter.title}</div>
           <p className="text-zinc-500 mt-1 text-sm">
-          <span>{post.frontmatter.date} ({parseAndFormatDate()})</span>
+            <span>{post.frontmatter.date} ({parseAndFormatDate()})</span>
           </p>
         </div>
         <div className="text-zinc-300">
