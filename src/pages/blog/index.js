@@ -100,7 +100,7 @@ export default function Blog({ posts }) {
                     <motion.img
                       src={post.frontmatter.image}
                       alt="Blog Post Preview"
-                      className="w-full h-auto md:h-full object-cover"
+                      className="w-full h-auto md:h-full object-cover rounded-lg"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ duration: 0.3 }}
