@@ -6,7 +6,7 @@ const MenuBar = ({ blogPostFileName }) => {
     const githubURL = blogPostFileName ? `https://github.com/inttter/iinter.me/blob/master/content/${blogPostFileName}.md` : '';
   
     return (
-      <div className="fixed bottom-5 left-1/2 transform -translate-x-1/2 w-62 menu menu-horizontal bg-base-200 duration-300 justify-center rounded-full divide-x-2">
+      <div className="fixed bottom-5 left-1/2 transform -translate-x-1/2 w-62 menu menu-horizontal rounded-full bg-neutral-900 border border-gray-800 justify-center">
         <motion.ul 
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
