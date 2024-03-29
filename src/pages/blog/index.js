@@ -71,7 +71,7 @@ export default function Blog({ posts }) {
             <div className="rounded-md shadow-lg overflow-hidden relative">
               <div className="p-4 md:py-7">
                 <div className="flex flex-col justify-between items-start">
-                  <h2 className="text-xl text-[#E8D4B6] hover:text-zinc-400 duration-300 tracking-tight font-semibold">{post.frontmatter.title} <span class="text-zinc-700">➜</span></h2>
+                  <h2 className="text-xl text-[#E8D4B6] hover:text-zinc-400 duration-300 tracking-tight font-semibold">{post.frontmatter.title} <span className="text-zinc-700">➜</span></h2>
                   <p className="text-gray-400 text-sm">{post.frontmatter.date}</p>
                 </div>
                 <p className="text-zinc-300 mt-2 md:mt-2">{post.frontmatter.description}</p>
