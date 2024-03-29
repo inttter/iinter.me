@@ -31,7 +31,7 @@ export default function Blog({ posts }) {
   const sortedPosts = filteredPosts.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
 
   return (
-    <div className="bg-neutral-950 min-h-screen flex flex-col justify-center items-center antialiased scrollbar-thin scrollbar-thumb-slate-50 scroll-smooth p-4 md:p-8">
+    <div className="bg-neutral-900 min-h-screen flex flex-col justify-center items-center antialiased scrollbar-thin scrollbar-thumb-slate-50 scroll-smooth p-4 md:p-8">
       <Head>
         <title>inter | blog</title>
       </Head>
@@ -60,7 +60,7 @@ export default function Blog({ posts }) {
             initial={{ opacity: 0, y: -5 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
-            className="px-4 py-2 text-lg rounded-md placeholder:text-gray-500 bg-neutral-900 text-zinc-300 focus:outline-none focus:caret-gray-400 border border-gray-800 focus:border-red-200 duration-300 w-full"
+            className="px-4 py-2 text-lg rounded-md placeholder:text-gray-500 bg-neutral-950 text-zinc-300 focus:outline-none focus:caret-gray-400 border border-gray-800 focus:border-red-200 duration-300 w-full"
           />
         </div>
         {filteredPosts.length === 0 && (

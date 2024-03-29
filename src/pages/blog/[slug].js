@@ -67,7 +67,7 @@ export default function BlogPost({ post }) {
   const githubURL = `https://github.com/inttter/iinter.me/blob/master/content/${post.slug}.md`;
 
   return (
-    <div className="bg-neutral-950 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 selection:bg-[#E8D4B6] selection:text-black relative">
+    <div className="bg-neutral-900 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 selection:bg-[#E8D4B6] selection:text-black relative">
       <div className="fixed inset-x-0 top-0 h-8 transparent backdrop-blur-[3px] pointer-events-none"></div>
       <div className="fixed inset-x-0 bottom-0 h-8 transparent backdrop-blur-[3px] pointer-events-none"></div>
       <Head>
@@ -182,11 +182,11 @@ const markdownComponents = {
     );
   });
     return !inline && match ? (
-      <pre className="block code bg-neutral-900 text-zinc-300 duration-300 p-3 rounded-md font-mono max-w-full overflow-x-auto scrollbar-thin">
+      <pre className="block code bg-neutral-950 text-zinc-300 duration-300 p-3 rounded-md font-mono max-w-full overflow-x-auto scrollbar-thin">
         {codeLines}
       </pre>
     ) : (
-      <pre className="block code bg-neutral-900 text-zinc-300 duration-300 p-3 rounded-md font-mono max-w-full overflow-x-auto scrollbar-thin">
+      <pre className="block code bg-neutral-950 text-zinc-300 duration-300 p-3 rounded-md font-mono max-w-full overflow-x-auto scrollbar-thin">
         {codeLines}
       </pre>
     );
@@ -229,24 +229,24 @@ const markdownComponents = {
     );
   },
   h2({ node, children, ...props }) {
-    return <h2 className="text-2xl font-semibold my-5" {...props}>{children}</h2>;
+    return <h2 className="text-zinc-100 text-2xl font-semibold my-5" {...props}>{children}</h2>;
   },
   h3({ node, children, ...props }) {
-    return <h3 className="text-xl font-semibold my-4" {...props}>{children}</h3>;
+    return <h3 className="text-zinc-100 text-xl font-semibold my-4" {...props}>{children}</h3>;
   },
   h4({ node, children, ...props }) {
-    return <h4 className="text-lg font-semibold my-3" {...props}>{children}</h4>;
+    return <h4 className="text-zinc-100 text-lg font-semibold my-3" {...props}>{children}</h4>;
   },
   h5({ node, children, ...props }) {
-    return <h5 className="text-base font-semibold my-2" {...props}>{children}</h5>;
+    return <h5 className="text-zinc-100 text-base font-semibold my-2" {...props}>{children}</h5>;
   },
   h6({ node, children, ...props }) {
-    return <h6 className="text-sm font-semibold my-1" {...props}>{children}</h6>;
+    return <h6 className="text-zinc-100 text-sm font-semibold my-1" {...props}>{children}</h6>;
   },
 
   // Lists
   ul({ node, children, ...props }) {
-    return <ul className="list-disc list-inside my-4" {...props}>{children}</ul>;
+    return <ul className="list-disc list-inside my-4 " {...props}>{children}</ul>;
   },
   ol({ node, children, ...props }) {
     return <ol className="list-decimal list-inside my-4" {...props}>{children}</ol>;
@@ -284,7 +284,7 @@ const markdownComponents = {
 
   // Keyboard input
   kbd({ node, children, ...props }) {
-    return <kbd className="inline-block bg-neutral-900 text-zinc-300 focus:outline-none focus:caret-gray-400 border border-gray-800 focus:border-red-200 duration-300 p-1 rounded-md" {...props}>{children}</kbd>;
+    return <kbd className="inline-block bg-neutral-800 text-zinc-300 focus:outline-none focus:caret-gray-400 border border-gray-800 focus:border-red-200 duration-300 p-1 rounded-md" {...props}>{children}</kbd>;
   },
 
   // Horizontal Rule
@@ -300,7 +300,7 @@ const markdownComponents = {
     return <thead className="bg-neutral-800 text-white" {...props}>{children}</thead>;
   },
   tbody({ node, children, ...props }) {
-    return <tbody className="bg-neutral-900" {...props}>{children}</tbody>;
+    return <tbody className="bg-neutral-950" {...props}>{children}</tbody>;
   },
   tr({ node, children, ...props }) {
     return <tr className="border-b border-neutral-700" {...props}>{children}</tr>;
