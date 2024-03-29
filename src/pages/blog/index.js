@@ -10,7 +10,7 @@ import '@fontsource/jetbrains-mono';
 import Link from 'next/link';
 import Lanyard from '../../components/Lanyard';
 import { motion } from 'framer-motion'
-import { ChevronRight } from 'react-icons/bs';
+import { FaSearch } from 'react-icons/fa';
 
 export default function Blog({ posts }) {
   posts.reverse();
@@ -52,16 +52,23 @@ export default function Blog({ posts }) {
         </div>
         {/* search box */}
         <div className="mb-4 relative mt-4">
-          <motion.input
-            type="text"
-            placeholder="Search blog posts"
-            value={searchQuery}
-            onChange={handleSearchChange}
+          <motion.div
+            className="relative"
             initial={{ opacity: 0, y: -5 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
-            className="px-4 py-2 text-lg rounded-md placeholder:text-gray-500 bg-neutral-950 text-zinc-300 focus:outline-none focus:caret-gray-400 border border-gray-800 focus:border-red-200 duration-300 w-full"
-          />
+          >
+            <motion.input
+              type="text"
+              placeholder="Search blog posts"
+              value={searchQuery}
+              onChange={handleSearchChange}
+              className="px-10 py-2 text-lg rounded-md bg-transparent w-full focus:border-none focus:outline-none"
+            />
+            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+              <FaSearch className="text-gray-400" />
+            </div>
+          </motion.div>
         </div>
         {filteredPosts.length === 0 && (
           <p className="text-gray-400 text-lg code">No posts found.</p>
@@ -80,7 +87,7 @@ export default function Blog({ posts }) {
           </Link>
         ))}
         <button onClick={() => window.history.back()} className="hover:text-zinc-300 duration-300 flex items-center">
-          <div className="bottom-5 left-1/2 transform -translate-x-1/2 text-sm font-regular fixed bg-neutral-900 hover:bg-neutral-800 text-zinc-300 focus:outline-none border border-gray-800 focus:border-red-200 duration-300 px-4 py-2 rounded-md">
+          <div className="bottom-5 left-1/2 transform -translate-x-1/2 text-sm font-regular fixed bg-neutral-800 hover:bg-neutral-950 text-zinc-300 focus:outline-none border border-gray-800 focus:border-red-200 duration-300 px-4 py-2 rounded-md">
             ← Back
           </div>
         </button>
