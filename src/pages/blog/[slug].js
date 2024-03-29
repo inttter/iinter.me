@@ -11,7 +11,6 @@ import '@fontsource/geist-sans/600.css';
 import '@fontsource/geist-mono';
 import Head from 'next/head';
 import Image from 'next/image';
-import Menu from '../../components/MenuBar';
 import { motion } from 'framer-motion';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
@@ -19,6 +18,8 @@ import { useRouter } from 'next/router';
 import axios from 'axios';
 import { FaCodeCommit } from "react-icons/fa6";
 import { parseISO, formatDistanceToNow } from 'date-fns';
+import { FaHome, FaEnvelope, FaGithub } from 'react-icons/fa6';
+
 
 export default function BlogPost({ post }) {
   const router = useRouter();
@@ -63,6 +64,8 @@ export default function BlogPost({ post }) {
     }
   };
 
+  const githubURL = `https://github.com/inttter/iinter.me/blob/master/content/${post.slug}.md`;
+
   return (
     <div className="bg-neutral-950 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 selection:bg-[#E8D4B6] selection:text-black relative">
       <div className="fixed inset-x-0 top-0 h-8 transparent backdrop-blur-[3px] pointer-events-none"></div>
@@ -72,6 +75,24 @@ export default function BlogPost({ post }) {
         <meta property="og:image" content={post.frontmatter.image} />
       </Head>
       <div className="max-w-2xl w-full px-4 py-8 space-y-6">
+        <div className="relative">
+          <div className="flex items-center absolute md:-top-8 -top-5">
+            <button
+              className="text-zinc-400 bg-transparent px-1 rounded-md shadow-md transition hover:text-zinc-200 duration-300 tooltip tooltip-bottom"
+              onClick={() => window.history.back()}
+              data-tip="Back"
+              data-theme="lofi"
+            >
+              {'←'}
+            </button>
+            <span className="ml-2 text-gray-500 flex items-center">
+              inter's blog
+              <a href={githubURL} className="ml-2 text-gray-500 hover:text-zinc-300" target="_blank" rel="noopener noreferrer">
+                <FaGithub size={20} />
+              </a>
+            </span>
+          </div>
+        </div>
         <motion.img
           src={post.frontmatter.image}
           alt="Blog Post Image"
@@ -108,10 +129,9 @@ export default function BlogPost({ post }) {
           </div>
         )}
       </div>
-      <Menu blogPostFileName={post.slug} />
     </div>
   );
-}
+};
 
 export async function getStaticPaths() {
   const postsDirectory = path.join(process.cwd(), 'content');
@@ -203,7 +223,7 @@ const markdownComponents = {
   // Headers
   h1({ node, children, ...props }) {
     return (
-      <h1 className="text-3xl font-semibold my-6" style={{ borderBottom: '1px solid rgba(209, 213, 218, 0.2)', paddingBottom: '5px' }} {...props}>
+      <h1 className="text-3xl font-semibold my-6" {...props}>
         {children}
       </h1>
     );
