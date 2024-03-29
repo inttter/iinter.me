@@ -78,7 +78,7 @@ export default function BlogPost({ post }) {
         <div className="relative">
           <div className="flex items-center absolute md:-top-8 -top-5">
             <button
-              className="text-zinc-400 bg-transparent px-1 rounded-md shadow-md transition hover:text-zinc-200 duration-300 tooltip tooltip-bottom"
+              className="text-zinc-400 bg-transparent px-1 rounded-md shadow-md transition duration-300 transform hover:-translate-x-0.5 active:-translate-x-1 tooltip tooltip-bottom"
               onClick={() => window.history.back()}
               data-tip="Back"
               data-theme="lofi"
@@ -87,7 +87,7 @@ export default function BlogPost({ post }) {
             </button>
             <span className="ml-2 text-gray-500 flex items-center">
               inter's blog
-              <a href={githubURL} className="ml-2 text-gray-500 hover:text-zinc-300" target="_blank" rel="noopener noreferrer">
+              <a href={githubURL} className="ml-2 text-neutral-700 hover:text-zinc-300 duration-300 tooltip tooltip-bottom bg-transparent" target="_blank" rel="noopener noreferrer" data-theme="lofi" data-tip="View file on GitHub">
                 <FaGithub size={20} />
               </a>
             </span>
@@ -119,8 +119,8 @@ export default function BlogPost({ post }) {
           — Last Updated: {post.frontmatter.lastUpdated}
         </div>
         {latestCommit && (
-          <div className="text-gray-500 duration-300 text-sm mt-2 flex justify-end code hover:text-zinc-300 hover:underline hover:underline-offset-2">
-            <FaCodeCommit className="mt-[3px]" /> 
+          <div className="text-gray-500 duration-300 text-sm mt-2 flex justify-end code hover:text-zinc-300 hover:underline hover:underline-offset-2 -translate-y-4">
+            <FaCodeCommit className="md:mt-[3px] mt-[1px]" /> 
             <span className="ml-2">
               <a href={latestCommit.html_url} target="_blank" rel="noopener noreferrer">
                 {latestCommit.sha.substr(0, 7)}
