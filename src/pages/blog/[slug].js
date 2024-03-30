@@ -72,7 +72,7 @@ export default function BlogPost({ post }) {
         <title>{post.frontmatter.title}</title>
         <meta property="og:image" content={post.frontmatter.image} />
       </Head>
-      <div className="max-w-2xl w-full px-4 py-8 space-y-6">
+      <div className="max-w-2xl w-full md:px-1 px-2 py-8 space-y-6">
         <div className="relative">
           <div className="flex items-center absolute md:-top-8 -top-5">
             <button
@@ -91,10 +91,16 @@ export default function BlogPost({ post }) {
             </span>
           </div>
         </div>
+        <div className="flex flex-col items-start justify-center">
+          <div className="text-3xl text-[#E8D4B6] font-semibold tracking-tighter">{post.frontmatter.title}</div>
+          <p className="text-zinc-500 mt-1 text-sm">
+            <span>{post.frontmatter.date} ({parseAndFormatDate()})</span>
+          </p>
+        </div>
         <motion.img
           src={post.frontmatter.image}
           alt="Blog Post Image"
-          className="rounded-lg mb-4 mx-auto shadow-xl"
+          className="rounded-lg mb-4 mx-auto shadow-2xl"
           width={700}
           height={700}
           loading="lazy"
@@ -102,12 +108,6 @@ export default function BlogPost({ post }) {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         />
-        <div className="flex flex-col items-start justify-center">
-          <div className="text-3xl text-[#E8D4B6] font-semibold tracking-tighter">{post.frontmatter.title}</div>
-          <p className="text-zinc-500 mt-1 text-sm">
-            <span>{post.frontmatter.date} ({parseAndFormatDate()})</span>
-          </p>
-        </div>
         <div className="text-zinc-300">
           <ReactMarkdown components={markdownComponents} remarkPlugins={[gfm]} rehypePlugins={[rehypeRaw, rehypeAutolinkHeadings, rehypeSlug]}>
             {post.content}
@@ -204,7 +204,7 @@ const markdownComponents = {
   // Video
   video({ node, ...props }) {
     return (
-      <video src={props.src} loading="lazy" {...props}>
+      <video src={props.src} className="shadow-2xl" loading="lazy" {...props}>
         Your browser does not support the video tag.
       </video>
     );
@@ -279,7 +279,7 @@ const markdownComponents = {
 
   // Keyboard input
   kbd({ node, children, ...props }) {
-    return <kbd className="inline-block bg-neutral-800 text-zinc-300 focus:outline-none focus:caret-gray-400 border border-gray-800 focus:border-red-200 duration-300 p-1 rounded-md" {...props}>{children}</kbd>;
+    return <kbd className="inline-block bg-neutral-800 text-zinc-300 px-1 py-0.5 rounded-md m-0.5" {...props}>{children}</kbd>;
   },
 
   // Horizontal Rule
