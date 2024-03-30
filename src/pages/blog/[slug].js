@@ -16,26 +16,14 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import { useRouter } from 'next/router';
 import axios from 'axios';
-import { FaCodeCommit } from "react-icons/fa6";
+import { FaCodeCommit, FaGithub } from 'react-icons/fa6';
 import { parseISO, formatDistanceToNow } from 'date-fns';
-import { FaHome, FaEnvelope, FaGithub } from 'react-icons/fa6';
-
 
 export default function BlogPost({ post }) {
   const router = useRouter();
   const [latestCommit, setLatestCommit] = useState(null);
 
   useEffect(() => {
-    if (!post) return;
-
-    if (router.asPath.includes('#')) {
-      const anchor = router.asPath.split('#')[1];
-      const element = document.getElementById(anchor);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-
     const fetchLatestCommit = async () => {
       try {
         const response = await axios.get(
@@ -50,7 +38,7 @@ export default function BlogPost({ post }) {
     };
 
     fetchLatestCommit();
-  }, [router.asPath, post]);
+  }, [post.slug]);
 
   if (!post) return null;
 
@@ -65,6 +53,16 @@ export default function BlogPost({ post }) {
   };
 
   const githubURL = `https://github.com/inttter/iinter.me/blob/master/content/${post.slug}.md`;
+
+  const anchorScroll = () => {
+    if (router.asPath.includes('#')) {
+      const anchor = router.asPath.split('#')[1];
+      const element = document.getElementById(anchor);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <div className="bg-neutral-900 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 selection:bg-[#E8D4B6] selection:text-black relative">
