@@ -269,7 +269,7 @@ const markdownComponents = {
     return <strong className="font-bold text-bold" {...props}>{children}</strong>;
   },
   em({ node, children, ...props }) {
-    return <em className="italic" {...props}>{children}</em>;
+    return <em className="italic mr-0.5" {...props}>{children}</em>;
   },
 
   // Links
