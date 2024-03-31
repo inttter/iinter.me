@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import SocialLink from '../components/SocialLink';
 import Lanyard from '../components/Lanyard';
-import ProjectsDrawer from '../components/Drawer';
+import Projects from '../components/Projects';
 import '@fontsource/geist-sans';
 import '@fontsource/geist-sans/700.css';
 import '@fontsource/geist-sans/600.css';
@@ -16,7 +16,7 @@ export default function Home() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-4xl md:text-5xl tracking-wide text-zinc-100 opacity-90 selection:bg-white selection:text-black"
+            className="text-4xl md:text-5xl tracking-wide text-zinc-100 opacity-90 selection:bg-[#E8D4B6] selection:text-black"
           >
             <Lanyard showAlbumArt={false} />
           </motion.h1>
@@ -25,7 +25,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex justify-start md:space-x-5 space-x-3 selection:bg-gray-700 bg-transparent"
+          className="flex justify-start md:space-x-5 space-x-3 selection:bg-[#E8D4B6] bg-transparent"
           data-theme="lofi"
         >
           <SocialLink href="https://github.com/inttter" src="socials/github.svg" alt="GitHub" tooltipText="@inttter" />
@@ -36,7 +36,7 @@ export default function Home() {
           <SocialLink href="https://mine.ly/intter" src="socials/namemc.svg" alt="NameMC" tooltipText="@intter" />
           <SocialLink href="https://www.last.fm/user/intter" src="socials/lastfm.svg" alt="Last.fm" tooltipText="@intter" />
         </motion.div>
-        <ProjectsDrawer />
+        <Projects />
       </div>
     </div>
   );

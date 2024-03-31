@@ -9,7 +9,7 @@
     },
     {
       "name": "mdbadges-cli",
-      "description": "The CLI version of md-badges. Search from over 400+ Shields.io badges directly from the command line.",
+      "description": "An extensive CLI tool to find over 400+ Shields.io badges for your projects.",
       "link": "https://mdbcli.xyz",
       "source": "https://github.com/inttter/mdbadges-cli",
       "docs": "https://example.xyz",
@@ -35,7 +35,7 @@
     },
     {
       "name": "iinter.me",
-      "description": "My personal website built with Next.js, TypeScript, and Tailwind. Also uses Lanyard for Discord presence.",
+      "description": "My personal website built with Next.js, TypeScript, Lanyard and Tailwind.",
       "link": "https://iinter.me",
       "source": "https://github.com/inttter/iinter.me",
       "maintained": true
