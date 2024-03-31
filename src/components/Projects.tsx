@@ -19,7 +19,7 @@ function Projects() {
       >
         Projects
       </motion.div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
         {projectsData.map((project, index) => (
           <motion.div
             key={index}
@@ -52,7 +52,7 @@ function Projects() {
               )}
             </div>
             <motion.p
-              className="text-zinc-400 text-sm py-2.5"
+              className="text-zinc-300 text-sm py-2.5"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
