@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, VideoHTMLAttributes } from 'react';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -44,7 +44,7 @@ export default function BlogPost({ post }) {
 
   const parseAndFormatDate = () => {
     try {
-      const distance = formatDistanceToNow(new Date(post.frontmatter.date), { addSuffix: true, unit: 'short' });
+      const distance = formatDistanceToNow(new Date(post.frontmatter.date), { addSuffix: true });
       return distance;
     } catch (error) {
       console.error('Error parsing date:', error);
@@ -62,6 +62,10 @@ export default function BlogPost({ post }) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     }
+  };
+
+  type VideoProps = VideoHTMLAttributes<HTMLVideoElement> & {
+    loading?: 'eager' | 'lazy';
   };
 
   return (
@@ -204,7 +208,7 @@ const markdownComponents = {
   // Video
   video({ node, ...props }) {
     return (
-      <video src={props.src} className="shadow-2xl" loading="lazy" {...props}>
+      <video src={props.src} className="shadow-2xl" {...props}>
         Your browser does not support the video tag.
       </video>
     );

@@ -27,8 +27,11 @@ export default function Blog({ posts }) {
     post.frontmatter.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  // sort by latest
-  const sortedPosts = filteredPosts.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
+  const sortedPosts = filteredPosts.sort((a, b) => {
+    const dateA = new Date(a.frontmatter.date).getTime();
+    const dateB = new Date(b.frontmatter.date).getTime();
+    return dateB - dateA;
+  });
 
   return (
     <div className="bg-neutral-900 min-h-screen flex flex-col justify-center items-center antialiased scrollbar-thin scrollbar-thumb-slate-50 scroll-smooth p-4 md:p-8">
