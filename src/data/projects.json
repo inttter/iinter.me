@@ -3,41 +3,30 @@
       "name": "md-badges",
       "description": "An extensive list of Shields.io badges.",
       "link": "https://github.com/inttter/md-badges",
-      "source": "https://github.com/inttter/md-badges",
-      "docs": "https://mdbdocs.inttter.com",
       "maintained": true
     },
     {
       "name": "mdbadges-cli",
       "description": "An extensive CLI tool to find over 400+ Shields.io badges for your projects.",
       "link": "https://mdbcli.xyz",
-      "source": "https://github.com/inttter/mdbadges-cli",
-      "docs": "https://example.xyz",
-      "install": "npm install -g mdbadges-cli",
       "maintained": true
     },
     {
       "name": "discid",
       "description": "A command-line tool to check a user's Discord status using Lanyard.",
       "link": "https://discid.xyz",
-      "source": "https://github.com/inttter/discid",
-      "install": "npm i -g discid && discid 514106760299151372",
-      "blogPost": "/blog/using-discid",
       "maintained": true
     },
     {
       "name": "create-ps",
       "description": "Creates the foundations for an NPM package.",
       "link": "https://github.com/inttter/create-ps",
-      "source": "https://github.com/inttter/create-ps",
-      "install": "npx cps new-project",
       "maintained": true
     },
     {
       "name": "iinter.me",
       "description": "My personal website built with Next.js, TypeScript, Lanyard and Tailwind.",
       "link": "https://iinter.me",
-      "source": "https://github.com/inttter/iinter.me",
       "maintained": true
     }
   ]
