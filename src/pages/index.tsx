@@ -33,7 +33,8 @@ export default function Home() {
           <SocialLink href="https://discord.com/users/514106760299151372" src="socials/discord.svg" alt="Discord" tooltipText="@iinter" />
           <SocialLink href="https://twitter.com/accmpy" src="socials/twitter.svg" alt="Twitter" tooltipText="@accmpy" />
           <SocialLink href="https://osu.ppy.sh/users/19054376" src="socials/osu.svg" alt="osu!" tooltipText="@intter" />
-          <SocialLink href="https://www.last.fm/user/intter" src="/socials/lastfm.svg" alt="Last.fm" tooltipText="@intter" />
+          <SocialLink href="https://mine.ly/intter" src="socials/namemc.svg" alt="NameMC" tooltipText="@intter" />
+          <SocialLink href="https://www.last.fm/user/intter" src="socials/lastfm.svg" alt="Last.fm" tooltipText="@intter" />
         </motion.div>
         <ProjectsDrawer />
       </div>
