@@ -10,7 +10,7 @@ import '@fontsource/geist-sans/700.css';
 import '@fontsource/geist-sans/600.css';
 import '@fontsource/geist-mono';
 import Head from 'next/head';
-import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
@@ -89,9 +89,9 @@ export default function BlogPost({ post }) {
             </button>
             <span className="ml-2 text-gray-500 flex items-center">
               inter's blog
-              <a href={githubURL} className="ml-2 text-neutral-700 hover:text-zinc-300 duration-300 tooltip tooltip-bottom bg-transparent" target="_blank" rel="noopener noreferrer" data-theme="lofi" data-tip="View file on GitHub">
+              <Link href={githubURL} className="ml-2 text-neutral-700 hover:text-zinc-300 duration-300 tooltip tooltip-bottom bg-transparent" target="_blank" rel="noopener noreferrer" data-theme="lofi" data-tip="View file on GitHub">
                 <FaGithub size={20} />
-              </a>
+              </Link>
             </span>
           </div>
         </div>
@@ -124,9 +124,9 @@ export default function BlogPost({ post }) {
           <div className="text-gray-500 duration-300 text-sm mt-2 flex justify-end code hover:text-zinc-300 hover:underline hover:underline-offset-2 -translate-y-4">
             <FaCodeCommit className="md:mt-[3px] mt-[1px]" /> 
             <span className="ml-2">
-              <a href={latestCommit.html_url} target="_blank" rel="noopener noreferrer">
+              <Link href={latestCommit.html_url} target="_blank" rel="noopener noreferrer">
                 {latestCommit.sha.substr(0, 7)}
-              </a>
+              </Link>
             </span>
           </div>
         )}
