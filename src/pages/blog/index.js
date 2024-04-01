@@ -31,66 +31,96 @@ export default function Blog({ posts }) {
   const sortedPosts = filteredPosts.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
 
   return (
-    <div className="bg-neutral-900 min-h-screen flex flex-col justify-center items-center antialiased scrollbar-thin scrollbar-thumb-slate-50 scroll-smooth p-4 md:p-8">
-      <Head>
-        <title>inter | blog</title>
-      </Head>
-      <div className="max-w-3xl w-full px-4 py-8">
-        <div className="flex items-center justify-between py-4 text-lg w-full">
-          <div className="flex items-center text-zinc-200 font-semibold text-3xl px-2">
-            Blog
-          </div>
-        </div>
-        <div className="flex items-center ml-2">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.2, delay: 0.2 }}
-          >
-            <Lanyard showUsername={false} showEmoji={false} showAlbumArt={true} />
-          </motion.div>
-        </div>
-        {/* search box */}
-        <div className="mb-4 relative mt-4">
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, y: -5 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <motion.input
-              type="text"
-              placeholder="Search blog posts"
-              value={searchQuery}
-              onChange={handleSearchChange}
-              className="px-10 py-2 text-lg rounded-md bg-transparent w-full focus:border-none focus:outline-none"
-            />
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <FaSearch className="text-gray-400" />
-            </div>
-          </motion.div>
-        </div>
-        {filteredPosts.length === 0 && (
-          <p className="text-gray-400 text-lg code">No posts found.</p>
-        )}
-        {sortedPosts.map((post) => (
-          <Link key={post.slug} href={`/blog/${post.slug}`} passHref>
-            <div className="rounded-md shadow-lg overflow-hidden relative">
-              <div className="p-4 md:py-7">
-                <div className="flex flex-col justify-between items-start">
-                  <h2 className="text-xl text-[#E8D4B6] hover:text-zinc-400 duration-300 tracking-tight font-semibold">{post.frontmatter.title} <span className="text-zinc-700">➜</span></h2>
-                  <p className="text-gray-400 text-sm">{post.frontmatter.date}</p>
-                </div>
-                <p className="text-zinc-300 mt-2 md:mt-2">{post.frontmatter.description}</p>
+    <div className="bg-neutral-900 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 selection:bg-[#E8D4B6] selection:text-black">
+      <div className="max-w-3xl w-full px-0 py-8 space-y-6 flex-col">
+        <div className="flex items-center justify-start">
+          <Head>
+            <title>inter | blog</title>
+          </Head>
+          <div className="max-w-3xl w-full px-4 py-8">
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="flex items-center justify-between py-4 text-lg w-full"
+            >
+              <div className="flex items-center text-[#E8D4B6] font-semibold text-2xl px-1">
+                Blog
               </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: -5 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="mb-4 relative mt-4"
+            >
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder="Search posts..."
+                  value={searchQuery}
+                  onChange={handleSearchChange}
+                  className="px-10 text-lg rounded-md bg-transparent w-full focus:border-none focus:outline-none"
+                />
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <FaSearch className="text-gray-400" />
+                </div>
+              </div>
+            </motion.div>
+            {filteredPosts.length === 0 && (
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="text-gray-400 text-lg code my-8"
+              >
+                No posts found.
+              </motion.p>
+            )}
+            {sortedPosts.map((post) => (
+              <motion.div
+                key={post.slug}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="relative"
+              >
+                <div className="p-2 md:px-1 px-0">
+                  <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
+                    <Link href={`/blog/${post.slug}`} passHref>
+                      <div className="text-zinc-300 border-b-2 border-gray-500 hover:border-gray-400 duration-300 animate-in fade-in mb-1 md:mb-0 md:mr-2">
+                        {post.frontmatter.title}
+                      </div>
+                    </Link>
+                    <p className="text-gray-400 text-sm">{post.frontmatter.date}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+            <motion.button
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              onClick={() => window.history.back()}
+              className="hover:text-zinc-300 duration-300 flex items-center"
+            >
+            </motion.button>
+            <div className="py-4">
+              <Lanyard showUsername={false} showEmoji={false} showAlbumArt={true} />
             </div>
-          </Link>
-        ))}
-        <button onClick={() => window.history.back()} className="hover:text-zinc-300 duration-300 flex items-center">
-          <div className="bottom-5 left-1/2 transform -translate-x-1/2 text-sm font-regular fixed bg-neutral-800 hover:bg-neutral-950 text-zinc-300 focus:outline-none border border-gray-800 focus:border-red-200 duration-300 px-4 py-2 rounded-md">
-            ← Back
+            <div className="absolute top-10 space-x-4">
+              <Link href="/" className="text-neutral-500 hover:border-b-2 hover:border-neutral-500 selection:bg-[#E8D4B6] selection:text-black">
+                home ↗
+              </Link>
+              <Link href="/projects" className="text-neutral-500 hover:border-b-2 hover:border-neutral-500 selection:bg-[#E8D4B6] selection:text-black">
+                projects ↗
+              </Link>
+              <Link href="/blog" className="text-neutral-500 hover:border-b-2 hover:border-neutral-500 selection:bg-[#E8D4B6] selection:text-black">
+                blog ↗
+              </Link>
+            </div>
           </div>
-        </button>
+        </div>
       </div>
     </div>
   );
