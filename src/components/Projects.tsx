@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import projectsData from '../data/projects.json';
+import Link from 'next/link';
 import { CgDanger } from "react-icons/cg";
+import projectsData from '../data/projects.json';
 
 function Projects() {
   return (
@@ -29,12 +30,12 @@ function Projects() {
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
             <div className="flex items-center">
-              <a
+              <Link
                 href={project.link}
                 className="text-zinc-300 border-b-2 border-gray-500 hover:border-gray-400 duration-300 animate-in fade-in"
               >
                 {project.name}
-              </a>
+              </Link>
               {!project.maintained && (
                 <motion.div
                   className="bg-[#383131] text-red-200 p-1 px-2 ml-2 rounded-md text-xs flex items-center tooltip tooltip-top cursor-help"
