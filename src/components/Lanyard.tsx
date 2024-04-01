@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { toast } from 'sonner';
+import { motion } from 'framer-motion';
 
 function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }) {
-  const [status, setStatus] = useState('Loading...');
+  const [status, setStatus] = useState('✈️ Finding status...');
   const [emoji, setEmoji] = useState('');
   const [spotifySong, setSpotifySong] = useState('');
   const [spotifyArtist, setSpotifyArtist] = useState('');
   const [spotifyAlbum, setSpotifyAlbum] = useState('');
   const [spotifyAlbumArt, setSpotifyAlbumArt] = useState('');
-  const [spotifyTime, setSpotifyTime] = useState('');
 
   useEffect(() => {
     fetch('https://api.lanyard.rest/v1/users/514106760299151372')
@@ -51,7 +50,6 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
           setSpotifyArtist(spotifyActivityData.artist);
           setSpotifyAlbum(spotifyActivityData.album);
           setSpotifyAlbumArt(spotifyActivityData.album_art_url);
-          setSpotifyTime(spotifyActivityData.timestamps.end);
         }
 
         setStatus(updatedStatus);
@@ -69,41 +67,73 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
     return `${duration} minutes`;
   };
 
-  const handleStatusClick = () => {
-    if (status.includes('🎧')) {
-      const endTime = new Date(spotifyTime);
-      const now = new Date();
-      const timeLeft = endTime.getTime() - now.getTime();
-      const minutesLeft = Math.floor(timeLeft / 60000);
-      const secondsLeft = Math.floor((timeLeft % 60000) / 1000);
-      toast.info(`${spotifySong} by ${spotifyArtist}, on ${spotifyAlbum} - ${minutesLeft}min ${secondsLeft}s left`);
-    }
-  };
-
   return (
     <>
       {showUsername && (
-        <span className="text-[#EBD2B6] font-semibold justify-start tracking-tight">Inter</span>
+        <motion.span
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-[#EBD2B6] font-semibold justify-start tracking-tight"
+        >
+          Inter
+        </motion.span>
       )}
       {emoji && showEmoji && (
-        <span style={{ fontSize: '0.3em', verticalAlign: 'middle', paddingLeft: '10px' }}>
+        <motion.span
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          style={{ fontSize: '0.3em', verticalAlign: 'middle', paddingLeft: '10px' }}
+        >
           {emoji}
-        </span>
+        </motion.span>
       )}
       {showAlbumArt && spotifyAlbumArt && (
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <img src={spotifyAlbumArt} className="w-12 h-12 rounded-md focus:outline-none focus:caret-gray-400 border border-gray-800 focus:border-red-200 duration-300" alt="Album Art" style={{ marginRight: '8px' }} />
-          <p className="text-sm tracking-normal text-gray-500 justify-start overflow-elipsis">{status}</p>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          style={{ display: 'flex', alignItems: 'center' }}
+        >
+          <motion.img
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            src={spotifyAlbumArt}
+            className="w-12 h-12 rounded-md focus:outline-none focus:caret-gray-400 border border-gray-800 focus:border-red-200 duration-300"
+            alt="Album Art"
+            style={{ marginRight: '8px' }}
+          />
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            className="text-sm tracking-normal text-gray-500 justify-start overflow-elipsis"
+          >
+            {status}
+          </motion.p>
+        </motion.div>
       )}
       {!showAlbumArt && (
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <p className="text-sm tracking-normal text-gray-500 justify-start overflow-elipsis" onClick={handleStatusClick}>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          style={{ display: 'flex', alignItems: 'center' }}
+        >
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="text-sm tracking-normal text-gray-500 justify-start overflow-elipsis"
+          >
             {status}
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
       )}
     </>
-  )};
+  );
+}
 
 export default Lanyard;
