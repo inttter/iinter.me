@@ -1,7 +1,7 @@
 ---
 title: "My Opinion on Forza Horizon 3"
 date: "March 9, 2024"
-lastUpdated: "01/05/2024 16:23"
+lastUpdated: "01/05/2024 16:31"
 author: "Inter"
 image: "/blog/forza-horizon-3/cover-image.png"
 description: A little blog post about my experience growing up playing Forza Horizon 3, a game released in 2016 by Playground Games.
@@ -19,8 +19,9 @@ And of course, **Forza**, specifically, [Horizon 3](https://en.wikipedia.org/wik
 
 
 <div align="center">
-  <img src="/blog/forza-horizon-3/xbox-one-s.png" width="350">
+  <img src="/blog/forza-horizon-3/xbox-one-s.png" alt="The Xbox One S in my living room">
 </div>
+
 
 This is the main talking point of this blog post. This is mostly a nostalgia trip for me, so don't mind any odd things.
 
@@ -76,7 +77,7 @@ When I first tried to go back to this game, I wanted to do it on PC, because I h
 I did try to do this, but unfortunately, even though I was on the right account, I couldn't:
 
 <div align="center">
-    <img src="/blog/forza-horizon-3/fh3-delisted.png" width="450">
+    <img src="/blog/forza-horizon-3/fh3-delisted.png" alt="Clicking 'Choose Option' would tell me every version was unavailable">
 </div>
 
  I could not download, or even buy the game, because they [delisted it in 2020](https://support.forzamotorsport.net/hc/en-us/articles/360052097274-Forza-Horizon-3-Unavailable-for-Purchase#:~:text=Forza%20Horizon%203%20and%20its,game%20and%20its%20associated%20content.). I went through different rabbit holes to try and get access to the game without paying hundreds of $$$ for a PC key, but I stopped because I wasn't willing to dig deeper and get myself into something shady.
@@ -94,7 +95,7 @@ While the game is delisted, it had a big impact on my personality by sparking an
 Try [Forza Horizon 4](https://store.steampowered.com/app/1293830/Forza_Horizon_4/), but probably not [Forza Horizon 5](https://store.steampowered.com/app/1551360/Forza_Horizon_5/).
 
 <div align="center">
-    <img src="/blog/forza-horizon-3/170gb-fh5.png" width="650">
+    <img src="/blog/forza-horizon-3/170gb-fh5.png" alt="This is over 50% bigger than previous installments.">
 </div>
 
 170 GB just for a Forza installment, which its new content is recycled cars from previous titles, is insane. That's a fifth of my PC. When the game came out, it was only ~80 GB, which is the same as Horizon 4, 6 years after launch.
