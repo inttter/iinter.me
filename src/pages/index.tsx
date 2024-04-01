@@ -17,7 +17,7 @@ export default function Home() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-4xl md:text-5xl tracking-wide text-zinc-100 opacity-90 selection:bg-[#E8D4B6] selection:text-black md:mt-0 mt-10"
+            className="text-4xl md:text-5xl tracking-wide text-zinc-100 opacity-90 selection:bg-[#E8D4B6] selection:text-black md:mt-0 mt-10 max-w-md"
           >
             <Lanyard showAlbumArt={false} />
           </motion.h1>
@@ -37,9 +37,11 @@ export default function Home() {
           <SocialLink href="https://mine.ly/intter" src="socials/namemc.svg" alt="NameMC" tooltipText="@intter" />
           <SocialLink href="https://www.last.fm/user/intter" src="socials/lastfm.svg" alt="Last.fm" tooltipText="@intter" />
         </motion.div>
-        <Projects />
-        <div className="absolute top-2 text-neutral-500 hover:border-b-2 hover:border-neutral-500 selection:bg-[#E8D4B6] selection:text-black">
-          <Link href="/blog">
+        <div className="absolute top-2 space-x-4">
+        <Link href="/projects" className="text-neutral-500 hover:border-b-2 hover:border-neutral-500 selection:bg-[#E8D4B6] selection:text-black">
+            projects ↗
+          </Link>
+          <Link href="/blog" className="text-neutral-500 hover:border-b-2 hover:border-neutral-500 selection:bg-[#E8D4B6] selection:text-black">
             blog ↗
           </Link>
         </div>
