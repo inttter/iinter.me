@@ -75,7 +75,7 @@ More fields are supported. The full list that can be displayed is as follows:
 
 More specific details are also shown for certain fields. For example, the time left on a song, activity/state details, and more:
 
-```
+```bash
 Duvet by bôa on Twilight • 1min 54sec left # time left on a song
 Rainbow Six Siege • STANDARD match - Round 4 / 6 • 11min 52sec # activity/state details
 ```
