@@ -1,7 +1,7 @@
 ---
 title: "Using discid"
 date: "March 11, 2024"
-lastUpdated: "01/04/2024 15:54"
+lastUpdated: "03/04/2024 00:16"
 author: "Inter"
 image: "/blog/using-discid/cover-image.png"
 description: How I use my tool, discid, to find people's statuses on Discord, directly from the command line.
@@ -14,7 +14,7 @@ Lanyard lets you expose your Discord presence and activities to a RESTful API. d
 
 To install discid, run the following in your terminal:
 
-```
+```bash
 npm install -g discid
 ```
 
@@ -22,7 +22,7 @@ This will globally install the package, so you can run it from anywhere on your 
 
 To find someone's user ID, run this code in the terminal, replacing <kbd>userID</kbd> with the ID of the user you want to check the status of:
 
-```
+```bash
 discid <userID>
 ```
 
@@ -42,13 +42,13 @@ discid <userID>
 
 **(3)** Go back to your command line and run <kbd>discid userID</kbd>, replacing <kbd>userID</kbd> with the ID you copied. For example, if you had the user ID ***514106760299151372*** (my user ID!) copied, you would run:
 
-```
+```bash
 discid 514106760299151372
 ```
 
 Depending on what the user's status is, different things may come up. For example, this is what it looks like right now as of me writing this:
 
-```
+```bash
 iinter • 🟢 Online
 Listening To: It Ain't Hard to Tell by Nas on Illmatic • 3min 14sec left
 Playing: Visual Studio Code • 📂 website  • 📝 using-discid.md (51, 4) • 44min 39sec
@@ -88,7 +88,7 @@ There's a few command line options also available:
 
 This option will print the user's information in a JSON response. You can see an example of this with user ID **514106760299151372** below:
 
-```
+```json
 {
   "kv": {
     "email": "hi@iinter.me",
@@ -185,14 +185,14 @@ Lanyard also has [key-value pairs](https://en.wikipedia.org/wiki/Name%E2%80%93va
 
 Here's an example with the KV of ***514106760299151372***:
 
-```
+```json
 {
   "kv": {
     "email": "hi@iinter.me",
     "location": "UK",
     "website": "https://iinter.me"
   },
-  # rest of response...
+  // rest of response...
 }
 ```
 

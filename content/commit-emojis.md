@@ -1,7 +1,7 @@
 ---
 title: "Using Emoji in Commit Messages"
 date: "March 25, 2024"
-lastUpdated: "27/03/24 18:24"
+lastUpdated: "03/04/24 00:17"
 author: "Inter"
 timeToRead: 3
 image: "/blog/commit-emojis/cover-image.png"
@@ -67,7 +67,7 @@ Here is a list of the emojis I most commonly use when committing changes:
 
 Some ways to expand this, for example, is adding this style of commit to your [Dependabot](https://github.com/dependabot) config. I have the [following config](https://github.com/inttter/mdbadges-cli/blob/main/.github/dependabot.yml) set up in mdbadges-cli to update dependencies with these custom prefixes:
 
-```
+```yaml
 version: 2
 updates:
   - package-ecosystem: "npm"

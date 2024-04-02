@@ -1,7 +1,7 @@
 ---
 title: "Creating packages with create-ps"
 date: "March 29, 2024"
-lastUpdated: "29/03/24 16:00"
+lastUpdated: "03/04/24 00:19"
 author: "Inter"
 image: "/blog/creating-packages/cover-image.png"
 description: A guide on a faster way to create NPM packages from the terminal.
@@ -22,7 +22,7 @@ You can view the source code at [inttter/create-ps](https://github.com/inttter/c
 
 ### Installation
 
-```
+```bash
 npm install -g create-ps 
 # Globally install it to run it anywhere.
 ```
@@ -32,7 +32,7 @@ npm install -g create-ps
 * Navigate to the directory you are going to create your package in.
 * Run the following command, replacing <kbd>projectName</kbd> with the name of the package.
 
-```
+```bash
 cps <projectName>
 ```
 
@@ -45,7 +45,7 @@ cps <projectName>
 
 If you run the following command in your terminal, you can edit your <kbd>package.json</kbd> aswell with various fields:
 
-```
+```bash
 cps pkg-config
 ```
 
