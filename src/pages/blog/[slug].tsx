@@ -18,6 +18,8 @@ import { useRouter } from 'next/router';
 import axios from 'axios';
 import { FaCodeCommit, FaGithub } from 'react-icons/fa6';
 import { parseISO, formatDistanceToNow } from 'date-fns';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
 export default function BlogPost({ post }) {
   const router = useRouter();
@@ -53,20 +55,6 @@ export default function BlogPost({ post }) {
   };
 
   const githubURL = `https://github.com/inttter/iinter.me/blob/master/content/${post.slug}.md`;
-
-  const anchorScroll = () => {
-    if (router.asPath.includes('#')) {
-      const anchor = router.asPath.split('#')[1];
-      const element = document.getElementById(anchor);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  };
-
-  type VideoProps = VideoHTMLAttributes<HTMLVideoElement> & {
-    loading?: 'eager' | 'lazy';
-  };
 
   return (
     <div className="bg-neutral-900 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 selection:bg-[#E8D4B6] selection:text-black relative">
@@ -195,8 +183,10 @@ const markdownComponents = {
     });
   
     return (
-      <pre className="block code bg-[#101111] text-zinc-300 text-sm duration-300 p-3 rounded-md font-mono max-w-full overflow-x-auto scrollbar-thin">
-        {codeLines}
+      <pre className="rounded-lg overflow-auto scrollbar-thin">
+        <SyntaxHighlighter language={match ? match[1] : null} style={dracula}>
+          {children}
+        </SyntaxHighlighter>
       </pre>
     );
   },
