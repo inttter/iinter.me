@@ -8,6 +8,7 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
   const [spotifyArtist, setSpotifyArtist] = useState('');
   const [spotifyAlbum, setSpotifyAlbum] = useState('');
   const [spotifyAlbumArt, setSpotifyAlbumArt] = useState('');
+  const [spotifyTrackId, setSpotifyTrackId] = useState('');
 
   useEffect(() => {
     fetch('https://api.lanyard.rest/v1/users/514106760299151372')
@@ -50,6 +51,7 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
           setSpotifyArtist(spotifyActivityData.artist);
           setSpotifyAlbum(spotifyActivityData.album);
           setSpotifyAlbumArt(spotifyActivityData.album_art_url);
+          setSpotifyTrackId(spotifyActivityData.track_id);
         }
 
         setStatus(updatedStatus);
@@ -105,14 +107,28 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
             alt="Album Art"
             style={{ marginRight: '8px' }}
           />
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
-            className="text-sm tracking-normal text-gray-500 justify-start overflow-elipsis"
-          >
-            {status}
-          </motion.p>
+          {spotifyTrackId ? (
+            <motion.a
+              href={`https://open.spotify.com/track/${spotifyTrackId}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              className="text-sm tracking-normal text-gray-500 hover:text-gray-400 duration-300 justify-start overflow-elipsis"
+            >
+              {status}
+            </motion.a>
+          ) : (
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              className="text-sm tracking-normal text-gray-500 justify-start overflow-elipsis"
+            >
+              {status}
+            </motion.p>
+          )}
         </motion.div>
       )}
       {!showAlbumArt && (
@@ -122,14 +138,28 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
           transition={{ duration: 0.5, delay: 0.4 }}
           style={{ display: 'flex', alignItems: 'center' }}
         >
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            className="text-sm tracking-normal text-gray-500 justify-start overflow-elipsis"
-          >
-            {status}
-          </motion.p>
+          {spotifyTrackId ? (
+            <motion.a
+              href={`https://open.spotify.com/track/${spotifyTrackId}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="text-sm tracking-normal text-gray-500 hover:text-gray-400 duration-300 justify-start overflow-elipsis"
+            >
+              {status}
+            </motion.a>
+          ) : (
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="text-sm tracking-normal text-gray-500 justify-start overflow-elipsis"
+            >
+              {status}
+            </motion.p>
+          )}
         </motion.div>
       )}
     </>
