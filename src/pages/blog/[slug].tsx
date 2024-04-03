@@ -25,23 +25,6 @@ export default function BlogPost({ post }) {
   const router = useRouter();
   const [latestCommit, setLatestCommit] = useState(null);
 
-  useEffect(() => {
-    const fetchLatestCommit = async () => {
-      try {
-        const response = await axios.get(
-          `https://api.github.com/repos/inttter/iinter.me/commits?path=src/pages/blog/posts/${post.slug}.md`
-        );
-        if (response.data && response.data.length > 0) {
-          setLatestCommit(response.data[0]);
-        }
-      } catch (error) {
-        console.error('Error fetching latest commit:', error);
-      }
-    };
-
-    fetchLatestCommit();
-  }, [post.slug]);
-
   if (!post) return null;
 
   const parseAndFormatDate = () => {
@@ -118,16 +101,6 @@ export default function BlogPost({ post }) {
         <div className="text-gray-500 duration-300 text-sm mt-2 flex justify-end">
           — Last Updated: {post.frontmatter.lastUpdated}
         </div>
-        {latestCommit && (
-          <div className="text-gray-500 duration-300 text-sm mt-2 flex justify-end code hover:text-zinc-300 hover:underline hover:underline-offset-2 -translate-y-4">
-            <FaCodeCommit className="md:mt-[3px] mt-[1px]" /> 
-            <span className="ml-2">
-              <Link href={latestCommit.html_url} target="_blank" rel="noopener noreferrer">
-                {latestCommit.sha.substr(0, 7)}
-              </Link>
-            </span>
-          </div>
-        )}
       </div>
     </div>
   );
