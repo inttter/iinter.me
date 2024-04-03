@@ -18,7 +18,7 @@ import { useRouter } from 'next/router';
 import { FaGithub } from 'react-icons/fa6';
 import { parseISO, formatDistanceToNow } from 'date-fns';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
 export default function BlogPost({ post }) {
   const router = useRouter();
@@ -133,30 +133,12 @@ export async function getStaticProps({ params }) {
 }
 
 const markdownComponents = {
-  // Code blocks
   code({ node, inline, className, children, ...props }) {
     const match = /language-(\w+)/.exec(className || '');
-    const codeLines = children.trim().split('\n').map((line, index) => {
-      const commentIndex = Math.max(line.indexOf('#'), line.indexOf('//'));
-      const hasComment = commentIndex !== -1;
-      const lineContent = hasComment ? (
-        <span>
-          <span>{line.substring(0, commentIndex)}</span>
-          <span className="text-gray-500">{line.substring(commentIndex)}</span>
-        </span>
-      ) : (
-        line
-      );
-      return (
-        <div key={index} className="code-line">
-          <span>{lineContent}</span>
-        </div>
-      );
-    });
-  
+    
     return (
-      <pre className="rounded-lg overflow-auto scrollbar-thin">
-        <SyntaxHighlighter language={match ? match[1] : null} style={dracula}>
+      <pre className="rounded-lg overflow-auto scrollbar-thin text-sm code">
+        <SyntaxHighlighter language={match ? match[1] : null} style={nightOwl} customStyle={{ background: '#101111', overflowX: 'auto' }}>
           {children}
         </SyntaxHighlighter>
       </pre>
