@@ -1,4 +1,4 @@
-import React, { useEffect, useState, VideoHTMLAttributes } from 'react';
+import React, { useState } from 'react';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -15,8 +15,7 @@ import { motion } from 'framer-motion';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import { useRouter } from 'next/router';
-import axios from 'axios';
-import { FaCodeCommit, FaGithub } from 'react-icons/fa6';
+import { FaGithub } from 'react-icons/fa6';
 import { parseISO, formatDistanceToNow } from 'date-fns';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism';
