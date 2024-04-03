@@ -137,7 +137,7 @@ const markdownComponents = {
     const match = /language-(\w+)/.exec(className || '');
     
     return (
-      <pre className="rounded-lg overflow-auto scrollbar-thin text-sm code">
+      <pre className="rounded-lg overflow-auto scrollbar-thin text-sm code -mt-2">
         <SyntaxHighlighter language={match ? match[1] : null} style={nightOwl} customStyle={{ background: '#101111', overflowX: 'auto' }}>
           {children}
         </SyntaxHighlighter>
