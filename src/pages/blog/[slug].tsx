@@ -177,31 +177,57 @@ const markdownComponents = {
 
   // Headers
   h1({ node, children, ...props }) {
+    const headerId = props.id;
     return (
-      <h1 className="text-3xl font-semibold my-6" {...props}>
-        {children}
+      <h1 className="text-3xl font-semibold my-6 relative" {...props}>
+        <a href={`#${headerId}`} className="no-underline">{children}<span className="text-zinc-700 hover:text-zinc-500 duration-300"> #</span></a>
       </h1>
     );
   },
   h2({ node, children, ...props }) {
-    return <h2 className="text-zinc-100 text-2xl font-semibold my-5" {...props}>{children}</h2>;
+    const headerId = props.id;
+    return (
+      <h2 className="text-zinc-100 text-2xl font-semibold my-5 relative" {...props}>
+        <a href={`#${headerId}`} className="no-underline">{children}<span className="text-zinc-700 hover:text-zinc-500 duration-300"> #</span></a>
+      </h2>
+    );
   },
   h3({ node, children, ...props }) {
-    return <h3 className="text-zinc-100 text-xl font-semibold my-4" {...props}>{children}</h3>;
+    const headerId = props.id;
+    return (
+      <h3 className="text-zinc-100 text-xl font-semibold my-4 relative" {...props}>
+        <a href={`#${headerId}`} className="no-underline">{children}<span className="text-zinc-700 hover:text-zinc-500 duration-300"> #</span></a>
+      </h3>
+    );
   },
   h4({ node, children, ...props }) {
-    return <h4 className="text-zinc-100 text-lg font-semibold my-3" {...props}>{children}</h4>;
+    const headerId = props.id;
+    return (
+      <h4 className="text-zinc-100 text-lg font-semibold my-3 relative" {...props}>
+        <a href={`#${headerId}`} className="no-underline">{children}<span className="text-zinc-700 hover:text-zinc-500 duration-300"> #</span></a>
+      </h4>
+    );
   },
   h5({ node, children, ...props }) {
-    return <h5 className="text-zinc-100 text-base font-semibold my-2" {...props}>{children}</h5>;
+    const headerId = props.id;
+    return (
+      <h5 className="text-zinc-100 text-base font-semibold my-2 relative" {...props}>
+        <a href={`#${headerId}`} className="no-underline">{children}<span className="text-zinc-700 hover:text-zinc-500 duration-300"> #</span></a>
+      </h5>
+    );
   },
   h6({ node, children, ...props }) {
-    return <h6 className="text-zinc-100 text-sm font-semibold my-1" {...props}>{children}</h6>;
+    const headerId = props.id;
+    return (
+      <h6 className="text-zinc-100 text-sm font-semibold my-1 relative" {...props}>
+        <a href={`#${headerId}`} className="no-underline">{children}<span className="text-zinc-700 hover:text-zinc-500 duration-300"> #</span></a>
+      </h6>
+    );
   },
 
   // Lists
   ul({ node, children, ...props }) {
-    return <ul className="list-disc list-inside my-4 " {...props}>{children}</ul>;
+    return <ul className="list-disc list-inside my-4" {...props}>{children}</ul>;
   },
   ol({ node, children, ...props }) {
     return <ol className="list-decimal list-inside my-4" {...props}>{children}</ol>;
