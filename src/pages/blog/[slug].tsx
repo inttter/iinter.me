@@ -19,6 +19,7 @@ import { FaGithub } from 'react-icons/fa6';
 import { parseISO, formatDistanceToNow } from 'date-fns';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import BackToTopButton from '../../components/BackToTop';
 
 export default function BlogPost({ post }) {
   const router = useRouter();
@@ -97,6 +98,7 @@ export default function BlogPost({ post }) {
             {post.content}
           </ReactMarkdown>
         </div>
+        <BackToTopButton />
         <div className="text-gray-500 duration-300 text-sm mt-2 flex justify-end">
           — Last Updated: {post.frontmatter.lastUpdated}
         </div>
