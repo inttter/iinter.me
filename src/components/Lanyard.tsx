@@ -37,16 +37,15 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
         const gameActivity = data.data.activities.find(activity => activity.type === 0);
         const gameName = gameActivity ? gameActivity.name : '';
         const gameStartTime = gameActivity ? gameActivity.timestamps.start : '';
-        const gameDuration = gameActivity ? calculateDuration(gameStartTime) : '';
 
         const spotifyActivityData = data.data.spotify;
 
         let updatedStatus = '';
 
         if (gameActivity) {
-          updatedStatus = `🎮 Playing ${gameName} for ${gameDuration}`;
+          updatedStatus = `Playing ${gameName}`;
         } else if (spotifyActivityData) {
-          updatedStatus = `🎧 Listening to ${spotifyActivityData.song} by ${spotifyActivityData.artist}`;
+          updatedStatus = `Listening to ${spotifyActivityData.song} by ${spotifyActivityData.artist}`;
           setSpotifySong(spotifyActivityData.song);
           setSpotifyArtist(spotifyActivityData.artist);
           setSpotifyAlbum(spotifyActivityData.album);
@@ -61,13 +60,6 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
         setStatus('🤷‍♂️ Couldn\'t find a status');
       });
   }, [showEmoji]);
-
-  const calculateDuration = startTime => {
-    const start = new Date(startTime);
-    const now = new Date();
-    const duration = Math.floor((now.getTime() - start.getTime()) / 60000); // Convert milliseconds to minutes
-    return `${duration} minutes`;
-  };
 
   return (
     <>
