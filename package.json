@@ -11,7 +11,7 @@
     "@fontsource/geist-mono": "^5.0.2",
     "@fontsource/geist-sans": "^5.0.2",
     "@fontsource/jetbrains-mono": "^5.0.19",
-    "@types/react-dom": "^18.2.23",
+    "@types/react-dom": "^18.2.24",
     "@vercel/analytics": "^1.2.2",
     "@vercel/speed-insights": "^1.0.10",
     "axios": "^1.6.8",
