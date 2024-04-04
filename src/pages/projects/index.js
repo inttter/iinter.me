@@ -1,5 +1,6 @@
 import React from 'react';
 import Projects from '../../components/Projects';
+import Navbar from '../../components/Navbar';
 import Link from 'next/link';
 import Head from 'next/head';
 import '@fontsource/geist-sans';
@@ -16,14 +17,7 @@ export default function ProjectsPage() {
         </Head>
           <Projects />
         </div>
-        <div className="absolute top-2 space-x-4">
-          <Link href="/" className="text-neutral-500 hover:border-b-2 hover:border-neutral-500 selection:bg-[#E8D4B6] selection:text-black">
-            home ↗
-          </Link>
-          <Link href="/blog" className="text-neutral-500 hover:border-b-2 hover:border-neutral-500 selection:bg-[#E8D4B6] selection:text-black">
-            blog ↗
-          </Link>
-        </div>
+        <Navbar />
       </div>
     </div>
   );

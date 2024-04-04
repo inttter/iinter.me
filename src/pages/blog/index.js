@@ -9,6 +9,7 @@ import '@fontsource/geist-sans/600.css';
 import '@fontsource/jetbrains-mono';
 import Link from 'next/link';
 import Lanyard from '../../components/Lanyard';
+import Navbar from '../../components/Navbar';
 import { motion } from 'framer-motion'
 import { FaSearch } from 'react-icons/fa';
 
@@ -32,7 +33,7 @@ export default function Blog({ posts }) {
 
   return (
     <div className="bg-neutral-900 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 selection:bg-[#E8D4B6] selection:text-black">
-      <div className="max-w-3xl w-full px-0 py-8 space-y-6 flex-col">
+      <div className="max-w-2xl w-full px-0 py-8 space-y-6 flex-col">
         <div className="flex items-center justify-start">
           <Head>
             <title>inter | blog</title>
@@ -108,17 +109,7 @@ export default function Blog({ posts }) {
             <div className="py-4">
               <Lanyard showUsername={false} showEmoji={false} showAlbumArt={true} />
             </div>
-            <div className="absolute top-10 space-x-4">
-              <Link href="/" className="text-neutral-500 hover:border-b-2 hover:border-neutral-500 selection:bg-[#E8D4B6] selection:text-black">
-                home ↗
-              </Link>
-              <Link href="/projects" className="text-neutral-500 hover:border-b-2 hover:border-neutral-500 selection:bg-[#E8D4B6] selection:text-black">
-                projects ↗
-              </Link>
-              <Link href="/blog" className="text-neutral-500 hover:border-b-2 hover:border-neutral-500 selection:bg-[#E8D4B6] selection:text-black">
-                blog ↗
-              </Link>
-            </div>
+            <Navbar />
           </div>
         </div>
       </div>

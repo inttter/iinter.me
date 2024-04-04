@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import SocialLink from '../components/SocialLink';
 import Lanyard from '../components/Lanyard';
+import Navbar from '../components/Navbar';
 import Link from 'next/link';
 import '@fontsource/geist-sans';
 import '@fontsource/geist-sans/700.css';
@@ -36,14 +37,7 @@ export default function Home() {
           <SocialLink href="https://mine.ly/intter" src="socials/namemc.svg" alt="NameMC" tooltipText="@intter" />
           <SocialLink href="https://www.last.fm/user/intter" src="socials/lastfm.svg" alt="Last.fm" tooltipText="@intter" />
         </motion.div>
-        <div className="absolute top-2 space-x-4">
-          <Link href="/projects" className="text-neutral-500 hover:border-b-2 hover:border-neutral-500 selection:bg-[#E8D4B6] selection:text-black">
-            projects ↗
-          </Link>
-          <Link href="/blog" className="text-neutral-500 hover:border-b-2 hover:border-neutral-500 selection:bg-[#E8D4B6] selection:text-black">
-            blog ↗
-          </Link>
-        </div>
+        <Navbar />
       </div>
     </div>
   );
