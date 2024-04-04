@@ -16,6 +16,7 @@ export default function ProjectsPage() {
           <title>inter | projects</title>
         </Head>
           <Projects />
+          <div className="fixed hidden md:block bottom-4 right-4 text-gray-500 text-xs">All projects are licensed under the MIT License.</div>
         </div>
         <Navbar />
       </div>
