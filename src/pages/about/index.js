@@ -17,7 +17,7 @@ export default function Home() {
             <title>inter | about</title>
           </Head>
           <Navbar />
-          <p>I have a thing for racing (games), computers, and cats. I'm also from the UK.</p>
+          <p>I like racing (games), computers, and cats. I'm also from the UK.</p>
         </div>
 
         <p>
@@ -29,37 +29,6 @@ export default function Home() {
           <Link href="/blog" className="text-white border-b-2 border-gray-500 hover:border-gray-400 duration-300 animate-in fade-in mx-1">
             here.
           </Link>
-        </p>
-
-        <p>
-          Currently, I'm playing a variety of games, such as Roblox, most particularly, Deepwoken, and F1 23.
-        </p> 
-
-        <div className="grid grid-cols-3 gap-4">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="rounded-lg overflow-hidden"
-          >
-            <img src="/about/f123-1.png" alt="Image 1" className="w-full" />
-          </motion.div>
-
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="rounded-lg overflow-hidden"
-          >
-            <img src="/about/f123-2.png" alt="Image 2" className="w-full" />
-          </motion.div>
-
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="rounded-lg overflow-hidden"
-          >
-            <img src="/about/f123-3.png" alt="Image 3" className="w-full" />
-          </motion.div>
-        </div>
-
-        <p className="col-span-3 text-gray-500">
-          Fun Fact: I play F1 23 with a wheel. That's how these screenshots happened.
         </p>
 
         <p>
@@ -77,31 +46,7 @@ export default function Home() {
 
         <p className="col-span-3">
           When I'm not listening to music, I'm <em className="mr-0.5">probably</em> playing something. I have ~70 games on Steam, and some more misc ones that are on other platforms.
-          Most recently, I've been playing a multiplayer survival world on Minecraft. I did use to PVP a lot, but I have slowed down in recent months.
         </p>
-
-        <div className="grid grid-cols-3 gap-4">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="rounded-lg overflow-hidden"
-          >
-            <img src="/about/mc-1.png" alt="Image 1" className="w-full" />
-          </motion.div>
-
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="rounded-lg overflow-hidden"
-          >
-            <img src="/about/mc-2.png" alt="Image 1" className="w-full" />
-          </motion.div>
-
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="rounded-lg overflow-hidden"
-          >
-            <img src="/about/mc-3.png" alt="Image 1" className="w-full" />
-          </motion.div>
-        </div>
 
         <p className="col-span-3">
           If you want to find me on my socials, go
