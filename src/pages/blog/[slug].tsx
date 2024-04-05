@@ -37,7 +37,7 @@ export default function BlogPost({ post }) {
     }
   };
 
-  const githubURL = `https://github.com/inttter/iinter.me/blob/master/content/${post.slug}.md`;
+  const githubURL = `https://github.com/inttter/iinter.me/blob/master/content/${post.slug}.md?plain=1`;
 
   return (
     <div className="bg-neutral-900 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 selection:bg-[#E8D4B6] selection:text-black relative">
@@ -58,14 +58,14 @@ export default function BlogPost({ post }) {
             >
               {'←'}
             </button>
-            <span className="ml-2 text-gray-500 flex items-center">
-              inter's blog
-              <Link href={githubURL} className="ml-2 text-neutral-700 hover:text-zinc-300 duration-300 tooltip tooltip-bottom bg-transparent" target="_blank" rel="noopener noreferrer" data-theme="lofi" data-tip="View file on GitHub">
+            <span className="ml-2 text-neutral-600 flex items-center">
+                {post.frontmatter.date}
+              <Link href={githubURL} className="ml-2 text-neutral-700 hover:text-zinc-300 duration-300 tooltip tooltip-bottom bg-transparent" target="_blank" rel="noopener noreferrer" data-theme="lofi" data-tip="View raw Markdown on GitHub">
                 <FaGithub size={20} />
-              </Link> 
+              </Link>
             </span>
           </div> 
-          <span className="ml-2 text-gray-500 flex items-center space-x-4 absolute right-1 -top-5 md:-top-8 w-full">
+          <span className="ml-2 text-gray-500 flex items-center space-x-4 absolute right-1 -top-5 md:-top-7 w-full">
               <div className="absolute top-0 right-0 flex space-x-4">
                 <Link href="/" className="text-neutral-500 hover:border-b-2 hover:border-neutral-500 selection:bg-[#E8D4B6] selection:text-black">
                   home ↗
@@ -77,23 +77,12 @@ export default function BlogPost({ post }) {
             </span>
         </div>
         <div className="flex flex-col items-start justify-center">
-          <div className="text-3xl text-[#E8D4B6] font-semibold tracking-tighter">{post.frontmatter.title}</div>
-          <p className="text-zinc-500 mt-1 text-sm">
-            <span>{post.frontmatter.date} ({parseAndFormatDate()})</span>
+          <div className="text-2xl text-zinc-200 font-semibold tracking-tight">{post.frontmatter.title}</div>
+          <p className="text-zinc-500 text-md max-w-2xl overflow-auto">
+            <span>{post.frontmatter.description}</span>
           </p>
         </div>
-        <motion.img
-          src={post.frontmatter.image}
-          alt="Blog Post Image"
-          className="rounded-lg mb-4 mx-auto shadow-2xl"
-          width={700}
-          height={700}
-          loading="lazy"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        />
-        <div className="text-zinc-300">
+        <div className="text-neutral-300 leading-7">
           <ReactMarkdown components={markdownComponents} remarkPlugins={[gfm]} rehypePlugins={[rehypeRaw, rehypeAutolinkHeadings, rehypeSlug]}>
             {post.content}
           </ReactMarkdown>
