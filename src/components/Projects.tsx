@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { CgDanger } from "react-icons/cg";
+import { FaGithub } from "react-icons/fa";
 import projectsData from '../data/projects.json';
 
 function Projects() {
@@ -36,6 +37,18 @@ function Projects() {
               >
                 {project.name}
               </Link>
+              {project.github && (
+                <Link
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-neutral-600 hover:text-neutral-400 duration-300 ml-2 tooltip tooltip-bottom bg-transparent"
+                  data-tip="View on GitHub"
+                  data-theme="lofi"
+                >
+                  <FaGithub />
+                </Link>
+              )}
               {!project.maintained && (
                 <motion.div
                   className="bg-[#383131] text-red-200 p-1 px-2 ml-2 rounded-md text-xs flex items-center tooltip tooltip-top cursor-help"
