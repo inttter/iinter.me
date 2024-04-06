@@ -7,7 +7,7 @@
     },
     {
       "name": "mdbadges-cli",
-      "description": "An extensive CLI tool to find over 400+ Shields.io badges for your projects.",
+      "description": "Extensive command-line tool to find 400+ Shields.io badges for your projects.",
       "link": "https://mdbcli.xyz",
       "maintained": true
     },
