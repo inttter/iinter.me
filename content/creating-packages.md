@@ -3,7 +3,6 @@ title: "Creating packages with create-ps"
 date: "March 29, 2024"
 lastUpdated: "03/04/24 00:19"
 author: "Inter"
-image: "/blog/creating-packages/cover-image.png"
 description: A guide on a faster way to create NPM packages from the terminal.
 slug: creating-packages
 ---

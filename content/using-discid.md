@@ -3,7 +3,6 @@ title: "Using discid"
 date: "March 11, 2024"
 lastUpdated: "03/04/2024 00:16"
 author: "Inter"
-image: "/blog/using-discid/cover-image.png"
 description: How I use my tool, discid, to find people's statuses on Discord, directly from the command line.
 slug: using-discid
 ---

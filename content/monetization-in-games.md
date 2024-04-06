@@ -3,7 +3,6 @@ title: "Monetization in Games"
 date: "April 3, 2024"
 lastUpdated: "03/04/24 00:00"
 author: "Inter"
-image: "/blog/monetization-in-games/cover-image.png"
 description: Thoughts on ways of monetizing in games, and how they are good and bad.
 slug: monetization-in-games
 ---
