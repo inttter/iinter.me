@@ -40,9 +40,13 @@ export default function BlogPost({ post }) {
   const githubURL = `https://github.com/inttter/iinter.me/blob/master/content/${post.slug}.md?plain=1`;
 
   return (
-    <div className="bg-neutral-900 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 selection:bg-[#E8D4B6] selection:text-black relative">
-      <div className="fixed inset-x-0 top-0 h-8 transparent backdrop-blur-[3px] pointer-events-none"></div>
-      <div className="fixed inset-x-0 bottom-0 h-8 transparent backdrop-blur-[3px] pointer-events-none"></div>
+    <motion.div
+      className="bg-neutral-900 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <Head>
         <title>{post.frontmatter.title}</title>
         <meta property="og:image" content={post.frontmatter.image} />
@@ -50,49 +54,78 @@ export default function BlogPost({ post }) {
       <div className="max-w-2xl w-full md:px-1 px-2 py-8 space-y-6">
         <div className="relative">
           <div className="flex items-center absolute md:-top-8 -top-5">
-            <button
+            <motion.button
               className="text-zinc-400 bg-transparent px-1 rounded-md shadow-md transition duration-300 transform hover:-translate-x-0.5 active:-translate-x-1 tooltip tooltip-bottom"
               onClick={() => window.history.back()}
               data-tip="Back"
               data-theme="lofi"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
             >
               {'←'}
-            </button>
+            </motion.button>
             <span className="ml-2 text-neutral-600 flex items-center">
-                {post.frontmatter.date}
+              {post.frontmatter.date}
               <Link href={githubURL} className="ml-2 text-neutral-700 hover:text-zinc-300 duration-300 tooltip tooltip-bottom bg-transparent" target="_blank" rel="noopener noreferrer" data-theme="lofi" data-tip="View raw Markdown on GitHub">
                 <FaGithub size={20} />
               </Link>
             </span>
           </div> 
           <span className="ml-2 text-gray-500 flex items-center space-x-4 absolute right-1 -top-5 md:-top-7 w-full">
-              <div className="absolute top-0 right-0 flex space-x-4">
-                <Link href="/" className="text-neutral-500 hover:border-b-2 hover:border-neutral-500 selection:bg-[#E8D4B6] selection:text-black">
-                  home ↗
-                </Link>
-                <Link href="/projects" className="text-neutral-500 hover:border-b-2 hover:border-neutral-500 selection:bg-[#E8D4B6] selection:text-black">
-                  projects ↗
-                </Link>
-              </div>
-            </span>
+            <div className="absolute top-0 right-0 flex space-x-4">
+              <Link href="/" className="text-neutral-500 hover:border-b-2 hover:border-neutral-500 selection:bg-[#E8D4B6] selection:text-black">
+                home ↗
+              </Link>
+              <Link href="/projects" className="text-neutral-500 hover:border-b-2 hover:border-neutral-500 selection:bg-[#E8D4B6] selection:text-black">
+                projects ↗
+              </Link>
+            </div>
+          </span>
         </div>
-        <div className="flex flex-col items-start justify-center">
-          <div className="text-2xl text-zinc-200 font-semibold tracking-tight">{post.frontmatter.title}</div>
-          <p className="text-zinc-500 text-md max-w-2xl overflow-auto">
+        <motion.div
+          className="flex flex-col items-start justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <motion.div
+            className="text-2xl text-zinc-200 font-semibold tracking-tight"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+          >
+            {post.frontmatter.title}
+          </motion.div>
+          <motion.p
+            className="text-zinc-500 text-md max-w-2xl overflow-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+          >
             <span>{post.frontmatter.description}</span>
-          </p>
-        </div>
-        <div className="text-neutral-300 leading-7">
+          </motion.p>
+        </motion.div>
+        <motion.div
+          className="text-neutral-300 leading-7"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.5 }}
+        >
           <ReactMarkdown components={markdownComponents} remarkPlugins={[gfm]} rehypePlugins={[rehypeRaw, rehypeAutolinkHeadings, rehypeSlug]}>
             {post.content}
           </ReactMarkdown>
-        </div>
+        </motion.div>
         <BackToTopButton />
-        <div className="text-gray-500 duration-300 text-sm mt-2 flex justify-end">
+        <motion.div
+          className="text-gray-500 duration-300 text-sm mt-2 flex justify-end"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8, duration: 0.5 }}
+        >
           — Last Updated: {post.frontmatter.lastUpdated}
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
