@@ -49,6 +49,8 @@ class MyDocument extends Document {
           <meta property="og:url" content="iinter.me" />
           <meta property="og:type" content="website" />
           <meta name="theme-color" content="#161617" />
+          <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
+          <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
         </Head>
         <body>
           <Main />
