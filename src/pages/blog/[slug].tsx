@@ -105,6 +105,16 @@ export default function BlogPost({ post }) {
             <span>{post.frontmatter.description}</span>
           </motion.p>
         </motion.div>
+        {post.frontmatter.draft && (
+          <div className="text-zinc-300 text-md bg-sky-500 bg-opacity-40 py-2 pl-4 rounded-md">
+            🚧 This post is a draft.
+            If you see this,
+            <strong className="underline underline-offset-2 mr-1 ml-1">
+              don't
+            </strong> 
+            share the post yet!
+          </div>
+        )}
         <motion.div
           className="text-neutral-300 leading-7"
           initial={{ opacity: 0 }}
