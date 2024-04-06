@@ -9,6 +9,11 @@ import '@fontsource/geist-sans/700.css';
 import '@fontsource/geist-sans/600.css';
 
 export default function Home() {
+  const currentDate = new Date();
+
+  // Check if it's the 25th of July
+  const isBirthday = currentDate.getDate() === 25 && currentDate.getMonth() === 6;
+
   return (
     <div className="bg-neutral-900 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8">
       <div className="max-w-2xl w-full px-4 py-8 space-y-6 flex-col">
@@ -38,6 +43,16 @@ export default function Home() {
           <SocialLink href="https://www.last.fm/user/intter" src="socials/lastfm.svg" alt="Last.fm" tooltipText="@intter" />
         </motion.div>
         <Navbar />
+        {isBirthday && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+            className="absolute top-9 right-7 md:right-1/3 text-zinc-400 bg-transparent text-lg font-semibold"
+          >
+           🎂
+          </motion.div>
+        )}
       </div>
     </div>
   );
