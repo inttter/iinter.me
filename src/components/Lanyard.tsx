@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
-function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }) {
+function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true, showAvatar = true }) {
   const [status, setStatus] = useState('✈️ Finding status...');
   const [emoji, setEmoji] = useState('');
   const [spotifySong, setSpotifySong] = useState('');
@@ -9,6 +9,7 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
   const [spotifyAlbum, setSpotifyAlbum] = useState('');
   const [spotifyAlbumArt, setSpotifyAlbumArt] = useState('');
   const [spotifyTrackId, setSpotifyTrackId] = useState('');
+  const [avatarUrl, setAvatarUrl] = useState('');
 
   useEffect(() => {
     fetch('https://api.lanyard.rest/v1/users/514106760299151372')
@@ -54,6 +55,10 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
         }
 
         setStatus(updatedStatus);
+
+        if (showAvatar) {
+          setAvatarUrl(`https://cdn.discordapp.com/avatars/${data.data.discord_user.id}/${data.data.discord_user.avatar}.png`);
+        }
       })
       .catch(error => {
         console.error('Error fetching Discord status:', error);
@@ -62,99 +67,111 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
   }, [showEmoji]);
 
   return (
-    <>
-      {showUsername && (
-        <motion.span
+    <div className="flex items-center">
+      {showAvatar && (
+        <motion.img
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="text-[#EBD2B6] font-semibold justify-start tracking-tight"
-        >
-          Inter
-        </motion.span>
+          src={avatarUrl}
+          alt="Avatar"
+          className="w-12 h-12 rounded-md mr-2"
+        />
       )}
-      {emoji && showEmoji && (
-        <motion.span
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          style={{ fontSize: '0.3em', verticalAlign: 'middle', paddingLeft: '10px' }}
-        >
-          {emoji}
-        </motion.span>
-      )}
-      {showAlbumArt && spotifyAlbumArt && (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          style={{ display: 'flex', alignItems: 'center' }}
-        >
-          <motion.img
+      <div>
+        {showUsername && (
+          <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            src={spotifyAlbumArt}
-            className="w-12 h-12 rounded-md focus:outline-none focus:caret-gray-400 border border-gray-800 focus:border-red-200 duration-300"
-            alt="Album Art"
-            style={{ marginRight: '8px' }}
-          />
-          {spotifyTrackId ? (
-            <motion.a
-              href={`https://open.spotify.com/track/${spotifyTrackId}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-              className="text-sm tracking-normal text-gray-500 hover:text-gray-400 duration-300 justify-start overflow-elipsis"
-            >
-              {status}
-            </motion.a>
-          ) : (
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-              className="text-sm tracking-normal text-gray-500 justify-start overflow-elipsis"
-            >
-              {status}
-            </motion.p>
-          )}
-        </motion.div>
-      )}
-      {!showAlbumArt && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          style={{ display: 'flex', alignItems: 'center' }}
-        >
-          {spotifyTrackId ? (
-            <motion.a
-              href={`https://open.spotify.com/track/${spotifyTrackId}`}
-              target="_blank"
-              rel="noopener noreferrer"
+            transition={{ duration: 0.5 }}
+            className="text-[#EBD2B6] font-semibold justify-start tracking-tight"
+          >
+            Inter
+          </motion.span>
+        )}
+        {emoji && showEmoji && (
+          <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            style={{ fontSize: '0.3em', verticalAlign: 'middle', paddingLeft: '10px' }}
+          >
+            {emoji}
+          </motion.span>
+        )}
+        {showAlbumArt && spotifyAlbumArt && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            style={{ display: 'flex', alignItems: 'center' }}
+          >
+            <motion.img
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.6 }}
-              className="text-sm tracking-normal text-gray-500 hover:text-gray-400 duration-300 justify-start overflow-elipsis"
-            >
-              {status}
-            </motion.a>
-          ) : (
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              className="text-sm tracking-normal text-gray-500 justify-start overflow-elipsis"
-            >
-              {status}
-            </motion.p>
-          )}
-        </motion.div>
-      )}
-    </>
+              src={spotifyAlbumArt}
+              className="w-12 h-12 rounded-md focus:outline-none focus:caret-gray-400 border border-gray-800 focus:border-red-200 duration-300"
+              alt="Album Art"
+              style={{ marginRight: '8px' }}
+            />
+            {spotifyTrackId ? (
+              <motion.a
+                href={`https://open.spotify.com/track/${spotifyTrackId}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                className="text-sm tracking-normal text-gray-500 hover:text-gray-400 duration-300 justify-start overflow-elipsis"
+              >
+                {status}
+              </motion.a>
+            ) : (
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+                className="text-sm tracking-normal text-gray-500 justify-start overflow-elipsis"
+              >
+                {status}
+              </motion.p>
+            )}
+          </motion.div>
+        )}
+        {!showAlbumArt && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}
+          >
+            {spotifyTrackId ? (
+              <motion.a
+                href={`https://open.spotify.com/track/${spotifyTrackId}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                className="text-sm tracking-normal text-gray-500 hover:text-gray-400 duration-300 justify-start overflow-elipsis"
+              >
+                {status}
+              </motion.a>
+            ) : (
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.6 }}
+                className="text-sm tracking-normal text-gray-500 justify-start overflow-elipsis"
+              >
+                {status}
+              </motion.p>
+            )}
+          </motion.div>
+        )}
+      </div>
+    </div>
   );
 }
 

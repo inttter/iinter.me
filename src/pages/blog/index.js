@@ -107,7 +107,7 @@ export default function Blog({ posts }) {
             >
             </motion.button>
             <div className="py-4">
-              <Lanyard showUsername={false} showEmoji={false} showAlbumArt={true} />
+              <Lanyard showUsername={false} showEmoji={false} showAlbumArt={true} showAvatar={false} />
             </div>
             <Navbar />
           </div>
