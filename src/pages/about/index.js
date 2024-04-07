@@ -10,13 +10,7 @@ import '@fontsource/geist-sans/600.css';
 
 export default function Home() {
   return (
-    <motion.div 
-      className="bg-neutral-900 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 selection:bg-[#E8D4B6] selection:text-black"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-    >
+    <div className="bg-neutral-900 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 selection:bg-[#E8D4B6] selection:text-black">
       <Head>
         <title>inter | about</title>
       </Head>
@@ -67,6 +61,6 @@ export default function Home() {
           </p>
         </motion.div>
       </div>
-    </motion.div>
+    </div>
   );
 }
