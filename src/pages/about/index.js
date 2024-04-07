@@ -17,7 +17,7 @@ export default function Home() {
       <div className="max-w-2xl w-full px-4 space-y-8 flex-col">
         <Navbar />
         <motion.div 
-          className="w-full space-y-4"
+          className="w-full space-y-4 text-zinc-300"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
