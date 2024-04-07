@@ -73,9 +73,9 @@ export default function Blog({ posts }) {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
-                className="text-gray-400 text-lg code my-8"
+                className="text-zinc-300 text-md bg-red-500 bg-opacity-40 py-2 pl-4 rounded-md my-8"
               >
-                No posts found.
+                Couldn't find a post with that name. :(
               </motion.p>
             )}
             {sortedPosts.map((post) => (
