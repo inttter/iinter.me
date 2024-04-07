@@ -45,7 +45,7 @@ export default function Blog({ posts }) {
               transition={{ duration: 0.5 }}
               className="flex items-center justify-between py-4 text-lg w-full"
             >
-              <div className="flex items-center text-[#E8D4B6] font-semibold text-2xl px-1">
+              <div className="flex items-center text-zinc-100 font-semibold text-3xl px-1">
                 Blog
               </div>
             </motion.div>

@@ -44,9 +44,9 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }:
         let updatedStatus = '';
 
         if (gameActivity) {
-          updatedStatus = `🎮 Playing ${gameName} for ${gameDuration}`;
+          updatedStatus = `Playing ${gameName} for ${gameDuration}`;
         } else if (spotifyActivityData) {
-          updatedStatus = `🎧 Listening to ${spotifyActivityData.song} by ${spotifyActivityData.artist}`;
+          updatedStatus = `Listening to ${spotifyActivityData.song} by ${spotifyActivityData.artist}`;
           setSpotifySong(spotifyActivityData.song);
           setSpotifyArtist(spotifyActivityData.artist);
           setSpotifyAlbum(spotifyActivityData.album);
@@ -76,7 +76,7 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }:
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="text-[#EBD2B6] font-semibold justify-start tracking-tight"
+          className="font-semibold text-zinc-100 justify-start tracking-tight grayscale"
         >
           Inter
         </motion.span>
