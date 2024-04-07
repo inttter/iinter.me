@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
-function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }) {
+function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }: { showUsername?: boolean, showEmoji?: boolean, showAlbumArt?: boolean }) {
   const [status, setStatus] = useState('✈️ Finding status...');
   const [emoji, setEmoji] = useState('');
   const [spotifySong, setSpotifySong] = useState('');
@@ -62,7 +62,7 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
       });
   }, [showEmoji]);
 
-  const calculateDuration = startTime => {
+  const calculateDuration = (startTime: string) => {
     const start = new Date(startTime);
     const now = new Date();
     const duration = Math.floor((now.getTime() - start.getTime()) / 60000); // Convert milliseconds to minutes

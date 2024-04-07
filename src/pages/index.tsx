@@ -23,7 +23,7 @@ export default function Home() {
             transition={{ duration: 0.8, ease: "easeOut" }} 
             className="text-4xl md:text-5xl tracking-wide text-zinc-100 opacity-90 selection:bg-[#E8D4B6] selection:text-black md:mt-0 mt-10 max-w-md"
           >
-            <Lanyard showAlbumArt={false} showAvatar={true} />
+            <Lanyard showAlbumArt={false} />
           </motion.h1>
         </div>
         <motion.div

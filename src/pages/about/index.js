@@ -52,7 +52,7 @@ export default function Home() {
             And if I'm listening to something at this time, you'll see it below.
           </p>
 
-          <Lanyard showUsername={false} showEmoji={false} showAlbumArt={true} showAvatar={false} />
+          <Lanyard showUsername={false} showEmoji={false} showAlbumArt={true} />
 
           <p className="col-span-3">
             When I'm not listening to music, I'm <em className="mr-0.5">probably</em> playing something. I have ~70 games on Steam, and some more misc ones that are on other platforms.
