@@ -86,10 +86,10 @@ export default function Blog({ posts }) {
                 transition={{ duration: 0.5 }}
                 className="relative"
               >
-                <div className="p-2 md:px-1 px-0">
-                  <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
+                <div className="p-0.5 md:px-1 px-0">
+                  <div className="flex flex-col md:flex-row items-start md:items-center justify-between hover:bg-neutral-700 hover:bg-opacity-30 p-[7px] duration-300 rounded-md">
                     <Link href={`/blog/${post.slug}`} passHref>
-                      <div className="text-zinc-300 border-b-2 border-gray-500 hover:border-gray-400 duration-300 animate-in fade-in mb-1 md:mb-0 md:mr-2">
+                      <div className="text-zinc-300 border-b-2 border-gray-500 hover:border-gray-400duration-300 animate-in fade-in mb-1 md:mb-0 md:mr-2">
                         {post.frontmatter.title}
                       </div>
                     </Link>
