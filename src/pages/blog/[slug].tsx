@@ -184,10 +184,23 @@ const markdownComponents = {
     return <br className="my-4" />;
   },
 
-  img({ node, alt, ...props }) {
+  img({ node, alt, src, ...props }) {
+    const placeholderSrc = '/not-found.png';
+  
+    const handleImageError = (event) => {
+      event.target.src = placeholderSrc;
+    };
+  
     return (
       <div className="relative">
-        <img className="rounded-lg" loading="lazy" alt={alt} {...props} />
+        <img className="rounded-lg" loading="lazy" alt={alt} src={src} onError={handleImageError} {...props} />
+        {alt && <p className="text-sm text-gray-500 mt-2">{alt}</p>}
+      </div>
+    );
+  
+    return (
+      <div className="relative">
+        <img className="rounded-lg" loading="lazy" alt={alt} src={src} onError={handleImageError} {...props} />
         {alt && <p className="text-sm text-gray-500 mt-2">{alt}</p>}
       </div>
     );
