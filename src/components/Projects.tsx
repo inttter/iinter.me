@@ -33,6 +33,8 @@ function Projects() {
             <div className="flex items-center">
               <Link
                 href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-zinc-300 border-b-2 border-gray-500 hover:border-gray-400 duration-300 animate-in fade-in"
               >
                 {project.name}

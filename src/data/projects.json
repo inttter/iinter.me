@@ -32,7 +32,7 @@
       "description": "A simple text editor to write down what's on your mind.",
       "link": "https://notetxt.iinter.me",
       "github": "https://github.com/inttter/notetxt",
-      "maintained": "true"
+      "maintained": true
     },
     {
       "name": "iinter.me",
