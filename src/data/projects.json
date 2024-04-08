@@ -28,6 +28,13 @@
       "maintained": true
     },
     {
+      "name": "notetxt",
+      "description": "A simple text editor to write down what's on your mind.",
+      "link": "https://notetxt.iinter.me",
+      "github": "https://github.com/inttter/notetxt",
+      "maintained": "true"
+    },
+    {
       "name": "iinter.me",
       "description": "My personal website built with Next.js, TypeScript, Lanyard and Tailwind.",
       "link": "https://iinter.me",
