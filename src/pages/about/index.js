@@ -26,11 +26,11 @@ export default function Home() {
 
           <p>
             You can check out my projects
-            <Link href="/projects" className="text-white border-b-2 border-gray-500 hover:border-gray-400 duration-300 animate-in fade-in mx-1">
+            <Link href="/projects" className="border-b-2 border-gray-500 hover:border-gray-400 hover:text-zinc-200 duration-300 animate-in fade-in mx-1">
               here
             </Link>
             or you can see what I'm thinking about 
-            <Link href="/blog" className="text-white border-b-2 border-gray-500 hover:border-gray-400 duration-300 animate-in fade-in mx-1">
+            <Link href="/blog" className="border-b-2 border-gray-500 hover:border-gray-400 hover:text-zinc-200 duration-300 animate-in fade-in mx-1">
               here.
             </Link>
           </p>
@@ -54,7 +54,7 @@ export default function Home() {
 
           <p className="col-span-3">
             If you want to find me on my socials, go
-            <Link href="/" className="text-white border-b-2 border-gray-500 hover:border-gray-400 duration-300 animate-in fade-in mx-1">
+            <Link href="/" className="border-b-2 border-gray-500 hover:border-gray-400 hover:text-zinc-200 duration-300 animate-in fade-in mx-1">
               here,
             </Link>
             otherwise, thanks for reading.

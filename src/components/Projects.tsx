@@ -35,7 +35,7 @@ function Projects() {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-zinc-300 border-b-2 border-gray-500 hover:border-gray-400 duration-300 animate-in fade-in"
+                className="text-zinc-300 border-b-2 border-gray-500 hover:border-gray-400 hover:text-zinc-100 duration-300 animate-in fade-in"
               >
                 {project.name}
               </Link>

@@ -197,13 +197,6 @@ const markdownComponents = {
         {alt && <p className="text-sm text-gray-500 mt-2">{alt}</p>}
       </div>
     );
-  
-    return (
-      <div className="relative">
-        <img className="rounded-lg" loading="lazy" alt={alt} src={src} onError={handleImageError} {...props} />
-        {alt && <p className="text-sm text-gray-500 mt-2">{alt}</p>}
-      </div>
-    );
   },
 
   // Video
@@ -305,7 +298,7 @@ const markdownComponents = {
 
   // Links
   a({ node, children, ...props }) {
-    return <a className="text-white border-b-2 border-gray-500 hover:border-gray-400 duration-300 animate-in fade-in" target="_blank" rel="noopener noreferrer" {...props}>{children}</a>;
+    return <a className="border-b-2 border-gray-500 hover:border-gray-400 hover:text-zinc-200 duration-300 animate-in fade-in" target="_blank" rel="noopener noreferrer" {...props}>{children}</a>;
   },
 
   // Keyboard input
