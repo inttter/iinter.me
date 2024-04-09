@@ -172,7 +172,7 @@ const markdownComponents = {
     
     return (
       <pre className="rounded-lg overflow-auto scrollbar-thin text-sm code -mt-2">
-        <SyntaxHighlighter language={match ? match[1] : null} style={nightOwl} customStyle={{ background: '#101111', overflowX: 'auto' }}>
+        <SyntaxHighlighter language={match ? match[1] : null} style={nightOwl} customStyle={{ background: '#0B0B09', overflowX: 'auto', borderRadius: '0.5rem' }}>
           {children}
         </SyntaxHighlighter>
       </pre>
