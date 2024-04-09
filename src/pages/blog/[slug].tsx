@@ -54,16 +54,14 @@ export default function BlogPost({ post }) {
       <div className="max-w-2xl w-full md:px-1 px-2 py-8 space-y-6">
         <div className="relative">
           <div className="flex items-center absolute md:-top-8 -top-5">
-            <motion.button
+            <button
               className="text-zinc-400 bg-transparent px-1 rounded-md shadow-md transition duration-300 transform hover:-translate-x-0.5 active:-translate-x-1 tooltip tooltip-bottom"
               onClick={() => window.history.back()}
               data-tip="Back"
               data-theme="lofi"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
             >
               {'←'}
-            </motion.button>
+            </button>
             <span className="ml-2 text-neutral-600 flex items-center">
               {post.frontmatter.date}
               <Link href={githubURL} className="ml-2 text-neutral-700 hover:text-zinc-300 duration-300 tooltip tooltip-bottom bg-transparent" target="_blank" rel="noopener noreferrer" data-theme="lofi" data-tip="View raw Markdown on GitHub">
