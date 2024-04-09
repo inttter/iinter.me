@@ -167,11 +167,12 @@ export async function getStaticProps({ params }) {
 }
 
 const markdownComponents = {
+  // Code
   code({ node, inline, className, children, ...props }) {
     const match = /language-(\w+)/.exec(className || '');
     
     return (
-      <pre className="rounded-lg overflow-auto scrollbar-thin text-sm code -mt-2">
+      <pre className="rounded-lg overflow-auto scrollbar-thin text-sm -mt-2">
         <SyntaxHighlighter language={match ? match[1] : null} style={nightOwl} customStyle={{ background: '#0B0B09', overflowX: 'auto', borderRadius: '0.5rem' }}>
           {children}
         </SyntaxHighlighter>
@@ -184,6 +185,7 @@ const markdownComponents = {
     return <br className="my-4" />;
   },
 
+  // Image
   img({ node, alt, src, ...props }) {
     const placeholderSrc = '/not-found.png';
   
@@ -303,7 +305,7 @@ const markdownComponents = {
 
   // Keyboard input
   kbd({ node, children, ...props }) {
-    return <kbd className="inline-block bg-neutral-800 text-zinc-300 px-1 py-0.5 rounded-md m-0.5" {...props}>{children}</kbd>;
+    return <kbd className="inline-block bg-neutral-800 text-zinc-300 px-1 p-[0.1px] rounded-md m-0.5 code" {...props}>{children}</kbd>;
   },
 
   // Horizontal Rule
