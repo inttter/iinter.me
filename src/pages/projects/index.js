@@ -15,7 +15,9 @@ export default function ProjectsPage() {
         <Head>
           <title>inter | projects</title>
         </Head>
-          <Projects />
+        <div className="md:-py-0 py-20">
+        <Projects />
+        </div>
           <div className="fixed hidden md:block bottom-4 right-4 text-gray-500 text-xs">All projects are licensed under the 
           <Link href="https://inter.mit-license.org/" className="ml-1 border-b-2 border-neutral-700 hover:border-neutral-600 duration-300 animate-in fade-in">
             MIT License
