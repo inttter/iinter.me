@@ -8,7 +8,6 @@ import '@fontsource/geist-sans/700.css';
 import '@fontsource/geist-sans/600.css';
 import '@fontsource/jetbrains-mono';
 import Link from 'next/link';
-import Lanyard from '../../components/Lanyard';
 import Navbar from '../../components/Navbar';
 import { motion } from 'framer-motion'
 import { FaSearch } from 'react-icons/fa';
@@ -40,16 +39,6 @@ export default function Blog({ posts }) {
           </Head>
           <div className="max-w-3xl w-full px-4 py-8">
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="flex items-center justify-between py-4 text-lg w-full"
-            >
-              <div className="flex items-center text-zinc-100 font-semibold text-3xl px-1">
-                Blog
-              </div>
-            </motion.div>
-            <motion.div
               initial={{ opacity: 0, y: -5 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -58,10 +47,10 @@ export default function Blog({ posts }) {
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="Search posts..."
+                  placeholder="Find something!"
                   value={searchQuery}
                   onChange={handleSearchChange}
-                  className="px-10 text-lg rounded-md bg-transparent w-full focus:border-none focus:outline-none"
+                  className="px-10 text-lg rounded-md bg-neutral-800 bg-opacity-40 focus:bg-opacity-80 focus:caret-zinc-300 focus:text-zinc-300 duration-300 p-2 w-full outline-none"
                 />
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <FaSearch className="text-gray-400" />
@@ -106,9 +95,6 @@ export default function Blog({ posts }) {
               className="hover:text-zinc-300 duration-300 flex items-center"
             >
             </motion.button>
-            <div className="py-4 px-2">
-              <Lanyard showUsername={false} showEmoji={false} showAlbumArt={true} />
-            </div>
             <Navbar />
           </div>
         </div>
