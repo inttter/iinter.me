@@ -1,7 +1,7 @@
 ---
 title: "My Opinion on Forza Horizon 3"
 date: "March 9, 2024"
-lastUpdated: "01/05/2024 16:31"
+lastUpdated: "01/04/2024 16:31"
 author: "Inter"
 description: A little blog post about my experience growing up playing Forza Horizon 3, a game released in 2016 by Playground Games.
 slug: fh3
