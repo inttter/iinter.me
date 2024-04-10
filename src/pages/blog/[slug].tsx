@@ -308,7 +308,11 @@ const markdownComponents = {
 
   // Horizontal Rule
   hr({ node, ...props }) {
-    return <hr className="my-4 border-t-2 border-neutral-500" {...props} />;
+    return (
+      <div className="my-4 flex items-center justify-center">
+        <hr className="w-full border-t border-neutral-800" {...props} />
+      </div>
+    );
   },
 
   // Tables
