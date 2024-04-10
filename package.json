@@ -36,8 +36,8 @@
     "vaul": "^0.9.0"
   },
   "devDependencies": {
-    "@types/node": "^20.12.5",
-    "@types/react": "^18.2.74",
+    "@types/node": "^20.12.7",
+    "@types/react": "^18.2.75",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.38",
     "postcss-import": "^16.1.0",
