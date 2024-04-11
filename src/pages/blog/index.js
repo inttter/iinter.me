@@ -58,10 +58,10 @@ export default function Blog({ posts }) {
                   placeholder="Find something!"
                   value={searchQuery}
                   onChange={handleSearchChange}
-                  className="px-10 text-lg rounded-md bg-neutral-800 bg-opacity-40 focus:bg-opacity-80 focus:caret-zinc-300 focus:text-zinc-300 duration-300 p-2 w-full outline-none"
+                  className="px-10 text-lg rounded-md bg-neutral-800 bg-opacity-40 focus:bg-opacity-80 focus:caret-zinc-300 focus:text-zinc-300 duration-300 border-2 border-neutral-800 focus:border-neutral-700 p-1.5 w-full outline-none"
                 />
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <FaSearch className="text-gray-400" />
+                <div className="absolute inset-y-0 pl-3.5 flex items-center pointer-events-none">
+                  <FaSearch className="text-gray-500" />
                 </div>
               </div>
             </motion.div>
