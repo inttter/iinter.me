@@ -9,26 +9,34 @@ import '@fontsource/geist-sans/600.css';
 import '@fontsource/jetbrains-mono';
 import Link from 'next/link';
 import Navbar from '../../components/Navbar';
-import { motion } from 'framer-motion'
+import { motion } from 'framer-motion';
 import { FaSearch } from 'react-icons/fa';
 
 export default function Blog({ posts }) {
   posts.reverse();
 
   const [searchQuery, setSearchQuery] = useState('');
+  const [hoveredPost, setHoveredPost] = useState(null);
 
-  // search input change
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
   };
 
+  const handleMouseEnter = (slug) => {
+    setHoveredPost(slug);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredPost(null);
+  };
+
   // sort by search
-  const filteredPosts = posts.filter(post =>
+  const filteredPosts = posts.filter((post) =>
     post.frontmatter.title.toLowerCase().includes(searchQuery.toLowerCase())
   );
-
-  // sort by latest
-  const sortedPosts = filteredPosts.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date));
+  const sortedPosts = filteredPosts.sort(
+    (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+  );
 
   return (
     <div className="bg-neutral-900 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 selection:bg-[#E8D4B6] selection:text-black">
@@ -74,6 +82,9 @@ export default function Blog({ posts }) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
                 className="relative"
+                style={{ filter: hoveredPost && hoveredPost !== post.slug ? 'brightness(70%)' : 'none' }}
+                onMouseEnter={() => handleMouseEnter(post.slug)}
+                onMouseLeave={handleMouseLeave}
               >
                 <div className="p-0.5 md:px-1 px-0">
                   <div className="flex flex-col md:flex-row items-start md:items-center justify-between hover:bg-neutral-700 hover:bg-opacity-30 p-[7px] duration-300 rounded-md">
