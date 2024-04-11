@@ -53,7 +53,7 @@ export default function BlogPost({ post }) {
         <title>{post.frontmatter.title}</title>
         <meta property="og:image" content={post.frontmatter.image} />
       </Head>
-      <div className="max-w-2xl w-full md:px-1 px-2 md:py-0 py-5 space-y-6">
+      <div className="max-w-2xl w-full md:px-1 px-3 md:py-0 py-5 space-y-6">
         <div className="relative flex items-center justify-between">
           <div className="flex items-center">
             <button
