@@ -51,9 +51,9 @@ export default function BlogPost({ post }) {
         <title>{post.frontmatter.title}</title>
         <meta property="og:image" content={post.frontmatter.image} />
       </Head>
-      <div className="max-w-2xl w-full md:px-1 px-2 py-8 space-y-6">
-        <div className="relative">
-          <div className="flex items-center absolute md:-top-8 -top-5">
+      <div className="max-w-2xl w-full md:px-1 px-2 md:py-0 py-5 space-y-6">
+        <div className="relative flex items-center justify-between">
+          <div className="flex items-center">
             <button
               className="text-zinc-400 bg-transparent px-1 rounded-md shadow-md transition duration-300 transform hover:-translate-x-0.5 active:-translate-x-1 tooltip tooltip-bottom"
               onClick={() => window.history.back()}
@@ -63,21 +63,13 @@ export default function BlogPost({ post }) {
               {'←'}
             </button>
             <span className="ml-2 text-neutral-600 flex items-center">
-              {post.frontmatter.date}
-              <Link href={githubURL} className="ml-2 text-neutral-700 hover:text-zinc-300 duration-300 tooltip tooltip-bottom bg-transparent" target="_blank" rel="noopener noreferrer" data-theme="lofi" data-tip="View raw Markdown on GitHub">
-                <FaGithub size={20} />
-              </Link>
+              Written on {post.frontmatter.date}
             </span>
-          </div> 
-          <span className="ml-2 text-gray-500 flex items-center space-x-4 absolute right-1 -top-5 md:-top-7 w-full">
-            <div className="absolute top-0 right-0 flex space-x-4">
-              <Link href="/" className="text-neutral-500 hover:border-b-2 hover:border-neutral-500 selection:bg-[#E8D4B6] selection:text-black">
-                home ↗
-              </Link>
-              <Link href="/projects" className="text-neutral-500 hover:border-b-2 hover:border-neutral-500 selection:bg-[#E8D4B6] selection:text-black">
-                projects ↗
-              </Link>
-            </div>
+          </div>
+          <span className="text-gray-500 flex items-center space-x-2">
+            <Link href={githubURL} className="text-neutral-700 hover:text-zinc-300 duration-300 tooltip tooltip-bottom bg-transparent" target="_blank" rel="noopener noreferrer" data-theme="lofi" data-tip="View raw Markdown on GitHub">
+              <FaGithub size={20} />
+            </Link>
           </span>
         </div>
         <motion.div
