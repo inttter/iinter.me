@@ -16,10 +16,13 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import { useRouter } from 'next/router';
 import { FaGithub } from 'react-icons/fa6';
-import { parseISO, formatDistanceToNow } from 'date-fns';
+import { LuCopy } from "react-icons/lu";
+import { formatDistanceToNow } from 'date-fns';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import BackToTopButton from '../../components/BackToTop';
+import { toast, Toaster } from 'sonner';
+import copy from 'copy-to-clipboard';
 
 export default function BlogPost({ post }) {
   const router = useRouter();
@@ -117,12 +120,12 @@ export default function BlogPost({ post }) {
         </motion.div>
         <BackToTopButton />
         <motion.div
-          className="text-gray-500 duration-300 text-sm mt-2 flex justify-end"
+          className="text-neutral-600 duration-300 text-xs flex justify-end"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.5 }}
         >
-          — Last Updated: {post.frontmatter.lastUpdated}
+          Last Updated: {post.frontmatter.lastUpdated}
         </motion.div>
       </div>
     </motion.div>
@@ -160,16 +163,32 @@ const markdownComponents = {
   // Code
   code({ node, inline, className, children, ...props }) {
     const match = /language-(\w+)/.exec(className || '');
-    
+    const codeText = children.trim();
+  
+    const handleCopyCode = () => {
+      copy(codeText);
+      toast.success('Code has been copied to your clipboard!', {});
+    };
+  
     return (
-      <pre className="rounded-lg overflow-auto scrollbar-thin text-sm -mt-2">
-        <SyntaxHighlighter language={match ? match[1] : null} style={nightOwl} customStyle={{ background: '#0B0B09', overflowX: 'auto', borderRadius: '0.5rem' }}>
-          {children}
-        </SyntaxHighlighter>
-      </pre>
+      <div className="relative">
+        <button
+          className="absolute top-5 right-3 text-gray-500 text-sm font-semibold font-sans hover:text-zinc-200 active:text-zinc-100 duration-300 bg-neutral-800 bg-opacity-40 hover:bg-opacity-80 border border-neutral-800 rounded-md p-1.5 tooltip tooltip-top"
+          data-tip="Copy"
+          data-theme="lofi"
+          onClick={handleCopyCode}
+        >
+          <LuCopy />
+        </button>
+        <Toaster richColors />
+        <pre className="rounded-lg overflow-auto scrollbar-thin text-sm -mt-2">
+          <SyntaxHighlighter language={match ? match[1] : null} style={nightOwl} customStyle={{ background: '#0B0B09', overflowX: 'auto', borderRadius: '0.5rem' }}>
+            {children}
+          </SyntaxHighlighter>
+        </pre>
+      </div>
     );
   },
-
   // Line break
   br() {
     return <br className="my-4" />;
