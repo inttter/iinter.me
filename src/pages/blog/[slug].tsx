@@ -23,6 +23,7 @@ import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import BackToTopButton from '../../components/BackToTop';
 import { toast, Toaster } from 'sonner';
 import copy from 'copy-to-clipboard';
+import Navbar from '../../components/Navbar';
 
 export default function BlogPost({ post }) {
   const router = useRouter();
@@ -53,29 +54,21 @@ export default function BlogPost({ post }) {
         <title>{post.frontmatter.title}</title>
         <meta property="og:image" content={post.frontmatter.image} />
       </Head>
-      <div className="max-w-2xl w-full md:px-1 px-3 md:py-0 py-5 space-y-6">
-        <div className="relative flex items-center justify-between">
+      <div className="max-w-2xl w-full md:px-1 px-3 md:py-8 py-5 space-y-6">
+        <div className="flex items-center justify-between">
           <div className="flex items-center">
-            <button
-              className="text-zinc-400 bg-transparent px-1 rounded-md shadow-md transition duration-300 transform hover:-translate-x-0.5 active:-translate-x-1 tooltip tooltip-bottom"
-              onClick={() => window.history.back()}
-              data-tip="Back"
-              data-theme="lofi"
-            >
-              {'←'}
-            </button>
-            <span className="ml-2 text-neutral-600 flex items-center">
-              Written on {post.frontmatter.date}
+            <Navbar />
+          </div>
+          <div className="flex items-center -mt-5">
+            <span className="text-gray-500 flex items-center">
+              <Link href={githubURL} className="text-neutral-700 hover:text-zinc-300 duration-300 tooltip tooltip-bottom bg-transparent" target="_blank" rel="noopener noreferrer" data-theme="lofi" data-tip="Suggest changes">
+                <FaGithub size={20} />
+              </Link>
             </span>
           </div>
-          <span className="text-gray-500 flex items-center space-x-2">
-            <Link href={githubURL} className="text-neutral-700 hover:text-zinc-300 duration-300 tooltip tooltip-bottom bg-transparent" target="_blank" rel="noopener noreferrer" data-theme="lofi" data-tip="View raw Markdown on GitHub">
-              <FaGithub size={20} />
-            </Link>
-          </span>
         </div>
         <motion.div
-          className="flex flex-col items-start justify-center"
+          className="flex flex-col items-start justify-center pt-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -94,7 +87,7 @@ export default function BlogPost({ post }) {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
-            <span>{post.frontmatter.description}</span>
+            <span>{post.frontmatter.date}</span>
           </motion.p>
         </motion.div>
         {post.frontmatter.draft && (
