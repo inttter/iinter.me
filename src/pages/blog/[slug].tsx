@@ -54,7 +54,7 @@ export default function BlogPost({ post }) {
         <title>{post.frontmatter.title}</title>
         <meta property="og:image" content={post.frontmatter.image} />
       </Head>
-      <div className="max-w-2xl w-full md:px-1 px-3 md:py-8 py-5 space-y-6">
+      <div className="max-w-2xl w-full md:px-1 px-3 md:py-8 py-12 space-y-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <Navbar />
