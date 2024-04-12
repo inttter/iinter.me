@@ -47,17 +47,17 @@ function Navbar() {
                 </div>
             </motion.div>
             <div className="hidden md:flex space-x-4">
-                <Link href="/" className="text-neutral-500 hover:border-b-2 hover:border-neutral-500 selection:bg-[#E8D4B6] selection:text-black">
-                    home ↗
+                <Link href="/" className="border-b-2 border-gray-500 hover:border-gray-400 hover:text-zinc-200 duration-300 animate-in fade-in mx-1 selection:bg-[#E8D4B6] selection:text-black">
+                    /
                 </Link>
-                <Link href="/about" className="text-neutral-500 hover:border-b-2 hover:border-neutral-500 selection:bg-[#E8D4B6] selection:text-black">
-                    about ↗
+                <Link href="/about" className="border-b-2 border-gray-500 hover:border-gray-400 hover:text-zinc-200 duration-300 animate-in fade-in mx-1 selection:bg-[#E8D4B6] selection:text-black">
+                    about
                 </Link>
-                <Link href="/projects" className="text-neutral-500 hover:border-b-2 hover:border-neutral-500 selection:bg-[#E8D4B6] selection:text-black">
-                    projects ↗
+                <Link href="/projects" className="border-b-2 border-gray-500 hover:border-gray-400 hover:text-zinc-200 duration-300 animate-in fade-in mx-1 selection:bg-[#E8D4B6] selection:text-black">
+                    projects
                 </Link>
-                <Link href="/blog" className="text-neutral-500 hover:border-b-2 hover:border-neutral-500 selection:bg-[#E8D4B6] selection:text-black">
-                    blog ↗
+                <Link href="/blog" className="border-b-2 border-gray-500 hover:border-gray-400 hover:text-zinc-200 duration-300 animate-in fade-in mx-1 selection:bg-[#E8D4B6] selection:text-black">
+                    blog
                 </Link>
             </div>
         </div>
