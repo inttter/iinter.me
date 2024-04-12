@@ -316,7 +316,7 @@ const markdownComponents = {
 
   // Keyboard input
   kbd({ node, children, ...props }) {
-    return <kbd className="inline-block bg-neutral-800 text-zinc-300 px-1 p-[0.1px] rounded-md m-0.5 code" {...props}>{children}</kbd>;
+    return <kbd className="inline-block bg-neutral-800 text-zinc-300 px-1 -my-2 rounded-md m-0.5 code selection:bg-neutral-700 border border-neutral-700 focus:border-neutral-700" {...props}>{children}</kbd>;
   },
 
   // Horizontal Rule
