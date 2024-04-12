@@ -76,7 +76,7 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }:
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="font-semibold text-zinc-100 justify-start tracking-tight grayscale"
+          className="font-semibold text-zinc-100 justify-start tracking-tight selection:bg-[#E8D4B6] selection:text-black"
         >
           Inter
         </motion.span>
