@@ -1,7 +1,7 @@
 ---
 title: "Why Steam is the Best Game Launcher"
 date: "March 23, 2024"
-lastUpdated: "27/03/2024 18:22"
+lastUpdated: "13/04/2024 16:29"
 author: "Inter"
 description: My personal opinion on why Steam is the best game launcher and store for PC gaming in the market. 
 slug: steam
@@ -56,23 +56,9 @@ I also don't like the fact that a lot of games on Steam, particularly from publi
 
 To prove my point, here is a comparison between two games. The first video is me launching [Rainbow Six Siege](https://store.steampowered.com/app/359550/Tom_Clancys_Rainbow_Six_Siege/) (a Ubisoft game) through Steam, while the second is a video of me launching [Geometry Dash](https://store.steampowered.com/app/322170/Geometry_Dash/) (a game that does not need another launcher packaged with it) through Steam:
 
-### Rainbow Six Siege:
-
-<div align="center">
-<!-- Rainbow Six Siege !-->
-<video src="/blog/steam/siege-launch-time.mp4" controls></video>
-
-<div style="color: rgb(161 161 170);">Time Taken: 2:03:90</div>
-</div>
-
-### Geometry Dash:
-
-<div align="center">
-<!-- Geometry Dash !-->
-<video src="/blog/steam/geometry-dash-launch-time.mp4" controls></video>
-
-<div style="color: rgb(161 161 170);">Time Taken: 00:03:33</div>
-</div>
+| Rainbow Six Siege | Geometry Dash |
+| ------ | ------- |
+| <video src="/blog/steam/siege-launch-time.mp4" controls></video> | <video src="/blog/steam/geometry-dash-launch-time.mp4" controls></video>
 
 # UI
 
@@ -84,35 +70,15 @@ The UI, while deep, is simple. There's four sections, Store, Library, Community,
 
 Simple as that, no lag, nothing, unlike Rockstar, which for some reason, eats my PC's resources up. The UI did recently [get a redesign](https://steamcommunity.com/games/593110/announcements/detail/3686801719529689368), which also made it look nicer.
 
-<div align="center">
-<img src="/blog/steam/old-ui.png">
-<br>
-<div style="color: rgb(161 161 170);">Old</div>
-</div>
-
-<br>
-
-<div align="center">
-<img src="/blog/steam/new-ui.png">
-<br>
-<div style="color: rgb(161 161 170);">New</div>
-</div>
+| Old | New |
+| ------ | ------- |
+| <img src="/blog/steam/old-ui.png"> | <img src="/blog/steam/new-ui.png">
 
 Although, some parts of the UI have taken quite a while to update. An example of this is the Server Browser, commonly used in games with community maps, such as [CS2](https://store.steampowered.com/app/730/CounterStrike_2/) and [Garry's Mod](https://store.steampowered.com/app/4000/Garrys_Mod/), which was only updated 11 months ago, prior to which had been many years without change:
 
-<div align="center">
-<img src="/blog/steam/old-server-browser-ui.png">
-<br>
-<div style="color: rgb(161 161 170);">Old</div>
-</div>
-
-<br>
-
-<div align="center">
-<img src="/blog/steam/new-server-browser-ui.png">
-<br>
-<div style="color: rgb(161 161 170);">New</div>
-</div>
+| Old | New |
+| ------ | ------- |
+| <img src="/blog/steam/old-server-browser-ui.png"> | <img src="/blog/steam/new-server-browser-ui.png">
 
 # Valve
 
