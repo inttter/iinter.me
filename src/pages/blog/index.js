@@ -81,7 +81,7 @@ export default function Blog({ posts }) {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="relative"
+                className="relative duration-300"
                 style={{ filter: hoveredPost && hoveredPost !== post.slug ? 'brightness(70%)' : 'none' }}
                 onMouseEnter={() => handleMouseEnter(post.slug)}
                 onMouseLeave={handleMouseLeave}
