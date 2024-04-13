@@ -333,18 +333,18 @@ const markdownComponents = {
     return <table className="table-auto my-4 w-full" {...props}>{children}</table>;
   },
   thead({ node, children, ...props }) {
-    return <thead className="bg-neutral-800 text-white" {...props}>{children}</thead>;
+    return <thead className="bg-neutral-800 text-zinc-300" {...props}>{children}</thead>;
   },
   tbody({ node, children, ...props }) {
-    return <tbody className="bg-neutral-950" {...props}>{children}</tbody>;
+    return <tbody  {...props}>{children}</tbody>;
   },
   tr({ node, children, ...props }) {
-    return <tr className="border-b border-neutral-700" {...props}>{children}</tr>;
+    return <tr className="border border-neutral-700" {...props}>{children}</tr>;
   },
   th({ node, children, ...props }) {
     return <th className="px-4 py-2 text-left" {...props}>{children}</th>;
   },
   td({ node, children, ...props }) {
-    return <td className="px-4 py-2" {...props}>{children}</td>;
+    return <td className="px-4 py-1.5" {...props}>{children}</td>;
   },
 };
