@@ -30,7 +30,7 @@ function Projects() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            <div className="hover:bg-neutral-800 hover:bg-opacity-70 hover:shadow-2xl hover:shadow-neutral-700 duration-300 p-3 rounded-lg">
+            <div className="hover:bg-neutral-800 hover:bg-opacity-70 hover:shadow-2xl hover:shadow-neutral-700 hover:border-neutral-700 border-transparent border-2 duration-300 p-3 rounded-lg">
               <div className="flex items-center">
                 <Link
                   href={project.link}
