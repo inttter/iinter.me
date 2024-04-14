@@ -173,7 +173,7 @@ const markdownComponents = {
     return (
       <div className="relative">
         <button
-          className={`absolute top-5 right-3 text-gray-500 text-sm font-semibold font-sans hover:text-zinc-200 active:text-zinc-100 duration-300 bg-neutral-800 bg-opacity-40 hover:bg-opacity-80 border border-neutral-800 rounded-md p-1.5 tooltip tooltip-top ${copied ? 'cursor-default' : ''}`}
+          className={`absolute top-[19px] right-3 text-gray-500 text-sm font-semibold font-sans hover:text-zinc-200 active:text-zinc-100 duration-300 bg-neutral-900 hover:bg-opacity-80 rounded-md p-1.5 tooltip tooltip-top ${copied ? 'cursor-default' : ''}`}
           data-tip={copied ? 'Copied' : 'Copy'}
           data-theme="lofi"
           disabled={copied}
@@ -182,8 +182,8 @@ const markdownComponents = {
           {copied ? <FaCheck /> : <LuCopy />}
         </button>
         <Toaster richColors />
-        <pre className="rounded-lg overflow-auto scrollbar-thin text-sm -mt-2">
-          <SyntaxHighlighter language={match ? match[1] : null} style={nightOwl} customStyle={{ background: '#0B0B09', overflowX: 'auto', borderRadius: '0.5rem' }}>
+        <pre className="rounded-md overflow-auto scrollbar-thin text-sm -mt-2 selection:bg-neutral-600 selection:text-zinc-100">
+          <SyntaxHighlighter language={match ? match[1] : null} style={nightOwl} customStyle={{ background: '#202020', overflowX: 'auto', borderRadius: '0.5rem' }}>
             {children}
           </SyntaxHighlighter>
         </pre>
