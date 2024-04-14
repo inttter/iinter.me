@@ -1,7 +1,7 @@
 ---
 title: "Using Emoji in Commit Messages"
 date: "March 25, 2024"
-lastUpdated: "03/04/24 00:17"
+lastUpdated: "03/03/24 00:17"
 author: "Inter"
 timeToRead: 3
 description: How I use emoji in my commit messages to symbolize different things.
