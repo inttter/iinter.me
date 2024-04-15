@@ -228,48 +228,48 @@ const markdownComponents = {
   h1({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h1 className="text-3xl font-semibold my-6 relative" {...props}>
-        <a href={`#${headerId}`} className="no-underline">{children}<span className="text-zinc-700 hover:text-zinc-500 duration-300"> #</span></a>
+      <h1 className="text-zinc-100 hover:text-zinc-400 text-3xl duration-300 font-semibold my-5 relative" {...props}>
+        <Link href={`#${headerId}`} className="no-underline">{children}</Link>
       </h1>
     );
   },
   h2({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h2 className="text-zinc-100 text-2xl font-semibold my-5 relative" {...props}>
-        <a href={`#${headerId}`} className="no-underline">{children}<span className="text-zinc-700 hover:text-zinc-500 duration-300"> #</span></a>
+      <h2 className="text-zinc-100 hover:text-zinc-400 text-2xl duration-300 font-semibold my-5 relative" {...props}>
+        <Link href={`#${headerId}`} className="no-underline">{children}</Link>
       </h2>
     );
   },
   h3({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h3 className="text-zinc-100 text-xl font-semibold my-4 relative" {...props}>
-        <a href={`#${headerId}`} className="no-underline">{children}<span className="text-zinc-700 hover:text-zinc-500 duration-300"> #</span></a>
+      <h3 className="text-zinc-100 hover:text-zinc-400 text-xl duration-300 font-semibold my-4 relative" {...props}>
+        <Link href={`#${headerId}`} className="no-underline">{children}</Link>
       </h3>
     );
   },
   h4({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h4 className="text-zinc-100 text-lg font-semibold my-3 relative" {...props}>
-        <a href={`#${headerId}`} className="no-underline">{children}<span className="text-zinc-700 hover:text-zinc-500 duration-300"> #</span></a>
+      <h4 className="text-zinc-100 hover:text-zinc-400 text-lg duration-300 font-semibold my-3 relative" {...props}>
+        <Link href={`#${headerId}`} className="no-underline">{children}</Link>
       </h4>
     );
   },
   h5({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h5 className="text-zinc-100 text-base font-semibold my-2 relative" {...props}>
-        <a href={`#${headerId}`} className="no-underline">{children}<span className="text-zinc-700 hover:text-zinc-500 duration-300"> #</span></a>
+      <h5 className="text-zinc-100 hover:text-zinc-400 text-base duration-300 font-semibold my-2 relative" {...props}>
+        <Link href={`#${headerId}`} className="no-underline">{children}</Link>
       </h5>
     );
   },
   h6({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h6 className="text-zinc-100 text-sm font-semibold my-1 relative" {...props}>
-        <a href={`#${headerId}`} className="no-underline">{children}<span className="text-zinc-700 hover:text-zinc-500 duration-300"> #</span></a>
+      <h6 className="text-zinc-100 hover:text-zinc-400 text-sm duration-300 font-semibold my-1 relative" {...props}>
+        <Link href={`#${headerId}`} className="no-underline">{children}</Link>
       </h6>
     );
   },
