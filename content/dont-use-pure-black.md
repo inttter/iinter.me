@@ -5,7 +5,6 @@ lastUpdated: "15/04/2024 16:26"
 author: "Inter"
 description: An explanation as to why you should not use pure black.
 slug: dont-use-pure-black
-draft: true
 ---
 
 Designing *"dark"* pages always involve using a multitude of dark colors. However, a common trend in most (newer) designs of pages is that they do not use the actual **black** color ([#000000](https://www.color-hex.com/color/000000)). Instead, most opt for a softer/lighter version of black.
