@@ -1,15 +1,13 @@
 ---
 title: "Don't use pure black"
 date: "April 15, 2024"
-lastUpdated: "15/04/2024 16:26"
+lastUpdated: "15/04/2024 21:51"
 author: "Inter"
 description: An explanation as to why you should not use pure black.
 slug: dont-use-pure-black
 ---
 
 Designing *"dark"* pages always involve using a multitude of dark colors. However, a common trend in most (newer) designs of pages is that they do not use the actual **black** color ([#000000](https://www.color-hex.com/color/000000)). Instead, most opt for a softer/lighter version of black.
-
-A good comparison would be with the Tailwind classes <kbd>..-neutral-900</kbd> ([#171717](https://www.color-hex.com/color/171717)) and <kbd>..-black</kbd> ([#000000](https://www.color-hex.com/color/000000)), both dark colors in of themselves, but as you can see below, they differ quite a bit.
 
 <div align="center"></div>
   <img src="/blog/dont-use-pure-black/bg-comparison.png" alt="Comparison of bg-neutral-900 and bg-black.">
