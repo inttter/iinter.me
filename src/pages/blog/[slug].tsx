@@ -173,7 +173,7 @@ const markdownComponents = {
     return (
       <div className="relative">
         <button
-          className={`absolute top-[19px] right-3 text-gray-500 text-sm font-semibold font-sans hover:text-zinc-200 active:text-zinc-100 duration-300 bg-neutral-900 hover:bg-opacity-80 rounded-md p-1.5 tooltip tooltip-top ${copied ? 'cursor-default' : ''}`}
+          className={`absolute top-[19px] right-2 text-zinc-300 text-sm font-semibold font-sans hover:bg-neutral-700 duration-300 bg-transparent hover:bg-opacity-80 rounded-md p-1.5 tooltip tooltip-top ${copied ? 'cursor-default' : ''}`}
           data-tip={copied ? 'Copied' : 'Copy'}
           data-theme="lofi"
           disabled={copied}
