@@ -44,7 +44,7 @@ export default function BlogPost({ post }) {
 
   return (
     <motion.div
-      className="bg-neutral-900 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 selection:bg-neutral-800 selection:text-zinc-300"
+      className="bg-neutral-900 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 selection:bg-neutral-800 selection:text-zinc-300 overflow-x-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -173,13 +173,11 @@ const markdownComponents = {
     return (
       <div className="relative">
         <button
-          className={`absolute top-[19px] right-2 text-zinc-300 text-sm font-semibold font-sans hover:bg-neutral-700 duration-300 bg-transparent hover:bg-opacity-80 rounded-md p-1.5 tooltip tooltip-top ${copied ? 'cursor-default' : ''}`}
-          data-tip={copied ? 'Copied' : 'Copy'}
-          data-theme="lofi"
+          className={`absolute top-[19px] right-2 text-zinc-300 text-sm font-semibold font-sans hover:bg-neutral-700 duration-300 bg-transparent hover:bg-opacity-80 rounded-md p-1.5 mr-1 ${copied ? 'cursor-default' : ''}`}
           disabled={copied}
           onClick={handleCopyCode}
         >
-          {copied ? <FaCheck /> : <LuCopy />}
+          {copied ? <FaCheck className="text-emerald-400" /> : <LuCopy />}
         </button>
         <Toaster richColors />
         <pre className="rounded-md overflow-auto scrollbar-thin text-sm -mt-2 selection:bg-neutral-600 selection:text-zinc-100">
