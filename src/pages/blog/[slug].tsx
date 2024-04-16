@@ -59,13 +59,11 @@ export default function BlogPost({ post }) {
           <div className="flex items-center">
             <Navbar />
           </div>
-          <div className="flex items-center -mt-5">
-            <span className="text-gray-500 flex items-center">
-              <Link href={githubURL} className="text-neutral-700 hover:text-zinc-300 duration-300 tooltip tooltip-bottom bg-transparent" target="_blank" rel="noopener noreferrer" data-theme="lofi" data-tip="Suggest changes">
-                <FaGithub size={20} />
+          <span className="text-gray-500 flex items-center relative">
+              <Link href={githubURL} className="flex items-center text-neutral-600 text-sm hover:bg-neutral-700 p-1.5 -mt-7 md:-mt-5 hover:text-zinc-300 duration-300 bg-transparent hover:bg-opacity-80 rounded-md tooltip tooltip-bottom" target="_blank" rel="noopener noreferrer">
+              <FaGithub size={20} />
               </Link>
             </span>
-          </div>
         </div>
         <motion.div
           className="flex flex-col items-start justify-center pt-2"
@@ -118,6 +116,13 @@ export default function BlogPost({ post }) {
           transition={{ delay: 0.8, duration: 0.5 }}
         >
           Last Updated: {post.frontmatter.lastUpdated}
+        </motion.div>
+        <motion.div
+          className="text-neutral-600 duration-300 text-xs flex justify-end"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.0, duration: 0.5 }}
+        >
         </motion.div>
       </div>
     </motion.div>
