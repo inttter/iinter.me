@@ -51,6 +51,7 @@ class MyDocument extends Document {
           <meta name="theme-color" content="#161617" />
           <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
           <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
+          <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5" />
         </Head>
         <body>
           <Main />
