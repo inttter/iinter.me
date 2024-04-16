@@ -1,7 +1,7 @@
 ---
 title: "My Opinion on Forza Horizon 3"
 date: "March 9, 2024"
-lastUpdated: "01/03/2024 16:31"
+lastUpdated: "16/04/2024 20:15"
 author: "Inter"
 description: A little blog post about my experience growing up playing Forza Horizon 3, a game released in 2016 by Playground Games.
 slug: fh3
@@ -24,11 +24,11 @@ And of course, **Forza**, specifically, [Horizon 3](https://en.wikipedia.org/wik
 
 This is the main talking point of this blog post. This is mostly a nostalgia trip for me, so don't mind any odd things.
 
-# The First Experience
+### First Time
 
-In my opinion, Forza Horizon 3 was the ***best*** Forza Horizon game out of the 5 that have released. Everything about the game was at its peak at the time. The community, the new features, the **cars** themselves, and more. 
+When I first played, Forza Horizon 3 was the best Horizon game out of the 5 that have released. Everything about the game was at its peak at the time. The community, the new features, the **cars** themselves, and more. 
 
-The first game I installed on that Xbox above was Forza Horizon 3. I also remember booting it up for the first time to hear the **amazing** title screen music. For those curious, you can see it below:
+The first game I installed on that Xbox above was Forza Horizon 3. I also remember booting it up for the first time to hear the title screen music. For those curious, you can see it below:
 
 <div align="center">
 
@@ -38,15 +38,13 @@ The first game I installed on that Xbox above was Forza Horizon 3. I also rememb
 
 </div>
 
-# Progressing Through
+### Progressing Through
 
 Most of my time on this game was spent [Freeroaming](https://en.wiktionary.org/wiki/free_roam) around the map, trying to get every collectable, driving over every little road that was still marked gray, and more.
 
 Thanks to me not having [Xbox Live Gold](https://www.xbox.com/en-GB/live/gold) for a total of 2 years, I didn't have the chance play online for the duration of the game's maintainablility. I did come back way later into the future, but I basically spent all of my time on this game playing singleplayer.
 
 Aside from only freeroaming, I also roleplayed (**don't question it.**), in the form of roleplaying doing different things inside of FH3, like delivering things, and also general freeroaming.
-
-> **Fun Fact:** I only started doing this because of [this video](https://www.youtube.com/watch?v=xDQ7KLGe42s) I saw back in ~2017.</span>
 
 I also progressed through the game normally, by buying new cars, upgrading them, driving them, completing [FORZATHON](https://forza.fandom.com/wiki/Forza_Horizon_3/Forzathon) events, and taking photo's of my cars, which I'd love to show the ones I made back then here, but they [removed the functionality to save them](https://steamcommunity.com/app/1551360/discussions/0/3416557114763087581/). Instead, here's some photo's from FH4 and FH5:
 
@@ -59,13 +57,13 @@ I also progressed through the game normally, by buying new cars, upgrading them,
   </div>
 </div>
 
-# Community
+### Community
 
 The Forza community at this time was at its peak.
 
 When I wasn't playing the game, most of the time I would be watching somebody like [AR12Gaming](https://www.youtube.com/@AR12Gaming) talk about the newest update or playing a minigame, or watching a ompilation from somebody like [Shinyodd](https://www.youtube.com/watch?v=jE37PeTZtEg&t=37s) or [YEAHMAP](https://www.youtube.com/watch?v=f_AoTnOHIJE).
 
-# The Present
+### The Present
 
 It's been 8 years since I first touched this game, and I sometimes take out my dust-filled Xbox (that, at this point, I don't know how long it's been since I've touched it), put the disc inside of the console, and launch the game to drive around for a little bit.
 
@@ -83,9 +81,9 @@ I did try to do this, but unfortunately, even though I was on the right account,
 
 I ended up just giving up and opened my Xbox for the first time in months, to redownload the game ([shockingly, only 46GB](https://www.google.com/search?q=fh3+install+size+xbox&source=lmns&bih=752&biw=772&client=opera-gx&hs=lfP&hl=en&sa=X&ved=2ahUKEwjvou2u2-eEAxXPbKQEHUb1CkcQ0pQJKAB6BAgBEAI)). This is the reason I hate the delisting of games.
 
-# Conclusion
+### Conclusion
 
-This game gave me **so** much nostalgia, and it is, ultimately, one of my top 3 games of all time. Feel free to disagree, but that's just my opinion. If you ever get a chance to play this game, you should.
+This game gave me **so** much nostalgia, and it is, ultimately, one of my top 3 games of all time. Feel free to disagree, but that's just my opinion.
 
 While the game is delisted, it had a big impact on my personality by sparking an interest in me for racing games and cars that I still have to this day.
 
@@ -98,5 +96,7 @@ Try [Forza Horizon 4](https://store.steampowered.com/app/1293830/Forza_Horizon_4
 </div>
 
 170 GB just for a Forza installment, which its new content is recycled cars from previous titles, is insane. That's a fifth of my PC. When the game came out, it was only ~80 GB, which is the same as Horizon 4, 6 years after launch.
+
+---
 
 In summary, this is my favourite game.

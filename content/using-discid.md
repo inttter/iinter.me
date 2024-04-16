@@ -1,7 +1,7 @@
 ---
 title: "Using discid"
 date: "March 11, 2024"
-lastUpdated: "03/03/2024 00:16"
+lastUpdated: "16/04/2024 20:15"
 author: "Inter"
 description: How I use my tool, discid, to find people's statuses on Discord, directly from the command line.
 slug: using-discid
@@ -25,7 +25,7 @@ To find someone's user ID, run this code in the terminal, replacing <kbd>userID<
 discid <userID>
 ```
 
-#  How do you find a user ID?
+### How do you find a user ID?
 
 **(1)** Enable Developer mode by going to **Settings** ➔ **Advanced** ➔ **Developer Mode**, and check the toggle.
 
@@ -57,7 +57,7 @@ Avatar URL: https://cdn.discordapp.com/avatars/514106760299151372/d14e90a1614498
 
 > NOTE: In order for this to actually work, you need a user ID which is in the Lanyard Discord server: [https://discord.gg/lanyard](https://discord.gg/lanyard).
 
-# What else?
+### What else?
 
 More fields are supported. The full list that can be displayed is as follows:
 
@@ -79,7 +79,7 @@ Duvet by bôa on Twilight • 1min 54sec left # time left on a song
 Rainbow Six Siege • STANDARD match - Round 4 / 6 • 11min 52sec # activity/state details
 ```
 
-# Options
+### Options
 
 There's a few command line options also available:
 
@@ -168,7 +168,7 @@ This option will print the user's information in a JSON response. You can see an
 }
 ```
 
-#### <kbd>--open</kbd>
+### <kbd>--open</kbd>
 
 This option will open the user's Discord profile in your browser. You can see an example of this in action below:
 

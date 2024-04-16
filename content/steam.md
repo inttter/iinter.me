@@ -1,7 +1,7 @@
 ---
 title: "Why Steam is the Best Game Launcher"
 date: "March 23, 2024"
-lastUpdated: "13/03/2024 16:29"
+lastUpdated: "16/04/2024 20:15"
 author: "Inter"
 description: My personal opinion on why Steam is the best game launcher and store for PC gaming in the market. 
 slug: steam
@@ -24,7 +24,7 @@ The whole reason I'm writing this is because of one of Steam's latest features, 
 
 ...and it got me thinking how Steam beats out every other launcher there is, which is what I'll talk about.
 
-# Sales
+### Sales
 
 Easily one of the best things about Steam is the amount of sales they put out every single year. While they have the four major sales (Spring, Summer, Autumn, Winter), they also have smaller sales, almost all of the time. Rarely do I actually pay full price for a game, except for certain exceptions, like this:
 
@@ -38,13 +38,13 @@ Anyway, I've found some amazing games just from these Steam sales, particularly 
 
 Not to mention, as a nice little touch, the store page gets redesigned for these sales, which adds some nice art to the store page.
 
-# Community
+### Community
 
 The Steam Community is where a lot of things, including but not limited to the [Market](https://steamcommunity.com/market/), [Workshop](https://steamcommunity.com/workshop/), and other things like Reviews, Guides, Artwork, and more.
 
 Particularly for Counter-Strike, the market has single-handedly kept the CS scene alive by giving it a real-world economy with real-world money and value. The workshop has let games continue off of their communities by letting them make custom mods/maps/anything you can think of to expand the game, and the others provide a personality to Steam, unlike other launchers, my next point.
 
-# Other Launchers
+### Other Launchers
 
 Obviously, there's more launchers than just Steam, but they're very lackluster and mediocre at best.
 
@@ -60,7 +60,7 @@ To prove my point, here is a comparison between two games. The first video is me
 | ------ | ------- |
 | <video src="/blog/steam/siege-launch-time.mp4" controls></video> | <video src="/blog/steam/geometry-dash-launch-time.mp4" controls></video>
 
-# UI
+### UI
 
 The UI, while deep, is simple. There's four sections, Store, Library, Community, and one with your username. Like I mentioned earlier, it takes me three clicks to open a game:
 
@@ -80,12 +80,12 @@ Although, some parts of the UI have taken quite a while to update. An example of
 | ------ | ------- |
 | <img src="/blog/steam/old-server-browser-ui.png"> | <img src="/blog/steam/new-server-browser-ui.png">
 
-# Valve
+### Valve
 
 The company behind Steam. They've made some of the most iconic games, such as [Half-Life](https://store.steampowered.com/app/70/HalfLife/), [Portal](https://store.steampowered.com/app/400/Portal/) and [Portal 2](https://store.steampowered.com/app/620/Portal_2/), [Counter-Strike](https://store.steampowered.com/app/730/CounterStrike_2/), and more. They formed Steam in 2003 to serve as a distribution channel for games. They also created hardware like the [Steam Deck](https://store.steampowered.com/steamdeck/) and [Valve Index](https://store.steampowered.com/valveindex).
 
-# TL;DR
+### TL;DR
 
-Steam is good and has a lot of features which extends it, whereas other launchers are either barebones, lack anything notable, or are downright bad, or all three if they stoop that low.
+Steam is good and has a lot of features which extends it, whereas other launchers are either barebones, lack anything notable, or are downright bad, or all three sometimes.
 
 > [Click here](https://steamcommunity.com/id/intermed) if you want to see my Steam profile!
