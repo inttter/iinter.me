@@ -43,7 +43,7 @@ export default function Blog({ posts }) {
       <div className="max-w-2xl w-full px-0 py-8 space-y-6 flex-col">
         <div className="flex items-center justify-start">
           <Head>
-            <title>inter | blog</title>
+            <title>Blog ● Inter</title>
           </Head>
           <div className="max-w-3xl w-full px-4 py-8">
             <motion.div

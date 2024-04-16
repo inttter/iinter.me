@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="bg-neutral-900 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 selection:bg-[#E8D4B6] selection:text-black">
       <Head>
-        <title>inter | about</title>
+        <title>About ● Inter</title>
       </Head>
       <div className="max-w-2xl w-full px-4 space-y-8 flex-col">
         <Navbar />
