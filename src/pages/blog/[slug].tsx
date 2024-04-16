@@ -186,7 +186,7 @@ const markdownComponents = {
         </button>
         <Toaster richColors />
         <pre className="rounded-md overflow-auto scrollbar-thin text-sm -mt-2 selection:bg-neutral-600 selection:text-zinc-100">
-          <SyntaxHighlighter language={match ? match[1] : null} style={nightOwl} customStyle={{ background: '#202020', overflowX: 'auto', borderRadius: '0.5rem' }}>
+          <SyntaxHighlighter language={match ? match[1] : null} style={nightOwl} wrapLongLines={true} customStyle={{ background: '#202020', overflowX: 'auto', borderRadius: '0.5rem' }}>
             {children}
           </SyntaxHighlighter>
         </pre>
