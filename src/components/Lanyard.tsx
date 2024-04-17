@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaSpotify } from 'react-icons/fa6';
+import Link from 'next/link'
 
 function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }: { showUsername?: boolean, showEmoji?: boolean, showAlbumArt?: boolean }) {
   const [status, setStatus] = useState('✈️ Finding status...');
@@ -107,7 +108,7 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }:
               transition={{ duration: 0.5, delay: 0.8 }}
               className="text-sm tracking-normal text-zinc-300 hover:text-zinc-200 mx-1 duration-300 justify-start overflow-elipsis"
             >
-              <a href={`https://open.spotify.com/track/${spotifyTrackId}`} target="_blank" rel="noopener noreferrer">{spotifySong}</a> by {spotifyArtist}
+              <Link href={`https://open.spotify.com/track/${spotifyTrackId}`} target="_blank" rel="noopener noreferrer">{spotifySong} by {spotifyArtist}</Link>
             </motion.a>
             <div className="mr-2 flex justify-end items-end space-x-1">
               <FaSpotify size={30} className="text-green-500" />
