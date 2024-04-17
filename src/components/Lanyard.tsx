@@ -101,14 +101,14 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }:
             style={{ marginRight: '8px' }}
           />
           <div className="flex justify-between items-center w-full">
-            <motion.p
+            <motion.a
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
               className="text-sm tracking-normal text-zinc-300 hover:text-zinc-200 mx-1 duration-300 justify-start overflow-elipsis"
             >
-              <a href={`https://open.spotify.com/track/${spotifyTrackId}`} target="_blank" rel="noopener noreferrer">{spotifySong}</a> by <a href={`https://open.spotify.com/artist/${spotifyArtist}`} target="_blank" rel="noopener noreferrer">{spotifyArtist}</a>
-            </motion.p>
+              <a href={`https://open.spotify.com/track/${spotifyTrackId}`} target="_blank" rel="noopener noreferrer">{spotifySong}</a> by {spotifyArtist}
+            </motion.a>
             <div className="mr-2 flex justify-end items-end space-x-1">
               <FaSpotify size={30} className="text-green-500" />
             </div>
