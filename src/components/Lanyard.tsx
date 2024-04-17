@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { FaSpotify } from 'react-icons/fa6';
 
 function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }: { showUsername?: boolean, showEmoji?: boolean, showAlbumArt?: boolean }) {
   const [status, setStatus] = useState('✈️ Finding status...');
   const [emoji, setEmoji] = useState('');
   const [spotifySong, setSpotifySong] = useState('');
   const [spotifyArtist, setSpotifyArtist] = useState('');
-  const [spotifyAlbum, setSpotifyAlbum] = useState('');
   const [spotifyAlbumArt, setSpotifyAlbumArt] = useState('');
   const [spotifyTrackId, setSpotifyTrackId] = useState('');
 
@@ -36,25 +36,19 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }:
 
         const gameActivity = data.data.activities.find(activity => activity.type === 0);
         const gameName = gameActivity ? gameActivity.name : '';
-        const gameStartTime = gameActivity ? gameActivity.timestamps.start : '';
-        const gameDuration = gameActivity ? calculateDuration(gameStartTime) : '';
 
-        const spotifyActivityData = data.data.spotify;
+        setStatus(gameName ? `Playing ${gameName}` : '');
 
-        let updatedStatus = '';
-
-        if (gameActivity) {
-          updatedStatus = `Playing ${gameName} for ${gameDuration}`;
-        } else if (spotifyActivityData) {
-          updatedStatus = `Listening to ${spotifyActivityData.song} by ${spotifyActivityData.artist}`;
-          setSpotifySong(spotifyActivityData.song);
-          setSpotifyArtist(spotifyActivityData.artist);
-          setSpotifyAlbum(spotifyActivityData.album);
-          setSpotifyAlbumArt(spotifyActivityData.album_art_url);
-          setSpotifyTrackId(spotifyActivityData.track_id);
+        if (data.data.spotify) {
+          setSpotifySong(data.data.spotify.song);
+          setSpotifyArtist(data.data.spotify.artist);
+          if (showAlbumArt && data.data.spotify.album_art_url) {
+            setSpotifyAlbumArt(data.data.spotify.album_art_url);
+          } else {
+            setSpotifyAlbumArt('');
+          }
+          setSpotifyTrackId(data.data.spotify.track_id);
         }
-
-        setStatus(updatedStatus);
       })
       .catch(error => {
         console.error('Error fetching Discord status:', error);
@@ -62,15 +56,13 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }:
       });
   }, [showEmoji]);
 
-  const calculateDuration = (startTime: string) => {
-    const start = new Date(startTime);
-    const now = new Date();
-    const duration = Math.floor((now.getTime() - start.getTime()) / 60000); // Convert milliseconds to minutes
-    return `${duration} minutes`;
-  };
-
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.4 }}
+      className={`relative ${showAlbumArt && spotifyAlbumArt ? 'md:w-11/12 w-full bg-opacity-5 bg-[#FAFAFA] border border-neutral-700 rounded-lg p-2 selection:bg-[#E8D4B6] selection:text-black' : ''}`}
+    >
       {showUsername && (
         <motion.span
           initial={{ opacity: 0 }}
@@ -97,72 +89,50 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }:
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           style={{ display: 'flex', alignItems: 'center' }}
+          className="text-zinc-300"
         >
           <motion.img
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
             src={spotifyAlbumArt}
-            className="w-12 h-12 rounded-md focus:outline-none focus:caret-gray-400 border border-gray-800 focus:border-red-200 duration-300"
+            className="w-12 h-12 rounded-md duration-300"
             alt="Album Art"
             style={{ marginRight: '8px' }}
           />
-          {spotifyTrackId ? (
-            <motion.a
-              href={`https://open.spotify.com/track/${spotifyTrackId}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-              className="text-sm tracking-normal text-gray-500 hover:text-gray-400 duration-300 justify-start overflow-elipsis"
-            >
-              {status}
-            </motion.a>
-          ) : (
+          <div className="flex justify-between items-center w-full">
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
-              className="text-sm tracking-normal text-gray-500 justify-start overflow-elipsis"
+              className="text-sm tracking-normal text-zinc-300 hover:text-zinc-200 mx-1 duration-300 justify-start overflow-elipsis"
             >
-              {status}
+              <a href={`https://open.spotify.com/track/${spotifyTrackId}`} target="_blank" rel="noopener noreferrer">{spotifySong}</a> by <a href={`https://open.spotify.com/artist/${spotifyArtist}`} target="_blank" rel="noopener noreferrer">{spotifyArtist}</a>
             </motion.p>
-          )}
+            <div className="mr-2 flex justify-end items-end space-x-1">
+              <FaSpotify size={30} className="text-green-500" />
+            </div>
+          </div>
         </motion.div>
       )}
-      {!showAlbumArt && (
+      {!showAlbumArt && spotifySong && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           style={{ display: 'flex', alignItems: 'center' }}
         >
-          {spotifyTrackId ? (
-            <motion.a
-              href={`https://open.spotify.com/track/${spotifyTrackId}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              className="text-sm tracking-normal text-gray-500 hover:text-gray-400 duration-300 justify-start overflow-elipsis"
-            >
-              {status}
-            </motion.a>
-          ) : (
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
-              className="text-sm tracking-normal text-gray-500 justify-start overflow-elipsis"
-            >
-              {status}
-            </motion.p>
-          )}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="text-sm tracking-normal text-neutral-500 justify-start overflow-elipsis"
+          >
+            {status}
+          </motion.p>
         </motion.div>
       )}
-    </>
+    </motion.div>
   );
 }
 

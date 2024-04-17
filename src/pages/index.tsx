@@ -10,7 +10,6 @@ import '@fontsource/geist-sans/600.css';
 
 export default function Home() {
   const currentDate = new Date();
-
   const isBirthday = currentDate.getDate() === 25 && currentDate.getMonth() === 6;
 
   return (
@@ -42,6 +41,7 @@ export default function Home() {
           <SocialLink href="https://www.last.fm/user/intter" src="socials/lastfm.svg" alt="Last.fm" tooltipText="@intter" />
         </motion.div>
         <Navbar />
+        <Lanyard showUsername={false} showEmoji={false} showAlbumArt={true}  />
         {isBirthday && (
           <motion.div
             initial={{ opacity: 0, y: 10 }}

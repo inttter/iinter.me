@@ -17,7 +17,7 @@ export default function Home() {
       <div className="max-w-2xl w-full px-4 space-y-8 flex-col">
         <Navbar />
         <motion.div 
-          className="w-full space-y-4 text-zinc-300"
+          className="w-full space-y-4 text-zinc-300 py-10"
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -39,14 +39,16 @@ export default function Home() {
             Here's my main playlist:
           </p>
 
-          {/* Adjust Spotify iframe width for better mobile display */}
           <iframe style={{ borderRadius: '12px', width: '100%', maxWidth: '700px' }} src="https://open.spotify.com/embed/playlist/2jetgPieA6D2fafjl01aYC?utm_source=generator" height="152" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
           <p className="col-span-3">
             And if I'm listening to something at this time, you'll see it below.
           </p>
 
-          <Lanyard showUsername={false} showEmoji={false} showAlbumArt={true} />
+          
+          <div className="flex justify-center items-center">
+            <Lanyard showUsername={false} showEmoji={false} showAlbumArt={true} />
+          </div>
 
           <p className="col-span-3">
             When I'm not listening to music, I'm <em className="mr-0.5">probably</em> playing something. I have ~70 games on Steam, and some more misc ones that are on other platforms.
