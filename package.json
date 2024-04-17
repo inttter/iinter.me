@@ -16,7 +16,7 @@
     "@vercel/speed-insights": "^1.0.10",
     "axios": "^1.6.8",
     "copy-to-clipboard": "^3.3.3",
-    "daisyui": "^4.10.1",
+    "daisyui": "^4.10.2",
     "date-fns": "^3.6.0",
     "framer-motion": "^11.0.28",
     "gray-matter": "^4.0.3",
