@@ -101,18 +101,26 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }:
             alt="Album Art"
             style={{ marginRight: '8px' }}
           />
-          <div className="flex justify-between items-center w-full">
+          <div className="w-full">
             <motion.a
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
-              className="text-sm tracking-normal text-zinc-300 hover:text-zinc-200 mx-1 duration-300 justify-start overflow-elipsis"
+              className="border-neutral-600 hover:border-neutral-500 border-b-2 text-zinc-300 duration-300 animate-in fade-in mx-1 overflow-elipsis"
             >
-              <Link href={`https://open.spotify.com/track/${spotifyTrackId}`} target="_blank" rel="noopener noreferrer">{spotifySong} by {spotifyArtist}</Link>
+              <Link href={`https://open.spotify.com/track/${spotifyTrackId}`} target="_blank" rel="noopener noreferrer">{spotifySong}</Link>
             </motion.a>
-            <div className="mr-2 flex justify-end items-end space-x-1">
-              <FaSpotify size={30} className="text-green-500" />
-            </div>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              className="text-xs tracking-normal text-neutral-500 justify-start overflow-elipsis px-1 mr-1"
+            >
+              {spotifyArtist}
+            </motion.p>
+          </div>
+          <div className="mr-2 flex justify-end items-end space-x-1">
+            <FaSpotify size={30} className="text-green-500" />
           </div>
         </motion.div>
       )}
