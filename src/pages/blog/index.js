@@ -11,6 +11,7 @@ import Link from 'next/link';
 import Navbar from '../../components/Navbar';
 import { motion } from 'framer-motion';
 import { FaSearch } from 'react-icons/fa';
+import { TbMoodSad } from "react-icons/tb";
 
 export default function Blog({ posts }) {
   posts.reverse();
@@ -52,16 +53,16 @@ export default function Blog({ posts }) {
               transition={{ duration: 0.5 }}
               className="mb-4 relative mt-4"
             >
-              <div className="relative">
+              <div className="relative px-2">
                 <input
                   type="text"
-                  placeholder="Find something!"
+                  placeholder="Search posts"
                   value={searchQuery}
                   onChange={handleSearchChange}
-                  className="px-10 text-lg rounded-md bg-neutral-800 bg-opacity-40 focus:bg-opacity-80 focus:caret-zinc-300 focus:text-zinc-300 duration-300 border-2 border-neutral-800 focus:border-neutral-700 p-1.5 w-full outline-none focus:shadow-2xl focus:shadow-neutral-700"
+                  className="px-10 text-lg bg-main placeholder:text-neutral-600 rounded-md focus:caret-zinc-300 focus:text-zinc-300 duration-300 border border-neutral-800 p-1.5 w-full outline-none focus:shadow-2xl focus:shadow-neutral-800"
                 />
                 <div className="absolute inset-y-0 pl-3.5 flex items-center pointer-events-none">
-                  <FaSearch className="text-gray-500" />
+                  <FaSearch className="text-neutral-600" />
                 </div>
               </div>
             </motion.div>
@@ -70,9 +71,9 @@ export default function Blog({ posts }) {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
-                className="text-zinc-300 text-md bg-red-500 bg-opacity-40 py-2 pl-4 rounded-md my-8"
+                className="text-zinc-300 text-md bg-neutral-900 border border-neutral-700 py-2 pl-4 ml-1.5   rounded-md my-8 flex items-center"
               >
-                Couldn't find a post with that name. :(
+                <TbMoodSad size={20} className="mr-1 text-red-400" /> Couldn't find a post with that name.
               </motion.p>
             )}
             {sortedPosts.map((post) => (
@@ -87,25 +88,17 @@ export default function Blog({ posts }) {
                 onMouseLeave={handleMouseLeave}
               >
                 <div className="p-0.5 md:px-1 px-0">
-                  <div className="flex flex-col md:flex-row items-start md:items-center justify-between hover:bg-neutral-700 hover:bg-opacity-30 p-[7px] duration-300 rounded-md">
+                  <div className="flex flex-col md:flex-row items-start md:items-center justify-between hover:bg-neutral-800 hover:bg-opacity-30 p-[7px] duration-300 rounded-md">
                     <Link href={`/blog/${post.slug}`} passHref>
-                      <div className="text-zinc-300 hover:text-zinc-100 duration-300 border-b-2 border-gray-500 hover:border-gray-400duration-300 animate-in fade-in mb-1 md:mb-0 md:mr-2">
+                      <div className="text-zinc-100 hover:text-zinc-300 duration-300 border-b-2 border-dotted hover:border-solid border-neutral-700 hover:border-neutral-600 animate-in fade-in mb-1 md:mb-0 md:mr-2">
                         {post.frontmatter.title}
                       </div>
                     </Link>
-                    <p className="text-gray-400 text-sm">{post.frontmatter.date}</p>
+                    <p className="text-neutral-600 text-sm">{post.frontmatter.date}</p>
                   </div>
                 </div>
               </motion.div>
             ))}
-            <motion.button
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              onClick={() => window.history.back()}
-              className="hover:text-zinc-300 duration-300 flex items-center"
-            >
-            </motion.button>
             <Navbar />
           </div>
         </div>
