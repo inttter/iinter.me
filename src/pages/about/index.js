@@ -10,7 +10,7 @@ import '@fontsource/geist-sans/600.css';
 
 export default function Home() {
   return (
-    <div className="bg-neutral-900 min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 selection:bg-[#E8D4B6] selection:text-black">
+    <div className="bg-main min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 selection:bg-[#E8D4B6] selection:text-black">
       <Head>
         <title>about | iinter.me</title>
       </Head>

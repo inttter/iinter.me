@@ -7,7 +7,8 @@ module.exports = {
     extend: {
       colors: {
         'gray-1100': '#B5B3AD',
-        'blogcard': '#171721'
+        'blogcard': '#171721',
+        'main': '#111111'
       },
     },
   },
