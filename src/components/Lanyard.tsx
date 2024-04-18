@@ -116,7 +116,7 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }:
           </div>
         </motion.div>
       )}
-      {!showAlbumArt && spotifySong && (
+      {!showAlbumArt && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
