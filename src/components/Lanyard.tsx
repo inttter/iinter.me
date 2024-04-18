@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaSpotify } from 'react-icons/fa6';
-import Link from 'next/link'
+import Link from 'next/link';
 
 function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }: { showUsername?: boolean, showEmoji?: boolean, showAlbumArt?: boolean }) {
   const [status, setStatus] = useState('✈️ Finding status...');
-  const [emoji, setEmoji] = useState('');
+  const [emoji, setEmoji] = useState<JSX.Element | null>(null);
   const [spotifySong, setSpotifySong] = useState('');
   const [spotifyArtist, setSpotifyArtist] = useState('');
   const [spotifyAlbumArt, setSpotifyAlbumArt] = useState('');
@@ -21,19 +21,19 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }:
       })
       .then(data => {
         const discordStatus = data.data.discord_status;
-        let newEmoji = '';
+        let statusDot: JSX.Element | null = null;
 
         if (discordStatus === 'online') {
-          newEmoji = '🟢';
+          statusDot = <span className="h-4 w-4 rounded-full bg-green-500 inline-block"></span>;
         } else if (discordStatus === 'idle') {
-          newEmoji = '🟡';
+          statusDot = <span className="h-4 w-4 rounded-full bg-amber-400 inline-block"></span>;
         } else if (discordStatus === 'dnd') {
-          newEmoji = '🔴';
+          statusDot = <span className="h-4 w-4 rounded-full bg-red-500 inline-block"></span>;
         } else if (discordStatus === 'offline') {
-          newEmoji = '💤';
+          statusDot = <span className="h-4 w-4 rounded-full bg-gray-500 inline-block"></span>;
         }
 
-        setEmoji(showEmoji ? newEmoji : '');
+        setEmoji(showEmoji ? statusDot : null);
 
         const gameActivity = data.data.activities.find(activity => activity.type === 0);
         const gameName = gameActivity ? gameActivity.name : '';
