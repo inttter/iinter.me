@@ -13,7 +13,7 @@ function Navbar() {
     return (
         <div className="absolute top-10">
             <button
-                className="md:hidden text-zinc-100 hover:text-zinc-300 duration-300 selection:bg-[#E8D4B6] selection:text-black"
+                className="md:hidden text-zinc-100 hover:text-zinc-300 duration-300"
                 onClick={toggleMenu}
             >
                 menu ↗

@@ -62,14 +62,14 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }:
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.4 }}
-      className={`relative ${showAlbumArt && spotifyAlbumArt ? 'md:w-11/12 w-full bg-opacity-5 bg-[#FAFAFA] border border-neutral-700 rounded-lg p-2 selection:bg-[#E8D4B6] selection:text-black' : ''}`}
+      className={`relative ${showAlbumArt && spotifyAlbumArt ? 'md:w-11/12 w-full bg-opacity-5 bg-[#FAFAFA] border border-neutral-700 rounded-lg p-2' : ''}`}
     >
       {showUsername && (
         <motion.span
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="font-semibold text-zinc-100 justify-start tracking-tight selection:bg-[#E8D4B6] selection:text-black"
+          className="font-semibold text-zinc-100 justify-start tracking-tight"
         >
           Inter
         </motion.span>

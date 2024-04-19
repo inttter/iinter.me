@@ -8,7 +8,7 @@ import projectsData from '../data/projects.json';
 function Projects() {
   return (
     <motion.div
-      className="rounded-t-[20px] selection:bg-[#E8D4B6] selection:text-black"
+      className="rounded-t-[20px]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
