@@ -3,10 +3,6 @@ import { motion } from 'framer-motion';
 import SocialLink from '../components/SocialLink';
 import Lanyard from '../components/Lanyard';
 import Navbar from '../components/Navbar';
-import Link from 'next/link';
-import '@fontsource/geist-sans';
-import '@fontsource/geist-sans/700.css';
-import '@fontsource/geist-sans/600.css';
 
 export default function Home() {
   const currentDate = new Date();

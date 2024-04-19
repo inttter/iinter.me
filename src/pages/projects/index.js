@@ -3,9 +3,6 @@ import Projects from '../../components/Projects';
 import Navbar from '../../components/Navbar';
 import Link from 'next/link';
 import Head from 'next/head';
-import '@fontsource/geist-sans';
-import '@fontsource/geist-sans/700.css';
-import '@fontsource/geist-sans/600.css';
 
 export default function ProjectsPage() {
   return (
