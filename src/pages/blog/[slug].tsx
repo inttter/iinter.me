@@ -40,7 +40,7 @@ export default function BlogPost({ post }) {
 
   return (
     <motion.div
-      className="bg-main min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 selection:bg-neutral-800 selection:text-zinc-300 overflow-x-hidden"
+      className="bg-main min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 overflow-x-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -183,7 +183,7 @@ const markdownComponents = {
           {copied ? <FaCheck className="text-emerald-400" /> : <LuCopy />}
         </button>
         <Toaster richColors />
-        <pre className="rounded-md overflow-auto scrollbar-thin text-sm -mt-2 selection:bg-neutral-600 selection:text-zinc-100">
+        <pre className="rounded-md overflow-auto scrollbar-thin text-sm -mt-2">
           <SyntaxHighlighter language={match ? match[1] : null} style={nightOwl} wrapLongLines={true} customStyle={{ background: '#202020', overflowX: 'auto', borderRadius: '0.5rem' }}>
             {children}
           </SyntaxHighlighter>
@@ -319,7 +319,7 @@ const markdownComponents = {
 
   // Keyboard input
   kbd({ node, children, ...props }) {
-    return <kbd className="bg-neutral-800 text-zinc-300 px-1 py-[1px] -my-2 rounded-md code selection:bg-neutral-700" {...props}>{children}</kbd>;
+    return <kbd className="bg-neutral-800 text-zinc-300 px-1 py-[1px] -my-2 rounded-md code" {...props}>{children}</kbd>;
   },
 
   // Horizontal Rule

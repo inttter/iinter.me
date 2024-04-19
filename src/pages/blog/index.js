@@ -36,7 +36,7 @@ export default function Blog({ posts }) {
   );
 
   return (
-    <div className="bg-main min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 selection:bg-[#E8D4B6] selection:text-black">
+    <div className="bg-main min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8">
       <div className="max-w-2xl w-full px-0 py-8 space-y-6 flex-col">
         <div className="flex items-center justify-start">
           <Head>

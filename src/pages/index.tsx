@@ -16,7 +16,7 @@ export default function Home() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }} 
-            className="text-4xl md:text-5xl tracking-wide text-zinc-100 opacity-90 selection:bg-[#E8D4B6] selection:text-black md:mt-0 mt-10 max-w-md"
+            className="text-4xl md:text-5xl tracking-wide text-zinc-100 opacity-90 md:mt-0 mt-10 max-w-md"
           >
             <Lanyard showAlbumArt={false} />
           </motion.h1>
@@ -25,7 +25,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          className="flex justify-start md:space-x-5 space-x-3 selection:bg-[#E8D4B6] bg-transparent"
+          className="flex justify-start md:space-x-5 space-x-3 bg-transparent"
           data-theme="lofi"
         >
           <SocialLink href="https://github.com/inttter" src="socials/github.svg" alt="GitHub" tooltipText="@inttter" />
