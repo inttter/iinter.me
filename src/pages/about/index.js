@@ -22,15 +22,17 @@ export default function Home() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <p>I like racing (games), computers, and cats. I'm also from the UK.</p>
+          <p>
+            I like racing (games), computers, and cats. I'm also from the UK.
+          </p>
 
           <p>
             You can check out my projects
-            <Link href="/projects" className="border-b-2 border-gray-500 hover:border-gray-400 hover:text-zinc-200 duration-300 animate-in fade-in mx-1">
+            <Link href="/projects" className="text-zinc-100 hover:text-zinc-300 duration-300 border-b-2 border-dotted hover:border-solid border-neutral-700 hover:border-neutral-600 mx-1">
               here
             </Link>
             or you can see what I'm thinking about 
-            <Link href="/blog" className="border-b-2 border-gray-500 hover:border-gray-400 hover:text-zinc-200 duration-300 animate-in fade-in mx-1">
+            <Link href="/blog" className="text-zinc-100 hover:text-zinc-300 duration-300 border-b-2 border-dotted hover:border-solid border-neutral-700 hover:border-neutral-600 mx-1">
               here.
             </Link>
           </p>
@@ -42,7 +44,7 @@ export default function Home() {
           <iframe style={{ borderRadius: '12px', width: '100%', maxWidth: '700px' }} src="https://open.spotify.com/embed/playlist/2jetgPieA6D2fafjl01aYC?utm_source=generator" height="152" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
           <p className="col-span-3">
-            And if I'm listening to something at this time, you'll see it below.
+            And if I'm listening to something right now, you'll see it below.
           </p>
 
           
@@ -56,7 +58,7 @@ export default function Home() {
 
           <p className="col-span-3">
             If you want to find me on my socials, go
-            <Link href="/" className="border-b-2 border-gray-500 hover:border-gray-400 hover:text-zinc-200 duration-300 animate-in fade-in mx-1">
+            <Link href="/" className="text-zinc-100 hover:text-zinc-300 duration-300 border-b-2 border-dotted hover:border-solid border-neutral-700 hover:border-neutral-600 mx-1">
               here,
             </Link>
             otherwise, thanks for reading.

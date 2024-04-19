@@ -101,7 +101,7 @@ export default function BlogPost({ post }) {
           </div>
         )}
         <motion.div
-          className="text-neutral-300 leading-7"
+          className="text-zinc-300 leading-7"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.5 }}
@@ -318,7 +318,7 @@ const markdownComponents = {
 
   // Links
   a({ node, children, ...props }) {
-    return <a className="border-b-2 border-gray-500 hover:border-gray-400 hover:text-zinc-200 duration-300 animate-in fade-in" target="_blank" rel="noopener noreferrer" {...props}>{children}</a>;
+    return <a className="text-zinc-100 hover:text-zinc-300 duration-300 border-b-2 border-dotted hover:border-solid border-neutral-700 hover:border-neutral-600" target="_blank" rel="noopener noreferrer" {...props}>{children}</a>;
   },
 
   // Keyboard input
