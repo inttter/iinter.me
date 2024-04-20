@@ -14,7 +14,7 @@ function Projects() {
       transition={{ duration: 0.5 }}
     >
       <motion.div
-        className="text-3xl md:text-2xl font-semibold leading-none tracking-tight text-zinc-100 mb-4"
+        className="text-3xl md:text-2xl font-semibold leading-none tracking-tight text-zinc-100 mb-4 px-3"
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -69,7 +69,7 @@ function Projects() {
                 </motion.div>
               )}
               <motion.p
-                className="text-zinc-300 text-sm py-2.5"
+                className="text-neutral-500 text-sm py-2.5"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
