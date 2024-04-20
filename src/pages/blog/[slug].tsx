@@ -57,11 +57,11 @@ export default function BlogPost({ post }) {
           <div className="flex items-center">
             <Navbar />
           </div>
-          <span className="text-gray-500 flex items-center relative">
-              <Link href={githubURL} className="flex items-center text-neutral-600 text-sm hover:bg-neutral-700 p-1.5 -mt-7 md:-mt-5 hover:text-zinc-300 duration-300 bg-transparent hover:bg-opacity-80 rounded-md tooltip tooltip-bottom" target="_blank" rel="noopener noreferrer">
+          <span className="flex items-center relative">
+            <Link href={githubURL} className="flex items-center text-neutral-600 text-sm hover:bg-neutral-700 p-1.5 -mt-7 md:-mt-5 hover:text-zinc-300 duration-300 bg-transparent hover:bg-opacity-80 rounded-md tooltip tooltip-bottom" target="_blank" rel="noopener noreferrer">
               <FaGithub size={20} />
-              </Link>
-            </span>
+            </Link>
+          </span>
         </div>
         <motion.div
           className="flex flex-col items-start justify-center pt-2"
@@ -70,7 +70,7 @@ export default function BlogPost({ post }) {
           transition={{ duration: 0.5 }}
         >
           <motion.div
-            className="text-2xl text-zinc-200 font-semibold tracking-tight"
+            className="text-2xl text-zinc-100 font-semibold tracking-tight"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
@@ -78,7 +78,7 @@ export default function BlogPost({ post }) {
             {post.frontmatter.title}
           </motion.div>
           <motion.p
-            className="text-zinc-500 text-md max-w-2xl overflow-auto"
+            className="text-neutral-600 text-md max-w-2xl overflow-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}
@@ -210,7 +210,7 @@ const markdownComponents = {
         <Link href={`${src}`} target="_blank" rel="noopener noreferrer">
           <img className="rounded-lg hover:opacity-80 hover:shadow-2xl hover:shadow-neutral-800 duration-300" loading="lazy" alt={alt} src={src} onError={handleImageError} {...props} />
         </Link>
-        {alt && <p className="text-sm text-gray-500 mt-2">{alt}</p>}
+        {alt && <p className="text-sm text-neutral-600 mt-2">{alt}</p>}
       </div>
     );
   },
@@ -301,7 +301,7 @@ const markdownComponents = {
 
   // Inline code
   inlineCode({ node, children, ...props }) {
-    return <code className="rounded-lg bg-gray-800 text-white px-2 py-1" {...props}>{children}</code>;
+    return <code className="rounded-lg bg-neutral-800 text-white px-2 py-1" {...props}>{children}</code>;
   },
 
   // Strong and Emphasis
