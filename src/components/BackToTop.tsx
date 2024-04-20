@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaArrowUp } from 'react-icons/fa6';
+import { FaA, FaArrowUp } from 'react-icons/fa6';
 
 const BackToTop = () => {
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -27,13 +27,13 @@ const BackToTop = () => {
 
   return (
     <motion.button
-      className="fixed bottom-6 right-6 bg-neutral-800 hover:bg-neutral-700 duration-300 text-white rounded-full p-2 focus:outline-none"
+      className="fixed bottom-6 right-6 text-neutral-600 hover:text-neutral-500 p-2 bg-neutral-900 rounded-md duration-300 border border-neutral-800 flex items-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: showScrollButton ? 1 : 0 }}
       transition={{ duration: 0.5 }}
       onClick={scrollToTop}
     >
-      <FaArrowUp size={24} />
+      back to top <FaArrowUp className="ml-1" />
     </motion.button>
   );
 };
