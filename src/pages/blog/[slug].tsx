@@ -11,8 +11,7 @@ import { motion } from 'framer-motion';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import { useRouter } from 'next/router';
-import { FaGithub, FaCheck } from 'react-icons/fa6';
-import { LuCopy } from "react-icons/lu";
+import { Github, Check, Copy } from 'lucide-react';
 import { formatDistanceToNow } from 'date-fns';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/prism';
@@ -59,7 +58,7 @@ export default function BlogPost({ post }) {
           </div>
           <span className="flex items-center relative">
             <Link href={githubURL} className="flex items-center text-neutral-600 text-sm hover:bg-neutral-700 p-1.5 -mt-7 md:-mt-5 hover:text-zinc-300 duration-300 bg-transparent hover:bg-opacity-80 rounded-md tooltip tooltip-bottom" target="_blank" rel="noopener noreferrer">
-              <FaGithub size={20} />
+              <Github size={20} />
             </Link>
           </span>
         </div>
@@ -180,7 +179,7 @@ const markdownComponents = {
           disabled={copied}
           onClick={handleCopyCode}
         >
-          {copied ? <FaCheck className="text-emerald-400" /> : <LuCopy />}
+          {copied ? <Check size={15} className="text-emerald-400" /> : <Copy size={15} />}
         </button>
         <Toaster richColors />
         <pre className="rounded-md overflow-auto scrollbar-thin text-sm -mt-2">

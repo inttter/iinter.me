@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { CgDanger } from "react-icons/cg";
-import { FaGithub } from "react-icons/fa";
+import { Github } from "lucide-react";
 import projectsData from '../data/projects.json';
 
 function Projects() {
@@ -49,7 +49,7 @@ function Projects() {
                     data-tip="View on GitHub"
                     data-theme="lofi"
                   >
-                    <FaGithub />
+                    <Github size={20} />
                   </Link>
                 )}
               </div>

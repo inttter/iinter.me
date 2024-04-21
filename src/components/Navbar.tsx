@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { MdOutlineClose } from "react-icons/md";
 
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
