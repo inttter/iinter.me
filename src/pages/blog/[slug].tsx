@@ -96,7 +96,7 @@ export default function BlogPost({ post }) {
           </div>
         )}
         <motion.div
-          className="text-zinc-300 leading-7"
+          className="leading-7 text-neutral-300"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.5 }}
@@ -317,12 +317,12 @@ const markdownComponents = {
 
   // Links
   a({ node, children, ...props }) {
-    return <a className="duration-300 border-b-2 border-dotted border-neutral-500 hover:border-neutral-400" target="_blank" rel="noopener noreferrer" {...props}>{children}</a>;
+    return <a className="text-zinc-100 duration-300 border-b-2 border-dotted border-neutral-500 hover:border-neutral-400" target="_blank" rel="noopener noreferrer" {...props}>{children}</a>;
   },
 
   // Keyboard input
   kbd({ node, children, ...props }) {
-    return <kbd className="bg-neutral-800 text-zinc-300 px-1 py-[1px] -my-2 rounded-md code" {...props}>{children}</kbd>;
+    return <kbd className="code font-mono text-neutral-400" {...props}><span className="text-neutral-500">`</span>{children}<span className="text-neutral-500">`</span></kbd>;
   },
 
   // Horizontal Rule
