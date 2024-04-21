@@ -217,7 +217,7 @@ const markdownComponents = {
   // Video
   video({ node, ...props }) {
     return (
-      <video src={props.src} className="shadow-2xl" {...props}>
+      <video src={props.src} className="shadow-2xl rounded-lg" {...props}>
         Your browser does not support the video tag.
       </video>
     );
@@ -225,7 +225,7 @@ const markdownComponents = {
 
   // Paragraphs
   p({ node, children, ...props }) {
-    return <p className="my-4" {...props}>{children}</p>;
+    return <p className="my-3" {...props}>{children}</p>;
   },
 
   // Headers
