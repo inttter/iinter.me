@@ -286,7 +286,11 @@ const markdownComponents = {
     return <ol className="list-decimal list-inside my-4" {...props}>{children}</ol>;
   },
   li({ node, children, ...props }) {
-    return <li className="my-2" {...props}>{children}</li>;
+    return <li className="my-1 marker:text-neutral-600 marker:text-xl" {...props}>
+      <span className="-mx-1 marker">
+        {children}
+      </span>
+    </li>;
   },
 
   // Blockquotes
@@ -305,7 +309,7 @@ const markdownComponents = {
 
   // Strong and Emphasis
   strong({ node, children, ...props }) {
-    return <strong className="font-bold text-bold" {...props}>{children}</strong>;
+    return <strong className="font-semibold text-zinc-100" {...props}>{children}</strong>;
   },
   em({ node, children, ...props }) {
     return <em className="italic mr-0.5" {...props}>{children}</em>;
