@@ -1,7 +1,7 @@
 ---
 title: "Creating packages with create-ps"
 date: "March 29, 2024"
-lastUpdated: "03/03/24 00:19"
+lastUpdated: "21/04/24 16:34"
 author: "Inter"
 description: A guide on a faster way to create NPM packages from the terminal.
 slug: creating-packages
@@ -36,20 +36,48 @@ cps <projectName>
 ```
 
 * This will run <kbd>npm init -y</kbd> to create a <kbd>package.json</kbd>.
-* Select which files you'd like to include and exclude.
+* Select which files you'd like to include and exclude. As of [v3.0.0](https://github.com/inttter/create-ps/releases/tag/v3.0.0), they are all deselected by default.
 
-**Tip:** To create a .mjs (ESM/EcmaScript) file and use import statements, run the command with the <kbd>--esm</kbd> flag.
+```bash
+✔ Ran npm init -y successfully!
+
+Enter a short description of the package: A package. 
+Select what you'd like to include: (Press <space> to select, <a> to toggle all, <i> to invert selection, and <enter> to proceed)
+
+ ◉ README.md
+ ◉ CONTRIBUTING.md
+ ◉ CHANGELOG.md
+ ◉ CODE_OF_CONDUCT.md
+ ◉ LICENSE
+ ◉ src/
+ ◉ test/
+```
+
+<div style="background-color: #1B2A3A; color: #47A3F3; padding: 10px; margin-bottom: 20px; margin-top: 10px; border-radius: 5px;">
+  💡 To create a .mjs (ESM/EcmaScript) file and use <kbd>import</kbd> statements, run the command with the <kbd>--esm</kbd> flag.
+</div>
 
 ### pkg-config
 
-If you run the following command in your terminal, you can edit your <kbd>package.json</kbd> aswell with various fields:
+If you run the following command in your terminal, you can edit various fields in your <kbd>package.json</kbd>.
 
 ```bash
 cps pkg-config
 ```
 
-You are then able to answer prompts such as, but not limited to the **Author**, **Keywords**, and the **License** you are using (you can use [this](https://spdx.org/licenses/) list from SPDX to find the right identifier for the license field), and once confirmed, it will edit your <kbd>package.json</kbd> and fill out those fields.
+You are then able to select what fields you want to include such as, but not limited to the **Author**, **Keywords**, and the **License** you are using (you can use [this](https://spdx.org/licenses/) list from SPDX to find the right identifier for the license field), and once confirmed, it will ask a series of prompts for you to fill out the necessary information, and will edit your <kbd>package.json</kbd> accordingly.
 
-> You can also run this in an existing project and it will add the necessary fields.
+```markdown
+Select what you'd like to include: (Press <space> to select, <a> to toggle all, <i> to invert selection, and <enter> to proceed)
+
+ ◯ Author
+ ◯ Repository
+ ◯ Keywords
+ ◯ Homepage
+ ◯ Funding
+ ◯ License
+```
+
+You can also run this in an existing project and it will add the necessary fields.
 
 If you find this useful, star it on [GitHub](https://github.com/inttter/create-ps)!
