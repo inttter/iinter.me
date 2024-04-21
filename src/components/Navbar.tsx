@@ -41,16 +41,16 @@ function Navbar() {
                 </div>
             </motion.div>
             <div className="hidden md:flex space-x-4">
-                <Link href="/" className="text-zinc-100 hover:text-zinc-300 duration-300 border-b-2 border-dotted hover:border-solid border-neutral-700 hover:border-neutral-600">
+                <Link href="/" className="text-zinc-100 hover:text-zinc-300 duration-300 border-b-2 border-dotted border-neutral-700 hover:border-neutral-500">
                     /
                 </Link>
-                <Link href="/about" className="text-zinc-100 hover:text-zinc-300 duration-300 border-b-2 border-dotted hover:border-solid border-neutral-700 hover:border-neutral-600">
+                <Link href="/about" className="text-zinc-100 hover:text-zinc-300 duration-300 border-b-2 border-dotted border-neutral-700 hover:border-neutral-500">
                     about
                 </Link>
-                <Link href="/projects" className="text-zinc-100 hover:text-zinc-300 duration-300 border-b-2 border-dotted hover:border-solid border-neutral-700 hover:border-neutral-600">
+                <Link href="/projects" className="text-zinc-100 hover:text-zinc-300 duration-300 border-b-2 border-dotted border-neutral-700 hover:border-neutral-500">
                     projects
                 </Link>
-                <Link href="/blog" className="text-zinc-100 hover:text-zinc-300 duration-300 border-b-2 border-dotted hover:border-solid border-neutral-700 hover:border-neutral-600">
+                <Link href="/blog" className="text-zinc-100 hover:text-zinc-300 duration-300 border-b-2 border-dotted border-neutral-700 hover:border-neutral-500">
                     blog
                 </Link>
             </div>

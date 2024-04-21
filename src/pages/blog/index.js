@@ -86,7 +86,7 @@ export default function Blog({ posts }) {
                 <div className="p-0.5 md:px-1 px-0">
                   <div className="flex flex-col md:flex-row items-start md:items-center justify-between hover:bg-neutral-800 hover:bg-opacity-30 p-[7px] duration-300 rounded-md">
                     <Link href={`/blog/${post.slug}`} passHref>
-                      <div className="text-zinc-100 hover:text-zinc-300 duration-300 border-b-2 border-dotted hover:border-solid border-neutral-700 hover:border-neutral-600 animate-in fade-in mb-1 md:mb-0 md:mr-2">
+                      <div className="text-zinc-100 hover:text-zinc-300 duration-300 border-b-2 border-dotted border-neutral-700 hover:border-neutral-500 mb-1 md:mb-0 md:mr-2">
                         {post.frontmatter.title}
                       </div>
                     </Link>
