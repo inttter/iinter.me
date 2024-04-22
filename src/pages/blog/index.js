@@ -66,7 +66,7 @@ export default function Blog({ posts }) {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
-                className="text-zinc-300 text-md bg-neutral-900 border border-neutral-700 py-2 pl-4 ml-1.5   rounded-md my-8 flex items-center"
+                className="text-zinc-300 text-md bg-neutral-900 border border-neutral-700 py-2 pl-4 ml-1.5 rounded-md my-8 flex items-center"
               >
                 <Frown size={20} className="mr-1 text-red-400" /> Couldn't find a post with that name.
               </motion.p>
@@ -89,7 +89,7 @@ export default function Blog({ posts }) {
                         {post.frontmatter.title}
                       </div>
                     </Link>
-                    <p className="text-neutral-600 text-sm">{post.frontmatter.date}</p>
+                    <p className={`text-sm ${hoveredPost === post.slug ? 'text-neutral-400 duration-300' : 'text-neutral-600'}`}>{post.frontmatter.date}</p>
                   </div>
                 </div>
               </motion.div>
