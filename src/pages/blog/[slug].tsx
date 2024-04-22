@@ -96,7 +96,7 @@ export default function BlogPost({ post }) {
           </div>
         )}
         <motion.div
-          className="leading-7 text-neutral-300"
+          className="leading-7 text-stone-300"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 0.5 }}
@@ -286,8 +286,8 @@ const markdownComponents = {
     return <ol className="list-decimal list-inside my-4" {...props}>{children}</ol>;
   },
   li({ node, children, ...props }) {
-    return <li className="my-1 marker:text-neutral-600 marker:text-xl" {...props}>
-      <span className="-mx-1 marker">
+    return <li className="my-1 marker:text-neutral-600" {...props}>
+      <span className="mx-[5px] marker">
         {children}
       </span>
     </li>;
@@ -309,7 +309,7 @@ const markdownComponents = {
 
   // Strong and Emphasis
   strong({ node, children, ...props }) {
-    return <strong className="font-semibold text-zinc-100" {...props}>{children}</strong>;
+    return <strong className="font-normal text-zinc-50 brightness-200" {...props}>{children}</strong>;
   },
   em({ node, children, ...props }) {
     return <em className="italic mr-0.5" {...props}>{children}</em>;
@@ -317,12 +317,12 @@ const markdownComponents = {
 
   // Links
   a({ node, children, ...props }) {
-    return <a className="text-zinc-100 duration-300 border-b-2 border-dotted border-neutral-500 hover:border-neutral-400" target="_blank" rel="noopener noreferrer" {...props}>{children}</a>;
+    return <a className="text-zinc-50 duration-300 border-b-2 border-dotted border-neutral-500 hover:border-neutral-400" target="_blank" rel="noopener noreferrer" {...props}>{children}</a>;
   },
 
   // Keyboard input
   kbd({ node, children, ...props }) {
-    return <kbd className="code font-mono text-neutral-400" {...props}><span className="text-neutral-500">`</span>{children}<span className="text-neutral-500">`</span></kbd>;
+    return <kbd className="font-mono" {...props}><span className="text-neutral-500">`</span>{children}<span className="text-neutral-500">`</span></kbd>;
   },
 
   // Horizontal Rule
