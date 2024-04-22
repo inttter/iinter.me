@@ -14,17 +14,17 @@
       "maintained": true
     },
     {
-      "name": "discid",
-      "description": "A command-line tool to check a user's Discord status using Lanyard.",
-      "link": "https://discid.xyz",
-      "github": "https://github.com/inttter/discid",
-      "maintained": true
-    },
-    {
       "name": "create-ps",
       "description": "Creates the foundations for an NPM package.",
       "link": "https://github.com/inttter/create-ps",
       "github": "https://github.com/inttter/create-ps",
+      "maintained": true
+    },
+    {
+      "name": "discid",
+      "description": "A command-line tool to check a user's Discord status using Lanyard.",
+      "link": "https://discid.xyz",
+      "github": "https://github.com/inttter/discid",
       "maintained": true
     },
     {
