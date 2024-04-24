@@ -207,7 +207,7 @@ const markdownComponents = {
     return (
       <div className="relative">
         <Link href={`${src}`} target="_blank" rel="noopener noreferrer">
-          <img className="rounded-lg hover:opacity-80 hover:shadow-2xl hover:shadow-neutral-800 duration-300" loading="lazy" alt={alt} src={src} onError={handleImageError} {...props} />
+          <img className="rounded-lg hover:opacity-80 duration-300" loading="lazy" alt={alt} src={src} onError={handleImageError} {...props} />
         </Link>
         {alt && <p className="text-sm text-neutral-600 mt-2">{alt}</p>}
       </div>
