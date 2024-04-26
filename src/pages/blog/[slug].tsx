@@ -106,6 +106,9 @@ export default function BlogPost({ post }) {
           </ReactMarkdown>
         </motion.div>
         <BackToTopButton />
+        <div className="flex items-center justify-center">
+          <hr className="w-full border-t border-neutral-800" />
+        </div>
         <motion.div
           className="text-neutral-600 duration-300 text-xs flex justify-end"
           initial={{ opacity: 0 }}

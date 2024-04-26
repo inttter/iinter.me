@@ -95,5 +95,3 @@ With this, pull requests opened from Dependabot will look like similarly to thes
 </div>
 
 With that, automated pull request titles with these emoji and the Convential Commit format are now set up.
-
----

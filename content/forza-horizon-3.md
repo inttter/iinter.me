@@ -72,5 +72,3 @@ Try [Forza Horizon 4](https://store.steampowered.com/app/1293830/Forza_Horizon_4
 </div>
 
 170 GB just for a Forza installment, which the new content of is recycled cars from previous titles and then advertised as **"new!"** content, is insane. That's 1/5 of my computer. When the game came out, it was only about 80GB, which is the same as Horizon 4, **6** years after launch.
-
----

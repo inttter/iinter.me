@@ -77,5 +77,3 @@ Valve is the company behind Steam. They have made some very iconic games. For ex
 ### End
 
 Steam is great and has a lot of features which help to extend it and provide QOL features, whereas other launchers lack these as they are either very **barebones**, lack anything **notable**, or are **downright bad**, or sometimes all three.
-
----
