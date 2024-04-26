@@ -1,25 +1,24 @@
 ---
 title: "Using discid"
 date: "March 11, 2024"
-lastUpdated: "16/04/2024 20:15"
+lastUpdated: "24/04/2024 18:54"
 author: "Inter"
 description: How I use my tool, discid, to find people's statuses on Discord, directly from the command line.
-slug: using-discid
 ---
 
-A few weeks ago, I made a tool called [**discid**](https://discid.xyz). In a short summary, it's a command-line tool to check a user's Discord status using [Lanyard](https://github.com/phineas/lanyard).
+A few weeks ago, I made a command-line tool called [discid](https://discid.xyz). In a brief summary, it lets you check a user's Discord status using [Lanyard](https://github.com/phineas/lanyard).
 
 Lanyard lets you expose your Discord presence and activities to a RESTful API. discid uses Lanyard to fetch users' statuses, and provides that information in a neat form in the command line.
 
-To install discid, run the following in your terminal:
+To install discid, run this command in your terminal.
 
 ```bash
 npm install -g discid
 ```
 
-This will globally install the package, so you can run it from anywhere on your machine.
+### Getting Started
 
-To find someone's user ID, run this code in the terminal, replacing <kbd>userID</kbd> with the ID of the user you want to check the status of:
+To find someone's user ID, run the following in the terminal, replacing <kbd>userID</kbd> with the 18-character ID of the user you want to check the status of:
 
 ```bash
 discid <userID>
@@ -27,25 +26,25 @@ discid <userID>
 
 ### How do you find a user ID?
 
-**(1)** Enable Developer mode by going to **Settings** ➔ **Advanced** ➔ **Developer Mode**, and check the toggle.
+1. Enable Developer Mode on Discord. You can do this by going to Discord settings, navigating to the **Advanced** tab, and  enabling **Developer Mode** by checking the toggle.
 
 <div align="center">
-<img src="/blog/using-discid/developer-mode-toggle.png">
+  <img src="/blog/using-discid/developer-mode-toggle.png">
 </div>
 
-**(2)** Right click on a user and click *Copy User ID*.
+2. Right click on a user's profile picture and click on the option which says '**Copy User ID**'. This will copy the user's ID to your clipboard.
 
 <div align="center">
-<img src="/blog/using-discid/copy-user-id.png">
+  <img src="/blog/using-discid/copy-user-id.png">
 </div>
 
-**(3)** Go back to your command line and run <kbd>discid userID</kbd>, replacing <kbd>userID</kbd> with the ID you copied. For example, if you had the user ID ***514106760299151372*** (my user ID!) copied, you would run:
+3. Go back to your command-line and run <kbd>discid userID</kbd>, replacing <kbd>userID</kbd> with the ID of the user you copied. For example, if you had the user ID **514106760299151372** copied, you would run:
 
 ```bash
 discid 514106760299151372
 ```
 
-Depending on what the user's status is, different things may come up. For example, this is what it looks like right now as of me writing this:
+Depending on what the status of the user is, different information may appear. For example, this is what it could look like.
 
 ```bash
 iinter • 🟢 Online
@@ -55,37 +54,40 @@ Platform: Desktop
 Avatar URL: https://cdn.discordapp.com/avatars/514106760299151372/d14e90a16144987f53f5a3700aacc934.png
 ```
 
-> NOTE: In order for this to actually work, you need a user ID which is in the Lanyard Discord server: [https://discord.gg/lanyard](https://discord.gg/lanyard).
+<div style="padding: 0.8rem 1rem; background-color: #262626; border-radius: 0.375rem; font-size: 0.96rem; display: flex; align-items: center; color: #d4d4d8; margin-top: 10px;">
+    <strong style="margin-right: 0.8rem;">⚠️</strong> 
+    <span><strong>Note:</strong> In order for the status to be found correctly, you need a user ID which is in the Lanyard Discord server: <a href="https://discord.gg/lanyard" target="_blank" rel="noopener noreferrer">https://discord.gg/lanyard</a>.</span>
+</div>
 
 ### What else?
 
-More fields are supported. The full list that can be displayed is as follows:
+More fields are supported, not just the ones shown in the example. The full list that can be displayed is as follows:
 
 * Username
-* Status (eg. 🟢 Online, 🟡 Idle, etc...)
+* [Status](https://support.discord.com/hc/en-us/articles/227779547-Changing-Online-Status)
 * Platform
-* Custom Status (eg. *"💫 This is a custom status."*)
+* [Custom Status](https://support.discord.com/hc/en-us/articles/360035407531-Custom-Status)
 * Playing
 * Listening to Spotify
 * Streaming
 * Watching
 * Avatar URL
-* [KV](#--kv) (via the <kbd>--kv</kbd> option)
 
-More specific details are also shown for certain fields. For example, the time left on a song, activity/state details, and more:
+More specific details are also able to be shown for certain fields. For example, the time left on a song, activity/state details, and more.
 
 ```bash
-Duvet by bôa on Twilight • 1min 54sec left # time left on a song
-Rainbow Six Siege • STANDARD match - Round 4 / 6 • 11min 52sec # activity/state details
+Listening to: 春色リップ by 告RADIO on KAGUYA ULTRA BEST • 2min 50sec left
+# time left is calculated by subtracting the current time from the end time. song name, artist, and album comes from other fields set in the 'activities' section.
+
+Playing: osu! • Goose house - Hikaru nara [Synesthesia] • Clicking circles
+# ie. 'Goose house - Hikaru Nara [Synthesis]' comes from the state details, which is set to that text.
 ```
 
 ### Options
 
-There's a few command line options also available:
+### <kbd>--json</kbd>
 
-#### <kbd>--json</kbd>
-
-This option will print the user's information in a JSON response. You can see an example of this with user ID **514106760299151372** below:
+This option will print the user's information in a formatted JSON response. You can see an example of this with user ID **514106760299151372** below.
 
 ```json
 {
@@ -95,15 +97,15 @@ This option will print the user's information in a JSON response. You can see an
     "website": "https://iinter.me"
   },
   "spotify": {
-    "track_id": "5RmPFKZcsV6bciHOQR3jli",
+    "track_id": "03yMZBtC3QxyK7ttlBLeme",
     "timestamps": {
-      "start": 1711981501725,
-      "end": 1711981703726
+      "start": 1713979964806,
+      "end": 1713980148219
     },
-    "album": "Paper Soldier",
-    "album_art_url": "https://i.scdn.co/image/ab67616d0000b273fe4be0573ecfc552c5067461",
-    "artist": "d3puu",
-    "song": "Paper Soldier"
+    "album": "THE MOUSE & THE MASK",
+    "album_art_url": "https://i.scdn.co/image/ab67616d0000b2736c3fb85147fcf2972923cf2d",    
+    "artist": "DANGERDOOM; MF DOOM; Danger Mouse",
+    "song": "A.T.H.F. (Aqua Teen Hunger Force)"
   },
   "discord_user": {
     "id": "514106760299151372",
@@ -111,50 +113,45 @@ This option will print the user's information in a JSON response. You can see an
     "avatar": "d14e90a16144987f53f5a3700aacc934",
     "discriminator": "0",
     "bot": false,
+    "clan": null,
     "global_name": "lunar",
     "avatar_decoration_data": null,
     "display_name": "lunar",
-    "public_flags": 4194432
+    "public_flags": 128
   },
   "activities": [
     {
-      "flags": 1,
-      "id": "60a8a706a4354bda",
-      "name": "Visual Studio Code",
+      "id": "98c669cfc69b645",
+      "name": "osu!",
       "type": 0,
-      "state": "📝 using-discid.md (87, 17)",
-      "session_id": "99a4d2f060386f3ce850d19ea0a36f52",
-      "details": "📂 website ",
-      "timestamps": {
-        "start": 1711980396581
-      },
+      "state": "Idle",
+      "application_id": "367827983903490050",
       "assets": {
-        "large_image": "mp:external/upBsApcxBvN1KsYpnaBGo2gpIMtYbUQ9ZI90L8HdtgU/https/raw.githubusercontent.com/LeonardSSH/vscord/main/assets/icons/markdown.png",
-        "large_text": "⌨️ Editing a MARKDOWN file",
-        "small_image": "mp:external/Joitre7BBxO-F2IaS7R300AaAcixAvPu3WD1YchRgdc/https/raw.githubusercontent.com/LeonardSSH/vscord/main/assets/icons/vscode.png",
-        "small_text": "Visual Studio Code"
+        "large_image": "373344233077211136",
+        "large_text": "intter",
+        "small_image": "373370493127884800",
+        "small_text": "osu!"
       },
-      "application_id": "810516608442695700",
-      "created_at": 1711981530879
+      "created_at": 1713979992340
     },
     {
       "flags": 48,
       "id": "spotify:1",
       "name": "Spotify",
       "type": 2,
-      "state": "d3puu",
-      "session_id": "99a4d2f060386f3ce850d19ea0a36f52",
-      "details": "Paper Soldier",
+      "state": "DANGERDOOM; MF DOOM; Danger Mouse",
+      "session_id": "aff3a5a656181f92d4ecbbe49952a167",
+      "details": "A.T.H.F. (Aqua Teen Hunger Force)",
       "timestamps": {
-        "start": 1711981501725,
-        "end": 1711981703726
+        "start": 1713979964806,
+        "end": 1713980148219
       },
       "assets": {
-        "large_image": "spotify:ab67616d0000b273fe4be0573ecfc552c5067461",
-        "large_text": "Paper Soldier"
+        "large_image": "spotify:ab67616d0000b2736c3fb85147fcf2972923cf2d",
+        "large_text": "THE MOUSE & THE MASK"
       },
-      "sync_id": "5RmPFKZcsV6bciHOQR3jli",
-      "created_at": 1711981508644,
+      "sync_id": "03yMZBtC3QxyK7ttlBLeme",
+      "created_at": 1713979984161,
       "party": {
         "id": "spotify:514106760299151372"
       }
@@ -170,19 +167,19 @@ This option will print the user's information in a JSON response. You can see an
 
 ### <kbd>--open</kbd>
 
-This option will open the user's Discord profile in your browser. You can see an example of this in action below:
+This option will open the user's Discord profile in your web browser. You can see an example of this in action below:
 
 <div align="center">
-<img src="/blog/using-discid/open-option-example.gif">
+  <video src="/blog/using-discid/open-option-example.mp4" controls></video>
 </div>
 
 ### <kbd>--kv</kbd>
 
 Lanyard also has [key-value pairs](https://en.wikipedia.org/wiki/Name%E2%80%93value_pair) (KV for short) which allow a key-value store to be added to the response.
 
-> "When a KV pair is updated, a <kbd>PRESENCE_UPDATE</kbd> for the user will also be emitted through the Lanyard socket."
+> *"When a KV pair is updated, a <kbd>PRESENCE_UPDATE</kbd> for the user will also be emitted through the Lanyard socket."*
 
-Here's an example with the KV of ***514106760299151372***:
+Here's an example with the KV of **514106760299151372**:
 
 ```json
 {
@@ -195,4 +192,4 @@ Here's an example with the KV of ***514106760299151372***:
 }
 ```
 
-To check this package out on GitHub, click [here](https://github.com/inttter/discid), and on NPM [here](https://npmjs.com/package/discid). If you'd also like to, ⭐ the repository!
+To check this package and its source code out on GitHub, click [here](https://github.com/inttter/discid), and visit it on NPM [here](https://npmjs.com/package/discid). If you'd also like to, [star](https://github.com/inttter/discid/stargazers) the repository!

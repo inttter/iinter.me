@@ -1,46 +1,46 @@
 ---
 title: "Using Emoji in Commit Messages"
 date: "March 25, 2024"
-lastUpdated: "03/03/24 00:17"
+lastUpdated: "24/04/24 19:53"
 author: "Inter"
 timeToRead: 3
 description: How I use emoji in my commit messages to symbolize different things.
 slug: commit-emojis
 ---
 
-Typically, when committing stuff from Git, you'll need to provide a [commit message](https://git-scm.com/docs/git-commit#Documentation/git-commit.txt--cltcommitgt), which details in a very short summary what changes you have made within the commit.
+Typically, when making commit messages from Git, you will need to provide a [commit message](https://git-scm.com/docs/git-commit#Documentation/git-commit.txt--cltcommitgt), which details in a very short summary what changes you have made within the commit.
 
-Some people are not bothered to write commit messages, or they end up using [GitHub](https://github.com)'s automatic commit messages, which go something along the lines of:
+Some people aren't bothered to write a proper commit messages, to which they end up using [GitHub](https://github.com)'s automatic commit messages, which go something along the lines of...
 
 ```
 Update README.md
 ```
 
-or if they do end up writing a commit message, it ends up being just what the change is:
+If they **do** end up writing a commit message, it ends up being just what the change was in that commit.
 
 ```
-Fix 'undefined' showing when emoji is not valid
+Fix errors in browser console
 ```
 
-While these are still valid ways of writing commit messages, most people use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for commit messages, which follow this structure:
+While these are still completely valid ways of writing commit messages and are not a problem, most people use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for commit messages, which follow this structure.
 
 ```
-docs(installation): add Bun as an install option
+docs: add requirment for Node.js 18 or higher
 ```
 
 This gives some important details about **what** you are changing, and the description of what that commit **is**.
 
-However, I like to expand my own commit messages from the conventional commits by using [Gitmoji](https://gitmoji.dev/), as well as my own set of emoji I use for certain purposes, some of which taken from [this GitHub Gist](https://gist.github.com/parmentf/035de27d6ed1dce0b36a). Below, you can see some example use cases of these emoji within the commit message:
+However, I like to expand my own commit messages on top of the conventional commits by using [Gitmoji](https://gitmoji.dev/), a set of emoji's which links to different convential commits, as well as my own set of emoji that I use for other, more specific purposes. Some of them are taken from [this](https://gist.github.com/parmentf/035de27d6ed1dce0b36a) GitHub Gist. Below, you can see some example use cases of these emoji within the commit message.
 
 ```
-📦 chore(package): Bump axios to 1.6.8
-💥 refactor(BREAKING)!: migrate from npm to Bun
-✨ feat: add '--fix' option
+✨ feat: add `--fix` option
+💥 BREAKING: migrate from npm to Bun
+📦 chore: bump dependencies
 ```
 
-For me, this helps to make the commits stand out, and know what kind of commit it was, whether it'd be something small, like a minor text change, or a new feature. They also make the project look less *"bland"* (no offense) and more colorful.
+For me, this helps to make the commits stand out, and know what kind of commit it was, whether it was something small, like a typo, or a complete refactor of something. They also make the project look less **"bland"** and easier to communicate changes with.
 
-If you want more example use cases of these, you can check out my project, [mdbadges-cli](https://github.com/inttter/mdbadges-cli/commits/main/), where I use this style of commit message for every single commit message.
+If you want more example use cases of these, you can check out one of my projects, [mdbadges-cli](https://github.com/inttter/mdbadges-cli/commits/main/), where I use this style of commit message for all of my commit messages.
 
 Here is a list of the emojis I most commonly use when committing changes:
 
@@ -62,9 +62,7 @@ Here is a list of the emojis I most commonly use when committing changes:
 | 🧪 | Tests |
 | 🔥 | Removing old/unused things |
 
-> If you'd like, you can use this for your own commits!
-
-Some ways to expand this, for example, is adding this style of commit to your [Dependabot](https://github.com/dependabot) config. I have the [following config](https://github.com/inttter/mdbadges-cli/blob/main/.github/dependabot.yml) set up in mdbadges-cli to update dependencies with these custom prefixes:
+Some ways to expand this, for example, is by adding this style of commit to your <kbd>dependabot.yml</kbd> configuration file. I have the [following configuration](https://github.com/inttter/mdbadges-cli/blob/main/.github/dependabot.yml) set up in mdbadges-cli to update dependencies for npm and GitHub Actions with these custom prefixes:
 
 ```yaml
 version: 2
@@ -85,20 +83,17 @@ updates:
       prefix: "🤖 chore(action):" # commit prefix for github actions
 ```
 
-📦 signifies a package, which is a sort-of metaphor for a dependency within npm.
+* 📦 signifies a package, which is a metaphor for a package within npm.
+* 🤖 signifies an automated (GitHub) action.
 
-🤖 signifies a change related to automation. Since Dependabot is a bot that auto-creates PR's for you, it is automated, hence the robot emoji.
-
-With this config, PR's opened from Dependabot will look like this:
+With this, pull requests opened from Dependabot will look like similarly to these:
 
 <div align="center">
-<img src="/blog/commit-emojis/package-pr.png">
-<br>
-<img src="/blog/commit-emojis/action-pr.png">
+  <img src="/blog/commit-emojis/package-pr.png">
+  <br>
+  <img src="/blog/commit-emojis/action-pr.png">
 </div>
 
-I also recently came across a CLI tool called [better-commits](https://github.com/Everduin94/better-commits) that I'm most likely going to start using now. It includes this type of commit message, but in steps through the terminal. You can see a demo below:
+With that, automated pull request titles with these emoji and the Convential Commit format are now set up.
 
-<video src="https://github.com/Everduin94/better-commits/assets/14320878/8fb15d46-17c4-4e5d-80d9-79abe0a2a00a" controls></video>
-
-There is also quite an extensive list of configuration options available, which you can see in the [README](https://github.com/Everduin94/better-commits). It also supports [Semantic Release](https://github.com/semantic-release/semantic-release) alongside.
+---

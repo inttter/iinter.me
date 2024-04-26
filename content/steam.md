@@ -1,60 +1,49 @@
 ---
 title: "Why Steam is the Best Game Launcher"
 date: "March 23, 2024"
-lastUpdated: "16/04/2024 20:15"
+lastUpdated: "24/04/2024 19:37"
 author: "Inter"
-description: My personal opinion on why Steam is the best game launcher and store for PC gaming in the market. 
-slug: steam
+description: A host of different reasons as to why Steam is the best Game Launcher & Store for gaming in the market. 
 ---
 
-If you've ever bought a PC game before, it was almost 100% off of Steam. With over 120,000,000 users a month, it's the biggest distributor for games, and for good reason. There's no bullshit that you need to get through to launch a game. Simply launch Steam, select the game, and **Play**. Three clicks (or maybe four if you have to select a launch option).
+If you ever purchased a PC game before, it was almost 100% purchased from the Steam platform. With over 120 million users a month, it's the biggest distributor for games in the world. There's no bullshit that you need to get through to launch a game. Simply launch Steam, select the game, and **Play**. Three clicks.
 
-I myself have used Steam for the better part of four years ever since I switched over from [this old pile of a barely working console](/blog/forza-horizon-3/xbox-one-s.png), to a computer that decently works enough to play most of the games I play daily.
+I have used Steam for about four years ever since I switched over from [this old, barely functioning Xbox One](/blog/forza-horizon-3/xbox-one-s.png), to a much better computer which is now my daily driver.
 
-The whole reason I'm writing this is because of one of Steam's latest features, [Steam Families](https://store.steampowered.com/news/app/593110/view/4149575031735702628), which piqued my interest. It's great to see companies like Valve doing stuff like this:
+The whole reason I wrote this is because of one of Steam's latest features that they have announced, named [Steam Families](https://store.steampowered.com/news/app/593110/view/4149575031735702628).
 
-<div align="center">
-  <blockquote class="twitter-tweet" data-dnt="true" data-theme="dark">
-    <p lang="en" dir="ltr">
-      <em>Hello! We are excited to announce the launch of Steam Families, now accessible in the Steam Beta Client. This feature introduces significant updates and improvements to family sharing, parental controls, and child purchase requests.</em>
-    </p>
-    &mdash; Steam <a href="https://twitter.com/Steam/status/1769797470673076564?ref_src=twsrc%5Etfw">(@Steam)</a>
-  </blockquote>
-</div>
-
-...and it got me thinking how Steam beats out every other launcher there is, which is what I'll talk about.
+> *Hello! We are excited to announce the launch of Steam Families, now accessible in the Steam Beta Client. This feature introduces significant updates and improvements to family sharing, parental controls, and child purchase requests.*
+> &mdash; Steam [(@Steam)](https://twitter.com/Steam/status/1769797470673076564)
 
 ### Sales
 
-Easily one of the best things about Steam is the amount of sales they put out every single year. While they have the four major sales (Spring, Summer, Autumn, Winter), they also have smaller sales, almost all of the time. Rarely do I actually pay full price for a game, except for certain exceptions, like this:
+One of the best and most commonly known things about Steam is the amount of sales there are every single year. Over the course of a year, they have the four major sales, one for each season of the year. They also have smaller sales, which usually revolve around a certain theme, such as games from a specific country or genre. Some games are still full-price anyway, especially recently released ones. This video is a good example.
 
 <div align="center">
-<video src="/blog/steam/buying-fh5.mp4" controls></video>
-<br>
-<div style="color: rgb(161 161 170);">This is the kind of stuff I was making three years ago...</div>
+  <video src="/blog/steam/buying-fh5.mp4" controls></video>
 </div>
 
-Anyway, I've found some amazing games just from these Steam sales, particularly the seasonal ones, one of my favourites and most memorable being [OneShot](https://store.steampowered.com/app/420530/OneShot/).
-
-Not to mention, as a nice little touch, the store page gets redesigned for these sales, which adds some nice art to the store page.
+Besides that, I have found some great games from these sales, particularly the seasonal ones. One of my favorites and most memorable of these was [OneShot](https://store.steampowered.com/app/420530/OneShot/), a top down puzzle/adventure game.
 
 ### Community
 
-The Steam Community is where a lot of things, including but not limited to the [Market](https://steamcommunity.com/market/), [Workshop](https://steamcommunity.com/workshop/), and other things like Reviews, Guides, Artwork, and more.
+The Steam Community is where a lot of things, including, but not limited to the [Market](https://steamcommunity.com/market/), [Workshop](https://steamcommunity.com/workshop/), and other things like Reviews, Guides, Artwork, and more are located.
 
-Particularly for Counter-Strike, the market has single-handedly kept the CS scene alive by giving it a real-world economy with real-world money and value. The workshop has let games continue off of their communities by letting them make custom mods/maps/anything you can think of to expand the game, and the others provide a personality to Steam, unlike other launchers, my next point.
+For example, for Counter-Strike, the market has been one of the major contributing factors to keeping the CS scene alive by giving it a real-world economy with real-world money and value, creating new content for the game. 
+
+The workshop has let games continue off of their communities by letting them make custom mods/maps/anything to expand the game, and the rest are (mostly) QOL features which expand the experience in a good way. For example, reviews give you an idea of people's opinions of the game before you decide to buy it.
 
 ### Other Launchers
 
-Obviously, there's more launchers than just Steam, but they're very lackluster and mediocre at best.
+Obviously, there are more launchers in the market than just Steam, but they are very lackluster and mediocre at best, as they lack most things which Steam has.
 
-Let's take an example like the Epic Games Launcher. When it comes to mind, all I use it for is to launch Fortnite. It took them [**THREE YEARS**](https://store.epicgames.com/en-US/news/introducing-the-epic-games-store-shopping-cart) to add a **shopping cart**. Not to mention, the launcher itself is really lackluster, that's including all of the games on it. The only redeeming factor of it is that there is a free game every week, although most aren't very good in my opinion.
+Let's take an example like the [Epic Games Launcher](https://epicgames.com). When it comes to mind, all I know it for is to launch Fortnite. It took them [**three years**](https://store.epicgames.com/en-US/news/introducing-the-epic-games-store-shopping-cart) to add a **shopping cart**. Not to mention, the launcher itself is very lackluster and soulless, that's including all of the games on it. The only redeeming factor of the Epic launcher is that there is a free game every week that you can claim, although most aren't that good in my opinion.
 
-Other launchers like EA sometimes just...don't want to work? At least in my experience, whenever I play an EA game, sometimes the EA App, which launches the game I'm trying to play, will just...uninstall itself. I have to manually reinstall it and repair it through the installer.
+Some other launchers like the EA App sometimes decide to not want to work. In my experience, whenever I play an EA game like Need For Speed, either the game will have issues (ie. controller not working) or the launcher will, for some reason, just uninstall itself. I have to manually reinstall it and repair it by redownloading it from the EA website and selecting the **'Repair'** option.
 
-I also don't like the fact that a lot of games on Steam, particularly from publishers like EA or Ubisoft, love to embed their own launcher into the game, so that when I click 'Play', it actually opens the other games' launcher, and launches the game there. What is the point of me launching a game just for it to take over a minute to launch because it's using ANOTHER launcher?
+What I also don't like the fact that a lot of games on Steam, mostly from publishers like EA or Ubisoft (you might be able to see a common trend here) love to embed their own launcher into the game, so that when I click **'Play'**, it actually opens the launcher of the publisher, and launches the game from there. Simply put, there is **NO** point of this. Why should I have to launch a launcher from another launcher and wait over a minute for the game to open?
 
-To prove my point, here is a comparison between two games. The first video is me launching [Rainbow Six Siege](https://store.steampowered.com/app/359550/Tom_Clancys_Rainbow_Six_Siege/) (a Ubisoft game) through Steam, while the second is a video of me launching [Geometry Dash](https://store.steampowered.com/app/322170/Geometry_Dash/) (a game that does not need another launcher packaged with it) through Steam:
+To prove this point, here is a comparison between two games. The vide on the left is a typical launch of [Rainbow Six Siege](https://store.steampowered.com/app/359550/Tom_Clancys_Rainbow_Six_Siege/) (a Ubisoft game) through Steam, while the video on the right is a typical launch of [Geometry Dash](https://store.steampowered.com/app/322170/Geometry_Dash/), which is a game that does not have another launcher packaged with it.
 
 | Rainbow Six Siege | Geometry Dash |
 | ------ | ------- |
@@ -62,19 +51,20 @@ To prove my point, here is a comparison between two games. The first video is me
 
 ### UI
 
-The UI, while deep, is simple. There's four sections, Store, Library, Community, and one with your username. Like I mentioned earlier, it takes me three clicks to open a game:
+The UI is clean, plain and simple. There are four sections.
 
-* Open Steam
-* Click on game I want to play
-* Click 'Play'
+* **Store**
+* **Library**
+* **Community**
+* **Username**, which contains profile-related options
 
-Simple as that, no lag, nothing, unlike Rockstar, which for some reason, eats my PC's resources up. The UI did recently [get a redesign](https://steamcommunity.com/games/593110/announcements/detail/3686801719529689368), which also made it look nicer.
+There is no lag, issues, or anything, which is unlike Rockstar. For some reason, it eats my computer's resources up. The UI did recently [get a redesign](https://steamcommunity.com/games/593110/announcements/detail/3686801719529689368) as well, which also made it look nicer.
 
 | Old | New |
 | ------ | ------- |
 | <img src="/blog/steam/old-ui.png"> | <img src="/blog/steam/new-ui.png">
 
-Although, some parts of the UI have taken quite a while to update. An example of this is the Server Browser, commonly used in games with community maps, such as [CS2](https://store.steampowered.com/app/730/CounterStrike_2/) and [Garry's Mod](https://store.steampowered.com/app/4000/Garrys_Mod/), which was only updated 11 months ago, prior to which had been many years without change:
+Although, some parts of the UI have taken quite a while to update, or have not been updated in years. An example of this is the Server Browser, commonly used in games with community maps and/or servers, such as [CS2](https://store.steampowered.com/app/730/CounterStrike_2/) and [Garry's Mod](https://store.steampowered.com/app/4000/Garrys_Mod/). The Server Browser was only updated 11 months ago, prior to which had been many years without change.
 
 | Old | New |
 | ------ | ------- |
@@ -82,10 +72,10 @@ Although, some parts of the UI have taken quite a while to update. An example of
 
 ### Valve
 
-The company behind Steam. They've made some of the most iconic games, such as [Half-Life](https://store.steampowered.com/app/70/HalfLife/), [Portal](https://store.steampowered.com/app/400/Portal/) and [Portal 2](https://store.steampowered.com/app/620/Portal_2/), [Counter-Strike](https://store.steampowered.com/app/730/CounterStrike_2/), and more. They formed Steam in 2003 to serve as a distribution channel for games. They also created hardware like the [Steam Deck](https://store.steampowered.com/steamdeck/) and [Valve Index](https://store.steampowered.com/valveindex).
+Valve is the company behind Steam. They have made some very iconic games. For example, [Half-Life](https://store.steampowered.com/app/70/HalfLife/), [Portal](https://store.steampowered.com/app/400/Portal/) + [Portal 2](https://store.steampowered.com/app/620/Portal_2/), [Counter-Strike](https://store.steampowered.com/app/730/CounterStrike_2/), and more. They formed Steam in 2003 to serve as a distribution channel for games. They have also created hardware like the recently released [Steam Deck](https://store.steampowered.com/steamdeck/) and the [Valve Index](https://store.steampowered.com/valveindex).
 
-### TL;DR
+### End
 
-Steam is good and has a lot of features which extends it, whereas other launchers are either barebones, lack anything notable, or are downright bad, or all three sometimes.
+Steam is great and has a lot of features which help to extend it and provide QOL features, whereas other launchers lack these as they are either very **barebones**, lack anything **notable**, or are **downright bad**, or sometimes all three.
 
-> [Click here](https://steamcommunity.com/id/intermed) if you want to see my Steam profile!
+---

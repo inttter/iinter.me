@@ -1,29 +1,27 @@
 ---
 title: "Creating packages with create-ps"
 date: "March 29, 2024"
-lastUpdated: "21/04/24 16:34"
+lastUpdated: "24/04/24 23:13"
 author: "Inter"
 description: A guide on a faster way to create NPM packages from the terminal.
-slug: creating-packages
 ---
 
-A lot of <kbd>npm</kbd> packages are made all the time. I, myself, do not enjoy the fact that I have to create a load of new files which I know I'll need to make anyway whenever I start making a new package. In the end, I just do this whenever it comes time to actually make that new file, name it, add the contents of what I need into it. To me, that seems like a long process.
+Lots of <kbd>npm</kbd> packages are made all the time. In my opinion, I don't enjoy the fact that I have to create a bunch of new files which I know I will need to make anyway at a later date whenever I decide to create a new package. In the end, I just do this whenever it comes time to actually make that new file, name it, add the contents of what I need into it. To me, that seems like a tedious process.
 
-That's why I decided to make <kbd>create-ps</kbd>, a CLI tool which allows you to create files that you need for an average NPM package.
+That's why I decided to make <kbd>create-ps</kbd>, a command-line tool which allows you to create files that you need for an average NPM package.
 
 ### Demo
 
 <video src="/blog/creating-packages/Demo.mp4" controls></video>
 
-And just like that, it saves me having to create a bunch of new files, makes a Dependabot config, an MIT License, and also a basis for the README!
+Just like that, it saves me having to create a lot of new files, makes a Dependabot config for updating my dependencies, lets me pick a license (since [v2.3.0](https://github.com/inttter/create-ps/releases/tag/v2.3.0)), and also makes a base for the README.
 
-You can view the source code at [inttter/create-ps](https://github.com/inttter/create-ps).
+This is all done using switch cases. If you're curious, you can view the source on [GitHub](https://github.com/inttter/create-ps).
 
 ### Installation
 
 ```bash
 npm install -g create-ps 
-# Globally install it to run it anywhere.
 ```
 
 ### Usage
@@ -33,9 +31,9 @@ npm install -g create-ps
 
 ```bash
 cps <projectName>
+# Note: This will run 'npm init -y' to create a package.json, and a Git repository will also be initialised.
 ```
 
-* This will run <kbd>npm init -y</kbd> to create a <kbd>package.json</kbd>.
 * Select which files you'd like to include and exclude. As of [v3.0.0](https://github.com/inttter/create-ps/releases/tag/v3.0.0), they are all deselected by default.
 
 ```bash
@@ -53,7 +51,7 @@ Select what you'd like to include: (Press <space> to select, <a> to toggle all, 
  ◉ test/
 ```
 
-<div style="background-color: #1B2A3A; color: #47A3F3; padding: 10px; margin-bottom: 20px; margin-top: 10px; border-radius: 5px;">
+<div style="background-color: #1B2A3A; color: #d4d4d8; padding: 10px; margin-bottom: 20px; margin-top: 10px; border-radius: 5px;">
   💡 To create a .mjs (ESM/EcmaScript) file and use <kbd>import</kbd> statements, run the command with the <kbd>--esm</kbd> flag.
 </div>
 
@@ -65,7 +63,7 @@ If you run the following command in your terminal, you can edit various fields i
 cps pkg-config
 ```
 
-You are then able to select what fields you want to include such as, but not limited to the **Author**, **Keywords**, and the **License** you are using (you can use [this](https://spdx.org/licenses/) list from SPDX to find the right identifier for the license field), and once confirmed, it will ask a series of prompts for you to fill out the necessary information, and will edit your <kbd>package.json</kbd> accordingly.
+You're then able to select the fields you would like to include and customise. For example, but not limited to, the **Author**, **Keywords**, and the **License** you are using (you can use [this](https://spdx.org/licenses/) list from SPDX to find the right identifier for the license field). Once confirmed, create-ps will ask a series of prompts for you to fill out the necessary information, and will edit your <kbd>package.json</kbd> accordingly.
 
 ```markdown
 Select what you'd like to include: (Press <space> to select, <a> to toggle all, <i> to invert selection, and <enter> to proceed)
@@ -78,6 +76,6 @@ Select what you'd like to include: (Press <space> to select, <a> to toggle all, 
  ◯ License
 ```
 
-You can also run this in an existing project and it will add the necessary fields.
+You can also run this in an existing project to fill out and/or replace any fields.
 
 If you find this useful, star it on [GitHub](https://github.com/inttter/create-ps)!
