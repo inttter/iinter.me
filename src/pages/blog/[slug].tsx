@@ -45,8 +45,6 @@ export default function BlogPost({ post }) {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="fixed inset-x-0 top-0 h-8 transparent backdrop-blur-[3px] pointer-events-none"></div>
-      <div className="fixed inset-x-0 bottom-0 h-8 transparent backdrop-blur-[3px] pointer-events-none"></div>
       <Head>
         <title>{post.frontmatter.title}</title>
         <meta property="og:image" content={post.frontmatter.image} />
@@ -299,8 +297,10 @@ const markdownComponents = {
   // Blockquotes
   blockquote({ node, children, ...props }) {
     return (
-      <blockquote className="border-l-4 border-neutral-700 pl-4 my-4">
-        <div className="ml-2">{children}</div>
+      <blockquote className="text-stone-400 border-neutral-700 flex items-center italic">
+        <div className="px-3">
+          {children}
+        </div>
       </blockquote>
     );
   },
