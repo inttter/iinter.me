@@ -1,10 +1,9 @@
 ---
 title: "Noting down stuff"
 date: "April 11, 2024"
-lastUpdated: "25/04/2024 23:16"
+lastUpdated: "27/04/2024 20:17"
 author: "Inter"
 description: The way I note down stuff I think about doing.
-slug: noting-down-stuff
 ---
 
 A lot of the time, but commonly when I go to bed, I remember or think about something that I want to do the next day. We have a tendency to forget things after we sleep, so I need to note it down somewhere, but how exactly?
@@ -13,7 +12,7 @@ There are a host of options out there for how to write stuff down, some built sp
 
 However, I do it in an uncommon way, that I haven't seen many other people doing. **I note down stuff on [Discord](https://discord.com)**. 
 
-At first, this might sound odd, until you realise that anyone can make a server that is just **you** in it, and since nobody else can see what you write, aka private, it makes a server a great place to store stuff you're thinking about doing.
+At first, this might sound odd, until you realize that anyone can make a server that is just **you** in it, and since nobody else can see what you write, aka private, it makes a server a great place to store stuff you're thinking about doing.
 
 <img src="/blog/noting-down-stuff/note.png" alt="I wanted to replace <a> tags with <Link> tags, so I wrote it down before I forgot.">
 

@@ -1,7 +1,7 @@
 ---
 title: "Using Emoji in Commit Messages"
 date: "March 25, 2024"
-lastUpdated: "24/04/24 19:53"
+lastUpdated: "27/04/24 20:08"
 author: "Inter"
 timeToRead: 3
 description: How I use emoji in my commit messages to symbolize different things.
@@ -25,12 +25,12 @@ Fix errors in browser console
 While these are still completely valid ways of writing commit messages and are not a problem, most people use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for commit messages, which follow this structure.
 
 ```
-docs: add requirment for Node.js 18 or higher
+docs: add requirement for Node.js 18 or higher
 ```
 
 This gives some important details about **what** you are changing, and the description of what that commit **is**.
 
-However, I like to expand my own commit messages on top of the conventional commits by using [Gitmoji](https://gitmoji.dev/), a set of emoji's which links to different convential commits, as well as my own set of emoji that I use for other, more specific purposes. Some of them are taken from [this](https://gist.github.com/parmentf/035de27d6ed1dce0b36a) GitHub Gist. Below, you can see some example use cases of these emoji within the commit message.
+However, I like to expand my own commit messages on top of the conventional commits by using [Gitmoji](https://gitmoji.dev/), a set of emoji's which links to different conventional commits, as well as my own set of emoji that I use for other, more specific purposes. Some of them are taken from [this](https://gist.github.com/parmentf/035de27d6ed1dce0b36a) GitHub Gist. Below, you can see some example use cases of these emoji within the commit message.
 
 ```
 ✨ feat: add `--fix` option
@@ -94,4 +94,4 @@ With this, pull requests opened from Dependabot will look like similarly to thes
   <img src="/blog/commit-emojis/action-pr.png">
 </div>
 
-With that, automated pull request titles with these emoji and the Convential Commit format are now set up.
+With that, automated pull request titles with these emoji and the Conventional Commit format are now set up.

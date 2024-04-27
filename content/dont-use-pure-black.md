@@ -1,10 +1,9 @@
 ---
 title: "Don't use pure black"
 date: "April 15, 2024"
-lastUpdated: "2/04/2024 23:30"
+lastUpdated: "27/04/2024 20:15"
 author: "Inter"
 description: An explanation as to why you should not use pure black.
-slug: dont-use-pure-black
 ---
 
 Designing dark pages always involve using a wide palette of dark colors. A common trend in most newer designs of pages is that they don't use the actual **black** color, which uses hex color [#000000](https://www.color-hex.com/color/000000), they instead opt for a softer and/or lighter version of black.
@@ -23,7 +22,7 @@ These colors also shine off the screen (or wherever it's being emitted from) and
   <img src="/blog/dont-use-pure-black/shining-clock.png" width="350">
 </div>
 
-As you're most likely able to spot, there is a round, white glow being emitted off of the numbers. In an environment where light is minimal or dimmed, this will make them feel the need to squint, further worsening their vision, but moreso for those with impaired vision.
+As you're most likely able to spot, there is a round, white glow being emitted off of the numbers. In an environment where light is minimal or dimmed, this will make them feel the need to squint, further worsening their vision, but more so for those with impaired vision.
 
 Here's that same clock with the lights in the room turned on:
 
@@ -67,7 +66,7 @@ On the linked page, Microsoft themselves have said:
 
 > *"Text with low contrast can be difficult to read for people with low vision. There are websites that have, for example, poor color combinations such as blue links on black backgrounds. They aren’t easy to read even for people with unimpaired vision and can be virtually impossible for people with vision disabilities. Strongly contrasting colors can make it quicker and easier to read from your PC."*
 
-There's also other factors that are determing factors for whether this may apply to you. For example:
+There's also other factors that are determining factors for whether this may apply to you. For example:
 
 * The theme of your design
 * Emphasizing important content against opposite colors (eg. a banner)

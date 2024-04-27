@@ -1,10 +1,9 @@
 ---
 title: "Monetization in Games"
 date: "April 3, 2024"
-lastUpdated: "25/04/24 23:07"
+lastUpdated: "27/04/24 20:17"
 author: "Inter"
 description: Thoughts on ways of monetizing in games, and how they are good and bad.
-slug: monetization-in-games
 ---
 
 I've been playing video games for basically my entire life. In this time, there's been a large amount of games that I **played**, **refunded** because they were ~~shit~~ **bad**, or simply got **burnt out** after playing it for a long time. I've also spent way too much money then I should be on games in general.
@@ -50,7 +49,7 @@ Examples of gacha games which have a *"gacha system"* include [Genshin Impact](h
 
 * **Randomized Rewards** — A chance to get different things by rolling for them.
 * **Limited-Time Offers** — Events with exclusive/limited-time items ([FOMO](#battle-passes)).
-* **Pity Systems** — Garuntees something good after a certain amount of rolls.
+* **Pity Systems** — Guarantees something good after a certain amount of rolls.
 
 This makes people spend large amounts of money chasing for rare cosmetics, which makes the company millions or sometimes **billions** in revenue. This could lead to addiction if it gets bad enough.
 
@@ -70,9 +69,9 @@ A lot of the time, you tend to get much more of the premium currency that you ha
 
 <img src="/blog/monetization-in-games/apex-coins.png" alt="This is the store page for buying Apex Coins in Apex Legends. In this example specifically, they will try and incentivize people by saying that they will get (𝑥) amount of currency bonus.">
 
-If you want to visualise this, here's a diagram.
+If you want to visualize this, here's a diagram.
 
-<img src="/blog/monetization-in-games/diagram.png" alt="A simple diagram to visualise the cycle of premium currency, using 10,000 Apex coins as an example.">
+<img src="/blog/monetization-in-games/diagram.png" alt="A simple diagram to visualize the cycle of premium currency, using 10,000 Apex coins as an example.">
  
 ### DLC
 

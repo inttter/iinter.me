@@ -1,7 +1,7 @@
 ---
 title: "Creating packages with create-ps"
 date: "March 29, 2024"
-lastUpdated: "24/04/24 23:13"
+lastUpdated: "27/04/24 20:51"
 author: "Inter"
 description: A guide on a faster way to create NPM packages from the terminal.
 ---
@@ -31,7 +31,7 @@ npm install -g create-ps
 
 ```bash
 cps <projectName>
-# Note: This will run 'npm init -y' to create a package.json, and a Git repository will also be initialised.
+# Note: This will run 'npm init -y' to create a package.json, and a Git repository will also be initialized.
 ```
 
 * Select which files you'd like to include and exclude. As of [v3.0.0](https://github.com/inttter/create-ps/releases/tag/v3.0.0), they are all deselected by default.
@@ -63,7 +63,7 @@ If you run the following command in your terminal, you can edit various fields i
 cps pkg-config
 ```
 
-You're then able to select the fields you would like to include and customise. For example, but not limited to, the **Author**, **Keywords**, and the **License** you are using (you can use [this](https://spdx.org/licenses/) list from SPDX to find the right identifier for the license field). Once confirmed, create-ps will ask a series of prompts for you to fill out the necessary information, and will edit your <kbd>package.json</kbd> accordingly.
+You're then able to select the fields you would like to include and customize. For example, but not limited to, the **Author**, **Keywords**, and the **License** you are using (you can use [this](https://spdx.org/licenses/) list from SPDX to find the right identifier for the license field). Once confirmed, create-ps will ask a series of prompts for you to fill out the necessary information, and will edit your <kbd>package.json</kbd> accordingly.
 
 ```markdown
 Select what you'd like to include: (Press <space> to select, <a> to toggle all, <i> to invert selection, and <enter> to proceed)

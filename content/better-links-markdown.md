@@ -1,10 +1,9 @@
 ---
 title: "A better way to use links in Markdown"
 date: "April 20, 2024"
-lastUpdated: "26/04/24 18:26"
+lastUpdated: "27/04/24 20:07"
 author: "Inter"
 description: Link definitions help simplify the repeated use of specific links in Markdown files.
-slug: a-better-way-to-use-links-in-markdown
 ---
 
 Normally, when we use hyperlinks in Markdown, it looks like this:
@@ -55,7 +54,7 @@ This approach also becomes quite useful when dealing with lengthy URLs or when y
 
 <div style="padding: 0.8rem 1rem; background-color: #262626; border-radius: 0.375rem; font-size: 0.96rem; display: flex; align-items: center; color: #d4d4d8; margin-top: 20px; margin-bottom: 20px;">
     <strong style="margin-right: 0.8rem;">💡</strong> 
-    <span>Visual Studio Code has a useful Source Action to organize link definitions, which you can utilise by right clicking within the Markdown file, selecting <kbd>Source Action</kbd>, and selecting <kbd>Organize link definitions</kbd>.
+    <span>Visual Studio Code has a useful Source Action to organize link definitions, which you can utilize by right clicking within the Markdown file, selecting <kbd>Source Action</kbd>, and selecting <kbd>Organize link definitions</kbd>.
 </div>
 
 You can watch [this video](https://www.youtube.com/watch?v=N_fEkFEiiRc) for more info, but if you want to save yourself time, add the following to your <kbd>settings.json</kbd> file:
