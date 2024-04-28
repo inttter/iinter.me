@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
+import Link from 'next/link';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import Navbar from '../../components/Navbar';
+import Top from '../../components/BackToTop';
 import { request } from 'graphql-request';
+import { SiAnilist } from "react-icons/si";
 
 const IndexPage = () => {
   const [watchlist, setWatchlist] = useState({
@@ -37,21 +39,19 @@ const IndexPage = () => {
 
       try {
         const data = await request('https://graphql.anilist.co', query);
+        console.log('Successfully fetched list from https://anilist.co/user/intter/animelist.')
         const lists = data.MediaListCollection.lists;
 
         const watching = [];
         const completed = [];
         const planned = [];
 
-        // Iterate over each list
         lists.forEach(list => {
-          // Iterate over entries in the list
           list.entries.forEach(entry => {
             const media = entry.media;
             const title = media.title.english;
             const coverImage = media.coverImage ? media.coverImage.large : null;
 
-            // Determine the status and push to corresponding array
             switch (entry.status) {
               case 'CURRENT':
                 watching.push({ id: media.id, title, coverImage });
@@ -81,14 +81,36 @@ const IndexPage = () => {
     <div className="bg-main min-h-screen flex flex-col justify-center items-center antialiased p-4 md:p-8">
       <div className="max-w-2xl w-full px-4 py-24 space-y-6 flex-col">
         <div className="flex flex-col space-y-4">
-          {watchlist.watching.length > 0 && <WatchlistCategory title="Watching" list={watchlist.watching} />}
-          {watchlist.completed.length > 0 && <WatchlistCategory title="Completed" list={watchlist.completed} />}
-          {watchlist.planned.length > 0 && <WatchlistCategory title="Plan To Watch" list={watchlist.planned} />}
+          {watchlist.watching.length > 0 && (
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+              <WatchlistCategory title="📺 Watching" list={watchlist.watching} />
+            </motion.div>
+          )}
+          {watchlist.completed.length > 0 && (
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.5 }}>
+              <WatchlistCategory title="✅ Completed" list={watchlist.completed} />
+            </motion.div>
+          )}
+          {watchlist.planned.length > 0 && (
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 1.0 }}>
+              <WatchlistCategory title="⌚ Plan To Watch" list={watchlist.planned} />
+            </motion.div>
+          )}
         </div>
         <Head>
-        <title>anime list | iinter.me</title>
+          <title>anime list | iinter.me</title>
         </Head>
         <Navbar />
+        <div className="mt-auto">
+          <Top />
+        </div>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.8 }}>
+          <div className="flex justify-end">
+            <Link href="https://anilist.co/user/intter/animelist" target="_blank" rel="noopener noreferrer" className="relative items-end justify-end tooltip tooltip-left bg-transparent" data-theme="lofi" data-tip="View list on AniList">
+              <SiAnilist size={40} className="mr-1 text-neutral-700 hover:text-sky-400 hover:bg-zinc-300 hover:bg-opacity-15 rounded-md p-2 duration-300" />
+            </Link>
+          </div>
+        </motion.div>
       </div>
     </div>
   );
@@ -98,7 +120,7 @@ const WatchlistCategory = ({ title, list }) => {
   return (
     <div>
       <h2 className="text-2xl font-semibold mb-6 text-stone-100 tracking-tighter">{title}</h2>
-      <div className="grid md:grid-cols-4 grid-cols-2 gap-4">
+      <div className="grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4">
         {list.map(item => (
           <div key={item.id} className="relative">
             {item.coverImage && (
@@ -107,21 +129,22 @@ const WatchlistCategory = ({ title, list }) => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1, delay: 1.0 }}
                 transition={{ duration: 1.0 }}
-                className="group relative"
+                className="group relative hover:shadow-2xl hover:shadow-neutral-700 hover:scale-105 active:scale-95 duration-300"
               >
-                <Image
-                  src={item.coverImage}
-                  alt={item.title}
-                  width={200}
-                  height={200}
-                  priority={true}
-                  className="rounded-md mb-2 opacity-100 transition-opacity duration-300 ease-in-out group-hover:opacity-30"
-                />
-                <span className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 bg-black bg-opacity-50">
-                  <span className="text-zinc-50 font-semibold px-3 text-center md:text-left">
-                    {item.title}
+                <Link href={`https://anilist.co/anime/${item.id}`} target="_blank" rel="noopener noreferrer">
+                  <img
+                    src={item.coverImage}
+                    alt={item.title}
+                    width={200}
+                    height={200}
+                    className="rounded-md mb-2 opacity-100 transition-opacity duration-300 ease-in-out group-hover:opacity-30"
+                  />
+                  <span className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 bg-black bg-opacity-50">
+                    <span className="text-zinc-50 font-semibold px-3 text-center md:text-left sm:text-lg md:text-md tracking-tighter">
+                      {item.title}
+                    </span>
                   </span>
-                </span>
+                </Link>
               </motion.div>
             )}
           </div>
