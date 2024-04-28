@@ -31,6 +31,9 @@ function Navbar() {
                     <Link href="/about" className="text-neutral-100 hover:text-neutral-300 duration-300">
                         About
                     </Link>
+                    <Link href="/anime" className="text-neutral-100 hover:text-neutral-300 duration-300">
+                        Anime List
+                    </Link>
                     <Link href="/projects" className="text-neutral-100 hover:text-neutral-300 duration-300">
                         Projects
                     </Link>
@@ -45,6 +48,9 @@ function Navbar() {
                 </Link>
                 <Link href="/about" className="text-zinc-100 hover:text-zinc-300 duration-300 border-b-2 border-dotted border-neutral-700 hover:border-neutral-500">
                     about
+                </Link>
+                <Link href="/anime" className="text-zinc-100 hover:text-zinc-300 duration-300 border-b-2 border-dotted border-neutral-700 hover:border-neutral-500">
+                    anime
                 </Link>
                 <Link href="/projects" className="text-zinc-100 hover:text-zinc-300 duration-300 border-b-2 border-dotted border-neutral-700 hover:border-neutral-500">
                     projects
