@@ -116,7 +116,7 @@ const IndexPage = () => {
         )}
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.8 }}>
           <div className="flex justify-end">
-            <Link href="https://anilist.co/user/intter/animelist" target="_blank" rel="noopener noreferrer" className="relative items-end justify-end tooltip tooltip-left bg-transparent" data-theme="lofi" data-tip="View list on AniList">
+            <Link href="https://anilist.co/user/intter/animelist" target="_blank" rel="noopener noreferrer" className="relative mt-2 items-end justify-end tooltip tooltip-left bg-transparent" data-theme="lofi" data-tip="View list on AniList">
               <SiAnilist size={40} className="mr-1 text-neutral-700 hover:text-sky-400 hover:bg-zinc-300 hover:bg-opacity-15 rounded-md p-2 duration-300" />
             </Link>
           </div>
@@ -129,7 +129,7 @@ const IndexPage = () => {
 const WatchlistCategory = ({ title, list }) => {
   return (
     <div>
-      <h2 className="text-2xl font-semibold mb-6 text-stone-100 tracking-tighter">{title}</h2>
+      <div className="text-2xl font-semibold mb-6 text-stone-100 tracking-tighter">{title}</div>
       <div className="grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4">
         {list.map(item => (
           <div key={item.id} className="relative">
@@ -159,6 +159,9 @@ const WatchlistCategory = ({ title, list }) => {
             )}
           </div>
         ))}
+      </div>
+      <div className="flex items-center justify-center">
+        <hr className="w-full border-t border-neutral-800 mt-2" />
       </div>
     </div>
   );
