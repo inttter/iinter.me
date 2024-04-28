@@ -35,8 +35,7 @@
     "rehype-slug": "^6.0.0",
     "remark-gfm": "^4.0.0",
     "sharp": "^0.33.3",
-    "sonner": "^1.4.41",
-    "vaul": "^0.9.0"
+    "sonner": "^1.4.41"
   },
   "devDependencies": {
     "@types/node": "^20.12.7",
