@@ -6,6 +6,7 @@ import Navbar from '../../components/Navbar';
 import Top from '../../components/BackToTop';
 import { request } from 'graphql-request';
 import { SiAnilist } from "react-icons/si";
+import { CircleX } from 'lucide-react';
 
 const IndexPage = () => {
   const [watchlist, setWatchlist] = useState({
@@ -13,6 +14,7 @@ const IndexPage = () => {
     completed: [],
     planned: [],
   });
+  const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
     const fetchWatchlist = async () => {
@@ -71,6 +73,7 @@ const IndexPage = () => {
         setWatchlist({ watching, completed, planned });
       } catch (error) {
         console.error('Error fetching watchlist:', error);
+        setErrorMessage(`Error fetching list. Most likely, the site is being rate-limited by the API. Please try visiting again in a few minutes.`);
       }
     };
 
@@ -104,6 +107,13 @@ const IndexPage = () => {
         <div className="mt-auto">
           <Top />
         </div>
+        {errorMessage && (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+            <div className="flex justify-center items-center bg-red-500 bg-opacity-40 text-zinc-200 px-4 py-2 rounded-md">
+              <CircleX size={60} className="mr-3" /> {errorMessage}
+            </div>
+          </motion.div>
+        )}
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.8 }}>
           <div className="flex justify-end">
             <Link href="https://anilist.co/user/intter/animelist" target="_blank" rel="noopener noreferrer" className="relative items-end justify-end tooltip tooltip-left bg-transparent" data-theme="lofi" data-tip="View list on AniList">
