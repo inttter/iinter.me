@@ -46,16 +46,15 @@ export default function Post({ post }) {
       transition={{ duration: 0.5 }}
     >
       <Head>
-        <title>{post.frontmatter.title}</title>
-        <meta property="og:image" content={post.frontmatter.image} />
+        <title>{post.frontmatter.title} | iinter.me</title>
       </Head>
-      <div className="max-w-2xl w-full md:px-1 px-3 md:py-7 py-12 space-y-6">
+      <div className="max-w-2xl w-full md:px-1 px-3 md:py-7 py-11 space-y-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <Navbar />
           </div>
           <span className="flex items-center relative">
-            <Link href={githubURL} className="flex items-center text-neutral-600 text-sm hover:bg-neutral-700 p-1.5 -mt-7 md:-mt-5 hover:text-zinc-300 duration-300 bg-transparent hover:bg-opacity-80 rounded-md tooltip tooltip-bottom" target="_blank" rel="noopener noreferrer">
+            <Link href={githubURL} className="flex relative items-center text-neutral-600 text-sm hover:bg-neutral-70 p-1.5 -mt-7 md:-mt-5 hover:text-zinc-300 duration-300 bg-transparent hover:bg-opacity-80 rounded-md tooltip tooltip-bottom" target="_blank" rel="noopener noreferrer">
               <Github size={20} />
             </Link>
           </span>
