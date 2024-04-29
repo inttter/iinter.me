@@ -8,35 +8,31 @@ class MyDocument extends Document {
 
   render() {
     const { post } = this.props.__NEXT_DATA__.props.pageProps;
-    const isBlogPostPage = !!post;
-    const isBlogIndexPage = this.props.__NEXT_DATA__.props.pageProps.isBlogIndexPage;
+    const isPostPage = !!post;
+    const isWritingIndexPage = this.props.__NEXT_DATA__.props.pageProps.isWritingIndexPage;
 
     return (
       <Html>
         <Head>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-          {/* Metadata for blog index page */}
-          {isBlogIndexPage && (
+          {isWritingIndexPage && (
             <>
-              <meta property="og:description" content="inter's (mediocre) blog." />
-              <meta property="og:url" content="https://iinter.me/blog" />
-              <meta property="og:image" content="https://iinter.me/external-assets/blog-index.png" />
-              <meta name="twitter:image" content="https://iinter.me/external-assets/blog-index.png" />
+              <meta property="og:url" content="https://iinter.me/writing" />
+              <meta property="og:image" content="https://iinter.me/external-assets/wrting-index.png" />
+              <meta name="twitter:image" content="https://iinter.me/external-assets/writing-index.png" />
               <meta name="twitter:card" content="summary_large_image" />
             </>
           )}
-          {/* Metadata for blog post page */}
-          {isBlogPostPage && (
+          {isPostPage && (
             <>
               <meta property="og:title" content={post.frontmatter.title} />
-              <meta property="og:image" content="https://iinter.me/external-assets/blog-index.png" />
+              <meta property="og:image" content="https://iinter.me/external-assets/writing-index.png" />
               <meta property="og:description" content={post.frontmatter.description} />
-              <meta name="twitter:image" content="https://iinter.me/external-assets/blog-index.png" />
+              <meta name="twitter:image" content="https://iinter.me/external-assets/writing-index.png" />
               <meta name="twitter:card" content="summary_large_image" />
             </>
           )}
-          {/* Default metadata */}
-          {!isBlogIndexPage && !isBlogPostPage && (
+          {!isWritingIndexPage && !isPostPage && (
             <>
               <meta property="og:image" content="https://iinter.me/external-assets/og-card.png" />
               <meta name="twitter:image" content="https://iinter.me/external-assets/og-card.png" />
@@ -46,7 +42,7 @@ class MyDocument extends Document {
           )}
           <meta property="og:title" content="Inter" />
           <meta property="og:site_name" content="iinter.me" />
-          <meta property="og:url" content="iinter.me" />
+          <meta property="og:url" content="https://iinter.me" />
           <meta property="og:type" content="website" />
           <meta name="theme-color" content="#161617" />
           <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
