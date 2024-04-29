@@ -33,6 +33,7 @@ const IndexPage = () => {
                   }
                 }
                 status
+                score
               }
             }
           }
@@ -53,16 +54,17 @@ const IndexPage = () => {
             const media = entry.media;
             const title = media.title.english;
             const coverImage = media.coverImage ? media.coverImage.large : null;
+            const score = entry.score;
 
             switch (entry.status) {
               case 'CURRENT':
-                watching.push({ id: media.id, title, coverImage });
+                watching.push({ id: media.id, title, coverImage, score });
                 break;
               case 'COMPLETED':
-                completed.push({ id: media.id, title, coverImage });
+                completed.push({ id: media.id, title, coverImage, score });
                 break;
               case 'PLANNING':
-                planned.push({ id: media.id, title, coverImage });
+                planned.push({ id: media.id, title, coverImage, score });
                 break;
               default:
                 break;
@@ -154,6 +156,11 @@ const WatchlistCategory = ({ title, list }) => {
                       {item.title}
                     </span>
                   </span>
+                  {title !== "⌚ Plan To Watch" && item.score && item.score > 0 && ( // Check if title is not "Plan To Watch" and score exists and is greater than 0
+                    <span className="absolute bottom-1 right-2 md:right-1 bg-neutral-800 text-neutral-300 px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-top group-hover:bottom-2 group-hover:right-2 group-hover:md:right-2 duration-300" data-tip="Rating" data-theme="lofi">
+                      {item.score}/10
+                    </span>
+                  )}
                 </Link>
               </motion.div>
             )}
