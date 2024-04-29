@@ -20,7 +20,7 @@ import { toast, Toaster } from 'sonner';
 import copy from 'copy-to-clipboard';
 import Navbar from '../../components/Navbar';
 
-export default function BlogPost({ post }) {
+export default function Post({ post }) {
   const router = useRouter();
 
   if (!post) return null;

@@ -12,7 +12,7 @@ That's why I decided to make <kbd>create-ps</kbd>, a command-line tool which all
 
 ### Demo
 
-<video src="/blog/creating-packages/Demo.mp4" controls></video>
+<video src="/images/creating-packages/Demo.mp4" controls></video>
 
 Just like that, it saves me having to create a lot of new files, makes a Dependabot config for updating my dependencies, lets me pick a license (since [v2.3.0](https://github.com/inttter/create-ps/releases/tag/v2.3.0)), and also makes a base for the README.
 

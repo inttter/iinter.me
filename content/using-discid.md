@@ -29,13 +29,13 @@ discid <userID>
 1. Enable Developer Mode on Discord. You can do this by going to Discord settings, navigating to the **Advanced** tab, and  enabling **Developer Mode** by checking the toggle.
 
 <div align="center">
-  <img src="/blog/using-discid/developer-mode-toggle.png">
+  <img src="/images/using-discid/developer-mode-toggle.png">
 </div>
 
 2. Right click on a user's profile picture and click on the option which says '**Copy User ID**'. This will copy the user's ID to your clipboard.
 
 <div align="center">
-  <img src="/blog/using-discid/copy-user-id.png">
+  <img src="/images/using-discid/copy-user-id.png">
 </div>
 
 3. Go back to your command-line and run <kbd>discid userID</kbd>, replacing <kbd>userID</kbd> with the ID of the user you copied. For example, if you had the user ID **514106760299151372** copied, you would run:
@@ -170,7 +170,7 @@ This option will print the user's information in a formatted JSON response. You 
 This option will open the user's Discord profile in your web browser. You can see an example of this in action below:
 
 <div align="center">
-  <video src="/blog/using-discid/open-option-example.mp4" controls></video>
+  <video src="/images/using-discid/open-option-example.mp4" controls></video>
 </div>
 
 ### <kbd>--kv</kbd>

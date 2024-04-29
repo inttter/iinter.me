@@ -89,9 +89,9 @@ updates:
 With this, pull requests opened from Dependabot will look like similarly to these:
 
 <div align="center">
-  <img src="/blog/commit-emojis/package-pr.png">
+  <img src="/images/commit-emojis/package-pr.png">
   <br>
-  <img src="/blog/commit-emojis/action-pr.png">
+  <img src="/images/commit-emojis/action-pr.png">
 </div>
 
 With that, automated pull request titles with these emoji and the Conventional Commit format are now set up.

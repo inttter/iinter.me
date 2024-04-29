@@ -8,7 +8,7 @@ description: My experience growing up playing Forza Horizon 3, a game released i
 
 In Christmas of 2016, I recieved an Xbox One S. It was the first time I was able to properly play games after being stuck on a PS3 for a long time. My PS3 was the console I was stuck on for quite a few years, even after the (now) last-gen consoles each came out in 2014. I got a few games along with my Xbox aswell. For example, some prominent ones I got were [Rocket League](https://rocketleague.com) and [Minecraft Xbox One Edition](https://minecraft.fandom.com/wiki/Xbox_One_Edition). As a part of these games, I got [Forza Horizon 3](https://en.wikipedia.org/wiki/Forza_Horizon_3) as well, a prominent racing game from the Forza franchise back in 2016, which was the same year in which the game released.
 
-<img src="/blog/forza-horizon-3/xbox-one-s.png" alt="The Xbox One S in question positioned in my living room. At the time of making this blog post, it hasn't been played with for about a year.">
+<img src="/images/forza-horizon-3/xbox-one-s.png" alt="The Xbox One S in question positioned in my living room. At the time of making this post, it hasn't been played with for about a year.">
 
 This post goes into more detail about my personal experience with the game, and my opinions on it.
 
@@ -28,10 +28,10 @@ I also progressed through the game normally, by buying new cars with the Credits
 
 <div align="center">
   <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 20px;"> <!-- grid-style formation -->
-    <img src="/blog/forza-horizon-3/forza-image-1.png" width="350">
-    <img src="/blog/forza-horizon-3/forza-image-2.png" width="350">
-    <img src="/blog/forza-horizon-3/forza-image-3.png" width="350">
-    <img src="/blog/forza-horizon-3/forza-image-4.png" width="350">
+    <img src="/images/forza-horizon-3/forza-image-1.png" width="350">
+    <img src="/images/forza-horizon-3/forza-image-2.png" width="350">
+    <img src="/images/forza-horizon-3/forza-image-3.png" width="350">
+    <img src="/images/forza-horizon-3/forza-image-4.png" width="350">
   </div>
 </div>
 
@@ -51,7 +51,7 @@ When I first tried to go back to this game, I wanted to do it on PC, because I h
 
 I did try to do this, but unfortunately, since the game was delisted, and even though I was using the same account from my Xbox on the Microsoft Store, the game was unavailable for download.
 
-<img src="/blog/forza-horizon-3/fh3-delisted.png" alt="Clicking 'Choose Option' would tell me every version was unavailable.">
+<img src="/images/forza-horizon-3/fh3-delisted.png" alt="Clicking 'Choose Option' would tell me every version was unavailable.">
 
 I could not download, or even buy the game, because they [delisted it in 2020](https://support.forzamotorsport.net/hc/en-us/articles/360052097274-Forza-Horizon-3-Unavailable-for-Purchase#:~:text=Forza%20Horizon%203%20and%20its,game%20and%20its%20associated%20content.). I went through different rabbit holes to try and get access to the game without paying hundreds of $$$ for a key of the PC version of the game, but I stopped because I wasn't willing to dig deeper and get myself into something shady.
 
@@ -68,7 +68,7 @@ While the game is now delisted, it sparked an interest for racing and cars in ge
 Try [Forza Horizon 4](https://store.steampowered.com/app/1293830/Forza_Horizon_4/), but probably not [Forza Horizon 5](https://store.steampowered.com/app/1551360/Forza_Horizon_5/).
 
 <div align="center">
-    <img src="/blog/forza-horizon-3/170gb-fh5.png" alt="This is over 50% bigger than previous installments.">
+    <img src="/images/forza-horizon-3/170gb-fh5.png" alt="This is over 50% bigger than previous installments.">
 </div>
 
 170 GB just for a Forza installment, which the new content of is recycled cars from previous titles and then advertised as **"new!"** content, is insane. That's 1/5 of my computer. When the game came out, it was only about 80GB, which is the same as Horizon 4, **6** years after launch.

@@ -12,7 +12,7 @@ Normally, when we use hyperlinks in Markdown, it looks like this:
 [Some text](https://example.com)
 ```
 
-This is a perfectly valid way of using hyperlinks, and it's the standard for most people using Markdown. I prefer using this method when writing blog posts as well, since I don't tend to use the same link multiple times in one blog post.
+This is a perfectly valid way of using hyperlinks, and it's the standard for most people using Markdown. I prefer using this method when writing these posts as well, since I don't tend to use the same link multiple times in one post.
 
 ---
 

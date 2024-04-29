@@ -26,5 +26,5 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/components/SocialName.tsx", "src/components/SocialLink.js", "src/pages/blog/index.js", "src/pages/projects/index.js", "src/pages/404.js", "src/pages/anime/index.js"  ]
+, "src/components/SocialName.tsx", "src/components/SocialLink.js", "src/pages/writing/index.js", "src/pages/projects/index.js", "src/pages/404.js", "src/pages/anime/index.js"  ]
 }

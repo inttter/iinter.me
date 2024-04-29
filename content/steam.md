@@ -8,7 +8,7 @@ description: A host of different reasons as to why Steam is the best Game Launch
 
 If you ever purchased a PC game before, it was almost 100% purchased from the Steam platform. With over 120 million users a month, it's the biggest distributor for games in the world. There's no bullshit that you need to get through to launch a game. Simply launch Steam, select the game, and **Play**. Three clicks.
 
-I have used Steam for about four years ever since I switched over from [this old, barely functioning Xbox One](/blog/forza-horizon-3/xbox-one-s.png), to a much better computer which is now my daily driver.
+I have used Steam for about four years ever since I switched over from [this old, barely functioning Xbox One](/images/forza-horizon-3/xbox-one-s.png), to a much better computer which is now my daily driver.
 
 The whole reason I wrote this is because of one of Steam's latest features that they have announced, named [Steam Families](https://store.steampowered.com/news/app/593110/view/4149575031735702628).
 
@@ -20,7 +20,7 @@ The whole reason I wrote this is because of one of Steam's latest features that 
 One of the best and most commonly known things about Steam is the amount of sales there are every single year. Over the course of a year, they have the four major sales, one for each season of the year. They also have smaller sales, which usually revolve around a certain theme, such as games from a specific country or genre. Some games are still full-price anyway, especially recently released ones. This video is a good example.
 
 <div align="center">
-  <video src="/blog/steam/buying-fh5.mp4" controls></video>
+  <video src="/images/steam/buying-fh5.mp4" controls></video>
 </div>
 
 Besides that, I have found some great games from these sales, particularly the seasonal ones. One of my favorites and most memorable of these was [OneShot](https://store.steampowered.com/app/420530/OneShot/), a top down puzzle/adventure game.
@@ -47,7 +47,7 @@ To prove this point, here is a comparison between two games. The vide on the lef
 
 | Rainbow Six Siege | Geometry Dash |
 | ------ | ------- |
-| <video src="/blog/steam/siege-launch-time.mp4" controls></video> | <video src="/blog/steam/geometry-dash-launch-time.mp4" controls></video>
+| <video src="/images/steam/siege-launch-time.mp4" controls></video> | <video src="/images/steam/geometry-dash-launch-time.mp4" controls></video>
 
 ### UI
 
@@ -62,13 +62,13 @@ There is no lag, issues, or anything, which is unlike Rockstar. For some reason,
 
 | Old | New |
 | ------ | ------- |
-| <img src="/blog/steam/old-ui.png"> | <img src="/blog/steam/new-ui.png">
+| <img src="/images/steam/old-ui.png"> | <img src="/images/steam/new-ui.png">
 
 Although, some parts of the UI have taken quite a while to update, or have not been updated in years. An example of this is the Server Browser, commonly used in games with community maps and/or servers, such as [CS2](https://store.steampowered.com/app/730/CounterStrike_2/) and [Garry's Mod](https://store.steampowered.com/app/4000/Garrys_Mod/). The Server Browser was only updated 11 months ago, prior to which had been many years without change.
 
 | Old | New |
 | ------ | ------- |
-| <img src="/blog/steam/old-server-browser-ui.png"> | <img src="/blog/steam/new-server-browser-ui.png">
+| <img src="/images/steam/old-server-browser-ui.png"> | <img src="/images/steam/new-server-browser-ui.png">
 
 ### Valve
 

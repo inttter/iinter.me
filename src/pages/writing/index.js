@@ -8,7 +8,7 @@ import Navbar from '../../components/Navbar';
 import { motion } from 'framer-motion';
 import { Search, Frown } from 'lucide-react';
 
-export default function Blog({ posts }) {
+export default function Writing({ posts }) {
   posts.reverse();
 
   const [searchQuery, setSearchQuery] = useState('');
@@ -39,7 +39,7 @@ export default function Blog({ posts }) {
       <div className="max-w-2xl w-full px-0 py-8 space-y-6 flex-col">
         <div className="flex items-center justify-start">
           <Head>
-            <title>blog | iinter.me</title>
+            <title>writing | iinter.me</title>
           </Head>
           <div className="max-w-3xl w-full px-4 py-8">
             <motion.div
@@ -84,7 +84,7 @@ export default function Blog({ posts }) {
               >
                 <div className="p-0.5 md:px-1 px-0">
                   <div className="flex flex-col md:flex-row items-start md:items-center justify-between hover:bg-neutral-800 hover:bg-opacity-30 p-[7px] duration-300 rounded-md">
-                    <Link href={`/blog/${post.slug}`} passHref>
+                    <Link href={`/writing/${post.slug}`} passHref>
                       <div className="text-zinc-100 hover:text-zinc-300 duration-300 border-b-2 border-dotted border-neutral-700 hover:border-neutral-500 mb-1 md:mb-0 md:mr-2">
                         {post.frontmatter.title}
                       </div>
@@ -122,7 +122,7 @@ export async function getStaticProps() {
         };
       });
   } catch (error) {
-    console.error('Error reading blog posts:', error);
+    console.error('Error reading posts:', error);
   }
 
   return {
