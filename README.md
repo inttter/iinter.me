@@ -1,20 +1,20 @@
 # iinter.me
+    
+* [**Next.js**](https://nextjs.org)
+* [**Vercel**](https://vercel.com)
+* [**Tailwind CSS**](https://tailwindcss.com)
+* [**Lanyard**](https://github.com/Phineas/lanyard?tab=readme-ov-file#kv) (for Discord RPC)
+* [**Vercel Analytics**](https://vercel.com/analytics)
 
-
-The source code for [https://iinter.me](https://iinter.me), built with [Next.js](https://nextjs.org), [TypeScript](https://www.typescriptlang.org), and optimized with [Million](https://million.dev).
-
-Also uses [Lanyard](https://github.com/Phineas/lanyard) for fetching presence from Discord, and [Vercel](https://vercel.com) for deployment.
+### Run locally
 
 ```bash
-npm i # install dependencies
-
-npm run dev # start dev server
-
-npm run build # build
-
-npm run start # start the built version
+git clone https://github.com/inttter/iinter.me.git
+cd iinter.me
+npm install
+npm run dev
 ```
 
-## License
+### License
 
-©️ 2024 - MIT License.
+© **2024** - Licensed under the [**MIT License**](https://github.com/inttter/iinter.me/blob/master/LICENSE).
