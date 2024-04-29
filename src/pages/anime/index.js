@@ -157,7 +157,7 @@ const WatchlistCategory = ({ title, list }) => {
                     </span>
                   </span>
                   {title !== "⌚ Plan To Watch" && item.score && item.score > 0 && ( // Check if title is not "Plan To Watch" and score exists and is greater than 0
-                    <span className="absolute bottom-1 right-2 md:right-1 bg-neutral-800 text-neutral-300 px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-top group-hover:bottom-2 group-hover:right-2 group-hover:md:right-2 duration-300" data-tip="Rating" data-theme="lofi">
+                    <span className="absolute bottom-1 right-1.5 sm:right-2 md:right-1 bg-neutral-800 text-neutral-300 px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-top group-hover:bottom-2 group-hover:right-2 group-hover:md:right-2 duration-300" data-tip="Rating" data-theme="lofi">
                       {item.score}/10
                     </span>
                   )}
