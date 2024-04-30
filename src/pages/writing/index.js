@@ -6,7 +6,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../../components/Navbar';
 import { motion } from 'framer-motion';
-import { Search, Frown } from 'lucide-react';
+import { Search, CircleX } from 'lucide-react';
 
 export default function Writing({ posts }) {
   posts.reverse();
@@ -66,9 +66,9 @@ export default function Writing({ posts }) {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
-                className="text-zinc-300 text-md bg-neutral-900 border border-neutral-700 py-2 pl-4 ml-1.5 rounded-md my-8 flex items-center"
+                className="text-zinc-200 text-md bg-red-500 bg-opacity-40 px-4 py-2 ml-2 rounded-md flex items-center"
               >
-                <Frown size={20} className="mr-1 text-red-400" /> Couldn't find a post with that name.
+                <CircleX size={20} className="mr-1 text-red-400" /> Sorry, a post couldn't be found with that name.
               </motion.p>
             )}
             {sortedPosts.map((post) => (
