@@ -182,7 +182,7 @@ const markdownComponents = {
           {copied ? <Check size={15} className="text-emerald-400" /> : <Copy size={15} />}
         </button>
         <Toaster richColors />
-        <pre className="rounded-md overflow-auto scrollbar-thin text-sm -mt-2">
+        <pre className="rounded-md overflow-auto scrollbar-thin text-sm mt-2">
           <SyntaxHighlighter language={match ? match[1] : null} style={nightOwl} wrapLongLines={true} customStyle={{ background: '#202020', overflowX: 'auto', borderRadius: '0.5rem' }}>
             {children}
           </SyntaxHighlighter>
