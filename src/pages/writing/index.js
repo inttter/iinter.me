@@ -77,21 +77,21 @@ export default function Writing({ posts }) {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.0 }}
-                className="relative duration-300"
+                className="relative duration-300 group"
                 style={{ filter: hoveredPost && hoveredPost !== post.slug ? 'brightness(70%)' : 'none' }}
                 onMouseEnter={() => handleMouseEnter(post.slug)}
                 onMouseLeave={handleMouseLeave}
               >
-                <div className="p-0.5 md:px-1 px-0">
-                  <div className="flex flex-col md:flex-row items-start md:items-center justify-between hover:bg-neutral-800 hover:bg-opacity-30 p-[7px] duration-300 rounded-md">
-                    <Link href={`/writing/${post.slug}`} passHref>
-                      <div className="text-zinc-100 hover:text-zinc-300 duration-300 border-b-2 border-dotted border-neutral-700 hover:border-neutral-500 mb-1 md:mb-0 md:mr-2">
+                <Link href={`/writing/${post.slug}`} passHref>
+                  <div className="p-0.5 md:px-1 px-0">
+                    <div className="flex flex-col md:flex-row items-start md:items-center justify-between hover:bg-neutral-800 hover:bg-opacity-30 p-[7px] duration-300 rounded-md">
+                      <div className="text-zinc-300 group-hover:text-zinc-100 duration-300 border-b-2 border-dotted border-neutral-700 group-hover:border-neutral-500 mb-1 md:mb-0 md:mr-2">
                         {post.frontmatter.title}
                       </div>
-                    </Link>
-                    <p className={`text-sm ${hoveredPost === post.slug ? 'text-neutral-400 duration-300' : 'text-neutral-600'}`}>{post.frontmatter.date}</p>
+                      <p className={`text-sm ${hoveredPost === post.slug ? 'text-neutral-400 duration-300' : 'text-neutral-600'}`}>{post.frontmatter.date}</p>
+                    </div>
                   </div>
-                </div>
+                </Link>
               </motion.div>
             ))}
             <Navbar />
