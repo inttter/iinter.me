@@ -1,7 +1,7 @@
 ---
 title: "Creating packages with create-ps"
 date: "March 29, 2024"
-lastUpdated: "27/04/24 20:51"
+lastUpdated: "30/04/24 22:55"
 author: "Inter"
 description: A guide on a faster way to create NPM packages from the terminal.
 ---
@@ -51,8 +51,9 @@ Select what you'd like to include: (Press <space> to select, <a> to toggle all, 
  ◉ test/
 ```
 
-<div style="background-color: #1B2A3A; color: #d4d4d8; padding: 10px; margin-bottom: 20px; margin-top: 10px; border-radius: 5px;">
-  💡 To create a .mjs (ESM/EcmaScript) file and use <kbd>import</kbd> statements, run the command with the <kbd>--esm</kbd> flag.
+<div style="padding: 0.8rem 1rem; background-color: #262626; border-radius: 0.375rem; font-size: 0.96rem; display: flex; align-items: center; color: #d4d4d8; margin-top: 20px; margin-bottom: 20px;">
+    <strong style="margin-right: 0.8rem;">💡</strong> 
+    <span>To create a <kbd>.mjs</kbd> (ESM) file and use <kbd>import</kbd> statements within the README, run the command with the <kbd>--esm</kbd> flag.</span>
 </div>
 
 ### pkg-config
