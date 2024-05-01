@@ -27,7 +27,7 @@ function Navbar() {
             >
                 <div className="flex flex-col space-y-2 text-neutral-300 hover:text-neutral-100 duration-300">
                     <Link href="/" className="text-neutral-100 hover:text-neutral-300 duration-300 flex items-center">
-                    <Image src="https://us-east-1.tixte.net/uploads/inter.tixte.co/blossom_v2.webp" width={15} height={15} alt="Tree" className="mr-2" /> Home
+                        <Image src="https://us-east-1.tixte.net/uploads/inter.tixte.co/blossom_v2.webp" width={15} height={15} alt="Tree" className="mr-2" /> Home
                     </Link>
                     <Link href="/anime" className="text-neutral-100 hover:text-neutral-300 duration-300">
                         Anime List
@@ -40,17 +40,17 @@ function Navbar() {
                     </Link>
                 </div>
             </motion.div>
-            <div className="hidden md:flex space-x-4 items-center">
-                <Link href="/" className="tooltip tooltip-bottom bg-transparent" data-tip="home" data-theme="lofi">
-                   <Image src="https://us-east-1.tixte.net/uploads/inter.tixte.co/blossom_v2.webp" width={25} height={25} alt="Tree" />
+            <div className="hidden md:flex space-x-1 items-center">
+                <Link href="/" className="text-zinc-100 duration-300 hover:bg-neutral-800 rounded-md px-2 py-1">
+                    /
                 </Link>
-                <Link href="/anime" className="text-zinc-100 hover:text-zinc-300 duration-300 border-b-2 border-dotted border-neutral-700 hover:border-neutral-500">
+                <Link href="/anime" className="text-zinc-100 duration-300 hover:bg-neutral-800 rounded-md px-2 py-1">
                     anime
                 </Link>
-                <Link href="/projects" className="text-zinc-100 hover:text-zinc-300 duration-300 border-b-2 border-dotted border-neutral-700 hover:border-neutral-500">
+                <Link href="/projects" className="text-zinc-100 duration-300 hover:bg-neutral-800 rounded-md px-2 py-1">
                     projects
                 </Link>
-                <Link href="/writing" className="text-zinc-100 hover:text-zinc-300 duration-300 border-b-2 border-dotted border-neutral-700 hover:border-neutral-500">
+                <Link href="/writing" className="text-zinc-100 duration-300 hover:bg-neutral-800 rounded-md px-2 py-1">
                     writing
                 </Link>
             </div>
