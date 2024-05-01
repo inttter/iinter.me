@@ -38,13 +38,7 @@ export default function Post({ post }) {
   const githubURL = `https://github.com/inttter/iinter.me/blob/master/content/${post.slug}.md?plain=1`;
 
   return (
-    <motion.div
-      className="bg-main min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 overflow-x-hidden"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
-    >
+    <div className="bg-main min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 overflow-x-hidden">
       <Head>
         <title>{post.frontmatter.title} | iinter.me</title>
       </Head>
@@ -122,7 +116,7 @@ export default function Post({ post }) {
         >
         </motion.div>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
