@@ -38,7 +38,7 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }:
         const gameActivity = data.data.activities.find(activity => activity.type === 0);
         const gameName = gameActivity ? gameActivity.name : '';
 
-        setStatus(gameName ? `${gameName}` : '');
+        setStatus(gameName ? `Playing ${gameName}` : '');
 
         if (data.data.spotify) {
           setSpotifySong(data.data.spotify.song);
@@ -137,7 +137,7 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }:
             transition={{ duration: 0.5, delay: 0.6 }}
             className="text-sm tracking-normal text-neutral-500 justify-start overflow-elipsis"
           >
-            Playing <span className="font-semibold text-zinc-400">{status}</span>
+            {status}
           </motion.p>
         </motion.div>
       )}
