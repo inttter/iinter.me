@@ -1,44 +1,38 @@
 [
     {
       "name": "md-badges",
-      "description": "An extensive list of Shields.io badges.",
+      "description": "An extensive list of Shields.io badges, sorted categorically.",
       "link": "https://github.com/inttter/md-badges",
-      "github": "https://github.com/inttter/md-badges",
       "maintained": true
     },
     {
       "name": "mdbadges-cli",
       "description": "Extensive command-line tool to find 400+ Shields.io badges for your projects.",
       "link": "https://mdbcli.xyz",
-      "github": "https://github.com/inttter/mdbadges-cli",
       "maintained": true
     },
     {
       "name": "create-ps",
-      "description": "Creates the foundations for an NPM package.",
+      "description": "Helps you create the foundations for an NPM package.",
       "link": "https://github.com/inttter/create-ps",
-      "github": "https://github.com/inttter/create-ps",
       "maintained": true
     },
     {
       "name": "discid",
       "description": "A command-line tool to check a user's Discord status using Lanyard.",
       "link": "https://discid.xyz",
-      "github": "https://github.com/inttter/discid",
       "maintained": true
     },
     {
       "name": "notetxt",
-      "description": "A simple text editor to write down what's on your mind.",
+      "description": "A simple text editor to write down what's on your mind without any distractions.",
       "link": "https://notetxt.iinter.me",
-      "github": "https://github.com/inttter/notetxt",
       "maintained": true
     },
     {
       "name": "iinter.me",
-      "description": "My personal website built with Next.js, TypeScript, Lanyard and Tailwind.",
+      "description": "My personal website made using Next.js, Tailwind, and Million for optimization.",
       "link": "https://iinter.me",
-      "github": "https://github.com/inttter/iinter.me",
       "maintained": true
     }
   ]
