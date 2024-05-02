@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
-import { CircleX } from 'lucide-react';
+import { CircleX, ArrowLeft } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Custom404() {
   return (
@@ -12,8 +13,9 @@ export default function Custom404() {
             Page Not Found
           </h1>
         </div>
-          <p className="text-neutral-600 text-lg max-w-lg">
-            Sorry, the page you requested could not be found.
+          <p className="text-neutral-500 text-lg max-w-lg ">
+            Sorry, the page you were looking for could not be found.
+            You might have made a typo, or the link may have been moved/deleted.
           </p>
         <Navbar />
       </div>
