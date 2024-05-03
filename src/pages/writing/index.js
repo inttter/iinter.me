@@ -42,12 +42,7 @@ export default function Writing({ posts }) {
             <title>writing | iinter.me</title>
           </Head>
           <div className="max-w-3xl w-full px-4 py-8">
-            <motion.div
-              initial={{ opacity: 0, y: -5 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="mb-4 relative mt-4"
-            >
+            <div className="mb-4 relative mt-4 animate-blurred-fade-in duration-300">
               <div className="relative px-2">
                 <input
                   type="text"
@@ -60,24 +55,19 @@ export default function Writing({ posts }) {
                   <Search className="text-neutral-600" size={20} />
                 </div>
               </div>
-            </motion.div>
+            </div>
             {filteredPosts.length === 0 && (
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
-                className="text-zinc-200 text-md bg-red-500 bg-opacity-40 px-4 py-2 ml-2 rounded-md flex items-center"
-              >
+              <motion.p className="text-zinc-200 text-md bg-red-500 bg-opacity-40 px-4 py-2 ml-2 rounded-md flex items-center">
                 <CircleX size={20} className="mr-1 text-red-400" /> Sorry, a post couldn't be found with that name.
               </motion.p>
             )}
             {sortedPosts.map((post) => (
-              <motion.div
+              <div
                 key={post.slug}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.0 }}
-                className="relative duration-300 group"
+                className="relative duration-500 group animate-blurred-fade-in"
                 style={{ filter: hoveredPost && hoveredPost !== post.slug ? 'brightness(70%)' : 'none' }}
                 onMouseEnter={() => handleMouseEnter(post.slug)}
                 onMouseLeave={handleMouseLeave}
@@ -92,7 +82,7 @@ export default function Writing({ posts }) {
                     </div>
                   </div>
                 </Link>
-              </motion.div>
+              </div>
             ))}
             <Navbar />
           </div>

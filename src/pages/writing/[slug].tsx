@@ -55,18 +55,13 @@ export default function Post({ post }) {
         </div>
         <motion.div
           className="flex flex-col items-start justify-center pt-2"
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 5 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <motion.div
-            className="text-2xl text-zinc-200 font-semibold tracking-tighter"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-          >
+          <div className="text-2xl text-zinc-200 font-semibold tracking-tighter animate-blurred-fade-in duration-300">
             {post.frontmatter.title}
-          </motion.div>
+          </div>
           <motion.p
             className="text-neutral-500 max-w-2xl overflow-auto tracking-tight"
             initial={{ opacity: 0 }}
@@ -88,24 +83,17 @@ export default function Post({ post }) {
             If you see this message, make sure to <span className="text-emerald-400">complete the post</span> before publishing.
           </motion.div>
         )}
-        <motion.div
-          className="leading-7 text-stone-300"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6, duration: 0.5 }}
-        >
+        <div className="leading-7 text-stone-300 animate-blurred-fade-in duration-500">
           <ReactMarkdown components={markdownComponents} remarkPlugins={[gfm]} rehypePlugins={[rehypeRaw, rehypeAutolinkHeadings, rehypeSlug]}>
             {post.content}
           </ReactMarkdown>
-        </motion.div>
+        </div>
         <BackToTopButton />
         <div className="flex items-center justify-center">
           <hr className="w-full border-t border-neutral-800" />
         </div>
         <motion.div
-          className="text-neutral-600 duration-300 text-xs flex justify-end"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          className="text-neutral-600 animate-blurred-fade-in duration-700 text-xs flex justify-end"
           transition={{ delay: 0.8, duration: 0.5 }}
         >
           This post was last updated on <span className="font-semibold tracking-tight ml-1">{post.frontmatter.lastUpdated}</span>.

@@ -10,6 +10,21 @@ module.exports = {
         'blogcard': '#171721',
         'main': '#111111'
       },
+      animation: {
+        "blurred-fade-in": "blurred-fade-in 0.9s ease-in-out"
+      },
+      keyframes: {
+        "blurred-fade-in": {
+          "0%": {
+            "filter": "blur(5px)",
+            "opacity": "0"
+          },
+          "100%": {
+            "filter": "blur(0)",
+            "opacity": "1"
+          }
+        }
+      }
     },
   },
   variants: {},

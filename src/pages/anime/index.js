@@ -87,19 +87,19 @@ const IndexPage = () => {
       <div className="max-w-2xl w-full px-4 py-24 space-y-6 flex-col">
         <div className="flex flex-col space-y-4">
           {watchlist.watching.length > 0 && (
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+            <div className="animate-blurred-fade-in duration-300">
               <WatchlistCategory title="📺 Watching" list={watchlist.watching} />
-            </motion.div>
+            </div>
           )}
           {watchlist.completed.length > 0 && (
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.5 }}>
+            <div className="animate-blurred-fade-in duration-300">
               <WatchlistCategory title="✅ Completed" list={watchlist.completed} />
-            </motion.div>
+            </div>
           )}
           {watchlist.planned.length > 0 && (
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 1.0 }}>
+            <div className="animate-blurred-fade-in duration-300">
               <WatchlistCategory title="⌚ Plan To Watch" list={watchlist.planned} />
-            </motion.div>
+            </div>
           )}
         </div>
         <Head>
@@ -136,20 +136,14 @@ const WatchlistCategory = ({ title, list }) => {
         {list.map(item => (
           <div key={item.id} className="relative">
             {item.coverImage && (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1, delay: 1.0 }}
-                transition={{ duration: 1.0 }}
-                className="group relative hover:shadow-2xl hover:shadow-neutral-700 hover:scale-105 active:scale-95 duration-300"
-              >
+              <div key={item.id} className="group relative hover:shadow-2xl hover:shadow-neutral-700 hover:scale-105 active:scale-95 duration-300">
                 <Link href={`https://anilist.co/anime/${item.id}`} target="_blank" rel="noopener noreferrer">
                   <img
                     src={item.coverImage}
                     alt={item.title}
                     width={200}
                     height={200}
-                    className="rounded-md mb-2 opacity-100 transition-opacity duration-300 ease-in-out group-hover:opacity-30"
+                    className="rounded-md mb-2 opacity-100 transition-opacity duration-300 ease-in-out group-hover:opacity-30 animate-blurred-fade-in"
                   />
                   <span className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 bg-black bg-opacity-50">
                     <span className="text-zinc-50 font-semibold px-3 text-center md:text-left sm:text-lg md:text-md tracking-tighter">
@@ -162,7 +156,7 @@ const WatchlistCategory = ({ title, list }) => {
                     </span>
                   )}
                 </Link>
-              </motion.div>
+              </div>
             )}
           </div>
         ))}
