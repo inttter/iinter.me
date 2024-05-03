@@ -38,7 +38,7 @@ export default function Post({ post }) {
   const githubURL = `https://github.com/inttter/iinter.me/blob/master/content/${post.slug}.md?plain=1`;
 
   return (
-    <div className="bg-main min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 overflow-x-hidden">
+    <div className="bg-main min-h-screen flex flex-col justify-center items-center antialiased p-4 md:p-8 overflow-x-hidden">
       <Head>
         <title>{post.frontmatter.title} | iinter.me</title>
       </Head>
@@ -48,7 +48,7 @@ export default function Post({ post }) {
             <Navbar />
           </div>
           <span className="flex items-center relative">
-            <Link href={githubURL} className="flex relative items-center text-neutral-600 text-sm hover:bg-neutral-70 p-1.5 -mt-7 md:-mt-5 hover:text-zinc-300 duration-300 bg-transparent hover:bg-opacity-80 rounded-md tooltip tooltip-bottom" target="_blank" rel="noopener noreferrer">
+            <Link href={githubURL} className="flex relative items-center text-neutral-600 text-sm hover:bg-neutral-700 p-1.5 -mt-7 md:-mt-5 hover:text-zinc-300 duration-300 bg-transparent hover:bg-opacity-80 rounded-md tooltip tooltip-bottom" target="_blank" rel="noopener noreferrer">
               <Github size={20} />
             </Link>
           </span>
@@ -60,7 +60,7 @@ export default function Post({ post }) {
           transition={{ duration: 0.5 }}
         >
           <motion.div
-            className="text-2xl text-zinc-100 font-semibold tracking-tight"
+            className="text-2xl text-zinc-200 font-semibold tracking-tighter"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
@@ -68,7 +68,7 @@ export default function Post({ post }) {
             {post.frontmatter.title}
           </motion.div>
           <motion.p
-            className="text-neutral-600 text-md max-w-2xl overflow-auto"
+            className="text-neutral-500 max-w-2xl overflow-auto tracking-tight"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}
@@ -76,15 +76,17 @@ export default function Post({ post }) {
             <span>{post.frontmatter.date}</span>
           </motion.p>
         </motion.div>
+        {/* if draft: true in the metadata */}
         {post.frontmatter.draft && (
-          <div className="text-zinc-300 text-md bg-sky-500 bg-opacity-40 py-2 pl-4 rounded-md">
-            🚧 This post is a draft.
-            If you see this,
-            <strong className="underline underline-offset-2 mr-1 ml-1">
-              don't
-            </strong> 
-            share the post yet!
-          </div>
+        <motion.div
+          className="text-zinc-100 text-md bg-neutral-700 bg-opacity-40 p-4 rounded-md"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
+          >
+            This post is a <span className="text-yellow-400">work in progress</span>, and may contain incomplete information or mistakes.
+            If you see this message, make sure to <span className="text-emerald-400">complete the post</span> before publishing.
+          </motion.div>
         )}
         <motion.div
           className="leading-7 text-stone-300"
@@ -106,14 +108,7 @@ export default function Post({ post }) {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.5 }}
         >
-          Last Updated: {post.frontmatter.lastUpdated}
-        </motion.div>
-        <motion.div
-          className="text-neutral-600 duration-300 text-xs flex justify-end"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.0, duration: 0.5 }}
-        >
+          This post was last updated on <span className="font-semibold tracking-tight ml-1">{post.frontmatter.lastUpdated}</span>.
         </motion.div>
       </div>
     </div>
