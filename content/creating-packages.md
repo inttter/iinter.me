@@ -1,7 +1,7 @@
 ---
 title: "Creating packages with create-ps"
 date: "March 29, 2024"
-lastUpdated: "30/04/24 22:55"
+lastUpdated: "04/05/24 16:09"
 author: "Inter"
 description: A guide on a faster way to create NPM packages from the terminal.
 ---
@@ -37,18 +37,26 @@ cps <projectName>
 * Select which files you'd like to include and exclude. As of [v3.0.0](https://github.com/inttter/create-ps/releases/tag/v3.0.0), they are all deselected by default.
 
 ```bash
-✔ Ran npm init -y successfully!
-
-Enter a short description of the package: A package. 
-Select what you'd like to include: (Press <space> to select, <a> to toggle all, <i> to invert selection, and <enter> to proceed)
-
- ◉ README.md
- ◉ CONTRIBUTING.md
- ◉ CHANGELOG.md
- ◉ CODE_OF_CONDUCT.md
- ◉ LICENSE
- ◉ src/
- ◉ test/
+┌  create-ps 
+│
+◇  Enter a short description of the package:
+│  Creates the foundations for an NPM package.
+│
+◆  Select what you'd like to include:
+│  ◼ Source (Recommended)
+│  ◼ Test
+│  ◻ Examples
+│  ◼ Documentation
+│  ◻ Assets / Images
+│  ◻ Internationalization (i18n)
+│  ◼ GitHub workflows
+│  ◻ Dependabot configuration
+│  ◼ Gitignore
+│  ◼ Readme
+│  ◻ Contributing guidelines
+│  ◼ Changelog
+│  ◼ Code of Conduct
+│  ◼ License
 ```
 
 <div style="padding: 0.8rem 1rem; background-color: #262626; border-radius: 0.375rem; font-size: 0.96rem; display: flex; align-items: center; color: #d4d4d8; margin-top: 20px; margin-bottom: 20px;">
@@ -67,14 +75,13 @@ cps pkg-config
 You're then able to select the fields you would like to include and customize. For example, but not limited to, the **Author**, **Keywords**, and the **License** you are using (you can use [this](https://spdx.org/licenses/) list from SPDX to find the right identifier for the license field). Once confirmed, create-ps will ask a series of prompts for you to fill out the necessary information, and will edit your <kbd>package.json</kbd> accordingly.
 
 ```markdown
-Select what you'd like to include: (Press <space> to select, <a> to toggle all, <i> to invert selection, and <enter> to proceed)
-
- ◯ Author
- ◯ Repository
- ◯ Keywords
- ◯ Homepage
- ◯ Funding
- ◯ License
+◆  Select what you'd like to include:
+│  ◼ Author
+│  ◼ Repository
+│  ◼ Keywords
+│  ◻ Homepage
+│  ◻ Funding
+│  ◼ License
 ```
 
 You can also run this in an existing project to fill out and/or replace any fields.
