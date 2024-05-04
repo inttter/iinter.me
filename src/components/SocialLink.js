@@ -5,25 +5,22 @@ import { FaGithub, FaTwitter, FaSteam, FaDiscord, FaLastfm } from 'react-icons/f
 import { SiAnilist, SiOsu } from "react-icons/si";
 
 export default function SocialLink({ href, tooltipText, social }) {
-  // Sadly, i have to use react-icons in order for the icons to appear 
-  // without the "Element type is invalid" error.
-  // However, react-icons is used for the Context Provider.
   const getIcon = () => {
     switch (social) {
       case 'GitHub':
-        return <FaGithub className="text-neutral-500 hover:text-zinc-100" />;
+        return <FaGithub />;
       case 'Steam':
-        return <FaSteam className="text-neutral-500 hover:text-[#579fc9]" />;
+        return <FaSteam />;
       case 'Discord':
-        return <FaDiscord className="text-neutral-500 hover:text-[#5865F2]" />;
+        return <FaDiscord />;
       case 'Twitter':
-        return <FaTwitter className="text-neutral-500 hover:text-sky-400" />;
+        return <FaTwitter />;
       case 'osu!':
-        return <SiOsu className="text-neutral-500 hover:text-pink-400" />;
+        return <SiOsu className />;
       case 'AniList':
-        return <SiAnilist className="text-neutral-500 hover:text-sky-400" />;
+        return <SiAnilist />;
       case 'Last.fm':
-        return <FaLastfm className="text-neutral-500 hover:text-red-500" />;
+        return <FaLastfm />;
       default:
         return null;
     }
@@ -35,10 +32,8 @@ export default function SocialLink({ href, tooltipText, social }) {
       data-tip={tooltipText}
     >
       <Link href={href} target="_blank" rel="noopener noreferrer" alt={social}>
-        <div className="flex items-center">
-          <IconContext.Provider value={{ size: '35px', className: 'mb-2 hover:scale-105 active:scale-110 active:rotate-6 duration-150' }}>
+        <div className="flex items-center text-4xl text-neutral-500 hover:text-zinc-300 mb-2 hover:scale-105 active:scale-110 active:rotate-6 duration-150">
             {getIcon()}
-          </IconContext.Provider>
         </div>
       </Link>
     </div>
