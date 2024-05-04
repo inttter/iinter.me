@@ -88,17 +88,17 @@ const IndexPage = () => {
         <div className="flex flex-col space-y-4">
           {watchlist.watching.length > 0 && (
             <div className="animate-blurred-fade-in duration-300">
-              <WatchlistCategory title="📺 Watching" list={watchlist.watching} />
+              <WatchlistCategory title="💻 Watching Currently" list={watchlist.watching} titleColor="text-blue-400" />
             </div>
           )}
           {watchlist.completed.length > 0 && (
             <div className="animate-blurred-fade-in duration-300">
-              <WatchlistCategory title="✅ Completed" list={watchlist.completed} />
+              <WatchlistCategory title="✅ Completed" list={watchlist.completed} titleColor="text-emerald-400" />
             </div>
           )}
           {watchlist.planned.length > 0 && (
             <div className="animate-blurred-fade-in duration-300">
-              <WatchlistCategory title="⌚ Plan To Watch" list={watchlist.planned} />
+              <WatchlistCategory title="⌚ Plan To Watch" list={watchlist.planned} titleColor="text-violet-400" />
             </div>
           )}
         </div>
@@ -118,7 +118,7 @@ const IndexPage = () => {
         )}
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.8 }}>
           <div className="flex justify-end">
-            <Link href="https://anilist.co/user/intter/animelist" target="_blank" rel="noopener noreferrer" className="relative mt-2 items-end justify-end tooltip tooltip-left bg-transparent" data-theme="lofi" data-tip="View list on AniList">
+            <Link href="https://anilist.co/user/intter/animelist" target="_blank" rel="noopener noreferrer" className="relative mt-2 items-end justify-end tooltip tooltip-left bg-transparent" data-theme="lofi" data-tip="View this on my AniList profile">
               <SiAnilist size={40} className="mr-1 text-neutral-700 hover:text-sky-400 hover:bg-zinc-300 hover:bg-opacity-15 rounded-md p-2 duration-300" />
             </Link>
           </div>
@@ -128,10 +128,10 @@ const IndexPage = () => {
   );
 };
 
-const WatchlistCategory = ({ title, list }) => {
+const WatchlistCategory = ({ title, list, titleColor }) => {
   return (
     <div>
-      <div className="text-2xl font-semibold mb-6 text-stone-100 tracking-tighter">{title}</div>
+      <div className={`text-2xl font-semibold mb-6 tracking-tighter ${titleColor}`}>{title}</div>
       <div className="grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4">
         {list.map(item => (
           <div key={item.id} className="relative">
