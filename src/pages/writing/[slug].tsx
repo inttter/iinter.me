@@ -44,7 +44,7 @@ export default function Post({ post }) {
       </Head>
       <div className="max-w-2xl w-full md:px-1 px-3 md:py-7 py-11 space-y-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center">
+          <div className="flex items-center md:-mx-2">
             <Navbar />
           </div>
           <span className="flex items-center relative">

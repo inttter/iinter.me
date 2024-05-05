@@ -36,14 +36,14 @@ export default function Writing({ posts }) {
 
   return (
     <div className="bg-main min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8">
-      <div className="max-w-2xl w-full px-0 py-8 space-y-6 flex-col">
+      <div className="max-w-2xl w-full px-4 py-24 space-y-6 flex-col">
         <div className="flex items-center justify-start">
           <Head>
             <title>writing | iinter.me</title>
           </Head>
-          <div className="max-w-3xl w-full px-4 py-8">
+          <div className="max-w-3xl w-full py-8">
             <div className="mb-4 relative mt-4 animate-blurred-fade-in duration-300">
-              <div className="relative px-2">
+              <div className="relative">
                 <input
                   type="text"
                   placeholder="Search posts"
@@ -84,9 +84,9 @@ export default function Writing({ posts }) {
                 </Link>
               </div>
             ))}
-            <Navbar />
           </div>
         </div>
+        <Navbar />
       </div>
     </div>
   );
