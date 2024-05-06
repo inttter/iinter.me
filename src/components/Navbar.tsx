@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router'; // Import the useRouter hook
 import { ChevronRight, ChevronDown, NotebookPen, Code, Cat, Home } from 'lucide-react';
 
 function Navbar() {
+    const router = useRouter(); // Initialize the useRouter hook
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -36,17 +38,17 @@ function Navbar() {
                 </div>
             </div>
             <div className="hidden md:flex space-x-1 items-center">
-                <Link href="/" className="text-zinc-100 duration-300 hover:bg-neutral-800 rounded-md px-2 py-1 flex items-center">
-                    <Home size={15} className="mr-1.5 text-neutral-600" /> home
+                <Link href="/" className={`text-zinc-100 duration-300 hover:bg-neutral-800 rounded-md px-2 py-1 flex items-center ${router.pathname === '/' ? 'bg-neutral-700 bg-opacity-55' : ''}`}>
+                    <Home size={15} className="mr-1.5 text-neutral-500" /> home
                 </Link>
-                <Link href="/anime" className="text-zinc-100 duration-300 hover:bg-neutral-800 rounded-md px-2 py-1 flex items-center">
-                   <Cat size={15} className="mr-1.5 text-neutral-600" /> anime
+                <Link href="/anime" className={`text-zinc-100 duration-300 hover:bg-neutral-800 rounded-md px-2 py-1 flex items-center ${router.pathname === '/anime' ? 'bg-neutral-700 bg-opacity-55' : ''}`}>
+                   <Cat size={15} className="mr-1.5 text-neutral-500" /> anime
                 </Link>
-                <Link href="/projects" className="text-zinc-100 duration-300 hover:bg-neutral-800 rounded-md px-2 py-1 flex items-center">
-                   <Code size={15} className="mr-1.5 text-neutral-600" /> projects
+                <Link href="/projects" className={`text-zinc-100 duration-300 hover:bg-neutral-800 rounded-md px-2 py-1 flex items-center ${router.pathname === '/projects' ? 'bg-neutral-700 bg-opacity-55' : ''}`}>
+                   <Code size={15} className="mr-1.5 text-neutral-500" /> projects
                 </Link>
-                <Link href="/writing" className="text-zinc-100 duration-300 hover:bg-neutral-800 rounded-md px-2 py-1 flex items-center">
-                   <NotebookPen size={15} className="mr-1.5 text-neutral-600" /> writing
+                <Link href="/writing" className={`text-zinc-100 duration-300 hover:bg-neutral-800 rounded-md px-2 py-1 flex items-center ${router.pathname === '/writing' ? 'bg-neutral-700 bg-opacity-55' : ''}`}>
+                   <NotebookPen size={15} className="mr-1.5 text-neutral-500" /> writing
                 </Link>
             </div>
         </div>
