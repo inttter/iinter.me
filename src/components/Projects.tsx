@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { CgDanger } from "react-icons/cg";
-import { Github, TriangleAlert } from "lucide-react";
+import { Github, TriangleAlert, ArrowUpRight } from "lucide-react";
 import projectsData from '../data/projects.json';
 
 function Projects() {
@@ -25,8 +25,8 @@ function Projects() {
             <div className="hover:bg-gray-200 hover:bg-opacity-5 duration-200 p-3 rounded-md block hover:shadow-2xl hover:shadow-neutral-800 antialiased">
               <div className="flex items-center">
                 <Link href={project.link} target="_blank" rel="noopener noreferer" passHref>
-                  <span className="text-zinc-100 hover:text-zinc-300 duration-300 border-b-2 border-dotted border-neutral-600 hover:border-neutral-500">
-                    {project.name}
+                  <span className="text-zinc-100 hover:text-stone-300 duration-300 flex items-center group">
+                    {project.name} <ArrowUpRight size={15} className="text-neutral-500 ml-1 inline-block group-hover:translate-x-0.5 group-active:translate-x-1 duration-300" />
                   </span>
                 </Link>
               </div>
