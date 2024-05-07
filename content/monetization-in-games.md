@@ -8,7 +8,9 @@ description: Thoughts on ways of monetizing in games, and how they are good and 
 
 I've been playing video games for basically my entire life. In this time, there's been a large amount of games that I **played**, **refunded** because they were ~~shit~~ **bad**, or simply got **burnt out** after playing it for a long time. I've also spent way too much money then I should be on games in general.
 
-<img src="/images/monetization-in-games/external-funds.png" alt="In total, I've spent $947 on Steam, excluding third-party sites and other platforms (like Xbox), because then it would be a lot more.">
+<div align="center">
+  <img src="/images/monetization-in-games/external-funds.png" alt="In total, I've spent $947 on Steam, excluding third-party sites and other platforms (like Xbox), because then it would be a lot more." width="450">
+</div>
 
 <div style="padding: 0.8rem 1rem; background-color: #262626; border-radius: 0.375rem; font-size: 0.96rem; display: flex; align-items: center; color: #d4d4d8; margin-top: 20px; margin-bottom: 20px;">
     <strong style="margin-right: 0.8rem;">✨</strong> 
