@@ -6,7 +6,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../../components/Navbar';
 import { motion } from 'framer-motion';
-import { Search, CircleX } from 'lucide-react';
+import { Search, CircleX, ArrowUpRight } from 'lucide-react';
 
 export default function Writing({ posts }) {
   posts.reverse();
@@ -75,8 +75,8 @@ export default function Writing({ posts }) {
                 <Link href={`/writing/${post.slug}`} passHref>
                   <div className="p-0.5 md:px-1 px-0">
                     <div className="flex flex-col md:flex-row items-start md:items-center justify-between hover:bg-neutral-800 hover:bg-opacity-30 p-[7px] duration-300 rounded-md">
-                      <div className="text-zinc-300 group-hover:text-zinc-100 duration-300 border-b-2 border-dotted border-neutral-700 group-hover:border-neutral-500 mb-1 md:mb-0 md:mr-2">
-                        {post.frontmatter.title}
+                      <div className="text-zinc-300 group-hover:text-zinc-100 duration-300 mb-1 md:mb-0 md:mr-2 flex items-center">
+                        {post.frontmatter.title} <ArrowUpRight size={15} className="text-neutral-600 ml-0.5 group-hover:translate-x-0.5 group-active:translate-x-1 duration-300" />
                       </div>
                       <p className={`text-sm ${hoveredPost === post.slug ? 'text-neutral-400 duration-300' : 'text-neutral-600'}`}>{post.frontmatter.date}</p>
                     </div>
