@@ -10,30 +10,17 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
-import { useRouter } from 'next/router';
 import { Github, Check, Copy } from 'lucide-react';
-import { formatDistanceToNow } from 'date-fns';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import BackToTopButton from '../../components/BackToTop';
 import { toast, Toaster } from 'sonner';
 import copy from 'copy-to-clipboard';
 import Navbar from '../../components/Navbar';
+import consola from 'consola';
 
 export default function Post({ post }) {
-  const router = useRouter();
-
   if (!post) return null;
-
-  const parseAndFormatDate = () => {
-    try {
-      const distance = formatDistanceToNow(new Date(post.frontmatter.date), { addSuffix: true });
-      return distance;
-    } catch (error) {
-      console.error('Error parsing date:', error);
-      return '?';
-    }
-  };
 
   const githubURL = `https://github.com/inttter/iinter.me/blob/master/content/${post.slug}.md?plain=1`;
 
@@ -179,6 +166,7 @@ const markdownComponents = {
   
     const handleImageError = (event) => {
       event.target.src = placeholderSrc;
+      consola.error(new Error(`Image at path ${src} could not be found. A placeholder error image (${placeholderSrc}) will be used instead.`));
     };
   
     return (

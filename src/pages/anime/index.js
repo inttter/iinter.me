@@ -7,6 +7,7 @@ import Top from '../../components/BackToTop';
 import { request } from 'graphql-request';
 import { SiAnilist } from "react-icons/si";
 import { CircleX } from 'lucide-react';
+import consola from 'consola';
 
 const IndexPage = () => {
   const [watchlist, setWatchlist] = useState({
@@ -42,7 +43,7 @@ const IndexPage = () => {
 
       try {
         const data = await request('https://graphql.anilist.co', query);
-        console.log('Successfully fetched list from https://anilist.co/user/intter/animelist.')
+        consola.success('Successfully fetched list from https://anilist.co/user/intter/animelist.')
         const lists = data.MediaListCollection.lists;
 
         const watching = [];
@@ -74,8 +75,8 @@ const IndexPage = () => {
 
         setWatchlist({ watching, completed, planned });
       } catch (error) {
-        console.error('Error fetching watchlist:', error);
-        setErrorMessage(`Error fetching list. Most likely, the site is being rate-limited by the API. Please try visiting again in a few minutes.`);
+        consola.error(new Error('An error occurred when fetching the watchlist:', error));
+        setErrorMessage(`Error fetching list. Check the console for more details, or wait a few minutes and try again.`);
       }
     };
 

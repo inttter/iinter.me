@@ -112,7 +112,7 @@ export async function getStaticProps() {
         };
       });
   } catch (error) {
-    console.error('Error reading posts:', error);
+    consola.error(new Error('Error reading posts:', error));
   }
 
   return {
