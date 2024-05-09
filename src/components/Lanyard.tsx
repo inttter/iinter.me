@@ -77,7 +77,9 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }:
         <div className="flex items-center text-zinc-300">
           <Image src={spotifyAlbumArt} className="rounded-md animate-blurred-fade-in duration-1000" width={50} height={50} alt="Album Art" style={{ marginRight: '8px' }} />
           <div className="w-full overflow-clip truncate">
-            <Link href={`https://open.spotify.com/track/${spotifyTrackId}`} target="_blank" rel="noopener noreferrer" className="text-zinc-100 hover:text-zinc-300 animate-blurred-fade-in duration-700 border-b-2 border-dotted border-neutral-700 hover:border-neutral-500 mx-1">{spotifySong}</Link>
+            <Link href={`https://open.spotify.com/track/${spotifyTrackId}`} target="_blank" rel="noopener noreferrer" className="text-zinc-100 hover:text-zinc-300 animate-blurred-fade-in duration-100 border-b-2 border-dotted border-neutral-500 hover:border-neutral-300 mx-1">
+              {spotifySong}
+            </Link>
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -88,7 +90,7 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }:
             </motion.p>
           </div>
           <div className="mr-2 flex justify-end items-center">
-            <FaSpotify size={30} className="text-green-500" />
+            <FaSpotify size={30} className="text-neutral-400 opacity-50" />
           </div>
         </div>
       )}
