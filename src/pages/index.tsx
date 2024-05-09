@@ -2,6 +2,7 @@ import React from 'react';
 import SocialLink from '../components/SocialLink';
 import Lanyard from '../components/Lanyard';
 import Navbar from '../components/Navbar';
+import { motion } from 'framer-motion';
 import { Cake } from 'lucide-react'
 
 export default function Home() {
@@ -16,7 +17,7 @@ export default function Home() {
             <Lanyard showAlbumArt={false} />
           </h1>
         </div>
-        <div className="flex justify-start md:space-x-4 space-x-3 bg-transparent animate-blurred-fade-in duration-700" data-theme="lofi">
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.3 }} className="flex justify-start md:space-x-4 space-x-3 bg-transparent animate-blurred-fade-in duration-700" data-theme="lofi">
           <SocialLink href="https://github.com/inttter" social="GitHub" tooltipText="@inttter" />
           <SocialLink href="https://steamcommunity.com/id/intermed" social="Steam" tooltipText="@inter" />
           <SocialLink href="https://discord.com/users/514106760299151372" social="Discord" tooltipText="@iinter"/>
@@ -24,7 +25,7 @@ export default function Home() {
           <SocialLink href="https://osu.ppy.sh/users/19054376" social="osu!" tooltipText="@intter" />
           <SocialLink href="http://anilist.co/user/intter" social="AniList" tooltipText="@intter" />
           <SocialLink href="https://www.last.fm/user/intter" social="Last.fm" tooltipText="@intter" />
-        </div>
+        </motion.div>
         <Navbar />
         <Lanyard showUsername={false} showEmoji={false} showAlbumArt={true}  />
         {isBirthday && (
