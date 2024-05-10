@@ -10,7 +10,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
-import { Github, Check, Copy } from 'lucide-react';
+import { Check, Copy } from 'lucide-react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import BackToTopButton from '../../components/BackToTop';
@@ -22,8 +22,6 @@ import consola from 'consola';
 export default function Post({ post }) {
   if (!post) return null;
 
-  const githubURL = `https://github.com/inttter/iinter.me/blob/master/content/${post.slug}.md?plain=1`;
-
   return (
     <div className="bg-main min-h-screen flex flex-col justify-center items-center antialiased p-4 md:p-8 overflow-x-hidden">
       <Head>
@@ -34,14 +32,9 @@ export default function Post({ post }) {
           <div className="flex items-center md:-mx-2">
             <Navbar />
           </div>
-          <span className="flex items-center relative">
-            <Link href={githubURL} className="flex relative items-center text-neutral-600 text-sm hover:bg-neutral-700 p-1.5 -mt-7 md:-mt-5 hover:text-zinc-300 duration-300 bg-transparent hover:bg-opacity-80 rounded-md tooltip tooltip-bottom" target="_blank" rel="noopener noreferrer">
-              <Github size={20} />
-            </Link>
-          </span>
         </div>
         <motion.div
-          className="flex flex-col items-start justify-center pt-2"
+          className="flex flex-col items-start justify-center pt-3 md:pt-5"
           initial={{ opacity: 0, y: 5 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -60,14 +53,13 @@ export default function Post({ post }) {
         </motion.div>
         {/* if draft: true in the metadata */}
         {post.frontmatter.draft && (
-        <motion.div
-          className="text-zinc-100 text-md bg-neutral-700 bg-opacity-40 p-4 rounded-md"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.5 }}
+          <motion.div
+            className="text-zinc-100 text-md bg-neutral-700 bg-opacity-40 p-4 rounded-md"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
           >
-            This post is a <span className="text-yellow-400">work in progress</span>, and may contain incomplete information or mistakes.
-            If you see this message, make sure to <span className="text-emerald-400">complete the post</span> before publishing.
+            This post is a <span className="text-yellow-400">work in progress</span>, and may contain incomplete information or mistakes. If you see this message, make sure to <span className="text-emerald-400">complete the post</span> before publishing.
           </motion.div>
         )}
         <div className="leading-7 text-stone-300 animate-blurred-fade-in duration-500">
