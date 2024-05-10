@@ -147,7 +147,7 @@ const markdownComponents = {
         </button>
         <Toaster richColors />
         <pre className="rounded-md overflow-auto scrollbar-thin text-sm mt-2">
-          <SyntaxHighlighter language={match ? match[1] : null} style={nightOwl} wrapLongLines={true} customStyle={{ background: '#202020', overflowX: 'auto', borderRadius: '0.5rem' }}>
+          <SyntaxHighlighter language={match ? match[1] : null} style={nightOwl} wrapLongLines={true} customStyle={{ background: '#202020', overflowX: 'auto', borderRadius: '0.5rem', fontFamily: 'Jetbrains Mono, monospace' }} codeTagProps={{style: {fontFamily: 'inherit'} }}>
             {children}
           </SyntaxHighlighter>
         </pre>
@@ -289,7 +289,7 @@ const markdownComponents = {
 
   // Keyboard input
   kbd({ node, children, ...props }) {
-    return <kbd className="font-mono" {...props}><span className="text-neutral-500">`</span>{children}<span className="text-neutral-500">`</span></kbd>;
+    return <kbd className="code text-neutral-400 bg-neutral-700 bg-opacity-50 px-1 py-0.5 rounded-md" {...props}>{children}</kbd>;
   },
 
   // Horizontal Rule
