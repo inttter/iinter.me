@@ -276,7 +276,7 @@ const markdownComponents = {
 
   // Links
   a({ node, children, ...props }) {
-    return <a className="text-zinc-50 duration-300 border-b-2 border-dotted hover:p-1 rounded-md hover:bg-neutral-800 border-neutral-500 hover:border-transparent" target="_blank" rel="noopener noreferrer" {...props}>{children}</a>;
+    return <a className="text-sky-400 hover:border-b border-transparent hover:border-dashed hover:border-sky-400 duration-300" target="_blank" rel="noopener noreferrer" {...props}>{children}</a>;
   },
 
   // Keyboard input
