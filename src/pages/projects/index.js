@@ -1,13 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Star } from "lucide-react";
 import { FaGithub } from 'react-icons/fa6';
 import projectsData from '../../data/projects.json';
 import Navbar from '../../components/Navbar';
 import Head from 'next/head';
 
 export default function ProjectsPage() {
+  const [stars, setStars] = useState({});
+
+  useEffect(() => {
+    const fetchStars = async () => {
+      const starsData = {};
+      for (const project of projectsData) {
+        try {
+          const response = await fetch(`https://api.github.com/repos/inttter/${project.name}`);
+          const data = await response.json();
+          starsData[project.github] = data.stargazers_count;
+        } catch (error) {
+          console.error(`Failed to fetch stars for ${project.github}: ${error}`);
+        }
+      }
+      setStars(starsData);
+    };
+    fetchStars();
+  }, []);
+
   return (
     <div className="bg-main min-h-screen flex flex-col justify-center items-center antialiased p-4 md:p-8">
       <div className="max-w-2xl w-full px-4 py-8 space-y-6 flex-col">
@@ -29,16 +48,20 @@ export default function ProjectsPage() {
                   <div key={index} className="animate-blurred-fade-in duration-700">
                     <div className="bg-neutral-800 bg-opacity-20 hover:bg-neutral-500 hover:bg-opacity-5 border border-dashed border-neutral-700 hover:border-neutral-800 duration-300 p-3 rounded-md block antialiased">
                       <div className="flex justify-between items-center">
-                        <Link href={project.link} target="_blank" rel="noopener noreferer" className="group" passHref>
+                        <Link href={project.link} target="_blank" rel="noopener noreferrer" className="group" passHref>
                           <span className="flex items-center">
-                            <span className={`border-b border-dashed border-neutral-600 hover:border-neutral-500 ${!project.maintained ? "text-amber-300 hover:text-amber-200 duration-300 tooltip tooltip-top bg-transparent" : "text-zinc-100 hover:text-zinc-300 duration-300 bg-transparent"}`} data-theme={!project.maintained ? "lofi" : ""} data-tip={!project.maintained ? "Updates will no longer be provided, and any issues that arise may not be fixed." : ""}>{project.name}</span> <ArrowUpRight size={15} className="m-1 opacity-50 group-hover:opacity-100 group-hover:translate-x-[1.5px] group-hover:text-zinc-300 duration-200" />
+                            <span className={`border-b border-dashed border-neutral-600 hover:border-neutral-500 ${!project.maintained ? "text-amber-300 hover:text-amber-200 duration-300 tooltip tooltip-top bg-transparent" : "text-zinc-100 hover:text-zinc-300 duration-300 bg-transparent"}`} data-theme={!project.maintained ? "lofi" : ""} data-tip={!project.maintained ? "Updates will no longer be provided, and any issues that arise may not be fixed." : ""}>{project.name}</span>
+                            <ArrowUpRight size={15} className="m-1 opacity-50 group-hover:opacity-100 group-hover:translate-x-[1.5px] group-hover:text-zinc-300 duration-200" />
                           </span>
                         </Link>
-                        <Link href={project.github} target="_blank" rel="noopener noreferer" passHref>
-                          <div className="mr-1 md:mr-0.5 mt-0.5 text-neutral-500 hover:text-stone-300 duration-300">
+                        <div className="flex items-center">
+                          {stars[project.github] !== undefined && (
+                            <span className="text-xs text-neutral-600 tags mr-1.5 flex items-center"><Star size={13} className="md:mb-0.5 mr-0.5" />{stars[project.github]}</span>
+                          )}
+                          <Link href={project.github} target="_blank" rel="noopener noreferrer" className="mr-1 md:mr-0.5 -mt-1 text-neutral-500 hover:text-stone-300 duration-300">
                             <FaGithub size={18} />
-                          </div>
-                        </Link>
+                          </Link>
+                        </div>
                       </div>
                       <p className="text-stone-400 text-sm py-2.5 animate-blurred-fade-in duration-700">
                         {project.description}
