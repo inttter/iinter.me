@@ -1,38 +1,50 @@
 [
     {
       "name": "md-badges",
-      "description": "An extensive list of Shields.io badges, sorted categorically.",
+      "description": "📃 An extensive list of static Shields.io badges, sorted by category.",
       "link": "https://github.com/inttter/md-badges",
+      "github": "https://github.com/inttter/md-badges",
+      "tags": ["Markdown", "Shields.io", "README"],
       "maintained": true
     },
     {
       "name": "mdbadges-cli",
-      "description": "Extensive command-line tool to find 400+ Shields.io badges for your projects.",
+      "description": "💻 An extensive command-line tool to find 400+ Shields.io badges for your projects.",
       "link": "https://mdbcli.xyz",
+      "github": "https://github.com/inttter/mdbadges-cli",
+      "tags": ["JavaScript", "CLI", "Shields.io"],
       "maintained": true
     },
     {
       "name": "create-ps",
-      "description": "Helps you create the foundations for an NPM package.",
+      "description": "🏗️ A package that helps you create the foundations for an NPM package.",
       "link": "https://createps.xyz",
+      "github": "https://github.com/inttter/create-ps",
+      "tags": ["JavaScript", "npm", "CLI", "Template"],
       "maintained": true
     },
     {
       "name": "discid",
-      "description": "A command-line tool to check a user's Discord status using Lanyard.",
+      "description": "🏓 A quicker way to check a user's Discord status from the terminal.",
       "link": "https://discid.xyz",
+      "github": "https://github.com/inttter/discid",
+      "tags": ["JavaScript", "Discord", "Lanyard"],
       "maintained": true
     },
     {
       "name": "notetxt",
-      "description": "A simple text editor to write down what's on your mind without any distractions.",
+      "description": "📝 A simple text editor to write down what's on your mind without any distractions.",
       "link": "https://notetxt.iinter.me",
+      "github": "https://github.com/inttter/notetxt",
+      "tags": ["Next.js", "Tailwind", "Note-taking"],
       "maintained": true
     },
     {
       "name": "iinter.me",
-      "description": "My personal website made using Next.js, Tailwind, and Million for optimization.",
+      "description": "🪄 My personal website made using Next.js, Tailwind, and Million for optimization.",
+      "github": "https://github.com/inttter/iinter.me",
       "link": "https://iinter.me",
+      "tags": ["Next.js", "Tailwind", "Million", "Blog"],
       "maintained": true
     }
   ]

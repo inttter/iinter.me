@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fontsource/geist-mono": "^5.0.3",
     "@fontsource/geist-sans": "^5.0.3",
     "@fontsource/jetbrains-mono": "^5.0.20",
     "@types/react-dom": "^18.3.0",

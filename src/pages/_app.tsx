@@ -7,6 +7,7 @@ import '@fontsource/geist-sans';
 import '@fontsource/geist-sans/700.css';
 import '@fontsource/geist-sans/600.css';
 import '@fontsource/jetbrains-mono';
+import '@fontsource/geist-mono';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
