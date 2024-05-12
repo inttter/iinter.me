@@ -171,11 +171,10 @@ export async function getStaticProps() {
       .map(filename => {
         const filePath = path.join(postsDirectory, filename);
         const fileContent = fs.readFileSync(filePath, 'utf8');
-        const { data, content } = matter(fileContent);
+        const { data } = matter(fileContent);
         return {
           slug: filename.replace(/\.md$/, ''),
           frontmatter: data,
-          content,
         };
       });
   } catch (error) {
