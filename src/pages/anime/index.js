@@ -104,7 +104,7 @@ const IndexPage = () => {
           )}
         </div>
         <Head>
-          <title>anime list | iinter.me</title>
+          <title>Anime List | Inter</title>
         </Head>
         <Navbar />
         <div className="mt-auto">

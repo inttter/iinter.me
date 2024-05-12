@@ -16,7 +16,7 @@ export default function Writing({ posts }) {
   const [searchQuery, setSearchQuery] = useState('');
   const [hoveredPost, setHoveredPost] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const postsPerPage = 7; // Change this value as needed
+  const postsPerPage = 7;
 
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
@@ -38,7 +38,7 @@ export default function Writing({ posts }) {
     (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
   );
 
-  // Pagination
+  // pagination
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = sortedPosts.slice(indexOfFirstPost, indexOfLastPost);
@@ -50,7 +50,7 @@ export default function Writing({ posts }) {
       <div className="max-w-2xl w-full px-4 md:py-24 py-20 space-y-6 flex-col">
         <div className="flex items-center justify-start">
           <Head>
-            <title>writing | iinter.me</title>
+            <title>Writing | Inter</title>
           </Head>
           <div className="max-w-3xl w-full">
             <div className="mb-4 relative mt-4 animate-blurred-fade-in duration-500">

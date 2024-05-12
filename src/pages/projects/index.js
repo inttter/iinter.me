@@ -32,7 +32,7 @@ export default function ProjectsPage() {
       <div className="max-w-2xl w-full px-4 py-8 space-y-6 flex-col">
         <div className="flex items-center justify-start">
           <Head>
-            <title>projects | iinter.me</title>
+            <title>Projects | Inter</title>
           </Head>
           <div className="md:-py-0 py-20">
             <div>

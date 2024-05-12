@@ -4,7 +4,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Head>
-        <title>iinter.me</title>
+        <title>Inter</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       {/* Your layout content here */}
