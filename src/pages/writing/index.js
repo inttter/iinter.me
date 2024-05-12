@@ -105,6 +105,7 @@ export default function Writing({ posts }) {
           postsPerPage={postsPerPage}
           totalPosts={sortedPosts.length}
           paginate={paginate}
+          currentPage={currentPage}
         />
       </div>
       <div>
@@ -122,7 +123,7 @@ export default function Writing({ posts }) {
   );
 }
 
-const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
+const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
@@ -130,7 +131,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
   }
 
   if (totalPosts === 0) {
-    return null; // don't render anything if there are no posts
+    return null; // won't render anything if there are no posts
   }
 
   return (
@@ -141,7 +142,14 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
         </div>
         {pageNumbers.map(number => (
           <li key={number}>
-            <div onClick={() => paginate(number)} className="bg-neutral-900 hover:bg-neutral-700 hover:bg-opacity-70 duration-300 text-zinc-300 page-link code px-2 py-0.5 rounded-md cursor-pointer">
+            <div
+              onClick={() => paginate(number)}
+              className={`${
+                currentPage === number
+                  ? 'bg-neutral-700 bg-opacity-90'
+                  : 'bg-neutral-800'
+              } hover:bg-neutral-600 hover:bg-opacity-50 duration-300 text-zinc-300 page-link code px-2 py-0.5 rounded-md cursor-pointer`}
+            >
               {number}
             </div>
           </li>
