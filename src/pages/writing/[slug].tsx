@@ -187,7 +187,7 @@ const markdownComponents = {
   h1({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h1 className="text-zinc-100 hover:text-zinc-400 text-3xl duration-300 font-semibold mt-5 relative" {...props}>
+      <h1 className="text-zinc-100 hover:text-zinc-400 text-3xl duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
         <Link href={`#${headerId}`} className="no-underline">{children}</Link>
       </h1>
     );
@@ -195,7 +195,7 @@ const markdownComponents = {
   h2({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h2 className="text-zinc-100 hover:text-zinc-400 text-2xl duration-300 font-semibold mt-5 relative" {...props}>
+      <h2 className="text-zinc-100 hover:text-zinc-400 text-2xl duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
         <Link href={`#${headerId}`} className="no-underline">{children}</Link>
       </h2>
     );
@@ -203,7 +203,7 @@ const markdownComponents = {
   h3({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h3 className="text-zinc-100 hover:text-zinc-400 text-xl duration-300 font-semibold mt-5 relative" {...props}>
+      <h3 className="text-zinc-100 hover:text-zinc-400 text-xl duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
         <Link href={`#${headerId}`} className="no-underline">{children}</Link>
       </h3>
     );
@@ -211,7 +211,7 @@ const markdownComponents = {
   h4({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h4 className="text-zinc-100 hover:text-zinc-400 text-lg duration-300 font-semibold mt-5 relative" {...props}>
+      <h4 className="text-zinc-100 hover:text-zinc-400 text-lg duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
         <Link href={`#${headerId}`} className="no-underline">{children}</Link>
       </h4>
     );
@@ -219,7 +219,7 @@ const markdownComponents = {
   h5({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h5 className="text-zinc-100 hover:text-zinc-400 text-base duration-300 font-semibold mt-5 relative" {...props}>
+      <h5 className="text-zinc-100 hover:text-zinc-400 text-base duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
         <Link href={`#${headerId}`} className="no-underline">{children}</Link>
       </h5>
     );
@@ -227,7 +227,7 @@ const markdownComponents = {
   h6({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h6 className="text-zinc-100 hover:text-zinc-400 text-sm duration-300 font-semibold mt-5 relative" {...props}>
+      <h6 className="text-zinc-100 hover:text-zinc-400 text-sm duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
         <Link href={`#${headerId}`} className="no-underline">{children}</Link>
       </h6>
     );
@@ -279,7 +279,7 @@ const markdownComponents = {
 
   // Keyboard input
   kbd({ node, children, ...props }) {
-    return <kbd className="code text-neutral-400 bg-neutral-700 bg-opacity-50 px-1 py-0.5 rounded-md" {...props}>{children}</kbd>;
+    return <kbd className="tags text-zinc-100 bg-neutral-800 px-1.5 py-1 tracking-tighter rounded-md" {...props}>{children}</kbd>;
   },
 
   // Horizontal Rule
