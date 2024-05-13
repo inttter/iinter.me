@@ -8,6 +8,7 @@ import { request } from 'graphql-request';
 import { SiAnilist } from "react-icons/si";
 import { CircleX } from 'lucide-react';
 import consola from 'consola';
+import Image from 'next/image';
 
 const IndexPage = () => {
   const [watchlist, setWatchlist] = useState({
@@ -15,10 +16,12 @@ const IndexPage = () => {
     completed: [],
     planned: [],
   });
+  const [profilePicture, setProfilePicture] = useState('');
+  const [username, setUsername] = useState(''); // State to hold the username
   const [errorMessage, setErrorMessage] = useState('');
 
   useEffect(() => {
-    const fetchWatchlist = async () => {
+    const fetchData = async () => {
       const query = `
         query {
           MediaListCollection(userName: "Intter", type: ANIME) {
@@ -37,51 +40,55 @@ const IndexPage = () => {
                 score
               }
             }
+            user {
+              name
+              avatar {
+                large
+              }
+            }
           }
         }
       `;
 
       try {
         const data = await request('https://graphql.anilist.co', query);
-        consola.success('Successfully fetched list from https://anilist.co/user/intter/animelist.')
         const lists = data.MediaListCollection.lists;
+        const user = data.MediaListCollection.user;
 
-        const watching = [];
-        const completed = [];
-        const planned = [];
-
-        lists.forEach(list => {
-          list.entries.forEach(entry => {
-            const media = entry.media;
-            const title = media.title.english;
-            const coverImage = media.coverImage ? media.coverImage.large : null;
-            const score = entry.score;
-
-            switch (entry.status) {
-              case 'CURRENT':
-                watching.push({ id: media.id, title, coverImage, score });
-                break;
-              case 'COMPLETED':
-                completed.push({ id: media.id, title, coverImage, score });
-                break;
-              case 'PLANNING':
-                planned.push({ id: media.id, title, coverImage, score });
-                break;
-              default:
-                break;
-            }
-          });
+        setWatchlist({
+          watching: parseEntries(lists, 'CURRENT'),
+          completed: parseEntries(lists, 'COMPLETED'),
+          planned: parseEntries(lists, 'PLANNING')
         });
 
-        setWatchlist({ watching, completed, planned });
+        if (user) {
+          setProfilePicture(user.avatar.large);
+          setUsername(user.name); // Set the username
+        }
       } catch (error) {
-        consola.error(new Error('An error occurred when fetching the watchlist:', error));
-        setErrorMessage(`Error fetching list. Check the console for more details, or wait a few minutes and try again.`);
+        consola.error('An error occurred:', error);
+        setErrorMessage('Error fetching data. Please try again later.');
       }
     };
 
-    fetchWatchlist();
+    fetchData();
   }, []);
+
+  const parseEntries = (lists, status) => {
+    return lists.reduce((accumulator, list) => {
+      list.entries.forEach(entry => {
+        if (entry.status === status) {
+          accumulator.push({
+            id: entry.media.id,
+            title: entry.media.title.english,
+            coverImage: entry.media.coverImage ? entry.media.coverImage.large : null,
+            score: entry.score
+          });
+        }
+      });
+      return accumulator;
+    }, []);
+  };
 
   return (
     <div className="bg-main min-h-screen flex flex-col justify-center items-center antialiased p-4 md:p-8">
@@ -104,7 +111,7 @@ const IndexPage = () => {
           )}
         </div>
         <Head>
-          <title>Anime List | Inter</title>
+          <title>Anime List | {username}</title>
         </Head>
         <Navbar />
         <div className="mt-auto">
@@ -118,10 +125,13 @@ const IndexPage = () => {
           </motion.div>
         )}
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.8 }}>
-          <div className="flex justify-end">
-            <Link href="https://anilist.co/user/intter/animelist" target="_blank" rel="noopener noreferrer" className="relative mt-2 items-end justify-end tooltip tooltip-left bg-transparent" data-theme="lofi" data-tip="View this on my AniList profile">
-              <SiAnilist size={40} className="mr-1 text-neutral-700 hover:text-sky-400 hover:bg-zinc-300 hover:bg-opacity-15 rounded-md p-2 duration-300" />
-            </Link>
+          <div className="flex justify-end items-center text-sm text-neutral-600">
+            {profilePicture && (
+              <Link href={`https://anilist.co/user/${username}`} target="_blank" rel="noopener noreferrer" className="group hover:bg-neutral-800 hover:text-zinc-100 p-2 rounded-md duration-300 flex items-center">
+                <Image src={profilePicture} alt="AniList Profile Picture" width={30} height={30} className="rounded-md mr-2.5 -rotate-6 group-hover:scale-110 group-active:scale-105 duration-300" />
+                View {username}'s AniList <SiAnilist className="ml-1 group-hover:text-sky-400 duration-100" />
+              </Link>
+            )}
           </div>
         </motion.div>
       </div>
@@ -139,11 +149,12 @@ const WatchlistCategory = ({ title, list, titleColor }) => {
             {item.coverImage && (
               <div key={item.id} className="group relative hover:shadow-2xl hover:shadow-neutral-700 hover:scale-105 active:scale-95 duration-300">
                 <Link href={`https://anilist.co/anime/${item.id}`} target="_blank" rel="noopener noreferrer">
-                  <img
+                  <Image
                     src={item.coverImage}
                     alt={item.title}
                     width={200}
                     height={200}
+                    layout="responsive"
                     className="rounded-md mb-2 opacity-100 transition-opacity duration-300 ease-in-out group-hover:opacity-30 animate-blurred-fade-in"
                   />
                   <span className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100 bg-black bg-opacity-50">
