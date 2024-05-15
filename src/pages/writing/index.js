@@ -87,7 +87,7 @@ export default function Writing({ posts }) {
                   <div className="p-0.5 hover:bg-neutral-800 hover:bg-opacity-30 rounded-md duration-300">
                     <div className="flex flex-col md:flex-row items-start md:items-center justify-between p-[7px] duration-300 rounded-md">
                       <div className="text-zinc-100 group-hover:text-zinc-100 duration-300 mb-1 md:mb-0 md:mr-2 flex items-center">
-                        <span>{post.frontmatter.title}</span> <ArrowUpRight size={15} className="text-neutral-600 ml-0.5 group-hover:translate-x-0.5 duration-200" />
+                        <span>{post.frontmatter.title}</span> <ArrowUpRight size={15} className="text-neutral-600 ml-0.5 group-hover:translate-x-0.5 group-hover:text-zinc-300 duration-200" />
                       </div>
                       <p className={`text-sm flex items-center duration-300 ${hoveredPost === post.slug ? 'text-neutral-400' : 'text-neutral-600'}`}>{post.frontmatter.date}</p>
                     </div>
