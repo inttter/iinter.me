@@ -163,7 +163,7 @@ const markdownComponents = {
   
     return (
       <div className="relative">
-          <img className="rounded-lg" loading="lazy" alt={alt} src={src} onError={handleImageError} {...props} />
+          <img className="rounded-lg border border-neutral-800" loading="lazy" alt={alt} src={src} onError={handleImageError} {...props} />
         {alt && <p className="text-sm text-neutral-600 mt-2">{alt}</p>}
       </div>
     );
@@ -172,10 +172,15 @@ const markdownComponents = {
   // Video
   video({ node, ...props }) {
     return (
-      <video src={props.src} className="shadow-2xl rounded-lg" {...props}>
+      <video src={props.src} className="border border-neutral-800 rounded-lg" {...props}>
         Your browser does not support the video tag.
       </video>
     );
+  },
+
+  // Iframe
+  iframe({ node, ...props }) {
+    return <iframe className="w-full h-96 border border-neutral-800 rounded-lg" {...props}></iframe>;
   },
 
   // Paragraphs
@@ -187,7 +192,7 @@ const markdownComponents = {
   h1({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h1 className="text-zinc-100 hover:text-zinc-400 text-3xl duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
+      <h1 className="text-zinc-100 hover:text-zinc-300 border-transparent hover:border-b hover:border-dotted hover:border-neutral-500 inline-block text-3xl duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
         <Link href={`#${headerId}`} className="no-underline">{children}</Link>
       </h1>
     );
@@ -195,7 +200,7 @@ const markdownComponents = {
   h2({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h2 className="text-zinc-100 hover:text-zinc-400 text-2xl duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
+      <h2 className="text-zinc-100 hover:text-zinc-300 border-transparent hover:border-b hover:border-dotted hover:border-neutral-500 inline-block text-2xl duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
         <Link href={`#${headerId}`} className="no-underline">{children}</Link>
       </h2>
     );
@@ -203,7 +208,7 @@ const markdownComponents = {
   h3({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h3 className="text-zinc-100 hover:text-zinc-400 text-xl duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
+      <h3 className="text-zinc-100 hover:text-zinc-300 border-transparent hover:border-b hover:border-dotted hover:border-neutral-500 inline-block text-xl duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
         <Link href={`#${headerId}`} className="no-underline">{children}</Link>
       </h3>
     );
@@ -211,7 +216,7 @@ const markdownComponents = {
   h4({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h4 className="text-zinc-100 hover:text-zinc-400 text-lg duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
+      <h4 className="text-zinc-100 hover:text-zinc-300 border-transparent hover:border-b hover:border-dotted hover:border-neutral-500 inline-block text-lg duration-300 font-semibold tracking-tight mt-5 relative" {...props}>
         <Link href={`#${headerId}`} className="no-underline">{children}</Link>
       </h4>
     );
@@ -219,7 +224,7 @@ const markdownComponents = {
   h5({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h5 className="text-zinc-100 hover:text-zinc-400 text-base duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
+      <h5 className="text-zinc-100 hover:text-zinc-300 border-transparent hover:border-b hover:border-dotted hover:border-neutral-500 inline-block text-base duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
         <Link href={`#${headerId}`} className="no-underline">{children}</Link>
       </h5>
     );
@@ -227,7 +232,7 @@ const markdownComponents = {
   h6({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h6 className="text-zinc-100 hover:text-zinc-400 text-sm duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
+      <h6 className="ttext-zinc-100 hover:text-zinc-300 border-transparent hover:border-b hover:border-dotted hover:border-neutral-500 inline-block text-sm duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
         <Link href={`#${headerId}`} className="no-underline">{children}</Link>
       </h6>
     );
@@ -241,8 +246,8 @@ const markdownComponents = {
     return <ol className="list-decimal list-inside my-4" {...props}>{children}</ol>;
   },
   li({ node, children, ...props }) {
-    return <li className="my-1 marker:text-neutral-600" {...props}>
-      <span className="mx-[5px] marker">
+    return <li className="my-2 marker:text-neutral-500" {...props}>
+      <span className="marker">
         {children}
       </span>
     </li>;
@@ -251,7 +256,7 @@ const markdownComponents = {
   // Blockquotes
   blockquote({ node, children, ...props }) {
     return (
-      <blockquote className="text-stone-400 border-neutral-700 flex items-center italic">
+      <blockquote className="text-zinc-100 bg-neutral-900 rounded-lg border-neutral-700 flex items-center italic">
         <div className="px-3">
           {children}
         </div>
@@ -293,19 +298,19 @@ const markdownComponents = {
 
   // Tables
   table({ node, children, ...props }) {
-    return <table className="table-auto my-4 w-full" {...props}>{children}</table>;
+    return <table className="table-auto my-4 w-full rounded-md overflow-hidden" {...props}>{children}</table>;
   },
   thead({ node, children, ...props }) {
-    return <thead className="bg-neutral-800 text-zinc-300" {...props}>{children}</thead>;
+    return <thead className="bg-neutral-800 bg-opacity-70 text-zinc-300" {...props}>{children}</thead>;
   },
   tbody({ node, children, ...props }) {
     return <tbody  {...props}>{children}</tbody>;
   },
   tr({ node, children, ...props }) {
-    return <tr className="border border-neutral-700" {...props}>{children}</tr>;
+    return <tr className="border border-neutral-800" {...props}>{children}</tr>;
   },
   th({ node, children, ...props }) {
-    return <th className="px-4 py-2 text-left" {...props}>{children}</th>;
+    return <th className="px-4 py-2 text-left font-normal text-zinc-100 tags" {...props}>{children}</th>;
   },
   td({ node, children, ...props }) {
     return <td className="px-4 py-1.5" {...props}>{children}</td>;
