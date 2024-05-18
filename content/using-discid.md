@@ -85,6 +85,8 @@ Playing: osu! • Goose house - Hikaru nara [Synesthesia] • Clicking circles
 
 ### Options
 
+<br>
+
 ### <kbd>--json</kbd>
 
 This option will print the user's information in a formatted JSON response. You can see an example of this with user ID **514106760299151372** below.
