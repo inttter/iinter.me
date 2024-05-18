@@ -17,7 +17,7 @@ export default function Home() {
             <Lanyard showAlbumArt={false} />
           </h1>
         </div>
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.3 }} className="flex justify-start md:space-x-4 space-x-3 bg-transparent animate-blurred-fade-in duration-700" data-theme="lofi">
+        <motion.div initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: 0.3 }} className="flex justify-start md:space-x-4 space-x-3 bg-transparent animate-blurred-fade-in duration-700" data-theme="lofi">
           <SocialLink href="https://github.com/inttter" social="GitHub" tooltipText="@inttter" />
           <SocialLink href="https://steamcommunity.com/id/intermed" social="Steam" tooltipText="@inter" />
           <SocialLink href="https://discord.com/users/514106760299151372" social="Discord" tooltipText="@iinter"/>
