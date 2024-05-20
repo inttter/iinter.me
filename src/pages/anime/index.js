@@ -95,19 +95,34 @@ const IndexPage = () => {
       <div className="max-w-2xl w-full px-4 py-24 space-y-6 flex-col">
         <div className="flex flex-col space-y-4">
           {watchlist.watching.length > 0 && (
-            <div className="animate-blurred-fade-in duration-500">
-              <WatchlistCategory title="💻 Watching Currently" list={watchlist.watching} titleColor="text-blue-400" />
-            </div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="animate-blurred-fade-in duration-1000"
+            >
+              <WatchlistCategory title="Watching" list={watchlist.watching} />
+            </motion.div>
           )}
           {watchlist.completed.length > 0 && (
-            <div className="animate-blurred-fade-in duration-500">
-              <WatchlistCategory title="✅ Completed" list={watchlist.completed} titleColor="text-emerald-400" />
-            </div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="animate-blurred-fade-in duration-1000"
+            >
+              <WatchlistCategory title="Completed" list={watchlist.completed} />
+            </motion.div>
           )}
           {watchlist.planned.length > 0 && (
-            <div className="animate-blurred-fade-in duration-500">
-              <WatchlistCategory title="⌚ Plan To Watch" list={watchlist.planned} titleColor="text-violet-400" />
-            </div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.8 }}
+              className="animate-blurred-fade-in duration-500"
+            >
+              <WatchlistCategory title="Plan To Watch" list={watchlist.planned} />
+            </motion.div>
           )}
         </div>
         <Head>
@@ -118,18 +133,26 @@ const IndexPage = () => {
           <Top />
         </div>
         {errorMessage && (
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
             <div className="flex justify-center items-center bg-red-500 bg-opacity-40 text-zinc-200 px-4 py-2 rounded-md">
               <CircleX size={60} className="mr-3" /> {errorMessage}
             </div>
           </motion.div>
         )}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.8 }}>
+        <motion.div 
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }} 
+          transition={{ duration: 0.5, delay: 1.0 }}
+        >
           <div className="flex justify-end items-center text-sm text-neutral-600 animate-blurred-fade-in duration-500">
             {profilePicture && (
               <Link href={`https://anilist.co/user/${username}`} target="_blank" rel="noopener noreferrer" className="group hover:bg-neutral-800 hover:text-zinc-100 p-2 rounded-md duration-300 flex items-center">
-                <Image src={profilePicture} alt="AniList Profile Picture" width={30} height={30} className="rounded-md mr-2.5 -rotate-6 group-hover:scale-110 group-active:scale-105 duration-300" />
-                View {username}'s AniList <SiAnilist className="ml-1 group-hover:text-sky-400 duration-100" />
+                <Image src={profilePicture} alt="AniList Profile Picture" width={30} height={30} className="rounded-md mr-2.5 -rotate-6 group-hover:-rotate-2 group-hover:scale-110 group-active:scale-105 duration-300" />
+                View {username}'s full AniList <SiAnilist className="m-1 group-hover:text-sky-400 duration-100" /> profile
               </Link>
             )}
           </div>
@@ -139,13 +162,13 @@ const IndexPage = () => {
   );
 };
 
-const WatchlistCategory = ({ title, list, titleColor }) => {
+const WatchlistCategory = ({ title, list }) => {
   return (
     <div>
-      <div className={`text-2xl font-semibold mb-6 tracking-tighter ${titleColor}`}>{title}</div>
+      <div className="text-2xl mx-3 tracking-tighter font-semibold mb-3 text-zinc-100">{title}</div>
         {list.map(item => (
           <Link key={item.id} href={`https://anilist.co/anime/${item.id}`} target="_blank" rel="noopener noreferrer" className="group">
-            <div key={item.id} className="relative flex items-center hover:bg-neutral-800 hover:bg-opacity-80 active:bg-neutral-700 active:bg-opacity-45 px-2 py-3 rounded-md duration-300">
+            <div key={item.id} className="relative flex items-center hover:bg-neutral-950 p-3 rounded-md duration-300">
               {item.coverImage && (
                 <div className="group relative">
                   <Image
@@ -154,26 +177,28 @@ const WatchlistCategory = ({ title, list, titleColor }) => {
                     width={70}
                     height={70}
                     layout="intrinsic"
-                    className="rounded-md animate-blurred-fade-in duration-500"
+                    className="rounded-lg animate-blurred-fade-in border-2 border-neutral-700 group-hover:border-zinc-300 duration-300"
                   />
                 </div>
               )}
-              <div className="px-3 flex-grow flex-shrink-0 md:max-w-[500px] max-w-[200px] overflow-elipsis truncate text-zinc-100 md:text-lg text-md font-semibold tracking-tight">
+              <div className="px-3 flex-grow flex-shrink-0 md:max-w-[500px] max-w-[200px] overflow-ellipsis truncate text-zinc-100 md:text-lg text-md tracking-tigh">
                 {item.title}
-                {title !== "⌚ Plan To Watch" && item.score && item.score > 0 && (
-                  <span className="absolute bottom-1 right-1.5 sm:right-2 md:right-1 bg-neutral-800 group-hover:bg-neutral-950 text-neutral-300 px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-top group-hover:bottom-2 group-hover:right-2 group-hover:md:right-2 duration-300" data-tip="Rating" data-theme="lofi">
+                {title !== "⌚ Plan To Watch" && item.score && item.score > 0 ? (
+                  <span className="absolute sm:right-2 bg-neutral-800 group-hover:bg-neutral-950 text-neutral-300 px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-top bottom-2 right-2 md:right- group-hover:scale-110 group-hover:rotate-6 duration-300" data-tip="Rating" data-theme="lofi">
                     {item.score}/10
                   </span>
+                ) : (
+                  null // null so that the "0" that gets appeneded to the {item.title} won't show
                 )}
               </div>
             </div>
           </Link>
         ))}
-      <div className="flex items-center justify-center">
-        <hr className="w-full border-t border-neutral-800 mt-2" />
+        <div className="flex items-center justify-center">
+          <hr className="w-full border-t border-neutral-800 mt-2" />
+        </div>
       </div>
-    </div>
-  );
-};
+    )
+  };
 
 export default IndexPage;
