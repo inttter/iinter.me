@@ -25,7 +25,7 @@ export default function Post({ post }) {
   return (
     <div className="bg-main min-h-screen flex flex-col justify-center items-center antialiased p-4 md:p-8 overflow-x-hidden">
       <Head>
-        <title>{post.frontmatter.title} | Inter</title>
+        <title>{`${post.frontmatter.title} | Inter`}</title>
       </Head>
       <div className="max-w-2xl w-full md:px-1 px-3 md:py-7 py-11 space-y-4">
         <div className="flex items-center justify-between">
