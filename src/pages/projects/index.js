@@ -36,18 +36,36 @@ export default function ProjectsPage() {
           </Head>
           <div className="md:-py-0 py-20">
             <div>
-              <div className="flex justify-end">
+              <motion.div
+                initial={{ opacity: 0 }} 
+                animate={{ opacity: 1 }} 
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="flex justify-end"
+              >
                 <Link href="https://github.com/inttter?tab=repositories" target="_blank" rel="noopener noreferrer" passHref>
                   <div className="text-xs code mb-2 flex items-center group">
-                    <span className="text-neutral-600 hover:text-neutral-500 duration-300">All repos</span> <ArrowUpRight size={15} className="m-1 opacity-50 group-hover:opacity-100 group-hover:translate-x-[1.5px] text-neutral-600 group-hover:text-neutral-500 duration-200" />
+                    <span className="text-neutral-600 hover:text-neutral-500 duration-300">
+                      All repositories
+                    </span> 
+                    <ArrowUpRight size={15} className="m-1 opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 text-neutral-600 group-hover:text-neutral-500 duration-200" />
                   </div>
                 </Link>
-              </div>
+              </motion.div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-3 gap-y-3">
                 {projectsData.map((project, index) => (
-                  <div key={index} className="animate-blurred-fade-in duration-700">
+                  <motion.div 
+                    key={index} 
+                    initial={{ opacity: 0 }} 
+                    animate={{ opacity: 1 }} 
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                    className="animate-blurred-fade-in duration-700">
                     <div className="bg-neutral-800 bg-opacity-20 hover:bg-neutral-500 hover:bg-opacity-5 border border-dashed border-neutral-700 hover:border-neutral-800 duration-300 p-3 rounded-md block antialiased">
-                      <div className="flex justify-between items-center">
+                      <motion.div 
+                        initial={{ opacity: 0 }} 
+                        animate={{ opacity: 1 }} 
+                        transition={{ duration: 0.5, delay: 0.8 }}
+                        className="flex justify-between items-center"
+                      >
                         <Link href={project.link} target="_blank" rel="noopener noreferrer" className="group" passHref>
                           <span className="flex items-center">
                             <span className={`border-b border-dashed border-neutral-600 hover:border-neutral-500 ${!project.maintained ? "text-amber-300 hover:text-amber-200 duration-300 tooltip tooltip-top bg-transparent" : "text-zinc-100 hover:text-zinc-300 duration-300 bg-transparent"}`} data-theme={!project.maintained ? "lofi" : ""} data-tip={!project.maintained ? "Updates will no longer be provided, and any issues that arise may not be fixed." : ""}>{project.name}</span>
@@ -62,16 +80,21 @@ export default function ProjectsPage() {
                             <FaGithub size={18} />
                           </Link>
                         </div>
-                      </div>
-                      <p className="text-stone-400 text-sm py-2.5 animate-blurred-fade-in duration-700">
+                      </motion.div>
+                      <motion.p 
+                        initial={{ opacity: 0 }} 
+                        animate={{ opacity: 1 }} 
+                        transition={{ duration: 0.5, delay: 1.0 }}
+                        className="text-stone-400 text-sm py-2.5 animate-blurred-fade-in duration-700"
+                      >
                         {project.description}
-                      </p>
+                      </motion.p>
                       {project.tags && (
                         <motion.div
                           className="-mx-1 p-1 rounded-md text-xs flex flex-wrap items-center"
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
-                          transition={{ duration: 0.5, delay: index * 0.1 }}
+                          transition={{ duration: 0.5, delay: 1.2 }}
                         >
                           {project.tags.map((tag, tagIndex) => (
                             <span key={tagIndex} className="mr-2">
@@ -81,7 +104,7 @@ export default function ProjectsPage() {
                         </motion.div>
                       )}
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>

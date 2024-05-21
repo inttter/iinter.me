@@ -8,7 +8,6 @@ import Navbar from '../../components/Navbar';
 import { motion } from 'framer-motion';
 import { Search, CircleX, ArrowUpRight } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
-import { useRouter } from 'next/router';
 
 export default function Writing({ posts }) {
   posts.reverse();
@@ -54,7 +53,12 @@ export default function Writing({ posts }) {
           </Head>
           <div className="max-w-3xl w-full">
             <div className="mb-4 relative mt-4 animate-blurred-fade-in duration-500">
-              <div className="relative">
+              <motion.div 
+                initial={{ opacity: 0 }} 
+                animate={{ opacity: 1 }} 
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="relative"
+              >
                 <input
                   type="text"
                   placeholder="Search posts"
@@ -65,7 +69,7 @@ export default function Writing({ posts }) {
                 <div className="absolute inset-y-0 pl-3.5 flex items-center pointer-events-none group-focus:rotate-12">
                   <Search className="text-neutral-600" size={20} />
                 </div>
-              </div>
+              </motion.div>
             </div>
             {filteredPosts.length === 0 && (
               <motion.p className="text-zinc-200 text-md bg-red-500 bg-opacity-40 px-4 py-2 ml-2 rounded-md flex items-center">
@@ -73,11 +77,11 @@ export default function Writing({ posts }) {
               </motion.p>
             )}
             {currentPosts.map((post) => (
-              <div
+              <motion.div
+                initial={{ opacity: 0 }} 
+                animate={{ opacity: 1 }} 
+                transition={{ duration: 0.5, delay: 0.8 }}
                 key={post.slug}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1.0 }}
                 className="relative duration-500 group animate-blurred-fade-in mb-2"
                 style={{ filter: hoveredPost && hoveredPost !== post.slug ? 'brightness(70%)' : 'none' }}
                 onMouseEnter={() => handleMouseEnter(post.slug)}
@@ -96,7 +100,7 @@ export default function Writing({ posts }) {
                     </p>
                   </div>
                 </Link>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -135,7 +139,12 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
   }
 
   return (
-    <nav className="relative flex flex-col top-5 left-2 mb-5">
+    <motion.nav 
+      initial={{ opacity: 0 }} 
+      animate={{ opacity: 1 }} 
+      transition={{ duration: 0.5, delay: 1.0 }}
+      className="relative flex flex-col top-5 left-2 mb-5"
+    >
       <ul className="flex space-x-2">
         <div className="flex items-center text-neutral-600 code text-sm mr-1">
           Page
@@ -155,7 +164,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
           </li>
         ))}
       </ul>
-    </nav>
+    </motion.nav>
   );
 };
 
