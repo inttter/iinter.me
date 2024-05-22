@@ -21,7 +21,7 @@
     "framer-motion": "^11.2.4",
     "graphql-request": "^7.0.1",
     "gray-matter": "^4.0.3",
-    "lucide-react": "^0.378.0",
+    "lucide-react": "^0.379.0",
     "million": "^3.1.1",
     "next": "^14.2.3",
     "react": "^18.3.1",
