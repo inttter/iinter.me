@@ -3,6 +3,19 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
     commit-message:
       prefix: "📦 chore(deps):"
+    groups:
+      react:
+        patterns:
+          - "react*"
+          - "@types/react*"
+          - "@types/react-dom"
+      vercel:
+        patterns:
+          - "@vercel/*"
+          - "next"
+      font:
+        patterns:
+          - "@fontsource/*"
