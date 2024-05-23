@@ -7,7 +7,7 @@ const BackToTop = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.pageYOffset > 200) {
+      if (window.pageYOffset > 150) {
         setShowScrollButton(true);
       } else {
         setShowScrollButton(false);
@@ -27,13 +27,15 @@ const BackToTop = () => {
 
   return (
     <motion.button
-      className="fixed bottom-6 right-6 text-neutral-400 p-2 bg-neutral-800 hover:bg-neutral-700 hover:bg-opacity-80 hover:text-stone-300 rounded-md duration-300 flex items-center"
+      className="fixed bottom-6 right-6 text-zinc-300 p-2 bg-neutral-800 hover:bg-neutral-700 hover:bg-opacity-80 border border-neutral-700 hover:border-neutral-600 rounded-full duration-300 flex items-center tooltip tooltip-left"
       initial={{ opacity: 0 }}
       animate={{ opacity: showScrollButton ? 1 : 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.3 }}
       onClick={scrollToTop}
+      data-tip="Back To Top"
+      data-theme="lofi"
     >
-     <ArrowUp />
+      <ArrowUp />
     </motion.button>
   );
 };
