@@ -6,7 +6,7 @@ import Navbar from '../../components/Navbar';
 import Top from '../../components/BackToTop';
 import { request } from 'graphql-request';
 import { SiAnilist } from "react-icons/si";
-import { CircleX, Star } from 'lucide-react';
+import { CircleX } from 'lucide-react';
 import consola from 'consola';
 import Image from 'next/image';
 
@@ -197,22 +197,21 @@ const WatchlistCategory = ({ title, list, favourites }) => {
                 />
               </div>
             )}
-            <div className="px-3 flex-grow flex-shrink-0 md:max-w-[500px] max-w-[200px] overflow-ellipsis truncate text-zinc-100 md:text-lg text-md tracking-tigh">
-            {favourites.some(fav => fav.id === item.id) && (
-              <span className="absolute right-2.5 font-semibold top-3 flex items-center bg-transparent tooltip tooltip-left" data-tip={`This is position number ${favourites.findIndex(fav => fav.id === item.id) + 1} on my favourites list!`} data-theme="lofi">
-                <span className="text-sm text-neutral-600 mr-1.5 flex items-center">
-                  #{favourites.findIndex(fav => fav.id === item.id) + 1}
-                </span>
-                <Star size={15} color="yellow" fill="yellow" />
-              </span>
-            )}
-            {item.title}
+            <div className="px-3 flex-grow flex-shrink-0 md:max-w-[500px] max-w-[200px] overflow-ellipsis truncate text-zinc-100 md:text-lg text-md">
+              {item.title}
               {title !== "⌚ Plan To Watch" && item.score && item.score > 0 ? (
-                <span className="absolute sm:right-2 bg-neutral-800 group-hover:bg-neutral-950 text-neutral-300 px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-top bottom-2 right-2 md:right- group-hover:scale-110 group-hover:rotate-6 duration-300" data-tip="Rating" data-theme="lofi">
+                <span className="absolute sm:right-2 bg-neutral-800 group-hover:bg-neutral-700 group-hover:bg-opacity-70 text-neutral-300 px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-top bottom-2 right-2 duration-300" data-tip="Rating" data-theme="lofi">
                   {item.score}/10
                 </span>
               ) : (
                 null // null so that the "0" that gets appended to the {item.title} won't show
+              )}
+              {favourites.some(fav => fav.id === item.id) && (
+                <span className="absolute left-15 bottom-3.5 flex items-center px-2 py-1 bg-neutral-800 group-hover:bg-neutral-700 group-hover:bg-opacity-70 duration-300 rounded-md font-medium tooltip tooltip-right" data-tip={`This anime is #${favourites.findIndex(fav => fav.id === item.id) + 1} on my favourites list!`} data-theme="lofi">
+                  <div className={`text-xs flex items-center ${favourites.findIndex(fav => fav.id === item.id) === 0 ? 'text-yellow-400' : 'text-neutral-300'}`}>
+                    ⭐ #{favourites.findIndex(fav => fav.id === item.id) + 1}
+                  </div>
+                </span>
               )}
             </div>
           </div>
