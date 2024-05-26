@@ -245,16 +245,14 @@ const markdownComponents = {
 
   // Lists
   ul({ node, children, ...props }) {
-    return <ul className="list-disc list-inside my-4" {...props}>{children}</ul>;
+    return <ul className="list-disc pl-6 my-4" {...props}>{children}</ul>;
   },
   ol({ node, children, ...props }) {
-    return <ol className="list-decimal list-inside my-4" {...props}>{children}</ol>;
+    return <ol className="list-decimal pl-6 my-4" {...props}>{children}</ol>;
   },
   li({ node, children, ...props }) {
-    return <li className="my-2 marker:text-neutral-500" {...props}>
-      <span className="marker">
-        {children}
-      </span>
+    return <li className="my-2 marker:text-neutral-500 pl-2" {...props}>
+      {children}
     </li>;
   },
 
