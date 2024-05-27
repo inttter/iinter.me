@@ -7,9 +7,11 @@ class MyDocument extends Document {
   }
 
   render() {
-    const { post } = this.props.__NEXT_DATA__.props.pageProps;
+    const { post, isWritingIndexPage } = this.props.__NEXT_DATA__.props.pageProps;
     const isPostPage = !!post;
-    const isWritingIndexPage = this.props.__NEXT_DATA__.props.pageProps.isWritingIndexPage;
+
+    const description = 'A racing game enthusiast, and also cat lover.' // default
+    const writingDescription = 'Writing about things that I find interesting or think about.' // writing
 
     return (
       <Html>
@@ -17,10 +19,15 @@ class MyDocument extends Document {
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
           {isWritingIndexPage && (
             <>
+              <meta property="og:title" content="Writing | Inter" />
+              <meta property="og:description" content={writingDescription} />
+              <meta property="og:image" content="https://iinter.me/external-assets/writing-index.png" />
               <meta property="og:url" content="https://iinter.me/writing" />
-              <meta property="og:image" content="https://iinter.me/external-assets/wrting-index.png" />
+              <meta property="description" content={writingDescription} />
               <meta name="twitter:image" content="https://iinter.me/external-assets/writing-index.png" />
               <meta name="twitter:card" content="summary_large_image" />
+              <meta name="twitter:description" content={writingDescription} />
+              <meta name="twitter:title" content="Writing | Inter" />
             </>
           )}
           {isPostPage && (
@@ -28,27 +35,31 @@ class MyDocument extends Document {
               <meta property="og:title" content={post.frontmatter.title} />
               <meta property="og:image" content="https://iinter.me/external-assets/writing-index.png" />
               <meta property="og:description" content={post.frontmatter.description} />
+              <meta property="description" content={post.frontmatter.description} />
               <meta name="twitter:image" content="https://iinter.me/external-assets/writing-index.png" />
               <meta name="twitter:card" content="summary_large_image" />
-              <meta name="twitter:title" content={post.frontmatter.title} />
               <meta name="twitter:description" content={post.frontmatter.description} />
+              <meta name="twitter:title" content={`${post.frontmatter.title} | Inter`} />
             </>
           )}
           {!isWritingIndexPage && !isPostPage && (
             <>
               <meta property="og:image" content="https://iinter.me/external-assets/og-card.png" />
-              <meta property="og:description" content="A racing game enthusiast, and also cat lover." />
+              <meta property="og:description" content={description} />
+              <meta property="og:title" content="Inter" />
+              <meta property="description" content={description} />
+              <meta name="twitter:description" content={description} />
               <meta name="twitter:image" content="https://iinter.me/external-assets/og-card.png" />
               <meta name="twitter:card" content="summary_large_image" />
-              <meta name="twitter:description" content="A racing game enthusiast, and also cat lover." />
+              <meta name="twitter:title" content="Inter" />
             </>
           )}
-          <meta property="og:title" content="Inter" />
+          
+          {/* global tags for all pages */}
           <meta property="og:site_name" content="iinter.me" />
-          <meta property="og:url" content="https://iinter.me" />
-          <meta property="og:type" content="website" />
-          <meta name="twitter:title" content="Inter" />
           <meta name="theme-color" content="#161617" />
+  
+          {/* favicons */}
           <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
