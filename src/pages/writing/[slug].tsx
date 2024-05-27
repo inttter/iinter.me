@@ -301,13 +301,19 @@ const markdownComponents = {
 
   // Tables
   table({ node, children, ...props }) {
-    return <table className="table-auto my-4 w-full rounded-md overflow-hidden" {...props}>{children}</table>;
+    return (
+      <div className="overflow-x-auto my-4 rounded-md">
+        <table className="table-auto min-w-full" {...props}>
+          {children}
+        </table>
+      </div>
+    );
   },
   thead({ node, children, ...props }) {
     return <thead className="bg-neutral-800 bg-opacity-70 text-zinc-300" {...props}>{children}</thead>;
   },
   tbody({ node, children, ...props }) {
-    return <tbody  {...props}>{children}</tbody>;
+    return <tbody {...props}>{children}</tbody>;
   },
   tr({ node, children, ...props }) {
     return <tr className="border border-neutral-800" {...props}>{children}</tr>;
