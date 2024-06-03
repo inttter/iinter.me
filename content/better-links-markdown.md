@@ -1,7 +1,7 @@
 ---
 title: "A better way to use links in Markdown"
 date: "April 20, 2024"
-lastUpdated: "27/04/24 20:07"
+lastUpdated: "03/06/24 23:08"
 author: "Inter"
 description: Link definitions help simplify the repeated use of specific links in Markdown files.
 ---
@@ -34,47 +34,74 @@ One common use case for them is when you need to refer to the same link in your 
 <!-- NOT using link definitions -->
 [GitHub](https://github.com) allows developers to create, store, manage and share their code. 
 
-[GitHub](https://github.com) uses the Git version control, and [GitHub](https://github.com) also allows people to track bugs, add things to projects, and manage their projects.
+[GitHub](https://github.com) uses [Git](https://git-scm.com) for version control, and it also allows people to track bugs, add things to projects, and manage their projects.
 
 You can visit GitHub [here](https://github.com).
+```
 
+Now here's the same example using link definitions:
+
+```markdown
 <!-- Using link definitions -->
 [GitHub][github] allows developers to create, store, manage and share their code. 
 
-[GitHub][github] uses the Git version control, and [GitHub][github] also allows people to track bugs, add things to projects, and manage their projects.
+[GitHub][github] uses [Git][git] for version control, and it also allows people to track bugs, add things to projects, and manage their projects.
 
-You can visit GitHub [here][GitHub].
+You can visit GitHub [here][github].
 
 [github]: https://github.com
+[git]: https://git-scm.com
 ```
 
-It's much cleaner, and is also easier to maintain, since you don't need to manually go through and edit each hyperlink which uses that link. You can instead just define it in one place, and update it in the link definition only.
+This is, most of the time, a good way to incoorporate link definitions into your markup. However, you may notice that the same words are next to each other in these link definitions, such as <kbd>\[GitHub\]\[github\]</kbd>. This could be confusing to some.
 
-This approach also becomes quite useful when dealing with lengthy URLs or when you have dead links in your markup that are used multiple times.
+Instead, a better method you can use if you name the link definition the same as the word you make a hyperlink is to use an empty pair of second square brackets instead of using the word defined in the link definition. Here is one part of that example below using this method of link definitions:
+
+```markdown
+<!-- You don't need to repeat the word in the second square bracket -->
+[GitHub][] uses the [Git][] version control, and it also allows people to track bugs, add things to projects, and manage their projects.
+
+[github]: https://github.com
+[git]: https://git-scm.com
+```
+
+It now looks **much cleaner** in code, and is also **easier to maintain**, since you don't need to manually go through and edit each hyperlink which uses that link. Capitalisation also **does not matter** when using link definitions. You can just define it in one place with any capitalisation and update the link in the link definition only. This particular approach also becomes quite useful when dealing with **lengthy URLs** or when you have **dead links** in your markup that are used multiple times throughout multiple places.
+
+<div style="padding: 0.8rem 1rem; background-color: #262626; border-radius: 0.375rem; font-size: 0.96rem; display: flex; align-items: center; color: #d4d4d8; margin-top: 20px; margin-bottom: 20px;">
+    <strong style="margin-right: 0.8rem;">🧠</strong>
+    <span><strong>TL;DR:</strong> If the hyperlink and link definition use the same word, use an <strong>empty pair</strong> of second square brackets.</span>
+</div>
+
+You can try clicking on these links defined by link definitions below: 
+
+* View this website's repository on [GitHub][].
+* Markdown was created by [John Gruber][] in 2004.
+
+You can see the link definitions by going to the source of this post [here](https://github.com/inttter/iinter.me/blob/master/content/better-links-markdown.md) and scrolling to the bottom of the page, where you will see the two link definitions. They are hidden from view on this post and anywhere where Markdown is shown, but not in the raw file's code.
 
 <div style="padding: 0.8rem 1rem; background-color: #262626; border-radius: 0.375rem; font-size: 0.96rem; display: flex; align-items: center; color: #d4d4d8; margin-top: 20px; margin-bottom: 20px;">
     <strong style="margin-right: 0.8rem;">💡</strong> 
-    <span>Visual Studio Code has a useful Source Action to organize link definitions, which you can utilize by right clicking within the Markdown file, selecting <kbd>Source Action</kbd>, and selecting <kbd>Organize link definitions</kbd>.
+    <span>Visual Studio Code has a useful Source Action to organize link definitions, which you can utilize by right clicking within the Markdown file, selecting <kbd>Source Action</kbd>, and selecting <kbd>Organize link definitions</kbd>. You can also use <kbd>"source.organizeLinkDefinitions": true</kbd> within the <kbd>"editor.codeActionsOnSave"</kbd> identifier of your VSCode configuration.</span>
 </div>
 
-You can watch [this video](https://www.youtube.com/watch?v=N_fEkFEiiRc) for more info, but if you want to save yourself time, add the following to your <kbd>settings.json</kbd> file:
-
-```json
-"editor.codeActionsOnSave": {
-   "source.organizeLinkDefinitions": true
-}
-```
-
-If you want a tooltip (<kbd>title</kbd> in HTML), you can use the following syntax:
+If you want a tooltip on hover of the link definition, use the following syntax:
 
 ```markdown
+<!-- This will generate a HTML 'title=' for the link !-->
 [github]: <https://github.com> "Click on this to visit GitHub"
 ```
 
-Other kinds also work here too, like header ID's, pages on the same server, and emails:
+Other kinds of links also work with link definitions as well, such as these:
 
 ```markdown
-[Installation]: #installation
+[Install]: #install
 [About]: /about
 [Email]: <mailto:contact@example.com>
+[Demo]: ./demo.gif 
 ```
+
+At the end of the day, it's up to you to decide what method of hyperlinking in Markdown works for you, but this is a **lesser-known** method which I believe could be more commonly used and adopted by people, especially for those with bigger, maintained projects that like to use a lot of links which could die at any time.
+
+<!-- These are just for the example of link definitions in this post -->
+[GitHub]: https://github.com/inttter/iinter.me
+[John Gruber]: https://daringfireball.net/projects/markdown/
