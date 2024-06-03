@@ -22,7 +22,7 @@
     "graphql-request": "^7.0.1",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.379.0",
-    "million": "^3.1.6",
+    "million": "^3.1.8",
     "next": "^14.2.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
