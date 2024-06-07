@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowUpRight, Star } from "lucide-react";
-import { FaGithub } from 'react-icons/fa6';
+import { ArrowUpRight } from "lucide-react";
+import { FaGithub, FaStar } from 'react-icons/fa6';
 import projectsData from '../../data/projects.json';
 import Navbar from '../../components/Navbar';
 import Head from 'next/head';
@@ -58,7 +58,7 @@ export default function ProjectsPage() {
                     initial={{ opacity: 0 }} 
                     animate={{ opacity: 1 }} 
                     transition={{ duration: 0.5, delay: 0.6 }}
-                    className="animate-blurred-fade-in duration-700">
+                    className="animate-blurred-fade-in duration-700 group">
                     <div className="bg-neutral-800 bg-opacity-20 hover:bg-neutral-500 hover:bg-opacity-5 border border-dashed border-neutral-700 hover:border-neutral-800 duration-300 p-3 rounded-md block antialiased">
                       <motion.div 
                         initial={{ opacity: 0 }} 
@@ -72,19 +72,26 @@ export default function ProjectsPage() {
                             <ArrowUpRight size={15} className="m-1 opacity-50 group-hover:opacity-100 group-hover:translate-x-[1.5px] group-hover:text-zinc-300 duration-200" />
                           </span>
                         </Link>
-                        <div className="flex items-center">
+                        <motion.div 
+                          initial={{ opacity: 0 }} 
+                          animate={{ opacity: 1 }} 
+                          transition={{ duration: 0.5, delay: 1.1 }}
+                          className="flex items-center"
+                        >
                           {stars[project.github] !== undefined && (
-                            <span className="text-xs text-neutral-600 tags mr-1.5 flex items-center"><Star size={13} className="md:mb-0.5 mr-0.5" />{stars[project.github]}</span>
+                            <Link href={`${project.github}/stargazers`} target="_blank" rel="noopener noreferrer">
+                              <span className="text-xs px-2 py-1 hover:bg-neutral-500 hover:bg-opacity-20 duration-300 border border-dashed border-neutral-700 rounded-md text-stone-400 mr-1.5 mb-0.5 flex items-center tooltip tooltip-left bg-transparent" data-tip="Stars" data-theme="lofi"><FaStar size={13} className="md:mb-0.5 mr-0.5 text-yellow-400" />{stars[project.github]}</span>
+                            </Link>
                           )}
                           <Link href={project.github} target="_blank" rel="noopener noreferrer" className="mr-1 md:mr-0.5 -mt-1 text-neutral-500 hover:text-stone-300 duration-300">
                             <FaGithub size={18} />
                           </Link>
-                        </div>
+                        </motion.div>
                       </motion.div>
                       <motion.p 
                         initial={{ opacity: 0 }} 
                         animate={{ opacity: 1 }} 
-                        transition={{ duration: 0.5, delay: 1.0 }}
+                        transition={{ duration: 0.5, delay: 1.4 }}
                         className="text-stone-400 text-sm py-2.5 animate-blurred-fade-in duration-700"
                       >
                         {project.description}
@@ -94,7 +101,7 @@ export default function ProjectsPage() {
                           className="-mx-1 p-1 rounded-md text-xs flex flex-wrap items-center"
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
-                          transition={{ duration: 0.5, delay: 1.2 }}
+                          transition={{ duration: 0.5, delay: 1.8 }}
                         >
                           {project.tags.map((tag, tagIndex) => (
                             <span key={tagIndex} className="mr-2">
