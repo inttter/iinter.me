@@ -58,8 +58,9 @@ export default function ProjectsPage() {
                     initial={{ opacity: 0 }} 
                     animate={{ opacity: 1 }} 
                     transition={{ duration: 0.5, delay: 0.6 }}
-                    className="animate-blurred-fade-in duration-700 group">
-                    <div className="bg-neutral-800 bg-opacity-20 hover:bg-neutral-500 hover:bg-opacity-5 border border-dashed border-neutral-700 hover:border-neutral-800 duration-300 p-3 rounded-md block antialiased">
+                    className="animate-blurred-fade-in duration-700"
+                  >
+                    <div className="bg-neutral-800 bg-opacity-20 hover:bg-neutral-500 hover:bg-opacity-5 border border-dotted border-neutral-700 hover:border-neutral-800 duration-300 p-3 rounded-md block antialiased">
                       <motion.div 
                         initial={{ opacity: 0 }} 
                         animate={{ opacity: 1 }} 
@@ -80,7 +81,9 @@ export default function ProjectsPage() {
                         >
                           {stars[project.github] !== undefined && (
                             <Link href={`${project.github}/stargazers`} target="_blank" rel="noopener noreferrer">
-                              <span className="text-xs px-2 py-1 hover:bg-neutral-500 hover:bg-opacity-20 duration-300 border border-dashed border-neutral-700 rounded-md text-stone-400 mr-1.5 mb-0.5 flex items-center tooltip tooltip-left bg-transparent" data-tip="Stars" data-theme="lofi"><FaStar size={13} className="md:mb-0.5 mr-0.5 text-yellow-400" />{stars[project.github]}</span>
+                              <span className="text-xs px-2 py-1 bg-neutral-500 bg-opacity-15 hover:bg-neutral-400 hover:bg-opacity-20 duration-300 rounded-md text-stone-400 mr-1.5 mb-0.5 flex items-center tooltip tooltip-left bg-transparent" data-tip="Stars" data-theme="lofi">
+                                <FaStar size={13} className="md:mb-0 mb-0.5 mr-0.5 text-yellow-400" />{stars[project.github]}
+                              </span>
                             </Link>
                           )}
                           <Link href={project.github} target="_blank" rel="noopener noreferrer" className="mr-1 md:mr-0.5 -mt-1 text-neutral-500 hover:text-stone-300 duration-300">
