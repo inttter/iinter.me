@@ -6,7 +6,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../../components/Navbar';
 import { motion } from 'framer-motion';
-import { Search, CircleX, ArrowUpRight } from 'lucide-react';
+import { Search, CircleX, ArrowUpRight, Copyright } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 
 export default function Writing({ posts }) {
@@ -111,17 +111,17 @@ export default function Writing({ posts }) {
           paginate={paginate}
           currentPage={currentPage}
         />
-      </div>
-      <div>
-        <div className="text-neutral-700 text-xs code md:p-0 p-5 md:max-w-xl animate-blurred-fade-in duration-500">
-          Posts themselves are licensed under the MIT License, however content inside of them may be licensed under different licenses, or have other legal properties.
-        </div>
-        <div className="text-neutral-700 text-xs code md:mt-2 mb-5 group md:px-0 px-5 animate-blurred-fade-in duration-500">
-          <FaGithub className="inline mr-1 group-hover:text-neutral-600 duration-300" />
-          <Link href="https://github.com/inttter/iinter.me/tree/master/content" target="_blank" rel="noopener noreferrer" className="border-b border-neutral-800 hover:border-neutral-600 hover:text-neutral-600 duration-300">
-            See posts on GitHub
+        <motion.div
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }} 
+          transition={{ duration: 0.5, delay: 1.2 }}
+          className="inline-flex text-xs rounded-md mb-5 ml-1.5 group p-2 bg-[#24292E] bg-opacity-60 hover:bg-[#434b54] hover:bg-opacity-40 border border-neutral-800 hover:border-neutral-700 text-zinc-300 hover:text-zinc-100 duration-300"
+        >
+          <FaGithub size={15} className="text-zinc-400 group-hover:text-zinc-50 duration-300 inline mr-1" />
+          <Link href="https://github.com/inttter/iinter.me/tree/master/content" target="_blank" rel="noopener noreferrer" className="flex items-center">
+            See posts on GitHub <ArrowUpRight size={15} className="text-neutral-600 ml-0.5 group-hover:translate-x-0.5 group-hover:text-zinc-300 duration-200" />
           </Link>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
@@ -143,10 +143,10 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
       initial={{ opacity: 0 }} 
       animate={{ opacity: 1 }} 
       transition={{ duration: 0.5, delay: 1.0 }}
-      className="relative flex flex-col top-5 left-2 mb-5"
+      className="relative flex flex-col top-2 left-2"
     >
       <ul className="flex space-x-2">
-        <div className="flex items-center text-neutral-600 code text-sm mr-1">
+        <div className="flex items-center text-neutral-600 text-sm mr-1">
           Page
         </div>
         {pageNumbers.map(number => (

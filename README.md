@@ -1,12 +1,11 @@
 # iinter.me
     
-* [**Next.js**](https://nextjs.org)
+* [**Next.js 14**](https://nextjs.org)
 * [**Vercel**](https://vercel.com)
 * [**Tailwind CSS**](https://tailwindcss.com)
-* [**Lanyard**](https://github.com/Phineas/lanyard?tab=readme-ov-file#kv) (for Discord RPC)
 * [**Vercel Analytics**](https://vercel.com/analytics)
 
-### Run locally
+## Run locally
 
 ```bash
 git clone https://github.com/inttter/iinter.me.git
@@ -15,6 +14,8 @@ npm install
 npm run dev
 ```
 
-### License
+## License
 
 © **2024** - Licensed under the [**MIT License**](https://github.com/inttter/iinter.me/blob/master/LICENSE).
+
+Posts are also licensed under the MIT License, but content inside of these posts may be subject to other licenses.
