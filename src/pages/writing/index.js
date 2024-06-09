@@ -111,17 +111,17 @@ export default function Writing({ posts }) {
           paginate={paginate}
           currentPage={currentPage}
         />
-        <motion.div
+        <Link href="https://github.com/inttter/iinter.me/tree/master/content" target="_blank" rel="noopener noreferrer" className="flex items-center">
+          <motion.div
           initial={{ opacity: 0 }} 
           animate={{ opacity: 1 }} 
           transition={{ duration: 0.5, delay: 1.2 }}
           className="inline-flex text-xs rounded-md mb-5 ml-1.5 group p-2 bg-[#24292E] bg-opacity-60 hover:bg-[#434b54] hover:bg-opacity-40 border border-neutral-800 hover:border-neutral-700 text-zinc-300 hover:text-zinc-100 duration-300"
-        >
-          <FaGithub size={15} className="text-zinc-400 group-hover:text-zinc-50 duration-300 inline mr-1" />
-          <Link href="https://github.com/inttter/iinter.me/tree/master/content" target="_blank" rel="noopener noreferrer" className="flex items-center">
+          >
+            <FaGithub size={15} className="text-zinc-400 group-hover:text-zinc-50 duration-300 inline mr-1" />
             See posts on GitHub <ArrowUpRight size={15} className="text-neutral-600 ml-0.5 group-hover:translate-x-0.5 group-hover:text-zinc-300 duration-200" />
-          </Link>
-        </motion.div>
+          </motion.div>
+        </Link>
       </div>
     </div>
   );
