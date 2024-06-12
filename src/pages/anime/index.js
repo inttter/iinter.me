@@ -39,6 +39,7 @@ const IndexPage = () => {
                 }
                 status
                 score
+                notes
               }
             }
             user {
@@ -98,7 +99,8 @@ const IndexPage = () => {
             id: entry.media.id,
             title: entry.media.title.english,
             coverImage: entry.media.coverImage ? entry.media.coverImage.large : null,
-            score: entry.score
+            score: entry.score,
+            notes: entry.notes
           });
         }
       });
@@ -184,7 +186,7 @@ const WatchlistCategory = ({ title, list, favourites }) => {
       <div className="text-2xl mx-3 tracking-tighter font-semibold mb-3 text-zinc-100">{title}</div>
       {list.map(item => (
         <Link key={item.id} href={`https://anilist.co/anime/${item.id}`} target="_blank" rel="noopener noreferrer" className="group">
-          <div key={item.id} className="relative flex items-center hover:bg-neutral-950 p-3 rounded-md duration-300">
+          <div key={item.id} className="relative flex items-center hover:bg-neutral-950 group-hover:scale-[1.01] p-3 rounded-md duration-300">
             {item.coverImage && (
               <div className="group relative">
                 <Image
@@ -197,8 +199,13 @@ const WatchlistCategory = ({ title, list, favourites }) => {
                 />
               </div>
             )}
-            <div className="px-3 flex-grow flex-shrink-0 md:max-w-[500px] max-w-[200px] overflow-ellipsis truncate text-zinc-100 md:text-lg text-md">
+            <div className="px-3 flex-grow flex-shrink-0 md:max-w-[500px] max-w-[200px] overflow-ellipsis truncate text-zinc-100 md:text-lg text-md antialiased">
               {item.title}
+              {item.notes && (
+                <div className="text-xs text-neutral-400 italic flex items-center mt-1 overflow-ellipsis truncate">
+                  "{item.notes}"
+                </div>
+              )}
               {title !== "⌚ Plan To Watch" && item.score && item.score > 0 ? (
                 <span className="absolute sm:right-2 bg-neutral-800 group-hover:bg-neutral-700 group-hover:bg-opacity-70 text-neutral-300 px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-top bottom-2 right-2 duration-300" data-tip="Rating" data-theme="lofi">
                   {item.score}/10
@@ -207,7 +214,7 @@ const WatchlistCategory = ({ title, list, favourites }) => {
                 null // null so that the "0" that gets appended to the {item.title} won't show
               )}
               {favourites.some(fav => fav.id === item.id) && (
-                <span className="absolute left-15 bottom-3.5 flex items-center px-2 py-1 bg-neutral-800 group-hover:bg-neutral-700 group-hover:bg-opacity-70 duration-300 rounded-md font-medium tooltip tooltip-right" data-tip={`This anime is #${favourites.findIndex(fav => fav.id === item.id) + 1} on my favourites list!`} data-theme="lofi">
+                <span className="absolute right-14 mx-1 bottom-2 flex items-center px-2 py-1 bg-neutral-800 group-hover:bg-neutral-700 group-hover:bg-opacity-70 duration-300 rounded-md font-medium tooltip tooltip-top" data-tip="Favorite Number" data-theme="lofi">
                   <div className={`text-xs flex items-center ${favourites.findIndex(fav => fav.id === item.id) === 0 ? 'text-yellow-400' : 'text-neutral-300'}`}>
                     ⭐ #{favourites.findIndex(fav => fav.id === item.id) + 1}
                   </div>
