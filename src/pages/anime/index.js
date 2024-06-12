@@ -6,6 +6,7 @@ import Navbar from '../../components/Navbar';
 import Top from '../../components/BackToTop';
 import { request } from 'graphql-request';
 import { SiAnilist } from "react-icons/si";
+import { FaStar } from "react-icons/fa";
 import { CircleX } from 'lucide-react';
 import consola from 'consola';
 import Image from 'next/image';
@@ -216,7 +217,7 @@ const WatchlistCategory = ({ title, list, favourites }) => {
               {favourites.some(fav => fav.id === item.id) && (
                 <span className="absolute right-14 mx-1 bottom-2 flex items-center px-2 py-1 bg-neutral-800 group-hover:bg-neutral-700 group-hover:bg-opacity-70 duration-300 rounded-md font-medium tooltip tooltip-top" data-tip="Favorite Number" data-theme="lofi">
                   <div className={`text-xs flex items-center ${favourites.findIndex(fav => fav.id === item.id) === 0 ? 'text-yellow-400' : 'text-neutral-300'}`}>
-                    ⭐ #{favourites.findIndex(fav => fav.id === item.id) + 1}
+                    <FaStar size={13} className="md:mb-0 mb-0.5 mr-1 text-yellow-400" /> #{favourites.findIndex(fav => fav.id === item.id) + 1}
                   </div>
                 </span>
               )}
