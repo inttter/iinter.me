@@ -203,7 +203,7 @@ const WatchlistCategory = ({ title, list, favourites }) => {
             <div className="px-3 flex-grow flex-shrink-0 md:max-w-[500px] max-w-[200px] overflow-ellipsis truncate text-zinc-100 md:text-lg text-md antialiased">
               {item.title}
               {item.notes && (
-                <div className="text-xs text-neutral-400 italic flex items-center mt-1 overflow-ellipsis truncate">
+                <div className="text-xs text-neutral-400 italic mt-1 overflow-hidden overflow-ellipsis">
                   "{item.notes}"
                 </div>
               )}
@@ -215,7 +215,7 @@ const WatchlistCategory = ({ title, list, favourites }) => {
                 null // null so that the "0" that gets appended to the {item.title} won't show
               )}
               {favourites.some(fav => fav.id === item.id) && (
-                <span className="absolute right-14 mx-1 bottom-2 flex items-center px-2 py-1 bg-neutral-800 group-hover:bg-neutral-700 group-hover:bg-opacity-70 duration-300 rounded-md font-medium tooltip tooltip-top" data-tip="Favorite Number" data-theme="lofi">
+                <span className="absolute right-15 bottom-2 flex items-center px-2 py-1 bg-neutral-800 group-hover:bg-neutral-700 group-hover:bg-opacity-70 duration-300 rounded-md font-medium tooltip tooltip-top" data-tip="Favorite Number" data-theme="lofi">
                   <div className={`text-xs flex items-center ${favourites.findIndex(fav => fav.id === item.id) === 0 ? 'text-yellow-400' : 'text-neutral-300'}`}>
                     <FaStar size={13} className="md:mb-0 mb-0.5 mr-1 text-yellow-400" /> #{favourites.findIndex(fav => fav.id === item.id) + 1}
                   </div>
