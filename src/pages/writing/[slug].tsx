@@ -115,7 +115,6 @@ export async function getStaticProps({ params }) {
 }
 
 const markdownComponents = {
-
   // Code
   code({ node, inline, className, children, ...props }) {
     const match = /language-(\w+)/.exec(className || '');
@@ -256,10 +255,10 @@ const markdownComponents = {
     </li>;
   },
 
-  // Blockquotes
+  // Quotes
   blockquote({ node, children, ...props }) {
     return (
-      <blockquote className="text-zinc-100 bg-neutral-900 rounded-lg border-neutral-700 flex items-center italic">
+      <blockquote className="border-l-4 border-neutral-700 pl-4 py-0.5 my-1 italic">
         <div className="px-3">
           {children}
         </div>
