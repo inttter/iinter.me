@@ -12,7 +12,7 @@ To me, this seems like a tedious process. That's why I decided to make <kbd>crea
 
 ### Demo
 
-<video src="https://files.iinter.me/r/create-ps_Demo_v4.mp4" controls></video>
+<video src="https://us-east-1.tixte.net/uploads/files.iinter.me/create-ps_Demo_v4.mp4" controls></video>
 
 As you can see in the demo video, I added multiple files, directories, and more into the project directory. You can select what you want to include to fit your project's needs, such as examples files, a pre-made <kbd>index.mjs</kbd> with your installed dependencies imported, and more.
 
