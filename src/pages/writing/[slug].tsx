@@ -281,7 +281,19 @@ const markdownComponents = {
 
   // Links
   a({ node, children, ...props }) {
-    return <a className="text-sky-400 hover:border-b border-transparent hover:border-dashed hover:border-sky-400 duration-300" target="_blank" rel="noopener noreferrer" {...props}>{children}</a>;
+    // 'isInternalLink' is used here to determine whether the link is a header ID or external link.
+    // Minus styling, attributes aren't applied to header ID's (isInternalLink).
+    const isInternalLink = props.href && props.href.startsWith('#');
+    return (
+      <a 
+        className="text-sky-400 hover:border-b border-transparent hover:border-dashed hover:border-sky-400 duration-300"
+        target={isInternalLink ? undefined : "_blank"}
+        rel={isInternalLink ? undefined : "noopener noreferrer"}
+        {...props}
+      >
+        {children}
+      </a>
+    );
   },
 
   // Keyboard input
