@@ -1,22 +1,20 @@
 ---
-title: "Creating packages with create-ps"
+title: "Creating npm packages with create-ps"
 date: "March 29, 2024"
-lastUpdated: "04/05/24 16:09"
+lastUpdated: "15/06/24 14:01"
 author: "Inter"
 description: A guide on a faster way to create NPM packages from the terminal.
 ---
 
-Lots of <kbd>npm</kbd> packages are made all the time. In my opinion, I don't enjoy the fact that I have to create a bunch of new files which I know I will need to make anyway at a later date whenever I decide to create a new package. In the end, I just do this whenever it comes time to actually make that new file, name it, add the contents of what I need into it. To me, that seems like a tedious process.
+In my opinion, I don't enjoy the fact that I have to create a bunch of new files which I know I will need to make anyway at a later date whenever I decide to create a new <kbd>npm</kbd> package. In the end, I just do this whenever it comes time to actually make that new file. I name it and add the contents of what I need into it.
 
-That's why I decided to make <kbd>create-ps</kbd>, a command-line tool which allows you to create files that you need for an average NPM package.
+To me, this seems like a tedious process. That's why I decided to make <kbd>create-ps</kbd>, a command-line tool which allows you to create files that you need for an average NPM package.
 
 ### Demo
 
-<video src="/images/creating-packages/Demo.mp4" controls></video>
+<video src="https://files.iinter.me/r/create-ps_Demo_v4.mp4" controls></video>
 
-Just like that, it saves me having to create a lot of new files, makes a Dependabot config for updating my dependencies, lets me pick a license (since [v2.3.0](https://github.com/inttter/create-ps/releases/tag/v2.3.0)), and also makes a base for the README.
-
-This is all done using switch cases. If you're curious, you can view the source on [GitHub](https://github.com/inttter/create-ps).
+As you can see in the demo video, I added multiple files, directories, and more into the project directory. You can select what you want to include to fit your project's needs, such as examples files, a pre-made <kbd>index.mjs</kbd> with your installed dependencies imported, and more.
 
 ### Installation
 
@@ -29,12 +27,11 @@ npm install -g create-ps
 * Navigate to the directory you are going to create your package in.
 * Run the following command, replacing <kbd>projectName</kbd> with the name of the package.
 
-```bash
-cps <projectName>
-# Note: This will run 'npm init -y' to create a package.json, and a Git repository will also be initialized.
-```
+  ```bash
+  cps [projectName]
+  ```
 
-* Select which files you'd like to include and exclude. As of [v3.0.0](https://github.com/inttter/create-ps/releases/tag/v3.0.0), they are all deselected by default.
+* Select which files you'd like to include and exclude, as shown below:
 
 ```bash
 ┌  create-ps 
@@ -57,11 +54,12 @@ cps <projectName>
 │  ◼ Changelog
 │  ◼ Code of Conduct
 │  ◼ License
+│  ◼ Dependencies
 ```
 
 <div style="padding: 0.8rem 1rem; background-color: #262626; border-radius: 0.375rem; font-size: 0.96rem; display: flex; align-items: center; color: #d4d4d8; margin-top: 20px; margin-bottom: 20px;">
     <strong style="margin-right: 0.8rem;">💡</strong> 
-    <span>To create a <kbd>.mjs</kbd> (ESM) file and use <kbd>import</kbd> statements within the README, run the command with the <kbd>--esm</kbd> flag.</span>
+    <span>To use CommonJS instead of ESM, run the command with the <kbd>--cjs</kbd> flag.</span>
 </div>
 
 ### pkg-config
@@ -86,4 +84,25 @@ You're then able to select the fields you would like to include and customize. F
 
 You can also run this in an existing project to fill out and/or replace any fields.
 
-If you find this useful, star it on [GitHub](https://github.com/inttter/create-ps)!
+### The Logic Behind This
+
+In it's simplest form, all the logic is just **switch cases**. 
+
+The code iterates over the toggles and, based on each toggle, creates the appropriate files and/or directories. These switch cases hold the logic for creating each file/directory when each toggle is selected. For example, here's the logic for '<kbd>CHANGELOG.md</kbd>':
+
+```javascript
+case 'CHANGELOG.md':
+    const currentDate = new Date().toISOString().split('T')[0];
+    const changelogContent = `# Changelog\n\n# v1.0.0 (${currentDate})\n\n* 🎉 Initial commit`;
+    const changelogFile = path.join(process.cwd(),  'CHANGELOG.md');
+    await fs.writeFile(changelogFile, changelogContent , 'utf8');
+    break;
+```
+
+<kbd>currentDate</kbd> creates today's date and appends that after 'v1.0.0', <kbd>changelogContent</kbd> holds the content of the file, <kbd>changelogFile</kbd> creates a full file path for the file, then everything is written to the file using <kbd>fs</kbd>.
+
+Things can get a bit more complicated though. For example, within <kbd>src/</kbd>, there needs to be logic to change file paths and content within other files, as ESM and CommonJS have different logic, and in <kbd>LICENSE</kbd>, the licenses are fetched from the GitHub API, with the user having to select the license they want from the prompts.
+
+---
+
+If this CLI has been useful in any way to you, feel free to give it a star on [GitHub](https://github.com/inttter/create-ps). Your support is very much appreciated!
