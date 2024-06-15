@@ -6,7 +6,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../../components/Navbar';
 import { motion } from 'framer-motion';
-import { Search, CircleX, ArrowUpRight, Copyright } from 'lucide-react';
+import { Search, CircleX, ArrowUpRight } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 
 export default function Writing({ posts }) {
@@ -19,6 +19,7 @@ export default function Writing({ posts }) {
 
   const handleSearchChange = (event) => {
     setSearchQuery(event.target.value);
+    setCurrentPage(1);
   };
 
   const handleMouseEnter = (slug) => {
@@ -53,36 +54,33 @@ export default function Writing({ posts }) {
           </Head>
           <div className="max-w-3xl w-full">
             <div className="mb-4 relative mt-4 animate-blurred-fade-in duration-500">
-              <motion.div 
-                initial={{ opacity: 0 }} 
-                animate={{ opacity: 1 }} 
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="relative"
-              >
+              <div className="relative">
                 <input
                   type="text"
                   placeholder="Search posts"
                   value={searchQuery}
                   onChange={handleSearchChange}
-                  className="px-10 text-lg bg-main placeholder:text-neutral-600 rounded-md focus:caret-zinc-300 focus:text-zinc-300 duration-300 border border-neutral-800 p-1.5 w-full focus:outline-none focus-visible:outline-neutral-600"
+                  className="px-10 text-lg bg-main placeholder:text-neutral-600 rounded-md focus:caret-zinc-300 focus:text-zinc-300 animate-blurred-fade-in duration-300 border border-neutral-800 focus:border-neutral-600 p-1.5 outline-none w-full"
                 />
                 <div className="absolute inset-y-0 pl-3.5 flex items-center pointer-events-none group-focus:rotate-12">
                   <Search className="text-neutral-600" size={20} />
                 </div>
-              </motion.div>
+              </div>
             </div>
             {filteredPosts.length === 0 && (
-              <motion.p className="text-zinc-200 text-md bg-red-500 bg-opacity-40 px-4 py-2 ml-2 rounded-md flex items-center">
+              <motion.p 
+                className="text-zinc-100 bg-red-500 bg-opacity-50 px-4 py-2 rounded-md flex items-center"
+                initial={{ opacity: 0 }} 
+                animate={{ opacity: 1 }} 
+                transition={{ duration: 0.5 }}
+              >
                 <CircleX size={20} className="mr-1 text-red-400" /> Sorry, a post couldn't be found with that name.
               </motion.p>
             )}
             {currentPosts.map((post) => (
-              <motion.div
-                initial={{ opacity: 0 }} 
-                animate={{ opacity: 1 }} 
-                transition={{ duration: 0.5, delay: 0.8 }}
+              <div
                 key={post.slug}
-                className="relative duration-500 group animate-blurred-fade-in mb-2"
+                className="relative duration-300 group animate-blurred-fade-in mb-2"
                 style={{ filter: hoveredPost && hoveredPost !== post.slug ? 'brightness(70%)' : 'none' }}
                 onMouseEnter={() => handleMouseEnter(post.slug)}
                 onMouseLeave={handleMouseLeave}
@@ -95,12 +93,12 @@ export default function Writing({ posts }) {
                       </div>
                       <p className={`text-sm flex items-center duration-300 ${hoveredPost === post.slug ? 'text-neutral-400' : 'text-neutral-600'}`}>{post.frontmatter.date}</p>
                     </div>
-                    <p className={`text-neutral-600 text-sm ml-1.5 -mt-0.5 mb-1 max-w-xl duration-300 ${hoveredPost === post.slug ? 'text-neutral-400' : 'text-neutral-600'}`}>
+                    <p className={`text-sm ml-1.5 -mt-0.5 mb-1 max-w-xl duration-300 ${hoveredPost === post.slug ? 'text-neutral-500' : 'text-neutral-600'}`}>
                       {post.frontmatter.description}
                     </p>
                   </div>
                 </Link>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -111,17 +109,19 @@ export default function Writing({ posts }) {
           paginate={paginate}
           currentPage={currentPage}
         />
-        <Link href="https://github.com/inttter/iinter.me/tree/master/content" target="_blank" rel="noopener noreferrer" className="flex items-center">
           <motion.div
           initial={{ opacity: 0 }} 
           animate={{ opacity: 1 }} 
-          transition={{ duration: 0.5, delay: 1.2 }}
-          className="inline-flex text-xs rounded-md mb-5 ml-1.5 group p-2 bg-[#24292E] bg-opacity-60 hover:bg-[#434b54] hover:bg-opacity-40 border border-neutral-800 hover:border-neutral-700 text-zinc-300 hover:text-zinc-100 duration-300"
+          transition={{ duration: 0.5, delay: 0.8 }}
+          className="inline-flex absolute text-xs mt-48 ml-1 p-1 duration-300"
           >
-            <FaGithub size={15} className="text-zinc-400 group-hover:text-zinc-50 duration-300 inline mr-1" />
-            See posts on GitHub <ArrowUpRight size={15} className="text-neutral-600 ml-0.5 group-hover:translate-x-0.5 group-hover:text-zinc-300 duration-200" />
+            <span className="text-neutral-600 mr-1">
+              © 2024 / MIT License /
+            </span>
+            <Link href="https://github.com/inttter/iinter.me/tree/master/content" target="_blank" rel="noopener noreferrer" className="flex items-center group text-neutral-600 hover:text-neutral-500 duration-300">
+              See posts on GitHub <ArrowUpRight size={15} className="text-neutral-600 ml-0.5 group-hover:translate-x-0.5 group-hover:text-neutral-400 duration-200" />
+            </Link>
           </motion.div>
-        </Link>
       </div>
     </div>
   );
@@ -139,12 +139,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
   }
 
   return (
-    <motion.nav 
-      initial={{ opacity: 0 }} 
-      animate={{ opacity: 1 }} 
-      transition={{ duration: 0.5, delay: 1.0 }}
-      className="relative flex flex-col top-2 left-2"
-    >
+    <nav className="relative flex flex-col top-2 left-2 animate-blurred-fade-in duration-300">
       <ul className="flex space-x-2">
         <div className="flex items-center text-neutral-600 text-sm mr-1">
           Page
@@ -155,16 +150,16 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
               onClick={() => paginate(number)}
               className={`${
                 currentPage === number
-                  ? 'bg-neutral-700 bg-opacity-90'
-                  : 'bg-neutral-800'
-              } hover:bg-neutral-600 hover:bg-opacity-50 duration-300 text-zinc-300 page-link code px-2 py-0.5 rounded-md cursor-pointer`}
+                  ? 'border border-neutral-700 bg-neutral-600 bg-opacity-60'
+                  : 'bg-neutral-800 bg-opacity-80'
+              } border border-transparent hover:border-neutral-600 hover:bg-opacity-50 duration-300 text-zinc-300 code px-2 py-0.5 rounded-md cursor-pointer`}
             >
               {number}
             </div>
           </li>
         ))}
       </ul>
-    </motion.nav>
+    </nav>
   );
 };
 
