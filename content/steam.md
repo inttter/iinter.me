@@ -1,9 +1,9 @@
 ---
 title: "Why Steam is the Best Game Launcher"
 date: "March 23, 2024"
-lastUpdated: "24/04/2024 19:37"
+lastUpdated: "17/06/24 19:10"
 author: "Inter"
-description: A host of different reasons as to why Steam is the best Game Launcher & Store for gaming in the market. 
+description: I love Steam. I use it every day for playing my games, and it is arguably the best launcher in the PC gaming market, and is why I made this post in order to explain why I feel this way.
 ---
 
 If you ever purchased a PC game before, it was almost 100% purchased from the Steam platform. With over 120 million users a month, it's the biggest distributor for games in the world. There's no bullshit that you need to get through to launch a game. Simply launch Steam, select the game, and **Play**. Three clicks.
@@ -20,7 +20,7 @@ The whole reason I wrote this is because of one of Steam's latest features that 
 One of the best and most commonly known things about Steam is the amount of sales there are every single year. Over the course of a year, they have the four major sales, one for each season of the year. They also have smaller sales, which usually revolve around a certain theme, such as games from a specific country or genre. Some games are still full-price anyway, especially recently released ones. This video is a good example.
 
 <div align="center">
-  <video src="/images/steam/buying-fh5.mp4" controls></video>
+  <video src="https://us-east-1.tixte.net/uploads/files.iinter.me/buying-fh5.mp4" controls></video>
 </div>
 
 Besides that, I have found some great games from these sales, particularly the seasonal ones. One of my favorites and most memorable of these was [OneShot](https://store.steampowered.com/app/420530/OneShot/), a top down puzzle/adventure game.
@@ -47,15 +47,15 @@ To prove this point, here is a comparison between two games. The vide on the lef
 
 | Rainbow Six Siege | Geometry Dash |
 | ------ | ------- |
-| <video src="/images/steam/siege-launch-time.mp4" controls></video> | <video src="/images/steam/geometry-dash-launch-time.mp4" controls></video>
+| <video src="https://us-east-1.tixte.net/uploads/files.iinter.me/siege.mp4" controls></video> | <video src="https://us-east-1.tixte.net/uploads/files.iinter.me/geometry-dash-launch-time.mp4" controls></video> |
 
 ### UI
 
 The UI is clean, plain and simple. There are four sections.
 
-* **Store**
-* **Library**
-* **Community**
+* **Store**, containing games for purchase
+* **Library**, containing your library of games
+* **Community**, which is where community-created things are categorized into
 * **Username**, which contains profile-related options
 
 There is no lag, issues, or anything, which is unlike Rockstar. For some reason, it eats my computer's resources up. The UI did recently [get a redesign](https://steamcommunity.com/games/593110/announcements/detail/3686801719529689368) as well, which also made it look nicer.
@@ -76,4 +76,4 @@ Valve is the company behind Steam. They have made some very iconic games. For ex
 
 ### End
 
-Steam is great and has a lot of features which help to extend it and provide QOL features, whereas other launchers lack these as they are either very **barebones**, lack anything **notable**, or are **downright bad**, or sometimes all three.
+Steam is great and has a lot of features which help to extend it and provide QOL features, where as most other launchers lack these features as they are either **barebones**, lack anything **notable** about them, or are just downright **bad** or **hard** to use. Sometimes, it can be all three.
