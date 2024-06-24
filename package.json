@@ -18,7 +18,7 @@
     "consola": "^3.2.3",
     "copy-to-clipboard": "^3.3.3",
     "daisyui": "^4.12.7",
-    "framer-motion": "^11.2.10",
+    "framer-motion": "^11.2.11",
     "graphql-request": "^7.0.1",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.395.0",
