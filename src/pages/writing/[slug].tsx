@@ -10,7 +10,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
-import { Check, Copy } from 'lucide-react';
+import { Check, Copy, Link as LinkIcon } from 'lucide-react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import BackToTopButton from '../../components/BackToTop';
@@ -196,48 +196,66 @@ const markdownComponents = {
   h1({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h1 className="text-zinc-100 hover:text-zinc-300 border-transparent hover:border-b hover:border-dotted hover:border-neutral-500 inline-block text-3xl duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
-        <Link href={`#${headerId}`} className="no-underline">{children}</Link>
+      <h1 className="group text-zinc-100 hover:text-zinc-300 text-3xl duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
+        <Link href={`#${headerId}`} className="no-underline flex items-center">
+          {children}
+          <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300 tooltip tooltip-top" />
+        </Link>
       </h1>
     );
   },
   h2({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h2 className="text-zinc-100 hover:text-zinc-300 border-transparent hover:border-b hover:border-dotted hover:border-neutral-500 inline-block text-2xl duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
-        <Link href={`#${headerId}`} className="no-underline">{children}</Link>
+      <h2 className="group text-zinc-100 hover:text-zinc-300 text-2xl duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
+        <Link href={`#${headerId}`} className="no-underline flex items-center">
+          {children}
+          <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300 tooltip tooltip-top" />
+        </Link>
       </h2>
     );
   },
   h3({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h3 className="text-zinc-100 hover:text-zinc-300 border-transparent hover:border-b hover:border-dotted hover:border-neutral-500 inline-block text-xl duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
-        <Link href={`#${headerId}`} className="no-underline">{children}</Link>
+      <h3 className="group text-zinc-100 hover:text-zinc-300 text-xl duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
+        <Link href={`#${headerId}`} className="no-underline flex items-center">
+          {children}
+          <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300 tooltip tooltip-top" />
+        </Link>
       </h3>
     );
   },
   h4({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h4 className="text-zinc-100 hover:text-zinc-300 border-transparent hover:border-b hover:border-dotted hover:border-neutral-500 inline-block text-lg duration-300 font-semibold tracking-tight mt-5 relative" {...props}>
-        <Link href={`#${headerId}`} className="no-underline">{children}</Link>
+      <h4 className="group text-zinc-100 hover:text-zinc-300 text-lg duration-300 font-semibold tracking-tight mt-5 relative" {...props}>
+        <Link href={`#${headerId}`} className="no-underline flex items-center">
+          {children}
+          <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300 tooltip tooltip-top" />
+        </Link>
       </h4>
     );
   },
   h5({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h5 className="text-zinc-100 hover:text-zinc-300 border-transparent hover:border-b hover:border-dotted hover:border-neutral-500 inline-block text-base duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
-        <Link href={`#${headerId}`} className="no-underline">{children}</Link>
+      <h5 className="group text-zinc-100 hover:text-zinc-300 text-base duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
+        <Link href={`#${headerId}`} className="no-underline flex items-center">
+          {children}
+          <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300 tooltip tooltip-top" />
+        </Link>
       </h5>
     );
   },
   h6({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h6 className="ttext-zinc-100 hover:text-zinc-300 border-transparent hover:border-b hover:border-dotted hover:border-neutral-500 inline-block text-sm duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
-        <Link href={`#${headerId}`} className="no-underline">{children}</Link>
+      <h6 className="group text-zinc-100 hover:text-zinc-300 text-sm duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
+        <Link href={`#${headerId}`} className="no-underline flex items-center">
+          {children}
+          <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300 tooltip tooltip-top" />
+        </Link>
       </h6>
     );
   },
