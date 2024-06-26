@@ -51,15 +51,17 @@ export default function Post({ post }) {
             <span>{post.frontmatter.date}</span>
           </motion.p>
         </div>
-        {/* if draft: true in the metadata */}
-        {post.frontmatter.draft && (
+        {/* if wip: true in the metadata */}
+        {/* tldr; posts can get published early now but this note will show that its a wip post */}
+        {post.frontmatter.wip && (
           <motion.div
-            className="text-zinc-100 text-md bg-neutral-700 bg-opacity-40 p-4 rounded-md"
+            className="flex items-center justify-center text-zinc-100 text-md bg-amber-500 bg-opacity-40 p-4 rounded-md"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            This post is a <span className="text-yellow-400">work in progress</span>, and may contain incomplete information or mistakes. If you see this message, make sure to <span className="text-emerald-400">complete the post</span> before publishing.
+            <span className="mr-2 text-3xl -rotate-3 bg-transparent tooltip tooltip-right" data-tip="You can keep reading, but this isn't final!" data-theme="lofi">🏗️</span>
+            <span>This post is under construction and still being made. Note that some things may be unfinished or could be subject to change!</span>
           </motion.div>
         )}
         <motion.div
