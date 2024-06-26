@@ -162,7 +162,7 @@ const markdownComponents = {
   
     const handleImageError = (event) => {
       event.target.src = placeholderSrc;
-      consola.error(new Error(`Image at path ${src} could not be found. A placeholder error image (${placeholderSrc}) will be used instead.`));
+      consola.error(new Error(`Image at path ${src} could not be found. A placeholder error image (${placeholderSrc}) will be used instead to represent this.`));
     };
   
     return (
@@ -174,11 +174,21 @@ const markdownComponents = {
   },
 
   // Video
-  video({ node, ...props }) {
+  video({ node, alt, src, ...props }) {
+    const placeholderSrc = '/not-found.png';
+
+    const handleVideoError = (event) => {
+      event.target.src = placeholderSrc;
+      consola.error(new Error(`Video at path ${src} could not be found. A placeholder error image (${placeholderSrc}) will be used instead to represent this.`));
+    };
+
     return (
-      <video src={props.src} className="border border-neutral-800 rounded-lg" {...props}>
-        Your browser does not support the video tag.
-      </video>
+      <div className="relative">
+        <video src={src} className="border border-neutral-800 rounded-lg" onError={handleVideoError} {...props}>
+          Your browser does not support the video tag.
+        </video>
+        {alt && <p className="text-sm text-neutral-600 mt-2">{alt}</p>}
+      </div>
     );
   },
 
