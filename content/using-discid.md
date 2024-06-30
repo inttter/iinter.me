@@ -16,7 +16,7 @@ To install discid, install it through npm:
 npm install -g discid
 ```
 
-### Getting Started
+## Getting Started
 
 To find someone's user ID, run the following in the terminal, replacing <kbd>[userID]</kbd> with the 18-character ID of the user you want to check the status of:
 
@@ -24,7 +24,7 @@ To find someone's user ID, run the following in the terminal, replacing <kbd>[us
 discid [userID]
 ```
 
-### How do you find a user ID?
+## How do you find a user ID?
 
 1. Enable Developer Mode on Discord. You can do this by going to Discord settings, navigating to the **Advanced** tab, and  enabling **Developer Mode** by checking the toggle.
 
@@ -59,7 +59,7 @@ Avatar URL: https://cdn.discordapp.com/avatars/514106760299151372/d14e90a1614498
     <span><strong>Note:</strong> In order for the status to be found correctly, you need a user ID of someone who is in the Lanyard Discord server: <a href="https://discord.gg/lanyard" target="_blank" rel="noopener noreferrer">https://discord.gg/lanyard</a>.</span>
 </div>
 
-### What else?
+## What else?
 
 More fields are supported, not just the ones shown in the example. The full list that can be displayed is as follows:
 
@@ -85,9 +85,7 @@ Playing: osu! • Himeringo - Koitsubakihime [Another] • Clicking circles
 # 'Clicking circles' comes from the state text in the activities section.
 ```
 
-### Options
-
-<br>
+## Options
 
 ### <kbd>--json</kbd>
 

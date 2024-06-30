@@ -10,7 +10,7 @@ Designing dark pages always involve using a wide palette of dark colors. A commo
 
 <img src="/images/dont-use-pure-black/bg-comparison.png" alt="An older screenshot of a comparison between bg-neutral-900 and bg-black.">
 
-### Eyestrain
+## Eyestrain
 
 Eyestrain is the **most common** reason why pure black should not be used, particularly on pure white text as well. Using black on white text can block the light being emitted from the users' screen, making the text harder to read. This is called [halation](https://www.google.com/search?q=halation). Although mostly linked with photography, also applies to websites and design. If the person is in a dark environment, can make the white letters **bleed** into the black background, making text appear less visible.
 
@@ -34,7 +34,7 @@ As you can see, the white glow that was previously noticeable is gone.
 
 This example is trying to show you optimizing the contents of your page is key. You should consider the different places a user may be when they read your page, and whether your target audience typically stay in dark or bright areas (**Note:** This does not apply in all cases). You can adjust your color scheme to fit this. Sometimes, not doing so might cause people to navigate off your page as they either don't want to hurt their eyes, or simply can't read your content.
 
-### Alternatives
+## Alternatives
 
 In terms of Tailwind CSS, you can use these classes for better text + background combos.
 
@@ -54,7 +54,7 @@ In terms of Tailwind CSS, you can use these classes for better text + background
 </div>
 ```
 
-### It's not always bad though
+## It's not always bad though
 
 As mentioned earlier, not everyone has perfect vision. If you're aiming for accessibility, you **should** have a high-contrast mode, as some people can't see softer colors as well as most do. An example of this would be [Microsoft's high contrast mode on Windows](https://support.microsoft.com/en-gb/windows/change-color-contrast-in-windows-fedc744c-90ac-69df-aed5-c8a90125e696).
 

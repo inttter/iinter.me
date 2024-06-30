@@ -1,14 +1,14 @@
 ---
 title: "Being bored & what I've been doing"
 date: "May 17, 2024"
-lastUpdated: "24/06/24 22:31"
+lastUpdated: "30/06/24 19:27"
 author: "Inter"
 description: I get bored a lot of the time, so I need to find something to do. I talk about the ways I struggle with boredom and what I do to overcome it.
 ---
 
 I often find myself getting bored a lot. I spend quite a bit of time staring at my screen, thinking, *"What should I do?"* while I usually have something like a video or music playing in the background. This is especially true during those late nights when I stay up until the middle of the night, whether it'd be that I'm on my phone, or watching anime. I don't want to sleep, but I have nothing else to do.
 
-### My Own Experiences
+## Personal Experiences
 
 Everyone has their own ways of getting bored. For me, there are a few specific patterns I’ve noticed. Here are some examples that come to mind:
 
@@ -18,11 +18,11 @@ Everyone has their own ways of getting bored. For me, there are a few specific p
 
 There are more, but these are the ones I wanted to talk about in more detail. I find myself thinking about these three all of the time and what I can do about them.
 
-### What I've Gotten Into
+## What I've Gotten Into
 
 In order to tackle this, I have had to find **something to do**. In order to accomplish this, I've resorted to a few things, which I'll talk about below. Most of these also come from recent experience or events that have occurred.
 
-#### Anime
+### Anime
 
 About a month and a half ago (from the time of writing this), I was recommended by a friend to watch [Your Lie in April](https://anilist.co/anime/20665/Your-lie-in-April/), a **music-focused romance anime** about a piano prodigy that is unable to play music after his mother dies. This is the case until he meets a girl who plays the violin. 
 
@@ -40,7 +40,7 @@ As of this post, though, I have watched over a dozen anime, most fitting into th
 
 If you want to see all the shows I've watched, you can visit my anime list, see the ratings I gave to each show, which ones were my favorites and any additional notes directly on this website! [Click here](/anime) to visit it.
 
-#### Games
+### Games
 
 [Earlier](#my-own-experiences), I talked about how I get hooked onto a game and play it for an extended period of time, and then gradually start playing it less and less. This is mostly because I feel it starts becoming a "chore" for me to play. I feel like I almost have an **obligation** to play it, even when I don't want to.
 
@@ -59,7 +59,7 @@ One game this cycle happens to me with frequently is **Minecraft**. I've been pl
 
 I'm not going to go into excruciating detail for every game this has occurred to me in, but some honorable mentions for me are:
 
-* **osu!** - I've played osu! since late 2020, and currently, I am almost rank 350,000. Recently, I have been playing a lot more than I used to and have been improving, not just at osu! but at my aim and reaction time. If you go to my [profile](https://osu.ppy.sh/users/19054376), you can see that most of my top plays were set within the last month.
+* **osu!** - I've played osu! since late 2020, and currently, I am almost rank 350,000. Recently, I have been playing a lot more than I used to and have been improving, not just at osu! but at my aim and reaction time. If you go to my [profile](https://osu.ppy.sh/users/19054376), you can see that most of my top plays were set within the last month. Read more about this [here](/writing/rusting-and-derusting).
 
 <img src="/images/being-bored/osu-play-history.png" alt="As you can see, June 2024 is, at the time of writing, my peak month in terms of play count.">
 
@@ -72,7 +72,7 @@ I'm not going to go into excruciating detail for every game this has occurred to
 
 ### Holiday: Romania
 
-In my case at least, to cure boredom, I need to find something I either used to do, or try something completely new.
+In my case at least, in order to cure my boredom, I need to find something I either used to do, or try something completely new.
 
 Last year, I traveled to my home country, Romania, for the first time in **7 years**. I managed to visit a lot of famous and significant locations, such as my family members and landmarks. 
 

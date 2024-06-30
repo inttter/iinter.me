@@ -15,7 +15,7 @@ The whole reason I wrote this is because of one of Steam's latest features that 
 > *Hello! We are excited to announce the launch of Steam Families, now accessible in the Steam Beta Client. This feature introduces significant updates and improvements to family sharing, parental controls, and child purchase requests.*
 > &mdash; Steam [(@Steam)](https://twitter.com/Steam/status/1769797470673076564)
 
-### Sales
+## Sales
 
 One of the best and most commonly known things about Steam is the amount of sales there are every single year. Over the course of a year, they have the four major sales, one for each season of the year. They also have smaller sales, which usually revolve around a certain theme, such as games from a specific country or genre. Some games are still full-price anyway, especially recently released ones. This video is a good example.
 
@@ -25,7 +25,7 @@ One of the best and most commonly known things about Steam is the amount of sale
 
 Besides that, I have found some great games from these sales, particularly the seasonal ones. One of my favorites and most memorable of these was [OneShot](https://store.steampowered.com/app/420530/OneShot/), a top down puzzle/adventure game.
 
-### Community
+## Community
 
 The Steam Community is where a lot of things, including, but not limited to the [Market](https://steamcommunity.com/market/), [Workshop](https://steamcommunity.com/workshop/), and other things like Reviews, Guides, Artwork, and more are located.
 
@@ -33,7 +33,7 @@ For example, for Counter-Strike, the market has been one of the major contributi
 
 The workshop has let games continue off of their communities by letting them make custom mods/maps/anything to expand the game, and the rest are (mostly) QOL features which expand the experience in a good way. For example, reviews give you an idea of people's opinions of the game before you decide to buy it.
 
-### Other Launchers
+## Other Launchers
 
 Obviously, there are more launchers in the market than just Steam, but they are very lackluster and mediocre at best, as they lack most things which Steam has.
 
@@ -49,7 +49,7 @@ To prove this point, here is a comparison between two games. The vide on the lef
 | ------ | ------- |
 | <video src="https://us-east-1.tixte.net/uploads/files.iinter.me/siege.mp4" controls></video> | <video src="https://us-east-1.tixte.net/uploads/files.iinter.me/geometry-dash-launch-time.mp4" controls></video> |
 
-### UI
+## User Interface
 
 The UI is clean, plain and simple. There are four sections.
 
@@ -70,10 +70,10 @@ Although, some parts of the UI have taken quite a while to update, or have not b
 | ------ | ------- |
 | <img src="/images/steam/old-server-browser-ui.png"> | <img src="/images/steam/new-server-browser-ui.png">
 
-### Valve
+## Valve
 
 Valve is the company behind Steam. They have made some very iconic games. For example, [Half-Life](https://store.steampowered.com/app/70/HalfLife/), [Portal](https://store.steampowered.com/app/400/Portal/) + [Portal 2](https://store.steampowered.com/app/620/Portal_2/), [Counter-Strike](https://store.steampowered.com/app/730/CounterStrike_2/), and more. They formed Steam in 2003 to serve as a distribution channel for games. They have also created hardware like the recently released [Steam Deck](https://store.steampowered.com/steamdeck/) and the [Valve Index](https://store.steampowered.com/valveindex).
 
-### End
+## End
 
 Steam is great and has a lot of features which help to extend it and provide QOL features, where as most other launchers lack these features as they are either **barebones**, lack anything **notable** about them, or are just downright **bad** or **hard** to use. Sometimes, it can be all three.

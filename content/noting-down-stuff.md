@@ -10,7 +10,7 @@ A lot of the time, but commonly when I go to bed, I remember or think about some
 
 There are a host of options out there for how to write stuff down, some built specifically for that purpose, like [Obsidian](https://obsidian.md/), which uses Markdown files to let you write down notes.
 
-However, I do it in an uncommon way, that I haven't seen many other people doing. **I note down stuff on [Discord](https://discord.com)**. 
+However, I do it in an uncommon way, that I haven't seen many other people doing. I note down stuff on [Discord](https://discord.com). 
 
 At first, this might sound odd, until you realize that anyone can make a server that is just **you** in it, and since nobody else can see what you write, aka private, it makes a server a great place to store stuff you're thinking about doing.
 

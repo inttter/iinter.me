@@ -10,19 +10,21 @@ In my opinion, I don't enjoy the fact that I have to create a bunch of new files
 
 To me, this seems like a tedious process. That's why I decided to make <kbd>create-ps</kbd>, a command-line tool which allows you to create files that you need for an average NPM package.
 
-### Demo
+## Demo
 
-<video src="https://us-east-1.tixte.net/uploads/files.iinter.me/create-ps_Demo_v4.mp4" controls></video>
+<div align="center">
+  <video src="https://us-east-1.tixte.net/uploads/files.iinter.me/create-ps_Demo_v4.mp4" controls style="margin-top: 10px"></video>
+</div>
 
 As you can see in the demo video, I added multiple files, directories, and more into the project directory. You can select what you want to include to fit your project's needs, such as examples files, a pre-made <kbd>index.mjs</kbd> with your installed dependencies imported, and more.
 
-### Installation
+## Installation
 
 ```bash
 npm install -g create-ps 
 ```
 
-### Usage
+## Usage
 
 * Navigate to the directory you are going to create your package in.
 * Run the following command, replacing <kbd>projectName</kbd> with the name of the package.
@@ -62,7 +64,7 @@ npm install -g create-ps
     <span>To use CommonJS instead of ESM, run the command with the <kbd>--cjs</kbd> flag.</span>
 </div>
 
-### pkg-config
+## pkg-config
 
 If you run the following command in your terminal, you can edit various fields in your <kbd>package.json</kbd>.
 
@@ -84,7 +86,7 @@ You're then able to select the fields you would like to include and customize. F
 
 You can also run this in an existing project to fill out and/or replace any fields.
 
-### The Logic Behind This
+## The Logic Behind This
 
 In it's simplest form, all the logic is just **switch cases**. 
 

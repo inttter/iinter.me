@@ -12,13 +12,13 @@ In Christmas of 2016, I recieved an Xbox One S. It was the first time I was able
 
 This post goes into more detail about my personal experience with the game, and my opinions on it.
 
-### First Time
+## First Time
 
 When I first played, it was generally argued that Forza Horizon 3 was the best Horizon game out of the, at that point, 3-game franchise. Everything about the game was at its highest point at the time, from the community, developer interaction, the **cars** being added to the game, and more.
 
 I got curious a few months back, and searched for the first game which I installed by checking my first achievements, which, coincidentally, one of them was Forza Horizon 3. I also remember opening the game up for the first time to hear the (now nostalgic) title screen music. For those curious, you can see it [here](https://www.youtube.com/watch?v=2CbJUm_AfJs).
 
-### Progressing Through
+## Progressing Through
 
 I spent most time on this game [freeroaming](https://en.wiktionary.org/wiki/free_roam) around the map, trying to get every collectable ([there's a lot](https://www.ign.com/maps/forza-horizon-3/australia)), driving over every road that was still marked gray, (meaning they were unfound and [there was also 488 of them](https://www.trueachievements.com/a223064/i-know-these-roads-achievement)) and more.
 
@@ -35,13 +35,13 @@ I also progressed through the game normally, by buying new cars with the Credits
   </div>
 </div>
 
-### Community
+## Community
 
 In simple terms, the Forza community at this time reached its highest point.
 
 When I wasn't playing the game, most of the time I would be watching somebody like [AR12Gaming](https://www.youtube.com/@AR12Gaming) talk about the newest update or playing a minigame, or watching a compilation from somebody like [Shinyodd](https://www.youtube.com/watch?v=jE37PeTZtEg&t=37s) or [YEAHMAP](https://www.youtube.com/watch?v=f_AoTnOHIJE).
 
-### The Present
+## The Present
 
 It's been over 8 years since I first played this game, and sometimes, I take out my Xbox which is covered in dust, put the disc inside of the console, and launch the game to drive around for a bit.
 
@@ -57,7 +57,7 @@ I could not download, or even buy the game, because they [delisted it in 2020](h
 
 I ended up just dropping the search and opened my Xbox for the first time in months to redownload the game (which, shockingly, was [only 46GB](https://www.google.com/search?q=fh3+install+size+xbox&source=lmns&bih=752&biw=772&client=opera-gx&hs=lfP&hl=en&sa=X&ved=2ahUKEwjvou2u2-eEAxXPbKQEHUb1CkcQ0pQJKAB6BAgBEAI)). This is a good example of the disadvantages of delisting these old games. Obviously, there are valid reasons, such as licensing, but it does suck.
 
-### Conclusion
+## Conclusion
 
 This game gave me **so** much nostalgia, and it is ultimately in my list of the top 5 games that I have ever played.
 

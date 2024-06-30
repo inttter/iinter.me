@@ -1,7 +1,7 @@
 ---
 title: "Monetization in Games"
 date: "April 3, 2024"
-lastUpdated: "27/04/24 20:17"
+lastUpdated: "30/06/24 19:23"
 author: "Inter"
 description: Thoughts on ways of monetizing in games, and how they are good and bad.
 ---
@@ -19,7 +19,7 @@ I've been playing video games for basically my entire life. In this time, there'
 
 This, ultimately, leads to spending a lot of money on microtransactions. I talk about a few types here, and a bit of my opinion on it.
 
-### Battle Passes
+## Battle Passes
 
 A common trend commonly amongst some games is that after the release of [Fortnite](https://www.fortnite.com/), many of them shifted to an ideology that they had to become a **live service**.
 
@@ -33,7 +33,7 @@ These battle passes are designed to have FOMO (Feeling Of Missing Out), and it e
 
 This also creates a market for buying accounts, hacking, and the general breaking of rules the game has set in place. Most commonly, people buy and hack accounts to play with unobtainable items, which, most of the time goes against the companies' TOS.
 
-### Lootboxes and Gacha Systems
+## Lootboxes and Gacha Systems
 
 This is another common form of in-game microtransactions, although not as bad as battle passes. In fact, some games like Rocket League have [already phased them out](https://www.rocketleague.com/en/news/crates-leaving-rocket-league-later-this-year). Besides that, the point is that some games are **built** on this system. Take an example like [Counter-Strike 2](https://www.counter-strike.net/), or CS2 for short. CS2 has cases, capsules, stickers, music kits, and more that I won't go into explicitly. They have a lot of monetary sources. According to [Insider Gaming](https://insider-gaming.com/valve-cs-cases-earnings/), Valve made over **$1,000,000,000** from cases, keys, and the skin market in general. Although, CS2 is a slightly different case, as players can also make money since CS2 has an [actual market and value for skins](https://csfloat.com/db).
 
@@ -57,7 +57,7 @@ This makes people spend large amounts of money chasing for rare cosmetics, which
 
 Not everything is bad, though. Positives include the fact that communities can form for these types of games. Community interaction motivates devs to build updates, which prevents the game from running dry.
 
-### Virtual Currency
+## Virtual Currency
 
 People spend real-world money to buy in-game currency and then buy things within a game. [Battle Passes](#battle-passes) also typically use an in-game currency in order to buy it.
 
@@ -75,13 +75,13 @@ If you want to visualize this, here's a diagram.
 
 <img src="/images/monetization-in-games/diagram.png" alt="A simple diagram to visualize the cycle of premium currency, using 10,000 Apex coins as an example.">
  
-### DLC
+## DLC
 
 DLC's (**D**own**l**oadable **C**ontent) offer extra content to people who have completed the game already (most of the time, without competitive advantages), or DLC's may expand the game further out in different factors, like its story. This is a way publishers get people to keep coming back to their game. 
 
 An example of a good, well-thought out, and well-liked content expansion DLC is the [Dying Light: The Following](https://en.wikipedia.org/wiki/Dying_Light:_The_Following) DLC, which was an expansion and continuation of the main storyline from the main [Dying Light](https://store.steampowered.com/app/239140/Dying_Light/) campaign. 
 
-In particular, the DLC featured a...
+In particular, the DLC featured a:
 
 * New **map**
 * New **characters**
@@ -100,7 +100,7 @@ Sometimes, devs bundle some/all of their game's DLC into one edition of the game
     <span>The "Historical Low" and "Current Best" stats come from <a href="https://augmentedsteam.com/" target="_blank" rel="noopener noreferrer">Augmented Steam</a>.</span>
 </div>
 
-### Misc 
+## Misc 
 
 Here are some more examples, in bullet point form.
 
@@ -111,6 +111,4 @@ Here are some more examples, in bullet point form.
 
 ---
 
-To end this off, here's [one final quote](https://tagn.wordpress.com/2014/04/17/quote-of-the-day-when-you-have-a-f2p-hammer-every-nail-is-a-microtransaction/),
-
-> *"When you have a Free to Play hammer, every nail is a microtransaction."*
+At the end of the day, monetization in games sucks. It will probably get worse at time goes on, as evident with companies like EA, but only time will tell.
