@@ -10,7 +10,7 @@ class MyDocument extends Document {
     const { post, isWritingIndexPage } = this.props.__NEXT_DATA__.props.pageProps;
     const isPostPage = !!post;
 
-    const description = 'A racing game enthusiast, and also cat lover.' // default
+    const description = 'A racing game, computer and also cat lover.' // default
     const writingDescription = 'Writing about things that I find interesting or think about.' // writing
 
     return (

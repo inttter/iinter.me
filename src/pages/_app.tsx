@@ -8,6 +8,7 @@ import '@fontsource/geist-sans/700.css';
 import '@fontsource/geist-sans/600.css';
 import '@fontsource/jetbrains-mono';
 import '@fontsource/geist-mono';
+import { Toaster } from 'sonner';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </div>
         <SpeedInsights />
         <Analytics />
+        <Toaster richColors />
       </Head>
     </>
   );

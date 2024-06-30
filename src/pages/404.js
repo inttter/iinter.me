@@ -20,8 +20,8 @@ export default function Custom404() {
           Sorry, the page you were looking for could not be found.
           You may have made a typo, or the link might have been changed, moved, or deleted.
         </p>
-        <button class="group justify-center rounded-md text-sm font-medium bg-neutral-800 text-zinc-300 hover:bg-neutral-700/80 duration-300 px-5 py-2 flex items-center" onClick={() => window.history.back()}>
-          <ArrowLeft size={15} className="mr-1 group-hover:-translate-x-0.5 duration-200" /> Go back
+        <button className="text-zinc-300 bg-[#202020] hover:bg-neutral-600 hover:bg-opacity-40 duration-300 px-4 py-2 rounded-md group flex items-center" onClick={() => window.history.back()}>
+          <ArrowLeft size={20} className="mr-1 group-hover:-translate-x-0.5 duration-200" /> Go back
         </button>
         <Navbar />
       </div>

@@ -60,7 +60,7 @@ export default function ProjectsPage() {
                     transition={{ duration: 0.5, delay: 0.6 }}
                     className="animate-blurred-fade-in duration-700"
                   >
-                    <div className="bg-neutral-800 bg-opacity-20 hover:bg-neutral-500 hover:bg-opacity-5 border border-dotted border-neutral-700 hover:border-neutral-800 duration-300 p-3 rounded-md block antialiased">
+                    <div className="bg-[#181818] hover:bg-neutral-500 hover:bg-opacity-5 border border-dotted border-neutral-700 duration-300 p-3 rounded-md block antialiased">
                       <motion.div 
                         initial={{ opacity: 0 }} 
                         animate={{ opacity: 1 }} 

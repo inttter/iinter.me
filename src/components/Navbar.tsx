@@ -40,16 +40,16 @@ function Navbar() {
         {/* Desktop Navbar */}
         <div className="hidden md:flex space-x-1 items-center">
           <Link href="/" className={`text-zinc-100 duration-300 hover:bg-neutral-800 rounded-md px-2 py-1 flex items-center ${router.pathname === '/' ? 'bg-neutral-700 bg-opacity-55' : ''}`}>
-            <Home size={15} className="mr-1.5 text-neutral-500" /> home
+            <Home size={15} className="mr-1.5 text-neutral-500" /> Home
           </Link>
           <Link href="/anime" className={`text-zinc-100 duration-300 hover:bg-neutral-800 rounded-md px-2 py-1 flex items-center ${router.pathname === '/anime' ? 'bg-neutral-700 bg-opacity-55' : ''}`}>
-            <Cat size={15} className="mr-1.5 text-neutral-500" /> anime
+            <Cat size={15} className="mr-1.5 text-neutral-500" /> Anime
           </Link>
           <Link href="/projects" className={`text-zinc-100 duration-300 hover:bg-neutral-800 rounded-md px-2 py-1 flex items-center ${router.pathname === '/projects' ? 'bg-neutral-700 bg-opacity-55' : ''}`}>
-            <Code size={15} className="mr-1.5 text-neutral-500" /> projects
+            <Code size={15} className="mr-1.5 text-neutral-500" /> Projects
           </Link>
           <Link href="/writing" className={`text-zinc-100 duration-300 hover:bg-neutral-800 rounded-md px-2 py-1 flex items-center ${router.pathname === '/writing' ? 'bg-neutral-700 bg-opacity-55' : ''}`}>
-            <NotebookPen size={15} className="mr-1.5 text-neutral-500" /> writing
+            <NotebookPen size={15} className="mr-1.5 text-neutral-500" /> Writing
           </Link>
         </div>
       </div>

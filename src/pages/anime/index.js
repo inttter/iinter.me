@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import Navbar from '../../components/Navbar';
-import Top from '../../components/BackToTop';
+import BackToTop from '../../components/BackToTop';
 import { request } from 'graphql-request';
 import { SiAnilist } from "react-icons/si";
 import { FaStar } from "react-icons/fa";
@@ -113,11 +113,14 @@ const IndexPage = () => {
     <div className="bg-main min-h-screen flex flex-col justify-center items-center antialiased p-4 md:p-8">
       <div className="max-w-2xl w-full px-4 py-24 space-y-6 flex-col">
         <div className="flex flex-col space-y-4">
+          <Head>
+            <title>Anime List | Inter</title>
+          </Head>
           {watchlist.watching.length > 0 && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
+              transition={{ duration: 0.5 }}
               className="animate-blurred-fade-in duration-1000"
             >
               <WatchlistCategory title="Watching" list={watchlist.watching} favourites={favourites} />
@@ -127,7 +130,7 @@ const IndexPage = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
+              transition={{ duration: 0.5 }}
               className="animate-blurred-fade-in duration-1000"
             >
               <WatchlistCategory title="Completed" list={watchlist.completed} favourites={favourites} />
@@ -137,19 +140,16 @@ const IndexPage = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
-              className="animate-blurred-fade-in duration-500"
+              transition={{ duration: 0.5 }}
+              className="animate-blurred-fade-in duration-1000"
             >
               <WatchlistCategory title="Plan To Watch" list={watchlist.planned} favourites={favourites} />
             </motion.div>
           )}
         </div>
-        <Head>
-          <title>Anime List | Inter</title>
-        </Head>
         <Navbar />
         <div className="mt-auto">
-          <Top />
+          <BackToTop />
         </div>
         {errorMessage && (
           <motion.div 
@@ -184,24 +184,24 @@ const IndexPage = () => {
 const WatchlistCategory = ({ title, list, favourites }) => {
   return (
     <div>
-      <div className="text-2xl mx-3 tracking-tighter font-semibold mb-3 text-zinc-100">{title}</div>
+      <div className="text-2xl mx-3 mb-3 font-semibold tracking-tighter text-zinc-100">{title}</div>
       {list.map(item => (
-        <Link key={item.id} href={`https://anilist.co/anime/${item.id}`} target="_blank" rel="noopener noreferrer" className="group">
-          <div key={item.id} className="relative flex items-center hover:bg-neutral-950 group-hover:scale-[1.01] p-3 rounded-md duration-300">
-            {item.coverImage && (
-              <div className="group relative">
-                <Image
-                  src={item.coverImage}
-                  alt={item.title}
-                  width={70}
-                  height={70}
-                  layout="intrinsic"
-                  className="rounded-lg animate-blurred-fade-in border-2 border-neutral-700 group-hover:border-zinc-300 duration-300"
-                />
-              </div>
-            )}
-            <div className="px-3 flex-grow flex-shrink-0 md:max-w-[500px] max-w-[200px] overflow-ellipsis truncate text-zinc-100 md:text-lg text-md antialiased">
-              {item.title}
+      <Link key={item.id} href={`https://anilist.co/anime/${item.id}`} target="_blank" rel="noopener noreferrer" className="group">
+        <div className="relative flex items-center hover:bg-neutral-950 border border-transparent hover:border-neutral-700 transform group-hover:scale-[1.03] p-3 rounded-lg transition duration-300">
+          {item.coverImage && (
+            <div className="relative">
+              <Image
+                src={item.coverImage}
+                alt={item.title}
+                width={70}
+                height={70}
+                layout="intrinsic"
+                className="antialiased rounded-lg transition duration-300"
+              />
+            </div>
+          )}
+          <div className="px-3 flex-grow flex-shrink-0 md:max-w-[500px] max-w-[200px] truncate text-zinc-100 md:text-lg text-md antialiased">
+            {item.title}
               {item.notes && (
                 <div className="text-xs text-neutral-400 italic mt-1 overflow-hidden overflow-ellipsis">
                   "{item.notes}"

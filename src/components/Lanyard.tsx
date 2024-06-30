@@ -5,9 +5,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import consola from 'consola';
 
-function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }: { showUsername?: boolean, showEmoji?: boolean, showAlbumArt?: boolean }) {
+function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }) {
   const [status, setStatus] = useState('✈️ Finding status...');
-  const [emoji, setEmoji] = useState<JSX.Element | null>(null);
+  const [emoji, setEmoji] = useState(null);
   const [spotifySong, setSpotifySong] = useState('');
   const [spotifyArtist, setSpotifyArtist] = useState('');
   const [spotifyAlbumArt, setSpotifyAlbumArt] = useState('');
@@ -21,7 +21,7 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }:
       })
       .then(data => {
         const discordStatus = data.data.discord_status;
-        let statusDot: JSX.Element | null = null;
+        let statusDot = null;
 
         if (discordStatus === 'online') {
           statusDot = <span className="h-4 w-4 rounded-full bg-green-500 inline-block tooltip tooltip-right tracking-tight" data-tip="Online" data-theme="lofi"></span>;
@@ -82,13 +82,14 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }:
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <Image src={spotifyAlbumArt} className="rounded-md animate-blurred-fade-in duration-750" width={50} height={50} alt="Album Art" style={{ marginRight: '8px' }} />
-          <div className="w-full overflow-clip truncate">
+          <div className="w-[200px] md:w-[460px]">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
+              className="truncate"
             >
-              <Link href={`https://open.spotify.com/track/${spotifyTrackId}`} target="_blank" rel="noopener noreferrer" className="text-zinc-100 hover:text-zinc-300 animate-blurred-fade-in duration-100 border-b-2 border-dotted border-neutral-500 hover:border-neutral-300 mx-1">
+              <Link href={`https://open.spotify.com/track/${spotifyTrackId}`} target="_blank" rel="noopener noreferrer" className="text-zinc-100 hover:text-zinc-300 animate-blurred-fade-in duration-300 border-b-2 border-dotted border-neutral-500 mx-1 truncate">
                 {spotifySong}
               </Link>
             </motion.div>
@@ -96,20 +97,20 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }:
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 1.2 }}
-              className="text-xs tracking-normal text-neutral-500 justify-start overflow-elipsis px-1 mr-1"
+              className="text-xs tracking-normal text-neutral-500 justify-start truncate px-1 mr-1"
             >
               {spotifyArtist}
             </motion.p>
           </div>
-          <div className="mr-2 flex justify-end items-center">
-            <FaSpotify size={30} className="text-neutral-400 opacity-50" />
+          <div className="mr-2 ml-3 flex justify-end items-center">
+            <FaSpotify size={30} className="text-neutral-500 opacity-50" />
           </div>
         </motion.div>
       )}
       {!showAlbumArt && (
         <div className="flex items-center">
           <motion.p 
-            className="text-sm tracking-normal text-neutral-500 justify-start overflow-elipsis animate-blurred-fade-in duration-1000"
+            className="text-sm tracking-normal text-neutral-500 justify-start overflow-ellipsis animate-blurred-fade-in duration-1000 truncate"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.8 }}

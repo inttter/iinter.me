@@ -127,7 +127,7 @@ const markdownComponents = {
     const handleCopyCode = () => {
       copy(codeText);
       setCopied(true);
-      toast.success('Code has been copied to your clipboard!', {});
+      toast.success('Code copied to your clipboard!');
     };
 
     setTimeout(() => {
@@ -143,7 +143,6 @@ const markdownComponents = {
         >
           {copied ? <Check size={15} className="text-emerald-400" /> : <Copy size={15} />}
         </button>
-        <Toaster richColors />
         <pre className="rounded-md overflow-auto scrollbar-thin text-sm mt-2">
           <SyntaxHighlighter language={match ? match[1] : null} style={nightOwl} wrapLongLines={true} customStyle={{ background: '#202020', overflowX: 'auto', borderRadius: '0.5rem', fontFamily: 'Jetbrains Mono, monospace' }} codeTagProps={{style: {fontFamily: 'inherit'} }}>
             {children}
@@ -316,7 +315,7 @@ const markdownComponents = {
     const isInternalLink = props.href && props.href.startsWith('#');
     return (
       <a 
-        className="text-sky-400 hover:border-b border-transparent hover:border-dashed hover:border-sky-400 duration-300"
+        className="text-zinc-100 hover:opacity-80 duration-300 border-b border-dashed border-neutral-400"
         target={isInternalLink ? undefined : "_blank"}
         rel={isInternalLink ? undefined : "noopener noreferrer"}
         {...props}

@@ -13,11 +13,17 @@ export default function Home() {
     <div className="bg-main min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8">
       <div className="max-w-2xl w-full px-4 py-8 space-y-6 flex-col">
         <div className="flex items-center justify-start">
-          <h1 className="text-5xl tracking-wide">
+          <h1 className="text-5xl">
             <Lanyard showAlbumArt={false} />
           </h1>
         </div>
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 1.0 }} className="flex justify-start md:space-x-4 space-x-3 bg-transparent animate-blurred-fade-in duration-700" data-theme="lofi">
+        <motion.div 
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }} 
+          transition={{ duration: 0.5, delay: 1.0 }} 
+          className="flex justify-start md:space-x-4 space-x-3 bg-transparent animate-blurred-fade-in duration-700" 
+          data-theme="lofi"
+        >
           <SocialLink href="https://github.com/inttter" social="GitHub" tooltipText="@inttter" />
           <SocialLink href="https://steamcommunity.com/id/intermed" social="Steam" tooltipText="@inter" />
           <SocialLink href="https://discord.com/users/514106760299151372" social="Discord" tooltipText="@iinter"/>
