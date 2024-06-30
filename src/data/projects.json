@@ -33,7 +33,7 @@
     },
     {
       "name": "notetxt",
-      "description": "📝 A simple text editor to write down what's on your mind without any distractions.",
+      "description": "📝 A note-taker app with a focus on minimalism and simplicity.",
       "link": "https://notetxt.iinter.me",
       "github": "https://github.com/inttter/notetxt",
       "tags": ["Next.js", "Tailwind", "Note-taking"],
