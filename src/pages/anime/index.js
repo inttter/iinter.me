@@ -37,10 +37,12 @@ const IndexPage = () => {
                   coverImage {
                     large
                   }
+                  episodes
                 }
                 status
                 score
                 notes
+                progress
               }
             }
             user {
@@ -101,7 +103,9 @@ const IndexPage = () => {
             title: entry.media.title.english,
             coverImage: entry.media.coverImage ? entry.media.coverImage.large : null,
             score: entry.score,
-            notes: entry.notes
+            notes: entry.notes,
+            progress: entry.progress,
+            episodes: entry.media.episodes,
           });
         }
       });
@@ -186,36 +190,38 @@ const WatchlistCategory = ({ title, list, favourites }) => {
     <div>
       <div className="text-2xl mx-3 mb-3 font-semibold tracking-tighter text-zinc-100">{title}</div>
       {list.map(item => (
-      <Link key={item.id} href={`https://anilist.co/anime/${item.id}`} target="_blank" rel="noopener noreferrer" className="group">
-        <div className="relative flex items-center hover:bg-neutral-950 border border-transparent hover:border-neutral-700 transform group-hover:scale-[1.03] p-3 rounded-lg transition duration-300">
-          {item.coverImage && (
-            <div className="relative">
-              <Image
-                src={item.coverImage}
-                alt={item.title}
-                width={70}
-                height={70}
-                layout="intrinsic"
-                className="antialiased rounded-lg transition duration-300"
-              />
-            </div>
-          )}
-          <div className="px-3 flex-grow flex-shrink-0 md:max-w-[500px] max-w-[200px] truncate text-zinc-100 md:text-lg text-md antialiased">
-            {item.title}
+        <Link key={item.id} href={`https://anilist.co/anime/${item.id}`} target="_blank" rel="noopener noreferrer" className="group">
+          <div className="relative flex items-center hover:bg-neutral-950 border border-transparent hover:border-neutral-700 transform group-hover:scale-[1.03] p-3 rounded-xl transition duration-300">
+            {item.coverImage && (
+              <div className="relative">
+                <Image
+                  src={item.coverImage}
+                  alt={item.title}
+                  width={70}
+                  height={70}
+                  layout="intrinsic"
+                  className="antialiased rounded-lg transition duration-300"
+                />
+              </div>
+            )}
+            <div className="px-3 flex-grow flex-shrink-0 md:max-w-[500px] max-w-[200px] truncate text-zinc-100 md:text-lg text-md antialiased">
+              {item.title}
               {item.notes && (
                 <div className="text-xs text-neutral-400 italic mt-1 overflow-hidden overflow-ellipsis">
                   "{item.notes}"
                 </div>
               )}
-              {title !== "⌚ Plan To Watch" && item.score && item.score > 0 ? (
-                <span className="absolute sm:right-2 bg-neutral-800 group-hover:bg-neutral-700 group-hover:bg-opacity-70 text-neutral-300 px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-top bottom-2 right-2 duration-300" data-tip="Rating" data-theme="lofi">
+              {title === "Watching" ? (
+                <span className="absolute sm:right-2 bg-[#242424] group-hover:bg-[#292929] text-neutral-300 px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-top bottom-2 right-2 duration-300" data-tip="Episodes Watched" data-theme="lofi">
+                  {item.progress}/{item.episodes} episodes
+                </span>
+              ) : item.score && item.score > 0 ? (
+                <span className="absolute sm:right-3 bg-[#242424] group-hover:bg-[#292929] text-neutral-300 px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-top bottom-3 right-3 duration-300" data-tip="Rating" data-theme="lofi">
                   {item.score}/10
                 </span>
-              ) : (
-                null // null so that the "0" that gets appended to the {item.title} won't show
-              )}
+              ) : null}
               {favourites.some(fav => fav.id === item.id) && (
-                <span className="absolute right-15 bottom-2 flex items-center px-2 py-1 bg-neutral-800 group-hover:bg-neutral-700 group-hover:bg-opacity-70 duration-300 rounded-md font-medium tooltip tooltip-top" data-tip="Favorite Number" data-theme="lofi">
+                <span className="absolute right-15 bottom-2 flex items-center px-2 py-1 bg-[#242424] group-hover:bg-[#292929] duration-300 rounded-md font-medium tooltip tooltip-top" data-tip="Favorite Number" data-theme="lofi">
                   <div className={`text-xs flex items-center ${favourites.findIndex(fav => fav.id === item.id) === 0 ? 'text-yellow-400' : 'text-neutral-300'}`}>
                     <FaStar size={13} className="md:mb-0 mb-0.5 mr-1 text-yellow-400" /> #{favourites.findIndex(fav => fav.id === item.id) + 1}
                   </div>
