@@ -73,10 +73,34 @@ const IndexPage = () => {
         const lists = data.MediaListCollection.lists;
         const user = data.MediaListCollection.user;
         const favourites = user.favourites.anime.nodes;
+
+        const completedList = parseEntries(lists, 'COMPLETED').sort((a, b) => {
+          const aFavIndex = favourites.findIndex(fav => fav.id === a.id);
+          const bFavIndex = favourites.findIndex(fav => fav.id === b.id);
+
+          if (a.score !== b.score) {
+            // sorts by score
+            return b.score - a.score;
+          }
+          if (aFavIndex !== -1 && bFavIndex === -1) {
+            // eg. if a is favorited and b is not
+            return -1;
+          }
+          if (aFavIndex === -1 && bFavIndex !== -1) {
+            // eg. if b is favorited and a is not
+            return 1;
+          }
+          if (aFavIndex !== -1 && bFavIndex !== -1) {
+            // if both are favorited, then it sorts by favorite rank
+            return aFavIndex - bFavIndex;
+          }
+          // both aren't favorites
+          return 0;
+        });
   
         setWatchlist({
           watching: parseEntries(lists, 'CURRENT'),
-          completed: parseEntries(lists, 'COMPLETED'),
+          completed: completedList,
           planned: parseEntries(lists, 'PLANNING')
         });
   
