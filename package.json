@@ -18,7 +18,7 @@
     "consola": "^3.2.3",
     "copy-to-clipboard": "^3.3.3",
     "daisyui": "^4.12.10",
-    "framer-motion": "^11.2.12",
+    "framer-motion": "^11.2.13",
     "graphql-request": "^7.1.0",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.400.0",
@@ -38,7 +38,7 @@
     "sonner": "^1.5.0"
   },
   "devDependencies": {
-    "@types/node": "^20.14.9",
+    "@types/node": "^20.14.10",
     "@types/react": "^18.3.3",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.39",

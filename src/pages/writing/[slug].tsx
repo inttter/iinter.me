@@ -12,9 +12,9 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeSlug from 'rehype-slug';
 import { Check, Copy, Link as LinkIcon } from 'lucide-react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { nightOwl } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { nord } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import BackToTopButton from '../../components/BackToTop';
-import { toast, Toaster } from 'sonner';
+import { toast } from 'sonner';
 import copy from 'copy-to-clipboard';
 import Navbar from '../../components/Navbar';
 import consola from 'consola';
@@ -29,7 +29,7 @@ export default function Post({ post }) {
       </Head>
       <div className="max-w-2xl w-full md:px-1 px-3 md:py-7 py-11 space-y-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center md:-mx-2">
+          <div className="flex items-center -mx-2 z-50">
             <Navbar />
           </div>
         </div>
@@ -38,12 +38,12 @@ export default function Post({ post }) {
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-2xl text-zinc-200 font-semibold tracking-tighter"
+            className="text-3xl text-zinc-200 font-semibold tracking-tighter"
           >
             {post.frontmatter.title}
           </motion.div>
           <motion.p
-            className="text-neutral-500 max-w-2xl overflow-auto tracking-tight"
+            className="text-neutral-500 max-w-2xl mt-1 overflow-auto tracking-tight"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
@@ -68,7 +68,7 @@ export default function Post({ post }) {
           initial={{ opacity: 0 }} 
           animate={{ opacity: 1 }} 
           transition={{ duration: 0.5, delay: 0.8 }} 
-          className="leading-7 text-stone-300"
+          className="leading-7 text-stone-300 text-opacity-95"
         >
           <ReactMarkdown components={markdownComponents} remarkPlugins={[gfm]} rehypePlugins={[rehypeRaw, rehypeAutolinkHeadings, rehypeSlug]}>
             {post.content}
@@ -137,14 +137,14 @@ const markdownComponents = {
     return (
       <div className="relative">
         <button
-          className={`absolute top-[19px] right-2 text-zinc-300 text-sm font-semibold font-sans hover:bg-neutral-700 duration-300 bg-transparent hover:bg-opacity-80 rounded-md p-1.5 mr-1 ${copied ? 'cursor-default' : ''}`}
+          className={`absolute top-[19px] right-2 text-zinc-300 text-sm font-semibold font-sans duration-300 bg-neutral-900 hover:border-neutral-700 border-2 border-neutral-800 rounded-md p-1.5 mr-1 ${copied ? 'cursor-default' : ''}`}
           disabled={copied}
           onClick={handleCopyCode}
         >
           {copied ? <Check size={15} className="text-emerald-400" /> : <Copy size={15} />}
         </button>
         <pre className="rounded-md overflow-auto scrollbar-thin text-sm mt-2">
-          <SyntaxHighlighter language={match ? match[1] : null} style={nightOwl} wrapLongLines={true} customStyle={{ background: '#202020', overflowX: 'auto', borderRadius: '0.5rem', fontFamily: 'Jetbrains Mono, monospace' }} codeTagProps={{style: {fontFamily: 'inherit'} }}>
+          <SyntaxHighlighter language={match ? match[1] : null} style={nord} wrapLongLines={true} customStyle={{ background: '#101010', overflowX: 'auto', borderRadius: '0.5rem', fontFamily: 'Jetbrains Mono, monospace', border: '2px solid #242424' }} codeTagProps={{style: {fontFamily: 'inherit'} }}>
             {children}
           </SyntaxHighlighter>
         </pre>
@@ -168,7 +168,7 @@ const markdownComponents = {
   
     return (
       <div className="relative">
-          <img className="rounded-lg border border-neutral-800" loading="lazy" alt={alt} src={src} onError={handleImageError} {...props} />
+          <img className="rounded-md border border-neutral-800" loading="lazy" alt={alt} src={src} onError={handleImageError} {...props} />
         {alt && <p className="text-sm text-neutral-600 mt-2">{alt}</p>}
       </div>
     );
@@ -207,7 +207,7 @@ const markdownComponents = {
   h1({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h1 className="group text-zinc-100 hover:text-zinc-300 text-3xl duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
+      <h1 className="group text-zinc-100 hover:text-zinc-300 text-3xl duration-300 font-semibold tracking-tight mt-5 pb-1 relative" {...props}>
         <Link href={`#${headerId}`} className="no-underline flex items-center">
           {children}
           <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300 tooltip tooltip-top" />
@@ -218,7 +218,7 @@ const markdownComponents = {
   h2({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h2 className="group text-zinc-100 hover:text-zinc-300 text-2xl duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
+      <h2 className="group text-zinc-100 hover:text-zinc-300 text-2xl duration-300 font-semibold tracking-tight mt-5 pb-1 relative" {...props}>
         <Link href={`#${headerId}`} className="no-underline flex items-center">
           {children}
           <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300 tooltip tooltip-top" />
@@ -229,7 +229,7 @@ const markdownComponents = {
   h3({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h3 className="group text-zinc-100 hover:text-zinc-300 text-xl duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
+      <h3 className="group text-zinc-100 hover:text-zinc-300 text-xl duration-300 font-semibold tracking-tight mt-5 pb-1 relative" {...props}>
         <Link href={`#${headerId}`} className="no-underline flex items-center">
           {children}
           <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300 tooltip tooltip-top" />
@@ -240,7 +240,7 @@ const markdownComponents = {
   h4({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h4 className="group text-zinc-100 hover:text-zinc-300 text-lg duration-300 font-semibold tracking-tight mt-5 relative" {...props}>
+      <h4 className="group text-zinc-100 hover:text-zinc-300 text-lg duration-300 font-semibold tracking-tight mt-5 pb-1 relative" {...props}>
         <Link href={`#${headerId}`} className="no-underline flex items-center">
           {children}
           <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300 tooltip tooltip-top" />
@@ -251,7 +251,7 @@ const markdownComponents = {
   h5({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h5 className="group text-zinc-100 hover:text-zinc-300 text-base duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
+      <h5 className="group text-zinc-100 hover:text-zinc-300 text-base duration-300 font-semibold tracking-tight mt-5 pb-1 relative" {...props}>
         <Link href={`#${headerId}`} className="no-underline flex items-center">
           {children}
           <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300 tooltip tooltip-top" />
@@ -262,7 +262,7 @@ const markdownComponents = {
   h6({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h6 className="group text-zinc-100 hover:text-zinc-300 text-sm duration-300 font-semibold tracking-tighter mt-5 relative" {...props}>
+      <h6 className="group text-zinc-100 hover:text-zinc-300 text-sm duration-300 font-semibold tracking-tight mt-5 pb-1 relative" {...props}>
         <Link href={`#${headerId}`} className="no-underline flex items-center">
           {children}
           <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300 tooltip tooltip-top" />
@@ -287,7 +287,7 @@ const markdownComponents = {
   // Quotes
   blockquote({ node, children, ...props }) {
     return (
-      <blockquote className="border-l-4 border-neutral-700 pl-4 py-0.5 my-1 italic">
+      <blockquote className="border-l-4 border-neutral-800 border-opacity-60 pl-4 py-0.5 my-1 italic">
         <div className="px-3">
           {children}
         </div>
@@ -297,7 +297,7 @@ const markdownComponents = {
 
   // Inline code
   inlineCode({ node, children, ...props }) {
-    return <code className="rounded-lg bg-neutral-800 text-white px-2 py-1" {...props}>{children}</code>;
+    return <div className="rounded-lg bg-neutral-800 text-white px-2 py-1" {...props}>{children}</div>;
   },
 
   // Strong and Emphasis
@@ -315,7 +315,7 @@ const markdownComponents = {
     const isInternalLink = props.href && props.href.startsWith('#');
     return (
       <a 
-        className="text-zinc-100 hover:opacity-80 duration-300 border-b border-dashed border-neutral-400"
+        className="text-zinc-100 hover:text-zinc-300 duration-300 border-b border-dashed border-neutral-400"
         target={isInternalLink ? undefined : "_blank"}
         rel={isInternalLink ? undefined : "noopener noreferrer"}
         {...props}
@@ -325,9 +325,13 @@ const markdownComponents = {
     );
   },
 
-  // Keyboard input
+  // Keyboard
   kbd({ node, children, ...props }) {
-    return <kbd className="tags text-zinc-100 bg-neutral-800 px-1.5 py-1 tracking-tighter rounded-md" {...props}>{children}</kbd>;
+    return (
+      <kbd className="text-zinc-100 rounded-md tags tracking-tighter m-0.5" {...props}>
+        `{children}`
+      </kbd>
+    );
   },
 
   // Horizontal Rule

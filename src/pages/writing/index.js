@@ -6,7 +6,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Navbar from '../../components/Navbar';
 import { motion } from 'framer-motion';
-import { Search, CircleX, ArrowUpRight } from 'lucide-react';
+import { Search, X, ArrowUpRight } from 'lucide-react';
 import consola from 'consola';
 
 export default function Writing({ posts }) {
@@ -57,24 +57,24 @@ export default function Writing({ posts }) {
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="Search posts"
+                  placeholder="Search for posts"
                   value={searchQuery}
                   onChange={handleSearchChange}
-                  className="px-10 text-lg bg-main placeholder:text-neutral-600 rounded-md focus:caret-zinc-300 focus:text-zinc-300 animate-blurred-fade-in duration-300 border border-neutral-800 focus:border-neutral-600 p-1.5 outline-none w-full"
+                  className="px-10 text-lg bg-main placeholder:text-neutral-600 rounded-md focus:caret-zinc-300 text-zinc-300 focus:text-zinc-100 animate-blurred-fade-in duration-300 border-b border-neutral-800 focus:border-neutral-600 p-1.5 outline-none w-full"
                 />
                 <div className="absolute inset-y-0 pl-3.5 flex items-center pointer-events-none group-focus:rotate-12">
-                  <Search className="text-neutral-600" size={20} />
+                  <Search className="text-stone-400" size={20} />
                 </div>
               </div>
             </div>
             {filteredPosts.length === 0 && (
               <motion.p 
-                className="text-zinc-100 bg-red-500 bg-opacity-50 px-4 py-2 rounded-md flex items-center"
+                className="text-zinc-200 bg-red-700 bg-opacity-50 px-4 py-2 rounded-md flex items-center"
                 initial={{ opacity: 0 }} 
                 animate={{ opacity: 1 }} 
                 transition={{ duration: 0.5 }}
               >
-                <CircleX size={20} className="mr-1 text-red-400" /> No posts found with that name.
+                <X size={20} className="mr-1 text-red-300" /> No posts found with that name.
               </motion.p>
             )}
             {currentPosts.map((post) => (
@@ -86,7 +86,7 @@ export default function Writing({ posts }) {
                 onMouseLeave={handleMouseLeave}
               >
                 <Link href={`/writing/${post.slug}`} passHref>
-                  <div className="p-1 hover:bg-neutral-800 hover:bg-opacity-30 rounded-md duration-300">
+                  <div className="p-1 border border-transparent hover:border-neutral-800 hover:bg-neutral-800 hover:bg-opacity-30 rounded-md duration-300">
                     <div className="flex flex-col md:flex-row items-start md:items-center justify-between p-[7px] duration-300 rounded-md">
                       <div className="text-zinc-100 group-hover:text-zinc-100 duration-300 mb-1 md:mb-0 md:mr-2 flex items-center">
                         <span>{post.frontmatter.title}</span> <ArrowUpRight size={15} className="text-neutral-600 ml-0.5 group-hover:translate-x-0.5 group-hover:text-zinc-300 duration-200" />
