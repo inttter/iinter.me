@@ -3,7 +3,7 @@ title: "Monetization in Games"
 date: "April 3, 2024"
 lastUpdated: "30/06/24 19:23"
 author: "Inter"
-description: Thoughts on ways of monetizing in games, and how they are good and bad.
+description: My opinions how monetization is used in video games and how they are good or bad.
 ---
 
 I've been playing video games for basically my entire life. In this time, there's been a large amount of games that I **played**, **refunded** because they were ~~shit~~ **bad**, or simply got **burnt out** after playing it for a long time. I've also spent way too much money then I should be on games in general.

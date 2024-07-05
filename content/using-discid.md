@@ -3,7 +3,7 @@ title: "Using discid"
 date: "March 11, 2024"
 lastUpdated: "17/06/24 19:27"
 author: "Inter"
-description: How I use my tool, discid, to find people's statuses on Discord, directly from the command line.
+description: How I find the statuses of certain users on Discord, directly from the command line.
 ---
 
 A few weeks ago, I made a command-line tool called [discid](https://discid.xyz). In a brief summary, it lets you check a user's Discord status using [Lanyard](https://github.com/phineas/lanyard).

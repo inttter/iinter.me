@@ -3,7 +3,7 @@ title: "Creating npm packages with create-ps"
 date: "March 29, 2024"
 lastUpdated: "15/06/24 14:01"
 author: "Inter"
-description: A guide on a faster way to create NPM packages from the terminal.
+description: A guide on a faster way to create npm packages, straight from the terminal.
 ---
 
 In my opinion, I don't enjoy the fact that I have to create a bunch of new files which I know I will need to make anyway at a later date whenever I decide to create a new <kbd>npm</kbd> package. In the end, I just do this whenever it comes time to actually make that new file. I name it and add the contents of what I need into it.

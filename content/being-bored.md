@@ -3,7 +3,7 @@ title: "Being bored & what I've been doing"
 date: "May 17, 2024"
 lastUpdated: "30/06/24 19:27"
 author: "Inter"
-description: I get bored a lot of the time, so I need to find something to do. I talk about the ways I struggle with boredom and what I do to overcome it.
+description: A lot of the time, I find myself being bored. Here's how I've tried to overcome it.
 ---
 
 I often find myself getting bored a lot. I spend quite a bit of time staring at my screen, thinking, *"What should I do?"* while I usually have something like a video or music playing in the background. This is especially true during those late nights when I stay up until the middle of the night, whether it'd be that I'm on my phone, or watching anime. I don't want to sleep, but I have nothing else to do.

@@ -3,7 +3,7 @@ title: "Why Steam is the Best Game Launcher"
 date: "March 23, 2024"
 lastUpdated: "17/06/24 19:10"
 author: "Inter"
-description: I love Steam. I use it every day for playing my games, and it is arguably the best launcher in the PC gaming market, and is why I made this post in order to explain why I feel this way.
+description: Steam is the biggest launcher and store in the PC gaming market. This is why.
 ---
 
 If you ever purchased a PC game before, it was almost 100% purchased from the Steam platform. With over 120 million users a month, it's the biggest distributor for games in the world. There's no bullshit that you need to get through to launch a game. Simply launch Steam, select the game, and **Play**. Three clicks.

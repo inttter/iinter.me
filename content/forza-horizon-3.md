@@ -1,9 +1,9 @@
 ---
-title: "Forza Horizon 3"
+title: "Playing Forza Horizon 3"
 date: "March 9, 2024"
 lastUpdated: "23/04/2024 23:07"
 author: "Inter"
-description: My experience growing up playing Forza Horizon 3, a game released in 2016 by Playground Games.
+description: A game released in 2016 by Playground Games. Here is my personal experience with it!
 ---
 
 In Christmas of 2016, I recieved an Xbox One S. It was the first time I was able to properly play games after being stuck on a PS3 for a long time. My PS3 was the console I was stuck on for quite a few years, even after the (now) last-gen consoles each came out in 2014. I got a few games along with my Xbox aswell. For example, some prominent ones I got were [Rocket League](https://rocketleague.com) and [Minecraft Xbox One Edition](https://minecraft.fandom.com/wiki/Xbox_One_Edition). As a part of these games, I got [Forza Horizon 3](https://en.wikipedia.org/wiki/Forza_Horizon_3) as well, a prominent racing game from the Forza franchise back in 2016, which was the same year in which the game released.

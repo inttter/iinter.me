@@ -3,7 +3,7 @@ title: "Don't use pure black"
 date: "April 15, 2024"
 lastUpdated: "27/04/2024 20:15"
 author: "Inter"
-description: An explanation as to why you should not use pure black.
+description: Pure black is bad design. Here's why.
 ---
 
 Designing dark pages always involve using a wide palette of dark colors. A common trend in most newer designs of pages is that they don't use the actual **black** color, which uses hex color [#000000](https://www.color-hex.com/color/000000), they instead opt for a softer and/or lighter version of black.

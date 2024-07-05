@@ -3,7 +3,7 @@ title: "Rusting and Derusting"
 date: "26 June, 2024"
 lastUpdated: "27/06/24 22:00"
 author: "Inter"
-description: The phenomenons of burnout, rusting and derusting, explained through my own experience playing osu!.
+description: An analogy of rusting and derusting, explained through my own anecdote with osu!.
 ---
 
 ***Rusting** — To lose most of your skills at a game after not having played for a while.*
