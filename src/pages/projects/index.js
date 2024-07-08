@@ -7,7 +7,7 @@ import projectsData from '../../data/projects.json';
 import Navbar from '../../components/Navbar';
 import Head from 'next/head';
 
-export default function ProjectsPage() {
+export default function Projects() {
   const [stars, setStars] = useState({});
 
   useEffect(() => {
@@ -60,7 +60,7 @@ export default function ProjectsPage() {
                     transition={{ duration: 0.5, delay: 0.6 }}
                     className="animate-blurred-fade-in duration-700"
                   >
-                    <div className="bg-[#181818] hover:bg-neutral-500 hover:bg-opacity-5 border border-dotted border-neutral-700 duration-300 p-3 rounded-md block antialiased">
+                    <div className="bg-[#141414] md:bg-[#181818] border-2 border-neutral-800 duration-300 p-3 rounded-md block antialiased">
                       <motion.div 
                         initial={{ opacity: 0 }} 
                         animate={{ opacity: 1 }} 
@@ -69,8 +69,14 @@ export default function ProjectsPage() {
                       >
                         <Link href={project.link} target="_blank" rel="noopener noreferrer" className="group" passHref>
                           <span className="flex items-center">
-                            <span className={`border-b border-dashed border-neutral-600 hover:border-neutral-500 ${!project.maintained ? "text-amber-300 hover:text-amber-200 duration-300 tooltip tooltip-top bg-transparent" : "text-zinc-100 hover:text-zinc-300 duration-300 bg-transparent"}`} data-theme={!project.maintained ? "lofi" : ""} data-tip={!project.maintained ? "Updates will no longer be provided, and any issues that arise may not be fixed." : ""}>{project.name}</span>
-                            <ArrowUpRight size={15} className="m-1 opacity-50 group-hover:opacity-100 group-hover:translate-x-[1.5px] group-hover:text-zinc-300 duration-200" />
+                            <span 
+                              className={`border-b border-dashed border-neutral-600 hover:border-neutral-500 ${!project.maintained ? "text-amber-300 hover:text-amber-400 duration-300 tooltip tooltip-top bg-transparent" : "text-soft hover:text-stone-300 hover:text-opacity-80 duration-300 bg-transparent"}`} 
+                              data-theme={!project.maintained ? "black" : ""} 
+                              data-tip={!project.maintained ? "Updates will no longer be provided, and any issues that arise may not be fixed." : ""}
+                            >
+                              {project.name}
+                            </span>
+                            <ArrowUpRight size={15} className="m-1 opacity-50 group-hover:opacity-100 group-hover:translate-x-[1.5px] group-hover:text-soft duration-200" />
                           </span>
                         </Link>
                         <motion.div 
@@ -81,12 +87,12 @@ export default function ProjectsPage() {
                         >
                           {stars[project.github] !== undefined && (
                             <Link href={`${project.github}/stargazers`} target="_blank" rel="noopener noreferrer">
-                              <span className="text-xs px-2 py-1 bg-neutral-500 bg-opacity-15 hover:bg-neutral-400 hover:bg-opacity-20 duration-300 rounded-md text-stone-400 mr-1.5 mb-0.5 flex items-center tooltip tooltip-left bg-transparent" data-tip="Stars" data-theme="lofi">
+                              <span className="text-xs px-2 py-1 bg-soft-gray bg-opacity-40 border border-neutral-800 hover:border-neutral-700 hover:bg-opacity-80 hover:text-soft duration-300 rounded-md text-stone-400 mr-1.5 mb-0.5 flex items-center tooltip tooltip-left bg-transparent" data-tip="Stargazers" data-theme="black">
                                 <FaStar size={13} className="md:mb-0 mb-0.5 mr-0.5 text-yellow-400" />{stars[project.github]}
                               </span>
                             </Link>
                           )}
-                          <Link href={project.github} target="_blank" rel="noopener noreferrer" className="mr-1 md:mr-0.5 -mt-1 text-neutral-500 hover:text-stone-300 duration-300">
+                          <Link href={project.github} target="_blank" rel="noopener noreferrer" className="mr-1 md:mr-0.5 -mt-1 text-neutral-600 hover:text-soft duration-300">
                             <FaGithub size={18} />
                           </Link>
                         </motion.div>
@@ -108,7 +114,7 @@ export default function ProjectsPage() {
                         >
                           {project.tags.map((tag, tagIndex) => (
                             <span key={tagIndex} className="mr-2">
-                              <span className="text-zinc-300 bg-[#202020] border border-neutral-800 px-2 md:py-1.5 py-1 rounded-md tags tracking-tight">{tag}</span>
+                              <span className="text-soft bg-[#141414] border border-neutral-800 px-2 md:py-1.5 py-1 rounded-md tags tracking-tight">{tag}</span>
                             </span>
                           ))}
                         </motion.div>

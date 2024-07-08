@@ -6,9 +6,9 @@
     theme: {
       extend: {
         colors: {
-          'gray-1100': '#B5B3AD',
-          'blogcard': '#171721',
-          'main': '#111111'
+          'main': '#111110',
+          'soft': '#D6D3D1',
+          'soft-gray': '#373737'
         },
         animation: {
           "blurred-fade-in": "blurred-fade-in 0.9s ease-in-out"

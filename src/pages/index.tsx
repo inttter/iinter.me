@@ -3,12 +3,8 @@ import SocialLink from '../components/SocialLink';
 import Lanyard from '../components/Lanyard';
 import Navbar from '../components/Navbar';
 import { motion } from 'framer-motion';
-import { Cake } from 'lucide-react'
 
 export default function Home() {
-  const currentDate = new Date();
-  const isBirthday = currentDate.getDate() === 25 && currentDate.getMonth() === 6;
-
   return (
     <div className="bg-main min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8">
       <div className="max-w-2xl w-full px-4 py-8 space-y-6 flex-col">
@@ -21,8 +17,7 @@ export default function Home() {
           initial={{ opacity: 0 }} 
           animate={{ opacity: 1 }} 
           transition={{ duration: 0.5, delay: 1.0 }} 
-          className="flex justify-start md:space-x-4 space-x-3 bg-transparent animate-blurred-fade-in duration-700" 
-          data-theme="lofi"
+          className="flex justify-start space-x-3 animate-blurred-fade-in duration-700" 
         >
           <SocialLink href="https://github.com/inttter" social="GitHub" tooltipText="@inttter" />
           <SocialLink href="https://steamcommunity.com/id/intermed" social="Steam" tooltipText="@inter" />
@@ -34,11 +29,6 @@ export default function Home() {
         </motion.div>
         <Navbar />
         <Lanyard showUsername={false} showEmoji={false} showAlbumArt={true}  />
-        {isBirthday && (
-          <div className="absolute text-neutral-600 text-lg md:-mx-1 flex items-center animate-blurred-fade-in duration-700">
-           <Cake className="mr-1" /> Today is my birthday!
-          </div>
-        )}
       </div>
     </div>
   );

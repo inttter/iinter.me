@@ -24,13 +24,13 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
         let statusDot = null;
 
         if (discordStatus === 'online') {
-          statusDot = <span className="h-4 w-4 rounded-full bg-green-500 inline-block tooltip tooltip-right tracking-tight" data-tip="Online" data-theme="lofi"></span>;
+          statusDot = <span className="h-4 w-4 rounded-full bg-green-500 inline-block md:mt-0 mt-5 mx-2 tooltip tooltip-right" data-tip="Online" data-theme="black"></span>;
         } else if (discordStatus === 'idle') {
-          statusDot = <span className="h-4 w-4 rounded-full bg-amber-400 inline-block tooltip tooltip-right tracking-tight" data-tip="Idle" data-theme="lofi"></span>;
+          statusDot = <span className="h-4 w-4 rounded-full bg-amber-400 inline-block md:mt-0 mt-5 mx-2 tooltip tooltip-right" data-tip="Idle" data-theme="black"></span>;
         } else if (discordStatus === 'dnd') {
-          statusDot = <span className="h-4 w-4 rounded-full bg-red-500 inline-block tooltip tooltip-top tracking-tight" data-tip="Do Not Disturb" data-theme="lofi"></span>;
+          statusDot = <span className="h-4 w-4 rounded-full bg-red-500 inline-block md:mt-0 mt-5 mx-2 tooltip tooltip-right" data-tip="Do Not Disturb" data-theme="black"></span>;
         } else if (discordStatus === 'offline') {
-          statusDot = <span className="h-4 w-4 rounded-full bg-gray-500 inline-block tooltip tooltip-top tracking-tight" data-tip="Offline" data-theme="lofi"></span>;
+          statusDot = <span className="h-4 w-4 rounded-full bg-gray-500 inline-block md:mt-0 mt-5 mx-2 tooltip tooltip-right" data-tip="Offline" data-theme="black"></span>;
         }
 
         setEmoji(showEmoji ? statusDot : null);
@@ -38,7 +38,7 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
         const gameActivity = data.data.activities.find(activity => activity.type === 0);
         const gameName = gameActivity ? gameActivity.name : '';
 
-        setStatus(gameName ? `Playing ${gameName}` : '');
+        setStatus(gameName ? `${gameName}` : '');
 
         if (data.data.spotify) {
           setSpotifySong(data.data.spotify.song);
@@ -62,15 +62,15 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
       initial={{ opacity: 0, y: 5 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.4 }}
-      className={`relative ${showAlbumArt && spotifyAlbumArt ? 'md:w-11/12 w-full bg-opacity-5 bg-[#FAFAFA] border border-neutral-700 rounded-lg p-2' : ''}`}
+      className={`relative ${showAlbumArt && spotifyAlbumArt ? 'md:w-11/12 w-full bg-[#141414] md:bg-[#181818] border-2 border-neutral-800 rounded-xl p-2' : ''}`}
     >
       {showUsername && (
-        <span className="font-semibold text-zinc-100 justify-start tracking-tight animate-blurred-fade-in duration-1000">
+        <span className="font-semibold text-stone-300 tracking-tight animate-blurred-fade-in duration-1000">
           Inter
         </span>
       )}
       {emoji && showEmoji && (
-        <span className="animate-blurred-fade-in duration-1000" style={{ fontSize: '0.3em', verticalAlign: 'middle', paddingLeft: '10px' }}>
+        <span className="animate-blurred-fade-in duration-1000" style={{ fontSize: '0.3em', verticalAlign: 'middle' }}>
           {emoji}
         </span>
       )}
@@ -89,7 +89,7 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
               transition={{ duration: 0.5, delay: 0.8 }}
               className="truncate"
             >
-              <Link href={`https://open.spotify.com/track/${spotifyTrackId}`} target="_blank" rel="noopener noreferrer" className="text-zinc-100 hover:text-zinc-300 animate-blurred-fade-in duration-300 border-b-2 border-dotted border-neutral-500 mx-1 truncate">
+              <Link href={`https://open.spotify.com/track/${spotifyTrackId}`} target="_blank" rel="noopener noreferrer" className="text-zinc-100 hover:text-soft hover:text-opacity-90 animate-blurred-fade-in duration-300 border-b-2 border-neutral-600 border-dotted mx-1 truncate">
                 {spotifySong}
               </Link>
             </motion.div>
@@ -97,25 +97,25 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 1.2 }}
-              className="text-xs tracking-normal text-neutral-500 justify-start truncate px-1 mr-1"
+              className="text-xs tracking-normal text-neutral-500 text-opacity-70 justify-start truncate px-1 mr-1"
             >
               {spotifyArtist}
             </motion.p>
           </div>
           <div className="mr-2 ml-3 flex justify-end items-center">
-            <FaSpotify size={30} className="text-neutral-500 opacity-50" />
+            <FaSpotify size={30} className="text-neutral-600 opacity-50" />
           </div>
         </motion.div>
       )}
       {!showAlbumArt && (
         <div className="flex items-center">
           <motion.p 
-            className="text-sm tracking-normal text-neutral-500 justify-start overflow-ellipsis animate-blurred-fade-in duration-1000 truncate"
+            className="text-sm tracking-normal text-neutral-600 justify-start overflow-ellipsis animate-blurred-fade-in duration-1000 truncate"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.8 }}
           >
-            {status}
+            Playing <span className="font-semibold">{status}</span>
           </motion.p>
         </div>
       )}

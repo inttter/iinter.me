@@ -60,7 +60,7 @@ export default function Writing({ posts }) {
                   placeholder="Search for posts"
                   value={searchQuery}
                   onChange={handleSearchChange}
-                  className="px-10 text-lg bg-main placeholder:text-neutral-600 rounded-md focus:caret-zinc-300 text-zinc-300 focus:text-zinc-100 animate-blurred-fade-in duration-300 border-b border-neutral-800 focus:border-neutral-600 p-1.5 outline-none w-full"
+                  className="px-10 text-lg bg-main placeholder:text-neutral-600 rounded-md focus:caret-soft text-soft focus:text-zinc-100 animate-blurred-fade-in duration-300 border-b border-neutral-800 focus:border-neutral-600 p-1.5 outline-none w-full group"
                 />
                 <div className="absolute inset-y-0 pl-3.5 flex items-center pointer-events-none group-focus:rotate-12">
                   <Search className="text-stone-400" size={20} />
@@ -69,7 +69,7 @@ export default function Writing({ posts }) {
             </div>
             {filteredPosts.length === 0 && (
               <motion.p 
-                className="text-zinc-200 bg-red-700 bg-opacity-50 px-4 py-2 rounded-md flex items-center"
+                className="text-soft bg-red-700 bg-opacity-50 px-4 py-2 rounded-md flex items-center"
                 initial={{ opacity: 0 }} 
                 animate={{ opacity: 1 }} 
                 transition={{ duration: 0.5 }}
@@ -88,12 +88,13 @@ export default function Writing({ posts }) {
                 <Link href={`/writing/${post.slug}`} passHref>
                   <div className="p-1 border border-transparent hover:border-neutral-800 hover:bg-neutral-800 hover:bg-opacity-30 rounded-md duration-300">
                     <div className="flex flex-col md:flex-row items-start md:items-center justify-between p-[7px] duration-300 rounded-md">
-                      <div className="text-zinc-100 group-hover:text-zinc-100 duration-300 mb-1 md:mb-0 md:mr-2 flex items-center">
-                        <span>{post.frontmatter.title}</span> <ArrowUpRight size={15} className="text-neutral-600 ml-0.5 group-hover:translate-x-0.5 group-hover:text-zinc-300 duration-200" />
+                      <div className="text-soft group-hover:text-zinc-100 duration-300 mb-1 md:mb-0 md:mr-2 flex items-center">
+                        <span>{post.frontmatter.title}</span>
+                        <ArrowUpRight size={15} className="text-neutral-600 ml-0.5 group-hover:translate-x-0.5 group-hover:text-soft duration-200" />
                       </div>
-                      <p className={`text-sm flex items-center duration-300 ${hoveredPost === post.slug ? 'text-neutral-400' : 'text-neutral-600'}`}>{post.frontmatter.date}</p>
+                      <p className={`text-sm flex items-center duration-300 ${hoveredPost === post.slug ? 'text-stone-400' : 'text-stone-600'}`}>{post.frontmatter.date}</p>
                     </div>
-                    <p className={`text-sm ml-1.5 -mt-0.5 mb-1 max-w-xl duration-300 ${hoveredPost === post.slug ? 'text-neutral-500' : 'text-neutral-600'}`}>
+                    <p className={`text-sm ml-1.5 -mt-0.5 mb-1 max-w-xl duration-300 ${hoveredPost === post.slug ? 'text-stone-400' : 'text-stone-500'}`}>
                       {post.frontmatter.description}
                     </p>
                   </div>
@@ -119,7 +120,7 @@ export default function Writing({ posts }) {
               © 2024 / MIT License /
             </span>
             <Link href="https://github.com/inttter/iinter.me/tree/master/content" target="_blank" rel="noopener noreferrer" className="flex items-center group text-neutral-600 hover:text-neutral-500 duration-300">
-              See posts on GitHub <ArrowUpRight size={15} className="text-neutral-600 ml-0.5 group-hover:translate-x-0.5 group-hover:text-neutral-400 duration-200" />
+              See posts on GitHub <ArrowUpRight size={15} className="text-neutral-600 ml-0.5 group-hover:translate-x-0.5 group-hover:text-stone-400 duration-200" />
             </Link>
           </motion.div>
       </div>
@@ -141,7 +142,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
   return (
     <nav className="relative flex flex-col top-2 left-2 animate-blurred-fade-in duration-300">
       <ul className="flex space-x-2">
-        <div className="flex items-center text-neutral-600 text-sm mr-1">
+        <div className="flex items-center text-soft-gray text-sm mr-1">
           Page
         </div>
         {pageNumbers.map(number => (
@@ -152,7 +153,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
                 currentPage === number
                   ? 'border border-neutral-700 bg-neutral-600 bg-opacity-60'
                   : 'bg-neutral-800 bg-opacity-80'
-              } border border-transparent hover:border-neutral-600 hover:bg-opacity-50 duration-300 text-zinc-300 code px-2 py-0.5 rounded-md cursor-pointer`}
+              } border border-transparent hover:border-neutral-600 hover:bg-opacity-50 duration-300 text-soft code px-2 py-0.5 rounded-md cursor-pointer`}
             >
               {number}
             </div>

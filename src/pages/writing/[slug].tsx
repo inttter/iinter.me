@@ -38,12 +38,12 @@ export default function Post({ post }) {
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-3xl text-zinc-200 font-semibold tracking-tighter"
+            className="text-3xl text-zinc-200 font-semibold tracking-tight"
           >
             {post.frontmatter.title}
           </motion.div>
           <motion.p
-            className="text-neutral-500 max-w-2xl mt-1 overflow-auto tracking-tight"
+            className="text-stone-500 max-w-2xl mt-0.5 overflow-auto tracking-tight"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.6 }}
@@ -55,12 +55,12 @@ export default function Post({ post }) {
         {/* tldr; posts can get published early now but this note will show that its a wip post */}
         {post.frontmatter.wip && (
           <motion.div
-            className="flex items-center justify-center text-zinc-100 text-md bg-amber-500 bg-opacity-40 p-4 rounded-md"
+            className="flex items-center justify-center text-zinc-100 text-md bg-amber-500 bg-opacity-40 border-2 border-neutral-800 p-3.5 rounded-md"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            <span className="mr-2 text-3xl -rotate-3 bg-transparent tooltip tooltip-right" data-tip="You can keep reading, but this isn't final!" data-theme="lofi">🏗️</span>
+            <span className="mr-2 text-3xl -rotate-3 hover:scale-110 duration-200">🏗️</span>
             <span>This post is under construction and still being made. Note that some things may be unfinished or could be subject to change!</span>
           </motion.div>
         )}
@@ -68,7 +68,7 @@ export default function Post({ post }) {
           initial={{ opacity: 0 }} 
           animate={{ opacity: 1 }} 
           transition={{ duration: 0.5, delay: 0.8 }} 
-          className="leading-7 text-stone-300 text-opacity-95"
+          className="leading-7 text-soft text-opacity-95"
         >
           <ReactMarkdown components={markdownComponents} remarkPlugins={[gfm]} rehypePlugins={[rehypeRaw, rehypeAutolinkHeadings, rehypeSlug]}>
             {post.content}
@@ -137,7 +137,7 @@ const markdownComponents = {
     return (
       <div className="relative">
         <button
-          className={`absolute top-[19px] right-2 text-zinc-300 text-sm font-semibold font-sans duration-300 bg-neutral-900 hover:border-neutral-700 border-2 border-neutral-800 rounded-md p-1.5 mr-1 ${copied ? 'cursor-default' : ''}`}
+          className={`absolute top-[19px] right-2 text-soft text-sm font-semibold bg-neutral-900 hover:border-neutral-700 duration-300 border md:border-2 border-neutral-800 rounded-md p-1.5 mr-1 ${copied ? 'cursor-default' : ''}`}
           disabled={copied}
           onClick={handleCopyCode}
         >
@@ -207,7 +207,7 @@ const markdownComponents = {
   h1({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h1 className="group text-zinc-100 hover:text-zinc-300 text-3xl duration-300 font-semibold tracking-tight mt-5 pb-1 relative" {...props}>
+      <h1 className="group text-zinc-100 hover:text-soft text-3xl duration-300 font-semibold tracking-tight mt-5 pb-1 relative" {...props}>
         <Link href={`#${headerId}`} className="no-underline flex items-center">
           {children}
           <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300 tooltip tooltip-top" />
@@ -218,7 +218,7 @@ const markdownComponents = {
   h2({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h2 className="group text-zinc-100 hover:text-zinc-300 text-2xl duration-300 font-semibold tracking-tight mt-5 pb-1 relative" {...props}>
+      <h2 className="group text-zinc-100 hover:text-soft text-2xl duration-300 font-semibold tracking-tight mt-5 pb-1 relative" {...props}>
         <Link href={`#${headerId}`} className="no-underline flex items-center">
           {children}
           <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300 tooltip tooltip-top" />
@@ -229,7 +229,7 @@ const markdownComponents = {
   h3({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h3 className="group text-zinc-100 hover:text-zinc-300 text-xl duration-300 font-semibold tracking-tight mt-5 pb-1 relative" {...props}>
+      <h3 className="group text-zinc-100 hover:text-soft text-xl duration-300 font-semibold tracking-tight mt-5 pb-1 relative" {...props}>
         <Link href={`#${headerId}`} className="no-underline flex items-center">
           {children}
           <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300 tooltip tooltip-top" />
@@ -240,7 +240,7 @@ const markdownComponents = {
   h4({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h4 className="group text-zinc-100 hover:text-zinc-300 text-lg duration-300 font-semibold tracking-tight mt-5 pb-1 relative" {...props}>
+      <h4 className="group text-zinc-100 hover:text-soft text-lg duration-300 font-semibold tracking-tight mt-5 pb-1 relative" {...props}>
         <Link href={`#${headerId}`} className="no-underline flex items-center">
           {children}
           <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300 tooltip tooltip-top" />
@@ -251,7 +251,7 @@ const markdownComponents = {
   h5({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h5 className="group text-zinc-100 hover:text-zinc-300 text-base duration-300 font-semibold tracking-tight mt-5 pb-1 relative" {...props}>
+      <h5 className="group text-zinc-100 hover:text-soft text-base duration-300 font-semibold tracking-tight mt-5 pb-1 relative" {...props}>
         <Link href={`#${headerId}`} className="no-underline flex items-center">
           {children}
           <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300 tooltip tooltip-top" />
@@ -262,7 +262,7 @@ const markdownComponents = {
   h6({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h6 className="group text-zinc-100 hover:text-zinc-300 text-sm duration-300 font-semibold tracking-tight mt-5 pb-1 relative" {...props}>
+      <h6 className="group text-zinc-100 hover:text-soft text-sm duration-300 font-semibold tracking-tight mt-5 pb-1 relative" {...props}>
         <Link href={`#${headerId}`} className="no-underline flex items-center">
           {children}
           <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300 tooltip tooltip-top" />
@@ -287,7 +287,7 @@ const markdownComponents = {
   // Quotes
   blockquote({ node, children, ...props }) {
     return (
-      <blockquote className="border-l-4 border-neutral-800 border-opacity-60 pl-4 py-0.5 my-1 italic">
+      <blockquote className="border-l-4 border-neutral-800 border-opacity-90 pl-4 py-0.5 my-1 italic">
         <div className="px-3">
           {children}
         </div>
@@ -295,14 +295,9 @@ const markdownComponents = {
     );
   },
 
-  // Inline code
-  inlineCode({ node, children, ...props }) {
-    return <div className="rounded-lg bg-neutral-800 text-white px-2 py-1" {...props}>{children}</div>;
-  },
-
   // Strong and Emphasis
   strong({ node, children, ...props }) {
-    return <strong className="font-normal text-zinc-50 brightness-200" {...props}>{children}</strong>;
+    return <strong className="font-normal text-zinc-100 brightness-200" {...props}>{children}</strong>;
   },
   em({ node, children, ...props }) {
     return <em className="italic mr-0.5" {...props}>{children}</em>;
@@ -315,7 +310,7 @@ const markdownComponents = {
     const isInternalLink = props.href && props.href.startsWith('#');
     return (
       <a 
-        className="text-zinc-100 hover:text-zinc-300 duration-300 border-b border-dashed border-neutral-400"
+        className="text-zinc-100 hover:text-zinc-300 border-b border-dotted border-neutral-400 duration-300"
         target={isInternalLink ? undefined : "_blank"}
         rel={isInternalLink ? undefined : "noopener noreferrer"}
         {...props}
@@ -354,7 +349,7 @@ const markdownComponents = {
     );
   },
   thead({ node, children, ...props }) {
-    return <thead className="bg-neutral-800 bg-opacity-70 text-zinc-300" {...props}>{children}</thead>;
+    return <thead className="bg-neutral-800 bg-opacity-70 text-soft" {...props}>{children}</thead>;
   },
   tbody({ node, children, ...props }) {
     return <tbody {...props}>{children}</tbody>;

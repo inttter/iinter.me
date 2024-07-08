@@ -11,7 +11,7 @@ import { CircleX } from 'lucide-react';
 import consola from 'consola';
 import Image from 'next/image';
 
-const IndexPage = () => {
+const Anime = () => {
   const [watchlist, setWatchlist] = useState({
     watching: [],
     completed: [],
@@ -197,9 +197,9 @@ const IndexPage = () => {
         >
           <div className="flex justify-end items-center text-sm text-neutral-600 animate-blurred-fade-in duration-500">
             {profilePicture && (
-              <Link href={`https://anilist.co/user/${username}`} target="_blank" rel="noopener noreferrer" className="group hover:bg-neutral-800 hover:text-zinc-100 p-2 rounded-md duration-300 flex items-center">
-                <Image src={profilePicture} alt="AniList Profile Picture" width={30} height={30} className="rounded-md mr-2.5 -rotate-6 group-hover:-rotate-2 group-hover:scale-110 group-active:scale-105 duration-300" />
-                View {username}'s full AniList <SiAnilist className="m-1 group-hover:text-sky-400 duration-100" /> profile
+              <Link href={`https://anilist.co/user/${username}`} target="_blank" rel="noopener noreferrer" className="group hover:bg-neutral-800 hover:text-zinc-100 border border-transparent hover:border-soft-gray p-2 rounded-md duration-300 flex items-center">
+                <Image src={profilePicture} alt="AniList Profile Picture" width={30} height={30} className="border-2 border-soft-gray rounded-full mr-2.5 scale-110 group-active:scale-105 duration-300" />
+                View {username}'s full AniList <SiAnilist className="m-1" /> profile
               </Link>
             )}
           </div>
@@ -212,7 +212,7 @@ const IndexPage = () => {
 const WatchlistCategory = ({ title, list, favourites }) => {
   return (
     <div>
-      <div className="text-2xl mx-3 mb-3 font-semibold tracking-tighter text-zinc-100">{title}</div>
+      <div className="text-2xl mx-3 mb-3 font-semibold tracking-tighter text-soft">{title}</div>
       {list.map(item => (
         <Link key={item.id} href={`https://anilist.co/anime/${item.id}`} target="_blank" rel="noopener noreferrer" className="group">
           <div className="relative flex items-center hover:bg-neutral-950 border border-transparent hover:border-neutral-700 transform group-hover:scale-[1.03] p-3 rounded-xl transition duration-300">
@@ -228,7 +228,7 @@ const WatchlistCategory = ({ title, list, favourites }) => {
                 />
               </div>
             )}
-            <div className="px-3 flex-grow flex-shrink-0 md:max-w-[500px] max-w-[200px] truncate text-zinc-100 md:text-lg text-md antialiased">
+            <div className="px-3 flex-grow flex-shrink-0 md:max-w-[500px] max-w-[200px] truncate text-stone-300 md:text-lg text-md antialiased">
               {item.title}
               {item.notes && (
                 <div className="text-xs text-neutral-400 italic mt-1 overflow-hidden overflow-ellipsis">
@@ -236,17 +236,17 @@ const WatchlistCategory = ({ title, list, favourites }) => {
                 </div>
               )}
               {title === "Watching" ? (
-                <span className="absolute sm:right-2 bg-[#242424] group-hover:bg-[#292929] text-neutral-300 px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-top bottom-2 right-2 duration-300" data-tip="Episodes Watched" data-theme="lofi">
+                <span className="absolute sm:right-2 bg-neutral-800 bg-opacity-80 group-hover:bg-[#292929] text-soft px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-left bottom-2 right-2 duration-300" data-tip="Episodes Watched" data-theme="black">
                   {item.progress}/{item.episodes} episodes
                 </span>
               ) : item.score && item.score > 0 ? (
-                <span className="absolute sm:right-3 bg-[#242424] group-hover:bg-[#292929] text-neutral-300 px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-top bottom-3 right-3 duration-300" data-tip="Rating" data-theme="lofi">
+                <span className="absolute sm:right-3 bg-neutral-800 bg-opacity-80 group-hover:bg-[#292929] text-soft px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-left bottom-3 right-3 duration-300" data-tip="Rating" data-theme="black">
                   {item.score}/10
                 </span>
               ) : null}
               {favourites.some(fav => fav.id === item.id) && (
-                <span className="absolute right-15 bottom-2 flex items-center px-2 py-1 bg-[#242424] group-hover:bg-[#292929] duration-300 rounded-md font-medium tooltip tooltip-top" data-tip="Favorite Number" data-theme="lofi">
-                  <div className={`text-xs flex items-center ${favourites.findIndex(fav => fav.id === item.id) === 0 ? 'text-yellow-400' : 'text-neutral-300'}`}>
+                <span className="absolute right-15 bottom-2 flex items-center px-2 py-1 bg-neutral-800 bg-opacity-80 group-hover:bg-[#292929] duration-300 rounded-md font-medium tooltip tooltip-right" data-tip="Favorite Number" data-theme="black">
+                  <div className={`text-xs flex items-center ${favourites.findIndex(fav => fav.id === item.id) === 0 ? 'text-yellow-400' : 'text-soft'}`}>
                     <FaStar size={13} className="md:mb-0 mb-0.5 mr-1 text-yellow-400" /> #{favourites.findIndex(fav => fav.id === item.id) + 1}
                   </div>
                 </span>
@@ -262,4 +262,4 @@ const WatchlistCategory = ({ title, list, favourites }) => {
   );
 };
 
-export default IndexPage;
+export default Anime;
