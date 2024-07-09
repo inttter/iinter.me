@@ -6,7 +6,7 @@ author: "Inter"
 description: A game released in 2016 by Playground Games. Here is my personal experience with it!
 ---
 
-In Christmas of 2016, I recieved an Xbox One S. It was the first time I was able to properly play games after being stuck on a PS3 for a long time. My PS3 was the console I was stuck on for quite a few years, even after the (now) last-gen consoles each came out in 2014. I got a few games along with my Xbox aswell. For example, some prominent ones I got were [Rocket League](https://rocketleague.com) and [Minecraft Xbox One Edition](https://minecraft.fandom.com/wiki/Xbox_One_Edition). As a part of these games, I got [Forza Horizon 3](https://en.wikipedia.org/wiki/Forza_Horizon_3) as well, a prominent racing game from the Forza franchise back in 2016, which was the same year in which the game released.
+In Christmas of 2016, I received an Xbox One S. It was the first time I was able to properly play games after being stuck on a PS3 for a long time. My PS3 was the console I was stuck on for quite a few years, even after the (now) last-gen consoles each came out in 2014. I got a few games along with my Xbox as well. For example, some prominent ones I got were [Rocket League](https://www.rocketleague.com/en) and [Minecraft Xbox One Edition](https://minecraft.fandom.com/wiki/Xbox_One_Edition). As a part of these games, I got [Forza Horizon 3](https://en.wikipedia.org/wiki/Forza_Horizon_3) as well, a prominent racing game from the Forza franchise back in 2016, which was the same year in which the game released.
 
 <img src="/images/forza-horizon-3/xbox-one-s.png" alt="The Xbox One S in question positioned in my living room. At the time of making this post, it hasn't been played with for about a year.">
 
@@ -20,9 +20,9 @@ I got curious a few months back, and searched for the first game which I install
 
 ## Progressing Through
 
-I spent most time on this game [freeroaming](https://en.wiktionary.org/wiki/free_roam) around the map, trying to get every collectable ([there's a lot](https://www.ign.com/maps/forza-horizon-3/australia)), driving over every road that was still marked gray, (meaning they were unfound and [there was also 488 of them](https://www.trueachievements.com/a223064/i-know-these-roads-achievement)) and more.
+I spent most time on this game [freeroaming](https://en.wiktionary.org/wiki/free_roam) around the map, trying to get every collectable ([there's a lot](https://www.ign.com/maps/forza-horizon-3/australia)), driving over every road that was still marked gray, (meaning they were not found and [there was also 488 of them](https://www.trueachievements.com/a223064/i-know-these-roads-achievement)) and more.
 
-Thanks to me not having [Xbox Live Gold](https://www.xbox.com/en-GB/live/gold) for a total of 2 years, I didn't have the chance play online for the duration of the game's maintainablility by the developers, which lasted until 2020. I did come back a few years later, after which I got the chance to play multiplayer, but I mostly spent my time on this game playing singleplayer.
+Thanks to me not having [Xbox Live Gold](https://www.xbox.com/en-GB/live/gold) for a total of 2 years, I didn't have the chance play online for the duration of the game's maintainability by the developers, which lasted until 2020. I did come back a few years later, after which I got the chance to play multiplayer, but I mostly spent my time on this game playing single player.
 
 I also progressed through the game normally, by buying new cars with the Credits I accumalated, carefully upgrading and tuning them, driving them around the map, freeroaming with them, completing [FORZATHON](https://forza.fandom.com/wiki/Forza_Horizon_3/Forzathon) events, and taking photos of these cars which I built myself. I'd love to show the screenshots that I took back then here, but they [removed the functionality to save them](https://steamcommunity.com/app/1551360/discussions/0/3416557114763087581/) along with the game's delisting. Instead, here's some photo's from Forza Horizon 4 and Forza Horizon 5.
 

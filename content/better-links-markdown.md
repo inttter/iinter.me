@@ -26,7 +26,7 @@ If you want more information, you can read the documentation [here][Docs].
 [Docs]: https://docs.mdbcli.xyz
 ```
 
-According to [John Grube](https://daringfireball.net/projects/markdown/syntax#link), creator of Markdown, the point of this is that your document source becomes **'vastly more readable'**.
+According to [John Gruber](https://daringfireball.net/projects/markdown/syntax#link), creator of Markdown, the point of this is that your document source becomes **'vastly more readable'**.
 
 One common use case for them is when you need to refer to the same link in your markup multiple times in the same file. For example, here's a comparison with the same link multiple times in a Markdown snippet below.
 
@@ -53,7 +53,7 @@ You can visit GitHub [here][github].
 [git]: https://git-scm.com
 ```
 
-This is, most of the time, a good way to incoorporate link definitions into your markup. However, you may notice that the same words are next to each other in these link definitions, such as <kbd>\[GitHub\]\[github\]</kbd>. This could be confusing to some.
+This is, most of the time, a good way to incorporate link definitions into your markup. However, you may notice that the same words are next to each other in these link definitions, such as <kbd>\[GitHub\]\[github\]</kbd>. This could be confusing to some.
 
 Instead, a better method you can use if you name the link definition the same as the word you make a hyperlink is to use an empty pair of second square brackets instead of using the word defined in the link definition. Here is one part of that example below using this method of link definitions:
 
@@ -65,7 +65,7 @@ Instead, a better method you can use if you name the link definition the same as
 [git]: https://git-scm.com
 ```
 
-It now looks **much cleaner** in code, and is also **easier to maintain**, since you don't need to manually go through and edit each hyperlink which uses that link. Capitalisation also **does not matter** when using link definitions. You can just define it in one place with any capitalisation and update the link in the link definition only. This particular approach also becomes quite useful when dealing with **lengthy URLs** or when you have **dead links** in your markup that are used multiple times throughout multiple places.
+It now looks **much cleaner** in code, and is also **easier to maintain**, since you don't need to manually go through and edit each hyperlink which uses that link. Capitalization also **does not matter** when using link definitions. You can just define it in one place with any capitalization and update the link in the link definition only. This particular approach also becomes quite useful when dealing with **lengthy URLs** or when you have **dead links** in your markup that are used multiple times throughout multiple places.
 
 <div style="padding: 0.8rem 1rem; background-color: #262626; border-radius: 0.375rem; font-size: 0.96rem; display: flex; align-items: center; color: #d4d4d8; margin-top: 20px; margin-bottom: 20px;">
     <strong style="margin-right: 0.8rem;">🧠</strong>

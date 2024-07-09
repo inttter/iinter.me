@@ -37,7 +37,7 @@ The workshop has let games continue off of their communities by letting them mak
 
 Obviously, there are more launchers in the market than just Steam, but they are very lackluster and mediocre at best, as they lack most things which Steam has.
 
-Let's take an example like the [Epic Games Launcher](https://epicgames.com). When it comes to mind, all I know it for is to launch Fortnite. It took them [**three years**](https://store.epicgames.com/en-US/news/introducing-the-epic-games-store-shopping-cart) to add a **shopping cart**. Not to mention, the launcher itself is very lackluster and soulless, that's including all of the games on it. The only redeeming factor of the Epic launcher is that there is a free game every week that you can claim, although most aren't that good in my opinion.
+Let's take an example like the [Epic Games Launcher](https://store.epicgames.com/en-US/). When it comes to mind, all I know it for is to launch Fortnite. It took them [**three years**](https://store.epicgames.com/en-US/news/introducing-the-epic-games-store-shopping-cart) to add a **shopping cart**. Not to mention, the launcher itself is very lackluster and soulless, that's including all of the games on it. The only redeeming factor of the Epic launcher is that there is a free game every week that you can claim, although most aren't that good in my opinion.
 
 Some other launchers like the EA App sometimes decide to not want to work. In my experience, whenever I play an EA game like Need For Speed, either the game will have issues (ie. controller not working) or the launcher will, for some reason, just uninstall itself. I have to manually reinstall it and repair it by redownloading it from the EA website and selecting the **'Repair'** option.
 

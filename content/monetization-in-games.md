@@ -55,7 +55,7 @@ Examples of gacha games which have a *"gacha system"* include [Genshin Impact](h
 
 This makes people spend large amounts of money chasing for rare cosmetics, which makes the company millions or sometimes **billions** in revenue. This could lead to addiction if it gets bad enough.
 
-Not everything is bad, though. Positives include the fact that communities can form for these types of games. Community interaction motivates devs to build updates, which prevents the game from running dry.
+Not everything is bad, though. Positives include the fact that communities can form for these types of games. Community interaction motivates developers to build updates, which prevents the game from running dry.
 
 ## Virtual Currency
 
