@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaSpotify } from 'react-icons/fa6';
 import Link from 'next/link';
+import { FaSpotify } from 'react-icons/fa';
 import Image from 'next/image';
 import consola from 'consola';
 
@@ -62,7 +62,7 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
       initial={{ opacity: 0, y: 5 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.4 }}
-      className={`relative ${showAlbumArt && spotifyAlbumArt ? 'md:w-11/12 w-full bg-[#141414] md:bg-[#181818] border-2 border-neutral-800 rounded-xl p-2' : ''}`}
+      className={`relative ${showAlbumArt && spotifyAlbumArt ? 'md:w-11/12 w-full rounded-xl px-1' : ''}`}
     >
       {showUsername && (
         <span className="font-semibold text-stone-300 tracking-tight animate-blurred-fade-in duration-1000">
@@ -75,37 +75,38 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
         </span>
       )}
       {showAlbumArt && spotifyAlbumArt && (
+        <div className="group">
+          <Link href={`https://open.spotify.com/track/${spotifyTrackId}`} target="_blank" rel="noopener noreferrer">
         <motion.div 
-          className="flex items-center text-zinc-300"
+          className="flex items-center hover:bg-neutral-900 border border-transparent hover:border-neutral-700 transform px-2 py-2 -mt-2 rounded-xl transition duration-300 -mx-2.5 md:-mx-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <Image src={spotifyAlbumArt} className="rounded-md animate-blurred-fade-in duration-750" width={50} height={50} alt="Album Art" style={{ marginRight: '8px' }} />
-          <div className="w-[200px] md:w-[460px]">
+          <Image src={spotifyAlbumArt} className="rounded-md animate-blurred-fade-in duration-750" width={70} height={70} alt="Album Art" style={{ marginRight: '8px' }} />
+          <div className="w-[240px] md:w-[460px]">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
               className="truncate"
             >
-              <Link href={`https://open.spotify.com/track/${spotifyTrackId}`} target="_blank" rel="noopener noreferrer" className="text-zinc-100 hover:text-soft hover:text-opacity-90 animate-blurred-fade-in duration-300 border-b-2 border-neutral-600 border-dotted mx-1 truncate">
+              <div className="text-lg text-stone-300 tracking-tight animate-blurred-fade-in duration-300 mx-1 truncate">
                 {spotifySong}
-              </Link>
+              </div>
             </motion.div>
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 1.2 }}
-              className="text-xs tracking-normal text-neutral-500 text-opacity-70 justify-start truncate px-1 mr-1"
+              className="text-sm tracking-normal text-stone-500 justify-start truncate px-1 mr-1 flex items-center"
             >
-              {spotifyArtist}
+              by <span className="font-semibold ml-1">{spotifyArtist}</span> <FaSpotify className="ml-1" />
             </motion.p>
           </div>
-          <div className="mr-2 ml-3 flex justify-end items-center">
-            <FaSpotify size={30} className="text-neutral-600 opacity-50" />
-          </div>
         </motion.div>
+        </Link>
+        </div>
       )}
       {!showAlbumArt && (
         <div className="flex items-center">
