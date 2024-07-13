@@ -9,17 +9,20 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
   const [status, setStatus] = useState('✈️ Finding status...');
   const [emoji, setEmoji] = useState(null);
   const [spotifySong, setSpotifySong] = useState(null);
-  const [spotifyArtist, setSpotifyArtist] = useState(null)
+  const [spotifyArtist, setSpotifyArtist] = useState(null);
   const [spotifyAlbumArt, setSpotifyAlbumArt] = useState('');
   const [spotifyTrackId, setSpotifyTrackId] = useState('');
   const [spotifyStart, setSpotifyStart] = useState(0);
   const [spotifyEnd, setSpotifyEnd] = useState(0);
   const [currentTime, setCurrentTime] = useState(Date.now());
   const [isSongPlaying, setIsSongPlaying] = useState(false);
+  const [profilePicture, setProfilePicture] = useState(null);
+
+  const USER_ID = '514106760299151372';
 
   useEffect(() => {
     const fetchData = () => {
-      fetch('https://api.lanyard.rest/v1/users/514106760299151372')
+      fetch(`https://api.lanyard.rest/v1/users/${USER_ID}`)
         .then(response => response.json())
         .then(data => {
           const discordStatus = data.data.discord_status;
@@ -27,19 +30,19 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
   
           if (discordStatus === 'online') {
             statusDot = (
-              <span className="h-4 w-4 rounded-full bg-green-500 inline-block md:mt-0 mt-5 mx-2 tooltip tooltip-right" data-tip="Online" data-theme="black"></span>
+              <span className="h-4 w-4 rounded-full bg-green-500 inline-block md:mt-0 mt-5 mx-2 tooltip tooltip-top" data-tip="Online" data-theme="black"></span>
             );
           } else if (discordStatus === 'idle') {
             statusDot = (
-              <span className="h-4 w-4 rounded-full bg-amber-400 inline-block md:mt-0 mt-5 mx-2 tooltip tooltip-right" data-tip="Idle" data-theme="black"></span>
+              <span className="h-4 w-4 rounded-full bg-amber-400 inline-block md:mt-0 mt-5 mx-2 tooltip tooltip-top" data-tip="Idle" data-theme="black"></span>
             );
           } else if (discordStatus === 'dnd') {
             statusDot = (
-              <span className="h-4 w-4 rounded-full bg-red-500 inline-block md:mt-0 mt-5 mx-2 tooltip tooltip-right" data-tip="Do Not Disturb" data-theme="black"></span>
+              <span className="h-4 w-4 rounded-full bg-red-500 inline-block md:mt-0 mt-5 mx-2 tooltip tooltip-top" data-tip="Do Not Disturb" data-theme="black"></span>
             );
           } else if (discordStatus === 'offline') {
             statusDot = (
-              <span className="h-4 w-4 rounded-full bg-gray-500 inline-block md:mt-0 mt-5 mx-2 tooltip tooltip-right" data-tip="Offline" data-theme="black"></span>
+              <span className="h-4 w-4 rounded-full bg-gray-500 inline-block md:mt-0 mt-5 mx-2 tooltip tooltip-top" data-tip="Offline" data-theme="black"></span>
             );
           }
   
@@ -71,6 +74,14 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
             setSpotifyStart(0);
             setSpotifyEnd(0);
             setIsSongPlaying(false);
+          }
+
+          if (data.data.discord_user.avatar && data.data.discord_user.avatar.startsWith('a_')) {
+            // for animated avatars, use 'gif'
+            setProfilePicture(`https://api.lanyard.rest/${USER_ID}.gif`);
+          } else {
+            // for static avatars, use 'png'
+            setProfilePicture(`https://api.lanyard.rest/${USER_ID}.png`);
           }
         })
         .catch(error => {
@@ -124,16 +135,31 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
       transition={{ duration: 0.5, delay: 0.4 }}
       className={`relative ${showAlbumArt && spotifyAlbumArt ? 'md:w-11/12 w-full rounded-xl px-1' : ''}`}
     >
-      {showUsername && (
-        <span className="font-semibold text-stone-300 tracking-tight animate-blurred-fade-in duration-1000">
-          Inter
-        </span>
-      )}
-      {emoji && showEmoji && (
-        <span className="animate-blurred-fade-in duration-1000" style={{ fontSize: '0.3em', verticalAlign: 'middle' }}>
-          {emoji}
-        </span>
-      )}
+      <div className="flex items-center">
+        {showUsername && (
+          <div className="flex items-center">
+            {profilePicture && !showAlbumArt && (
+              <Image
+                src={profilePicture}
+                alt="Profile Picture"
+                width={64}
+                height={64}
+                className="rounded-lg border-2 border-neutral-600 mr-2"
+              />
+            )}
+            <span className="font-semibold text-stone-300 tracking-tight animate-blurred-fade-in duration-1000">
+              Inter
+            </span>
+          </div>
+        )}
+        {emoji && showEmoji && (
+          <div className="absolute -bottom-3.5 right-24 mb-1 mr-1">
+            <span className="animate-blurred-fade-in duration-1000" style={{ fontSize: '0.3em', verticalAlign: 'middle' }}>
+              {emoji}
+            </span>
+          </div>
+        )}
+      </div>
       {showAlbumArt && spotifyAlbumArt && spotifySong && spotifyArtist && (
         <div className="group">
           <Link href={`https://open.spotify.com/track/${spotifyTrackId}`} target="_blank" rel="noopener noreferrer">
@@ -184,7 +210,7 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
       {!showAlbumArt && (
         <div className="flex items-center">
           <motion.p
-            className="text-sm tracking-normal text-neutral-600 justify-start overflow-ellipsis animate-blurred-fade-in duration-1000 truncate"
+            className="text-sm tracking-normal text-neutral-600 justify-start overflow-ellipsis animate-blurred-fade-in duration-1000 truncate mt-1.5"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.8 }}

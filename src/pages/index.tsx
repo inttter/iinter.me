@@ -28,7 +28,7 @@ export default function Home() {
           <SocialLink href="https://www.last.fm/user/intter" social="Last.fm" tooltipText="@intter" />
         </motion.div>
         <Navbar />
-        <Lanyard showUsername={false} showEmoji={false} showAlbumArt={true}  />
+        <Lanyard showUsername={false} showEmoji={false} showAlbumArt={true} />
       </div>
     </div>
   );
