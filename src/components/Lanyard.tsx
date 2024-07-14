@@ -27,32 +27,32 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
         .then(data => {
           const discordStatus = data.data.discord_status;
           let statusDot = null;
-  
+          
           if (discordStatus === 'online') {
             statusDot = (
-              <span className="h-4 w-4 rounded-full bg-green-500 inline-block md:mt-0 mt-5 mx-2 tooltip tooltip-top" data-tip="Online" data-theme="black"></span>
+              <span className="h-4 w-4 rounded-full bg-green-500 absolute bottom-0 right-0 mb-1 mr-1 tooltip tooltip-top" data-tip="Online" data-theme="black"></span>
             );
           } else if (discordStatus === 'idle') {
             statusDot = (
-              <span className="h-4 w-4 rounded-full bg-amber-400 inline-block md:mt-0 mt-5 mx-2 tooltip tooltip-top" data-tip="Idle" data-theme="black"></span>
+              <span className="h-4 w-4 rounded-full bg-amber-400 absolute bottom-0 right-0 mb-1 mr-1 tooltip tooltip-top" data-tip="Idle" data-theme="black"></span>
             );
           } else if (discordStatus === 'dnd') {
             statusDot = (
-              <span className="h-4 w-4 rounded-full bg-red-500 inline-block md:mt-0 mt-5 mx-2 tooltip tooltip-top" data-tip="Do Not Disturb" data-theme="black"></span>
+              <span className="h-4 w-4 rounded-full bg-red-500 absolute bottom-0 right-0 mb-1 mr-1 tooltip tooltip-top" data-tip="Do Not Disturb" data-theme="black"></span>
             );
           } else if (discordStatus === 'offline') {
             statusDot = (
-              <span className="h-4 w-4 rounded-full bg-gray-500 inline-block md:mt-0 mt-5 mx-2 tooltip tooltip-top" data-tip="Offline" data-theme="black"></span>
+              <span className="h-4 w-4 rounded-full bg-gray-500 absolute bottom-0 right-0 mb-1 mr-1 tooltip tooltip-top" data-tip="Offline" data-theme="black"></span>
             );
           }
-  
+
           setEmoji(showEmoji ? statusDot : null);
-  
+
           const gameActivity = data.data.activities.find(activity => activity.type === 0);
           const gameName = gameActivity ? gameActivity.name : '';
-  
+
           setStatus(gameName ? `Playing ${gameName}` : '');
-  
+
           if (data.data.spotify) {
             setSpotifySong(data.data.spotify.song);
             setSpotifyArtist(data.data.spotify.artist);
@@ -89,11 +89,11 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
           setStatus('🤷‍♂️ Unknown Status');
         });
     };
-  
+
     fetchData();
 
     const interval = setInterval(fetchData, 5000);
-  
+
     return () => {
       clearInterval(interval);
       setIsSongPlaying(false);
@@ -104,9 +104,9 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
     const updateCurrentTime = () => {
       setCurrentTime(Date.now());
     };
-  
+
     const interval = setInterval(updateCurrentTime, 1000);
-  
+
     return () => clearInterval(interval);
   }, []);
 
@@ -137,25 +137,25 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
     >
       <div className="flex items-center">
         {showUsername && (
-          <div className="flex items-center">
+          <div className="flex items-center relative">
             {profilePicture && !showAlbumArt && (
-              <Image
-                src={profilePicture}
-                alt="Profile Picture"
-                width={64}
-                height={64}
-                className="rounded-lg border-2 border-neutral-600 mr-2"
-              />
+              <div className="relative">
+                <Image
+                  src={profilePicture}
+                  alt="Profile Picture"
+                  width={64}
+                  height={64}
+                  className="rounded-lg border-2 border-neutral-600 mr-2"
+                />
+                {emoji && showEmoji && (
+                  <div className="absolute -bottom-1.5 right-0">
+                    {emoji}
+                  </div>
+                )}
+              </div>
             )}
             <span className="font-semibold text-stone-300 tracking-tight animate-blurred-fade-in duration-1000">
               Inter
-            </span>
-          </div>
-        )}
-        {emoji && showEmoji && (
-          <div className="absolute -bottom-3.5 right-24 mb-1 mr-1">
-            <span className="animate-blurred-fade-in duration-1000" style={{ fontSize: '0.3em', verticalAlign: 'middle' }}>
-              {emoji}
             </span>
           </div>
         )}
@@ -210,7 +210,7 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
       {!showAlbumArt && (
         <div className="flex items-center">
           <motion.p
-            className="text-sm tracking-normal text-neutral-600 justify-start overflow-ellipsis animate-blurred-fade-in duration-1000 truncate mt-1.5"
+            className="text-base tracking-normal text-neutral-600 justify-start overflow-ellipsis animate-blurred-fade-in duration-1000 truncate mt-2 -mb-2"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.8 }}
