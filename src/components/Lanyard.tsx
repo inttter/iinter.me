@@ -137,7 +137,7 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
     >
       <div className="flex items-center">
         {showUsername && (
-          <div className="flex items-center relative">
+          <div className="flex items-start space-x-2">
             {profilePicture && !showAlbumArt && (
               <div className="relative">
                 <Image
@@ -145,36 +145,50 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
                   alt="Profile Picture"
                   width={64}
                   height={64}
-                  className="rounded-lg border-2 border-neutral-600 mr-2"
+                  className="rounded-full border-2 border-neutral-600"
                 />
                 {emoji && showEmoji && (
-                  <div className="absolute -bottom-1.5 right-0">
+                  <div className="absolute -bottom-0.5 -right-1">
                     {emoji}
                   </div>
                 )}
               </div>
             )}
-            <span className="font-semibold text-stone-300 tracking-tight animate-blurred-fade-in duration-1000">
-              Inter
-            </span>
+            <div className="flex flex-col">
+              <span className="font-semibold text-stone-300 tracking-tight animate-blurred-fade-in duration-1000 ml-0.5">
+                Inter
+              </span>
+              {!showAlbumArt && (
+                <motion.p
+                  className="text-base tracking-normal text-stone-500 overflow-ellipsis animate-blurred-fade-in duration-1000 truncate ml-0.5 -mt-0.5"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  {status}
+                </motion.p>
+              )}
+            </div>
           </div>
         )}
       </div>
       {showAlbumArt && spotifyAlbumArt && spotifySong && spotifyArtist && (
         <div className="group">
           <Link href={`https://open.spotify.com/track/${spotifyTrackId}`} target="_blank" rel="noopener noreferrer">
-            <motion.div
-              className="flex items-center hover:bg-neutral-900 border border-transparent hover:border-neutral-700 transform px-2 py-2 -mt-2 rounded-xl transition duration-300 -mx-2.5 md:-mx-2"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <Image src={spotifyAlbumArt} className="rounded-md animate-blurred-fade-in duration-750" width={70} height={70} alt="Album Art" style={{ marginRight: '8px' }} />
+            <div className="flex items-center hover:bg-neutral-900 border border-transparent hover:border-neutral-700 transform px-2 py-2 -mt-2 rounded-xl transition duration-300 ease-in-out -mx-2.5 md:-mx-2">
+              <Image 
+                src={spotifyAlbumArt}
+                alt="Album Cover"
+                width={70}
+                height={70}
+                style={{ marginRight: '8px' }}
+                className="rounded-md animate-blurred-fade-in duration-1000"
+              />
               <div className="w-[240px] md:w-[460px]">
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 0.8 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
                   className="truncate"
                 >
                   <div className="text-lg text-stone-300 tracking-tight animate-blurred-fade-in duration-300 mx-1 truncate">
@@ -184,39 +198,31 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
                 <motion.p
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 1.2 }}
+                  transition={{ duration: 0.5, delay: 0.8 }}
                   className="text-sm tracking-normal text-stone-500 justify-start truncate px-1 mr-1 flex items-center"
                 >
                   by <span className="font-semibold ml-1">{spotifyArtist}</span> <FaSpotify className="ml-1" />
                 </motion.p>
                 {/* progress bar hidden on mobile because current timestamp always becomes end timestamp?? */}
-                <div className="hidden items-center justify-between mt-1 ml-1 md:flex">
-                  <span className="text-sm text-stone-500">{formatTimestamp(elapsed)}</span>
+                <div className="hidden md:flex items-center justify-between mt-1 ml-1">
+                  <span className="text-sm text-stone-500">
+                    {formatTimestamp(elapsed)}
+                  </span>
                   <div className="relative w-full mx-2 h-2 bg-neutral-800 rounded-full">
                     <motion.div
                       initial={{ width: 0 }}
                       animate={{ width: `${calculateProgress()}%` }}
                       transition={{ duration: 0.5, ease: 'linear' }}
-                      className="absolute h-full bg-stone-500 rounded-full"
+                      className="absolute h-full bg-stone-600 rounded-full"
                     />
                   </div>
-                  <span className="text-sm text-stone-500">{formatTimestamp(spotifyEnd - spotifyStart)}</span>
+                  <span className="text-sm text-stone-500">
+                    {formatTimestamp(spotifyEnd - spotifyStart)}
+                  </span>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </Link>
-        </div>
-      )}
-      {!showAlbumArt && (
-        <div className="flex items-center">
-          <motion.p
-            className="text-base tracking-normal text-neutral-600 justify-start overflow-ellipsis animate-blurred-fade-in duration-1000 truncate mt-2 -mb-2"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
-          >
-            {status}
-          </motion.p>
         </div>
       )}
     </motion.div>

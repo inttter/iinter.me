@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { FaGithub, FaTwitter, FaSteam, FaDiscord, FaLastfm } from 'react-icons/fa';
 import { SiAnilist, SiOsu } from "react-icons/si";
+import { motion } from 'framer-motion';
 
 export default function SocialLink({ href, tooltipText, social }) {
   const getIcon = () => {
@@ -26,12 +27,20 @@ export default function SocialLink({ href, tooltipText, social }) {
   };
 
   return (
-    <div className="tooltip tooltip-bottom rounded-xl relative group bg-transparent" data-tip={tooltipText} data-theme="black">
-      <Link href={href} target="_blank" rel="noopener noreferrer" alt={social}>
+    <motion.div
+      initial={{ opacity: 0, y: 5 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.4 }}
+      style={{ opacity: 0 }}
+      className="tooltip tooltip-bottom rounded-xl group bg-transparent relative"
+      data-tip={tooltipText}
+      data-theme="black"
+    >
+      <Link href={href} target="_blank" rel="noopener noreferrer" aria-label={social}>
         <div className="flex items-center text-4xl text-stone-500 mb-2 hover:scale-105 active:scale-110 hover:rotate-2 active:rotate-6 duration-150">
           {getIcon()}
         </div>
       </Link>
-    </div>
+    </motion.div>
   );
 }
