@@ -7,8 +7,9 @@ import BackToTop from '../../components/BackToTop';
 import { request } from 'graphql-request';
 import { SiAnilist } from "react-icons/si";
 import { FaStar } from "react-icons/fa";
-import { CircleX } from 'lucide-react';
+import { X } from 'lucide-react';
 import consola from 'consola';
+import { toast } from 'sonner';
 import Image from 'next/image';
 
 const Anime = () => {
@@ -111,7 +112,8 @@ const Anime = () => {
         }
       } catch (error) {
         consola.error('An error occurred:', error);
-        setErrorMessage('Error fetching list. Check the console for more details, or wait a few minutes and try again.');
+        setErrorMessage('Cannot fetch list.')
+        toast.error('Error fetching list. Check the console for more details, or wait a few minutes and try again.')
       }
     };
   
@@ -140,41 +142,39 @@ const Anime = () => {
   return (
     <div className="bg-main min-h-screen flex flex-col justify-center items-center antialiased p-4 md:p-8">
       <div className="max-w-2xl w-full px-4 py-24 space-y-6 flex-col">
-        <div className="flex flex-col space-y-4">
-          <Head>
-            <title>Anime List | Inter</title>
-          </Head>
-          {watchlist.watching.length > 0 && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              className="animate-blurred-fade-in duration-1000"
-            >
-              <WatchlistCategory title="Watching" list={watchlist.watching} favourites={favourites} />
-            </motion.div>
-          )}
-          {watchlist.completed.length > 0 && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              className="animate-blurred-fade-in duration-1000"
-            >
-              <WatchlistCategory title="Completed" list={watchlist.completed} favourites={favourites} />
-            </motion.div>
-          )}
-          {watchlist.planned.length > 0 && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              className="animate-blurred-fade-in duration-1000"
-            >
-              <WatchlistCategory title="Plan To Watch" list={watchlist.planned} favourites={favourites} />
-            </motion.div>
-          )}
-        </div>
+        <Head>
+          <title>Anime List | Inter</title>
+        </Head>
+        {watchlist.watching.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, ease: 'easeInOut' }}
+            className="animate-blurred-fade-in duration-1000"
+          >
+            <WatchlistCategory title="Watching" list={watchlist.watching} favourites={favourites} />
+          </motion.div>
+        )}
+        {watchlist.completed.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, ease: 'easeInOut' }}
+            className="animate-blurred-fade-in duration-1000"
+          >
+            <WatchlistCategory title="Completed" list={watchlist.completed} favourites={favourites} />
+          </motion.div>
+        )}
+        {watchlist.planned.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, ease: 'easeInOut' }}
+            className="animate-blurred-fade-in duration-1000"
+          >
+            <WatchlistCategory title="Plan To Watch" list={watchlist.planned} favourites={favourites} />
+          </motion.div>
+        )}
         <Navbar />
         <div className="mt-auto">
           <BackToTop />
@@ -185,8 +185,8 @@ const Anime = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="flex justify-center items-center bg-red-500 bg-opacity-40 text-zinc-200 px-4 py-2 rounded-md">
-              <CircleX size={60} className="mr-3" /> {errorMessage}
+            <div className="flex justify-center items-center bg-neutral-800 bg-opacity-40 text-zinc-200 px-4 py-2 rounded-md">
+              <X size={20} className="mr-3" /> No list found.
             </div>
           </motion.div>
         )}
@@ -197,8 +197,18 @@ const Anime = () => {
         >
           <div className="flex justify-end items-center text-sm text-neutral-600 animate-blurred-fade-in duration-500">
             {profilePicture && (
-              <Link href={`https://anilist.co/user/${username}`} target="_blank" rel="noopener noreferrer" className="group hover:bg-neutral-800 hover:text-zinc-100 border border-transparent hover:border-soft-gray p-2 rounded-md duration-300 flex items-center">
-                <Image src={profilePicture} alt="AniList Profile Picture" width={30} height={30} className="border-2 border-soft-gray rounded-full mr-2.5 scale-110 group-active:scale-105 duration-300" />
+              <Link 
+                href={`https://anilist.co/user/${username}`} 
+                target="_blank" rel="noopener noreferrer" 
+                className="group hover:bg-neutral-800 hover:text-zinc-100 border border-transparent hover:border-soft-gray p-2 rounded-md duration-300 flex items-center"
+              >
+                <Image 
+                  src={profilePicture} 
+                  alt="AniList Profile Picture" 
+                  width={30} 
+                  height={30} 
+                  className="border-2 border-soft-gray rounded-full mr-2.5 scale-110 group-active:scale-105 duration-300" 
+                />
                 View {username}'s full AniList <SiAnilist className="m-1" /> profile
               </Link>
             )}
@@ -224,7 +234,7 @@ const WatchlistCategory = ({ title, list, favourites }) => {
                   width={70}
                   height={70}
                   layout="intrinsic"
-                  className="antialiased rounded-lg transition duration-300"
+                  className="antialiased rounded-lg shadow-2xl shadow-neutral-500 border border-neutral-600 transition duration-300"
                 />
               </div>
             )}
