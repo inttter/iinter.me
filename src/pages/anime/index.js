@@ -175,10 +175,10 @@ const Anime = () => {
             <WatchlistCategory title="Plan To Watch" list={watchlist.planned} favourites={favourites} />
           </motion.div>
         )}
-        <Navbar />
         <div className="mt-auto">
           <BackToTop />
         </div>
+        <Navbar />
         {errorMessage && (
           <motion.div 
             initial={{ opacity: 0 }}
@@ -193,7 +193,7 @@ const Anime = () => {
         <motion.div 
           initial={{ opacity: 0 }} 
           animate={{ opacity: 1 }} 
-          transition={{ duration: 0.5, delay: 1.0 }}
+          transition={{ duration: 0.5 }}
         >
           <div className="flex justify-end items-center text-sm text-neutral-600 animate-blurred-fade-in duration-500">
             {profilePicture && (
@@ -233,7 +233,6 @@ const WatchlistCategory = ({ title, list, favourites }) => {
                   alt={item.title}
                   width={70}
                   height={70}
-                  layout="intrinsic"
                   className="antialiased rounded-lg shadow-2xl shadow-neutral-500 border border-neutral-600 transition duration-300"
                 />
               </div>
@@ -257,7 +256,7 @@ const WatchlistCategory = ({ title, list, favourites }) => {
               {favourites.some(fav => fav.id === item.id) && (
                 <span className="absolute right-15 bottom-2 flex items-center px-2 py-1 bg-neutral-800 bg-opacity-80 group-hover:bg-[#292929] duration-300 rounded-md font-medium tooltip tooltip-right" data-tip="Favorite Number" data-theme="black">
                   <div className={`text-xs flex items-center ${favourites.findIndex(fav => fav.id === item.id) === 0 ? 'text-yellow-400' : 'text-soft'}`}>
-                    <FaStar size={13} className="md:mb-0 mb-0.5 mr-1 text-yellow-400" /> #{favourites.findIndex(fav => fav.id === item.id) + 1}
+                    <FaStar size={13} className="mr-1 text-yellow-400" /> #{favourites.findIndex(fav => fav.id === item.id) + 1}
                   </div>
                 </span>
               )}

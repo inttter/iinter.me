@@ -39,7 +39,7 @@ export default function Projects() {
               <motion.div
                 initial={{ opacity: 0 }} 
                 animate={{ opacity: 1 }} 
-                transition={{ duration: 0.5, delay: 0.4 }}
+                transition={{ duration: 0.5 }}
                 className="flex justify-end"
               >
                 <Link href="https://github.com/inttter?tab=repositories" target="_blank" rel="noopener noreferrer" passHref>
@@ -57,14 +57,14 @@ export default function Projects() {
                     key={index} 
                     initial={{ opacity: 0 }} 
                     animate={{ opacity: 1 }} 
-                    transition={{ duration: 0.5, delay: 0.6 }}
+                    transition={{ duration: 0.5 }}
                     className="animate-blurred-fade-in duration-700"
                   >
                     <div className="bg-[#141414] md:bg-[#181818] border-2 border-neutral-800 duration-300 p-3 rounded-md block antialiased">
                       <motion.div 
                         initial={{ opacity: 0 }} 
                         animate={{ opacity: 1 }} 
-                        transition={{ duration: 0.5, delay: 0.8 }}
+                        transition={{ duration: 0.5 }}
                         className="flex justify-between items-center"
                       >
                         <Link href={project.link} target="_blank" rel="noopener noreferrer" className="group" passHref>
@@ -82,7 +82,7 @@ export default function Projects() {
                         <motion.div 
                           initial={{ opacity: 0 }} 
                           animate={{ opacity: 1 }} 
-                          transition={{ duration: 0.5, delay: 1.1 }}
+                          transition={{ duration: 0.5 }}
                           className="flex items-center"
                         >
                           {stars[project.github] !== undefined && (
@@ -100,7 +100,7 @@ export default function Projects() {
                       <motion.p 
                         initial={{ opacity: 0 }} 
                         animate={{ opacity: 1 }} 
-                        transition={{ duration: 0.5, delay: 1.4 }}
+                        transition={{ duration: 0.5 }}
                         className="text-stone-400 text-sm py-2.5 animate-blurred-fade-in duration-700"
                       >
                         {project.description}
@@ -110,7 +110,7 @@ export default function Projects() {
                           className="-mx-1 p-1 rounded-md text-xs flex flex-wrap items-center"
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
-                          transition={{ duration: 0.5, delay: 1.8 }}
+                          transition={{ duration: 0.5 }}
                         >
                           {project.tags.map((tag, tagIndex) => (
                             <span key={tagIndex} className="mr-2">
