@@ -58,6 +58,7 @@ class MyDocument extends Document {
           {/* global tags for all pages */}
           <meta property="og:site_name" content="iinter.me" />
           <meta name="theme-color" content="#161617" />
+          <html lang="en" />
   
           {/* favicons */}
           <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
