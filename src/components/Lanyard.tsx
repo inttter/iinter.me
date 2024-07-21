@@ -135,45 +135,44 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
       transition={{ duration: 0.5, delay: 0.4 }}
       className={`relative ${showAlbumArt && spotifyAlbumArt ? 'md:w-11/12 w-full rounded-xl px-1' : ''}`}
     >
-      <div className="flex items-center">
-        {showUsername && (
-          <div className="flex items-start space-x-2">
-            {profilePicture && !showAlbumArt && (
-              <div className="relative">
-                <Image
-                  src={profilePicture}
-                  alt="Profile Picture"
-                  width={64}
-                  height={64}
-                  className="rounded-full border-2 border-neutral-600"
-                />
-                {emoji && showEmoji && (
-                  <div className="absolute -bottom-0.5 -right-1">
-                    {emoji}
-                  </div>
-                )}
+      <div className="flex items-center space-x-3">
+        {/* Conditional rendering of profile picture and emoji */}
+        {profilePicture && !showAlbumArt && (
+          <div className="relative">
+            <Image
+              src={profilePicture}
+              alt="Profile Picture"
+              width={64}
+              height={64}
+              className="rounded-full border-2 border-neutral-600"
+            />
+            {emoji && showEmoji && (
+              <div className="absolute -bottom-0.5 -right-1">
+                {emoji}
               </div>
             )}
-            <div className="flex flex-col">
-              <span className="font-semibold text-stone-300 tracking-tight animate-blurred-fade-in duration-1000 ml-0.5">
-                Inter
-              </span>
-              {!showAlbumArt && (
-                <motion.p
-                  className="text-base tracking-normal text-stone-500 overflow-ellipsis animate-blurred-fade-in duration-1000 truncate ml-0.5 -mt-0.5"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5 }}
-                >
-                  {status}
-                </motion.p>
-              )}
-            </div>
           </div>
         )}
+        <div className="flex flex-col justify-center">
+          {showUsername && (
+            <span className="font-semibold text-stone-300 tracking-tight animate-blurred-fade-in duration-1000">
+              Inter
+            </span>
+          )}
+          {!showAlbumArt && (
+            <motion.p
+              className="text-base tracking-normal text-stone-500 overflow-ellipsis animate-blurred-fade-in duration-1000 truncate -mt-0.5"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              {status}
+            </motion.p>
+          )}
+        </div>
       </div>
       {showAlbumArt && spotifyAlbumArt && spotifySong && spotifyArtist && (
-        <div className="group">
+        <div className="group mt-4">
           <Link href={`https://open.spotify.com/track/${spotifyTrackId}`} target="_blank" rel="noopener noreferrer">
             <div className="flex items-center hover:bg-neutral-900 border border-transparent hover:border-neutral-700 transform px-2 py-2 -mt-2 rounded-xl transition duration-300 ease-in-out -mx-2.5 md:-mx-2">
               <Image 
