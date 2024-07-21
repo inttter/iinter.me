@@ -14,6 +14,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
+        <html lang="en" />
         <div className="selection:bg-neutral-700 selection:text-zinc-300">
           <Component {...pageProps} />
         </div>
