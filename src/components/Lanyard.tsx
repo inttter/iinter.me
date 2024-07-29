@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { FaSpotify } from 'react-icons/fa';
 import Image from 'next/image';
 import consola from 'consola';
+import * as Progress from '@radix-ui/react-progress';
+import { isMobile } from 'react-device-detect';
 
 function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }) {
   const [status, setStatus] = useState('✈️ Finding status...');
@@ -121,12 +123,15 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
       return 0;
     }
 
-    const current = Math.min(Date.now(), spotifyEnd);
+    // Adjust current time for mobile devices (see comments below)
+    const current = isMobile ? Math.min(Date.now() - 27000, spotifyEnd) : Math.min(Date.now(), spotifyEnd);
     const progress = ((current - spotifyStart) / (spotifyEnd - spotifyStart)) * 100;
     return Math.min(Math.max(progress, 0), 100);
   };
 
-  const elapsed = Math.min(currentTime - spotifyStart, spotifyEnd - spotifyStart);
+  // On mobile the time elapsed is way further forward than it should be. 
+  // As a workaround, this elapses 'elapsed' 27 seconds back on mobile devices.
+  const elapsed = Math.min((isMobile ? currentTime - 27000 : currentTime) - spotifyStart, spotifyEnd - spotifyStart);
 
   return (
     <motion.div
@@ -136,7 +141,6 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
       className={`relative ${showAlbumArt && spotifyAlbumArt ? 'md:w-11/12 w-full rounded-xl px-1' : ''}`}
     >
       <div className="flex items-center space-x-3">
-        {/* Conditional rendering of profile picture and emoji */}
         {profilePicture && !showAlbumArt && (
           <div className="relative">
             <Image
@@ -202,18 +206,17 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
                 >
                   by <span className="font-semibold ml-1">{spotifyArtist}</span> <FaSpotify className="ml-1" />
                 </motion.p>
-                {/* progress bar hidden on mobile because current timestamp always becomes end timestamp?? */}
-                <div className="hidden md:flex items-center justify-between mt-1 ml-1">
+                <div className="flex items-center justify-between mt-1 ml-1">
                   <span className="text-sm text-stone-500">
                     {formatTimestamp(elapsed)}
                   </span>
                   <div className="relative w-full mx-2 h-2 bg-neutral-800 rounded-full">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      animate={{ width: `${calculateProgress()}%` }}
-                      transition={{ duration: 0.5, ease: 'linear' }}
-                      className="absolute h-full bg-stone-600 rounded-full"
-                    />
+                  <Progress.Root
+                    style={{ transform: 'translateZ(0)' }}
+                    value={calculateProgress()} 
+                    className="absolute w-full h-full">
+                      <Progress.Indicator className="h-full bg-stone-500 rounded-full" style={{ width: `${calculateProgress()}%` }} />
+                    </Progress.Root>
                   </div>
                   <span className="text-sm text-stone-500">
                     {formatTimestamp(spotifyEnd - spotifyStart)}
