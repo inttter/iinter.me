@@ -1,8 +1,8 @@
 ---
-title: "Rusting and Derusting"
-date: "26 June, 2024"
-lastUpdated: "27/06/24 22:00"
-author: "Inter"
+title: Rusting and Derusting
+date: June 26, 2024
+lastUpdated: 27/06/24 22:00
+author: Inter
 description: An analogy of rusting and derusting, explained through my own anecdote with osu!.
 ---
 
