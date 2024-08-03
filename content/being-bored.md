@@ -1,8 +1,8 @@
 ---
-title: "Being bored & what I've been doing"
-date: "May 17, 2024"
-lastUpdated: "30/06/24 19:27"
-author: "Inter"
+title: Being bored & what I've been doing
+date: May 17, 2024
+lastUpdated: 30/06/24 19:27
+author: Inter
 description: A lot of the time, I find myself being bored. Here's how I've tried to overcome it.
 ---
 

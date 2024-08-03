@@ -1,8 +1,8 @@
 ---
-title: "Monetization in Games"
-date: "April 3, 2024"
-lastUpdated: "30/06/24 19:23"
-author: "Inter"
+title: Monetization in Games
+date: April 3, 2024
+lastUpdated: 30/06/24 19:23
+author: Inter
 description: My opinions how monetization is used in video games and how they are good or bad.
 ---
 

@@ -1,8 +1,8 @@
 ---
-title: "Using discid to find Discord users' statuses"
-date: "March 11, 2024"
-lastUpdated: "16/07/24 23:30"
-author: "Inter"
+title: Using discid to find Discord users' statuses
+date: March 11, 2024
+lastUpdated: 16/07/24 23:30
+author: Inter
 description: How I find the statuses of certain users on Discord, directly from the command line.
 ---
 

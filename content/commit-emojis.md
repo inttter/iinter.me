@@ -1,8 +1,8 @@
 ---
-title: "Using Emojis in Commit Messages"
-date: "March 25, 2024"
-lastUpdated: "26/05/24 12:54"
-author: "Inter"
+title: Using Emojis in Commit Messages
+date: March 25, 2024
+lastUpdated: 26/05/24 12:54
+author: Inter
 description: This is how I expand my commit messages by using emojis within them.
 ---
 

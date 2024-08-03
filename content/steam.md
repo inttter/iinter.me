@@ -1,8 +1,8 @@
 ---
-title: "Why Steam is the Best Game Launcher"
-date: "March 23, 2024"
-lastUpdated: "17/06/24 19:10"
-author: "Inter"
+title: Why Steam is the Best Game Launcher
+date: March 23, 2024
+lastUpdated: 17/06/24 19:10
+author: Inter
 description: Steam is the biggest launcher and store in the PC gaming market. This is why.
 ---
 

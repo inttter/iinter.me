@@ -1,8 +1,8 @@
 ---
-title: "Forza Horizon 3: A Short Retrospective"
-date: "March 9, 2024"
-lastUpdated: "22/07/2024 15:04"
-author: "Inter"
+title: 'Forza Horizon 3: A Short Retrospective'
+date: March 9, 2024
+lastUpdated: 22/07/2024 15:04
+author: Inter
 description: A game released in 2016 by Playground Games. Here is my personal experience with it!
 ---
 

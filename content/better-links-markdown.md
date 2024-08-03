@@ -1,8 +1,8 @@
 ---
-title: "A better way to use links in Markdown"
-date: "April 20, 2024"
-lastUpdated: "03/06/24 23:08"
-author: "Inter"
+title: A better way to use links in Markdown
+date: April 20, 2024
+lastUpdated: 03/06/24 23:08
+author: Inter
 description: How link definitions help you to make better links in Markdown files.
 ---
 

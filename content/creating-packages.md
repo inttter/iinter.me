@@ -1,8 +1,8 @@
 ---
-title: "Creating npm packages with create-ps"
-date: "March 29, 2024"
-lastUpdated: "15/06/24 14:01"
-author: "Inter"
+title: Creating npm packages with create-ps
+date: March 29, 2024
+lastUpdated: 15/06/24 14:01
+author: Inter
 description: A guide on a faster way to create npm packages, straight from the terminal.
 ---
 

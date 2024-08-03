@@ -1,8 +1,8 @@
 ---
-title: "Noting down stuff"
-date: "April 11, 2024"
-lastUpdated: "27/04/2024 20:17"
-author: "Inter"
+title: Noting down stuff
+date: April 11, 2024
+lastUpdated: 27/04/2024 20:17
+author: Inter
 description: The way I note down stuff I think about doing.
 ---
 
