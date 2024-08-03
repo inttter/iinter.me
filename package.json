@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "last-updated": "node src/scripts/lastUpdated.js"
   },
   "dependencies": {
     "@fontsource/geist-mono": "^5.0.3",
