@@ -4,6 +4,7 @@ date: March 23, 2024
 lastUpdated: 17/06/24 19:10
 author: Inter
 description: Steam is the biggest launcher and store in the PC gaming market. This is why.
+tags: ["steam", "gaming"]
 ---
 
 If you ever purchased a PC game before, it was almost 100% purchased from the Steam platform. With over 120 million users a month, it's the biggest distributor for games in the world. There's no bullshit that you need to get through to launch a game. Simply launch Steam, select the game, and **Play**. Three clicks.

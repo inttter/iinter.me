@@ -4,6 +4,7 @@ date: April 11, 2024
 lastUpdated: 27/04/2024 20:17
 author: Inter
 description: The way I note down stuff I think about doing.
+tags: ["personal", "discord", "notes", "workflow"]
 ---
 
 A lot of the time, but commonly when I go to bed, I remember or think about something that I want to do the next day. We have a tendency to forget things after we sleep, so I need to note it down somewhere, but how exactly?

@@ -4,6 +4,7 @@ date: May 17, 2024
 lastUpdated: 30/06/24 19:27
 author: Inter
 description: A lot of the time, I find myself being bored. Here's how I've tried to overcome it.
+tags: ["personal", "anime", "gaming", "travel"]
 ---
 
 I often find myself getting bored a lot. I spend quite a bit of time staring at my screen, thinking, *"What should I do?"* while I usually have something like a video or music playing in the background. This is especially true during those late nights when I stay up until the middle of the night, whether it'd be that I'm on my phone, or watching anime. I don't want to sleep, but I have nothing else to do.

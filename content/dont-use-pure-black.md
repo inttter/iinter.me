@@ -4,6 +4,7 @@ date: April 15, 2024
 lastUpdated: 08/07/24 22:37
 author: Inter
 description: Personally, I think pure black is a bad design practise. Here's why.
+tags: ["webdev", "tailwind", "ui", "ux"]
 ---
 
 Designing dark pages always involve using a wide palette of dark colors. A common trend in most newer designs of pages is that they don't use the actual **black** color, which uses hex color [#000000](https://www.color-hex.com/color/000000), they instead opt for a softer and/or lighter version of black.

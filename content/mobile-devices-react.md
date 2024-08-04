@@ -4,6 +4,7 @@ date: August 3, 2024
 lastUpdated: 03/08/2024 18:20
 author: Inter
 description: How I use this library to adjust content for different devices.
+tags: ["react", "webdev", "ui", "ux"]
 ---
 
 More often than not, when making a website, you'll have to make sure you are able to support various interfaces, such as for those on mobile devices. Most of the time, this involves various UI or code changes that you must make based on the platform.
@@ -149,5 +150,3 @@ Now, instead of the success toast showing up all of the time, the info toast wou
 Anyway, there is more parts of the API you can leverage, but I just listed which parts of it I used in my specific use cases.
 
 If you want to use this library, check out its documentation on [GitHub](https://github.com/duskload/react-device-detect)!
-
-<!-- Todo: proofread and better wording !-->

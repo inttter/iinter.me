@@ -4,6 +4,7 @@ date: March 9, 2024
 lastUpdated: 22/07/2024 15:04
 author: Inter
 description: A game released in 2016 by Playground Games. Here is my personal experience with it!
+tags: ["gaming", "forza", "fh3", "racing"]
 ---
 
 In Christmas of 2016, I got an Xbox One S as a present. It was the first time I was able to properly play games after being stuck on a PS3 for a long time. It was the console I was stuck on for quite a few years, even after the last-gen consoles that came out in 2014. 

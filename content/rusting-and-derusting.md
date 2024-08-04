@@ -4,6 +4,7 @@ date: June 26, 2024
 lastUpdated: 27/06/24 22:00
 author: Inter
 description: An analogy of rusting and derusting, explained through my own anecdote with osu!.
+tags: ["personal", "gaming", "osu"]
 ---
 
 ***Rusting** — To lose most of your skills at a game after not having played for a while.*

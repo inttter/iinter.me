@@ -4,6 +4,7 @@ date: March 25, 2024
 lastUpdated: 26/05/24 12:54
 author: Inter
 description: This is how I expand my commit messages by using emojis within them.
+tags: ["personal", "git", "emoji"]
 ---
 
 Typically, when creating commit messages using Git, you will need to provide a [commit message](https://git-scm.com/docs/git-commit#Documentation/git-commit.txt--cltcommitgt), which details in a very short summary what changes you have made within the commit.
