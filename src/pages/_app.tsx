@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </div>
         <SpeedInsights />
         <Analytics />
-        <Toaster invert />
+        <Toaster richColors closeButton theme="dark" />
       </Head>
     </>
   );
