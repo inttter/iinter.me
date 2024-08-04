@@ -8,13 +8,23 @@ import rehypeRaw from 'rehype-raw';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import BackToTop from '../../components/BackToTop';
 import Navbar from '../../components/Navbar';
 import markdownStyles from '../../components/markdownStyles';
 
 export default function Post({ post }) {
+  const router = useRouter();
+
   if (!post) return null;
+
+  const handleTagClick = (tag) => {
+    router.push({
+      pathname: '/writing',
+      query: { tag },
+    });
+  };
 
   return (
     <div className="bg-main min-h-screen flex flex-col justify-center items-center antialiased p-4 md:p-8 overflow-x-hidden">
@@ -32,33 +42,38 @@ export default function Post({ post }) {
           <motion.div 
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
             className="text-3xl text-zinc-200 font-semibold tracking-tight"
           >
             {post.frontmatter.title}
           </motion.div>
           <motion.p
-            className="text-stone-500 max-w-2xl mt-0.5 overflow-auto tracking-tight"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="text-stone-500 max-w-2xl mt-0.5 overflow-auto tracking-tight"
           >
             <span>{post.frontmatter.date}</span>
           </motion.p>
+          {post.frontmatter.tags && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.6 }}
+              className="flex flex-wrap mt-2 space-x-2"
+            >
+              {post.frontmatter.tags.map((tag, index) => (
+                <span
+                  key={index}
+                  onClick={() => handleTagClick(tag)}
+                  className="text-xs text-soft bg-[#141414] hover:bg-[#202020] border border-neutral-800 hover:border-neutral-700 px-2 py-1 rounded-md code cursor-pointer duration-300"
+                >
+                  {tag}
+                </span>
+              ))}
+            </motion.div>
+          )}
         </div>
-        {post.frontmatter.wip && (
-          <motion.div
-            className="flex items-center justify-center text-zinc-100 text-md bg-amber-500 bg-opacity-40 border-2 border-neutral-800 p-3.5 rounded-md"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-          >
-            <span className="mr-2 text-3xl -rotate-3 hover:scale-110 duration-200">🏗️</span>
-            <span>
-              This post is under construction and still being made. Note that some things may be unfinished or could be subject to change!
-            </span>
-          </motion.div>
-        )}
         <motion.div
           initial={{ opacity: 0 }} 
           animate={{ opacity: 1 }} 
