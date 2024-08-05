@@ -5,6 +5,7 @@ import Image from 'next/image';
 import consola from 'consola';
 import * as Progress from '@radix-ui/react-progress';
 import { isMobile } from 'react-device-detect';
+import { FaSpotify } from 'react-icons/fa';
 
 function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true }) {
   const [status, setStatus] = useState('✈️ Finding status...');
@@ -79,10 +80,10 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
 
           if (data.data.discord_user.avatar && data.data.discord_user.avatar.startsWith('a_')) {
             // for animated avatars, use 'gif'
-            setProfilePicture(`https://api.lanyard.rest/${USER_ID}.gif`);
+            setProfilePicture(`https:/api.lanyard.rest/${USER_ID}.gif?t=${Date.now()}`);
           } else {
             // for static avatars, use 'png'
-            setProfilePicture(`https://api.lanyard.rest/${USER_ID}.png`);
+            setProfilePicture(`https:/api.lanyard.rest/${USER_ID}.png?t=${Date.now()}`);
           }
         })
         .catch(error => {
@@ -176,16 +177,10 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
       </div>
       {showAlbumArt && spotifyAlbumArt && spotifySong && spotifyArtist && (
         <div>
-          <div className="mt-2 flex items-center text-xs text-stone-400">
-            <div className="relative flex items-center">
-              <div className="relative">
-                <div className="absolute inline-flex h-2 w-2 rounded-full bg-green-500 opacity-75 animate-ping" />
-                <div className="relative h-2 w-2 rounded-full bg-green-500" />
-              </div>
-              <span className="ml-2 flex items-center">
-                Listening on Spotify
-              </span>
-            </div>
+          <div className="mt-2 flex items-center text-xs text-stone-500">
+            <span className="flex items-center">
+              <FaSpotify className="mr-1" /> Listening on Spotify
+            </span>
           </div>
           <div className="group mt-4">
             <Link href={`https://open.spotify.com/track/${spotifyTrackId}`} target="_blank" rel="noopener noreferrer">
