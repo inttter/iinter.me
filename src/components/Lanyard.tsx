@@ -80,10 +80,10 @@ function Lanyard({ showUsername = true, showEmoji = true, showAlbumArt = true })
 
           if (data.data.discord_user.avatar && data.data.discord_user.avatar.startsWith('a_')) {
             // for animated avatars, use 'gif'
-            setProfilePicture(`https:/api.lanyard.rest/${USER_ID}.gif?t=${Date.now()}`);
+            setProfilePicture(`https://cdn.discordapp.com/avatars/${USER_ID}/${data.data.discord_user.avatar}.gif?t=${Date.now()}`);
           } else {
             // for static avatars, use 'png'
-            setProfilePicture(`https:/api.lanyard.rest/${USER_ID}.png?t=${Date.now()}`);
+            setProfilePicture(`https://cdn.discordapp.com/avatars/${USER_ID}/${data.data.discord_user.avatar}.png?t=${Date.now()}`);
           }
         })
         .catch(error => {
