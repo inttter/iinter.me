@@ -70,9 +70,9 @@ export default function Projects() {
                         <Link href={project.link} target="_blank" rel="noopener noreferrer" className="group" passHref>
                           <span className="flex items-center">
                             <span 
-                              className={`border-b border-dashed border-neutral-600 hover:border-neutral-500 ${!project.maintained ? "text-amber-300 hover:text-amber-400 duration-300 tooltip tooltip-top bg-transparent" : "text-soft hover:text-stone-300 hover:text-opacity-80 duration-300 bg-transparent"}`} 
+                              className={`border-b border-dashed border-neutral-600 hover:border-neutral-500 ${!project.maintained ? "text-amber-300 hover:text-amber-400 duration-300 tooltip tooltip-right bg-transparent" : "text-soft hover:text-stone-300 hover:text-opacity-80 duration-300 bg-transparent"}`}
+                              data-tip={!project.maintained ? "Deprecated, visit for details." : ""}
                               data-theme={!project.maintained ? "black" : ""} 
-                              data-tip={!project.maintained ? "Updates will no longer be provided, and any issues that arise may not be fixed." : ""}
                             >
                               {project.name}
                             </span>
@@ -86,11 +86,17 @@ export default function Projects() {
                           className="flex items-center"
                         >
                           {stars[project.github] !== undefined && (
-                            <Link href={`${project.github}/stargazers`} target="_blank" rel="noopener noreferrer">
-                              <span className="text-xs px-2 py-1 bg-soft-gray bg-opacity-40 border border-neutral-800 hover:border-neutral-700 hover:bg-opacity-80 hover:text-soft duration-300 rounded-md text-stone-400 mr-1.5 mb-0.5 flex items-center tooltip tooltip-left bg-transparent" data-tip="Stargazers" data-theme="black">
-                                <FaStar size={13} className="md:mb-0 mb-0.5 mr-0.5 text-yellow-400" />{stars[project.github]}
-                              </span>
-                            </Link>
+                              <Link href={`${project.github}/stargazers`} target="_blank" rel="noopener noreferrer">
+                                <motion.span
+                                  initial={{ opacity: 0 }}
+                                  animate={{ opacity: 1 }}
+                                  transition={{ duration: 0.5 }}
+                                  className="text-xs text-soft bg-[#141414] hover:bg-[#202020] border border-neutral-800 hover:border-neutral-700 animate-blurred-fade-in duration-300 px-2 py-1 rounded-md mr-1.5 mb-0.5 flex items-center"
+                                >
+                                  <FaStar size={13} className="md:mb-0 mb-0.5 mr-0.5 text-yellow-400" />
+                                  {stars[project.github]}
+                                </motion.span>
+                              </Link>
                           )}
                           <Link href={project.github} target="_blank" rel="noopener noreferrer" className="mr-1 md:mr-0.5 -mt-1 text-neutral-600 hover:text-soft duration-300">
                             <FaGithub size={18} />
