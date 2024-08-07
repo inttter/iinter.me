@@ -22,7 +22,7 @@ export default function Home() {
           <SocialLink href="https://www.last.fm/user/intter" social="Last.fm" tooltipText="@intter" />
         </div>
         <Navbar />
-        <Lanyard showUsername={false} showEmoji={false} showAlbumArt={true} />
+        <Lanyard showUsername={false} showStatusDot={false} showAlbumArt={true} />
       </div>
     </div>
   );
