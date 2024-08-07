@@ -1,10 +1,14 @@
 ---
 title: Detecting mobile devices in React using react-device-detect
 date: August 3, 2024
-lastUpdated: 03/08/2024 18:20
+lastUpdated: 07/08/2024 14:36
 author: Inter
-description: How I use this library to adjust content for different devices.
+description: How I used this library to adjust content for different devices.
 tags: ["react", "webdev", "ui", "ux"]
+---
+
+***Note:** The <kbd>[NoteSummary](https://github.com/inttter/notetxt/blob/master/src/components/NoteSummary.tsx)</kbd> component discussed in this post is now completely different, so the below does not match the way I use it as of now, but this post will stay up in case you're interested in using this library, how it functions, or how I used it.*
+
 ---
 
 More often than not, when making a website, you'll have to make sure you are able to support various interfaces, such as for those on mobile devices. Most of the time, this involves various UI or code changes that you must make based on the platform.
@@ -15,7 +19,7 @@ For example, in [Notetxt](https://notetxt.iinter.me), I have a component named <
   <video src="https://us-east-1.tixte.net/uploads/files.iinter.me/summary_toast_desktop.mp4" alt="Video of toast on desktop" controls></video>
 </div>
 
-I'll spare the details behind the component, as you can go [view it for yourself](https://github.com/inttter/notetxt/blob/master/src/components/NoteSummary.tsx), but the toast was initially set up with a fixed position no matter the device. Here was the initial implementation:
+I'll spare the details behind the component, as you can [view this version of it here](https://github.com/inttter/notetxt/blob/8971f74c8b21d831c065691215b85bface96d184/src/components/NoteSummary.tsx), but the toast was initially set up with a fixed position regardless of the device. Here was the initial implementation I used:
 
 ```js
 import React from 'react';
@@ -47,7 +51,7 @@ With this implementation, the toast will show for 5 seconds correctly with the m
 On mobile, these toasts span the whole width of the bottom of the page. Subsequently, the toast ends up looking like this:
 
 <div align="center">
-  <video src="https://us-east-1.tixte.net/uploads/files.iinter.me/summary_toast_mobile.mp4" width="250" controls></video>
+  <video src="https://us-east-1.tixte.net/uploads/files.iinter.me/summary_toast_mobile.mp4" width="250" alt="Video of toast on mobile" controls></video>
 </div>
 
 Here, you can notice that the '**Note Summary**' button gets covered up by the toast, preventing you from pressing it again until you either **drag it down** or **close it** with the X. In my case, I wanted to keep the toast in the bottom right on desktop, since it worked fine there just fine, but have it be on the top of the screen on mobile. 
