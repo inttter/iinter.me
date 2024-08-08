@@ -17,6 +17,23 @@ function Lanyard({ showUsername = true, showStatusDot = true, showAlbumArt = tru
   const USER_ID = '514106760299151372';
 
   useEffect(() => {
+    fetch(`https://api.lanyard.rest/v1/users/${USER_ID}`)
+      .then(response => response.json())
+      .then(data => {
+        if (data.data.discord_user.avatar) {
+          const avatarUrl = data.data.discord_user.avatar.startsWith('a_')
+            // If animated, use .gif, otherwise use .png
+            ? `https://cdn.discordapp.com/avatars/${USER_ID}/${data.data.discord_user.avatar}.gif?t=${Date.now()}`
+            : `https://cdn.discordapp.com/avatars/${USER_ID}/${data.data.discord_user.avatar}.png?t=${Date.now()}`;
+          setProfilePicture(avatarUrl);
+        }
+      })
+      .catch(error => {
+        consola.error('An error occurred when trying to fetch profile picture:', error);
+      });
+  }, [USER_ID]);
+
+  useEffect(() => {
     const fetchData = () => {
       fetch(`https://api.lanyard.rest/v1/users/${USER_ID}`)
         .then(response => response.json())
@@ -64,14 +81,6 @@ function Lanyard({ showUsername = true, showStatusDot = true, showAlbumArt = tru
             setSpotifyArtist(null);
             setSpotifyAlbumArt('');
             setSpotifyTrackId('');
-          }
-
-          if (data.data.discord_user.avatar && data.data.discord_user.avatar.startsWith('a_')) {
-            // For animated avatars, use 'gif'
-            setProfilePicture(`https://cdn.discordapp.com/avatars/${USER_ID}/${data.data.discord_user.avatar}.gif?t=${Date.now()}`);
-          } else {
-            // For static avatars, use 'png'
-            setProfilePicture(`https://cdn.discordapp.com/avatars/${USER_ID}/${data.data.discord_user.avatar}.png?t=${Date.now()}`);
           }
         })
         .catch(error => {
