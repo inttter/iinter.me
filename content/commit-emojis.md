@@ -11,19 +11,19 @@ Typically, when creating commit messages using Git, you will need to provide a [
 
 Some people aren't bothered to write a proper commit messages, to which they end up using [GitHub](https://github.com)'s automatic commit messages, which go something along the lines of...
 
-```
+```text
 Update README.md
 ```
 
 If they **do** end up writing a commit message, it ends up being just what the change was in that commit.
 
-```
+```text
 Fix errors in browser console
 ```
 
 While these are still completely valid ways of writing commit messages and are not a problem, most people use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for commit messages, which follow this structure.
 
-```
+```text
 docs: add requirement for Node.js 18 or higher
 ```
 

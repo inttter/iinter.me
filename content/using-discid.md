@@ -1,7 +1,7 @@
 ---
 title: Using discid to find Discord users' statuses
 date: March 11, 2024
-lastUpdated: 16/08/24 13:41
+lastUpdated: 16/08/24 20:48
 author: Inter
 description: How I find the statuses of certain users on Discord, directly from the command line.
 tags: ["npm", "discord", "lanyard", "cli"]
@@ -59,10 +59,8 @@ Platform: Desktop
 Avatar URL: https://cdn.discordapp.com/avatars/514106760299151372/4b869d3c6104a6a29abb8a847cfdd6ad.png
 ```
 
-<div style="padding: 0.8rem 1rem; background-color: #262626; border-radius: 0.375rem; font-size: 0.96rem; display: flex; align-items: center; color: #d4d4d8; margin-top: 10px;">
-    <strong style="margin-right: 0.8rem;">⚠️</strong> 
-    <span><strong>Note:</strong> This will only work on user ID's that are in the the Lanyard Discord server: <a href="https://discord.gg/lanyard" target="_blank" rel="noopener noreferrer">https://discord.gg/lanyard</a></span>
-</div>
+> [!NOTE]
+> This will only work on user ID's that are in the the [Lanyard Discord server](https://discord.gg/lanyard).
 
 ## What else?
 
@@ -181,12 +179,10 @@ This is fetched from `https://api.lanyard.rest/v1/users/:user_id`, replacing `:u
 
 ### `--open`
 
-This option will open the user's Discord profile in your web browser. You can see an example of this in action below:
+This option will open the user's Discord profile in your default web browser. You can see an example of this in action below:
 
-<div style="padding: 0.8rem 1rem; background-color: #262626; border-radius: 0.375rem; font-size: 0.96rem; display: flex; align-items: center; color: #d4d4d8; margin-top: 10px; margin-bottom: 15px;">
-    <strong style="margin-right: 0.8rem;">💡</strong> 
-    <span><strong>Tip:</strong> This works with any user ID on Discord!</span>
-</div>
+> [!TIP]
+> This option works with any user ID on Discord, as long as it is valid!
 
 <div align="center">
   <video src="https://us-east-1.tixte.net/uploads/files.iinter.me/open-option-example.mp4" controls></video>

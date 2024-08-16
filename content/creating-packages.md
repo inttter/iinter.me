@@ -1,7 +1,7 @@
 ---
 title: Creating npm packages with create-ps
 date: March 29, 2024
-lastUpdated: 15/08/24 23:00
+lastUpdated: 16/08/24 20:43
 author: Inter
 description: A guide on a faster way to create npm packages, straight from the terminal.
 tags: ["npm", "cli", "javascript"]
@@ -60,10 +60,8 @@ npm install -g create-ps
 │  ◼ Dependencies
 ```
 
-<div style="padding: 0.8rem 1rem; background-color: #262626; border-radius: 0.375rem; font-size: 0.96rem; display: flex; align-items: center; color: #d4d4d8; margin-top: 20px; margin-bottom: 20px;">
-    <strong style="margin-right: 0.8rem;">💡</strong> 
-    <span>To use CommonJS instead of ESM, run the command with the <kbd>--cjs</kbd> flag.</span>
-</div>
+> [!TIP]
+> To use CommonJS instead of ESM, you can run the command with the `--cjs` flag.
 
 ## pkg-config
 

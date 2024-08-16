@@ -1,7 +1,7 @@
 ---
 title: A better way to use links in Markdown
 date: April 20, 2024
-lastUpdated: 15/08/24 21:43
+lastUpdated: 16/08/24 20:25
 author: Inter
 description: How link definitions help you to make better links in Markdown files.
 tags: ["markdown", "documentation"]
@@ -80,10 +80,12 @@ You can try clicking on these links defined by link definitions below:
 
 You can see the link definitions by going to the source of this post [here](https://github.com/inttter/iinter.me/blob/master/content/better-links-markdown.md) and scrolling to the bottom of the page, where you will see the two link definitions. They are hidden from view on this post and anywhere where Markdown is shown, but not in the raw file's code.
 
-<div style="padding: 0.8rem 1rem; background-color: #262626; border-radius: 0.375rem; font-size: 0.96rem; display: flex; align-items: center; color: #d4d4d8; margin-top: 20px; margin-bottom: 20px;">
-    <strong style="margin-right: 0.8rem;">💡</strong> 
-    <span>Visual Studio Code has a useful Source Action to organize link definitions, which you can utilize by right clicking within the Markdown file, selecting <kbd>Source Action</kbd>, and selecting <kbd>Organize link definitions</kbd>. You can also use <kbd>"source.organizeLinkDefinitions": true</kbd> within the <kbd>"editor.codeActionsOnSave"</kbd> identifier of your VSCode configuration.</span>
-</div>
+> [!TIP]
+> Visual Studio Code has a useful Source Action to organize link definitions, which you can utilize by right clicking within the Markdown file, selecting **Source Action**, and selecting **Organize link definitions**. You can also add the following to your `settings.json` file to run the source action when saving the file:
+>  ```json
+> "editor.codeActionsOnSave" {
+>    "source.organizeLinkDefinitions": true
+> }
 
 If you want a tooltip on hover of the link definition, use the following syntax:
 

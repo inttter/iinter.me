@@ -1,13 +1,14 @@
 ---
 title: Detecting mobile devices in React using react-device-detect
 date: August 3, 2024
-lastUpdated: 15/08/24 21:58
+lastUpdated: 16/08/24 20:17
 author: Inter
 description: How I used this library to adjust content for different devices.
 tags: ["react", "webdev", "ui", "ux"]
 ---
 
-***Note:** The [`NoteSummary`](https://github.com/inttter/notetxt/blob/master/src/components/NoteSummary.tsx) component discussed in this post is now completely different, so the below does not match the way I use it as of now, but this post will stay up in case you're interested in using this library, how it functions, or how I used it.*
+> [!NOTE]
+> The [`NoteSummary`](https://github.com/inttter/notetxt/blob/master/src/components/NoteSummary.tsx) component discussed in this post is now completely different, so the below does not match the way I use it as of now, but this post will stay up in case you're interested in using this library, how it functions, or how I used it.
 
 ---
 

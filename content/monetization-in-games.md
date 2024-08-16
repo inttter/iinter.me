@@ -1,7 +1,7 @@
 ---
 title: Monetization in Games
 date: April 3, 2024
-lastUpdated: 15/08/24 22:49
+lastUpdated: 16/08/24 20:42
 author: Inter
 description: My opinions how monetization is used in video games and how they are good or bad.
 tags: ["gaming", "monetization", "lootboxes", "money"]
@@ -10,13 +10,11 @@ tags: ["gaming", "monetization", "lootboxes", "money"]
 I've been playing video games for basically my entire life. In this time, there's been a large amount of games that I **played**, **refunded** because they were ~~shit~~ **bad**, or simply got **burnt out** after playing it for a long time. I've also spent way too much money then I should be on games in general.
 
 <div align="center">
-  <img src="/images/monetization-in-games/external-funds.png" alt="In total, I've spent $947 on Steam, excluding third-party sites and other platforms (like Xbox), because then it would be a lot more." width="450">
+  <img src="/images/monetization-in-games/external-funds.png" alt="As of this screenshot, I've spent $952 on Steam, excluding third-party sites and other platforms.">
 </div>
 
-<div style="padding: 0.8rem 1rem; background-color: #262626; border-radius: 0.375rem; font-size: 0.96rem; display: flex; align-items: center; color: #d4d4d8; margin-top: 20px; margin-bottom: 20px;">
-    <strong style="margin-right: 0.8rem;">✨</strong> 
-    <span>If you're curious, you can find your total spend on Steam <a href="https://help.steampowered.com/en/accountdata/AccountSpend" target="_blank" rel="noopener noreferrer">here</a>.</span>
-</div>
+> [!TIP]
+> If you're curious, you can find your total spend on Steam [here](https://help.steampowered.com/en/accountdata/AccountSpend).
 
 This, ultimately, leads to spending a lot of money on microtransactions. I talk about a few types here, and a bit of my opinion on it.
 
@@ -36,15 +34,15 @@ This also creates a market for buying accounts, hacking, and the general breakin
 
 ## Lootboxes and Gacha Systems
 
-This is another common form of in-game microtransactions, although not as bad as battle passes. In fact, some games like Rocket League have [already phased them out](https://www.rocketleague.com/en/news/crates-leaving-rocket-league-later-this-year). Besides that, the point is that some games are **built** on this system. Take an example like [Counter-Strike 2](https://www.counter-strike.net/), or CS2 for short. CS2 has cases, capsules, stickers, music kits, and more that I won't go into explicitly. They have a lot of monetary sources. According to [Insider Gaming](https://insider-gaming.com/valve-cs-cases-earnings/), Valve made over **$1,000,000,000** from cases, keys, and the skin market in general. Although, CS2 is a slightly different case, as players can also make money since CS2 has an [actual market and value for skins](https://csfloat.com/db).
+This is another common form of in-game microtransactions, although not as bad as battle passes. In fact, some games like Rocket League have [already phased them out](https://www.rocketleague.com/en/news/crates-leaving-rocket-league-later-this-year). Besides that, the point is that some games are **built** on this system. Take an example like [Counter-Strike](https://www.counter-strike.net/). Counter Strike has cases, capsules, stickers, music kits, and more that I won't go into explicitly. They have a lot of monetary sources. According to [Insider Gaming](https://insider-gaming.com/valve-cs-cases-earnings/), Valve made over **$1,000,000,000** from cases, keys, and the skin market in general. What helps them make this money is that players can also make money since CS2 has an [actual market, value, and community for skins](https://csfloat.com/db).
 
 <div align="center">
   <img src="/images/monetization-in-games/csfloat-payout.png" width="350" alt="Here's an example of a withdrawal from the CSFloat Marketplace, which withdrew my funds to my Stripe account, to which I them withdrew from Stripe and into my main bank.">
 </div>
 
-Although, this also creates a risk of getting scammed and losing thousands and thousands of your own money, and also creates situations like the [CSGOEmpire vs CSGORoll](https://blog.csgoempire.com/the-wars-we-wage/) gambling sites fighting against each other (although, they are both bad, as evidenced by [this "protest"](https://www.youtube.com/watch?v=ZcU3hUNOgmo&t=11s) at the PGL Copenhagen Major 2024). This can spiral into real life legal and ethical issues as well.
+Although, this also creates a risk of getting scammed and losing thousands and thousands of your own money, and also creates situations like the [CSGOEmpire vs CSGORoll](https://blog.csgoempire.com/the-wars-we-wage/) gambling sites fighting against each other (although, they are both bad, as evidenced by [this "protest"](https://www.youtube.com/watch?v=ZcU3hUNOgmo&t=11s) at the PGL Copenhagen Major 2024). This can also potentially spiral into legal and ethical issues as well.
 
-Now onto the **"gacha system"**. According to Wikipedia, a gacha game is,
+Moving on, **gacha systems**. According to Wikipedia, a "gacha" game is,
 
 > *"...a video game that implements the gacha (toy vending machine) mechanic."*
 
@@ -54,9 +52,7 @@ Examples of gacha games which have a *"gacha system"* include [Genshin Impact](h
 * **Limited-Time Offers** — Events with exclusive/limited-time items ([FOMO](#battle-passes)).
 * **Pity Systems** — Guarantees something good after a certain amount of rolls.
 
-This makes people spend large amounts of money chasing for rare cosmetics, which makes the company millions or sometimes **billions** in revenue. This could lead to addiction if it gets bad enough.
-
-Not everything is bad, though. Positives include the fact that communities can form for these types of games. Community interaction motivates developers to build updates, which prevents the game from running dry.
+This makes people spend large amounts of money chasing for rare cosmetics, which makes the company millions or sometimes **billions** in revenue. This could lead to addiction if it gets bad enough, which leads on to my point that these types of games are essentially just gambling in disguise (like Counter-Strike, but much more subtle) but instead, you gamble in an 'anime-ish' game.
 
 ## Virtual Currency
 
@@ -97,9 +93,8 @@ Sometimes, devs bundle some/all of their game's DLC into one edition of the game
 
 ![The 'Enhanced Edition' contains some more bigger and essential DLC's, while the 'Definitive Edition' has every DLC in the game, minus the free ones, which you need to get yourself.](/images/monetization-in-games/dl1-bundles.png) 
 
-<div style="padding: 0.8rem 1rem; background-color: #262626; border-radius: 0.375rem; font-size: 0.96rem; display: flex; align-items: center; color: #d4d4d8; margin-top: 20px; margin-bottom: 20px;">
-    <span>The "Historical Low" and "Current Best" stats come from <a href="https://augmentedsteam.com/" target="_blank" rel="noopener noreferrer">Augmented Steam</a>.</span>
-</div>
+> [!TIP]
+> The "Historical Low" and "Current Best" statistics come from the [Augmented Steam](https://augmentedsteam.com/) Chrome extension.
 
 ## Misc 
 
