@@ -1,7 +1,7 @@
 ---
 title: Using Emojis in Commit Messages
 date: March 25, 2024
-lastUpdated: 26/05/24 12:54
+lastUpdated: 16/08/24 13:35
 author: Inter
 description: This is how I expand my commit messages by using emojis within them.
 tags: ["personal", "git", "emoji"]
@@ -31,17 +31,17 @@ This gives some important details about **what** you are changing, and the descr
 
 You can also use optional scopes to denote a change in a specific part of your project.
 
-```
+```text
 chore(docs): remove outdated information
 ```
 
-<kbd>(docs)</kbd> is the optional scope here, as you are changing something specifically within the documentation of your project and no other parts. 
+`(docs)` is the optional scope here, as you are changing something specifically within the documentation of your project and no other parts. 
 
-You can also refer to a larger part of your project. For example, you could use <kbd>(frontend)</kbd> to signify that you are making changes to the frontend of your project.
+You can also refer to a larger part of your project. For example, you could use `(frontend)` to signify that you are making changes to the frontend of your project.
 
 However, I like to expand my own commit messages on top of the conventional commits by using [Gitmoji](https://gitmoji.dev/), a set of emojis that link to different types of conventional commits, as well as my own set of emojis that I use for other, more specific purposes. Some of them are taken/have inspiration from [this](https://gist.github.com/parmentf/035de27d6ed1dce0b36a) GitHub Gist. Below, you can see a few example use cases of these emojis within the commit message.
 
-```
+```text
 ✨ feat: add `--fix` option
 ♻️ refactor(setup): rework setup process
 📦 chore: bump dependencies
@@ -53,26 +53,26 @@ If you want more example use cases of these, you can check out one of my project
 
 Here is a list of the emojis and the type of conventional commits I most commonly use when committing changes:
 
-| Emoji | Meaning                          | Type                        |
-|-------|----------------------------------|-----------------------------|
-| 🎉    | Initial commit                   | <kbd>feat:</kbd>            |
-| ✨    | Adding a new feature             | <kbd>feat:</kbd>            |
-| 🐛    | Fixing a bug/issue               | <kbd>fix:</kbd>             |
-| ♻️    | Refactoring code/logic           | <kbd>refactor:</kbd>        |
-| 💄    | Adjusting/adding styling         | <kbd>style:</kbd>           |
-| ✏️    | Adjusting text                   | <kbd>chore:</kbd>           |
-| 💥    | Breaking Changes                 | <kbd>BREAKING:</kbd>        |
-| 📝    | Documentation                    | <kbd>docs:</kbd>            |
-| 🧹    | General updates and adjustments  | <kbd>chore:</kbd>           |
-| 👷    | Configuration (eg. Dependabot)   | <kbd>config:</kbd>          |
-| 📦    | Packages                         | <kbd>chore(package):</kbd>  |
-| 🤖    | Automation                       | <kbd>chore:</kbd>           |
-| 🔖    | Bumping versions                 | <kbd>chore(release):</kbd>  |
-| 🧪    | Tests                            | <kbd>tests:</kbd>           |
-| 🔥    | Removing old/unused things       | <kbd>chore:</kbd>           |
-| 🚚    | Moving/rearranging files         | <kbd>chore:</kbd>           |
+| Emoji | Meaning                           | Type                         |
+|-------|-----------------------------------|------------------------------|
+| 🎉    | Initial commit                    | `feat:`                     |
+| ✨    | Adding a new feature              | `feat:`                     |
+| 🐛    | Fixing a bug/issue                | `fix:`                      |
+| ♻️    | Refactoring code/logic            | `refactor:`                 |
+| 💄    | Adjusting/adding styling          | `style:`                    |
+| ✏️    | Adjusting text                    | `chore:`                    |
+| 💥    | Breaking Changes                  | `BREAKING:`                 |
+| 📝    | Documentation                     | `docs:`                     |
+| 🧹    | General updates and adjustments   | `chore:`                    |
+| 👷    | Configuration (e.g., Dependabot)  | `config:`                   |
+| 📦    | Packages                          | `chore(package):`           |
+| 🤖    | Automation                        | `chore:`                    |
+| 🔖    | Bumping versions                  | `chore(release):`           |
+| 🧪    | Tests                             | `tests:`                    |
+| 🔥    | Removing old/unused things        | `chore:`                    |
+| 🚚    | Moving/rearranging files          | `chore:`                    |
 
-Some ways to expand this is by adding this style of commit to your <kbd>dependabot.yml</kbd> configuration file. For example, I have the [following configuration](https://github.com/inttter/mdbadges-cli/blob/main/.github/dependabot.yml) set up in mdbadges-cli to update dependencies for npm and GitHub Actions with these custom prefixes:
+Some ways to expand this is by adding this style of commit to your `dependabot.yml` configuration file. For example, I have the [following configuration](https://github.com/inttter/mdbadges-cli/blob/main/.github/dependabot.yml) set up in mdbadges-cli to update dependencies for npm and GitHub Actions with these custom prefixes:
 
 ```yaml
 version: 2
@@ -98,10 +98,11 @@ updates:
 
 With that configuration, any pull requests opened from Dependabot will look something like this:
 
-<div align="center">
-  <img src="/images/commit-emojis/package-pr.png" style="margin-bottom: 10px;">
-  <img src="/images/commit-emojis/action-pr.png">
-</div>
+![A pull request that bumps a package.](/images/commit-emojis/package-pr.png)
+
+<br />
+
+![A pull request that bumps an action.](/images/commit-emojis/action-pr.png)
 
 ---
 

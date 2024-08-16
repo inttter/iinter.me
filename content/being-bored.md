@@ -1,7 +1,7 @@
 ---
 title: Being bored & what I've been doing
 date: May 17, 2024
-lastUpdated: 30/06/24 19:27
+lastUpdated: 15/08/24 22:33
 author: Inter
 description: A lot of the time, I find myself being bored. Here's how I've tried to overcome it.
 tags: ["personal", "anime", "gaming", "travel"]
@@ -28,6 +28,7 @@ In order to tackle this, I have had to find **something to do**. In order to acc
 About a month and a half ago (from the time of writing this), I was recommended by a friend to watch [Your Lie in April](https://anilist.co/anime/20665/Your-lie-in-April/), a **music-focused romance anime** about a piano prodigy that is unable to play music after his mother dies. This is the case until he meets a girl who plays the violin. 
 
 <div align="center">
+
   <img src="/images/being-bored/ylia-rec.png" width="250" alt="Granted, not a direct recommendation, but you get the idea.">
 </div>
 
@@ -62,11 +63,11 @@ I'm not going to go into excruciating detail for every game this has occurred to
 
 * **osu!** - I've played osu! since late 2020, and currently, I am almost rank 350,000. Recently, I have been playing a lot more than I used to and have been improving, not just at osu! but at my aim and reaction time. If you go to my [profile](https://osu.ppy.sh/users/19054376), you can see that most of my top plays were set within the last month. Read more about this [here](/writing/rusting-and-derusting).
 
-<img src="/images/being-bored/osu-play-history.png" alt="As you can see, June 2024 is, at the time of writing, my peak month in terms of play count.">
+![As you can see, June 2024 is, at the time of writing, my peak month in terms of play count.](/images/being-bored/osu-play-history.png)
 
 <br />
 
-<img src="/images/being-bored/osu-top-plays-jun-2024.png" alt="These are my top 15 scores. The scores highlighted in green are all of the top plays I have set in the last 30 days, which amounts to 11 plays at the time of writing.">
+[These are my top 15 scores. The scores highlighted in green are all of the top plays I have set in the last 30 days, which amounts to 11 plays at the time of writing.](/images/being-bored/osu-top-plays-jun-2024.png)
 
 * **Rocket League** - I have played Rocket League since it came out back in 2015. Every couple of seasons, I decide to come back to the game and grind the game out, trying to achieve a higher rank than my peak, which was Champion 3. I loved the game, but with recent decisions made by Epic Games, they have made me much less interested and inclined to play as frequently as I otherwise would.
 * **Roblox** - The game that mostly got me back into Roblox was [Deepwoken](https://www.roblox.com/games/4111023553/Deepwoken). Ever since then, Roblox has been one of my permanent main games, one of the sole reasons being that it becomes very fun with friends. Although my time spent on it has died down a little bit, I still play *almost* everyday.

@@ -1,7 +1,7 @@
 ---
 title: Using discid to find Discord users' statuses
 date: March 11, 2024
-lastUpdated: 16/07/24 23:30
+lastUpdated: 16/08/24 13:41
 author: Inter
 description: How I find the statuses of certain users on Discord, directly from the command line.
 tags: ["npm", "discord", "lanyard", "cli"]
@@ -19,7 +19,7 @@ npm install -g discid
 
 ## Getting Started
 
-To check the user's status on Discord, run the following in the terminal, replacing <kbd>[userID]</kbd> with the 18-character ID of the user you want to check the status of:
+To check the user's status on Discord, run the following in the terminal, replacing `[userID]` with the 18-character ID of the user you want to check the status of:
 
 ```bash
 discid [userID]
@@ -41,7 +41,7 @@ To be able to get the user ID of someone, follow these steps below first:
      <img src="/images/using-discid/copy-user-id.png" width="250">
    </div>
 
-3. Go back to your command-line and run <kbd>discid [userID]</kbd>, replacing <kbd>[userID]</kbd> with the ID of the user you copied.
+3. Go back to your command-line and run `discid [userID]`, replacing `[userID]` with the ID of the user you copied.
    
      For example, if you had the user ID **514106760299151372** copied, run:
 
@@ -97,11 +97,11 @@ Watching: Netflix • Alya Sometimes Hides Her Feelings in Russian
 
 ## Options
 
-### <kbd>--json</kbd>
+### `--json`
 
 This will print the user's information in a formatted, syntax-highlighted JSON response. 
 
-This is fetched from <kbd>https://api.lanyard.rest/v1/users/:user_id</kbd>, replacing <kbd>:user_id</kbd> with the user ID you entered. You can see an example of this with the user ID **514106760299151372** below.
+This is fetched from `https://api.lanyard.rest/v1/users/:user_id`, replacing `:user_id` with the user ID you entered. You can see an example of this with the user ID **514106760299151372** below.
 
 ```json
 {
@@ -179,7 +179,7 @@ This is fetched from <kbd>https://api.lanyard.rest/v1/users/:user_id</kbd>, repl
 }
 ```
 
-### <kbd>--open</kbd>
+### `--open`
 
 This option will open the user's Discord profile in your web browser. You can see an example of this in action below:
 
@@ -192,7 +192,7 @@ This option will open the user's Discord profile in your web browser. You can se
   <video src="https://us-east-1.tixte.net/uploads/files.iinter.me/open-option-example.mp4" controls></video>
 </div>
 
-### <kbd>--kv</kbd>
+### `--kv`
 
 Lanyard also has [key-value pairs](https://en.wikipedia.org/wiki/Name%E2%80%93value_pair) (KV for short) which allow a key-value store to be added to the response by the user. See [here](https://github.com/Phineas/lanyard?tab=readme-ov-file#kv) for how to add them to your own response.
 

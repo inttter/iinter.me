@@ -7,6 +7,8 @@ import gfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import { rehypeGithubAlerts } from 'rehype-github-alerts';
+import remarkUnwrapImages from 'remark-unwrap-images'
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
@@ -82,8 +84,8 @@ export default function Post({ post }) {
         >
           <ReactMarkdown 
             components={markdownStyles} 
-            remarkPlugins={[gfm]} 
-            rehypePlugins={[rehypeRaw, rehypeAutolinkHeadings, rehypeSlug]}
+            remarkPlugins={[gfm, remarkUnwrapImages]} 
+            rehypePlugins={[rehypeRaw, rehypeAutolinkHeadings, rehypeSlug, rehypeGithubAlerts]}
           >
             {post.content}
           </ReactMarkdown>

@@ -1,15 +1,15 @@
 ---
 title: Creating npm packages with create-ps
 date: March 29, 2024
-lastUpdated: 15/06/24 14:01
+lastUpdated: 15/08/24 23:00
 author: Inter
 description: A guide on a faster way to create npm packages, straight from the terminal.
 tags: ["npm", "cli", "javascript"]
 ---
 
-In my opinion, I don't enjoy the fact that I have to create a bunch of new files which I know I will need to make anyway at a later date whenever I decide to create a new <kbd>npm</kbd> package. In the end, I just do this whenever it comes time to actually make that new file. I name it and add the contents of what I need into it.
+In my opinion, I don't enjoy the fact that I have to create a bunch of new files which I know I will need to make anyway at a later date whenever I decide to create a new `npm` package. In the end, I just do this whenever it comes time to actually make that new file. I name it and add the contents of what I need into it.
 
-To me, this seems like a tedious process. That's why I decided to make <kbd>create-ps</kbd>, a command-line tool which allows you to create files that you need for an average NPM package.
+To me, this seems like a tedious process. That's why I decided to make `create-ps`, a command-line tool which allows you to create files that you need for an average NPM package.
 
 ## Demo
 
@@ -17,7 +17,7 @@ To me, this seems like a tedious process. That's why I decided to make <kbd>crea
   <video src="https://us-east-1.tixte.net/uploads/files.iinter.me/create-ps_Demo_v4.mp4" controls style="margin-top: 10px"></video>
 </div>
 
-As you can see in the demo video, I added multiple files, directories, and more into the project directory. You can select what you want to include to fit your project's needs, such as examples files, a pre-made <kbd>index.mjs</kbd> with your installed dependencies imported, and more.
+As you can see in the demo video, I added multiple files, directories, and more into the project directory. You can select what you want to include to fit your project's needs, such as examples files, a pre-made `index.mjs` with your installed dependencies imported, and more.
 
 ## Installation
 
@@ -28,7 +28,7 @@ npm install -g create-ps
 ## Usage
 
 * Navigate to the directory you are going to create your package in.
-* Run the following command, replacing <kbd>projectName</kbd> with the name of the package.
+* Run the following command, replacing `projectName` with the name of the package.
 
   ```bash
   cps [projectName]
@@ -67,13 +67,13 @@ npm install -g create-ps
 
 ## pkg-config
 
-If you run the following command in your terminal, you can edit various fields in your <kbd>package.json</kbd>.
+If you run the following command in your terminal, you can edit various fields in your `package.json`.
 
 ```bash
 cps pkg-config
 ```
 
-You're then able to select the fields you would like to include and customize. For example, but not limited to, the **Author**, **Keywords**, and the **License** you are using (you can use [this](https://spdx.org/licenses/) list from SPDX to find the right identifier for the license field). Once confirmed, create-ps will ask a series of prompts for you to fill out the necessary information, and will edit your <kbd>package.json</kbd> accordingly.
+You're then able to select the fields you would like to include and customize. For example, but not limited to, the **Author**, **Keywords**, and the **License** you are using (you can use [this](https://spdx.org/licenses/) list from SPDX to find the right identifier for the license field). Once confirmed, create-ps will ask a series of prompts for you to fill out the necessary information, and will edit your `package.json` accordingly.
 
 ```markdown
 ◆  Select what you'd like to include:
@@ -91,7 +91,7 @@ You can also run this in an existing project to fill out and/or replace any fiel
 
 In it's simplest form, all the logic is just **switch cases**. 
 
-The code iterates over the toggles and, based on each toggle, creates the appropriate files and/or directories. These switch cases hold the logic for creating each file/directory when each toggle is selected. For example, here's the logic for '<kbd>CHANGELOG.md</kbd>':
+The code iterates over the toggles and, based on each toggle, creates the appropriate files and/or directories. These switch cases hold the logic for creating each file/directory when each toggle is selected. For example, here's the logic for `CHANGELOG.md`:
 
 ```javascript
 case 'CHANGELOG.md':
@@ -102,9 +102,9 @@ case 'CHANGELOG.md':
     break;
 ```
 
-<kbd>currentDate</kbd> creates today's date and appends that after 'v1.0.0', <kbd>changelogContent</kbd> holds the content of the file, <kbd>changelogFile</kbd> creates a full file path for the file, then everything is written to the file using <kbd>fs</kbd>.
+`currentDate` creates today's date and appends that after 'v1.0.0', `changelogContent` holds the content of the file, `changelogFile` creates a full file path for the file, then everything is written to the file using `fs`.
 
-Things can get a bit more complicated though. For example, within <kbd>src/</kbd>, there needs to be logic to change file paths and content within other files, as ESM and CommonJS have different logic, and in <kbd>LICENSE</kbd>, the licenses are fetched from the GitHub API, with the user having to select the license they want from the prompts.
+Things can get a bit more complicated though. For example, within `src/`, there needs to be logic to change file paths and content within other files, as ESM and CommonJS have different logic, and in `LICENSE`, the licenses are fetched from the GitHub API, with the user having to select the license they want from the prompts.
 
 ---
 

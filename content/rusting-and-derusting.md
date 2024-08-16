@@ -1,7 +1,7 @@
 ---
 title: Rusting and Derusting
 date: June 26, 2024
-lastUpdated: 27/06/24 22:00
+lastUpdated: 15/08/24 22:10
 author: Inter
 description: An analogy of rusting and derusting, explained through my own anecdote with osu!.
 tags: ["personal", "gaming", "osu"]
@@ -30,8 +30,10 @@ In turn, this has propelled my rank at the time of writing this by around **160,
 
 ### Burnout
 
-<!-- image sourced from /being-bored post !-->
-<img src="/images/being-bored/osu-play-history.png" alt="Graph of the amount of plays I have had on osu! since my account creation date." style="margin-top: 15px;">
+<div style="margin-top: 15px;">
+
+  ![Graph of the amount of plays I have had on osu! since my account creation date.](/images/being-bored/osu-play-history.png)
+</div>
 
 In the graph above, we can directly see when I got burnt out, when I tried to come back, when I became rusty at the game, and when I derusted. 
 
@@ -42,7 +44,8 @@ This drop occurred due to the fact that I bought a brand new computer which coul
 osu! was not one of these games, although I had installed it on my new machine along with my old beatmaps from my old computer. This is because before, I had played it on my very slow laptop which could only run the game on around **60FPS** maximum. It also had minimal storage, so I could not download many beatmaps.
 
 <div align="center">
-    <img src="/images/rusting-and-derusting/2000-beatmaps.png" alt="Image within my osu! client showing that I have 2007 beatmaps installed on my current machine. For comparison, on my old machine, I had only ~200 beatmaps installed.">
+
+  ![Image within my osu! client showing that I have 2007 beatmaps installed on my current machine. For comparison, on my old machine, I had only ~200 beatmaps installed.](/images/rusting-and-derusting/2000-beatmaps.png)
 </div>
 
 ### Rusting
@@ -67,18 +70,20 @@ Over time, though, the same process happens in other video games. You get tired 
 
 Let's go back to that playcount graph for a moment:
 
-<!-- image sourced from /being-bored post !-->
-<img src="/images/being-bored/osu-play-history.png" alt="Graph of the amount of plays I have had on osu! since my account creation date.">
+<div style="margin-top: 15px;">
+
+  ![Graph of the amount of plays I have had on osu! since my account creation date.](/images/being-bored/osu-play-history.png)
+</div>
 
 As you can see, there is a **major** spike in the time period of April-June 2024, with the total playcount within these 3 months totalling up to ~**4100** plays. This is, evidently, where I **derusted**. 
 
 Since I had absolutely nothing to do, and I was on spring break, I decided that osu! could be a way to kill the time. As I played more to kill the time, I gradually got better at faster, more jump-oriented maps by, simply put, playing more.
 
-<img src="/images/rusting-and-derusting/play-more.png" alt="To be fair, they aren't lying.">
+![To be fair, they aren't lying.](/images/rusting-and-derusting/play-more.png)
 
 My recent rank gains and plays also prove this. For example, take the video earlier up in this post. During my rust period, I played maps around **3✰**, which are relatively slow. 
 
-However, my recent plays consist of **4✰**-**5.5✰** star maps. Most maps within these star ranges include harder jumps and streams. These maps typically award around <kbd>100pp+</kbd> when full-comboed, and can award even more **Score** and [PP](https://osu.ppy.sh/wiki/en/Performance_points) when using mods like [Hidden](https://osu.ppy.sh/wiki/en/Gameplay/Game_modifier/Hidden) (HD) or [Double Time](https://osu.ppy.sh/wiki/en/Gameplay/Game_modifier/Double_Time) (DT). Both mods increase the map's difficulty and readability, thus offering higher rewards for their completion.
+However, my recent plays consist of **4✰**-**5.5✰** star maps. Most maps within these star ranges include harder jumps and streams. These maps typically award around 100pp+  when full-comboed, and can award even more **Score** and [PP](https://osu.ppy.sh/wiki/en/Performance_points) when using mods like [Hidden](https://osu.ppy.sh/wiki/en/Gameplay/Game_modifier/Hidden) (HD) or [Double Time](https://osu.ppy.sh/wiki/en/Gameplay/Game_modifier/Double_Time) (DT). Both mods increase the map's difficulty and readability, thus offering higher rewards for their completion.
 
 To give you an example of this, here's a DT play which I set earlier this month:
 
@@ -90,6 +95,6 @@ This streak of improvement, along with better plays and skill, increased my moti
 
 ---
 
-As of now, my sharp gain in rank has mostly normalized, and I normally gain around ~**500** ranks within a single day, or more if I set a good play. Thanks to my practice, I now have the skill to get even better plays than before, regardless of the amount of rank I gain.
+As of now, my sharp gain in rank has mostly normalized, and I normally gain a decent amount of ranks within a session, or more if I set a good play. Thanks to my practice, I now have the skill to get even better plays than before, regardless of the amount of rank I gain.
 
 This process might happen again, who knows? But in the meantime, I'm looking to use what I've learnt from a proper rust and derust experience to help me **in the future** too.

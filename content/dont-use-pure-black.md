@@ -1,7 +1,7 @@
 ---
 title: Don't use pure black
 date: April 15, 2024
-lastUpdated: 08/07/24 22:37
+lastUpdated: 15/08/24 22:33
 author: Inter
 description: Personally, I think pure black is a bad design practise. Here's why.
 tags: ["webdev", "tailwind", "ui", "ux"]
@@ -9,7 +9,7 @@ tags: ["webdev", "tailwind", "ui", "ux"]
 
 Designing dark pages always involve using a wide palette of dark colors. A common trend in most newer designs of pages is that they don't use the actual **black** color, which uses hex color [#000000](https://www.color-hex.com/color/000000), they instead opt for a softer and/or lighter version of black.
 
-<img src="/images/dont-use-pure-black/bg-comparison.png" alt="An older screenshot of a comparison between bg-neutral-900 and bg-black.">
+![An older screenshot of a comparison between bg-neutral-900 and bg-black.](/images/dont-use-pure-black/bg-comparison.png)
 
 ## Eyestrain
 
@@ -43,7 +43,7 @@ You can adjust your **color scheme** to fit this. Sometimes, not doing so might 
 
 Most pages nowadays are stylised using Tailwind CSS. Below are some good black and white color combo's you can use to improve visibility for people who visit your website:
 
-1. <kbd>bg-main</kbd> and <kbd>text-soft</kbd>
+1. `bg-main` and `text-soft`
 
 These are the colors I use on this page you are viewing right now.
 
@@ -53,7 +53,7 @@ These are the colors I use on this page you are viewing right now.
 </div>
 ```
 
-Add the following to your <kbd>colors</kbd> in your <kbd>tailwind.config.ts</kbd> to make this work:
+Add the following to your `colors` in your `tailwind.config.ts` to make this work:
 
 ```ts 
 extend: {
@@ -66,7 +66,7 @@ extend: {
 
 ---
 
-2. <kbd>bg-neutral-900</kbd> and <kbd>text-stone-300</kbd>
+2. `bg-neutral-900` and `text-stone-300`
 
 These are the colors I previously used on this website before the above. It has a good text-on-background visibility.
 
@@ -76,11 +76,11 @@ These are the colors I previously used on this website before the above. It has 
 </div>
 ```
 
-Here, <kbd>text-opacity-95</kbd> is used to slightly reduce the brightness of the text.
+Here, `text-opacity-95` is used to slightly reduce the brightness of the text.
 
 ---
 
-3. <kbd>bg-[#131316]</kbd> and <kbd>text-neutral-200</kbd> 
+3. `bg-[#131316]` and `text-neutral-200`
 
 As seen on the [Clerk homepage](https://clerk.com), this will allow you to make text brighter and stand out to the user while keeping it easy on their eyes.
 
@@ -94,9 +94,7 @@ As seen on the [Clerk homepage](https://clerk.com), this will allow you to make 
 
 As mentioned earlier, not everyone has perfect vision. If you're aiming for accessibility, you **should** have a high-contrast mode, as some people can't see softer colors as well as most do. An example of this would be [Microsoft's high contrast mode on Windows](https://support.microsoft.com/en-gb/windows/change-color-contrast-in-windows-fedc744c-90ac-69df-aed5-c8a90125e696).
 
-<div align="center">
-  <img src="/images/dont-use-pure-black/high-contrast.png">
-</div>
+![](/images/dont-use-pure-black/high-contrast.png)
 
 On the linked page, Microsoft themselves have said:
 

@@ -1,7 +1,7 @@
 ---
 title: A better way to use links in Markdown
 date: April 20, 2024
-lastUpdated: 03/06/24 23:08
+lastUpdated: 15/08/24 21:43
 author: Inter
 description: How link definitions help you to make better links in Markdown files.
 tags: ["markdown", "documentation"]
@@ -54,7 +54,7 @@ You can visit GitHub [here][github].
 [git]: https://git-scm.com
 ```
 
-This is, most of the time, a good way to incorporate link definitions into your markup. However, you may notice that the same words are next to each other in these link definitions, such as <kbd>\[GitHub\]\[github\]</kbd>. This could be confusing to some.
+This is, most of the time, a good way to incorporate link definitions into your markup. However, you may notice that the same words are next to each other in these link definitions, such as `[GitHub][github]`. This could be confusing to some.
 
 Instead, a better method you can use if you name the link definition the same as the word you make a hyperlink is to use an empty pair of second square brackets instead of using the word defined in the link definition. Here is one part of that example below using this method of link definitions:
 

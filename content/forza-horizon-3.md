@@ -1,7 +1,7 @@
 ---
 title: 'Forza Horizon 3: A Short Retrospective'
 date: March 9, 2024
-lastUpdated: 22/07/2024 15:04
+lastUpdated: 16/08/24 14:01
 author: Inter
 description: A game released in 2016 by Playground Games. Here is my personal experience with it!
 tags: ["gaming", "forza", "fh3", "racing"]
@@ -13,7 +13,7 @@ I got a few games along with my Xbox as well. For example, some prominent ones I
 
 As a part of these games, I also got [Forza Horizon 3](https://en.wikipedia.org/wiki/Forza_Horizon_3), a racing game from the Forza Horizon franchise which released back in 2016.
 
-<img src="/images/forza-horizon-3/xbox-one-s.png" alt="The Xbox One S in question positioned underneath my TV in my living room. At the time of making this post, it hasn't been played with for about a year, hence the dust.">
+![The Xbox One S in question positioned underneath my TV in my living room. At the time of making this post, it hasn't been played with for about a year, hence the dust.](/images/forza-horizon-3/xbox-one-s.png)
 
 In this post, I'll go into more detail about my experiences with the game, aspects of the game, and my opinions on other parts of the franchise in general.
 
@@ -68,7 +68,7 @@ When I first tried to go back to this game, I wanted to do it on PC, because I h
 
 I did try to do this, but unfortunately, since the game was de-listed, and even though I was using the same account from my Xbox on the Microsoft Store, the game was unavailable for download.
 
-<img src="/images/forza-horizon-3/fh3-delisted.png" alt="Clicking 'Choose Option' would tell me every version was unavailable.">
+![Clicking 'Choose Edition' would tell me every version was unavailable.](/images/forza-horizon-3/fh3-delisted.png)
 
 I could not download, or even buy the game, because they [de-listed it in 2020](https://support.forzamotorsport.net/hc/en-us/articles/360052097274-Forza-Horizon-3-Unavailable-for-Purchase#:~:text=Forza%20Horizon%203%20and%20its,game%20and%20its%20associated%20content.). I went through different rabbit holes to try and get access to the game without paying hundreds of $$$ for a key of the PC version of the game, but I stopped because I wasn't willing to dig deeper and get myself into something shady.
 
@@ -80,7 +80,7 @@ I ended up just dropping the search and opened my Xbox for the first time in mon
 
 I would suggest buying [Forza Horizon 4](https://store.steampowered.com/app/1293830/Forza_Horizon_4/), as it's being [de-listed](https://forza.net/news/forza-horizon-4-delisting) on December 15th of this year. With the game going on sale for $10 for the Standard Edition, it's a cheap game with many hours of content to enjoy. For me, I put over 600 hours into it, both on Xbox and PC. It also has more players than Horizon 5 currently:
 
-<img src="/images/forza-horizon-3/fh4-and-fh5-players.png">
+![](/images/forza-horizon-3/fh4-and-fh5-players.png)
 
 Contrary to Horizon 4, I would not recommend buying [Forza Horizon 5](https://store.steampowered.com/app/1551360/Forza_Horizon_5/). If you want to know why, I suggest [reading the review](https://steamcommunity.com/id/inttter/recommended/1551360/) I made on Steam. It's a long one, but it details every **gripe** I have with the game and why it's the **worst** in the franchise so far.
 

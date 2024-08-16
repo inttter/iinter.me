@@ -25,7 +25,7 @@ const MarkdownComponents = {
       setCopied(false);
     }, 3000);
 
-    return (
+    return match ? (
       <div className="relative">
         <button
           className={`absolute top-[19px] right-2 text-soft text-sm font-semibold bg-neutral-900 hover:border-neutral-700 duration-300 border md:border-2 border-neutral-800 rounded-md p-1.5 mr-1 ${copied ? 'cursor-default' : ''}`}
@@ -35,7 +35,7 @@ const MarkdownComponents = {
           {copied ? <Check size={15} className="text-emerald-400" /> : <Copy size={15} />}
         </button>
         <pre className="rounded-md overflow-auto scrollbar-thin text-sm mt-2">
-          <SyntaxHighlighter
+        <SyntaxHighlighter
             language={match ? match[1] : null}
             style={nord}
             wrapLongLines={true}
@@ -47,11 +47,16 @@ const MarkdownComponents = {
               border: '2px solid #242424'
             }}
             codeTagProps={{ style: { fontFamily: 'inherit' } }}
-          >
-            {children}
-          </SyntaxHighlighter>
+          PreTag="div"
+          children={String(children).replace(/\n$/, "")}
+          {...props}
+        />
         </pre>
       </div>
+    ) : (
+      <code className="text-zinc-200 p-1 bg-[#1A1A1A] border border-neutral-800 rounded-md code tracking-tighter m-0.5 whitespace-pre-line" {...props}>
+        {children}
+      </code>
     );
   },
 
@@ -74,8 +79,8 @@ const MarkdownComponents = {
         <img
           className="rounded-md border border-neutral-800"
           loading="lazy"
-          alt={alt}
-          src={src}
+          alt={alt || 'Image'}
+          src={src || placeholderSrc}
           onError={handleImageError}
           {...props}
         />
@@ -238,7 +243,7 @@ const MarkdownComponents = {
   // Keyboard (aka inline code)
   kbd({ node, children, ...props }) {
     return (
-      <kbd className="text-zinc-200 p-1 bg-[#1A1A1A] border border-neutral-800 rounded-md tags tracking-tighter m-0.5" {...props}>
+      <kbd className="text-zinc-300 p-1.5 bg-[#1A1A1A] border border-neutral-700 shadow-sm shadow-neutral-500 rounded-md tags tracking-tighter m-0.5" {...props}>
         {children}
       </kbd>
     );

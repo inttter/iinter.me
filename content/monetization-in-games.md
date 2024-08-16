@@ -1,7 +1,7 @@
 ---
 title: Monetization in Games
 date: April 3, 2024
-lastUpdated: 30/06/24 19:23
+lastUpdated: 15/08/24 22:49
 author: Inter
 description: My opinions how monetization is used in video games and how they are good or bad.
 tags: ["gaming", "monetization", "lootboxes", "money"]
@@ -30,7 +30,7 @@ In case you don't know, a live service game is (explained from [this](https://ww
 
 These battle passes are designed to have FOMO (Feeling Of Missing Out), and it encourages people to grind the game in question to not miss out on exclusive rewards they won't be able to get after the period is over. An example of this is Fortnite, which was one of the first games to use the battle pass system, with other games to follow. There's been 29 seasons of Fortnite, with every single one since Season 2 having a battle pass.
 
-<img src="/images/monetization-in-games/c1s2-tier75.png" alt="The last tier of the C1S2 Battle Pass, the Black Knight skin. This skin has not returned to the game in the 7 years since it became unobtainable after the season ended.">
+![The last tier of the C1S2 Battle Pass, the Black Knight skin. This skin has not returned to the game in the 7 years since it became unobtainable after the season ended.](/images/monetization-in-games/c1s2-tier75.png)
 
 This also creates a market for buying accounts, hacking, and the general breaking of rules the game has set in place. Most commonly, people buy and hack accounts to play with unobtainable items, which, most of the time goes against the companies' TOS.
 
@@ -70,11 +70,11 @@ Any free games which have these kinds of monetization are dubbed '**Freemium**',
 
 A lot of the time, you tend to get much more of the premium currency that you have to spend money for rather than the free currency (that is, if you buy the premium currency). This is done in order to encourage people to buy the premium currency, as they'll receive more of it, meaning they'll spend more of it, and then need to refill, so they buy it again, and this cycle repeats itself.
 
-<img src="/images/monetization-in-games/apex-coins.png" alt="This is the store page for buying Apex Coins in Apex Legends. In this example specifically, they will try and incentivize people by saying that they will get (𝑥) amount of currency bonus.">
+![This is the store page for buying Apex Coins in Apex Legends. In this example specifically, they will try and incentivize people by saying that they will get (𝑥) amount of currency bonus.](/images/monetization-in-games/apex-coins.png)
 
 If you want to visualize this, here's a diagram.
 
-<img src="/images/monetization-in-games/diagram.png" alt="A simple diagram to visualize the cycle of premium currency, using 10,000 Apex coins as an example.">
+![A simple diagram to visualize the cycle of premium currency, using 10,000 Apex coins as an example.](/images/monetization-in-games/diagram.png)
  
 ## DLC
 
@@ -95,7 +95,7 @@ In particular, the DLC featured a:
 
 Sometimes, devs bundle some/all of their game's DLC into one edition of the game, and a few games even make them the main edition of the game, more commonly if the game has been out for a long time. Dying Light has this. It has 2 editions, one with some of the DLC, and one with every DLC in the game.
 
-<img src="/images/monetization-in-games/dl1-bundles.png" alt="The 'Enhanced Edition' contains some more bigger and essential DLC's, while the 'Definitive Edition' has every DLC in the game, minus the free ones, which you need to get yourself.">
+![The 'Enhanced Edition' contains some more bigger and essential DLC's, while the 'Definitive Edition' has every DLC in the game, minus the free ones, which you need to get yourself.](/images/monetization-in-games/dl1-bundles.png) 
 
 <div style="padding: 0.8rem 1rem; background-color: #262626; border-radius: 0.375rem; font-size: 0.96rem; display: flex; align-items: center; color: #d4d4d8; margin-top: 20px; margin-bottom: 20px;">
     <span>The "Historical Low" and "Current Best" stats come from <a href="https://augmentedsteam.com/" target="_blank" rel="noopener noreferrer">Augmented Steam</a>.</span>

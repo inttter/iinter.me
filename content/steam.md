@@ -1,7 +1,7 @@
 ---
 title: Why Steam is the Best Game Launcher
 date: March 23, 2024
-lastUpdated: 17/06/24 19:10
+lastUpdated: 16/08/24 13:38
 author: Inter
 description: Steam is the biggest launcher and store in the PC gaming market. This is why.
 tags: ["steam", "gaming"]
@@ -63,13 +63,13 @@ There is no lag, issues, or anything, which is unlike Rockstar. For some reason,
 
 | Old | New |
 | ------ | ------- |
-| <img src="/images/steam/old-ui.png"> | <img src="/images/steam/new-ui.png">
+| ![](/images/steam/old-ui.png) | ![](/images/steam/new-ui.png)
 
 Although, some parts of the UI have taken quite a while to update, or have not been updated in years. An example of this is the Server Browser, commonly used in games with community maps and/or servers, such as [CS2](https://store.steampowered.com/app/730/CounterStrike_2/) and [Garry's Mod](https://store.steampowered.com/app/4000/Garrys_Mod/). The Server Browser was only updated 11 months ago, prior to which had been many years without change.
 
-| Old | New |
-| ------ | ------- |
-| <img src="/images/steam/old-server-browser-ui.png"> | <img src="/images/steam/new-server-browser-ui.png">
+| Old                                          | New                                         |
+| -------------------------------------------- | ------------------------------------------- |
+| ![](/images/steam/old-server-browser-ui.png) | ![](/images/steam/new-server-browser-ui.png)
 
 ## Valve
 
