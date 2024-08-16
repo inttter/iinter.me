@@ -245,7 +245,7 @@ const WatchlistCategory = ({ title, list, favourites }) => {
                 </div>
               )}
               {title === "Watching" ? (
-                <span className="absolute sm:right-2 bg-neutral-800 bg-opacity-80 group-hover:bg-[#292929] text-soft px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-left bottom-2 right-2 duration-300" data-tip="Episodes Watched" data-theme="black">
+                <span className="absolute bottom-3 right-3 bg-neutral-800 bg-opacity-80 group-hover:bg-[#292929] border border-transparent text-soft px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-left duration-300" data-tip="Episodes Watched" data-theme="black">
                   {item.progress}/{item.episodes} episodes
                 </span>
               ) : item.score && item.score > 0 ? (
