@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "last-updated": "node src/scripts/lastUpdated.js"
+    "last-updated": "node src/scripts/lastUpdated.js",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@fontsource/geist-mono": "^5.0.3",
@@ -25,6 +26,7 @@
     "lucide-react": "^0.428.0",
     "million": "^3.1.11",
     "next": "^14.2.5",
+    "next-sitemap": "^4.2.3",
     "react": "^18.3.1",
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.3.1",
