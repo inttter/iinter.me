@@ -37,7 +37,7 @@ class MyDocument extends Document {
               <meta property="og:title" content={postTitle} />
               <meta property="og:image" content={postImage} />
               <meta property="og:description" content={postDescription} />
-              <meta property="description" content={postDescription} />
+              <meta name="description" content={postDescription} />
               <meta name="twitter:image" content={postImage} />
               <meta name="twitter:card" content="summary_large_image" />
               <meta name="twitter:description" content={postDescription} />
@@ -49,7 +49,7 @@ class MyDocument extends Document {
               <meta property="og:description" content={writingDescription} />
               <meta property="og:image" content={`${siteUrl}/external-assets/writing-index.png`} />
               <meta property="og:url" content={`${siteUrl}/writing`} />
-              <meta property="description" content={writingDescription} />
+              <meta name="description" content={writingDescription} />
               <meta name="twitter:image" content={`${siteUrl}/external-assets/writing-index.png`} />
               <meta name="twitter:card" content="summary_large_image" />
               <meta name="twitter:description" content={writingDescription} />
@@ -60,7 +60,7 @@ class MyDocument extends Document {
               <meta property="og:image" content={defaultImage} />
               <meta property="og:description" content={description} />
               <meta property="og:title" content="Inter" />
-              <meta property="description" content={description} />
+              <meta name="description" content={description} />
               <meta name="twitter:description" content={description} />
               <meta name="twitter:image" content={defaultImage} />
               <meta name="twitter:card" content="summary_large_image" />
