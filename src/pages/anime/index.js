@@ -124,9 +124,18 @@ const Anime = () => {
     return lists.reduce((accumulator, list) => {
       list.entries.forEach(entry => {
         if (entry.status === status) {
+          const animeId = entry.media.id;
+  
+          // Check for any title overrides on the ID
+          const title = titleOverrides[animeId] || 
+                        entry.media.title.english || 
+                        entry.media.title.romaji || 
+                        entry.media.title.native || 
+                        "Unknown Title";
+
           accumulator.push({
             id: entry.media.id,
-            title: entry.media.title.english,
+            title: title,
             coverImage: entry.media.coverImage ? entry.media.coverImage.large : null,
             score: entry.score,
             notes: entry.notes,
@@ -137,6 +146,13 @@ const Anime = () => {
       });
       return accumulator;
     }, []);
+  };
+
+  // For anime that do not have an official English title or return `null` for the English title,
+  // add the AniList ID of the show to the `titleOverrides` object below, 
+  // along with the preferred/correct title to display.
+  const titleOverrides = {
+    20997: "Charlotte",
   };
 
   return (
