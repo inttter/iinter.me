@@ -8,9 +8,9 @@ export default function Home() {
     <div className="bg-main min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8">
       <div className="max-w-2xl w-full px-4 py-8 space-y-6 flex-col">
         <div className="flex items-center justify-start">
-          <h1 className="text-5xl">
+          <div className="text-5xl">
             <Lanyard showAlbumArt={false} />
-          </h1>
+          </div>
         </div>
         <div className="flex justify-start space-x-3 px-0 md:px-1">
           <SocialLink href="https://github.com/inttter" social="GitHub" tooltipText="@inttter" />

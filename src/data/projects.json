@@ -34,7 +34,7 @@
     {
       "name": "notetxt",
       "description": "📝 A note-taker app with a focus on minimalism and simplicity.",
-      "link": "https://notetxt.iinter.me",
+      "link": "https://notetxt.xyz",
       "github": "https://github.com/inttter/notetxt",
       "tags": ["Next.js", "Tailwind", "Note-taking"],
       "maintained": true

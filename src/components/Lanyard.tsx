@@ -129,14 +129,14 @@ function Lanyard({ showUsername = true, showStatusDot = true, showAlbumArt = tru
             </span>
           )}
           {!showAlbumArt && (
-            <motion.p
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
               className="text-base tracking-normal text-stone-500 overflow-ellipsis animate-blurred-fade-in duration-1000 truncate -mt-0.5"
             >
               {status}
-            </motion.p>
+            </motion.div>
           )}
         </div>
       </div>
@@ -175,7 +175,7 @@ function Lanyard({ showUsername = true, showStatusDot = true, showAlbumArt = tru
                     </div>
                   </Link>
                 </motion.div>
-                <motion.p
+                <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
@@ -184,7 +184,7 @@ function Lanyard({ showUsername = true, showStatusDot = true, showAlbumArt = tru
                   <span className="font-medium truncate">
                     {spotifyArtist}
                   </span>
-                </motion.p>
+                </motion.div>
               </div>
             </div>
           </div>
