@@ -14,7 +14,7 @@ import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import BackToTop from '../../components/BackToTop';
 import Navbar from '../../components/Navbar';
-import markdownStyles from '../../components/MarkdownStyles';
+import markdownStyles from '../../components/markdownStyles';
 import { CalendarDays } from 'lucide-react';
 
 export default function Post({ post }) {
