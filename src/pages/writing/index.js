@@ -17,7 +17,7 @@ export default function Writing({ posts }) {
   const [hoveredPost, setHoveredPost] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedTag, setSelectedTag] = useState(null);
-  const postsPerPage = 7;
+  const postsPerPage = 5;
   const router = useRouter();
 
   useEffect(() => {
