@@ -14,8 +14,8 @@ class MyDocument extends Document {
     const { isPostPage, postSlug } = this.props;
     const post = this.props.__NEXT_DATA__.props.pageProps.post || {};
 
-    const description = 'A racing game, computer and also cat lover.';
-    const writingDescription = 'Posts about various things that I think or interesting or that I want to talk about.';
+    const description = 'A racing game, computer and cat lover.';
+    const writingDescription = 'Posts about various things that I think are interesting or that I want to talk about.';
     const siteUrl = 'https://iinter.me';
     const defaultImage = `${siteUrl}/external-assets/og-card.png`;
 
