@@ -14,7 +14,8 @@ import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import BackToTop from '../../components/BackToTop';
 import Navbar from '../../components/Navbar';
-import markdownStyles from '../../components/markdownStyles';
+import markdownStyles from '../../components/MarkdownStyles';
+import { CalendarDays } from 'lucide-react';
 
 export default function Post({ post }) {
   const router = useRouter();
@@ -46,14 +47,16 @@ export default function Post({ post }) {
             animate={{ opacity: 1 }} 
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-3xl text-zinc-200 font-semibold tracking-tight"
+            aria-label="Post Title"
           >
             {post.frontmatter.title}
           </motion.div>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-stone-500 max-w-2xl mt-0.5 overflow-auto tracking-tight"
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-stone-400 max-w-2xl mt-0.5 overflow-auto"
+            aria-label="Post Date"
           >
             <span>{post.frontmatter.date}</span>
           </motion.p>
@@ -61,8 +64,9 @@ export default function Post({ post }) {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.6 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
               className="flex flex-wrap mt-2 space-x-2"
+              aria-label="Post Tags"
             >
               {post.frontmatter.tags.map((tag, index) => (
                 <span
@@ -79,8 +83,9 @@ export default function Post({ post }) {
         <motion.div
           initial={{ opacity: 0 }} 
           animate={{ opacity: 1 }} 
-          transition={{ duration: 0.5, delay: 0.8 }} 
+          transition={{ duration: 0.5, delay: 0.4 }} 
           className="leading-7 text-soft text-opacity-95"
+          aria-label="Post Content"
         >
           <ReactMarkdown 
             components={markdownStyles} 
@@ -95,11 +100,14 @@ export default function Post({ post }) {
           <hr className="w-full border-t border-neutral-800" />
         </div>
         <motion.div
-          className="text-neutral-600 animate-blurred-fade-in duration-700 text-xs flex justify-end"
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }} 
           transition={{ delay: 0.8, duration: 0.5 }}
+          className="text-stone-500 animate-blurred-fade-in duration-700 text-xs flex justify-end items-center"
+          aria-label="Date Post Was Last Updated"
         >
-          Last updated on 
-          <span className="font-semibold tracking-tight ml-1">
+          <CalendarDays size={12} className="mr-1" /> Last updated on
+          <span className="font-semibold tracking-tight ml-0.5">
             {post.frontmatter.lastUpdated}
           </span>
         </motion.div>

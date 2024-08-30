@@ -34,6 +34,7 @@ const BackToTop = () => {
       onClick={scrollToTop}
       data-tip="Back To Top"
       data-theme="black"
+      aria-label="Back To Top Button"
     >
       <ArrowUp />
     </motion.button>

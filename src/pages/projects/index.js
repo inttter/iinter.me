@@ -44,10 +44,10 @@ export default function Projects() {
               >
                 <Link href="https://github.com/inttter?tab=repositories" target="_blank" rel="noopener noreferrer" passHref>
                   <div className="text-xs code mb-2 flex items-center group">
-                    <span className="text-neutral-600 hover:text-neutral-500 duration-300">
+                    <span className="text-stone-400 hover:text-stone-500 duration-300">
                       All repositories
                     </span> 
-                    <ArrowUpRight size={15} className="m-1 opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 text-neutral-600 group-hover:text-neutral-500 duration-200" />
+                    <ArrowUpRight size={15} className="m-1 opacity-80 group-hover:opacity-100 group-hover:translate-x-0.5 text-stone-400 group-hover:text-stone-500 duration-200" />
                   </div>
                 </Link>
               </motion.div>
@@ -72,7 +72,8 @@ export default function Projects() {
                             <span 
                               className={`border-b border-dashed border-neutral-600 hover:border-neutral-500 ${!project.maintained ? "text-amber-300 hover:text-amber-400 duration-300 tooltip tooltip-right bg-transparent" : "text-soft hover:text-stone-300 hover:text-opacity-80 duration-300 bg-transparent"}`}
                               data-tip={!project.maintained ? "Deprecated, visit for details." : ""}
-                              data-theme={!project.maintained ? "black" : ""} 
+                              data-theme={!project.maintained ? "black" : ""}
+                              aria-label="Project Name"
                             >
                               {project.name}
                             </span>
@@ -92,13 +93,19 @@ export default function Projects() {
                                   animate={{ opacity: 1 }}
                                   transition={{ duration: 0.5 }}
                                   className="text-xs text-soft bg-[#141414] hover:bg-[#202020] border border-neutral-800 hover:border-neutral-700 animate-blurred-fade-in duration-300 px-2 py-1 rounded-md mr-1.5 mb-0.5 flex items-center"
+                                  aria-label="GitHub Star Count"
                                 >
                                   <FaStar size={13} className="md:mb-0 mb-0.5 mr-0.5 text-yellow-400" />
                                   {stars[project.github]}
                                 </motion.span>
                               </Link>
                           )}
-                          <Link href={project.github} target="_blank" rel="noopener noreferrer" className="mr-1 md:mr-0.5 -mt-1 text-neutral-600 hover:text-soft duration-300">
+                          <Link 
+                            href={project.github} 
+                            target="_blank" rel="noopener noreferrer" 
+                            className="mr-1 md:mr-0.5 -mt-1 text-neutral-600 hover:text-soft duration-300"
+                            aria-label="GitHub Repository Link"
+                          >
                             <FaGithub size={18} />
                           </Link>
                         </motion.div>
@@ -108,15 +115,17 @@ export default function Projects() {
                         animate={{ opacity: 1 }} 
                         transition={{ duration: 0.5 }}
                         className="text-stone-400 text-sm py-2.5 animate-blurred-fade-in duration-700"
+                        aria-label="Project Description"
                       >
                         {project.description}
                       </motion.p>
                       {project.tags && (
                         <motion.div
-                          className="-mx-1 p-1 rounded-md text-xs flex flex-wrap items-center"
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           transition={{ duration: 0.5 }}
+                          className="-mx-1 p-1 rounded-md text-xs flex flex-wrap items-center"
+                          aria-label="Project Tags"
                         >
                           {project.tags.map((tag, tagIndex) => (
                             <span key={tagIndex} className="mr-2">

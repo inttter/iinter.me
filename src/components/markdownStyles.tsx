@@ -84,7 +84,7 @@ const MarkdownComponents = {
           onError={handleImageError}
           {...props}
         />
-        {alt && <p className="text-sm text-neutral-600 mt-2">{alt}</p>}
+        {alt && <p className="text-sm text-stone-500 mt-2">{alt}</p>}
       </div>
     );
   },
@@ -108,7 +108,7 @@ const MarkdownComponents = {
         >
           Your browser does not support the video tag.
         </video>
-        {alt && <p className="text-sm text-neutral-600 mt-2">{alt}</p>}
+        {alt && <p className="text-sm text-stone-500 mt-2">{alt}</p>}
       </div>
     );
   },

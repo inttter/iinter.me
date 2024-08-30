@@ -201,7 +201,7 @@ const Anime = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="flex justify-center items-center bg-neutral-800 bg-opacity-40 text-zinc-200 px-4 py-2 rounded-md">
+            <div className="flex justify-center items-center bg-neutral-800 bg-opacity-40 text-zinc-200 px-4 py-2 rounded-md" aria-label="Error Message">
               <X size={20} className="mr-3" /> No list found.
             </div>
           </motion.div>
@@ -211,7 +211,7 @@ const Anime = () => {
           animate={{ opacity: 1 }} 
           transition={{ duration: 0.5 }}
         >
-          <div className="flex justify-end items-center text-sm text-neutral-600 animate-blurred-fade-in duration-500">
+          <div className="flex justify-end items-center text-sm text-neutral-400 animate-blurred-fade-in duration-500" aria-label="AniList Profile Link">
             {profilePicture && (
               <Link 
                 href={`https://anilist.co/user/${username}`} 
@@ -223,7 +223,8 @@ const Anime = () => {
                   alt="AniList Profile Picture" 
                   width={30} 
                   height={30} 
-                  className="border-2 border-soft-gray rounded-full mr-2.5 scale-110 group-active:scale-105 duration-300" 
+                  className="border-2 border-soft-gray rounded-full mr-2.5 scale-110 group-active:scale-105 duration-300"
+                  aria-label="AniList Profile Picture"
                 />
                 View {username}'s full AniList <SiAnilist className="m-1" /> profile
               </Link>
@@ -250,22 +251,33 @@ const WatchlistCategory = ({ title, list, favourites }) => {
                   width={70}
                   height={70}
                   className="antialiased rounded-lg shadow-2xl shadow-neutral-500 border border-neutral-600 transition duration-300"
+                  aria-label="Anime Cover Image"
                 />
               </div>
             )}
-            <div className="px-3 flex-grow flex-shrink-0 md:max-w-[520px] max-w-[220px] truncate md:whitespace-pre-wrap whitespace-nowrap text-stone-200 md:text-lg text-md antialiased">
+            <div className="px-3 flex-grow flex-shrink-0 md:max-w-[520px] max-w-[220px] truncate md:whitespace-pre-wrap whitespace-nowrap text-stone-200 md:text-lg text-md antialiased" aria-label="Anime Title">
               {item.title}
               {item.notes && (
-                <div className="text-xs text-stone-400 italic mb-4 overflow-hidden overflow-ellipsis">
+                <div className="text-xs text-stone-400 italic mb-4 overflow-hidden overflow-ellipsis" aria-label="Anime Notes">
                   "{item.notes}"
                 </div>
               )}
               {title === "Watching" ? (
-                <span className="absolute bottom-3 right-3 bg-neutral-800 bg-opacity-80 group-hover:bg-[#292929] border border-transparent text-soft px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-left duration-300" data-tip="Episodes Watched" data-theme="black">
+                <span 
+                  className="absolute bottom-3 right-3 bg-neutral-800 bg-opacity-80 group-hover:bg-[#292929] border border-transparent text-soft px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-left duration-300" 
+                  data-tip="Episodes Watched" 
+                  data-theme="black" 
+                  aria-label="Anime Episode Progress"
+                >
                   {item.progress}/{item.episodes} episodes
                 </span>
               ) : item.score && item.score > 0 ? (
-                <span className="absolute bottom-3 right-3 bg-neutral-800 bg-opacity-80 group-hover:bg-[#292929] border border-transparent text-soft px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-left duration-300" data-tip="Rating" data-theme="black">
+                <span 
+                  className="absolute bottom-3 right-3 bg-neutral-800 bg-opacity-80 group-hover:bg-[#292929] border border-transparent text-soft px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-left duration-300" 
+                  data-tip="Rating" 
+                  data-theme="black" 
+                  aria-label="Anime Score"
+                >
                   {item.score}/10
                 </span>
               ) : null}
@@ -274,6 +286,7 @@ const WatchlistCategory = ({ title, list, favourites }) => {
                   className={`antialiased absolute right-14 mr-2.5 bottom-3 flex items-center px-2 py-1 border ${favourites.findIndex(fav => fav.id === item.id) === 0 ? 'border-pink-400' : 'border-transparent'} bg-neutral-800 bg-opacity-80 group-hover:bg-[#292929] duration-300 rounded-md font-medium tooltip tooltip-left`} 
                   data-tip="Favorite Position"
                   data-theme="black"
+                  aria-label="Anime Favorite Position"
                 >
                   <div className={`text-xs flex items-center ${favourites.findIndex(fav => fav.id === item.id) === 0 ? 'text-zinc-100' : 'text-soft'}`}>
                     <FaHeart size={13} className="mr-1 text-pink-400" />
