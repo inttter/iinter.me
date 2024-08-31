@@ -33,7 +33,8 @@ When the next day does eventually arrive, I go back to the server I use and chec
 
 Of course, you *can* just use a to-do or a note-taker app, and that's exactly what I do now by using [Notetxt](https://www.notetxt.xyz/), but I still think this is a pretty interesting method which I don't see people talk about often.
 
-<div style="font-size: 12px; color: #6b7280; margin-top: -5px;">
-
-  *This post was [originally made](https://github.com/inttter/iinter.me/commit/5eebb271a18a59df03ff1b927ac86e5b2dac3a84) on April 11, 2024, and was fully rewritten on August 30, 2024.*
+<div style="margin-bottom: 20px; color: #78716c">
+  <sub> 
+  This post was originally made on April 11, 2024, and was fully rewritten on August 30, 2024.
+  </sub>
 </div>
