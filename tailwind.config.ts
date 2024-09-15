@@ -26,6 +26,10 @@
           }
         }
       },
+      fontFamily: {
+        sans: ['var(--font-geist-sans)'],
+        mono: ['var(--font-jetbrains-mono)'],
+      },
     },
     variants: {},
     plugins: [

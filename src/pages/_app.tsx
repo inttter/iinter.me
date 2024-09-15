@@ -4,16 +4,24 @@ import { Toaster } from 'sonner';
 import Head from '../components/Layout';
 import '../styles/index.css';
 import '../styles/github-alerts.css';
-import '@fontsource/geist-sans';
-import '@fontsource/geist-sans/700.css';
-import '@fontsource/geist-sans/600.css';
-import '@fontsource/jetbrains-mono';
+import localFont from 'next/font/local';
+
+const geistSans = localFont({
+  src: "../fonts/GeistVF.woff",
+  variable: "--font-geist-sans",
+  weight: "100 900",
+});
+const jetbrainsMono = localFont({
+  src: "../fonts/JetBrainsMonoVF.ttf",
+  variable: "--font-jetbrains-mono",
+  weight: "100 900",
+});
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <div className="selection:bg-neutral-700 selection:text-zinc-300">
+        <div className={`${geistSans.className} ${jetbrainsMono.variable} antialiased selection:bg-neutral-700 selection:text-zinc-300`}>
           <Component {...pageProps} />
           <div className="fixed inset-x-0 top-0 h-16 pointer-events-none">
             <div

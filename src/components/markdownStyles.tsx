@@ -35,22 +35,22 @@ const MarkdownComponents = {
           {copied ? <Check size={15} className="text-emerald-400" /> : <Copy size={15} />}
         </button>
         <pre className="rounded-md overflow-auto scrollbar-thin text-sm mt-2">
-        <SyntaxHighlighter
+          <SyntaxHighlighter
             language={match ? match[1] : null}
             style={nord}
             wrapLongLines={true}
+            codeTagProps={{ style: { fontFamily: 'inherit' } }}
+            PreTag="div"
+            children={String(children).replace(/\n$/, "")}
             customStyle={{
               background: '#101010',
               overflowX: 'auto',
               borderRadius: '0.5rem',
-              fontFamily: 'Jetbrains Mono, monospace',
+              fontFamily: 'var(--font-jetbrains-mono)',
               border: '2px solid #242424'
             }}
-            codeTagProps={{ style: { fontFamily: 'inherit' } }}
-          PreTag="div"
-          children={String(children).replace(/\n$/, "")}
-          {...props}
-        />
+            {...props}
+          />
         </pre>
       </div>
     ) : (
