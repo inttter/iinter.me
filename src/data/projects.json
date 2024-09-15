@@ -28,23 +28,31 @@
       "description": "🏓 A quicker way to check a user's Discord status from the terminal.",
       "link": "https://discid.xyz",
       "github": "https://github.com/inttter/discid",
-      "tags": ["JavaScript", "Discord", "Lanyard"],
+      "tags": ["JavaScript", "CLI", "Discord", "Lanyard"],
       "maintained": true
     },
     {
-      "name": "notetxt",
+      "name": "Notetxt",
       "description": "📝 A note-taker app with a focus on minimalism and simplicity.",
       "link": "https://notetxt.xyz",
       "github": "https://github.com/inttter/notetxt",
-      "tags": ["Next.js", "Tailwind", "Note-taking"],
+      "tags": ["Next.js", "Notes", "Todo", "Note-taking"],
+      "maintained": true
+    },
+    {
+      "name": "Colorflow",
+      "description": "🎨 Generate and preview different types of colors on multiple different examples.",
+      "github": "https://github.com/inttter/colorflow",
+      "link": "https://colorflow.cc",
+      "tags": ["Next.js", "CSS", "Color", "Preview"],
       "maintained": true
     },
     {
       "name": "iinter.me",
-      "description": "🪄 My personal website made using Next.js, Tailwind, and Million for optimization.",
+      "description": "🪄 My personal website made using Next.js, Tailwind, and Million.",
       "github": "https://github.com/inttter/iinter.me",
       "link": "https://iinter.me",
-      "tags": ["Next.js", "Tailwind", "Million", "Blog"],
+      "tags": ["Next.js", "Tailwind", "Million", "Writing"],
       "maintained": true
     }
   ]
