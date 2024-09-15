@@ -70,14 +70,14 @@ export default function Projects() {
                         <Link href={project.link} target="_blank" rel="noopener noreferrer" className="group" passHref>
                           <span className="flex items-center">
                             <span 
-                              className={`border-b border-dashed border-neutral-600 hover:border-neutral-500 ${!project.maintained ? "text-amber-300 hover:text-amber-400 duration-300 tooltip tooltip-right bg-transparent" : "text-soft hover:text-stone-300 hover:text-opacity-80 duration-300 bg-transparent"}`}
+                              className={`border-b border-dotted border-neutral-600 hover:border-neutral-500 text-base ${!project.maintained ? "text-amber-300 hover:text-amber-400 duration-300 tooltip tooltip-right bg-transparent" : "text-soft hover:text-stone-300 hover:text-opacity-80 duration-300 bg-transparent"}`}
                               data-tip={!project.maintained ? "Deprecated, visit for details." : ""}
                               data-theme={!project.maintained ? "black" : ""}
                               aria-label="Project Name"
                             >
                               {project.name}
                             </span>
-                            <ArrowUpRight size={15} className="m-1 opacity-50 group-hover:opacity-100 group-hover:translate-x-[1.5px] group-hover:text-soft duration-200" />
+                            <ArrowUpRight size={15} className="hidden md:block m-1 opacity-50 group-hover:opacity-100 group-hover:translate-x-[1.5px] group-hover:text-soft duration-200" />
                           </span>
                         </Link>
                         <motion.div 
@@ -120,19 +120,16 @@ export default function Projects() {
                         {project.description}
                       </motion.p>
                       {project.tags && (
-                        <motion.div
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          transition={{ duration: 0.5 }}
-                          className="-mx-1 p-1 rounded-md text-xs flex flex-wrap items-center"
-                          aria-label="Project Tags"
-                        >
+                        <div className="flex flex-wrap gap-1 truncate whitespace-pre-wrap">
                           {project.tags.map((tag, tagIndex) => (
-                            <span key={tagIndex} className="mr-2">
-                              <span className="text-soft bg-[#141414] border border-neutral-800 px-2 md:py-1.5 py-1 rounded-md tags tracking-tight">{tag}</span>
+                            <span
+                              key={tagIndex}
+                              className="text-xs text-soft bg-[#141414] border border-neutral-800 px-2 py-1 rounded-md code tracking-tight"
+                            >
+                              {tag}
                             </span>
                           ))}
-                        </motion.div>
+                        </div>
                       )}
                     </div>
                   </motion.div>
