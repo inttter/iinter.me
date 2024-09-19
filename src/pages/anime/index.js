@@ -7,9 +7,7 @@ import BackToTop from '../../components/BackToTop';
 import { request } from 'graphql-request';
 import { SiAnilist } from "react-icons/si";
 import { FaHeart } from "react-icons/fa";
-import { X } from 'lucide-react';
 import consola from 'consola';
-import { toast } from 'sonner';
 import Image from 'next/image';
 
 const Anime = () => {
@@ -112,8 +110,7 @@ const Anime = () => {
         }
       } catch (error) {
         consola.error('An error occurred:', error);
-        setErrorMessage('Cannot fetch list.');
-        toast.error('Error fetching list. Check the console for more details, or wait a few minutes and try again.');
+        setErrorMessage('List could not be fetched. Check the console for more information, or try again later.');
       }
     };
   
@@ -153,6 +150,7 @@ const Anime = () => {
   // along with the preferred/correct title to display.
   const titleOverrides = {
     20997: "Charlotte",
+    181444: "The Fragrant Flower Blooms With Dignity"
   };
 
   return (
@@ -201,8 +199,11 @@ const Anime = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="flex justify-center items-center bg-neutral-800 bg-opacity-40 text-zinc-200 px-4 py-2 rounded-md" aria-label="Error Message">
-              <X size={20} className="mr-3" /> No list found.
+            <div className="flex items-center justify-center text-soft text-7xl font-semibold rounded-md tracking-tighter">
+              No list found.
+            </div>
+            <div className="flex items-center justify-center text-stone-400 text-sm rounded-md mt-2" aria-label="Error Message">
+              {errorMessage}
             </div>
           </motion.div>
         )}
