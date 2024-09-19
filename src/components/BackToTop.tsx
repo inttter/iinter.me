@@ -25,6 +25,10 @@ const BackToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  if (!showScrollButton) {
+    return null;
+  }
+
   return (
     <motion.button
       className="fixed bottom-6 right-6 text-soft p-2 bg-neutral-800 hover:bg-soft-gray hover:bg-opacity-80 border-2 border-neutral-800 hover:border-neutral-700 rounded-full duration-300 flex items-center tooltip tooltip-left"
