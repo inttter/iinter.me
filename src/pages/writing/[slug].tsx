@@ -35,13 +35,8 @@ export default function Post({ post }) {
         <title>{`${post.frontmatter.title} | Inter`}</title>
         <meta name="description" content={post.frontmatter.description} />
       </Head>
-      <div className="max-w-2xl w-full md:px-1 px-3 md:py-7 py-11 space-y-4">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center -mx-2 z-50">
-            <Navbar />
-          </div>
-        </div>
-        <div className="flex flex-col items-start justify-center pt-3 md:pt-5">
+      <div className="max-w-2xl w-full px-4 md:py-16 py-20 space-y-6">
+        <div className="flex flex-col items-start justify-center pt-3 md:pt-5 p-1">
           <motion.div 
             initial={{ opacity: 0 }} 
             animate={{ opacity: 1 }} 
@@ -84,7 +79,7 @@ export default function Post({ post }) {
           initial={{ opacity: 0 }} 
           animate={{ opacity: 1 }} 
           transition={{ duration: 0.5, delay: 0.4 }} 
-          className="leading-7 text-soft text-opacity-95"
+          className="leading-7 text-soft text-opacity-95 px-1 text-[15px] md:text-[16px]"
           aria-label="Post Content"
         >
           <ReactMarkdown 
@@ -111,6 +106,7 @@ export default function Post({ post }) {
             {post.frontmatter.lastUpdated}
           </span>
         </motion.div>
+        <Navbar />
       </div>
     </div>
   );
