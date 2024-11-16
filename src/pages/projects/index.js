@@ -36,21 +36,6 @@ export default function Projects() {
           </Head>
           <div className="md:-py-0 py-20">
             <div>
-              <motion.div
-                initial={{ opacity: 0 }} 
-                animate={{ opacity: 1 }} 
-                transition={{ duration: 0.5 }}
-                className="flex justify-end"
-              >
-                <Link href="https://github.com/inttter?tab=repositories" target="_blank" rel="noopener noreferrer" passHref>
-                  <div className="text-xs code mb-2 flex items-center group">
-                    <span className="text-stone-400 hover:text-stone-500 duration-300">
-                      All repositories
-                    </span> 
-                    <ArrowUpRight size={15} className="m-1 opacity-80 group-hover:opacity-100 group-hover:translate-x-0.5 text-stone-400 group-hover:text-stone-500 duration-200" />
-                  </div>
-                </Link>
-              </motion.div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-3 gap-y-3">
                 {projectsData.map((project, index) => (
                   <motion.div 

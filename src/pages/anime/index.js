@@ -110,7 +110,7 @@ const Anime = () => {
         }
       } catch (error) {
         consola.error('An error occurred:', error);
-        setErrorMessage('List could not be fetched. Check the console for more information, or try again later.');
+        setErrorMessage('List could not be fetched. The API may most likely be down. Try again later!');
       }
     };
   
@@ -150,7 +150,8 @@ const Anime = () => {
   // along with the preferred/correct title to display.
   const titleOverrides = {
     20997: "Charlotte",
-    181444: "The Fragrant Flower Blooms With Dignity"
+    181444: "The Fragrant Flower Blooms With Dignity",
+    181841: "CITY The Animation"
   };
 
   return (
@@ -202,7 +203,7 @@ const Anime = () => {
             <div className="flex items-center justify-center text-soft text-7xl font-semibold rounded-md tracking-tighter">
               No list found.
             </div>
-            <div className="flex items-center justify-center text-stone-400 text-sm rounded-md mt-2" aria-label="Error Message">
+            <div className="flex items-center justify-center text-stone-400 text-base md:text-sm rounded-md mt-2" aria-label="Error Message">
               {errorMessage}
             </div>
           </motion.div>
@@ -217,7 +218,7 @@ const Anime = () => {
               <Link 
                 href={`https://anilist.co/user/${username}`} 
                 target="_blank" rel="noopener noreferrer" 
-                className="group hover:bg-neutral-800 hover:text-zinc-100 border border-transparent hover:border-soft-gray p-2 rounded-md duration-300 flex items-center"
+                className="group hover:bg-neutral-800/70 hover:text-zinc-100 border border-transparent hover:border-soft-gray p-2 rounded-md duration-300 flex items-center"
               >
                 <Image 
                   src={profilePicture} 
@@ -227,7 +228,7 @@ const Anime = () => {
                   className="border-2 border-soft-gray rounded-full mr-2.5 scale-110 group-active:scale-105 duration-300"
                   aria-label="AniList Profile Picture"
                 />
-                View {username}'s full AniList <SiAnilist className="m-1" /> profile
+                View profile on AniList <SiAnilist className="m-1" />
               </Link>
             )}
           </div>
@@ -243,7 +244,7 @@ const WatchlistCategory = ({ title, list, favourites }) => {
       <div className="text-2xl mx-3 mb-3 font-semibold tracking-tighter text-soft">{title}</div>
       {list.map(item => (
         <Link key={item.id} href={`https://anilist.co/anime/${item.id}`} target="_blank" rel="noopener noreferrer" className="group">
-          <div className="relative flex items-center hover:bg-neutral-950 border border-transparent hover:border-neutral-700 transform p-3 rounded-xl duration-300">
+          <div className="relative flex items-center hover:bg-neutral-900 hover:shadow-2xl hover:shadow-neutral-950 border border-transparent hover:border-neutral-700 transform p-3 rounded-xl duration-300">
             {item.coverImage && (
               <div className="relative">
                 <Image
@@ -251,21 +252,21 @@ const WatchlistCategory = ({ title, list, favourites }) => {
                   alt={item.title}
                   width={70}
                   height={70}
-                  className="antialiased rounded-lg shadow-2xl shadow-neutral-500 border border-neutral-600 transition duration-300"
+                  className="antialiased rounded-lg shadow-2xl shadow-neutral-500 border border-neutral-700/60 transition duration-300"
                   aria-label="Anime Cover Image"
                 />
               </div>
             )}
-            <div className="px-3 flex-grow flex-shrink-0 md:max-w-[520px] max-w-[220px] truncate md:whitespace-pre-wrap whitespace-nowrap text-stone-200 md:text-lg text-md antialiased" aria-label="Anime Title">
+            <div className="px-3 flex-grow flex-shrink-0 md:max-w-[520px] max-w-[220px] truncate md:whitespace-pre-wrap whitespace-nowrap text-stone-200 font-medium md:text-lg text-md antialiased" aria-label="Anime Title">
               {item.title}
               {item.notes && (
-                <div className="text-xs text-stone-400 italic mb-4 overflow-hidden overflow-ellipsis" aria-label="Anime Notes">
+                <div className="text-xs text-stone-400 font-normal mb-4 overflow-hidden overflow-ellipsis" aria-label="Anime Notes">
                   "{item.notes}"
                 </div>
               )}
               {title === "Watching" ? (
                 <span 
-                  className="absolute bottom-3 right-3 bg-neutral-800 bg-opacity-80 group-hover:bg-[#292929] border border-transparent text-soft px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-left duration-300" 
+                  className="absolute bottom-3 right-3 bg-neutral-800 bg-opacity-80 group-hover:bg-[#292929] border border-neutral-700/60 text-soft px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-left duration-300" 
                   data-tip="Episodes Watched" 
                   data-theme="black" 
                   aria-label="Anime Episode Progress"
@@ -274,7 +275,7 @@ const WatchlistCategory = ({ title, list, favourites }) => {
                 </span>
               ) : item.score && item.score > 0 ? (
                 <span 
-                  className="absolute bottom-3 right-3 bg-neutral-800 bg-opacity-80 group-hover:bg-[#292929] border border-transparent text-soft px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-left duration-300" 
+                  className="absolute bottom-3 right-3 bg-neutral-800 bg-opacity-80 group-hover:bg-[#292929] border border-neutral-700/60 text-soft px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-left duration-300" 
                   data-tip="Rating" 
                   data-theme="black" 
                   aria-label="Anime Score"
@@ -284,7 +285,7 @@ const WatchlistCategory = ({ title, list, favourites }) => {
               ) : null}
               {favourites.some(fav => fav.id === item.id) && (
                 <span 
-                  className={`antialiased absolute right-14 mr-2.5 bottom-3 flex items-center px-2 py-1 border ${favourites.findIndex(fav => fav.id === item.id) === 0 ? 'border-pink-400' : 'border-transparent'} bg-neutral-800 bg-opacity-80 group-hover:bg-[#292929] duration-300 rounded-md font-medium tooltip tooltip-left`} 
+                  className={`antialiased absolute right-14 mr-2.5 bottom-3 flex items-center px-2 py-1 border ${favourites.findIndex(fav => fav.id === item.id) === 0 ? 'border-pink-400' : 'border-neutral-700/60'} bg-neutral-800 bg-opacity-80 group-hover:bg-[#292929] duration-300 rounded-md font-medium tooltip tooltip-left`} 
                   data-tip="Favorite Position"
                   data-theme="black"
                   aria-label="Anime Favorite Position"

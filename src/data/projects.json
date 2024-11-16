@@ -2,7 +2,7 @@
     {
       "name": "md-badges",
       "description": "📃 An extensive list of static Shields.io badges, sorted by category.",
-      "link": "https://github.com/inttter/md-badges",
+      "link": "https://inttter.github.io/md-badges",
       "github": "https://github.com/inttter/md-badges",
       "tags": ["Markdown", "Shields.io", "README"],
       "maintained": true
@@ -45,14 +45,6 @@
       "github": "https://github.com/inttter/colorflow",
       "link": "https://colorflow.cc",
       "tags": ["Next.js", "CSS", "Color", "Preview"],
-      "maintained": true
-    },
-    {
-      "name": "iinter.me",
-      "description": "🪄 My personal website made using Next.js, Tailwind, and Million.",
-      "github": "https://github.com/inttter/iinter.me",
-      "link": "https://iinter.me",
-      "tags": ["Next.js", "Tailwind", "Million", "Writing"],
       "maintained": true
     }
   ]
