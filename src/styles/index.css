@@ -9,3 +9,40 @@
 .code {
     font-family: var(--font-jetbrains-mono);
 }
+
+/* Normal scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    border: 1px solid #d5d5d5;
+}
+  
+::-webkit-scrollbar-track {
+    border-radius: 0;
+    background: #171717;
+}
+  
+::-webkit-scrollbar-thumb {
+    border-radius: 0;
+    background: #262626;
+}
+  
+/* Scrollbar for x-axis overflowing */
+::-webkit-scrollbar:horizontal {
+    height: 8px;
+    border: 1px solid #d5d5d5;
+}
+  
+::-webkit-scrollbar-track:horizontal {
+    background: #171717;
+}
+  
+::-webkit-scrollbar-thumb:horizontal {
+    background: #262626;
+}
+
+/* Prevents `daisyUI` from overriding scrollbar styles */
+/* https://github.com/saadeghi/daisyui/discussions/3113#discussioncomment-9959075 */
+*,
+*:hover {
+    scrollbar-color: auto;
+}

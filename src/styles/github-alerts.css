@@ -17,7 +17,7 @@
     border-radius: 0.5rem;
     color: var(--github-alert-text); 
     border-left-color: 2px solid #262626;
-    @apply box-border text-sm leading-6 rounded-lg border border-neutral-800;
+    @apply box-border text-[15px] leading-6 rounded-lg border border-neutral-800;
 }
 
 /* Use a smaller font size on mobile */

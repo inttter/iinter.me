@@ -1,60 +1,80 @@
 import React, { useState } from 'react';
 import copy from 'copy-to-clipboard';
-import { toast } from 'sonner';
-import Link from 'next/link';
-import { Check, Copy, Link as LinkIcon } from 'lucide-react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { nord } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import consola from 'consola';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/nord.css';
+import Link from 'next/link';
+import { toast } from 'sonner';
+import { Check, Copy, Link as LinkIcon } from 'lucide-react';
 
 const MarkdownComponents = {
-  // Code
-  code({ node, inline, className, children, ...props }) {
-    const match = /language-(\w+)/.exec(className || '');
-    const codeText = children.trim();
+  pre({ node, children, ...props }) {
+    const codeElement = React.Children.toArray(children).find(
+      (child) =>
+        React.isValidElement(child) &&
+        typeof child.props.className === 'string'
+    );
+
+    // Default values
+    let language = 'plaintext';
+    let codeString = '';
+
+    if (React.isValidElement(codeElement)) {
+      const className = codeElement.props.className;
+      const match = className.match(/language-(\w+)/);
+      language = match ? match[1] : 'plaintext';
+
+      codeString = codeElement.props.children
+        ? Array.isArray(codeElement.props.children)
+        ? codeElement.props.children.join('')
+        : String(codeElement.props.children)
+        : '';
+    }
+
+    const highlightedCode = hljs.highlightAuto(codeString, [language]).value;
 
     const [copied, setCopied] = useState(false);
 
-    const handleCopyCode = () => {
-      copy(codeText);
+    const handleCopy = () => {
+      copy(codeString);
       setCopied(true);
-      toast.success('Code copied to your clipboard!');
+      toast.success('Code copied to clipboard!');
+
+      setTimeout(() => {
+        setCopied(false);
+      }, 2000);
     };
 
-    setTimeout(() => {
-      setCopied(false);
-    }, 3000);
-
-    return match ? (
-      <div className="relative">
+    return (
+      <div className="relative mt-4 rounded-lg border border-neutral-800 bg-neutral-900/80">
         <button
-          className={`absolute top-[19px] right-2 text-soft text-sm font-semibold bg-neutral-900 hover:border-neutral-700 duration-300 border md:border-2 border-neutral-800 rounded-md p-1.5 mr-1 ${copied ? 'cursor-default' : ''}`}
-          disabled={copied}
-          onClick={handleCopyCode}
+          onClick={handleCopy}
+          className="absolute top-2.5 right-2 text-soft text-sm font-semibold bg-neutral-900 hover:border-neutral-700 duration-300 border md:border-2 border-neutral-800 rounded-md p-1.5 mr-1"
+          aria-label="Copy code to clipboard"
+          title="Copy code to clipboard"
         >
-          {copied ? <Check size={15} className="text-emerald-400" /> : <Copy size={15} />}
+          {copied ? (
+            <Check size={20} className="w-4 h-4 text-emerald-400 transform transition-transform duration-300" />
+          ) : (
+            <Copy size={20} className="w-4 h-4 transform transition-transform duration-300" />
+          )}
         </button>
-        <pre className="rounded-md overflow-auto scrollbar-thin text-sm mt-2">
-          <SyntaxHighlighter
-            language={match ? match[1] : null}
-            style={nord}
-            wrapLongLines={true}
-            codeTagProps={{ style: { fontFamily: 'inherit' } }}
-            PreTag="div"
-            children={String(children).replace(/\n$/, "")}
-            customStyle={{
-              background: '#101010',
-              overflowX: 'auto',
-              borderRadius: '0.5rem',
-              fontFamily: 'var(--font-jetbrains-mono)',
-              border: '2px solid #242424'
-            }}
-            {...props}
-          />
+        <pre
+          className="p-4 rounded-lg text-zinc-300 bg-[#101010] border-neutral-800 font-mono text-[13px] md:text-sm leading-5 whitespace-pre overflow-auto"
+          aria-label="Code Block"
+        >
+          <code dangerouslySetInnerHTML={{ __html: highlightedCode }} {...props} />
         </pre>
       </div>
-    ) : (
-      <code className="text-zinc-200 p-1 bg-[#1A1A1A] border border-neutral-800 rounded-md code tracking-tighter m-0.5 whitespace-pre-line" {...props}>
+    );
+  },
+
+  code({ node, inline, children, ...props }) {
+    return (
+      <code
+        className="px-1 py-[1.5px] bg-neutral-800 border border-neutral-700/40 rounded-md font-mono tracking-tighter whitespace-pre-wrap break-words"
+        {...props}
+      >
         {children}
       </code>
     );
@@ -71,7 +91,7 @@ const MarkdownComponents = {
 
     const handleImageError = (event) => {
       event.target.src = placeholderSrc;
-      consola.error(new Error(`Image at path ${src} could not be found. A placeholder error image (${placeholderSrc}) will be used instead to represent this.`));
+      consola.error(new Error(`Image at path ${src} could not be found.`));
     };
 
     return (
@@ -84,7 +104,7 @@ const MarkdownComponents = {
           onError={handleImageError}
           {...props}
         />
-        {alt && <p className="text-sm text-stone-500 mt-2">{alt}</p>}
+        {alt && <p className="text-sm text-stone-400 mt-2">{alt}</p>}
       </div>
     );
   },
@@ -95,86 +115,97 @@ const MarkdownComponents = {
 
     const handleVideoError = (event) => {
       event.target.src = placeholderSrc;
-      consola.error(new Error(`Video at path ${src} could not be found. A placeholder error image (${placeholderSrc}) will be used instead to represent this.`));
+      consola.error(new Error(`Video at path ${src} could not be found.`));
     };
 
     return (
       <div className="relative">
         <video
           src={src}
-          className="border border-neutral-800 rounded-lg"
+          className="border border-neutral-800 rounded-md"
           onError={handleVideoError}
           {...props}
         >
           Your browser does not support the video tag.
         </video>
-        {alt && <p className="text-sm text-stone-500 mt-2">{alt}</p>}
+        {alt && <p className="text-sm text-stone-400 mt-2">{alt}</p>}
       </div>
     );
   },
 
   // Iframe
   iframe({ node, ...props }) {
-    return <iframe className="w-full h-96 border border-neutral-800 rounded-lg" {...props}></iframe>;
+    return (
+      <iframe
+        width={props.width}
+        height={props.height}
+        className="aspect-video mb-4 prose-invert"
+        {...props}
+      />
+    );
   },
 
   // Paragraphs
   p({ node, children, ...props }) {
-    return <p className="my-3" {...props}>{children}</p>;
+    return <p className="my-4" {...props}>{children}</p>;
   },
 
   // Headers
   h1({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h1 className="group text-zinc-100 hover:text-soft text-3xl duration-300 font-semibold tracking-tight mt-5 pb-1 relative" {...props}>
+      <h1 className="group text-zinc-100 hover:text-soft text-3xl duration-300 font-semibold mt-5 relative" {...props}>
         <Link href={`#${headerId}`} className="no-underline flex items-center">
           {children}
-          <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300 tooltip tooltip-top" />
+          <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300" />
         </Link>
       </h1>
     );
   },
+
   h2({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h2 className="group text-zinc-100 hover:text-soft text-2xl duration-300 font-semibold tracking-tight mt-5 pb-1 relative" {...props}>
+      <h2 className="group text-zinc-100 hover:text-soft text-2xl duration-300 font-semibold mt-5 relative" {...props}>
         <Link href={`#${headerId}`} className="no-underline flex items-center">
           {children}
-          <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300 tooltip tooltip-top" />
+          <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300" />
         </Link>
       </h2>
     );
   },
+
   h3({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h3 className="group text-zinc-100 hover:text-soft text-xl duration-300 font-semibold tracking-tight mt-5 pb-1 relative" {...props}>
+      <h3 className="group text-zinc-100 hover:text-soft text-xl duration-300 font-semibold mt-5 relative" {...props}>
         <Link href={`#${headerId}`} className="no-underline flex items-center">
           {children}
-          <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300 tooltip tooltip-top" />
+          <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300" />
         </Link>
       </h3>
     );
   },
+
   h4({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h4 className="group text-zinc-100 hover:text-soft text-lg duration-300 font-semibold tracking-tight mt-5 pb-1 relative" {...props}>
+      <h4 className="group text-zinc-100 hover:text-soft text-lg duration-300 font-semibold mt-5 relative" {...props}>
         <Link href={`#${headerId}`} className="no-underline flex items-center">
           {children}
-          <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300 tooltip tooltip-top" />
+          <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300" />
         </Link>
       </h4>
     );
   },
+
   h5({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h5 className="group text-zinc-100 hover:text-soft text-base duration-300 font-semibold tracking-tight mt-5 pb-1 relative" {...props}>
+      <h5 className="group text-zinc-100 hover:text-soft text-base duration-300 font-semibold mt-5 relative" {...props}>
         <Link href={`#${headerId}`} className="no-underline flex items-center">
           {children}
-          <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300 tooltip tooltip-top" />
+          <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300" />
         </Link>
       </h5>
     );
@@ -182,10 +213,10 @@ const MarkdownComponents = {
   h6({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h6 className="group text-zinc-100 hover:text-soft text-sm duration-300 font-semibold tracking-tight mt-5 pb-1 relative" {...props}>
+      <h6 className="group text-neutral-500 hover:text-soft text-sm duration-300 font-semibold mt-5 relative" {...props}>
         <Link href={`#${headerId}`} className="no-underline flex items-center">
           {children}
-          <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300 tooltip tooltip-top" />
+          <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300" />
         </Link>
       </h6>
     );
@@ -193,11 +224,13 @@ const MarkdownComponents = {
 
   // Lists
   ul({ node, children, ...props }) {
-    return <ul className="list-disc pl-6 my-4" {...props}>{children}</ul>;
+    return <ul className="list-disc marker:text-neutral-500 pl-6 my-4" {...props}>{children}</ul>;
   },
+
   ol({ node, children, ...props }) {
-    return <ol className="list-decimal pl-6 my-4" {...props}>{children}</ol>;
+    return <ol className="list-decimal marker:text-neutral-500 pl-6 my-4" {...props}>{children}</ol>;
   },
+
   li({ node, children, ...props }) {
     return <li className="my-2 marker:text-neutral-500 pl-2" {...props}>
       {children}
@@ -207,7 +240,7 @@ const MarkdownComponents = {
   // Quotes
   blockquote({ node, children, ...props }) {
     return (
-      <blockquote className="border-l-4 border-neutral-800 border-opacity-90 pl-4 py-0.5 my-1 italic">
+      <blockquote className="border-l-4 border-neutral-800/90 pl-2 py-0.5 my-1">
         <div className="px-3">
           {children}
         </div>
@@ -225,16 +258,8 @@ const MarkdownComponents = {
 
   // Links
   a({ node, children, ...props }) {
-    // 'isInternalLink' is used here to determine whether the link is a header ID or external link.
-    // Minus styling, attributes aren't applied to header ID's (isInternalLink).
-    const isInternalLink = props.href && props.href.startsWith('#');
     return (
-      <a 
-        className="text-zinc-100 hover:text-zinc-300 border-b border-dotted border-neutral-400 duration-300"
-        target={isInternalLink ? undefined : "_blank"}
-        rel={isInternalLink ? undefined : "noopener noreferrer"}
-        {...props}
-      >
+      <a className="text-zinc-100 hover:text-zinc-300 border-b border-neutral-500 duration-300" {...props}>
         {children}
       </a>
     );

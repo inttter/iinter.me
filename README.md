@@ -2,10 +2,8 @@
     
 * [**Next.js**](https://nextjs.org)
 * [**Tailwind CSS**](https://tailwindcss.com)
-* [**Vercel**](https://vercel.com)
 
-
-## Run locally
+## Clone locally
 
 ```bash
 git clone https://github.com/inttter/iinter.me.git
@@ -24,4 +22,4 @@ npm run last-updated -- content/[file].md
 
 © **2024** - Licensed under the [**MIT License**](https://github.com/inttter/iinter.me/blob/master/LICENSE).
 
-Posts are also licensed under the MIT License, but content inside of these posts may be subject to other licenses.
+Content inside of posts **may** be subject to other licenses.

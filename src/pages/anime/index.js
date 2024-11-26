@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
+import Image from 'next/image';
+import consola from 'consola';
+import Navbar from '@/components/Navbar';
+import BackToTop from '@/components/BackToTop';
 import { motion } from 'framer-motion';
-import Navbar from '../../components/Navbar';
-import BackToTop from '../../components/BackToTop';
 import { request } from 'graphql-request';
 import { SiAnilist } from "react-icons/si";
 import { FaHeart } from "react-icons/fa";
-import consola from 'consola';
-import Image from 'next/image';
+import { ArrowUpRight } from 'lucide-react';
 
 const Anime = () => {
   const [watchlist, setWatchlist] = useState({
@@ -151,88 +152,57 @@ const Anime = () => {
   const titleOverrides = {
     20997: "Charlotte",
     181444: "The Fragrant Flower Blooms With Dignity",
-    181841: "CITY The Animation"
+    181841: "CITY THE ANIMATION"
   };
 
   return (
     <div className="bg-main min-h-screen flex flex-col justify-center items-center antialiased p-4 md:p-8">
-      <div className="max-w-2xl w-full px-4 py-24 space-y-6 flex-col">
+      <div className="max-w-2xl w-full px-3 md:px-0 py-24 md:py-16 space-y-4">
         <Head>
           <title>Anime List | Inter</title>
         </Head>
         {watchlist.watching.length > 0 && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, ease: 'easeInOut' }}
-            className="animate-blurred-fade-in duration-1000"
-          >
+          <div className="animate-blurred-fade-in duration-300">
             <WatchlistCategory title="Watching" list={watchlist.watching} favourites={favourites} />
-          </motion.div>
+          </div>
         )}
         {watchlist.completed.length > 0 && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, ease: 'easeInOut' }}
-            className="animate-blurred-fade-in duration-1000"
-          >
+          <div className="animate-blurred-fade-in duration-300">
             <WatchlistCategory title="Completed" list={watchlist.completed} favourites={favourites} />
-          </motion.div>
+          </div>
         )}
         {watchlist.planned.length > 0 && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, ease: 'easeInOut' }}
-            className="animate-blurred-fade-in duration-1000"
-          >
-            <WatchlistCategory title="Plan To Watch" list={watchlist.planned} favourites={favourites} />
-          </motion.div>
+          <div className="animate-blurred-fade-in duration-300">
+            <WatchlistCategory title="Planning" list={watchlist.planned} favourites={favourites} />
+          </div>
         )}
         <div className="mt-auto">
           <BackToTop />
         </div>
-        <Navbar />
         {errorMessage && (
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          >
+          <div className="animate-blurred-fade-in duration-300">
             <div className="flex items-center justify-center text-soft text-7xl font-semibold rounded-md tracking-tighter">
               No list found.
             </div>
             <div className="flex items-center justify-center text-stone-400 text-base md:text-sm rounded-md mt-2" aria-label="Error Message">
               {errorMessage}
             </div>
-          </motion.div>
+          </div>
         )}
-        <motion.div 
-          initial={{ opacity: 0 }} 
-          animate={{ opacity: 1 }} 
-          transition={{ duration: 0.5 }}
-        >
+        <div>
           <div className="flex justify-end items-center text-sm text-neutral-400 animate-blurred-fade-in duration-500" aria-label="AniList Profile Link">
             {profilePicture && (
               <Link 
                 href={`https://anilist.co/user/${username}`} 
                 target="_blank" rel="noopener noreferrer" 
-                className="group hover:bg-neutral-800/70 hover:text-zinc-100 border border-transparent hover:border-soft-gray p-2 rounded-md duration-300 flex items-center"
+                className="group hover:text-zinc-100 duration-300 flex items-center"
               >
-                <Image 
-                  src={profilePicture} 
-                  alt="AniList Profile Picture" 
-                  width={30} 
-                  height={30} 
-                  className="border-2 border-soft-gray rounded-full mr-2.5 scale-110 group-active:scale-105 duration-300"
-                  aria-label="AniList Profile Picture"
-                />
-                View profile on AniList <SiAnilist className="m-1" />
+                <SiAnilist className="mr-1" /> AniList Profile <ArrowUpRight size={15} />
               </Link>
             )}
           </div>
-        </motion.div>
+        </div>
+        <Navbar />
       </div>
     </div>
   );
@@ -241,10 +211,12 @@ const Anime = () => {
 const WatchlistCategory = ({ title, list, favourites }) => {
   return (
     <div>
-      <div className="text-2xl mx-3 mb-3 font-semibold tracking-tighter text-soft">{title}</div>
+      <div className="text-2xl mb-3 mt-0 md:mt-6 font-semibold tracking-tight text-soft">
+        {title}
+      </div>
       {list.map(item => (
-        <Link key={item.id} href={`https://anilist.co/anime/${item.id}`} target="_blank" rel="noopener noreferrer" className="group">
-          <div className="relative flex items-center hover:bg-neutral-900 hover:shadow-2xl hover:shadow-neutral-950 border border-transparent hover:border-neutral-700 transform p-3 rounded-xl duration-300">
+        <div key={item.id} className="group">
+          <div className="relative flex items-center py-3">
             {item.coverImage && (
               <div className="relative">
                 <Image
@@ -252,21 +224,31 @@ const WatchlistCategory = ({ title, list, favourites }) => {
                   alt={item.title}
                   width={70}
                   height={70}
-                  className="antialiased rounded-lg shadow-2xl shadow-neutral-500 border border-neutral-700/60 transition duration-300"
+                  className="antialiased rounded-md shadow-2xl shadow-neutral-500 border border-neutral-700/60 transition duration-300"
                   aria-label="Anime Cover Image"
                 />
               </div>
             )}
-            <div className="px-3 flex-grow flex-shrink-0 md:max-w-[520px] max-w-[220px] truncate md:whitespace-pre-wrap whitespace-nowrap text-stone-200 font-medium md:text-lg text-md antialiased" aria-label="Anime Title">
-              {item.title}
+            <div className="px-3 flex-grow flex-shrink-0 md:max-w-[520px] max-w-[240px] truncate md:whitespace-pre-wrap whitespace-nowrap antialiased">
+              <Link 
+                href={`https://anilist.co/anime/${item.id}`} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="flex items-center space-x-1 overflow-hidden"
+              >
+                <span className="text-zinc-300 hover:text-zinc-100 font-medium md:text-lg text-[15px] truncate duration-300" aria-label="Anime Title">
+                  {item.title}
+                </span>
+              </Link>
               {item.notes && (
                 <div className="text-xs text-stone-400 font-normal mb-4 overflow-hidden overflow-ellipsis" aria-label="Anime Notes">
                   "{item.notes}"
                 </div>
               )}
               {title === "Watching" ? (
+                // Anime Episodes Watched
                 <span 
-                  className="absolute bottom-3 right-3 bg-neutral-800 bg-opacity-80 group-hover:bg-[#292929] border border-neutral-700/60 text-soft px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-left duration-300" 
+                  className="absolute bottom-3 right-3 bg-neutral-800/80 border border-neutral-700/60 text-soft px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-left duration-300" 
                   data-tip="Episodes Watched" 
                   data-theme="black" 
                   aria-label="Anime Episode Progress"
@@ -274,8 +256,9 @@ const WatchlistCategory = ({ title, list, favourites }) => {
                   {item.progress}/{item.episodes} episodes
                 </span>
               ) : item.score && item.score > 0 ? (
+                // Anime Score
                 <span 
-                  className="absolute bottom-3 right-3 bg-neutral-800 bg-opacity-80 group-hover:bg-[#292929] border border-neutral-700/60 text-soft px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-left duration-300" 
+                  className="absolute bottom-3 right-3 bg-neutral-800/80 border border-neutral-700/60 text-soft px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-left duration-300" 
                   data-tip="Rating" 
                   data-theme="black" 
                   aria-label="Anime Score"
@@ -283,12 +266,13 @@ const WatchlistCategory = ({ title, list, favourites }) => {
                   {item.score}/10
                 </span>
               ) : null}
+              {/* Favourites Count */}
               {favourites.some(fav => fav.id === item.id) && (
                 <span 
-                  className={`antialiased absolute right-14 mr-2.5 bottom-3 flex items-center px-2 py-1 border ${favourites.findIndex(fav => fav.id === item.id) === 0 ? 'border-pink-400' : 'border-neutral-700/60'} bg-neutral-800 bg-opacity-80 group-hover:bg-[#292929] duration-300 rounded-md font-medium tooltip tooltip-left`} 
-                  data-tip="Favorite Position"
+                  className={`antialiased absolute right-14 mr-2.5 bottom-3 flex items-center px-2 py-1 border ${favourites.findIndex(fav => fav.id === item.id) === 0 ? 'border-pink-400' : 'border-neutral-700/60'} bg-neutral-800/80 duration-300 rounded-md font-medium tooltip tooltip-left`} 
+                  data-tip="Favourite Position"
                   data-theme="black"
-                  aria-label="Anime Favorite Position"
+                  aria-label="Anime Favourite Position"
                 >
                   <div className={`text-xs flex items-center ${favourites.findIndex(fav => fav.id === item.id) === 0 ? 'text-zinc-100' : 'text-soft'}`}>
                     <FaHeart size={13} className="mr-1 text-pink-400" />
@@ -298,7 +282,7 @@ const WatchlistCategory = ({ title, list, favourites }) => {
               )}
             </div>
           </div>
-        </Link>
+        </div>
       ))}
       <div className="flex items-center justify-center">
         <hr className="w-full border-t border-neutral-800 mt-2" />

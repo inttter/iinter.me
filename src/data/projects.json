@@ -4,47 +4,41 @@
       "description": "📃 An extensive list of static Shields.io badges, sorted by category.",
       "link": "https://inttter.github.io/md-badges",
       "github": "https://github.com/inttter/md-badges",
-      "tags": ["Markdown", "Shields.io", "README"],
-      "maintained": true
+      "tags": ["Markdown", "Badges", "Shields.io", "README"]
     },
     {
       "name": "mdbadges-cli",
       "description": "💻 An extensive command-line tool to find 400+ Shields.io badges for your projects.",
       "link": "https://mdbcli.xyz",
       "github": "https://github.com/inttter/mdbadges-cli",
-      "tags": ["JavaScript", "CLI", "Shields.io"],
-      "maintained": true
+      "tags": ["JavaScript", "CLI", "Shields.io"]
+    },
+    {
+      "name": "Notetxt",
+      "description": "📝 A note-taker site with a focus on minimalism and simplicity.",
+      "link": "https://notetxt.xyz",
+      "github": "https://github.com/inttter/notetxt",
+      "tags": ["Next.js", "Notes", "Markdown", "Note-taking"]
     },
     {
       "name": "create-ps",
       "description": "🏗️ A package that helps you create the foundations for an NPM package.",
-      "link": "https://createps.xyz",
+      "link": "https://github.com/inttter/create-ps",
       "github": "https://github.com/inttter/create-ps",
-      "tags": ["JavaScript", "npm", "CLI", "Template"],
-      "maintained": true
+      "tags": ["JavaScript", "npm", "CLI", "Template"]
     },
     {
       "name": "discid",
       "description": "🏓 A quicker way to check a user's Discord status from the terminal.",
-      "link": "https://discid.xyz",
+      "link": "https://github.com/inttter/discid",
       "github": "https://github.com/inttter/discid",
-      "tags": ["JavaScript", "CLI", "Discord", "Lanyard"],
-      "maintained": true
-    },
-    {
-      "name": "Notetxt",
-      "description": "📝 A note-taker app with a focus on minimalism and simplicity.",
-      "link": "https://notetxt.xyz",
-      "github": "https://github.com/inttter/notetxt",
-      "tags": ["Next.js", "Notes", "Todo", "Note-taking"],
-      "maintained": true
+      "tags": ["JavaScript", "CLI", "Discord", "Lanyard"]
     },
     {
       "name": "Colorflow",
       "description": "🎨 Generate and preview different types of colors on multiple different examples.",
       "github": "https://github.com/inttter/colorflow",
-      "link": "https://colorflow.cc",
-      "tags": ["Next.js", "CSS", "Color", "Preview"],
-      "maintained": true
+      "link": "https://colorflow-phi.vercel.app/",
+      "tags": ["Next.js", "CSS", "Color", "Preview"]
     }
   ]

@@ -80,17 +80,14 @@ More fields are supported and shown in the output, not just the ones shown in ex
 More specific details are also able to be shown for certain fields. For example, the time left on a song, activity/state details, and more.
 
 ```bash
-Listening To: Juicy - 2005 Remaster by The Notorious B.I.G. on Ready to Die (The Remaster) • 1min 42sec left
-# Time left is calculated by doing (current time - end time).
-# Song name, artist, and album comes from other fields set in the 'activities' section, specifically in 'spotify:1'.
+# Listening to a song on Spotify
+Listening To: Hypnotized by Omesi on Hypnotized • 2min 41sec left
 
-Playing: osu! • Himeringo - Koitsubakihime [Another] • Clicking circles
-# 'Himeringo - Koitsubakihime [Another]' comes from the state details, which is set to the name and difficulty of the map by osu!.
-# 'Clicking circles' comes from the state text in the activities section.
+# Playing a game which has extended rich presence
+Playing: osu!(lazer) • Our Stolen Theory - United (L.A.O.S Remix) (Asphyxia) [Infinity] • Clicking circles
 
-Watching: Netflix • Alya Sometimes Hides Her Feelings in Russian
-# 'Netflix' is the platform being used and is set as the name of the activity.
-# 'Alya Sometimes Hides Her Feelings in Russian' is the show name and is set as the state text.
+# Using an integration such as Crunchyroll
+Watching: Crunchyroll • Laid-Back Camp
 ```
 
 ## Options

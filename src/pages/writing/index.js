@@ -4,21 +4,20 @@ import path from 'path';
 import matter from 'gray-matter';
 import Head from 'next/head';
 import Link from 'next/link';
-import Navbar from '../../components/Navbar';
-import { motion } from 'framer-motion';
-import { Search, X, ArrowUpRight } from 'lucide-react';
 import consola from 'consola';
+import Navbar from '@/components/Navbar';
+import { ArrowLeft } from 'lucide-react';
 import { useRouter } from 'next/router'; 
 
 export default function Writing({ posts }) {
   posts.reverse();
 
+  const router = useRouter();
   const [searchQuery, setSearchQuery] = useState('');
   const [hoveredPost, setHoveredPost] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(parseInt(router.query.page) || 1);
   const [selectedTag, setSelectedTag] = useState(null);
   const postsPerPage = 5;
-  const router = useRouter();
 
   useEffect(() => {
     const { tag } = router.query;
@@ -47,7 +46,14 @@ export default function Writing({ posts }) {
     router.push({ pathname: '/writing', query: {} });
   };
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const paginate = (pageNumber) => {
+    const updatedQuery = { ...router.query, page: pageNumber };
+  
+    router.push({ 
+      pathname: '/writing', 
+      query: updatedQuery 
+    });
+  };
 
   // Filter posts based on search query/selected tag
   const filteredPosts = posts.filter((post) => {
@@ -67,86 +73,104 @@ export default function Writing({ posts }) {
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
 
+  useEffect(() => {
+    const page = parseInt(router.query.page) || 1;
+    setCurrentPage(page);
+  }, [router.query.page]);
+
   return (
     <div className="bg-main min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8">
       <Head>
         <title>Writing | Inter</title>
       </Head>
-      <div className="max-w-2xl w-full px-4 md:py-24 py-20 space-y-6 flex-col">
+      <div className="max-w-2xl w-full px-3 md:px-0 py-24 md:py-16 space-y-4">
         <div className="flex items-center justify-between">
-          <div className="max-w-3xl w-full">
-            <div className="mb-4 relative mt-4 animate-blurred-fade-in duration-500">
+          <div className="w-full">
+            <div className="mb-4 mt-0 md:mt-4 relative animate-blurred-fade-in duration-300">
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="Search for posts"
+                  placeholder="Search for posts..."
                   value={searchQuery}
                   onChange={handleSearchChange}
-                  className="px-10 text-lg bg-main placeholder:text-neutral-600 rounded-md focus:caret-soft text-soft focus:text-zinc-100 animate-blurred-fade-in duration-300 border-b border-neutral-800 focus:border-neutral-600 p-1.5 outline-none w-full group"
+                  className="text-lg placeholder:text-stone-500 text-soft focus:text-zinc-100 border-b border-neutral-700/60 focus:border-stone-400/70 py-1 outline-none rounded-none w-full group duration-300"
                   aria-label="Post Search"
                 />
-                <div className="absolute inset-y-0 pl-3.5 flex items-center pointer-events-none group-focus:rotate-12">
-                  <Search className="text-stone-400" size={20} />
-                </div>
               </div>
             </div>
-            <div className="flex justify-start mb-2">
+            <div className="flex justify-start">
               {selectedTag && (
                 <button
                   onClick={handleClearTags}
-                  className="flex items-center text-sm px-2 py-1 text-soft bg-[#141414] hover:bg-[#202020] border border-neutral-800 hover:border-neutral-700 rounded-md duration-300 ml-2"
+                  className="flex items-center text-sm text-zinc-300 hover:text-zinc-300/80 mb-4 duration-300"
                   aria-label="Clear Selected Tags Button"
                 >
-                  <X size={15} className="mr-1 text-red-400" />
-                  Clear Selected Tag
+                  <ArrowLeft size={15} className="mr-1" />
+                  Show all posts
                 </button>
               )}
             </div>
             {filteredPosts.length === 0 && (
-              <motion.div
-                className="text-soft bg-red-700 bg-opacity-50 px-4 py-2 rounded-md flex items-center"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5 }}
+              <div
+                className="text-soft pb-2 flex items-center justify-start"
                 aria-label="No Posts Found Message"
               >
-                <X size={20} className="mr-1 text-red-400" /> 
-                No posts found with that name.
-              </motion.div>
+                No results found
+              </div>
             )}
             {currentPosts.map((post) => (
               <div
                 key={post.slug}
-                className="relative animate-blurred-fade-in duration-300 group mb-2"
-                style={{ filter: hoveredPost && hoveredPost !== post.slug ? 'brightness(70%)' : 'none' }}
-                onMouseEnter={() => handleMouseEnter(post.slug)}
-                onMouseLeave={handleMouseLeave}
+                className="relative animate-blurred-fade-in duration-300 mb-2"
                 aria-label="Post Information"
               >
-                <div className="p-1 border border-transparent hover:border-neutral-800 hover:bg-neutral-800 hover:bg-opacity-30 rounded-md duration-300">
-                  <Link href={`/writing/${post.slug}`} passHref>
-                    <div className="flex flex-col md:flex-row items-start md:items-center justify-between p-[7px] duration-300 rounded-md">
-                      <div className="text-zinc-200 duration-300 mb-1 md:mb-0 md:mr-2 flex items-center" aria-label="Post Title">
-                        <span>{post.frontmatter.title}</span>
-                        <ArrowUpRight size={15} className="hidden md:block text-neutral-600 ml-0.5 group-hover:translate-x-0.5 group-hover:text-soft duration-200" />
-                      </div>
-                      <div className={`flex items-center text-sm text-stone-400 duration-300 ${hoveredPost === post.slug ? 'text-stone-400' : 'md:text-stone-500'}`} aria-label="Post Date">
-                        {post.frontmatter.date}
-                      </div>
+                <div className="pb-1.5 border-b border-neutral-800">
+                  <div className="flex flex-col md:flex-row items-start md:items-center justify-between py-1.5 duration-300 rounded-md">
+                    <div className="mb-1 md:mb-0 md:mr-2 flex items-center" aria-label="Post Title">
+                      <Link href={`/writing/${post.slug}`} passHref>
+                        <span 
+                          className="text-zinc-300 hover:text-zinc-100 font-medium group duration-300"
+                          onMouseEnter={() => handleMouseEnter(post.slug)}
+                          onMouseLeave={handleMouseLeave}
+                          style={{
+                            filter: hoveredPost && hoveredPost !== post.slug ? 'brightness(70%)' : 'none',
+                          }}
+                        >
+                          {post.frontmatter.title}
+                        </span>
+                      </Link>
                     </div>
-                    <div className="text-sm ml-1.5 -mt-0.5 mb-1 max-w-xl duration-300 text-stone-400 text-opacity-90" aria-label="Post Description">
-                      {post.frontmatter.description}
+                    <div
+                      className="text-sm text-stone-400 flex items-center duration-300"
+                      style={{
+                        filter: hoveredPost && hoveredPost !== post.slug ? 'brightness(70%)' : 'none',
+                      }}
+                      aria-label="Post Date"
+                    >
+                      {post.frontmatter.date}
                     </div>
-                  </Link>
+                  </div>
+                  <div
+                    className="text-sm max-w-xl mt-0 md:-mt-1 duration-300 text-stone-400 text-opacity-90"
+                    style={{
+                      filter: hoveredPost && hoveredPost !== post.slug ? 'brightness(70%)' : 'none',
+                    }}
+                    aria-label="Post Description"
+                  >
+                    {post.frontmatter.description}
+                  </div>
                   {post.frontmatter.tags && (
-                    <div className="flex flex-wrap mt-1.5 mb-1.5 ml-1.5 gap-1">
+                    <div className="flex flex-wrap mt-2.5 mb-1.5 gap-x-3">
                       {post.frontmatter.tags.map((tag, index) => (
                         <span
                           key={index}
                           onClick={() => handleTagClick(tag)}
-                          className={`text-xs text-soft bg-[#141414] hover:bg-[#202020] border border-neutral-800 hover:border-neutral-700 px-2 py-1 rounded-md cursor-pointer code duration-300 ${selectedTag === tag ? 'bg-neutral-800 border-neutral-500  border-opacity-40' : ''}`}
+                          className="text-xs text-stone-400 hover:text-zinc-300 font-mono tracking-normal cursor-pointer duration-300"
+                          style={{
+                            filter: hoveredPost && hoveredPost !== post.slug ? 'brightness(50%)' : 'none',
+                          }}
                         >
-                          {tag}
+                          #{tag}
                         </span>
                       ))}
                     </div>
@@ -163,25 +187,6 @@ export default function Writing({ posts }) {
           paginate={paginate}
           currentPage={currentPage}
         />
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
-          className="inline-flex absolute text-xs text-stone-500 mt-48 ml-1 p-1 duration-300"
-        >
-          <span className="mr-1">
-            © 2024 / MIT License /
-          </span>
-          <Link 
-            href="https://github.com/inttter/iinter.me/tree/master/content" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="flex items-center group hover:text-soft duration-300"
-          >
-            See posts on GitHub 
-            <ArrowUpRight size={15} className="ml-0.5 group-hover:translate-x-0.5 group-hover:text-soft duration-200" />
-          </Link>
-        </motion.div>
       </div>
     </div>
   );
@@ -200,9 +205,9 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
   }
 
   return (
-    <nav className="relative flex flex-col top-2 left-2 animate-blurred-fade-in duration-300">
+    <nav className="relative flex flex-col animate-blurred-fade-in duration-300">
       <ul className="flex space-x-2">
-        <div className="flex items-center text-stone-500 text-sm mr-1">
+        <div className="flex items-center text-stone-400 text-sm mr-1">
           Page
         </div>
         {pageNumbers.map(number => (
@@ -212,9 +217,9 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
               aria-label="Page Number"
               className={`${
                 currentPage === number
-                  ? 'border border-neutral-700 bg-neutral-600 bg-opacity-60'
-                  : 'bg-neutral-800 bg-opacity-80'
-              } border border-transparent hover:border-neutral-600 hover:bg-opacity-50 duration-300 text-soft code px-2 py-0.5 rounded-md cursor-pointer`}
+                  ? 'border border-neutral-700 bg-neutral-600/60'
+                  : 'bg-neutral-800'
+              } border border-neutral-800 hover:bg-neutral-700/60 duration-300 text-soft code px-2 py-0.5 rounded-md cursor-pointer`}
             >
               {number}
             </div>

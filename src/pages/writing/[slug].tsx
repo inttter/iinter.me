@@ -3,19 +3,20 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import ReactMarkdown from 'react-markdown';
-import gfm from 'remark-gfm';
+import remarkGfm from 'remark-gfm';
+import remarkUnwrapImages from 'remark-unwrap-images';
+import remarkGemoji from 'remark-gemoji';
 import rehypeRaw from 'rehype-raw';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeExternalLinks from 'rehype-external-links';
 import { rehypeGithubAlerts } from 'rehype-github-alerts';
-import remarkUnwrapImages from 'remark-unwrap-images'
 import Head from 'next/head';
+import BackToTop from '@/components/BackToTop';
+import Navbar from '@/components/Navbar';
+import markdownStyles from '@/components/markdownStyles';
 import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
-import BackToTop from '../../components/BackToTop';
-import Navbar from '../../components/Navbar';
-import markdownStyles from '../../components/markdownStyles';
-import { CalendarDays } from 'lucide-react';
 
 export default function Post({ post }) {
   const router = useRouter();
@@ -35,57 +36,39 @@ export default function Post({ post }) {
         <title>{`${post.frontmatter.title} | Inter`}</title>
         <meta name="description" content={post.frontmatter.description} />
       </Head>
-      <div className="max-w-2xl w-full px-4 md:py-16 py-20 space-y-6">
-        <div className="flex flex-col items-start justify-center pt-3 md:pt-5 p-1">
-          <motion.div 
-            initial={{ opacity: 0 }} 
-            animate={{ opacity: 1 }} 
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-3xl text-zinc-200 font-semibold tracking-tight"
+      <div className="max-w-2xl w-full px-3 md:px-1 py-24 md:py-16 space-y-4">
+        <div className="flex flex-col items-start justify-center pt-0 md:pt-2">
+          <motion.div
+            className="text-xl text-zinc-200 font-medium animate-blurred-fade-in duration-300"
             aria-label="Post Title"
           >
             {post.frontmatter.title}
           </motion.div>
           <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-stone-400 max-w-2xl mt-0.5 overflow-auto"
+            className="text-stone-400 text-base max-w-2xl overflow-auto animate-blurred-fade-in duration-300"
             aria-label="Post Date"
           >
             <span>{post.frontmatter.date}</span>
           </motion.p>
-          {post.frontmatter.tags && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="flex flex-wrap mt-2 space-x-2"
-              aria-label="Post Tags"
-            >
-              {post.frontmatter.tags.map((tag, index) => (
-                <span
-                  key={index}
-                  onClick={() => handleTagClick(tag)}
-                  className="text-xs text-soft bg-[#141414] hover:bg-[#202020] border border-neutral-800 hover:border-neutral-700 px-2 py-1 rounded-md code cursor-pointer duration-300"
-                >
-                  {tag}
-                </span>
-              ))}
-            </motion.div>
-          )}
         </div>
         <motion.div
-          initial={{ opacity: 0 }} 
-          animate={{ opacity: 1 }} 
-          transition={{ duration: 0.5, delay: 0.4 }} 
-          className="leading-7 text-soft text-opacity-95 px-1 text-[15px] md:text-[16px]"
+          className="text-soft/95 text-base leading-[1.8rem] animate-blurred-fade-in duration-300"
           aria-label="Post Content"
         >
           <ReactMarkdown 
             components={markdownStyles} 
-            remarkPlugins={[gfm, remarkUnwrapImages]} 
-            rehypePlugins={[rehypeRaw, rehypeAutolinkHeadings, rehypeSlug, rehypeGithubAlerts]}
+            remarkPlugins={[
+              remarkGfm, 
+              remarkUnwrapImages,
+              remarkGemoji
+            ]} 
+            rehypePlugins={[
+              rehypeRaw, 
+              rehypeAutolinkHeadings, 
+              rehypeSlug, 
+              rehypeGithubAlerts,
+              [rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] }],
+            ]}
           >
             {post.content}
           </ReactMarkdown>
@@ -95,16 +78,28 @@ export default function Post({ post }) {
           <hr className="w-full border-t border-neutral-800" />
         </div>
         <motion.div
-          initial={{ opacity: 0 }} 
-          animate={{ opacity: 1 }} 
-          transition={{ delay: 0.8, duration: 0.5 }}
-          className="text-stone-500 animate-blurred-fade-in duration-700 text-xs flex justify-end items-center"
-          aria-label="Date Post Was Last Updated"
+          className="text-stone-500 animate-blurred-fade-in duration-300 text-xs flex flex-col sm:flex-row sm:justify-between sm:items-center"
+          aria-label="Post Footer"
         >
-          <CalendarDays size={12} className="mr-1" /> Last updated on
-          <span className="font-semibold tracking-tight ml-0.5">
-            {post.frontmatter.lastUpdated}
-          </span>
+          {post.frontmatter.tags && (
+            <div className="flex flex-wrap gap-2 mt-2 sm:mt-0" aria-label="Post Tags">
+              {post.frontmatter.tags.map((tag, index) => (
+                <span
+                  key={index}
+                  onClick={() => handleTagClick(tag)}
+                  className="text-xs text-stone-400 hover:text-zinc-100 code cursor-pointer duration-300"
+                >
+                  #{tag}
+                </span>
+              ))}
+            </div>
+          )}
+          <div className="flex items-center text-xs text-stone-400/80 space-x-1 mt-2 sm:mt-0">
+            <span>Last updated on</span>
+            <span className="font-medium tracking-tight ml-0.5">
+              {post.frontmatter.lastUpdated}
+            </span>
+          </div>
         </motion.div>
         <Navbar />
       </div>
