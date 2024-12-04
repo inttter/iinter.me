@@ -38,7 +38,7 @@ const MarkdownComponents = {
     const handleCopy = () => {
       copy(codeString);
       setCopied(true);
-      toast.success('Code copied to clipboard!');
+      toast.success('Code was successfully copied to your clipboard!');
 
       setTimeout(() => {
         setCopied(false);
@@ -49,7 +49,7 @@ const MarkdownComponents = {
       <div className="relative mt-4 rounded-lg border border-neutral-800 bg-neutral-900/80">
         <button
           onClick={handleCopy}
-          className="absolute top-2.5 right-2 text-soft text-sm font-semibold bg-neutral-900 hover:border-neutral-700 duration-300 border md:border-2 border-neutral-800 rounded-md p-1.5 mr-1"
+          className="absolute top-2.5 right-2 text-soft text-sm font-semibold bg-neutral-900 border md:border-2 border-neutral-800 hover:border-neutral-700 duration-300 rounded-md p-1.5 mr-1"
           aria-label="Copy code to clipboard"
           title="Copy code to clipboard"
         >
@@ -82,7 +82,7 @@ const MarkdownComponents = {
 
   // Line break
   br() {
-    return <br className="my-4" />;
+    return <br className="my-3" />;
   },
 
   // Image
@@ -147,18 +147,20 @@ const MarkdownComponents = {
 
   // Paragraphs
   p({ node, children, ...props }) {
-    return <p className="my-4" {...props}>{children}</p>;
+    return <p className="my-3" {...props}>{children}</p>;
   },
 
   // Headers
   h1({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h1 className="group text-zinc-100 hover:text-soft text-3xl duration-300 font-semibold mt-5 relative" {...props}>
-        <Link href={`#${headerId}`} className="no-underline flex items-center">
+      <h1 className="group text-zinc-100 text-3xl duration-300 font-semibold mt-5 relative" {...props}>
+        <span className="flex items-center">
           {children}
-          <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300" />
-        </Link>
+          <Link href={`#${headerId}`} className="no-underline flex items-center ml-2">
+            <LinkIcon size={15} className="opacity-0 text-stone-400/80 hover:text-zinc-300 group-hover:opacity-100 duration-300" />
+          </Link>
+        </span>
       </h1>
     );
   },
@@ -166,11 +168,13 @@ const MarkdownComponents = {
   h2({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h2 className="group text-zinc-100 hover:text-soft text-2xl duration-300 font-semibold mt-5 relative" {...props}>
-        <Link href={`#${headerId}`} className="no-underline flex items-center">
+      <h2 className="group text-zinc-100 text-2xl duration-300 font-semibold mt-5 relative" {...props}>
+        <span className="flex items-center">
           {children}
-          <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300" />
-        </Link>
+          <Link href={`#${headerId}`} className="no-underline flex items-center ml-2">
+            <LinkIcon size={15} className="opacity-0 text-stone-400/80 hover:text-zinc-300 group-hover:opacity-100 duration-300" />
+          </Link>
+        </span>
       </h2>
     );
   },
@@ -178,11 +182,13 @@ const MarkdownComponents = {
   h3({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h3 className="group text-zinc-100 hover:text-soft text-xl duration-300 font-semibold mt-5 relative" {...props}>
-        <Link href={`#${headerId}`} className="no-underline flex items-center">
+      <h3 className="group text-zinc-100 text-xl duration-300 font-semibold mt-5 relative" {...props}>
+        <span className="flex items-center">
           {children}
-          <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300" />
-        </Link>
+          <Link href={`#${headerId}`} className="no-underline flex items-center ml-2">
+            <LinkIcon size={15} className="opacity-0 text-stone-400/80 hover:text-zinc-300 group-hover:opacity-100 duration-300" />
+          </Link>
+        </span>
       </h3>
     );
   },
@@ -190,11 +196,13 @@ const MarkdownComponents = {
   h4({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h4 className="group text-zinc-100 hover:text-soft text-lg duration-300 font-semibold mt-5 relative" {...props}>
-        <Link href={`#${headerId}`} className="no-underline flex items-center">
+      <h4 className="group text-zinc-100 text-lg duration-300 font-semibold mt-5 relative" {...props}>
+        <span className="flex items-center">
           {children}
-          <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300" />
-        </Link>
+          <Link href={`#${headerId}`} className="no-underline flex items-center ml-2">
+            <LinkIcon size={15} className="opacity-0 text-stone-400/80 hover:text-zinc-300 group-hover:opacity-100 duration-300" />
+          </Link>
+        </span>
       </h4>
     );
   },
@@ -202,37 +210,42 @@ const MarkdownComponents = {
   h5({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h5 className="group text-zinc-100 hover:text-soft text-base duration-300 font-semibold mt-5 relative" {...props}>
-        <Link href={`#${headerId}`} className="no-underline flex items-center">
+      <h5 className="group text-zinc-100 text-base duration-300 font-semibold mt-5 relative" {...props}>
+        <span className="flex items-center">
           {children}
-          <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300" />
-        </Link>
+          <Link href={`#${headerId}`} className="no-underline flex items-center ml-2">
+            <LinkIcon size={15} className="opacity-0 text-stone-400/80 hover:text-zinc-300 group-hover:opacity-100 duration-300" />
+          </Link>
+        </span>
       </h5>
     );
   },
+
   h6({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h6 className="group text-neutral-500 hover:text-soft text-sm duration-300 font-semibold mt-5 relative" {...props}>
-        <Link href={`#${headerId}`} className="no-underline flex items-center">
+      <h6 className="group text-neutral-500 text-sm duration-300 font-semibold mt-5 relative" {...props}>
+        <span className="flex items-center">
           {children}
-          <LinkIcon size={15} color="gray" className="ml-2 opacity-0 group-hover:opacity-100 duration-300" />
-        </Link>
+          <Link href={`#${headerId}`} className="no-underline flex items-center ml-2">
+            <LinkIcon size={15} className="opacity-0 text-stone-400/80 hover:text-zinc-300 group-hover:opacity-100 duration-300" />
+          </Link>
+        </span>
       </h6>
     );
   },
 
   // Lists
   ul({ node, children, ...props }) {
-    return <ul className="list-disc marker:text-neutral-500 pl-6 my-4" {...props}>{children}</ul>;
+    return <ul className="list-disc marker:text-stone-400 pl-6 my-4" {...props}>{children}</ul>;
   },
 
   ol({ node, children, ...props }) {
-    return <ol className="list-decimal marker:text-neutral-500 pl-6 my-4" {...props}>{children}</ol>;
+    return <ol className="list-decimal marker:text-stone-400 pl-6 my-4" {...props}>{children}</ol>;
   },
 
   li({ node, children, ...props }) {
-    return <li className="my-2 marker:text-neutral-500 pl-2" {...props}>
+    return <li className="my-2 marker:text-stone-400 pl-2" {...props}>
       {children}
     </li>;
   },
@@ -265,7 +278,7 @@ const MarkdownComponents = {
     );
   },
 
-  // Keyboard (aka inline code)
+  // Keyboard
   kbd({ node, children, ...props }) {
     return (
       <kbd className="text-zinc-300 p-1.5 bg-[#1A1A1A] border border-neutral-700 shadow-sm shadow-neutral-500 rounded-md tags tracking-tighter m-0.5" {...props}>
