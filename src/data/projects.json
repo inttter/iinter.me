@@ -9,7 +9,7 @@
     {
       "name": "mdbadges-cli",
       "description": "💻 An extensive command-line tool to find 400+ Shields.io badges for your projects.",
-      "link": "https://mdbcli.xyz",
+      "link": "https://inttter.gitbook.io/mdbcli",
       "github": "https://github.com/inttter/mdbadges-cli",
       "tags": ["JavaScript", "CLI", "Shields.io"]
     },
