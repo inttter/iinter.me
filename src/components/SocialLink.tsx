@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { FaGithub, FaTwitter, FaSteam, FaDiscord, FaLastfm } from 'react-icons/fa';
+import { FaGithub, FaTwitter, FaSteam, FaLastfm } from 'react-icons/fa';
 import { SiAnilist, SiOsu } from "react-icons/si";
 import { motion } from 'framer-motion';
 
@@ -11,8 +11,6 @@ export default function SocialLink({ href, tooltipText, social }) {
         return <FaGithub className="hover:text-soft duration-300" />;
       case 'Steam':
         return <FaSteam className="hover:text-soft duration-300" />;
-      case 'Discord':
-        return <FaDiscord className="hover:text-soft duration-300" />;
       case 'Twitter':
         return <FaTwitter className="hover:text-soft duration-300" />;
       case 'osu!':

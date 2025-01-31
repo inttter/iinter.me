@@ -13,7 +13,6 @@ export default function Home() {
         <div className="flex justify-start space-x-3 px-0 md:px-1">
           <SocialLink href="https://github.com/inttter" social="GitHub" tooltipText="@inttter" />
           <SocialLink href="https://steamcommunity.com/id/inttter" social="Steam" tooltipText="@inter" />
-          <SocialLink href="https://discord.com/users/514106760299151372" social="Discord" tooltipText="@iinter"/>
           <SocialLink href="https://twitter.com/accmpy" social="Twitter" tooltipText="@accmpy" />
           <SocialLink href="https://osu.ppy.sh/users/19054376" social="osu!" tooltipText="@intter" />
           <SocialLink href="https://anilist.co/user/intter" social="AniList" tooltipText="@intter" />
