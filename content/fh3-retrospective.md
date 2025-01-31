@@ -1,7 +1,7 @@
 ---
 title: 'Forza Horizon 3: A Short Retrospective'
 date: March 9, 2024
-lastUpdated: 21/12/24 13:31
+lastUpdated: 31/01/25 22:42
 author: Inter
 description: A game released in 2016 by Playground Games. Here is my personal experience with it!
 tags: ["gaming", "forza", "fh3", "racing"]
@@ -81,12 +81,10 @@ Although Forza Horizon 5 is the only purchasable title out of the five in the fr
 
 ![The Steam player count of both FH4 and FH5, showing FH4 with a higher player count. (21/12/2024)](/images/fh3-retrospective/fh4-and-fh5-players.png)
 
-In my personal opinion, I would not recommend buying [Forza Horizon 5](https://store.steampowered.com/app/1551360/Forza_Horizon_5/), as while it is good at times, the bad outweighs it. I explain in more detail in a [Steam review](https://steamcommunity.com/id/inttter/recommended/1551360/) I made which details my problems with the game. Nevertheless, this is just my view, so you could still try the game and enjoy it more than me.
+That's not to say you shouldn't buy [Forza Horizon 5](https://store.steampowered.com/app/1551360/Forza_Horizon_5/), though. As a game, it does a very good job at being one! In my opinion, though, it's much weaker compared to its predecessors, and thus, it's my least favorite game in the franchise so far.
 
 ## Conclusion
 
 This game brought back a lot of nostalgia, and I class it as one of my top 5 games that I've ever played because of the enjoyment I got out of playing it.
 
 While the game is now de-listed (and has been for 4 years), it sparked an interest in me for racing and cars in general that I still have to this day, and I'm grateful for that.
-
-**TL;DR: I'm telling you that you should buy (if you can) and play this game.**
