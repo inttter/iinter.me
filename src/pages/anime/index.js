@@ -5,7 +5,6 @@ import Image from 'next/image';
 import consola from 'consola';
 import Navbar from '@/components/Navbar';
 import BackToTop from '@/components/BackToTop';
-import { motion } from 'framer-motion';
 import { request } from 'graphql-request';
 import { SiAnilist } from "react-icons/si";
 import { FaHeart } from "react-icons/fa";
@@ -17,7 +16,6 @@ const Anime = () => {
     completed: [],
     planned: [],
   });
-  const [profilePicture, setProfilePicture] = useState('');
   const [username, setUsername] = useState('');
   const [favourites, setFavourites] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
@@ -105,7 +103,6 @@ const Anime = () => {
         });
   
         if (user) {
-          setProfilePicture(user.avatar.large);
           setUsername(user.name);
           setFavourites(favourites);
         }
@@ -152,7 +149,8 @@ const Anime = () => {
   const titleOverrides = {
     20997: "Charlotte",
     181444: "The Fragrant Flower Blooms With Dignity",
-    181841: "CITY THE ANIMATION"
+    181841: "CITY THE ANIMATION",
+    21127: "Steins;Gate 0"
   };
 
   return (
@@ -190,8 +188,8 @@ const Anime = () => {
           </div>
         )}
         <div>
-          <div className="flex justify-end items-center text-sm text-neutral-400 animate-blurred-fade-in duration-500" aria-label="AniList Profile Link">
-            {profilePicture && (
+          <div className="flex justify-end items-center text-sm text-stone-400 animate-blurred-fade-in duration-500" aria-label="AniList Profile Link">
+            {username && (
               <Link 
                 href={`https://anilist.co/user/${username}`} 
                 target="_blank" rel="noopener noreferrer" 
@@ -258,10 +256,10 @@ const WatchlistCategory = ({ title, list, favourites }) => {
               ) : item.score && item.score > 0 ? (
                 // Anime Score
                 <span 
-                  className="absolute bottom-3 right-3 bg-neutral-800/80 border border-neutral-700/60 text-soft px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-left duration-300" 
+                  className="absolute bottom-3 right-3 bg-neutral-800/80 border border-neutral-700/60 text-soft px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-top duration-300" 
                   data-tip="Rating" 
                   data-theme="black" 
-                  aria-label="Anime Score"
+                  aria-label="Anime Rating"
                 >
                   {item.score}/10
                 </span>
