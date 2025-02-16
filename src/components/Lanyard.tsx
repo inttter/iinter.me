@@ -28,45 +28,31 @@ function Lanyard({ showUsername = true, showStatusDot = true, showAlbumArt = tru
         .then(response => response.json())
         .then(data => {
           const discordStatus = data.data.discord_status;
-          let statusDot = null;
-          
+          let dotColor = '';
+  
           if (discordStatus === 'online') {
-            statusDot = (
-              <span 
-                className="h-4 w-4 rounded-full bg-green-500 absolute bottom-0 right-0 mb-1 mr-1 border border-neutral-800 tooltip tooltip-top" 
-                data-tip="Online"
-                data-theme="black"
-              >
-              </span>
-            );
+            dotColor = 'bg-green-500';
           } else if (discordStatus === 'idle') {
-            statusDot = (
-              <span 
-                className="h-4 w-4 rounded-full bg-amber-400 absolute bottom-0 right-0 mb-1 mr-1 border border-neutral-800 tooltip tooltip-top" 
-                data-tip="Idle" 
-                data-theme="black"
-              >
-              </span>
-            );
+            dotColor = 'bg-amber-400';
           } else if (discordStatus === 'dnd') {
-            statusDot = (
-              <span 
-                className="h-4 w-4 rounded-full bg-red-500 absolute bottom-0 right-0 mb-1 mr-1 border border-neutral-800 tooltip tooltip-top" 
-                data-tip="Do Not Disturb" 
-                data-theme="black"
-              >
-              </span>
-            );
+            dotColor = 'bg-red-500';
           } else if (discordStatus === 'offline') {
-            statusDot = (
-              <span 
-                className="h-4 w-4 rounded-full bg-gray-500 absolute bottom-0 right-0 mb-1 mr-1 border border-neutral-800 tooltip tooltip-top" 
-                data-tip="Offline" 
-                data-theme="black"
-              >
-              </span>
-            );
+            dotColor = 'bg-gray-500';
           }
+  
+          let statusDot = (
+            <span
+              key="status-dot"
+              className={`h-4 w-4 rounded-full absolute bottom-0 right-0 mb-1 mr-1 border border-neutral-800 tooltip tooltip-top ${dotColor}`}
+              data-theme="black"
+              data-tip={`${
+                discordStatus === 'online' ? 'Online' : 
+                discordStatus === 'idle' ? 'Idle' : 
+                discordStatus === 'dnd' ? 'Do Not Disturb' : 
+                'Offline'
+              }`}
+            />
+          );
 
           setStatusDot(showStatusDot ? statusDot : null);
 
@@ -160,7 +146,7 @@ function Lanyard({ showUsername = true, showStatusDot = true, showAlbumArt = tru
       </div>
       {showAlbumArt && spotifyAlbumArt && spotifySong && spotifyArtist && (
         <div>
-          <div className="mt-3 flex items-center text-sm text-zinc-100 animate-blurred-fade-in duration-700">
+          <div className="mt-3 flex items-center text-sm font-medium text-stone-300 animate-blurred-fade-in duration-700">
             <span className="flex items-center">
               <FaSpotify className="mr-1 text-green-500" /> 
               Listening to Spotify
@@ -187,7 +173,7 @@ function Lanyard({ showUsername = true, showStatusDot = true, showAlbumArt = tru
                     target="_blank" 
                     rel="noopener noreferrer"
                   >
-                    <div className="inline-flex text-lg font-medium text-stone-300 hover:text-stone-400 duration-300 border-b border-neutral-700 leading-tight mx-1 truncate">
+                    <div className="inline-flex text-lg font-medium text-stone-300 hover:text-stone-300/80 duration-300 border-b border-neutral-600 leading-tight mx-1 truncate">
                       {spotifySong}
                     </div>
                   </Link>
@@ -196,7 +182,7 @@ function Lanyard({ showUsername = true, showStatusDot = true, showAlbumArt = tru
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
-                  className="text-md md:text-sm tracking-normal text-stone-400/90 justify-start truncate px-1 flex items-center"
+                  className="text-sm tracking-normal text-stone-400/90 justify-start truncate px-1 flex items-center mt-0.5"
                 >
                   <span className="truncate">
                     {spotifyArtist}
