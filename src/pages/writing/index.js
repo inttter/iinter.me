@@ -17,7 +17,7 @@ export default function Writing({ posts }) {
   const [hoveredPost, setHoveredPost] = useState(null);
   const [currentPage, setCurrentPage] = useState(parseInt(router.query.page) || 1);
   const [selectedTag, setSelectedTag] = useState(null);
-  const postsPerPage = 5;
+  const postsPerPage = 6;
 
   useEffect(() => {
     const { tag } = router.query;
@@ -93,7 +93,7 @@ export default function Writing({ posts }) {
                   placeholder="Search for posts..."
                   value={searchQuery}
                   onChange={handleSearchChange}
-                  className="text-lg placeholder:text-stone-500 text-soft focus:text-zinc-100 bg-transparent border-b border-neutral-700/60 focus:border-stone-400/70 py-1 outline-none rounded-none w-full group duration-300"
+                  className="text-lg placeholder:text-stone-400/80 text-soft focus:text-zinc-100 bg-transparent border-b border-neutral-700/60 focus:border-stone-400/70 py-1 outline-none rounded-none w-full group duration-300"
                   aria-label="Post Search"
                 />
               </div>
@@ -106,7 +106,7 @@ export default function Writing({ posts }) {
                   aria-label="Clear Selected Tags Button"
                 >
                   <ArrowLeft size={15} className="mr-1" />
-                  Show all posts
+                  Back to all posts
                 </button>
               )}
             </div>
@@ -133,7 +133,7 @@ export default function Writing({ posts }) {
                           onMouseEnter={() => handleMouseEnter(post.slug)}
                           onMouseLeave={handleMouseLeave}
                           style={{
-                            filter: hoveredPost && hoveredPost !== post.slug ? 'brightness(70%)' : 'none',
+                            filter: hoveredPost && hoveredPost !== post.slug ? 'brightness(50%)' : 'none',
                           }}
                         >
                           {post.frontmatter.title}
@@ -143,24 +143,15 @@ export default function Writing({ posts }) {
                     <div
                       className="text-sm text-stone-400 flex items-center duration-300"
                       style={{
-                        filter: hoveredPost && hoveredPost !== post.slug ? 'brightness(70%)' : 'none',
+                        filter: hoveredPost && hoveredPost !== post.slug ? 'brightness(50%)' : 'none',
                       }}
                       aria-label="Post Date"
                     >
                       {post.frontmatter.date}
                     </div>
                   </div>
-                  <div
-                    className="text-sm max-w-xl mt-0 md:-mt-1 duration-300 text-stone-400 text-opacity-90"
-                    style={{
-                      filter: hoveredPost && hoveredPost !== post.slug ? 'brightness(70%)' : 'none',
-                    }}
-                    aria-label="Post Description"
-                  >
-                    {post.frontmatter.description}
-                  </div>
                   {post.frontmatter.tags && (
-                    <div className="flex flex-wrap mt-2.5 mb-1.5 gap-x-3">
+                    <div className="flex flex-wrap -mt-0.5 mb-1.5 gap-x-2">
                       {post.frontmatter.tags.map((tag, index) => (
                         <span
                           key={index}
