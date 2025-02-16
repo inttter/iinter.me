@@ -4,7 +4,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import consola from 'consola';
 import { FaSpotify } from 'react-icons/fa';
-import { ArrowDown } from 'lucide-react';
 
 function Lanyard({ showUsername = true, showStatusDot = true, showAlbumArt = true }) {
   const [status, setStatus] = useState('Finding status...');
@@ -161,11 +160,10 @@ function Lanyard({ showUsername = true, showStatusDot = true, showAlbumArt = tru
       </div>
       {showAlbumArt && spotifyAlbumArt && spotifySong && spotifyArtist && (
         <div>
-          <div className="mt-3 flex items-center text-sm text-stone-400 animate-blurred-fade-in duration-700">
+          <div className="mt-3 flex items-center text-sm text-zinc-100 animate-blurred-fade-in duration-700">
             <span className="flex items-center">
               <FaSpotify className="mr-1 text-green-500" /> 
-              Currently listening
-              <ArrowDown size={15} className="ml-0.5" />
+              Listening to Spotify
             </span>
           </div>
           <div className="group mt-4">
