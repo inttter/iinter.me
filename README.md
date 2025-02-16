@@ -20,6 +20,6 @@ npm run last-updated -- content/[file].md
 
 ## License
 
-© **2024** - Licensed under the [**MIT License**](https://github.com/inttter/iinter.me/blob/master/LICENSE).
+© **2025** - Licensed under the [**MIT License**](https://github.com/inttter/iinter.me/blob/master/LICENSE).
 
 Content inside of posts **may** be subject to other licenses.
