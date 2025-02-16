@@ -49,7 +49,7 @@ const MarkdownComponents = {
       <div className="relative mt-4 rounded-lg border border-neutral-800 bg-neutral-900/80">
         <button
           onClick={handleCopy}
-          className="absolute top-2.5 right-2 text-soft text-sm font-semibold bg-neutral-900 border md:border-2 border-neutral-800 hover:border-neutral-700 duration-300 rounded-md p-1.5 mr-1"
+          className="absolute top-2.5 right-2 text-zinc-100 text-sm font-semibold bg-neutral-900 hover:bg-neutral-800 border md:border-2 border-neutral-800 hover:border-neutral-700 duration-300 rounded-md p-1.5 mr-1"
           aria-label="Copy code to clipboard"
           title="Copy code to clipboard"
         >
@@ -60,7 +60,7 @@ const MarkdownComponents = {
           )}
         </button>
         <pre
-          className="p-4 rounded-lg text-zinc-300 bg-[#101010] border-neutral-800 font-mono text-[13px] md:text-sm leading-5 whitespace-pre overflow-auto"
+          className="p-4 rounded-lg text-zinc-300 bg-[#111111] border-neutral-800 font-mono text-[14px] md:text-sm leading-5 whitespace-pre overflow-auto"
           aria-label="Code Block"
         >
           <code dangerouslySetInnerHTML={{ __html: highlightedCode }} {...props} />
@@ -72,7 +72,7 @@ const MarkdownComponents = {
   code({ node, inline, children, ...props }) {
     return (
       <code
-        className="px-1 py-[1.5px] bg-neutral-800 border border-neutral-700/40 rounded-md font-mono tracking-tighter whitespace-pre-wrap break-words"
+        className="text-zinc-100 font-mono whitespace-pre-wrap break-words"
         {...props}
       >
         {children}
@@ -253,7 +253,7 @@ const MarkdownComponents = {
   // Quotes
   blockquote({ node, children, ...props }) {
     return (
-      <blockquote className="border-l-4 border-neutral-800/90 pl-2 py-0.5 my-1">
+      <blockquote className="border-l-4 border-neutral-700/60 pl-2 py-0.5 my-1">
         <div className="px-3">
           {children}
         </div>
@@ -263,7 +263,7 @@ const MarkdownComponents = {
 
   // Strong and Emphasis
   strong({ node, children, ...props }) {
-    return <strong className="font-normal text-zinc-100 brightness-200" {...props}>{children}</strong>;
+    return <strong className="font-medium text-zinc-100" {...props}>{children}</strong>;
   },
   em({ node, children, ...props }) {
     return <em className="italic mr-0.5" {...props}>{children}</em>;
@@ -272,7 +272,7 @@ const MarkdownComponents = {
   // Links
   a({ node, children, ...props }) {
     return (
-      <a className="text-zinc-100 hover:text-zinc-300 border-b border-neutral-500 duration-300" {...props}>
+      <a className="text-zinc-100 hover:text-zinc-300/90 border-b border-neutral-500 duration-300" {...props}>
         {children}
       </a>
     );
@@ -281,7 +281,7 @@ const MarkdownComponents = {
   // Keyboard
   kbd({ node, children, ...props }) {
     return (
-      <kbd className="text-zinc-300 p-1.5 bg-[#1A1A1A] border border-neutral-700 shadow-sm shadow-neutral-500 rounded-md tags tracking-tighter m-0.5" {...props}>
+      <kbd className="px-1 py-0.5 bg-neutral-800 border border-neutral-700/60 rounded-md text-sm m-0.5" {...props}>
         {children}
       </kbd>
     );
@@ -316,7 +316,7 @@ const MarkdownComponents = {
     return <tr className="border border-neutral-800" {...props}>{children}</tr>;
   },
   th({ node, children, ...props }) {
-    return <th className="px-4 py-2 text-left font-normal text-zinc-100 tags" {...props}>{children}</th>;
+    return <th className="px-4 py-2 text-left font-normal text-zinc-100" {...props}>{children}</th>;
   },
   td({ node, children, ...props }) {
     return <td className="px-4 py-1.5" {...props}>{children}</td>;

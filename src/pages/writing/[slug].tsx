@@ -52,7 +52,7 @@ export default function Post({ post }) {
           </motion.p>
         </div>
         <motion.div
-          className="text-soft/95 text-base leading-[1.8rem] animate-blurred-fade-in duration-300"
+          className="text-soft text-base leading-[1.65rem] animate-blurred-fade-in duration-300"
           aria-label="Post Content"
         >
           <ReactMarkdown 
@@ -78,7 +78,7 @@ export default function Post({ post }) {
           <hr className="w-full border-t border-neutral-800" />
         </div>
         <motion.div
-          className="text-stone-500 animate-blurred-fade-in duration-300 text-xs flex flex-col sm:flex-row sm:justify-between sm:items-center"
+          className="animate-blurred-fade-in duration-300 text-xs flex flex-col sm:flex-row sm:justify-between sm:items-center"
           aria-label="Post Footer"
         >
           {post.frontmatter.tags && (
@@ -87,14 +87,14 @@ export default function Post({ post }) {
                 <span
                   key={index}
                   onClick={() => handleTagClick(tag)}
-                  className="text-xs text-stone-400 hover:text-zinc-100 code cursor-pointer duration-300"
+                  className="text-xs text-stone-400 hover:text-zinc-100 font-mono cursor-pointer duration-300"
                 >
                   #{tag}
                 </span>
               ))}
             </div>
           )}
-          <div className="flex items-center text-xs text-stone-400/80 space-x-1 mt-2 sm:mt-0">
+          <div className="flex items-center text-xs text-stone-400 space-x-1 mt-2 sm:mt-0">
             <span>Last updated on</span>
             <span className="font-medium tracking-tight ml-0.5">
               {post.frontmatter.lastUpdated}
