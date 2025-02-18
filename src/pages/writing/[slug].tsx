@@ -39,20 +39,20 @@ export default function Post({ post }) {
       <div className="max-w-2xl w-full px-3 md:px-1 py-24 md:py-16 space-y-4">
         <div className="flex flex-col items-start justify-center pt-0 md:pt-2">
           <motion.div
-            className="text-xl text-zinc-200 font-medium animate-blurred-fade-in duration-300"
+            className="text-md md:text-lg text-zinc-200 font-medium animate-blurred-fade-in duration-300"
             aria-label="Post Title"
           >
             {post.frontmatter.title}
           </motion.div>
           <motion.p
-            className="text-stone-400 text-base max-w-2xl overflow-auto animate-blurred-fade-in duration-300"
+            className="text-stone-400 text-md font-medium max-w-2xl overflow-auto animate-blurred-fade-in duration-300 -mt-0.5"
             aria-label="Post Date"
           >
             <span>{post.frontmatter.date}</span>
           </motion.p>
         </div>
         <motion.div
-          className="text-soft text-base leading-[1.65rem] animate-blurred-fade-in duration-300"
+          className="text-soft text-[15px] md:text-base leading-[1.5rem] md:leading-[1.65rem] animate-blurred-fade-in duration-300"
           aria-label="Post Content"
         >
           <ReactMarkdown 
@@ -96,7 +96,7 @@ export default function Post({ post }) {
           )}
           <div className="flex items-center text-xs text-stone-400 space-x-1 mt-2 sm:mt-0">
             <span>Last updated on</span>
-            <span className="font-medium tracking-tight ml-0.5">
+            <span className="font-medium">
               {post.frontmatter.lastUpdated}
             </span>
           </div>

@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import copy from 'copy-to-clipboard';
 import consola from 'consola';
 import hljs from 'highlight.js';
-import 'highlight.js/styles/nord.css';
+import 'highlight.js/styles/base16/qualia.css';
 import Link from 'next/link';
 import { toast } from 'sonner';
 import { Check, Copy, Link as LinkIcon } from 'lucide-react';
 
 const MarkdownComponents = {
+  // Code block
   pre({ node, children, ...props }) {
     const codeElement = React.Children.toArray(children).find(
       (child) =>
@@ -46,7 +47,7 @@ const MarkdownComponents = {
     };
 
     return (
-      <div className="relative mt-4 rounded-lg border border-neutral-800 bg-neutral-900/80">
+      <div className="relative mt-4">
         <button
           onClick={handleCopy}
           className="absolute top-2.5 right-2 text-zinc-100 text-sm font-semibold bg-neutral-900 hover:bg-neutral-800 border md:border-2 border-neutral-800 hover:border-neutral-700 duration-300 rounded-md p-1.5 mr-1"
@@ -60,7 +61,7 @@ const MarkdownComponents = {
           )}
         </button>
         <pre
-          className="p-4 rounded-lg text-zinc-300 bg-[#111111] border-neutral-800 font-mono text-[14px] md:text-sm leading-5 whitespace-pre overflow-auto"
+          className="p-4 rounded-lg text-zinc-200 bg-neutral-900/60 border border-neutral-800 font-mono text-[14px] md:text-sm leading-5 whitespace-pre overflow-auto"
           aria-label="Code Block"
         >
           <code dangerouslySetInnerHTML={{ __html: highlightedCode }} {...props} />
@@ -69,10 +70,11 @@ const MarkdownComponents = {
     );
   },
 
+  // Inline code
   code({ node, inline, children, ...props }) {
     return (
       <code
-        className="text-zinc-100 font-mono whitespace-pre-wrap break-words"
+        className="text-zinc-200 px-1 py-0.5 bg-neutral-800 border border-neutral-700/60 rounded-md whitespace-pre-wrap break-words"
         {...props}
       >
         {children}
@@ -154,7 +156,7 @@ const MarkdownComponents = {
   h1({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h1 className="group text-zinc-100 text-3xl duration-300 font-semibold mt-5 relative" {...props}>
+      <h1 className="group text-zinc-100 text-2xl duration-300 font-medium mt-5 relative" {...props}>
         <span className="flex items-center">
           {children}
           <Link href={`#${headerId}`} className="no-underline flex items-center ml-2">
@@ -168,7 +170,7 @@ const MarkdownComponents = {
   h2({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h2 className="group text-zinc-100 text-2xl duration-300 font-semibold mt-5 relative" {...props}>
+      <h2 className="group text-zinc-100 text-xl duration-300 font-medium mt-5 relative" {...props}>
         <span className="flex items-center">
           {children}
           <Link href={`#${headerId}`} className="no-underline flex items-center ml-2">
@@ -182,7 +184,7 @@ const MarkdownComponents = {
   h3({ node, children, ...props }) {
     const headerId = props.id;
     return (
-      <h3 className="group text-zinc-100 text-xl duration-300 font-semibold mt-5 relative" {...props}>
+      <h3 className="group text-zinc-100 text-[17px] duration-300 font-medium mt-5 relative" {...props}>
         <span className="flex items-center">
           {children}
           <Link href={`#${headerId}`} className="no-underline flex items-center ml-2">
@@ -193,59 +195,17 @@ const MarkdownComponents = {
     );
   },
 
-  h4({ node, children, ...props }) {
-    const headerId = props.id;
-    return (
-      <h4 className="group text-zinc-100 text-lg duration-300 font-semibold mt-5 relative" {...props}>
-        <span className="flex items-center">
-          {children}
-          <Link href={`#${headerId}`} className="no-underline flex items-center ml-2">
-            <LinkIcon size={15} className="opacity-0 text-stone-400/80 hover:text-zinc-300 group-hover:opacity-100 duration-300" />
-          </Link>
-        </span>
-      </h4>
-    );
-  },
-
-  h5({ node, children, ...props }) {
-    const headerId = props.id;
-    return (
-      <h5 className="group text-zinc-100 text-base duration-300 font-semibold mt-5 relative" {...props}>
-        <span className="flex items-center">
-          {children}
-          <Link href={`#${headerId}`} className="no-underline flex items-center ml-2">
-            <LinkIcon size={15} className="opacity-0 text-stone-400/80 hover:text-zinc-300 group-hover:opacity-100 duration-300" />
-          </Link>
-        </span>
-      </h5>
-    );
-  },
-
-  h6({ node, children, ...props }) {
-    const headerId = props.id;
-    return (
-      <h6 className="group text-neutral-500 text-sm duration-300 font-semibold mt-5 relative" {...props}>
-        <span className="flex items-center">
-          {children}
-          <Link href={`#${headerId}`} className="no-underline flex items-center ml-2">
-            <LinkIcon size={15} className="opacity-0 text-stone-400/80 hover:text-zinc-300 group-hover:opacity-100 duration-300" />
-          </Link>
-        </span>
-      </h6>
-    );
-  },
-
   // Lists
   ul({ node, children, ...props }) {
-    return <ul className="list-disc marker:text-stone-400 pl-6 my-4" {...props}>{children}</ul>;
+    return <ul className="list-disc marker:text-zinc-100 pl-6 space-y-1 mt-4" {...props}>{children}</ul>;
   },
 
   ol({ node, children, ...props }) {
-    return <ol className="list-decimal marker:text-stone-400 pl-6 my-4" {...props}>{children}</ol>;
+    return <ol className="list-decimal marker:text-zinc-100 pl-6 space-y-1 mt-4" {...props}>{children}</ol>;
   },
 
   li({ node, children, ...props }) {
-    return <li className="my-2 marker:text-stone-400 pl-2" {...props}>
+    return <li className="marker:text-zinc-100 pl-2 space-y-1 mt-4" {...props}>
       {children}
     </li>;
   },
@@ -261,15 +221,17 @@ const MarkdownComponents = {
     );
   },
 
-  // Strong and Emphasis
+  // Bold
   strong({ node, children, ...props }) {
     return <strong className="font-medium text-zinc-100" {...props}>{children}</strong>;
   },
+  
+  // Italic
   em({ node, children, ...props }) {
     return <em className="italic mr-0.5" {...props}>{children}</em>;
   },
 
-  // Links
+  // Link
   a({ node, children, ...props }) {
     return (
       <a className="text-zinc-100 hover:text-zinc-300/90 border-b border-neutral-500 duration-300" {...props}>
@@ -296,7 +258,7 @@ const MarkdownComponents = {
     );
   },
 
-  // Tables
+  // Table
   table({ node, children, ...props }) {
     return (
       <div className="overflow-x-auto my-4 rounded-md">
@@ -306,21 +268,33 @@ const MarkdownComponents = {
       </div>
     );
   },
+  
   thead({ node, children, ...props }) {
-    return <thead className="bg-neutral-800 bg-opacity-70 text-soft" {...props}>{children}</thead>;
+    return <thead className="bg-neutral-800/70 text-soft" {...props}>{children}</thead>;
   },
+
   tbody({ node, children, ...props }) {
     return <tbody {...props}>{children}</tbody>;
   },
+
   tr({ node, children, ...props }) {
     return <tr className="border border-neutral-800" {...props}>{children}</tr>;
   },
+
   th({ node, children, ...props }) {
     return <th className="px-4 py-2 text-left font-normal text-zinc-100" {...props}>{children}</th>;
   },
+
   td({ node, children, ...props }) {
     return <td className="px-4 py-1.5" {...props}>{children}</td>;
   },
+
+  // Footnote
+  footnoteBlock: ({ node, ...props }) => (
+    <section data-footnotes="" className="footnotes" {...props}>
+      <ol className="prose-ol:pl-5 prose-ol:mb-2 marker:text-stone-400">{props.children}</ol>
+    </section>
+  ),
 };
 
 export default MarkdownComponents;

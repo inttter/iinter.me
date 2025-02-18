@@ -47,6 +47,7 @@
     scrollbar-color: auto;
 }
 
+/* Make inline code smaller (on mobile) */
 code {
     @apply text-sm;
 }
@@ -60,3 +61,8 @@ h5 code,
 h6 code {
   font-size: inherit;
 }
+
+/* Footnotes */
+.footnotes {
+    @apply text-stone-400 text-sm;
+  }
