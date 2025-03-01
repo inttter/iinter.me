@@ -153,7 +153,7 @@ function Lanyard({ showUsername = true, showStatusDot = true, showAlbumArt = tru
             </span>
           </div>
           <div className="group mt-4">
-            <div className="flex items-center px-2 py-2 -mt-2 rounded-lg transition duration-300 ease-in-out -mx-2.5 md:-mx-2">
+            <div className="flex items-center px-2 py-2 -mt-3 rounded-lg transition duration-300 ease-in-out -mx-2.5 md:-mx-2">
               <Image
                 src={spotifyAlbumArt}
                 alt="Album Cover"
@@ -173,8 +173,10 @@ function Lanyard({ showUsername = true, showStatusDot = true, showAlbumArt = tru
                     target="_blank" 
                     rel="noopener noreferrer"
                   >
-                    <div className="inline-flex text-lg font-medium text-stone-300 hover:text-stone-300/80 duration-300 border-b border-neutral-600 leading-tight mx-1 truncate">
-                      {spotifySong}
+                    <div className="inline-flex text-lg font-medium text-zinc-300 hover:text-zinc-100 border-b border-neutral-700 duration-300 leading-tight mx-1 max-w-full">
+                      <span className="truncate block">
+                        {spotifySong}
+                      </span>
                     </div>
                   </Link>
                 </motion.div>
@@ -182,7 +184,7 @@ function Lanyard({ showUsername = true, showStatusDot = true, showAlbumArt = tru
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
-                  className="text-sm tracking-normal text-stone-400/90 justify-start truncate px-1 flex items-center mt-0.5"
+                  className="text-sm tracking-normal text-stone-400 justify-start truncate px-1 flex items-center mt-0.5"
                 >
                   <span className="truncate">
                     {spotifyArtist}
