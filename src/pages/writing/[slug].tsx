@@ -36,20 +36,20 @@ export default function Post({ post }) {
         <title>{`${post.frontmatter.title} | Inter`}</title>
         <meta name="description" content={post.frontmatter.description} />
       </Head>
-      <div className="max-w-2xl w-full px-3 md:px-1 py-24 md:py-16 space-y-4">
+      <div className="max-w-2xl w-full px-3 md:px-1 py-[85px] md:py-16 space-y-4">
         <div className="flex flex-col items-start justify-center pt-0 md:pt-2">
           <motion.div
-            className="text-md md:text-lg text-zinc-200 font-medium animate-blurred-fade-in duration-300"
+            className="text-base md:text-[21px] text-zinc-100 font-medium animate-blurred-fade-in duration-300"
             aria-label="Post Title"
           >
             {post.frontmatter.title}
           </motion.div>
-          <motion.p
-            className="text-stone-400 text-md font-medium max-w-2xl overflow-auto animate-blurred-fade-in duration-300 -mt-0.5"
+          <motion.div
+            className="text-stone-400/90 text-sm md:text-base font-medium max-w-2xl overflow-auto animate-blurred-fade-in duration-300"
             aria-label="Post Date"
           >
             <span>{post.frontmatter.date}</span>
-          </motion.p>
+          </motion.div>
         </div>
         <motion.div
           className="text-soft text-[15px] md:text-base leading-[1.5rem] md:leading-[1.65rem] animate-blurred-fade-in duration-300"
