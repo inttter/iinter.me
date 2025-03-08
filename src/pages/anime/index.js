@@ -8,7 +8,7 @@ import BackToTop from '@/components/BackToTop';
 import { request } from 'graphql-request';
 import { SiAnilist } from "react-icons/si";
 import { FaHeart } from "react-icons/fa";
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Clock, Check } from 'lucide-react';
 
 const Anime = () => {
   const [watchlist, setWatchlist] = useState({
@@ -23,11 +23,44 @@ const Anime = () => {
   useEffect(() => {
     const fetchData = async () => {
       const query = `
-        query {
-          MediaListCollection(userName: "Intter", type: ANIME) {
-            lists {
-              entries {
-                media {
+      query {
+        MediaListCollection(userName: "Intter", type: ANIME) {
+          lists {
+            entries {
+              media {
+                id
+                title {
+                  english
+                }
+                coverImage {
+                  large
+                }
+                episodes
+              }
+              status
+              score
+              notes
+              progress
+              startedAt {
+                year
+                month
+                day
+              }
+              completedAt {
+                year
+                month
+                day
+              }
+            }
+          }
+          user {
+            name
+            avatar {
+              large
+            }
+            favourites {
+              anime {
+                nodes {
                   id
                   title {
                     english
@@ -35,35 +68,12 @@ const Anime = () => {
                   coverImage {
                     large
                   }
-                  episodes
-                }
-                status
-                score
-                notes
-                progress
-              }
-            }
-            user {
-              name
-              avatar {
-                large
-              }
-              favourites {
-                anime {
-                  nodes {
-                    id
-                    title {
-                      english
-                    }
-                    coverImage {
-                      large
-                    }
-                  }
                 }
               }
             }
           }
         }
+      }
       `;
   
       try {
@@ -108,7 +118,7 @@ const Anime = () => {
         }
       } catch (error) {
         consola.error('An error occurred:', error);
-        setErrorMessage('List could not be fetched. The API may most likely be down. Try again later!');
+        setErrorMessage('List could not be fetched. You may have hit rate limits. Try again later!');
       }
     };
   
@@ -128,6 +138,24 @@ const Anime = () => {
                         entry.media.title.native || 
                         "Unknown Title";
 
+          // Format start date of show
+          let startDate = "";
+          if (entry.startedAt?.year && entry.startedAt?.month && entry.startedAt?.day) {
+            const day = entry.startedAt.day.toString().padStart(2, "0");
+            const month = entry.startedAt.month.toString().padStart(2, "0");
+            const year = entry.startedAt.year.toString().slice(-2);
+            startDate = `${day}/${month}/${year}`; // eg. 05/03/25
+          }
+
+          // Format completion date of show
+          let finishDate = "";
+          if (entry.completedAt?.year && entry.completedAt?.month && entry.completedAt?.day) {
+            const day = entry.completedAt.day.toString().padStart(2, "0");
+            const month = entry.completedAt.month.toString().padStart(2, "0");
+            const year = entry.completedAt.year.toString().slice(-2);
+            finishDate = `${day}/${month}/${year}`; // eg. 05/03/25
+          }
+
           accumulator.push({
             id: entry.media.id,
             title: title,
@@ -136,6 +164,8 @@ const Anime = () => {
             notes: entry.notes,
             progress: entry.progress,
             episodes: entry.media.episodes,
+            startDate: startDate,
+            finishDate: finishDate
           });
         }
       });
@@ -150,7 +180,8 @@ const Anime = () => {
     20997: "Charlotte",
     181444: "The Fragrant Flower Blooms With Dignity",
     181841: "CITY THE ANIMATION",
-    21127: "Steins;Gate 0"
+    21127: "Steins;Gate 0",
+    186712: "Bocchi the Rock! 2nd Season"
   };
 
   return (
@@ -234,19 +265,31 @@ const WatchlistCategory = ({ title, list, favourites }) => {
                 rel="noopener noreferrer" 
                 className="flex items-center space-x-1 overflow-hidden"
               >
-                <span className="text-zinc-300 hover:text-zinc-100 font-medium md:text-lg text-[15px] truncate duration-300" aria-label="Anime Title">
+                <span className="text-zinc-200 hover:text-zinc-200/70 font-medium md:text-lg text-base text-[15px] truncate duration-300" aria-label="Anime Title">
                   {item.title}
                 </span>
               </Link>
+              {title === "Watching" && item.startDate && (
+                // Show start date of show
+                <div className="text-xs text-soft font-normal flex items-center -mt-1 mb-[1px] md:gap-x-0 gap-x-[3px]">
+                  <Clock size={12} className="text-stone-400" /> Started {item.startDate}
+                </div>
+              )}
+              {title == "Completed" && item.finishDate && (
+                // Show completion date of show
+                <div className="text-xs text-soft font-normal flex items-center -mt-1 mb-[1px] md:gap-x-0 gap-x-[3px]">
+                  <Check size={12} className="text-stone-400" /> Finished {item.finishDate}
+                </div>
+              )}
               {item.notes && (
-                <div className="text-xs text-stone-400 font-normal mb-4 overflow-hidden overflow-ellipsis" aria-label="Anime Notes">
+                <div className="text-xs text-stone-400 font-normal mb-4 md:mb-2 overflow-hidden overflow-ellipsis" aria-label="Anime Notes">
                   "{item.notes}"
                 </div>
               )}
               {title === "Watching" ? (
                 // Anime Episodes Watched
                 <span 
-                  className="absolute bottom-3 right-3 bg-neutral-800/80 border border-neutral-700/60 text-soft px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-left duration-300" 
+                  className="absolute bottom-3 right-3 bg-neutral-800/80 border border-neutral-700/60 text-soft px-2 py-1 rounded-md text-xs font-medium hover:cursor-help tooltip tooltip-left duration-300" 
                   data-tip="Episodes Watched" 
                   data-theme="black" 
                   aria-label="Anime Episode Progress"
@@ -256,7 +299,7 @@ const WatchlistCategory = ({ title, list, favourites }) => {
               ) : item.score && item.score > 0 ? (
                 // Anime Score
                 <span 
-                  className="absolute bottom-3 right-3 bg-neutral-800/80 border border-neutral-700/60 text-soft px-2 py-1 rounded-md text-xs font-medium tooltip tooltip-top duration-300" 
+                  className="absolute bottom-3 right-3 bg-neutral-800/80 border border-neutral-700/60 text-soft px-2 py-1 rounded-md text-xs font-medium hover:cursor-help tooltip tooltip-top duration-300" 
                   data-tip="Rating" 
                   data-theme="black" 
                   aria-label="Anime Rating"
@@ -267,7 +310,7 @@ const WatchlistCategory = ({ title, list, favourites }) => {
               {/* Favourites Count */}
               {favourites.some(fav => fav.id === item.id) && (
                 <span 
-                  className={`antialiased absolute right-14 mr-2.5 bottom-3 flex items-center px-2 py-1 border ${favourites.findIndex(fav => fav.id === item.id) === 0 ? 'border-pink-400' : 'border-neutral-700/60'} bg-neutral-800/80 duration-300 rounded-md font-medium tooltip tooltip-left`} 
+                  className={`antialiased absolute right-14 mr-2.5 bottom-3 flex items-center px-2 py-1 border ${favourites.findIndex(fav => fav.id === item.id) === 0 ? 'border-pink-400' : 'border-neutral-700/60'} bg-neutral-800/80 duration-300 rounded-md font-medium hover:cursor-help tooltip tooltip-left`} 
                   data-tip="Favourite Position"
                   data-theme="black"
                   aria-label="Anime Favourite Position"
