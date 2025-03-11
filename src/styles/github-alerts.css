@@ -1,10 +1,21 @@
 :root {
     --github-alert-default-color: rgb(48, 54, 61);
-    --github-alert-note-color: rgb(47, 129, 247);
-    --github-alert-tip-color: rgb(35, 134, 54);
-    --github-alert-important-color: rgb(137, 87, 229);
-    --github-alert-warning-color: rgb(240, 188, 69);
-    --github-alert-caution-color: rgb(248, 81, 73);
+
+    --github-alert-note-color: rgb(39, 39, 39);
+    --github-alert-note-text-color: rgb(197, 197, 197);
+
+    --github-alert-tip-color: rgb(13,37,25);
+    --github-alert-tip-text-color: rgb(110, 179, 145);
+    
+    --github-alert-important-color: rgb(34, 29, 47);
+    --github-alert-important-text-color: rgb(158, 124, 222);
+    
+    --github-alert-warning-color: rgb(52, 40, 17);
+    --github-alert-warning-text-color: rgb(240, 188, 69);
+
+    --github-alert-caution-color: rgb(49, 28, 28);
+    --github-alert-caution-text-color: rgb(248, 81, 73);
+
     --github-alert-text: rgb(228 228 231);
 }
 
@@ -16,13 +27,14 @@
     box-sizing: border-box;
     border-radius: 0.5rem;
     color: var(--github-alert-text); 
-    @apply box-border text-[15px] leading-6 rounded-lg border border-neutral-900;
+    border-left-color: 2px solid #262626;
+    @apply box-border text-[14px] leading-[1.25rem] rounded-lg border border-neutral-800/60;
 }
 
 /* Use a smaller font size on mobile */
 @media (max-width: 768px) {
     .markdown-alert {
-        @apply text-[14px];
+        @apply text-[12.5px];
     }
 }
 
@@ -31,56 +43,63 @@
 }
 
 .markdown-alert>:last-child {
-    margin-bottom: 5px;
+    margin-bottom: 2px;
 }
 
 .markdown-alert-note {
-    background-color: rgba(47, 129, 247, 0.1);
+    background-color: var(--github-alert-note-color);
 }
 
 .markdown-alert-tip {
-    background-color: rgba(26, 127, 55, 0.1);
+    background-color: var(--github-alert-tip-color);
 }
 
 .markdown-alert-important {
-    background-color: rgba(130, 80, 223, 0.1);
+    background-color: var(--github-alert-important-color);
 }
 
 .markdown-alert-warning {
-    background-color: rgba(240, 188, 69, 0.1);
+    background-color: var(--github-alert-warning-color);
 }
 
 .markdown-alert-caution {
-    background-color: rgba(248, 81, 73, 0.1);
+    background-color: var(--github-alert-caution-color);
 }
 
 .markdown-alert-title {
     display: flex;
-    margin-bottom: -6px;
+    margin-bottom: -10px;
     align-items: center;
     font-size: 15px;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .markdown-alert-title {
+        @apply text-[13px];
+    }
 }
 
 .markdown-alert-title>svg {
-    margin-right: 7px;
+    margin-right: 5px;
 }
 
 .markdown-alert-note .markdown-alert-title {
-    color: var(--github-alert-note-color);
+    color: var(--github-alert-note-text-color);
 }
 
 .markdown-alert-tip .markdown-alert-title {
-    color: var(--github-alert-tip-color);
+    color: var(--github-alert-tip-text-color);
 }
 
 .markdown-alert-important .markdown-alert-title {
-    color: var(--github-alert-important-color);
+    color: var(--github-alert-important-text-color);
 }
 
 .markdown-alert-warning .markdown-alert-title {
-    color: var(--github-alert-warning-color);
+    color: var(--github-alert-warning-text-color);
 }
 
 .markdown-alert-caution .markdown-alert-title {
-    color: var(--github-alert-caution-color);
+    color: var(--github-alert-caution-text-color);
 }

@@ -65,9 +65,40 @@ export default function Post({ post }) {
             rehypePlugins={[
               rehypeRaw, 
               rehypeAutolinkHeadings, 
-              rehypeSlug, 
-              rehypeGithubAlerts,
+              rehypeSlug,
               [rehypeExternalLinks, { target: '_blank', rel: ['noopener', 'noreferrer'] }],
+              [rehypeGithubAlerts,
+                {
+                  alerts: [
+                    // The icons below use the Tabler icon set (https://tabler.io/icons)
+                    {
+                      keyword: 'NOTE',
+                      icon: '<svg  xmlns="http://www.w3.org/2000/svg" width="16"  height="16" viewBox="0 0 24 24"  fill="none"  stroke="currentColor" stroke-width="2" stroke-linecap="round"  stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-info-circle"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 9h.01" /><path d="M11 12h1v4h1" /></svg>',
+                      title: 'Note',
+                    },
+                    {
+                      keyword: 'TIP',
+                      icon: '<svg  xmlns="http://www.w3.org/2000/svg" width="16"  height="16" viewBox="0 0 24 24"  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"  stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-sparkles"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2zm0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2zm-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6z" /></svg>',
+                      title: 'Tip',
+                    },
+                    {
+                      keyword: 'IMPORTANT',
+                      icon: '<svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"  stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-star"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" /></svg>',
+                      title: 'Important',
+                    },
+                    {
+                      keyword: 'WARNING',
+                      icon: '<svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"  stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-alert-triangle"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 9v4" /><path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z" /><path d="M12 16h.01" /></svg>',
+                      title: 'Warning',
+                    },
+                    {
+                      keyword: 'CAUTION',
+                      icon: '<svg  xmlns="http://www.w3.org/2000/svg" width="16"  height="16" viewBox="0 0 24 24"  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"  stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-exclamation-circle"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M12 9v4" /><path d="M12 16v.01" /></svg>',
+                      title: 'Caution',
+                    },
+                  ],
+                },
+              ],
             ]}
           >
             {post.content}
