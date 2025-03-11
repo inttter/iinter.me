@@ -14,7 +14,7 @@ To me, this seems like a tedious process. That's why I decided to make `create-p
 ## Demo
 
 <div align="center">
-  <video src="https://us-east-1.tixte.net/uploads/files.iinter.me/create-ps_Demo_v4.mp4" controls style="margin-top: 10px"></video>
+  <video src="https://us-east-1.tixte.net/uploads/files.iinter.me/CPSv4.mp4" controls style="margin-top: 10px"></video>
 </div>
 
 As you can see in the demo video, I added multiple files, directories, and more into the project directory. You can select what you want to include to fit your project's needs, such as examples files, a pre-made `index.mjs` with your installed dependencies imported, and more.
