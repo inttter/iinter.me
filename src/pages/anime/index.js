@@ -36,6 +36,7 @@ const Anime = () => {
                   large
                 }
                 episodes
+                status
               }
               status
               score
@@ -156,6 +157,8 @@ const Anime = () => {
             finishDate = `${day}/${month}/${year}`; // eg. 05/03/25
           }
 
+          const isAiring = entry.media.status === "RELEASING";
+
           accumulator.push({
             id: entry.media.id,
             title: title,
@@ -165,7 +168,8 @@ const Anime = () => {
             progress: entry.progress,
             episodes: entry.media.episodes,
             startDate: startDate,
-            finishDate: finishDate
+            finishDate: finishDate,
+            isAiring
           });
         }
       });
@@ -219,18 +223,26 @@ const Anime = () => {
           </div>
         )}
         <div>
-          <div className="flex justify-end items-center text-sm text-stone-400 animate-blurred-fade-in duration-500" aria-label="AniList Profile Link">
+          <div className="flex justify-between items-center text-sm animate-blurred-fade-in duration-500">
             {username && (
-              <Link 
-                href={`https://anilist.co/user/${username}`} 
-                target="_blank" rel="noopener noreferrer" 
-                className="group hover:text-zinc-100 duration-300 flex items-center"
-              >
-                <SiAnilist className="mr-1" /> AniList Profile <ArrowUpRight size={15} />
-              </Link>
-            )}
+              <>
+                {/* Display total count of anime watched */}
+                <span className="text-stone-400">
+                  {watchlist.completed.length + watchlist.watching.length} anime watched
+                </span>
+                {/* AniList Profile Link */}
+                <Link 
+                  href={`https://anilist.co/user/${username}`} 
+                  target="_blank" rel="noopener noreferrer" 
+                  className="group text-stone-400 hover:text-zinc-100 duration-300 flex items-center"
+                  aria-label="AniList Profile Link"
+                >
+                  <SiAnilist className="mr-1" /> AniList Profile <ArrowUpRight size={15} className="ml-0.5" />
+                </Link>
+              </>
+              )}
+            </div>
           </div>
-        </div>
         <Navbar />
       </div>
     </div>
@@ -289,11 +301,12 @@ const WatchlistCategory = ({ title, list, favourites }) => {
               {title === "Watching" ? (
                 // Anime Episodes Watched
                 <span 
-                  className="absolute bottom-3 right-3 bg-neutral-800/80 border border-neutral-700/60 text-soft px-2 py-1 rounded-md text-xs font-medium hover:cursor-help tooltip tooltip-left duration-300" 
-                  data-tip="Episodes Watched" 
-                  data-theme="black" 
-                  aria-label="Anime Episode Progress"
+                  className="absolute bottom-3 right-3 bg-neutral-800/80 border border-neutral-700/60 text-soft px-2 py-1 rounded-md text-xs font-medium duration-300" 
                 >
+                  {/* Show an indicator if a show being watched is currently watching */}
+                  {item.isAiring && (
+                    <div className="w-2 h-2 rounded-full bg-green-500 tooltip tooltip-left mr-1 hover:cursor-help" data-tip="Currently Airing" data-theme="black" />
+                  )}
                   {item.progress}/{item.episodes} episodes
                 </span>
               ) : item.score && item.score > 0 ? (
