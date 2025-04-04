@@ -31,6 +31,8 @@ const Anime = () => {
                 id
                 title {
                   english
+                  romaji
+                  native
                 }
                 coverImage {
                   large
@@ -151,9 +153,9 @@ const Anime = () => {
         if (entry.status === status) {
           const animeId = entry.media.id;
   
-          // Check for any title overrides on the ID
-          const title = titleOverrides[animeId] || 
-                        entry.media.title.english || 
+          // Fall back to a romaji or native title for the show
+          // if an English name can't be found (ie. if it is null)
+          const title = entry.media.title.english || 
                         entry.media.title.romaji || 
                         entry.media.title.native || 
                         "Unknown Title";
@@ -181,17 +183,6 @@ const Anime = () => {
       });
       return accumulator;
     }, []);
-  };
-
-  // For anime that do not have an official English title or return `null` for the English title,
-  // add the AniList ID of the show to the `titleOverrides` object below, 
-  // along with the preferred/correct title to display.
-  const titleOverrides = {
-    20997: "Charlotte",
-    181444: "The Fragrant Flower Blooms With Dignity",
-    181841: "CITY THE ANIMATION",
-    21127: "Steins;Gate 0",
-    186712: "Bocchi the Rock! 2nd Season"
   };
 
   return (
