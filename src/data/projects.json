@@ -4,14 +4,14 @@
       "description": "📃 An extensive list of static Shields.io badges, sorted by category.",
       "link": "https://inttter.github.io/md-badges",
       "github": "https://github.com/inttter/md-badges",
-      "tags": ["Markdown", "Badges", "Shields.io", "README"]
+      "tags": ["Markdown", "README", "Badges", "Shields.io"]
     },
     {
       "name": "mdbadges-cli",
-      "description": "💻 An extensive command-line tool to find 400+ Shields.io badges for your projects.",
+      "description": "💻 An extensive command-line tool to find 500+ Shields.io badges for your projects.",
       "link": "https://inttter.gitbook.io/mdbcli",
       "github": "https://github.com/inttter/mdbadges-cli",
-      "tags": ["JavaScript", "CLI", "Shields.io"]
+      "tags": ["JavaScript", "CLI", "Badges", "Shields.io"]
     },
     {
       "name": "Notetxt",
@@ -25,7 +25,7 @@
       "description": "🏗️ A package that helps you create the foundations for an NPM package.",
       "link": "https://github.com/inttter/create-ps",
       "github": "https://github.com/inttter/create-ps",
-      "tags": ["JavaScript", "npm", "CLI", "Template"]
+      "tags": ["JavaScript", "CLI", "npm", "Template"]
     },
     {
       "name": "discid",

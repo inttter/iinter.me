@@ -52,7 +52,7 @@ export default function Projects() {
                                 {project.name}
                               </span>
                             </div>
-                            <ArrowUpRight size={15} className="hidden md:block m-1 opacity-50 group-hover:opacity-100 group-hover:translate-x-[1.5px] group-hover:text-soft duration-200" />
+                            <ArrowUpRight size={15} className="hidden md:block ml-0.5 opacity-50 group-hover:opacity-100 group-hover:translate-x-[1.5px] group-hover:text-soft duration-200" />
                           </span>
                         </Link>
                         <motion.div 
@@ -64,7 +64,7 @@ export default function Projects() {
                           {stars[project.github] !== undefined && (
                             <Link href={`${project.github}/stargazers`} target="_blank" rel="noopener noreferrer">
                               <span
-                                className="text-xs text-soft bg-[#141414] hover:bg-[#202020] border border-neutral-800 hover:border-neutral-700 animate-blurred-fade-in duration-300 px-2 py-1 rounded-md mr-1.5 mb-0.5 flex items-center"
+                                className="text-xs text-soft hover:text-zinc-100 animate-blurred-fade-in duration-300 mr-2 mb-0.5 flex items-center"
                                 aria-label="GitHub Star Count"
                               >
                                 <FaStar size={13} className="md:mb-0 mb-0.5 mr-0.5 text-yellow-400" />
@@ -90,7 +90,7 @@ export default function Projects() {
                           {project.tags.map((tag, tagIndex) => (
                             <span
                               key={tagIndex}
-                              className="text-xs text-soft bg-[#141414] border border-neutral-800 px-2 py-1 rounded-md code tracking-tight"
+                              className="text-xs text-soft bg-[#141414] border border-neutral-800 px-2 py-1 rounded-md font-mono tracking-tight"
                             >
                               {tag}
                             </span>
