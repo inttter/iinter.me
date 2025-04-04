@@ -8,7 +8,7 @@ import BackToTop from '@/components/BackToTop';
 import { request } from 'graphql-request';
 import { SiAnilist } from "react-icons/si";
 import { FaHeart } from "react-icons/fa";
-import { ArrowUpRight, Clock, Check } from 'lucide-react';
+import { ArrowUpRight, Play, Check, Clock } from 'lucide-react';
 
 const Anime = () => {
   const [watchlist, setWatchlist] = useState({
@@ -52,6 +52,7 @@ const Anime = () => {
                 month
                 day
               }
+              createdAt
             }
           }
           user {
@@ -126,6 +127,24 @@ const Anime = () => {
     fetchData();
   }, []);
 
+  const formatDate = (dateOrUnix) => {
+    if (!dateOrUnix) return "";
+  
+    // If unix timestamp
+    if (typeof dateOrUnix === "number") {
+      const date = new Date(dateOrUnix * 1000);
+      const day = date.getDate().toString().padStart(2, "0");
+      const month = (date.getMonth() + 1).toString().padStart(2, "0");
+      const year = date.getFullYear().toString().slice(-2);
+      return `${day}/${month}/${year}`;
+    }
+  
+    // If date object
+    const { day, month, year } = dateOrUnix;
+    if (!day || !month || !year) return "";
+    return `${day.toString().padStart(2, "0")}/${month.toString().padStart(2, "0")}/${year.toString().slice(-2)}`;
+  };
+
   const parseEntries = (lists, status) => {
     return lists.reduce((accumulator, list) => {
       list.entries.forEach(entry => {
@@ -139,23 +158,9 @@ const Anime = () => {
                         entry.media.title.native || 
                         "Unknown Title";
 
-          // Format start date of show
-          let startDate = "";
-          if (entry.startedAt?.year && entry.startedAt?.month && entry.startedAt?.day) {
-            const day = entry.startedAt.day.toString().padStart(2, "0");
-            const month = entry.startedAt.month.toString().padStart(2, "0");
-            const year = entry.startedAt.year.toString().slice(-2);
-            startDate = `${day}/${month}/${year}`; // eg. 05/03/25
-          }
-
-          // Format completion date of show
-          let finishDate = "";
-          if (entry.completedAt?.year && entry.completedAt?.month && entry.completedAt?.day) {
-            const day = entry.completedAt.day.toString().padStart(2, "0");
-            const month = entry.completedAt.month.toString().padStart(2, "0");
-            const year = entry.completedAt.year.toString().slice(-2);
-            finishDate = `${day}/${month}/${year}`; // eg. 05/03/25
-          }
+          const startDate = formatDate(entry.startedAt); // Format start date of show
+          const finishDate = formatDate(entry.completedAt); // Format completion date of show
+          const planningSinceDate = formatDate(entry.createdAt); // Format date show was added to 'Planning'
 
           const isAiring = entry.media.status === "RELEASING";
 
@@ -169,7 +174,8 @@ const Anime = () => {
             episodes: entry.media.episodes,
             startDate: startDate,
             finishDate: finishDate,
-            isAiring
+            isAiring,
+            planningSinceDate
           });
         }
       });
@@ -277,20 +283,26 @@ const WatchlistCategory = ({ title, list, favourites }) => {
                 rel="noopener noreferrer" 
                 className="flex items-center space-x-1 overflow-hidden"
               >
-                <span className="text-zinc-200 hover:text-zinc-200/70 font-medium md:text-lg text-base text-[15px] truncate duration-300" aria-label="Anime Title">
+                <span className="text-zinc-200 hover:text-stone-200/70 font-medium md:text-lg text-base text-[15px] truncate duration-300" aria-label="Anime Title">
                   {item.title}
                 </span>
               </Link>
               {title === "Watching" && item.startDate && (
                 // Show start date of show
                 <div className="text-xs text-soft font-normal flex items-center -mt-1 mb-[1px] md:gap-x-0 gap-x-[3px]">
-                  <Clock size={12} className="text-stone-400" /> Started {item.startDate}
+                  <Play size={12} className="text-stone-400" /> Started {item.startDate}
                 </div>
               )}
               {title == "Completed" && item.finishDate && (
                 // Show completion date of show
                 <div className="text-xs text-soft font-normal flex items-center -mt-1 mb-[1px] md:gap-x-0 gap-x-[3px]">
                   <Check size={12} className="text-stone-400" /> Finished {item.finishDate}
+                </div>
+              )}
+              {title === "Planning" && item.planningSinceDate && (
+                // Show date show was added to Plan To Watch List
+                <div className="text-xs text-soft font-normal flex items-center -mt-1 mb-[1px] md:gap-x-0 gap-x-[3px]">
+                  <Clock size={12} className="text-stone-400" /> Since {item.planningSinceDate}
                 </div>
               )}
               {item.notes && (
