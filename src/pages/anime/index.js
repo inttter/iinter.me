@@ -304,18 +304,18 @@ const WatchlistCategory = ({ title, list, favourites }) => {
               {title === "Watching" ? (
                 // Anime Episodes Watched
                 <span 
-                  className="absolute bottom-3 right-3 bg-neutral-800/80 border border-neutral-700/60 text-soft px-2 py-1 rounded-md text-xs font-medium duration-300" 
+                  className="absolute bottom-2 right-3 bg-neutral-800/80 border border-neutral-700/60 text-soft px-2 py-1 rounded-md text-[11px] md:text-xs font-medium duration-300" 
                 >
                   {/* Show an indicator if a show being watched is currently watching */}
                   {item.isAiring && (
-                    <div className="w-2 h-2 rounded-full bg-green-500 tooltip tooltip-left mr-1 hover:cursor-help" data-tip="Currently Airing" data-theme="black" />
+                    <div className="w-2 h-2 rounded-full bg-green-500 tooltip tooltip-left mr-1 hover:cursor-help" data-tip="Currently Airing" data-theme="black" aria-label="Currently Airing Indicator" />
                   )}
-                  {item.progress}/{item.episodes} episodes
+                  {item.progress}/{item.episodes || '?'} episodes
                 </span>
               ) : item.score && item.score > 0 ? (
                 // Anime Score
                 <span 
-                  className="absolute bottom-3 right-3 bg-neutral-800/80 border border-neutral-700/60 text-soft px-2 py-1 rounded-md text-xs font-medium hover:cursor-help tooltip tooltip-top duration-300" 
+                  className="absolute bottom-2 right-3 bg-neutral-800/80 border border-neutral-700/60 text-soft px-2 py-1 rounded-md text-[11px] md:text-xs font-medium hover:cursor-help tooltip tooltip-top duration-300" 
                   data-tip="Rating" 
                   data-theme="black" 
                   aria-label="Anime Rating"
@@ -326,12 +326,12 @@ const WatchlistCategory = ({ title, list, favourites }) => {
               {/* Favourites Count */}
               {favourites.some(fav => fav.id === item.id) && (
                 <span 
-                  className={`antialiased absolute right-14 mr-2.5 bottom-3 flex items-center px-2 py-1 border ${favourites.findIndex(fav => fav.id === item.id) === 0 ? 'border-pink-400' : 'border-neutral-700/60'} bg-neutral-800/80 duration-300 rounded-md font-medium hover:cursor-help tooltip tooltip-left`} 
+                  className={`antialiased absolute right-14 mr-2.5 bottom-2 flex items-center px-2 py-1 border ${favourites.findIndex(fav => fav.id === item.id) === 0 ? 'border-pink-400' : 'border-neutral-700/60'} bg-neutral-800/80 duration-300 rounded-md font-medium hover:cursor-help tooltip tooltip-left`} 
                   data-tip="Favourite Position"
                   data-theme="black"
                   aria-label="Anime Favourite Position"
                 >
-                  <div className={`text-xs flex items-center ${favourites.findIndex(fav => fav.id === item.id) === 0 ? 'text-zinc-100' : 'text-soft'}`}>
+                  <div className={`text-[11px] md:text-xs flex items-center ${favourites.findIndex(fav => fav.id === item.id) === 0 ? 'text-zinc-100' : 'text-soft'}`}>
                     <FaHeart size={13} className="mr-1 text-pink-400" />
                     #{favourites.findIndex(fav => fav.id === item.id) + 1}
                   </div>
