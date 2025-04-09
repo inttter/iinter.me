@@ -17,7 +17,7 @@ More often than not, when making a website, you'll have to make sure you are abl
 For example, in [Notetxt](https://notetxt.xyz), I have a component named `NoteSummary` which makes a toast using [`sonner`](https://sonner.emilkowal.ski) appear when the user clicks on a button on the bottom right of the page with various metrics about the note contents:
 
 <div align="center">
-  <video src="https://us-east-1.tixte.net/uploads/files.iinter.me/summary_toast_desktop.mp4" alt="Video of toast on desktop" controls></video>
+  <video src="https://files.catbox.moe/nlhefs.mp4" alt="Video of toast on desktop" controls></video>
 </div>
 
 I'll spare the details behind the component, as you can [view this version of it here](https://github.com/inttter/notetxt/blob/8971f74c8b21d831c065691215b85bface96d184/src/components/NoteSummary.tsx), but the toast was initially set up with a fixed position regardless of the device. Here was the initial implementation I used:
@@ -52,7 +52,7 @@ With this implementation, the toast will show for 5 seconds correctly with the m
 On mobile, these toasts span the whole width of the bottom of the page. Subsequently, the toast ends up looking like this:
 
 <div align="center">
-  <video src="https://us-east-1.tixte.net/uploads/files.iinter.me/summary_toast_mobile.mp4" width="250" alt="Video of toast on mobile" controls></video>
+  <video src="https://files.catbox.moe/x09kg0.mov" width="250" alt="Video of toast on mobile" controls></video>
 </div>
 
 Here, you can notice that the '**Note Summary**' button gets covered up by the toast, preventing you from pressing it again until you either **drag it down** or **close it** with the X. In my case, I wanted to keep the toast in the bottom right on desktop, since it worked fine there just fine, but have it be on the top of the screen on mobile. 
@@ -88,7 +88,7 @@ With that, we have different positions for the toast depending on the device. He
 
 | Before    | After |
 | -------- | ------- |
-| <video src="https://us-east-1.tixte.net/uploads/files.iinter.me/summary_toast_mobile.mp4" alt="bottom-right" width="300" controls></video> | <video src="https://us-east-1.tixte.net/uploads/files.iinter.me/summary_toast_mobile_after.mp4" alt="top-left" width="300" controls></video> |
+| <video src="https://files.catbox.moe/x09kg0.mov" alt="bottom-right" width="300" controls></video> | <video src="https://files.catbox.moe/rn3tbf.mov" alt="top-left" width="300" controls></video> |
 
 You can also see that I have a conditional to apply the `move-desktop-toast-up` class to the toast if the user is on desktop, otherwise, if they aren't, it's hidden. 
 

@@ -105,7 +105,7 @@ In the case above, `192.168.1.36` is the IPv4 address, and `3000` is the port nu
 Now, when you attempt to access the URL, the website that you see in your `localhost` should load. Changes will also sync if made in the case of frameworks like Next.js.
 
 <div align="center">
-  <video src="https://us-east-1.tixte.net/uploads/files.iinter.me/localhost-iphone-example.mp4" alt="An example with a different address of accessing this website." width="300" controls />
+  <video src="https://files.catbox.moe/pzxtz3.mov" alt="An example with a different address of accessing this website." width="300" controls />
 </div>
 
 ---

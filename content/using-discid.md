@@ -182,7 +182,7 @@ This option will open the user's Discord profile in your default web browser. Yo
 > This option works with any user ID on Discord, as long as it is valid!
 
 <div align="center">
-  <video src="https://us-east-1.tixte.net/uploads/files.iinter.me/open-option-example.mp4" controls></video>
+  <video src="https://files.catbox.moe/a4qi0g.mp4" controls></video>
 </div>
 
 ### `--kv`
