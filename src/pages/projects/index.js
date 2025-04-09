@@ -52,7 +52,7 @@ export default function Projects() {
                                 {project.name}
                               </span>
                             </div>
-                            <ArrowUpRight size={15} className="hidden md:block ml-0.5 opacity-50 group-hover:opacity-100 group-hover:translate-x-[1.5px] group-hover:text-soft duration-200" />
+                            <ArrowUpRight size={15} className="ml-0.5 opacity-50 group-hover:opacity-100 group-hover:translate-x-[1.5px] text-stone-300/80 group-hover:text-soft duration-200" />
                           </span>
                         </Link>
                         <motion.div 

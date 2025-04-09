@@ -43,12 +43,12 @@ const Navbar = () => {
   );
 
   return (
-    <div className="absolute top-10">
+    <div className="absolute top-13.5">
       {/* Mobile Navbar */}
       {isMobile ? (
         <div>
           <button
-            className={`text-zinc-300 hover:text-zinc-100 ${isOpen ? 'text-neutral-100' : 'text-zinc-100'} rounded-md duration-300 flex items-center tags group`}
+            className={`text-zinc-300 hover:text-zinc-100 ${isOpen ? 'text-neutral-100' : 'text-zinc-100'} rounded-md duration-300 flex items-center tags group hover:cursor-pointer`}
             onClick={toggleMenu}
           >
             <List size={15} className={`mr-1 text-stone-400 ${isOpen ? 'text-zinc-300' : 'text-stone-400'} duration-300`} />
@@ -57,7 +57,7 @@ const Navbar = () => {
               <ChevronRight size={18} />
             </div>
           </button>
-          <div className={`${isOpen ? 'block' : 'hidden'} bg-neutral-900 backdrop-blur-sm px-2 py-3 pl-4 my-2 rounded-md shadow-2xl shadow-neutral-900 z-10 border border-neutral-800 animate-blurred-fade-in duration-300`}>
+          <div className={`${isOpen ? 'block' : 'hidden'} bg-neutral-900 backdrop-blur-xs px-2 py-3 pl-4 my-2 rounded-md shadow-2xl shadow-neutral-900 z-10 border border-neutral-800 animate-blurred-fade-in duration-300`}>
             <div className="flex flex-col space-y-3 text-soft hover:text-neutral-100 duration-300">
               {renderNavItems()}
             </div>
@@ -65,7 +65,7 @@ const Navbar = () => {
         </div>
       ) : (
         // Desktop Navbar
-        <div className="hidden md:flex space-x-1 items-center">
+        <div className="hidden md:flex space-x-2 items-center">
           {renderNavItems()}
         </div>
       )}

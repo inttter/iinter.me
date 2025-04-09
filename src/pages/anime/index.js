@@ -267,14 +267,14 @@ const WatchlistCategory = ({ title, list, favourites }) => {
                 />
               </div>
             )}
-            <div className="px-3 flex-grow flex-shrink-0 md:max-w-[520px] max-w-[240px] truncate md:whitespace-pre-wrap whitespace-nowrap antialiased">
+            <div className="px-3 grow shrink-0 md:max-w-[520px] max-w-[240px] truncate md:whitespace-pre-wrap whitespace-nowrap antialiased">
               <Link 
                 href={`https://anilist.co/anime/${item.id}`} 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="flex items-center space-x-1 overflow-hidden"
               >
-                <span className="text-zinc-200 hover:text-stone-200/70 font-medium md:text-lg text-base text-[15px] truncate duration-300" aria-label="Anime Title">
+                <span className="text-zinc-200 hover:text-stone-200/70 font-medium md:text-lg text-base truncate duration-300" aria-label="Anime Title">
                   {item.title}
                 </span>
               </Link>
@@ -297,18 +297,18 @@ const WatchlistCategory = ({ title, list, favourites }) => {
                 </div>
               )}
               {item.notes && (
-                <div className="text-xs text-stone-400 font-normal mb-4 md:mb-2 overflow-hidden overflow-ellipsis" aria-label="Anime Notes">
+                <div className="text-xs text-stone-400 font-normal mb-4 md:mb-2 overflow-hidden text-ellipsis" aria-label="Anime Notes">
                   "{item.notes}"
                 </div>
               )}
               {title === "Watching" ? (
                 // Anime Episodes Watched
                 <span 
-                  className="absolute bottom-2 right-3 bg-neutral-800/80 border border-neutral-700/60 text-soft px-2 py-1 rounded-md text-[11px] md:text-xs font-medium duration-300" 
+                  className="absolute bottom-2 right-3 bg-neutral-800/80 border border-neutral-700/60 text-soft px-2 py-1 rounded-md text-[11px] md:text-xs font-medium duration-300 flex items-center" 
                 >
                   {/* Show an indicator if a show being watched is currently watching */}
                   {item.isAiring && (
-                    <div className="w-2 h-2 rounded-full bg-green-500 tooltip tooltip-left mr-1 hover:cursor-help" data-tip="Currently Airing" data-theme="black" aria-label="Currently Airing Indicator" />
+                    <div className="w-2 h-2 rounded-full bg-green-500 tooltip tooltip-left mr-1 hover:cursor-help font-normal" data-tip="Currently Airing" data-theme="bumblebee" aria-label="Currently Airing Indicator" />
                   )}
                   {item.progress}/{item.episodes || '?'} episodes
                 </span>
@@ -317,7 +317,7 @@ const WatchlistCategory = ({ title, list, favourites }) => {
                 <span 
                   className="absolute bottom-2 right-3 bg-neutral-800/80 border border-neutral-700/60 text-soft px-2 py-1 rounded-md text-[11px] md:text-xs font-medium hover:cursor-help tooltip tooltip-top duration-300" 
                   data-tip="Rating" 
-                  data-theme="black" 
+                  data-theme="bumblebee" 
                   aria-label="Anime Rating"
                 >
                   {item.score}/10
@@ -326,9 +326,9 @@ const WatchlistCategory = ({ title, list, favourites }) => {
               {/* Favourites Count */}
               {favourites.some(fav => fav.id === item.id) && (
                 <span 
-                  className={`antialiased absolute right-14 mr-2.5 bottom-2 flex items-center px-2 py-1 border ${favourites.findIndex(fav => fav.id === item.id) === 0 ? 'border-pink-400' : 'border-neutral-700/60'} bg-neutral-800/80 duration-300 rounded-md font-medium hover:cursor-help tooltip tooltip-left`} 
+                  className={`antialiased absolute right-14 mr-2.5 bottom-2 flex items-center px-2 py-1 border ${favourites.findIndex(fav => fav.id === item.id) === 0 ? 'border-pink-400' : 'border-neutral-700/60'} bg-neutral-800/80 duration-300 rounded-md font-medium hover:cursor-help tooltip tooltip-top`} 
                   data-tip="Favourite Position"
-                  data-theme="black"
+                  data-theme="bumblebee"
                   aria-label="Anime Favourite Position"
                 >
                   <div className={`text-[11px] md:text-xs flex items-center ${favourites.findIndex(fav => fav.id === item.id) === 0 ? 'text-zinc-100' : 'text-soft'}`}>

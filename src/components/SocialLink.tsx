@@ -32,7 +32,7 @@ export default function SocialLink({ href, tooltipText, social }) {
       style={{ opacity: 0 }}
       className="tooltip tooltip-bottom rounded-xl group bg-transparent relative mt-1"
       data-tip={tooltipText}
-      data-theme="black"
+      data-theme="bumblebee"
     >
       <Link href={href} target="_blank" rel="noopener noreferrer" aria-label={social}>
         <div className="flex items-center text-4xl text-stone-400/85 hover:scale-105 active:scale-110 hover:rotate-2 active:rotate-6 duration-150">

@@ -31,13 +31,13 @@ export default function Post({ post }) {
   };
 
   return (
-    <div className="bg-main min-h-screen flex flex-col justify-center items-center antialiased p-4 md:p-8 overflow-x-hidden">
+    <div className="bg-main min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 overflow-x-hidden">
       <Head>
         <title>{`${post.frontmatter.title} | Inter`}</title>
         <meta name="description" content={post.frontmatter.description} />
       </Head>
-      <div className="max-w-2xl w-full px-3 md:px-1 py-[85px] md:py-16 space-y-4">
-        <div className="flex flex-col items-start justify-center pt-0 md:pt-2">
+      <div className="max-w-2xl w-full px-3 md:px-1 py-21 md:py-16 space-y-4">
+        <div className="flex flex-col items-start justify-center pt-0 md:pt-1">
           <motion.div
             className="text-base md:text-[21px] text-zinc-100 font-medium animate-blurred-fade-in duration-300"
             aria-label="Post Title"
@@ -45,7 +45,7 @@ export default function Post({ post }) {
             {post.frontmatter.title}
           </motion.div>
           <motion.div
-            className="text-stone-400/90 text-sm md:text-base font-medium max-w-2xl overflow-auto animate-blurred-fade-in duration-300"
+            className="text-stone-400/90 text-sm md:text-base font-medium max-w-2xl overflow-auto animate-blurred-fade-in duration-300 -mt-0 md:-mt-1"
             aria-label="Post Date"
           >
             <span>{post.frontmatter.date}</span>
@@ -104,7 +104,10 @@ export default function Post({ post }) {
             {post.content}
           </ReactMarkdown>
         </motion.div>
-        <BackToTop />
+        {/* Surround back to top button in a div to prevent position changes */}
+        <div>
+          <BackToTop />
+        </div>
         <div className="flex items-center justify-center">
           <hr className="w-full border-t border-neutral-800" />
         </div>

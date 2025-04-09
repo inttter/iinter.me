@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
-import consola from 'consola';
+import { consola } from 'consola';
 import { FaSpotify } from 'react-icons/fa';
 
 function Lanyard({ showUsername = true, showStatusDot = true, showAlbumArt = true }) {
@@ -44,7 +44,7 @@ function Lanyard({ showUsername = true, showStatusDot = true, showAlbumArt = tru
             <span
               key="status-dot"
               className={`h-4 w-4 rounded-full absolute bottom-0 right-0 mb-1 mr-1 border border-neutral-800 tooltip tooltip-top ${dotColor}`}
-              data-theme="black"
+              data-theme="bumblebee"
               data-tip={`${
                 discordStatus === 'online' ? 'Online' : 
                 discordStatus === 'idle' ? 'Idle' : 
@@ -137,7 +137,7 @@ function Lanyard({ showUsername = true, showStatusDot = true, showAlbumArt = tru
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="text-sm text-stone-400/90 overflow-ellipsis animate-blurred-fade-in duration-1000 truncate -mt-0.5"
+              className="text-sm text-stone-400/90 text-ellipsis animate-blurred-fade-in duration-1000 truncate -mt-0.5"
             >
               {status}
             </motion.div>

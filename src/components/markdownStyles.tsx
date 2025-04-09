@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import copy from 'copy-to-clipboard';
-import consola from 'consola';
+import { consola } from 'consola';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/base16/qualia.css';
 import Link from 'next/link';

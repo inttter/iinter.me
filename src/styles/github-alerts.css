@@ -1,3 +1,5 @@
+@reference "tailwindcss";
+
 :root {
     --github-alert-default-color: rgb(48, 54, 61);
 
@@ -28,7 +30,7 @@
     border-radius: 0.5rem;
     color: var(--github-alert-text); 
     border-left-color: 2px solid #262626;
-    @apply box-border text-[14px] leading-[1.25rem] rounded-lg border border-neutral-800/60;
+    @apply box-border text-[14px] leading-[1.3rem] rounded-lg border border-neutral-800/60;
 }
 
 /* Use a smaller font size on mobile */

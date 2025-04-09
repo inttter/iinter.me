@@ -31,13 +31,13 @@ const BackToTop = () => {
 
   return (
     <motion.button
-      className="fixed bottom-6 right-6 text-soft p-2 bg-neutral-800 hover:bg-soft-gray hover:bg-opacity-80 border-2 border-neutral-800 hover:border-neutral-700 rounded-full duration-300 flex items-center tooltip tooltip-left"
+      className="fixed bottom-6 right-6 text-soft p-2 bg-neutral-800 hover:bg-soft-gray border-2 border-neutral-800 hover:border-neutral-700 rounded-full duration-300 flex items-center tooltip tooltip-left hover:cursor-pointer"
       initial={{ opacity: 0 }}
       animate={{ opacity: showScrollButton ? 1 : 0 }}
       transition={{ duration: 0.3 }}
       onClick={scrollToTop}
       data-tip="Back To Top"
-      data-theme="black"
+      data-theme="bumblebee"
       aria-label="Back To Top Button"
     >
       <ArrowUp />

@@ -11,7 +11,7 @@
           'soft-gray': '#373737'
         },
         animation: {
-          "blurred-fade-in": "blurred-fade-in 0.9s ease-in-out"
+          "blurred-fade-in": "blurred-fade-in 0.3s ease-in-out"
         },
         keyframes: {
           "blurred-fade-in": {
@@ -32,11 +32,4 @@
       },
     },
     variants: {},
-    plugins: [
-      require("daisyui"),
-      require("tailwindcss-animate"),
-    ],
-    daisyui: {
-      themes: ["light", "dark", "cupcake", "lofi", "coffee", "black"],
-    },
   };

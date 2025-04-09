@@ -93,7 +93,7 @@ export default function Writing({ posts }) {
                   placeholder="Search for posts..."
                   value={searchQuery}
                   onChange={handleSearchChange}
-                  className="text-lg placeholder:text-stone-400/80 text-soft focus:text-zinc-100 bg-transparent border-b border-neutral-700/60 focus:border-stone-400/70 py-1 outline-none rounded-none w-full group duration-300"
+                  className="text-lg placeholder:text-stone-400/80 text-soft focus:text-zinc-100 bg-transparent border-b border-neutral-700/60 focus:border-stone-400/70 py-1 outline-hidden rounded-none w-full group duration-300"
                   aria-label="Post Search"
                 />
               </div>
@@ -102,7 +102,7 @@ export default function Writing({ posts }) {
               {selectedTag && (
                 <button
                   onClick={handleClearTags}
-                  className="flex items-center text-sm text-zinc-300 hover:text-zinc-300/80 mb-4 duration-300"
+                  className="flex items-center text-sm text-zinc-300 hover:text-zinc-300/80 hover:cursor-pointer mb-4 duration-300"
                   aria-label="Clear Selected Tags Button"
                 >
                   <ArrowLeft size={15} className="mr-1" />
@@ -198,7 +198,7 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
   return (
     <nav className="relative flex flex-col animate-blurred-fade-in duration-300">
       <ul className="flex space-x-2">
-        <div className="flex items-center text-stone-400 text-sm mr-1">
+        <div className="flex items-center text-stone-400 text-sm mr-3">
           Page
         </div>
         {pageNumbers.map(number => (
