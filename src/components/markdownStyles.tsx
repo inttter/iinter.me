@@ -50,9 +50,10 @@ const MarkdownComponents = {
       <div className="relative mt-4">
         <button
           onClick={handleCopy}
-          className="absolute top-2.5 right-2 text-zinc-100 text-sm font-semibold bg-neutral-900 hover:bg-neutral-800 border md:border-2 border-neutral-800 hover:border-neutral-700 duration-300 rounded-md p-1.5 mr-1"
-          aria-label="Copy code to clipboard"
-          title="Copy code to clipboard"
+          className="absolute top-2.5 right-2 text-zinc-100 bg-neutral-900 hover:bg-neutral-800 border md:border-2 border-neutral-800 hover:border-neutral-700 duration-300 rounded-md p-1.5 mr-1 hover:cursor-pointer tooltip tooltip-left"
+          data-tip={copied ? "Copied!" : "Copy"}
+          data-theme="bumblebee"
+          aria-label="Copy Code To Clipboard"
         >
           {copied ? (
             <Check size={20} className="w-4 h-4 text-emerald-400 transform transition-transform duration-300" />
