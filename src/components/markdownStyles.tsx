@@ -75,7 +75,7 @@ const MarkdownComponents = {
   code({ node, inline, children, ...props }) {
     return (
       <code
-        className="text-zinc-200 px-1 py-0.5 bg-neutral-800 rounded-md whitespace-pre-wrap break-words"
+        className="text-zinc-200 px-1 py-0.5 bg-neutral-800 ring ring-neutral-700/60 rounded-md whitespace-pre-wrap break-words"
         {...props}
       >
         {children}
