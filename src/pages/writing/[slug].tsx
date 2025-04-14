@@ -30,6 +30,16 @@ export default function Post({ post }) {
     });
   };
 
+  // Calculate average reading time for post 
+  // (https://www.craigabbott.co.uk/blog/how-to-calculate-reading-time-like-medium/)
+  function readingTime(text) {
+    const wordsPerMinute = 200;
+    const noOfWords = text.split(/\s/g).length;
+    const minutes = noOfWords / wordsPerMinute;
+    const readTime = Math.ceil(minutes);
+    return `${readTime} minute read`;
+  };
+
   return (
     <div className="bg-main min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8 overflow-x-hidden">
       <Head>
@@ -38,18 +48,26 @@ export default function Post({ post }) {
       </Head>
       <div className="max-w-2xl w-full px-3 md:px-1 py-21 md:py-16 space-y-4">
         <div className="flex flex-col items-start justify-center pt-0 md:pt-1">
-          <motion.div
-            className="text-base md:text-[21px] text-zinc-100 font-medium animate-blurred-fade-in duration-300"
+          <div
+            className="text-zinc-100 text-base md:text-[21px] font-medium animate-blurred-fade-in duration-300"
             aria-label="Post Title"
           >
             {post.frontmatter.title}
-          </motion.div>
-          <motion.div
-            className="text-stone-400/90 text-sm md:text-base font-medium max-w-2xl overflow-auto animate-blurred-fade-in duration-300 -mt-0 md:-mt-1"
-            aria-label="Post Date"
-          >
-            <span>{post.frontmatter.date}</span>
-          </motion.div>
+          </div>
+          <div className="w-full flex justify-between items-center max-w-2xl overflow-auto animate-blurred-fade-in duration-300 -mt-0 md:-mt-1">
+            <div 
+              className="text-stone-400/90 text-sm md:text-base font-medium"
+              aria-label="Post Date"
+            >
+              {post.frontmatter.date}
+            </div>
+            <div 
+              className="text-stone-400/90 text-sm font-medium flex items-center gap-x-1" 
+              aria-label="Time To Read"
+            >
+              {readingTime(post.content)}
+            </div>
+        </div>
         </div>
         <motion.div
           className="text-soft text-[15px] md:text-base leading-[1.5rem] md:leading-[1.65rem] animate-blurred-fade-in duration-300"
