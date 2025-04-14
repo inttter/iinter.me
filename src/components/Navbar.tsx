@@ -15,6 +15,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
+  const isWritingPostPage = /^\/writing\/[^/]+$/.test(router.pathname);
+
   useEffect(() => {
     // react-device-detect won't show the navbar on devices like iPads,
     // but this seems to work so use this.
@@ -42,6 +44,16 @@ const Navbar = () => {
     ))
   );
 
+  // Only shows up when on the /writing/[slug] page
+  const backButton = (
+    <Link
+      href="/writing"
+      className="flex items-center px-1 -ml-2 md:-ml-1 text-stone-400/85 hover:text-stone-500 duration-300"
+    >
+      Back
+    </Link>
+  );
+
   return (
     <div className="absolute top-13.5">
       {/* Mobile Navbar */}
@@ -59,6 +71,12 @@ const Navbar = () => {
           </button>
           <div className={`${isOpen ? 'block' : 'hidden'} bg-neutral-900 backdrop-blur-xs px-2 py-3 pl-4 my-2 rounded-md shadow-2xl shadow-neutral-900 z-10 border border-neutral-800 animate-blurred-fade-in duration-300`}>
             <div className="flex flex-col space-y-3 text-soft hover:text-neutral-100 duration-300">
+              {isWritingPostPage && (
+                <>
+                  {backButton}
+                  <hr className="border-t border-neutral-700/60 w-full -ml-1 -mt-1" />
+                </>
+              )}
               {renderNavItems()}
             </div>
           </div>
@@ -66,6 +84,12 @@ const Navbar = () => {
       ) : (
         // Desktop Navbar
         <div className="hidden md:flex space-x-2 items-center">
+          {isWritingPostPage && (
+            <>
+              {backButton}
+              <div className="h-4 border-l border-neutral-700/60 -ml-1" />
+            </>
+          )}
           {renderNavItems()}
         </div>
       )}
