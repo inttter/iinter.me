@@ -23,8 +23,10 @@
   }
 }
 
-:root {
+
+body {
     font-family: var(--font-geist-sans);
+    @apply bg-main;
 }
 
 .code {
