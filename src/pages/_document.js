@@ -16,7 +16,7 @@ class MyDocument extends Document {
 
     const siteUrl = 'https://iinter.me';
     const defaultImage = `${siteUrl}/external/og.png`;
-    const defaultDescription = `I'm passionate about computers, a cat lover, and an anime watcher.`;
+    const defaultDescription = `inter's personal site.`;
 
     const postTitle = post.frontmatter?.title || 'Post Title';
     const postDescription = post.frontmatter?.description || defaultDescription;
@@ -49,7 +49,7 @@ class MyDocument extends Document {
             <>
               {/* Meta tags for non-post pages */}
               <meta property="og:url" content={ogUrl} />
-              <meta property="og:title" content="Inter" />
+              <meta property="og:title" content="iinter.me" />
               <meta property="og:image" content={defaultImage} />
               <meta property="og:description" content={defaultDescription} />
               <meta name="description" content={defaultDescription} />
@@ -62,7 +62,7 @@ class MyDocument extends Document {
 
           {/* Global meta tags */}
           <meta property="og:site_name" content="Inter" />
-          <meta name="theme-color" content="#161617" />
+          <meta name="theme-color" content="#111110" />
 
           {/* Favicons */}
           <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
