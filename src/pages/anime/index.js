@@ -86,32 +86,45 @@ const Anime = () => {
         const user = data.MediaListCollection.user;
         const favourites = user.favourites.anime.nodes;
 
+        // Completed list is sorted in the following order:
+        // - Favourites (highest favourite to lowest favourite)
+        // - Score (highest to lowest)
+        //   - If two or more shows have the same score, then it sorts by
+        //   - completion date (least recent to most recent)
         const completedList = parseEntries(lists, 'COMPLETED').sort((a, b) => {
           const aFavIndex = favourites.findIndex(fav => fav.id === a.id);
           const bFavIndex = favourites.findIndex(fav => fav.id === b.id);
 
-          if (a.score !== b.score) {
-            // sorts by score
+          if (a.score != b.score) {
+            // Sort by score in descending order (higher score first)
             return b.score - a.score;
           }
+
           if (aFavIndex !== -1 && bFavIndex === -1) {
-            // eg. if a is favorited and b is not
+            // If show A is favourited and and show B is not, put A before B
             return -1;
           }
+
           if (aFavIndex === -1 && bFavIndex !== -1) {
-            // eg. if b is favorited and a is not
+            // If show A is not favurited and show B is, put B before A
             return 1;
           }
+
           if (aFavIndex !== -1 && bFavIndex !== -1) {
-            // if both are favorited, then it sorts by favorite rank
+            // If both are favorited, then sort by favorite rank
+            // (eg. Show A is at #2, Show B is at #4, so show A is put before show B)
             return aFavIndex - bFavIndex;
           }
-          // both aren't favorites
+
+          // Both aren't favorites, so the order does not get altered
           return 0;
         });
-  
+
+        // Sort watching list by alphabetical (A-Z) order
+        const watchingList = parseEntries(lists, 'CURRENT').sort((a, b) => a.title.localeCompare(b.title));
+
         setWatchlist({
-          watching: parseEntries(lists, 'CURRENT'),
+          watching: watchingList,
           completed: completedList,
           planned: parseEntries(lists, 'PLANNING')
         });
