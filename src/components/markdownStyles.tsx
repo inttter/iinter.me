@@ -198,17 +198,15 @@ const MarkdownComponents = {
 
   // Lists
   ul({ node, children, ...props }) {
-    return <ul className="list-disc marker:text-zinc-100 pl-6 space-y-1 mt-4" {...props}>{children}</ul>;
+    return <ul className="list-disc marker:text-zinc-100 pl-4 space-y-1 mt-4" {...props}>{children}</ul>;
   },
 
   ol({ node, children, ...props }) {
-    return <ol className="list-decimal marker:text-zinc-100 pl-6 space-y-1 mt-4" {...props}>{children}</ol>;
+    return <ol className="list-decimal marker:text-zinc-100 pl-4 space-y-1 mt-4" {...props}>{children}</ol>;
   },
 
   li({ node, children, ...props }) {
-    return <li className="marker:text-zinc-100 pl-2 space-y-1 mt-4" {...props}>
-      {children}
-    </li>;
+    return <li className="marker:text-zinc-100 pl-2 space-y-1 mt-2" {...props}>{children}</li>;
   },
 
   // Quotes

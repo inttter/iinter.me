@@ -88,4 +88,8 @@ h6 code {
 /* Footnotes */
 .footnotes {
     @apply text-stone-400 text-sm;
-  }
+}
+
+.footnotes ol {
+    @apply marker:text-stone-400;
+}
