@@ -30,79 +30,76 @@ export default function Projects() {
   return (
     <div className="bg-main min-h-screen flex flex-col justify-center items-center antialiased p-4 md:p-8">
       <div className="max-w-2xl w-full px-3 md:px-0 py-24 md:py-16 space-y-4">
-        <div className="flex items-center justify-start">
-          <Head>
-            <title>Projects | Inter</title>
-          </Head>
-          <div className="md:-py-0 py-2">
-            <div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-3 gap-y-3">
-                {projectsData.map((project, index) => (
-                  <div key={index} className="animate-blurred-fade-in duration-300">
-                    <div className="bg-[#141414] md:bg-[#181818] border border-neutral-700/60 duration-300 p-3 rounded-md block antialiased">
-                      <div className="flex justify-between items-center">
-                        <Link href={project.link} target="_blank" rel="noopener noreferrer" className="group" passHref>
-                          <span className="flex items-center">
-                            <div>
-                              <span
-                                className="text-zinc-300 hover:text-zinc-100 text-base bg-transparent duration-300"
-                                data-theme="black"
-                                aria-label="Project Name"
-                              >
-                                {project.name}
-                              </span>
-                            </div>
-                            <ArrowUpRight size={15} className="ml-0.5 opacity-50 group-hover:opacity-100 group-hover:translate-x-[1.5px] text-stone-300/80 group-hover:text-soft duration-200" />
-                          </span>
-                        </Link>
-                        <motion.div 
-                          initial={{ opacity: 0 }} 
-                          animate={{ opacity: 1 }} 
-                          transition={{ duration: 0.5 }}
-                          className="flex items-center"
-                        >
-                          {stars[project.github] !== undefined && (
-                            <Link href={`${project.github}/stargazers`} target="_blank" rel="noopener noreferrer">
-                              <span
-                                className="text-xs text-soft hover:text-zinc-100 animate-blurred-fade-in duration-300 mr-2 mb-0.5 flex items-center"
-                                aria-label="GitHub Star Count"
-                              >
-                                <FaStar size={13} className="md:mb-0 mb-0.5 mr-0.5 text-yellow-400" />
-                                {stars[project.github]}
-                              </span>
-                            </Link>
-                          )}
-                          <Link 
-                            href={project.github} 
-                            target="_blank" rel="noopener noreferrer" 
-                            className="mr-1 md:mr-0.5 -mt-1 text-stone-400/90 hover:text-soft duration-300"
-                            aria-label="GitHub Repository Link"
-                          >
-                            <FaGithub size={18} />
-                          </Link>
-                        </motion.div>
-                      </div>
-                      <div className="text-stone-400 text-sm py-2 -mt-0.5 animate-blurred-fade-in duration-300" aria-label="Project Description">
-                        {project.description}
-                      </div>
-                      {project.tags && (
-                        <div className="flex flex-wrap gap-1 truncate whitespace-pre-wrap animate-blurred-fade-in duration-300">
-                          {project.tags.map((tag, tagIndex) => (
-                            <span
-                              key={tagIndex}
-                              className="text-xs text-soft bg-[#141414] border border-neutral-800 px-2 py-1 rounded-md font-mono tracking-tight"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                    </div>
+        <Head>
+          <title>Projects | Inter</title>
+        </Head>
+
+        <div className="w-full max-w-3xl py-3= space-y-4">
+          {projectsData.map((project, index) => (
+            <div key={index} className="animate-blurred-fade-in duration-300">
+              {index !== 0 && 
+                <hr className="border-neutral-700/60 my-2" />
+              }
+
+              <div className="flex justify-between items-center w-full py-1 group">
+                <div className="flex items-center gap-1">
+                  <Link
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-zinc-200 hover:text-zinc-100 text-base font-medium flex items-center duration-300"
+                  >
+                    {project.name}
+                    <ArrowUpRight size={15} className="ml-0.5 group-hover:translate-x-[1.5px] text-stone-400/80 group-hover:text-zinc-100 duration-200" />
+                  </Link>
+                </div>
+
+                <div className="flex items-center gap-2 text-sm text-stone-400">
+                  {stars[project.github] !== undefined && (
+                    <>
+                      <Link
+                        href={`${project.github}/stargazers`}
+                        target="_blank"
+                        className="text-xs text-soft hover:text-zinc-100 flex items-center animate-blurred-fade-in duration-300"
+                        aria-label="GitHub Star Count"
+                      >
+                        <FaStar size={13} className="mr-0.5 text-yellow-400" />
+                        {stars[project.github]}
+                      </Link>
+                    </>
+                  )}
+
+                  <Link
+                    href={project.github}
+                    target="_blank"
+                    className="text-stone-400/80 hover:text-soft flex items-center duration-300"
+                    aria-label="GitHub Repository"
+                  >
+                    <FaGithub size={18} />
+                  </Link>
+                </div>
+              </div>
+
+              <div className="space-y-2 animate-blurred-fade-in duration-300">
+                <div className="text-stone-300 text-sm mb-2">
+                  {project.description}
+                </div>
+
+                {project.tags && (
+                  <div className="flex flex-wrap gap-2 truncate whitespace-pre-wrap duration-300">
+                    {project.tags.map((tag, tagIndex) => (
+                      <span
+                        key={tagIndex}
+                        className="text-xs text-stone-400 font-mono tracking-normal duration-300"
+                      >
+                        #{tag}
+                      </span>
+                    ))}
                   </div>
-                ))}
+                )}
               </div>
             </div>
-          </div>
+          ))}
         </div>
         <Navbar />
       </div>
