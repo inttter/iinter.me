@@ -200,7 +200,7 @@ const Anime = () => {
 
   return (
     <div className="bg-main min-h-screen flex flex-col justify-center items-center antialiased p-4 md:p-8">
-      <div className="max-w-2xl w-full px-3 md:px-0 py-24 md:py-16 space-y-4">
+      <div className="max-w-2xl w-full px-3 md:px-0 py-24 md:py-12 space-y-4">
         <Head>
           <title>Anime List | Inter</title>
         </Head>
