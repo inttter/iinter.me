@@ -17,7 +17,7 @@ export default function Writing({ posts }) {
   const [hoveredPost, setHoveredPost] = useState(null);
   const [currentPage, setCurrentPage] = useState(parseInt(router.query.page) || 1);
   const [selectedTag, setSelectedTag] = useState(null);
-  const postsPerPage = 6;
+  const postsPerPage = 7;
 
   useEffect(() => {
     const { tag } = router.query;
@@ -79,7 +79,7 @@ export default function Writing({ posts }) {
   }, [router.query.page]);
 
   return (
-    <div className="bg-main min-h-screen flex flex-col justify-center items-center antialiased scroll-smooth p-4 md:p-8">
+    <div className="bg-main min-h-screen flex flex-col justify-start items-center antialiased scroll-smooth p-4 md:p-8">
       <Head>
         <title>Writing | Inter</title>
       </Head>
