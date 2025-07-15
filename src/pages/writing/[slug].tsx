@@ -46,31 +46,30 @@ export default function Post({ post }) {
         <title>{`${post.frontmatter.title} | Inter`}</title>
         <meta name="description" content={post.frontmatter.description} />
       </Head>
-      <div className="max-w-2xl w-full px-3 md:px-1 py-21 md:py-16 space-y-4">
-        <div className="flex flex-col items-start justify-center pt-0 md:pt-1">
-          <div
-            className="text-zinc-100 text-base md:text-[21px] font-medium animate-blurred-fade-in duration-300"
-            aria-label="Post Title"
+      <div className="max-w-2xl w-full px-3 md:px-1 py-21 md:py-16">
+        <div className="flex items-center gap-x-2 animate-blurred-fade-in duration-300 mb-0.5">
+          <div 
+            className="text-stone-300/80 text-sm font-medium"
+            aria-label="Post Date"
           >
-            {post.frontmatter.title}
+            {post.frontmatter.date}
           </div>
-          <div className="w-full flex justify-between items-center max-w-2xl overflow-auto animate-blurred-fade-in duration-300 -mt-0 md:-mt-1">
-            <div 
-              className="text-stone-400/90 text-sm md:text-base font-medium"
-              aria-label="Post Date"
-            >
-              {post.frontmatter.date}
-            </div>
-            <div 
-              className="text-stone-400/90 text-sm font-medium flex items-center gap-x-1" 
-              aria-label="Time To Read"
-            >
-              {readingTime(post.content)}
-            </div>
+          <div className="h-3 border-l border-neutral-600" />
+          <div 
+            className="text-stone-300/80 text-sm font-medium flex items-center" 
+            aria-label="Time To Read"
+          >
+            {readingTime(post.content)}
+          </div>
         </div>
+        <div
+          className="text-zinc-100 text-lg md:text-[19px] font-medium animate-blurred-fade-in duration-300 leading-6"
+          aria-label="Post Title"
+        >
+          {post.frontmatter.title}
         </div>
         <motion.div
-          className="text-soft text-[15px] md:text-base leading-[1.5rem] md:leading-[1.65rem] animate-blurred-fade-in duration-300"
+          className="text-soft text-[15px] md:text-base leading-6 md:leading-[1.65rem] animate-blurred-fade-in duration-300"
           aria-label="Post Content"
         >
           <ReactMarkdown 
@@ -130,7 +129,7 @@ export default function Post({ post }) {
           <hr className="w-full border-t border-neutral-800" />
         </div>
         <motion.div
-          className="animate-blurred-fade-in duration-300 text-xs flex flex-col sm:flex-row sm:justify-between sm:items-center"
+          className="animate-blurred-fade-in duration-300 text-xs flex flex-col sm:flex-row sm:justify-between sm:items-center mt-4"
           aria-label="Post Footer"
         >
           {post.frontmatter.tags && (
@@ -146,9 +145,9 @@ export default function Post({ post }) {
               ))}
             </div>
           )}
-          <div className="flex items-center text-xs text-stone-400 space-x-1 mt-2 sm:mt-0">
-            <span>Last updated on</span>
-            <span className="font-medium">
+          <div className="flex items-center text-xs text-stone-400 mt-2 sm:mt-0">
+            Last updated on
+            <span className="font-medium ml-1">
               {post.frontmatter.lastUpdated}
             </span>
           </div>
@@ -163,6 +162,7 @@ export async function getStaticPaths() {
   const postsDirectory = path.join(process.cwd(), 'content');
   const filenames = fs.readdirSync(postsDirectory);
 
+  // Remove .md from file name so that it doesn't show in slug
   const paths = filenames.map((filename) => ({
     params: { slug: filename.replace(/\.md$/, '') },
   }));
