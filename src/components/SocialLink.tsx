@@ -8,17 +8,17 @@ export default function SocialLink({ href, tooltipText, social }) {
   const getIcon = () => {
     switch (social) {
       case 'GitHub':
-        return <FaGithub className="hover:text-soft duration-300" />;
+        return <FaGithub className="duration-300" />;
       case 'Steam':
-        return <FaSteam className="hover:text-soft duration-300" />;
+        return <FaSteam className="duration-300" />;
       case 'Twitter':
-        return <FaTwitter className="hover:text-soft duration-300" />;
+        return <FaTwitter className="duration-300" />;
       case 'osu!':
-        return <SiOsu className="hover:text-soft duration-300" />;
+        return <SiOsu className="duration-300" />;
       case 'AniList':
-        return <SiAnilist className="hover:text-soft duration-300" />;
+        return <SiAnilist className="duration-300" />;
       case 'Last.fm':
-        return <FaLastfm className="hover:text-soft duration-300" />;
+        return <FaLastfm className="duration-300" />;
       default:
         return null;
     }
@@ -35,7 +35,7 @@ export default function SocialLink({ href, tooltipText, social }) {
       data-theme="bumblebee"
     >
       <Link href={href} target="_blank" rel="noopener noreferrer" aria-label={social}>
-        <div className="flex items-center text-4xl text-stone-400/85 hover:scale-105 active:scale-110 hover:rotate-2 active:rotate-6 duration-150">
+        <div className="flex items-center text-4xl text-stone-300/85 hover:text-zinc-100 hover:scale-105 active:scale-110 hover:rotate-2 active:rotate-6 duration-150">
           {getIcon()}
         </div>
       </Link>
