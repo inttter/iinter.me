@@ -18,7 +18,7 @@ const Anime = () => {
   });
   const [username, setUsername] = useState('');
   const [favourites, setFavourites] = useState([]);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [hasError, setHasError] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -135,7 +135,7 @@ const Anime = () => {
         }
       } catch (error) {
         consola.error('An error occurred:', error);
-        setErrorMessage('List could not be fetched. You may have hit rate limits. Try again later!');
+        setHasError(true);
       }
     };
   
@@ -222,13 +222,13 @@ const Anime = () => {
         <div className="mt-auto">
           <BackToTop />
         </div>
-        {errorMessage && (
+        {hasError && (
           <div className="animate-blurred-fade-in duration-300">
-            <div className="flex items-center justify-center text-soft text-7xl font-semibold rounded-md tracking-tighter">
-              No list found.
+            <div className="text-soft text-4xl font-medium">
+              Failed to fetch list
             </div>
-            <div className="flex items-center justify-center text-stone-400 text-base md:text-sm rounded-md mt-2" aria-label="Error Message">
-              {errorMessage}
+            <div className="text-stone-300/80 text-base mt-1">
+              There was an error, or you may have been rate-limited. Try again in a bit.
             </div>
           </div>
         )}
