@@ -23,6 +23,19 @@ const Anime = () => {
  
   useEffect(() => {
     const fetchData = async () => {
+      const cached = sessionStorage.getItem('animeData');
+
+      // If there is already cached data in session storage,
+      // use that data to set the states and skip fetching from the API
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        setWatchlist(parsed.watchlist);
+        setUsername(parsed.username);
+        setFavourites(parsed.favourites);
+        setLoading(false);
+        return;
+      }
+
       const query = `
       query {
         MediaListCollection(userName: "Intter", type: ANIME) {
@@ -124,16 +137,26 @@ const Anime = () => {
         // Sort watching list by alphabetical (A-Z) order
         const watchingList = parseEntries(lists, 'CURRENT').sort((a, b) => a.title.localeCompare(b.title));
 
-        setWatchlist({
+        const watchlistData = {
           watching: watchingList,
           completed: completedList,
           planned: parseEntries(lists, 'PLANNING')
-        });
+        };
+
+        setWatchlist(watchlistData);
   
         if (user) {
           setUsername(user.name);
           setFavourites(favourites);
         }
+        
+        // Cache the fetched data from the AniList API
+        // so it can be reused during the browser session
+        sessionStorage.setItem('animeData', JSON.stringify({
+          watchlist: watchlistData,
+          username: user.name,
+          favourites
+        }));
       } catch (error) {
         consola.error('An error occurred:', error);
         setHasError(true);
