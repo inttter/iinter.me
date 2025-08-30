@@ -8,7 +8,7 @@ import BackToTop from '@/components/BackToTop';
 import { request } from 'graphql-request';
 import { SiAnilist } from "react-icons/si";
 import { FaHeart } from "react-icons/fa";
-import { ArrowUpRight, Play, Check, Clock } from 'lucide-react';
+import { ArrowUpRight, Play, Check, Clock, Loader2 } from 'lucide-react';
 
 const Anime = () => {
   const [watchlist, setWatchlist] = useState({
@@ -19,7 +19,8 @@ const Anime = () => {
   const [username, setUsername] = useState('');
   const [favourites, setFavourites] = useState([]);
   const [hasError, setHasError] = useState(false);
-
+  const [loading, setLoading] = useState(true);
+ 
   useEffect(() => {
     const fetchData = async () => {
       const query = `
@@ -136,6 +137,8 @@ const Anime = () => {
       } catch (error) {
         consola.error('An error occurred:', error);
         setHasError(true);
+      } finally {
+        setLoading(false);
       }
     };
   
@@ -222,8 +225,14 @@ const Anime = () => {
         <div className="mt-auto">
           <BackToTop />
         </div>
+        {loading && (
+          <div className="text-soft text-2xl font-medium animate-blurred-fade-in duration-300 flex items-center">
+            <Loader2 className="animate-spin mr-1" size={20} />
+            Fetching anime list...
+          </div>
+        )}
         {hasError && (
-          <div className="animate-blurred-fade-in duration-300">
+          <div className="animate-blurred-fade-in duration-300" aria-label="Error Message">
             <div className="text-soft text-4xl font-medium">
               Failed to fetch list
             </div>
