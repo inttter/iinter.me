@@ -110,7 +110,6 @@ function Lanyard({ showUsername = true, showStatusDot = true, showAlbumArt = tru
               height={70}
               className="rounded-full border border-neutral-800"
             />
-            {/*
             <Image
               src="https://us-east-1.tixte.net/uploads/files.iinter.me/christmas-hat.png"
               alt="Christmas Hat"
@@ -118,7 +117,6 @@ function Lanyard({ showUsername = true, showStatusDot = true, showAlbumArt = tru
               height={60}
               className="absolute -top-3 -right-3"
             />
-            */}
             {statusDot && showStatusDot && (
               <div className="absolute -bottom-0.5 -right-1">
                 {statusDot}
