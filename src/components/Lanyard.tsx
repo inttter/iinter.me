@@ -111,11 +111,11 @@ function Lanyard({ showUsername = true, showStatusDot = true, showAlbumArt = tru
               className="rounded-full border border-neutral-800"
             />
             <Image
-              src="https://us-east-1.tixte.net/uploads/files.iinter.me/christmas-hat.png"
+              src="https://us-east-1.tixte.net/uploads/files.iinter.me/christmas-hat-v2.png"
               alt="Christmas Hat"
-              width={60}
-              height={60}
-              className="absolute -top-3 -right-3"
+              width={70}
+              height={70}
+              className="absolute -top-4 -right-4 rotate-24"
             />
             {statusDot && showStatusDot && (
               <div className="absolute -bottom-0.5 -right-1">
